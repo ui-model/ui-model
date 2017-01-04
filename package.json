@@ -4,22 +4,33 @@
   "description": "ui model library",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require=ts-node/register --ui bdd --recursive src/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ui-model/ui-model.git"
   },
   "keywords": [
-    "ui",
-    "model",
-    "no-component",
+    "ui-model",
+    "no component",
     "lean-ui"
   ],
-  "author": "Zhicheng Wang, Rex",
+  "author": "Zhicheng Wang<asnowwolf@gmail.com>, Rex<rexebin@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ui-model/ui-model/issues"
   },
-  "homepage": "https://github.com/ui-model/ui-model#readme"
+  "homepage": "https://github.com/ui-model/ui-model#readme",
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.35",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mocha-typescript": "^1.0.15",
+    "ts-node": "^2.0.0",
+    "typescript": "^2.1.4"
+  },
+  "dependencies": {
+    "rxjs": "^5.0.2"
+  }
 }
