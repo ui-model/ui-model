@@ -1,0 +1,31 @@
+<app-panel title="select from 'select' ">
+  <select [uaSelect]="options" #select1="select">
+    <option>-</option>
+    <option *ngFor="let option of options" [value]="option" [selected]="select1.selected(option)">{{option.label}}</option>
+  </select>
+</app-panel>
+
+<app-panel title="select from radio group(linked to 'select')">
+  <div [uaSelect]="options" #select1="select">
+    <label class="form-check-inline" *ngFor="let option of options">
+      <input class="form-check-input" type="radio" (change)="select1.select(option)"
+             [checked]="select1.selected(option)"/>
+      {{option.label}}
+    </label>
+  </div>
+</app-panel>
+
+<app-panel title="select from mixture of radio and button">
+  <div [uaSelect]="options" #select2="select">
+    <label class="form-check-inline" *ngFor="let option of options; let odd=odd">
+      <ng-container *ngIf="odd">
+        <input class="form-check-input" type="radio" (change)="select2.select(option)"
+               [checked]="select2.selected(option)"/>
+        {{option.label}}
+      </ng-container>
+      <button class="btn" *ngIf="!odd" [class.btn-primary]="select2.selected(option)"
+              (click)="select2.select(option)">{{option.label}}
+      </button>
+    </label>
+  </div>
+</app-panel>
