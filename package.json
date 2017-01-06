@@ -1,6 +1,6 @@
 {
   "name": "ui-model",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ui model library",
   "main": "index.ts",
   "scripts": {
@@ -26,7 +26,6 @@
     "@types/mocha": "^2.2.35",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
-    "mocha-typescript": "^1.0.15",
     "ts-node": "^2.0.0",
     "typescript": "^2.1.4"
   },
