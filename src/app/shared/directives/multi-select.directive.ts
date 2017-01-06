@@ -1,9 +1,9 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[uaToggle]'
+  selector: '[uiMultiSelect]'
 })
-export class ToggleDirective {
+export class MultiSelectDirective {
 
   constructor() { }
 

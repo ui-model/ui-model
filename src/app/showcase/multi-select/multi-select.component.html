@@ -1,3 +1,19 @@
-<p>
-  multi-select works!
-</p>
+<app-panel title="Multiple selection states can be linked, and indeterminate state is supported">
+  <div class="card">
+    <div class="card-header">
+      <label>
+        <input type="checkbox" [indeterminate]="select.indeterminate" [(ngModel)]="select.allSelected"/>
+        All
+      </label>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let option of options">
+        <label>
+          <input type="checkbox" [ngModel]="select.selected(option)"
+                 (ngModelChange)="select.selectAs(option, $event)"/>
+          <span [innerHTML]="option.label"></span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</app-panel>

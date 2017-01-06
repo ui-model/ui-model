@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Select} from 'ui-model';
 
 class Option {
   label: string;
@@ -34,12 +35,14 @@ export class SelectComponent implements OnInit {
       value: 'e1',
     },
   ];
-  value: Option = this.options[1];
+
+  select: Select<Option> = new Select<Option>();
 
   constructor() {
   }
 
   ngOnInit() {
+    this.select.select(this.options[1]);
   }
 
 }

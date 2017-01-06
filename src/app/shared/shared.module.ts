@@ -1,8 +1,11 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SelectDirective} from './select.directive';
-import {MultiSelectDirective} from './multi-select.directive';
-import {ToggleDirective} from './toggle.directive';
+import {SelectDirective} from './directives/select.directive';
+import {MultiSelectDirective} from './directives/multi-select.directive';
+import {ToggleDirective} from './directives/toggle.directive';
+import { RadioGroupComponent } from './radio-group/radio-group.component';
+import {PanelComponent} from './panel/panel.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   imports: [
@@ -11,12 +14,17 @@ import {ToggleDirective} from './toggle.directive';
   declarations: [
     SelectDirective,
     MultiSelectDirective,
-    ToggleDirective
+    ToggleDirective,
+    RadioGroupComponent,
+    PanelComponent,
+    ModalComponent,
   ],
   exports: [
     SelectDirective,
     MultiSelectDirective,
-    ToggleDirective
+    ToggleDirective,
+    RadioGroupComponent,
+    PanelComponent,
   ],
 })
 export class SharedModule {

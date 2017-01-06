@@ -9,7 +9,6 @@ import {MultiSelectComponent} from './showcase/multi-select/multi-select.compone
 import {ToggleComponent} from './showcase/toggle/toggle.component';
 import {NavMenuComponent} from './layout/nav-menu/nav-menu.component';
 import {SharedModule} from './shared/shared.module';
-import { PanelComponent } from './layout/panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { PanelComponent } from './layout/panel/panel.component';
     MultiSelectComponent,
     ToggleComponent,
     NavMenuComponent,
-    PanelComponent
   ],
   imports: [
     BrowserModule,
