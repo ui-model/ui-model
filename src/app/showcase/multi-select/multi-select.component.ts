@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MultiSelect} from 'ui-model';
 
 class Data {
@@ -19,6 +19,10 @@ const options = [
     code: 'c',
     label: 'C',
   },
+  {
+    code: 'd',
+    label: 'D',
+  }
 ];
 @Component({
   selector: 'app-multi-select',
@@ -31,7 +35,8 @@ export class MultiSelectComponent implements OnInit {
 
   select: MultiSelect<Data> = new MultiSelect<Data>(options);
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

@@ -25,6 +25,7 @@ import { ModalComponent } from './modal/modal.component';
     ToggleDirective,
     RadioGroupComponent,
     PanelComponent,
+    ModalComponent,
   ],
 })
 export class SharedModule {
