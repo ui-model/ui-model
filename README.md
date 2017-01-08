@@ -42,25 +42,27 @@ Now you have seen some controls with *n* choose *1* logic, what about controls w
 
 In the above conceptual model, ui-model is parallel to JavaScript frameworks and CSS frameworks. These three components are independent from each other. We can freely mix and match them. JavaScript framework is responsible for synchronizing model and view. CSS frameworks are responsible to presentation. ui-model is focused on interactive logic. 
 
-For popular JavaScript frameworks, we will also provide some binding library to reduce adaption complexity, such as *ui-model-angular* for Angular and *ui-model-react* for React.
+We will also provide some binding libraries to reduce adaption complexity, such as *ui-model-angular* for Angular and *ui-model-react* for React. We welcome the community to contribute to ui-model and distribute their own binding libraries.
 
-## 传统的组件库为何难以复用？
+## Why are traditional component libraries difficult to reuse?  
 
-如果你使用过第三方组件库，那么大概也体会过组件库的一些共有缺点。
+If you use a third party component library, you probably experience some of the common drawbacks. 
 
-首先，大部分组件库都与某个前端框架紧紧绑定在一起，Angular的组件库显然无法用于React，反之也一样。甚至有些库还紧紧地绑定了CSS框架，如果绑定的是Bootstrap等设计良好的框架也就罢了，至少你可以通过CSS进行深度定制；如果是设计不良的框架，那就惨了，有些修改你可能只有去改它的源码，而这将破坏封装。
+Firstly, most component libraries are tightly coupled with a Frontend framework. A component library for Angular is obviously not usable with React, and vice versa. Some libraries are also tightly coupled with a CSS framework, which is probably alright if it is a well designed CSS Framework like Bootstrap because you could customise in depth via CSS. If the CSS framework is not well designed, then you may have to modify its source code, which will disrupt the original distribution.
 
-其次，组件库的配置过于复杂，一些大型套件甚至都需要专门学习一段时间才能上手，而一旦换了套件，关于本组件库的知识基本上就作废了。固然，它们所解决的需求本身就很复杂，但问题在于这些复杂的需求都是由少数几个通用的交互逻辑变形组合而成的（就像前文所说的多种交互控件抽取出的select逻辑），这种复杂度是否真的是我们必须付出的代价？
+Secondly, component libraries' configuration can be complex. Some large libraries require dedicated learning for a period to get started, and if switch libraries, what you learned for the old library would be wasted. It is true that these libraries are designed to solve complex problems. However what lies beneath these complex problems are a few common interactive logic, as mentioned above, may controls are based on abstracted ***n* choose *1***. There is a better way to handle these complex problems?
 
-最后，组件库很难在可定制性和复杂度之间进行平衡。可定制性强的组件库且不说自身的开发难度高，即使在使用方面也同样不易。传统方式下的组件库，通常都要通过配置去实现各种可定制性，最多是支持用回调函数进行定制，但是这种方式必然导致巨大的文档以及沉重的记忆负担。
+Finally, it can be difficult to balance between complexity and customisation. Customisable libraries is not only difficult to develop, but also difficult to use. Traditional component library normally achieve customisation through configuration, mostly via callback functions. However this approach will inevitably lead to complex documentation and heavy memory burden.    
 
-那么，组件库难以复用的根本原因是什么呢？一句话：违反了SoC（关注点分离）这一根本性的设计原则。传统的组件库同时涵盖了三个关注点：信息架构（HTML）、交互逻辑（JS）、外观样式（CSS），当这三个关注点紧紧捆绑在一起的时候，上述三大问题就很难避免了。
+So, what are the root cause that make component libraries difficult to reuse? They violated the SoC (Separate of Concerns) design principle. Traditional component has three concerns: view (HTML), model/logic (JavaScript) and styling (CSS). When these three concerns are tightly coupled together, complicity is inevitable.  
 
-相对来说，CSS库较早的独立出来，比如Bootstrap的CSS框架部分就仅仅实现了外观，对HTML和JS几乎没有依赖，加之其本身的设计就相当合理，因此快速流行起来。
+In fact, many CSS frameworks have been independent for a long time. For example, Bootstrap's CSS part only implements styling and is completely independent from HTML and JavaScript, and because of its well designed architecture, it quickly became popular. 
 
-而ui-model就是JS世界中的Bootstrap。
+ui-model is the Bootstrap in JavaScript world. 
 
 另一个关注点，信息架构（HTML）由于最贴近业务需求，因此可以留给应用去自己实现。而现有的前端框架则作为交互逻辑和信息架构之间的桥梁。ui-model对这个“桥梁”的唯一假设就是它能够实现模型和界面之间的同步 —— 并不关心它使用数据绑定实现还是使用Virtual DOM实现。
+
+
 
 ## ui-model的前景与未来
 
