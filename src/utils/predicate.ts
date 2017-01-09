@@ -6,15 +6,18 @@ export class Predicates {
   static any(v1: any, v2: any): boolean {
     return v1 === v2;
   }
-  static string(v1: string, v2: string): boolean {
-    return (v1 || '') === (v2 || '');
+  static string(v1: any, v2: any): boolean {
+    return (v1 || '').toString() === (v2 || '').toString();
   };
 
-  static number(v1: number, v2: number): boolean {
-    return (v1 || 0) === (v2 || 0);
+  static number(v1: any, v2: any): boolean {
+    return +v1 === +v2;
   };
 
-  static boolean(v1: boolean, v2: boolean): boolean {
-    return (v1 || false) === (v2 || false);
+  static boolean(v1: any, v2: any): boolean {
+    if (isNaN(v1) || isNaN(v2)) {
+      return false;
+    }
+    return !!v1 === !!v2;
   };
 }

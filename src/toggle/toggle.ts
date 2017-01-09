@@ -8,7 +8,7 @@ export class Toggle extends Subject<boolean> {
   static readonly ON: boolean = true;
   static readonly OFF: boolean = false;
 
-  get on() {
+  get on(): boolean {
     return this._on;
   }
 
@@ -16,7 +16,7 @@ export class Toggle extends Subject<boolean> {
     this._on = value;
   }
 
-  get off() {
+  get off(): boolean {
     return !this.on;
   }
 

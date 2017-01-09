@@ -1,9 +1,9 @@
 import {Supplier, Suppliers} from '../utils/supplier';
 import {Subject} from 'rxjs/Subject';
 export class MultiSelect<T> extends Subject<any> {
-  private selectedStates = {};
+  private selectedStates: {} = {};
 
-  constructor(public options: any[], private supplier: Supplier<T, any> = Suppliers.object) {
+  constructor(public options: any[], private supplier: Supplier<T, any> = Suppliers.objectById) {
     super();
   }
 
@@ -41,14 +41,17 @@ export class MultiSelect<T> extends Subject<any> {
 
   selectAs(option: T, value: any): void {
     this.selectedStates[this.supplier(option)] = !!value;
-    this.next({option: option, value: !!value})
+    this.next({
+      option: option,
+      value: !!value,
+    });
   }
 
   select(option: T): void {
     this.selectAs(option, true);
   }
 
-  deselect(option): void {
+  deselect(option: T): void {
     this.selectAs(option, false);
   }
 
@@ -60,8 +63,12 @@ export class MultiSelect<T> extends Subject<any> {
     this.options.forEach((option) => this.deselect(option));
   }
 
-  toggle(option): void {
+  toggle(option: T): void {
     this.selectAs(option, !this.selected(option));
+  }
+
+  toggleAll(): void {
+    this.options.forEach((option) => this.toggle(option));
   }
 
   get selection(): any[] {

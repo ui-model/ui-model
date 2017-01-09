@@ -20,7 +20,7 @@ describe('Select', () => {
     expect(select.selected({a: 1})).to.not.be.ok;
   });
   it('when using object supplier, we can lookup object properly', () => {
-    const select = new Select((obj: {a: number})=> obj.a);
+    const select = new Select(Suppliers.objectByField('a'));
     select.select({a: 1});
     expect(select.selected({a: 1})).to.be.ok;
   });

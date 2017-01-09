@@ -3,7 +3,7 @@ import {Subject} from 'rxjs/Subject';
 export class Select<T> extends Subject<T> {
   selection: T;
 
-  constructor(private supplier: Supplier<T, any> = Suppliers.object) {
+  constructor(private supplier: Supplier<T, any> = Suppliers.objectById) {
     super();
   }
 
@@ -12,7 +12,7 @@ export class Select<T> extends Subject<T> {
   }
 
   select(item: T): void {
-    if (this.selection !== item) {
+    if (!this.selected(item)) {
       this.selection = item;
       this.next(item);
     }

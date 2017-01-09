@@ -20,6 +20,10 @@
 
 我们这个实现的技术栈目前是TypeScript / Mocha / Chai，都已经在package.json中配置好了。如果在命令行模式下，请执行`npm test`命令。如果使用IntelliJ / WebStorm，请根据package.json中的test脚本配置上mocha，并运行，建议开启监控模式。
 
+如果不使用IDE，请执行`npm start`命令，它将开启监控模式，src目录下任何ts文件的变化都会触发单元测试以及lint任务。
+
+请确保`npm test`命令和`npm run lint`命令通过，CI服务器上将会检查它们。
+
 # 设计原则
 
 1. 善用TypeScript语法特性，特别是类型注解和泛型等。

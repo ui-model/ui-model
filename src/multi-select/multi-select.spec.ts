@@ -1,20 +1,21 @@
 import {MultiSelect} from './multi-select';
 import {expect} from 'chai';
+import {Suppliers} from '../utils/supplier';
 
 const options = [
   1,
   2,
-  3
+  3,
 ];
 
-describe('Multi select', () => {
+describe('Multi Select', () => {
   it('constructor', () => {
     const select = new MultiSelect(options);
     expect(select.options)
       .to.eql([
       1,
       2,
-      3
+      3,
     ]);
   });
   it('select', () => {
@@ -52,6 +53,13 @@ describe('Multi select', () => {
     select.allSelected = true;
     expect(select.allSelected).to.be.ok;
   });
+  it('toggleAll', () => {
+    const select = new MultiSelect(options);
+    select.toggleAll();
+    expect(select.allSelected).to.be.ok;
+    select.toggleAll();
+    expect(select.anySelected).to.not.be.ok;
+  });
   it('selection', () => {
     const select = new MultiSelect(options);
     select.select(1);
@@ -61,11 +69,15 @@ describe('Multi select', () => {
       .to
       .eql([
         1,
-        2
+        2,
       ]);
   });
   it('supplier', () => {
-    const select = new MultiSelect([{a: '1'}, {a: '2'}, {a: '3'}], (value: {a: string}) => value.a);
+    const select = new MultiSelect([
+      {a: '1'},
+      {a: '2'},
+      {a: '3'},
+    ], Suppliers.objectByField('a'));
     select.select({a: '1'});
     expect(select.selected({a: '1'})).to.be.ok;
   });

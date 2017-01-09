@@ -7,17 +7,17 @@ export class Suppliers {
     return fromData;
   }
 
-  static object(fromData: any): string {
-    if (fromData instanceof Object) {
-      if (fromData.hasOwnProperty('id')) {
-        return fromData['id'];
+  static objectByField(field: string): Supplier<Object, any> {
+    return (fromData: Object) => {
+      if (fromData instanceof Object) {
+        return fromData[field];
       } else {
-        return JSON.stringify(fromData);
+        return fromData;
       }
-    } else {
-      return fromData;
-    }
+    };
   }
+
+  static objectById: Supplier<Object, any> = Suppliers.objectByField('id');
 
   static toString(fromData: any): string {
     if (!fromData) {

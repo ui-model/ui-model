@@ -12,6 +12,13 @@ describe('Toggle', ()=> {
     const toggle = new Toggle(Toggle.OFF);
     expect(toggle.on).to.not.be.ok;
   });
+  it('on', () => {
+    const toggle = new Toggle();
+    toggle.on = true;
+    expect(toggle.on).to.be.ok;
+    toggle.on = false;
+    expect(toggle.on).to.not.be.ok;
+  });
   it('turn on', () => {
     const toggle = new Toggle();
     toggle.turnOn();
@@ -21,6 +28,17 @@ describe('Toggle', ()=> {
     const toggle = new Toggle();
     toggle.turnOn();
     toggle.turnOff();
+    expect(toggle.on).to.not.be.ok;
+  });
+  it('open', () => {
+    const toggle = new Toggle();
+    toggle.open();
+    expect(toggle.on).to.be.ok;
+  });
+  it('close', ()=> {
+    const toggle = new Toggle();
+    toggle.open();
+    toggle.close();
     expect(toggle.on).to.not.be.ok;
   });
   it('toggle', () => {
