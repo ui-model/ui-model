@@ -52,7 +52,7 @@ Firstly, most component libraries are tightly coupled with a Frontend framework.
 
 Secondly, component libraries' configuration can be complex. Some large libraries require dedicated learning for a period to get started, and if switch libraries, what you learned for the old library would be wasted. It is true that these libraries are designed to solve complex problems. However what lies beneath these complex problems are a few common interactive logic, as mentioned above, may controls are based on abstracted ***n* choose *1***. There is a better way to handle these complex problems?
 
-Finally, it can be difficult to balance between complexity and customisation. Customisable libraries is not only difficult to develop, but also difficult to use. Traditional component library normally achieve customisation through configuration, mostly via callback functions. However this approach will inevitably lead to complex documentation and heavy memory burden.    
+Finally, it can be difficult to balance between complexity and customization. Customisable libraries is not only difficult to develop, but also difficult to use. Traditional component library normally achieve customization through configuration, mostly via callback functions. However this approach will inevitably lead to complex documentation and heavy memory burden.    
 
 So, what are the root cause that make component libraries difficult to reuse? They violated the SoC (Separate of Concerns) design principle. Traditional component has three concerns: view (HTML), model/logic (JavaScript) and styling (CSS). When these three concerns are tightly coupled together, complicity is inevitable.  
 
@@ -62,13 +62,17 @@ ui-model is the Bootstrap in JavaScript world.
 
 另一个关注点，信息架构（HTML）由于最贴近业务需求，因此可以留给应用去自己实现。而现有的前端框架则作为交互逻辑和信息架构之间的桥梁。ui-model对这个“桥梁”的唯一假设就是它能够实现模型和界面之间的同步 —— 并不关心它使用数据绑定实现还是使用Virtual DOM实现。
 
+View (HTML) depends on business requirement and it is best to leave it to App themselves to implement. Frontend frameworks are responsible for bridging interactive logic and view. ui-model assumes that Frontend frameworks can synchronize model and view. However it does not care about frontend frameworks implement details such as via data binding or utilizing virtual dom. 
 
-
-## ui-model的前景与未来
+## Future of ui-model
 
 虽然简单，但ui-model仍然是一片蓝海。除了最简单的select、multi-select和toggle外，还有诸如slice、map等稍复杂的交互逻辑，还包括Calendar等更复杂的逻辑。
 
+ui-model is simple, but it has a bright future. apart from select, multi-select and toggle, it also has complex interactive logic such as ike slice and map, it can also handle more complex logic like Calendar.
+
 除了这些通用的交互逻辑外，还可以实现很多更贴近业务的交互逻辑，比如购物车，如果我们为它抽取出一个ui-model，那么只要把它绑定到HTML上就可以正常工作了。而对这个HTML及相应的CSS，各种应用可以任意定制。
+
+On top of these common interactive logic, it can also implement logic that are specific to business requirements. For example, for shopping cart, we can abstract the business logic to a ui-model, all the view has to do is to bind this ui-model for its functionality. this shopping cart specific ui-model would be independent from view and css appearance, which can be customized freely. 
 
 ## 历史与现状
 
