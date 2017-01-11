@@ -60,48 +60,42 @@ In fact, many CSS frameworks have been independent for a long time. For example,
 
 ui-model is the Bootstrap in JavaScript world. 
 
-另一个关注点，信息架构（HTML）由于最贴近业务需求，因此可以留给应用去自己实现。而现有的前端框架则作为交互逻辑和信息架构之间的桥梁。ui-model对这个“桥梁”的唯一假设就是它能够实现模型和界面之间的同步 —— 并不关心它使用数据绑定实现还是使用Virtual DOM实现。
-
 View (HTML) depends on business requirement and it is best to leave it to App themselves to implement. Frontend frameworks are responsible for bridging interactive logic and view. ui-model assumes that Frontend frameworks can synchronize model and view. However it does not care about frontend frameworks implement details such as via data binding or utilizing virtual dom. 
 
 ## Future of ui-model
 
-虽然简单，但ui-model仍然是一片蓝海。除了最简单的select、multi-select和toggle外，还有诸如slice、map等稍复杂的交互逻辑，还包括Calendar等更复杂的逻辑。
-
 ui-model is simple, but it has a bright future. apart from select, multi-select and toggle, it also has complex interactive logic such as ike slice and map, it can also handle more complex logic like Calendar.
-
-除了这些通用的交互逻辑外，还可以实现很多更贴近业务的交互逻辑，比如购物车，如果我们为它抽取出一个ui-model，那么只要把它绑定到HTML上就可以正常工作了。而对这个HTML及相应的CSS，各种应用可以任意定制。
 
 On top of these common interactive logic, it can also implement logic that are specific to business requirements. For example, for shopping cart, we can abstract the business logic to a ui-model, all the view has to do is to bind this ui-model for its functionality. this shopping cart specific ui-model would be independent from view and css appearance, which can be customized freely. 
 
 ## 历史与现状
 
-ui-model的思想来自两年多之前我对企业内部可复用性的研究，我发现了传统思路下的复用工作受挫的症结在于它们违反了SoC原则，因此也会被迫违反OCP原则。
+## History and presence
 
-后来，我在一些实际项目中应用这种思想简化了很多问题，并深切体会到了它的优点，还发现了更多可以抽象为select等ui-model的交互控件以及更多的ui-model。
+The ideologic of ui-model came from my research on internal reusability within enterprises in the last two years. I found that the fundamental barrier against reusability is violation to SoC design principle and thus to OCP design principle.
 
-经过一段时间的沉淀，我把这个想法拿出来和叶志敏进行探讨，我们都认为这是一个很有价值的思想，值得分享给社区，于是我们建立了一个叫做lean-ui的github组，写下了一些初步思想以及探讨性实现，但是由于事情较多，同时精力转向了推广Angular 2，因此很长时间内没有再动它。直到今天，2017年新年，我们把它更名为更贴切的ui-model，并正式把它公布给前端社区，也同时作为我们的交付承诺以及对各位志愿者的邀请。
+Later, through applying the ui-model theory in real world projects, I was able to simplify many problems and experience the benefits and advantages. I also realized that we can abstract many logic as ui-model from controls what we use every day in developer's lives. 
 
-## 规划与未来
+To formally present to the community, we created a github organisation named ui-model and we welcome the community to contribute with gratitude. 
 
-接下来，我们会先将过去实现过的ui-model整理一下、开源出来，作为给大家参与开发的范例。之后，我们还会进一步开发更多的ui-model，更多的前端框架中间层以及更多应用范例。
+## What's next
 
-希望大家记住：ui-model首先是一种思想，而不局限于这个具体的库。我们也希望出现更多的基于ui-model思想实现的竞争库，我们乐于见到良性的竞争，因为 —— 这才叫繁荣。
+We will share the already implemented ui-models with the community. We hope they can serve as the seed ui-models to inspire the community to join us and develop more re-usable ui-models. 
 
-我们希望，你在实际开发中对ui-model思想的应用不要局限于交互逻辑，而是外延到业务逻辑部分，希望ui-model的思想能给你一些启迪，帮助你开发出更加符合SoC原则的应用。
+Please note, ui-model is first and for most a theory, it does not limit to any library. We hope that we could see more library implementing the same idea, we would love to see health competitions, it is the definition of booming. 
 
-## 组织与参与
+We hope that when you implement the ui-model theory, you do not limit to interactive logic, but extend to business logic. We hope that the ui-model theory could help you to develop your apps that are more inline with SoC design principle. 
 
-我们的活动基地是<https://github.com/ui-model>组，欢迎大家star & fork它。
+## Contribution
 
-我们的开发计划是先做一个基于TypeScript的版本，由于其对类型提供了良好支持，因此很适合做API探索。
+Our base is <https://github.com/ui-model>. We welcome you to start & fork it.
 
-我们也会用到RxJS来对外公开各种事件接口，但会尽量避免引入其高级特性。
+Our development plan is to firstly implement a TypeScript version. Because TypeScript's strong support for typing, it is helpful to API design process. 
 
-我们会基于Angular 2来实现第一个中间层及其范例，若有ReactJS等其它前端框架方面的专家，我们也同样欢迎加入。同时考虑到遗留系统是如此之多，我们还预留了一个给jQuery程序员的仓库。
+We will use RxJS to expose event interfaces, but limit ourselves from advanced the features.
 
-初期，请给我们提issue来让我们了解你的需求和应用场景，反馈我们代码中的bug，并且我们非常欢迎各位给我们提交PR，无论我们是否会接受，我们都感激不尽。
+We will implement a middleware library for Angular 2 and present it with usage examples. We welcome ReactJS and other framework developers to join us and implement middleware libraries specific to individual frameworks. We also reserved a repository for JQuery developers consider the sheer amount of legacy applications online.
 
-之后，等开发步入了正规，我们就会根据issue和PR的记录来逐渐邀请一些活跃开发者加入我们的开发组。
+We welcome you to let us know your requirement and use cases and also report bugs. We greatly appreciate your PR. Based on the level of contribution, we will then invite active developers to ui-model organization. 
 
-最后，别忘了，我们还鼓励各位基于ui-model的思想来开发竞争库，将来对于优秀的竞争库，我们愿意从这里链接到你们。建议在发布npm包时添加ui-model标签或干脆以ui-model-前缀来命名你们自己的库，以便使用者更容易找到你们。
+We encourage the community to develop competitive libraries empowering the same theory. We would love to link quality libraries here. We suggest to use ui-model tag or prefix your library name with `ui-model-...` to increase visibility to potential users. 
