@@ -2,19 +2,21 @@
 
 ## What is ui-model？
 
-ui-model is a set of the streamlined frontend UI logic. No matter what framework you use, and regardless of their appearance, the logic behind many interactive UI controls can be abstracted to a few, they are ui-model.
+ui-model is first and foremost a concept of attempting to abstract logic from ui controls and business requirements. The project *ui-model* is a set of the streamlined UI logic. No matter what framework you use, and regardless of their appearance, the logic behind many interactive UI controls can be abstracted to a few, we call them **ui-model**.
 
-Let's elaborate the above statement with an example. What do the following controls have in common?
+Let's elaborate the above statement with an example. 
+
+What do the following controls have in common?
 
 ![Select](./images/select.png)
 
 ![Radio Group](./images/radio.png)
 
-Their logic are exactly the same i.e. ***n* choose *1***.
+You guessed right, their logic are exactly the same i.e. ***n* choose *1***.
 
-Maybe it is obviously to you, but let's explore further. Are there other interactive controls that share the same logic? You may be surprised how common they are. Please try to make a list in your mind before reading on.  
+Maybe it is obviously to you, but let's explore further. Are there other interactive controls that share the same *n* choose *1* logic? Please try to make a list in your mind, you may be surprised how common they are.
 
-Ok, let's reveal: 
+The list below is by no means exhaustive: 
 
 1. **Tabset** - only one tab can be activated at a time
 
@@ -30,11 +32,11 @@ Ok, let's reveal:
 
 1. A **table** that can only be sorted by one column at a time. 
 
-Behind all of the above intricate controls, is the simplest ***n* choose *1*** logic, which can be implemented in about 10 lines of code. This is the power of high-level abstraction. 
-
-**ui-model** is an attempt to abstract the interactive logic from all ui controls. 
+Behind all of the above simple or intricate controls, is the simplest ***n* choose *1*** logic, which can be implemented in about 10 lines of code. This is the power of high-level abstraction. 
 
 You have seen some controls with *n* choose *1* logic now, but can you list some UI controls with ***n* choose *k*** or ***toggle***?
+
+**ui-model** is an attempt to abstract the interactive logic from all ui controls. It does not limit to ui controls, 
 
 ## the conceptual model of ui-model
 
@@ -80,7 +82,7 @@ To formally present to the community, we created a github organisation named *ui
 
 We will share the already implemented ui-models with the community. We hope they can serve as the seed ui-models to inspire the community to join us and develop more re-usable ui-models. 
 
-Please note, ui-model is first and for most an idea or a theory, it does not limit to any library. We hope that we could see more library implementing the same idea. We would love to see health and positive competitions, it is the the very definition of a booming community. 
+Please note, ui-model is first and foremost an idea or a theory, it does not limit to any library. We hope that we could see more library implementing the same idea. We would love to see health and positive competitions, it is the the very definition of a booming community. 
 
 We hope that when you implement the idea/theory, you do not limit to interactive logic, but extend to business logic. We hope that the ui-model idea/theory could help you to develop your apps that are more inline with SoC design principle and thus highly reusable. 
 
