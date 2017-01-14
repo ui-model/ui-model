@@ -60,7 +60,7 @@ Secondly, component libraries' configuration can be complex. Some large librarie
 
 Finally, it can be difficult to balance between complexity and customization. Customizable libraries is not only difficult to develop, but also harder to use. Traditional component library normally achieve customization through configuration, mostly via callback functions. However this approach will inevitably lead to documentation hurdle and heavy memory burden.    
 
-So, what are the root cause that make component libraries difficult to reuse? The answer is quite simple: They violated the SoC design principle. Traditional component has three concerns: view (HTML), model/logic (JavaScript) and styling (CSS). When these three concerns are tightly coupled together, complicity is inevitable.  
+So, what are the root cause that make component libraries difficult to reuse? The answer is quite simple: They violated the SoC design principle. Traditional component has three concerns: view (HTML), model/logic (JavaScript) and styling (CSS). When these three concerns are tightly coupled together, complexity is inevitable.  
 
 Many CSS frameworks have been independent for a long time. For example, Bootstrap's CSS is completely independent from HTML and JavaScript. ui-model is the Bootstrap in JavaScript world. 
 
