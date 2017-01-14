@@ -72,11 +72,11 @@ Following the same principle, you can also implement logics that are specific to
  
 ## What's next
 
-We will share the already implemented ui-models with the community. We hope they can serve as the seeds and inspire the community to join us and develop more re-usable ui-models. 
+We will share the already implemented ui-models with the community. We hope they can serve as the seeds and inspire the community to join us and develop more ui-models. 
 
 Please note, ui-model is first and foremost a concept of abstracting pure logics from ui controls, it does not limit to any library. We hope that we could see more library implementing the same concept. We would love to see healthy and positive competitions, it is the the very definition of a booming community. 
 
-We hope that when you implement the concept, you do not limit to interactive logic, but extend to business logic. We hope that the ui-model concept could help you to develop your apps that are more inline with SoC design principle and thus highly reusable. 
+We hope that when you implement the concept, you do not limit to UI logics, but extend to business logics. We hope that the ui-model concept could help you to develop your apps in a way that is more inline with SoC design principle with reusable code basis. 
 
 ## Contribution
 
