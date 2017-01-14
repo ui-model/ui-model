@@ -2,11 +2,9 @@
 
 ## What is ui-model？
 
-ui-model is first and foremost a concept of attempting to abstract logic from ui controls and business requirements. The project *ui-model* is a set of the streamlined UI logic. No matter what framework you use, and regardless of their appearance, the logic behind many interactive UI controls can be abstracted to a few, we call them **ui-model**.
+ui-model is first and foremost a concept of attempting to abstract logic from ui controls and business requirements. The project *ui-model* is a set of the streamlined UI logic for frontend developers. No matter what framework you use, and regardless of their appearance, the logic behind many interactive UI controls can be abstracted to a few, we call them **ui-model**.
 
-Let's elaborate the above statement with an example. 
-
-What do the following controls have in common?
+Let's elaborate the above statement with an example. What do the following controls have in common?
 
 ![Select](./images/select.png)
 
