@@ -12,7 +12,9 @@ To formally present to the community, we created a GitHub organisation named *ui
 
 ## Why UI Logics? 
 
-No matter what framework you use, and regardless of their appearance, the logic behind many interactive UI controls can be extracted to a few. Let's elaborate the above statement with an example. What do the following controls have in common?
+No matter what framework you use, and regardless of their appearance, the logic behind many interactive UI controls can be extracted to a few. 
+
+Let's elaborate the above statement with an example. What do the following controls have in common?
 
 ![Select](./images/select.png)
 
