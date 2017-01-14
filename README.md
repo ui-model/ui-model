@@ -50,8 +50,6 @@ Now you have seen some controls with *n* choose *1* logic, but can you list some
 
 In the above conceptual model, ui-model is parallel to JavaScript frameworks and CSS frameworks. These three components should be independent from each other. You can freely mix and match them. JavaScript frameworks are responsible for synchronizing model and view. CSS frameworks are responsible for presentation. ui-model is focused on interactive logic. 
 
-We will also provide some binding libraries to reduce adaption complexity for popular frameworks, such as *ui-model-angular* for Angular and *ui-model-react* for React. We welcome the community distribute their own binding libraries.
-
 ## Why are traditional component libraries difficult to reuse?  
 
 If you use a third party component library, you probably have experienced some of the common drawbacks. 
