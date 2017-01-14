@@ -44,7 +44,7 @@ Behind all of the above simple or intricate controls, is the simplest *n* choose
 
 Now you have seen some controls with *n* choose *1* logic, but can you list some UI controls with *n* choose *k* or *toggle*?
 
-## the conceptual model of ui-model
+## The conceptual model of ui-model
 
 ![Architecture](./images/architecture.png)
 
@@ -68,7 +68,7 @@ Many CSS frameworks have been independent for a long time. For example, Bootstra
 
 ui-model is simple, but it has a bright future. Apart from select, multi-select and toggle, it will also handle complex interactive logic such as slice, map and even calendar.
 
-Following the same principle, you can also also implement logics that are specific to business requirements. For example, for a shopping cart, you can abstract the business logic to a ui-model. 
+Following the same principle, you can also implement logics that are specific to business requirements. For example, you can abstract the business logic of a shopping cart to a ui-model. 
  
 ## What's next
 
