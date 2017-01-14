@@ -40,9 +40,9 @@ Let's see some examples. The list below is by no means exhaustive:
 
 1. A **table** that can only be sorted by one column at a time. 
 
-Behind all of the above simple or intricate controls, is the simplest ***n* choose *1*** logic, which can be implemented in about 10 lines of code. This is the power of high-level abstraction. 
+Behind all of the above simple or intricate controls, is the simplest *n* choose *1* logic, which can be implemented in about 10 lines of code. This is the power of high-level abstraction. 
 
-Now you have seen some controls with *n* choose *1* logic, but can you list some UI controls with ***n* choose *k*** or ***toggle***?
+Now you have seen some controls with *n* choose *1* logic, but can you list some UI controls with *n* choose *k* or *toggle*?
 
 ## the conceptual model of ui-model
 
