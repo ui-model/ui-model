@@ -90,4 +90,4 @@ We will implement a binding library for Angular 2 with demos. We welcome other f
 
 We welcome you to rise issues to let us know your requirements, use cases and also bug reporting. Whether we are able to merge or not, we greatly appreciate your PR. 
 
-We encourage the community to develop competitive libraries based on the same ui-model concept. We would love to link quality libraries here. May we suggest that you use ui-model tag or prefix your library name with `ui-model-...` to increase visibility to potential users. 
+We encourage the community to develop competitive libraries based on the same ui-model concept. We would love to link quality libraries here. May we suggest that you use ui-model tag or prefix your library name with `ui-model-...` to increase visibility to the community.
