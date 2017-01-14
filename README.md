@@ -2,7 +2,7 @@
 
 ## What is ui-model？
 
-ui-model is first and foremost a concept of attempting to abstract logic from ui controls and business requirements. The project *ui-model* is a set of the streamlined UI logic for frontend developers. No matter what framework you use, and regardless of their appearance, the logic behind many interactive UI controls can be abstracted to a few, we call them **ui-model**.
+ui-model is first and foremost a concept of attempting to abstract logic from ui controls. The project *ui-model* is a set of the streamlined UI logic for frontend developers. No matter what framework you use, and regardless of their appearance, the logic behind many interactive UI controls can be abstracted to a few, we call them **ui-model**.
 
 Let's elaborate the above statement with an example. What do the following controls have in common?
 
@@ -32,15 +32,13 @@ The list below is by no means exhaustive:
 
 Behind all of the above simple or intricate controls, is the simplest ***n* choose *1*** logic, which can be implemented in about 10 lines of code. This is the power of high-level abstraction. 
 
-You have seen some controls with *n* choose *1* logic now, but can you list some UI controls with ***n* choose *k*** or ***toggle***?
-
-**ui-model** is an attempt to abstract the interactive logic from all ui controls. It does not limit to ui controls, 
+Now you have seen some controls with *n* choose *1* logic now, but can you list some UI controls with ***n* choose *k*** or ***toggle***?
 
 ## the conceptual model of ui-model
 
 ![Architecture](./images/architecture.png)
 
-In the above conceptual model, ui-model is parallel to JavaScript frameworks and CSS frameworks. These three components are independent from each other. We can freely mix and match them. JavaScript framework is responsible for synchronizing model and view. CSS frameworks are responsible for presentation. ui-model is focused on interactive logic. 
+In the above conceptual model, ui-model is parallel to JavaScript frameworks and CSS frameworks. These three components are independent from each other. You can freely mix and match them. JavaScript framework is responsible for synchronizing model and view. CSS frameworks are responsible for presentation. ui-model is focused on interactive logic. 
 
 We will also provide some binding libraries to reduce adaption complexity for popular frameworks, such as *ui-model-angular* for Angular and *ui-model-react* for React. We welcome the community distribute their own binding libraries.
 
@@ -90,7 +88,7 @@ Our base is <https://github.com/ui-model>. We welcome you to star & fork it.
 
 Our development plan is to firstly implement a TypeScript version. Because TypeScript's strong support for typing, it is helpful to API design process. 
 
-We will use RxJS to expose event interfaces, but we will limit ourselves from advanced the features.
+We will use RxJS to expose event interfaces, but we will limit ourselves from advanced features.
 
 We will implement a binding library for Angular 2 with demo usage samples. We welcome ReactJS and other framework developers to join us and implement binding libraries specific to individual frameworks. We also reserved a repository for JQuery developers considering the large amount of legacy applications online.
 
