@@ -20,7 +20,7 @@ Let's elaborate the above statement with an example. What do the following contr
 
 ![Radio Group](./images/radio.png)
 
-You guessed right, their logic are exactly the same i.e. ***n* choose *1***.
+You guessed right, their logic are exactly the same i.e. *n* choose *1*.
 
 Maybe it is obviously to you, but let's explore further. Are there other ui controls with the same *n* choose *1* logic? Please try to make a list in your mind, you may be surprised how common they are.
 
