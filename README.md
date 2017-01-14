@@ -86,7 +86,7 @@ Our development plan is to firstly implement a TypeScript version. TypeScript ha
 
 We will use RxJS to expose event interfaces, but we will limit ourselves from RxJS's advanced features.
 
-We will implement a binding library for Angular 2 with usage demos. We welcome other framework developers to join us and implement binding libraries. We also reserved a repository for JQuery developers considering the large amount of legacy applications online.
+We will implement a binding library for Angular 2 with demos. We welcome other framework developers to join us and implement binding libraries. We also reserved a repository for JQuery developers considering the large amount of legacy applications online.
 
 We welcome you to rise issues to let us know your requirements, use cases and also bug reporting. No matter we are able to merge or not, we greatly appreciate your PR. 
 
