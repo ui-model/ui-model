@@ -1,6 +1,6 @@
 # ui-model
 
-## What is ui-model？
+## What is ui-model?
 
 **ui-model** is a set of the streamlined UI logics extracted from ui controls for frontend developers. 
 
