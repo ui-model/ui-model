@@ -56,7 +56,7 @@ If you use a third party component library, you probably have experienced some o
 
 Firstly, most component libraries are tightly coupled with a frontend framework. A component library for Angular is obviously not usable with React, and vice versa. Some libraries are also tightly coupled with a CSS framework, which may not be the one you prefer.
 
-Secondly, component libraries' configuration can be complex. Some large libraries require dedicated learning just to get started, and if switching libraries, what you learned for the old library would be wasted. It is true that these libraries are designed to solve complex problems, however what lies beneath these complex problems are a few common and simple interactive logic, as mentioned above, may controls are based on the ***n* choose *1*** logic. There is a better way to handle these complex problems.
+Secondly, component libraries' configuration can be complex. Some large libraries require dedicated learning just to get started, and if switching libraries, what you learned for the old library would be wasted. It is true that these libraries are designed to solve complex problems, however what lies beneath these complex problems are a few common and simple interactive logic, as mentioned above, may controls are based on the *n* choose *1* logic. There is a better way to handle these complex problems.
 
 Finally, it can be difficult to balance between complexity and customization. Customizable libraries is not only difficult to develop, but also harder to use. Traditional component library normally achieve customization through configuration, mostly via callback functions. However this approach will inevitably lead to documentation hurdle and heavy memory burden.    
 
