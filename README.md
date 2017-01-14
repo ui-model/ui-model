@@ -4,7 +4,7 @@
 
 **ui-model** is a set of the streamlined UI logics extracted from ui controls for frontend developers. 
 
-The **ui-model** project is the fruit of my research on internal code reusability within enterprise apps in the last two years. What I found during the research was that the most common and important factor against re-usability is the violation of SoC (Separate of Concerns) design principle and thus of OCP design principle. To increase code re-usability for our projects, I further separate the logic from interactive ui controls. With these extracted reusable logics, I was able to dramatically simplify many problems. These logics are the seed of **ui-model**. 
+The **ui-model** project is the fruit of my research on internal code re-usability within enterprise apps in the last two years. What I found during the research was that the most common and important factor against re-usability is the violation of SoC (Separate of Concerns) design principle and thus of OCP design principle. To increase code re-usability for our projects, I further separate the logic from interactive ui controls. With these extracted reusable logics, I was able to dramatically simplify many problems. These logics are the seed of **ui-model**. 
 
 To formally present to the community, we created a GitHub organisation named *ui-model* and we invite the community to contribute.
 
