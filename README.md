@@ -76,13 +76,13 @@ We will share the already implemented ui-models with the community. We hope they
 
 Please note, ui-model is first and foremost a concept of abstracting pure logics from ui controls, it does not limit to any library. We hope that we could see more library implementing the same concept. We would love to see healthy and positive competitions, it is the the very definition of a booming community. 
 
-We hope that when you implement the concept, you do not limit to UI logics, but extend to business logics. We hope that the ui-model concept could help you to develop your apps in a way that is more inline with SoC design principle with reusable code basis. 
+We hope that when you implement the concept, you do not limit to UI logics, but extend to business logics. We hope that the ui-model concept could help you to develop your apps in a way that is more inline with SoC design principle with reusable code base. 
 
 ## Contribution
 
 Our base is <https://github.com/ui-model>. We welcome you to star & fork it.
 
-Our development plan is to firstly implement a TypeScript version, because TypeScript's strong support for typing, it is very helpful to API design process. 
+Our development plan is to firstly implement a TypeScript version. TypeScript has strong support for typing and it is very helpful to API design process. 
 
 We will use RxJS to expose event interfaces, but we will limit ourselves from RxJS's advanced features.
 
