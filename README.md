@@ -68,7 +68,7 @@ Many CSS frameworks have been independent for a long time. For example, Bootstra
 
 ui-model is simple, but it has a bright future. Apart from select, multi-select and toggle, it will also handle complex interactive logic such as slice, map and even calendar.
 
-Following the same principle, you can also implement logics that are specific to business requirements. For example, you can abstract the business logic of a shopping cart to a ui-model. 
+Following the same principle, you can also implement logics that are specific to business requirements. For example, you can abstract the business logic of a shopping cart to an ui-model. 
  
 ## What's next
 
