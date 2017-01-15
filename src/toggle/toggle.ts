@@ -1,53 +1,54 @@
-import {Subject} from 'rxjs/Subject';
+import { Subject } from 'rxjs/Subject';
 
 export class Toggle extends Subject<boolean> {
-  constructor(private _on: boolean = Toggle.OFF) {
+  constructor(private _isOn: boolean = Toggle.OFF) {
     super();
+    this.next(_isOn);
   }
-
+  
   static readonly ON: boolean = true;
   static readonly OFF: boolean = false;
-
-  get on(): boolean {
-    return this._on;
+  
+  get isOn(): boolean {
+    return this._isOn;
   }
-
-  set on(value: boolean) {
-    this._on = value;
+  
+  set isOn(value: boolean) {
+    this._isOn = value;
+    this.next(value);
   }
-
-  get off(): boolean {
-    return !this.on;
+  
+  get isOff(): boolean {
+    return !this.isOn;
   }
-
-  set off(value: boolean) {
-    this.on = !value;
+  
+  set isOff(value: boolean) {
+    this.isOn = !value;
   }
-
+  
   turnOn(): void {
     this.turnTo(true);
   }
-
+  
   open(): void {
     this.turnOn();
   }
-
+  
   turnOff(): void {
     this.turnTo(false);
   }
-
+  
   close(): void {
     this.turnOff();
   }
-
+  
   turnTo(state: boolean): void {
-    if (this.on !== state) {
-      this.next(state);
-      this._on = state;
+    if (this.isOn !== state) {
+      this.isOn = state;
     }
   }
-
+  
   toggle(): void {
-    this.turnTo(!this.on);
+    this.turnTo(!this.isOn);
   }
 }
