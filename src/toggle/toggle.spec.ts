@@ -1,52 +1,72 @@
-import {Toggle} from './toggle';
+import { Toggle } from './toggle';
 
-import {expect} from 'chai';
+import { expect } from 'chai';
 
-describe('Toggle', ()=> {
+describe('Toggle', () => {
   it('initial state: default to off', () => {
     const toggle = new Toggle();
-    expect(toggle.off).to.be.ok;
-    expect(toggle.on).to.not.be.ok;
+    expect(toggle.isOff).to.be.ok;
+    expect(toggle.isOn).to.not.be.ok;
   });
   it('initial state: on', () => {
-    const toggle = new Toggle(Toggle.OFF);
-    expect(toggle.on).to.not.be.ok;
+    const toggle = new Toggle(Toggle.ON);
+    expect(toggle.isOn).to.be.ok;
   });
-  it('on', () => {
+  it('set state with isOn', () => {
     const toggle = new Toggle();
-    toggle.on = true;
-    expect(toggle.on).to.be.ok;
-    toggle.on = false;
-    expect(toggle.on).to.not.be.ok;
+    toggle.isOn = true;
+    expect(toggle.isOn).to.be.ok;
+    expect(toggle.isOff).to.not.be.ok;
+    toggle.isOn = false;
+    expect(toggle.isOn).to.not.be.ok;
+    expect(toggle.isOff).to.be.ok;
+  });
+  it('set state with isOff', () => {
+    const toggle = new Toggle();
+    toggle.isOff = true;
+    expect(toggle.isOff).to.be.ok;
+    toggle.isOff = false;
+    expect(toggle.isOff).to.not.be.ok;
+  });
+  it('isOn and isOff is opposite to each other', () => {
+    const toggle = new Toggle();
+    toggle.isOff = true;
+    expect(toggle.isOn).to.not.be.ok;
+    toggle.isOff = false;
+    expect(toggle.isOn).to.be.ok;
+    toggle.isOn = false;
+    expect(toggle.isOff).to.be.ok;
+    toggle.isOn = true;
+    expect(toggle.isOff).to.not.be.ok;
   });
   it('turn on', () => {
     const toggle = new Toggle();
     toggle.turnOn();
-    expect(toggle.on).to.be.ok;
+    expect(toggle.isOn).to.be.ok;
   });
-  it('turn off', ()=> {
+  it('turn off', () => {
     const toggle = new Toggle();
     toggle.turnOn();
     toggle.turnOff();
-    expect(toggle.on).to.not.be.ok;
+    expect(toggle.isOn).to.not.be.ok;
   });
   it('open', () => {
     const toggle = new Toggle();
     toggle.open();
-    expect(toggle.on).to.be.ok;
+    expect(toggle.isOn).to.be.ok;
   });
-  it('close', ()=> {
+  it('close', () => {
     const toggle = new Toggle();
     toggle.open();
     toggle.close();
-    expect(toggle.on).to.not.be.ok;
+    expect(toggle.isOn).to.not.be.ok;
   });
   it('toggle', () => {
     const toggle = new Toggle();
-    expect(toggle.on).to.not.be.ok;
+    expect(toggle.isOn).to.not.be.ok;
     toggle.toggle();
-    expect(toggle.on).to.be.ok;
+    expect(toggle.isOn).to.be.ok;
     toggle.toggle();
-    expect(toggle.on).to.not.be.ok;
+    expect(toggle.isOn).to.not.be.ok;
   });
 });
