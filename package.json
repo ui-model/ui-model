@@ -1,6 +1,6 @@
 {
   "name": "ui-model",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "ui model library",
   "main": "index.ts",
   "scripts": {
@@ -38,7 +38,7 @@
     "tslint": "^4.3.1",
     "typescript": "^2.1.4"
   },
-  "dependencies": {
-    "rxjs": "^5.0.2"
+  "peerDependencies": {
+    "rxjs": "^5.0.0"
   }
 }
