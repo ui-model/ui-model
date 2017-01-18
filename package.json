@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "gulp",
-    "test": "mocha --require=ts-node/register --ui bdd --recursive src/**/*.spec.ts",
+    "test": "gulp lint && mocha --require=ts-node/register --ui bdd --recursive src/**/*.spec.ts",
     "lint": "gulp lint"
   },
   "repository": {

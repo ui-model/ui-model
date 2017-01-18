@@ -1,0 +1,16 @@
+language: node_js
+
+sudo: false
+
+notification:
+  email:
+    - asnowwolf@gmail.com
+
+node_js:
+- 6.9.1
+
+env:
+  matrix:
+  - TEST_TYPE=test
+  - TEST_TYPE=coverage
+  - TEST_TYPE=saucelabs
