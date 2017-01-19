@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ui-model/ui-model.svg?branch=master)](https://travis-ci.org/ui-model/ui-model)
+
 # ui-model
 
 ## What is ui-model?
