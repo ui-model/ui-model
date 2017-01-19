@@ -7,9 +7,3 @@ notification:
 
 node_js:
   - "6"
-
-env:
-  matrix:
-  - TEST_TYPE=test
-  - TEST_TYPE=coverage
-  - TEST_TYPE=saucelabs
