@@ -42,7 +42,7 @@
     "cyclomatic-complexity": true,
     "indent": true,
     "linebreak-style": [
-      true,
+      false,
       "LF"
     ],
     "max-classes-per-file": [
