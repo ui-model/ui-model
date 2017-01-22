@@ -2,7 +2,7 @@
   "rules": {
     "no-reference": true,
     "no-var-requires": true,
-    "only-arrow-functions": true,
+    "only-arrow-functions": false,
     "prefer-for-of": true,
     "typedef": [
       true,

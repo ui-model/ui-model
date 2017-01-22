@@ -25,4 +25,16 @@ describe('Comparator interface', () => {
   it('boolean: When compare, NaN is equal to NaN', () => {
     expect(Comparators.boolean(NaN, NaN)).to.equal(0);
   });
+
+  it('date', () => {
+    expect(Comparators.date('1900-01-01', '1900-01-02')).to.lessThan(0);
+    expect(Comparators.date('1900-01-03', '1900-01-02')).to.greaterThan(0);
+  });
+
+  it('any', () => {
+    expect(Comparators.any(0, 1)).to.lessThan(0);
+    expect(Comparators.any('10', '1')).to.greaterThan(0);
+    expect(Comparators.any(true, false)).to.greaterThan(0);
+    expect(Comparators.any(new Date('1900-01-01'), new Date('1900-01-02'))).to.lessThan(0);
+  });
 });

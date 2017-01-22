@@ -20,6 +20,8 @@ describe('Supplier', () => {
 
   it('objectByField', () => {
     expect(Suppliers.objectByField('a')({a: 1})).to.equal(1);
-    expect(Suppliers.objectByField('b')({a: 1})).to.be.undefined;
+  });
+  it('objectByField: field not found', () => {
+    expect(Suppliers.objectByField('a')({b: 1})).to.be.NaN;
   });
 });
