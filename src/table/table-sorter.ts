@@ -1,6 +1,7 @@
 import { TableField } from "./table-field";
 import { SortOrder } from "../utils/sort-order";
 import { Subject } from "rxjs/Subject";
+import { Observable } from 'rxjs';
 
 export function nextOf(order: SortOrder, defaultOrder: SortOrder) {
   if (!order) {
@@ -13,14 +14,27 @@ export function nextOf(order: SortOrder, defaultOrder: SortOrder) {
 }
 
 export class TableSorter extends Subject<TableField> {
-  field: TableField;
-
   constructor(private fields: TableField[]) {
     super();
   }
 
+  private _changes: Subject<TableField> = new Subject();
+
+  get changes(): Observable<TableField> {
+    return this._changes;
+  }
+
+  changed(): void {
+    this._changes.next(this._field);
+  }
+
+  private _field: TableField;
+  get field(): TableField {
+    return this._field;
+  }
+
   compare(v1: any, v2: any): number {
-    const field = this.field;
+    const field = this._field;
     if (!field) {
       return NaN;
     }
@@ -37,7 +51,7 @@ export class TableSorter extends Subject<TableField> {
 
     this.fields.forEach((field) => field.order = SortOrder.None);
 
-    if (this.field === field) {
+    if (this._field === field) {
       const nextOrder = nextOf(order, defaultOrder);
       if (nextOrder !== order) {
         field.order = nextOrder;
@@ -46,7 +60,7 @@ export class TableSorter extends Subject<TableField> {
       field.order = defaultOrder;
     }
 
-    this.field = field;
-    this.next(field);
+    this._field = field;
+    this.changed();
   }
 }

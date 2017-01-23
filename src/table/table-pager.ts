@@ -1,4 +1,5 @@
 import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 export class TablePager {
   constructor(recordCount: number = 0, pageSize: number = 10) {
@@ -6,7 +7,15 @@ export class TablePager {
     this.pageSize = pageSize;
   }
 
-  private changes: Subject<TablePager> = new Subject<TablePager>();
+  private _changes: Subject<TablePager> = new Subject();
+
+  get changes(): Observable<TablePager> {
+    return this._changes;
+  }
+
+  changed(): void {
+    this._changes.next(this);
+  }
 
   private _page: number = 0;
 
@@ -150,9 +159,5 @@ export class TablePager {
 
   goToLast(): void {
     this.goTo(this.lastPage);
-  }
-
-  changed(): void {
-    this.changes.next(this);
   }
 }

@@ -1,10 +1,26 @@
-import {Supplier, Suppliers} from '../utils/supplier';
-import {Subject} from 'rxjs/Subject';
-export class MultiSelect<T> extends Subject<any> {
+import { Supplier, Suppliers } from '../utils/supplier';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+
+interface State<T> {
+  option: T;
+  value: boolean;
+}
+
+export class MultiSelect<T> {
   private selectedStates: {} = {};
 
-  constructor(public options: any[], private supplier: Supplier<T, any> = Suppliers.objectById) {
-    super();
+  private _changes: Subject<State<T>> = new Subject();
+
+  get changes(): Observable<State<T>> {
+    return this._changes;
+  }
+
+  changed(value: State<T>): void {
+    this._changes.next(value);
+  }
+
+  constructor(public options: T[], private supplier: Supplier<T, any> = Suppliers.objectById) {
   }
 
   get allSelected(): boolean {
@@ -41,7 +57,7 @@ export class MultiSelect<T> extends Subject<any> {
 
   selectAs(option: T, value: any): void {
     this.selectedStates[this.supplier(option)] = !!value;
-    this.next({
+    this.changed({
       option: option,
       value: !!value,
     });

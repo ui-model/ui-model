@@ -7,6 +7,15 @@ describe('Viewport', () => {
     const viewport = new Viewport(items);
     expect(viewport.viewport).to.equal(5);
   });
+  it('changes', (done) => {
+    const viewport = new Viewport(items);
+    viewport.changes.subscribe(() => {
+      expect(viewport.items).to.eql([3, 4, 5, 6, 7]);
+      done();
+    });
+    viewport.next(5);
+  });
+
   it('initial items', () => {
     const viewport = new Viewport(items);
     expect(viewport.items).to.eql([0, 1, 2, 3, 4]);

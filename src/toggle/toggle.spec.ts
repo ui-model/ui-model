@@ -8,6 +8,14 @@ describe('Toggle', () => {
     expect(toggle.isOff).to.be.ok;
     expect(toggle.isOn).to.not.be.ok;
   });
+  it('changes', (done) => {
+    const toggle = new Toggle(Toggle.OFF);
+    toggle.changes.subscribe((value)=> {
+      expect(value).to.be.true;
+      done();
+    });
+    toggle.toggle();
+  });
   it('initial state: on', () => {
     const toggle = new Toggle(Toggle.ON);
     expect(toggle.isOn).to.be.ok;

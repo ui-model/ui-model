@@ -1,6 +1,20 @@
 import { Supplier, Suppliers } from '../utils/supplier';
 import { Subject } from 'rxjs/Subject';
-export class Select<T> extends Subject<T> {
+import { Observable } from 'rxjs/Observable';
+export class Select<T> {
+  constructor(private supplier: Supplier<T, any> = Suppliers.objectById) {
+  }
+
+  private _changes: Subject<T> = new Subject();
+
+  get changes(): Observable<T> {
+    return this._changes;
+  }
+
+  changed(): void {
+    this._changes.next(this._selection);
+  }
+
   _selection: T;
 
   get selection(): T {
@@ -9,11 +23,7 @@ export class Select<T> extends Subject<T> {
 
   set selection(item: T) {
     this._selection = item;
-    this.next(item);
-  }
-
-  constructor(private supplier: Supplier<T, any> = Suppliers.objectById) {
-    super();
+    this.changed();
   }
 
   selected(item: T): boolean {

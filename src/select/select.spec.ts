@@ -1,6 +1,6 @@
-import {Select} from './select';
-import {expect} from 'chai';
-import {Supplier, Suppliers} from '../utils/supplier';
+import { Select } from './select';
+import { expect } from 'chai';
+import { Suppliers } from '../utils/supplier';
 
 describe('Select', () => {
   it('select', () => {
@@ -9,6 +9,16 @@ describe('Select', () => {
     expect(select.selected(1)).to.be.ok;
     expect(select.selected(2)).to.not.be.ok;
   });
+
+  it('changes', (done) => {
+    const select = new Select();
+    select.changes.subscribe((value) => {
+      expect(value).to.equal(1);
+      done();
+    });
+    select.select(1);
+  });
+
   it('selection', () => {
     const select = new Select();
     select.select(1);

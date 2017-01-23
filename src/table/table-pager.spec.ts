@@ -10,6 +10,14 @@ describe('TablePager', ()=> {
     expect(pager.offsetNext).to.equal(0);
     expect(pager.pageCount).to.equal(0);
   });
+  it('changes', (done) => {
+    const pager = new TablePager(1001, 10);
+    pager.changes.subscribe((value)=> {
+      expect(value.page).to.equal(5);
+      done();
+    });
+    pager.goTo(5);
+  });
   it('constructor: normal', () => {
     const pager = new TablePager(1001, 10);
     expect(pager.page).to.equal(0);

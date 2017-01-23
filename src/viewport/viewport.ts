@@ -1,8 +1,19 @@
+import { Subject, Observable } from 'rxjs';
 export class Viewport<T> {
   constructor(allItems: T[] = [], viewport: number = 5) {
     this._allItems = allItems;
     this._viewport = viewport;
     this.update();
+  }
+
+  private _changes: Subject<Viewport<T>> = new Subject();
+
+  get changes(): Observable<Viewport<T>> {
+    return this._changes;
+  }
+
+  changed(): void {
+    this._changes.next(this);
   }
 
   private _allItems: T[];
@@ -84,5 +95,6 @@ export class Viewport<T> {
 
   update(): void {
     this._items = this.allItems.slice(this.lowBound, this.highBound);
+    this.changed();
   }
 }
