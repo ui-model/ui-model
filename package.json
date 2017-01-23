@@ -34,10 +34,10 @@
     "gulp-mocha": "^3.0.1",
     "gulp-tslint": "^7.0.1",
     "mocha": "^3.2.0",
+    "rxjs": "^5.0.0",
     "ts-node": "^2.0.0",
     "tslint": "^4.3.1",
-    "typescript": "^2.1.4",
-    "rxjs": "^5.0.0"
+    "typescript": "^2.1.4"
   },
   "peerDependencies": {
     "rxjs": "^5.0.0"
