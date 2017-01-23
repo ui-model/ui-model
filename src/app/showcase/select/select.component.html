@@ -1,0 +1,63 @@
+<app-panel title="The result of the selection can be an object">
+  {{select.selection|json}}
+</app-panel>
+<app-panel title="Traditional usage: select[ngModel]">
+  <select [(ngModel)]="select.selection">
+    <option>-</option>
+    <option *ngFor="let option of options" [ngValue]="option">{{option.label}}</option>
+  </select>
+</app-panel>
+
+<app-panel title="Radio Group's logic is select">
+  <label class="form-check-inline" *ngFor="let option of options">
+    <input class="form-check-input" type="radio" (change)="select.select(option)"
+           [checked]="select.selected(option)"/>
+    {{option.label}}
+  </label>
+</app-panel>
+
+<app-panel title="Radio Group with RadioGroupValueAccessor is the same as select [ngModel] in usage">
+  <ua-radio-group [options]="options" [(ngModel)]="select.selection"></ua-radio-group>
+</app-panel>
+
+<app-panel title="You can also mix Radio and Button freely">
+  <label class="form-check-inline" *ngFor="let option of options; let odd=odd">
+    <ng-container *ngIf="odd">
+      <input class="form-check-input" type="radio" (change)="select.select(option)"
+             [checked]="select.selected(option)"/>
+      {{option.label}}
+    </ng-container>
+    <button class="btn" *ngIf="!odd" [class.btn-primary]="select.selected(option)"
+            (click)="select.select(option)">{{option.label}}
+    </button>
+  </label>
+</app-panel>
+
+<app-panel title="Tabset's logic is also select">
+  <ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let option of options">
+      <a class="nav-link" [class.active]="select.selected(option)"
+         (click)="select.select(option)">{{option.label}}</a>
+    </li>
+  </ul>
+</app-panel>
+
+<app-panel title="Dropdown Menu's logic is also select">
+  <div class="dropdown-menu static">
+    <a class="dropdown-item" *ngFor="let option of options" [class.active]="select.selected(option)"
+       (click)="select.select(option)">
+      {{option.label}}
+    </a>
+  </div>
+</app-panel>
+
+<app-panel
+  title="We can let multiple controls share the select object, but it is also easy to make a standalone control">
+  <ul class="nav nav-tabs" uiSelect #select2="uiSelect">
+    <li class="nav-item" *ngFor="let option of options">
+      <a class="nav-link" [class.active]="select2.selected(option)"
+         (click)="select2.select(option)">{{option.label}}</a>
+    </li>
+  </ul>
+</app-panel>
+

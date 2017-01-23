@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header" *ngIf="title">
+    {{title}}
+    <i class="fa pull-right"
+       [class.fa-chevron-up]="toggle.isOn"
+       [class.fa-chevron-down]="toggle.isOff"
+       (click)="toggle.toggle()"
+       *ngIf="toggleable"
+    ></i>
+  </div>
+  <div class="card-block" [@slide]="toggle.isOn" *ngIf="toggle.isOn">
+    <ng-content></ng-content>
+  </div>
+</div>

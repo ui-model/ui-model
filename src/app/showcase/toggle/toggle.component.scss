@@ -1,0 +1,13 @@
+.modal {
+  display: block;
+}
+
+.modal-backdrop {
+  opacity: 0.5;
+}
+
+.demo-dropdown {
+  /deep/ .card-block {
+    height: 13em;
+  }
+}
