@@ -1,9 +1,9 @@
-import { TableField } from "./table-field";
-import { SortOrder } from "../utils/sort-order";
-import { Subject } from "rxjs/Subject";
-import { Observable } from 'rxjs';
+import { TableField } from './table-field';
+import { SortOrder } from '../utils/sort-order';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
-export function nextOf(order: SortOrder, defaultOrder: SortOrder) {
+function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
   if (!order) {
     return defaultOrder;
   } else if (order === SortOrder.Asc) {

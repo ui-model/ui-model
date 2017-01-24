@@ -1,4 +1,5 @@
-import { Subject, Observable } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 export class Viewport<T> {
   constructor(allItems: T[] = [], viewport: number = 5) {
     this._allItems = allItems;
@@ -61,6 +62,13 @@ export class Viewport<T> {
     }
   }
 
+  get firstIndex(): number {
+    return 0;
+  }
+  get lastIndex(): number {
+    return this.length - 1;
+  }
+
   isActive(index: number): boolean {
     return this.index === index;
   }
@@ -77,12 +85,27 @@ export class Viewport<T> {
     return this.index > 0;
   }
 
+  get hasPrevMore(): boolean {
+    return this.index > this.halfViewport + 1;
+  }
+
+  get hasFirst(): boolean {
+    return this.index > this.halfViewport;
+  }
   next(step: number = 1): void {
     this.index += step;
   }
 
   get hasNext(): boolean {
     return this.index < this.length - 1;
+  }
+
+  get hasNextMore(): boolean {
+    return this.index < this.length - this.halfViewport - 2;
+  }
+
+  get hasLast(): boolean {
+    return this.index < this.length - this.halfViewport - 1;
   }
 
   get lowBound(): number {

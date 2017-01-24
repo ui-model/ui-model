@@ -42,4 +42,42 @@ describe('Viewport', () => {
     viewport.prev(2);
     expect(viewport.items).to.eql([1, 2, 3, 4, 5]);
   });
+  it('hasPrev & hasNext', () => {
+    const viewport = new Viewport(items);
+    expect(viewport.hasPrev).to.be.false;
+    viewport.goTo(9);
+    expect(viewport.hasNext).to.be.false;
+  });
+  it('hasPrev & hasNext: empty', () => {
+    const viewport = new Viewport([]);
+    expect(viewport.hasPrev).to.be.false;
+    expect(viewport.hasNext).to.be.false;
+  });
+
+  it('hasPrevMore && hasFirst', () => {
+    const viewport = new Viewport(items);
+    viewport.goTo(0);
+    expect(viewport.hasPrevMore).to.be.false;
+    expect(viewport.hasFirst).to.be.false;
+    viewport.goTo(3);
+    expect(viewport.hasPrevMore).to.be.false;
+    expect(viewport.hasFirst).to.be.true;
+    viewport.goTo(4);
+    expect(viewport.hasPrevMore).to.be.true;
+    expect(viewport.hasFirst).to.be.true;
+  });
+  it('hasNextMore && hasLast', () => {
+    const viewport = new Viewport(items);
+    viewport.goTo(9);
+    expect(viewport.hasNextMore).to.be.false;
+    expect(viewport.hasLast).to.be.false;
+    viewport.goTo(7);
+    expect(viewport.hasLast).to.be.false;
+    viewport.goTo(6);
+    expect(viewport.hasNextMore).to.be.false;
+    expect(viewport.hasLast).to.be.true;
+    viewport.goTo(5);
+    expect(viewport.hasNextMore).to.be.true;
+    expect(viewport.hasLast).to.be.true;
+  });
 });
