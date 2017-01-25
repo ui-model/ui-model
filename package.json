@@ -1,6 +1,6 @@
 {
   "name": "ui-model-angular",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "license": "MIT",
   "description": "angular binding for ui model",
   "repository": {
@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/ui-model/ui-model-angular#readme",
   "scripts": {},
-  "dependencies": {
+  "peerDependencies": {
     "rxjs": "^5.0.0",
     "moment": "^2.0.0",
-    "ui-model": "0.0.6"
+    "ui-model": "0.0.9"
   },
   "devDependencies": {
     "@angular/common": "^2.0.0",
