@@ -1,5 +1,5 @@
-import {MultiSelect} from './multi-select';
 import {expect} from 'chai';
+import {MultiSelect} from './multi-select';
 import {Suppliers} from '../utils/supplier';
 
 const options = [

@@ -1,6 +1,5 @@
-import { Toggle } from './toggle';
-
 import { expect } from 'chai';
+import { Toggle } from './toggle';
 
 describe('Toggle', () => {
   it('initial state: default to off', () => {

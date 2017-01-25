@@ -24,7 +24,7 @@ export class TableSorter extends Subject<TableField> {
     return this._changes;
   }
 
-  changed(): void {
+  protected changed(): void {
     this._changes.next(this._field);
   }
 

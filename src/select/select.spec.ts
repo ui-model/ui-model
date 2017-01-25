@@ -1,5 +1,5 @@
-import { Select } from './select';
 import { expect } from 'chai';
+import { Select } from './select';
 import { Suppliers } from '../utils/supplier';
 
 describe('Select', () => {

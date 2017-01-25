@@ -16,11 +16,11 @@ export class MultiSelect<T> {
     return this._changes;
   }
 
-  changed(value: State<T>): void {
+  protected changed(value: State<T>): void {
     this._changes.next(value);
   }
 
-  constructor(public options: T[], private supplier: Supplier<T, any> = Suppliers.objectById) {
+  constructor(public options: T[] = [], private supplier: Supplier<T, any> = Suppliers.objectById) {
   }
 
   get allSelected(): boolean {
@@ -87,11 +87,17 @@ export class MultiSelect<T> {
     this.options.forEach((option) => this.toggle(option));
   }
 
-  get selection(): any[] {
+  get selection(): T[] {
     if (!this.options) {
       return [];
     }
 
     return this.options.filter((option) => this.selected(option));
+  }
+
+  set selection(selections: T[]) {
+    selections.forEach((value) => {
+      this.select(value);
+    })
   }
 }

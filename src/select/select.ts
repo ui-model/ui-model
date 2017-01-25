@@ -11,7 +11,7 @@ export class Select<T> {
     return this._changes;
   }
 
-  changed(): void {
+  protected changed(): void {
     this._changes.next(this._selection);
   }
 
