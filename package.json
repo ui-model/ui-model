@@ -28,8 +28,8 @@
     "moment": "^2.17.1",
     "rxjs": "^5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
-    "ui-model-angular": "0.0.7",
-    "ui-model": "0.0.7",
+    "ui-model-angular": "0.0.9",
+    "ui-model": "0.0.9",
     "zone.js": "^0.6.23"
   },
   "devDependencies": {
