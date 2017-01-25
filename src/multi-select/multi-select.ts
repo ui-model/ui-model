@@ -98,6 +98,6 @@ export class MultiSelect<T> {
   set selection(selections: T[]) {
     selections.forEach((value) => {
       this.select(value);
-    })
+    });
   }
 }

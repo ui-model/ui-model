@@ -42,7 +42,7 @@ export class TableSorter extends Subject<TableField> {
     return field.compare(v1, v2) * (reverse ? -1 : 1);
   }
 
-  toggle(field: TableField, defaultOrder: SortOrder = SortOrder.Asc) {
+  toggle(field: TableField, defaultOrder: SortOrder = SortOrder.Asc): void {
     if (!field.sortable) {
       return;
     }
