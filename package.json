@@ -1,6 +1,6 @@
 {
   "name": "ui-model-angular",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "description": "angular binding for ui model",
   "repository": {
@@ -18,14 +18,15 @@
   },
   "homepage": "https://github.com/ui-model/ui-model-angular#readme",
   "scripts": {},
-  "peerDependencies": {
+  "dependencies": {
+    "rxjs": "^5.0.0",
+    "moment": "^2.0.0",
+    "ui-model": "0.0.6"
+  },
+  "devDependencies": {
     "@angular/common": "^2.0.0",
     "@angular/core": "^2.0.0",
     "@types/lodash": "^4.0.0",
-    "lodash": "^4.0.0",
-    "moment": "^2.0.0",
-    "rxjs": "^5.0.0",
-    "ts-helpers": "^1.0.0",
-    "ui-model": "0.0.5"
+    "ts-helpers": "^1.0.0"
   }
 }

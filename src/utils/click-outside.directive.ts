@@ -1,10 +1,10 @@
-import { Directive, Output, EventEmitter, OnDestroy, OnInit, ElementRef } from "@angular/core";
+import { Directive, Output, EventEmitter, OnDestroy, OnInit, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[uiClickOutside]'
 })
 export class ClickOutsideDirective implements OnInit, OnDestroy {
-  @Output('uiClickOutside') onCancel: EventEmitter<any> = new EventEmitter();
+  @Output('uiClickOutside') onClickOutside: EventEmitter<any> = new EventEmitter();
 
   constructor(private element: ElementRef) {
 
@@ -13,7 +13,7 @@ export class ClickOutsideDirective implements OnInit, OnDestroy {
   ngOnInit(): void {
     document.addEventListener('click', (event) => {
       if (!isSelfOrAncestorNode(this.element.nativeElement, event.srcElement)) {
-        this.onCancel.emit();
+        this.onClickOutside.emit();
       }
     });
   }
