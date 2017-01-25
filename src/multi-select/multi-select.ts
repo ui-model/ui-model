@@ -8,7 +8,7 @@ interface State<T> {
 }
 
 export class MultiSelect<T> {
-  private selectedStates: {} = {};
+  private selectedStates: Map<T, boolean> = new Map();
 
   private _changes: Subject<State<T>> = new Subject();
 

@@ -25,7 +25,7 @@ export class TableField {
     return this.order === SortOrder.Desc;
   }
 
-  compare(item1: {}, item2: {}): number {
+  compare(item1: TableField, item2: TableField): number {
     const v1 = item1[this.name];
     const v2 = item2[this.name];
     return this.comparator(v1, v2);
