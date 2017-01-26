@@ -24,6 +24,10 @@ export class NavMenuComponent implements OnInit {
       title: 'Table',
       route: '/table'
     },
+    {
+      title: 'Form',
+      route: '/form',
+    },
   ];
 
   constructor() { }

@@ -10,6 +10,8 @@ import {ToggleComponent} from './showcase/toggle/toggle.component';
 import {NavMenuComponent} from './layout/nav-menu/nav-menu.component';
 import {SharedModule} from './shared/shared.module';
 import { TableComponent } from './showcase/table/table.component';
+import { FormComponent } from './showcase/form/form.component';
+import { FormSectionComponent } from './showcase/form-section/form-section.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { TableComponent } from './showcase/table/table.component';
     ToggleComponent,
     NavMenuComponent,
     TableComponent,
+    FormComponent,
+    FormSectionComponent,
   ],
   imports: [
     BrowserModule,

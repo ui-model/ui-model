@@ -1,0 +1,8 @@
+<form name="form" #form="ngForm">
+  <app-form-section ngModelGroup="basic"></app-form-section>
+  <input [(ngModel)]="email" name="email"/>
+  {{form.value|json}}
+  <div>
+    <button type="button" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+  </div>
+</form>

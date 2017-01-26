@@ -3,6 +3,7 @@ import {SelectComponent} from './showcase/select/select.component';
 import {MultiSelectComponent} from './showcase/multi-select/multi-select.component';
 import {ToggleComponent} from './showcase/toggle/toggle.component';
 import {TableComponent} from './showcase/table/table.component';
+import { FormComponent } from './showcase/form/form.component';
 const routes: Route[] = [
   {
     path: '',
@@ -24,6 +25,10 @@ const routes: Route[] = [
   {
     path: 'table',
     component: TableComponent,
+  },
+  {
+    path: 'form',
+    component: FormComponent,
   }
 ];
 
