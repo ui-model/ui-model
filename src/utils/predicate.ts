@@ -6,6 +6,7 @@ export class Predicates {
   static any(v1: any, v2: any): boolean {
     return v1 === v2;
   }
+
   static string(v1: any, v2: any): boolean {
     return (v1 || '').toString() === (v2 || '').toString();
   };

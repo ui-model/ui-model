@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import { Toggle } from './toggle';
+import {expect} from 'chai';
+import {Toggle} from './toggle';
 
 describe('Toggle', () => {
   it('initial state: default to off', () => {
@@ -9,7 +9,7 @@ describe('Toggle', () => {
   });
   it('changes', (done) => {
     const toggle = new Toggle(Toggle.OFF);
-    toggle.changes.subscribe((value)=> {
+    toggle.changes.subscribe((value) => {
       expect(value).to.be.true;
       done();
     });

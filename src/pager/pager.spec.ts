@@ -1,7 +1,7 @@
 import {expect} from 'chai';
-import { Pager } from './pager';
+import {Pager} from './pager';
 
-describe('Pager', ()=> {
+describe('Pager', () => {
   it('constructor:default', () => {
     const pager = new Pager();
     expect(pager.index).to.equal(0);
@@ -12,12 +12,19 @@ describe('Pager', ()=> {
   });
   it('changes', (done) => {
     const pager = new Pager(10, 1001);
-    pager.changes.subscribe((value)=> {
+    pager.changes.subscribe((value) => {
       expect(value).to.equal(5);
       done();
     });
     pager.goTo(5);
   });
+  it('isEmpty', () => {
+    const pager = new Pager();
+    expect(pager.isEmpty).to.be.true;
+    pager.recordCount = 1;
+    expect(pager.isEmpty).to.be.false;
+  });
+
   it('constructor: normal', () => {
     const pager = new Pager(10, 1001);
     expect(pager.index).to.equal(0);
@@ -43,6 +50,12 @@ describe('Pager', ()=> {
 
     pager.prev();
     expect(pager.offset).to.equal(100);
+
+    pager.goToFirst();
+    expect(pager.index).to.equal(0);
+
+    pager.goToLast();
+    expect(pager.index).to.equal(100);
   });
 
   it('navigation: out of bounds', () => {

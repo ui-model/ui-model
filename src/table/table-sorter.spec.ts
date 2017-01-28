@@ -1,7 +1,7 @@
-import { TableSorter } from './table-sorter';
-import { TableField } from './table-field';
-import { DataType } from '../utils/data-type';
-import { expect } from 'chai';
+import {TableSorter} from './table-sorter';
+import {TableField} from './table-field';
+import {DataType} from '../utils/data-type';
+import {expect} from 'chai';
 const fields: TableField[] = [
   {
     name: 'a',

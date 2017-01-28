@@ -1,4 +1,4 @@
-import { Pager } from './pager';
+import {Pager} from './pager';
 export class Pagination extends Pager {
   constructor(size: number = 10, recordCount: number = 0, viewport: number = 5) {
     super(size, recordCount);

@@ -1,4 +1,4 @@
-import { isObject, isUndefined } from 'util';
+import {isObject, isUndefined} from 'util';
 
 export interface Supplier<FromType, ToType> {
   (value: FromType): ToType;

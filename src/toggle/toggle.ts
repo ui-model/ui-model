@@ -1,5 +1,5 @@
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 export class Toggle {
   constructor(private _isOn: boolean = Toggle.OFF) {

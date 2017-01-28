@@ -1,7 +1,7 @@
 import {expect} from 'chai';
-import { Pagination } from './pagination';
+import {Pagination} from './pagination';
 
-describe('Pagination', ()=> {
+describe('Pagination', () => {
   it('hasPrevMore && hasFirst', () => {
     const pagination = new Pagination(10, 100, 5);
     pagination.goTo(0);
@@ -39,6 +39,6 @@ describe('Pagination', ()=> {
   });
   it('pages', () => {
     const pagination = new Pagination(10, 100, 5);
-    expect(pagination.pages).to.eql([0,1,2,3,4]);
+    expect(pagination.pages).to.eql([0, 1, 2, 3, 4]);
   });
 });

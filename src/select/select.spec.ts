@@ -1,6 +1,6 @@
-import { expect } from 'chai';
-import { Select } from './select';
-import { Suppliers } from '../utils/supplier';
+import {expect} from 'chai';
+import {Select} from './select';
+import {Suppliers} from '../utils/supplier';
 
 describe('Select', () => {
   it('select', () => {

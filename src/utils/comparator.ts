@@ -33,6 +33,7 @@ export class Comparators {
     }
     return -1;
   };
+
   static date(v1: any, v2: any): number {
     return new Date(v1).getTime() - new Date(v2).getTime();
   }

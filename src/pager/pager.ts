@@ -1,5 +1,5 @@
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 export class Pager {
   constructor(size: number = 10, recordCount: number = 0) {

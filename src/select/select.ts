@@ -1,6 +1,6 @@
-import { Supplier, Suppliers } from '../utils/supplier';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import {Supplier, Suppliers} from '../utils/supplier';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 export class Select<T> {
   constructor(private supplier: Supplier<T, any> = Suppliers.objectById) {
   }
