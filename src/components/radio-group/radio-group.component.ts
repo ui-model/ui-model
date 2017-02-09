@@ -8,7 +8,7 @@ export const RADIO_GROUP_VALUE_ACCESSOR = {
   multi: true,
 };
 @Component({
-  selector: 'ua-radio-group',
+  selector: 'ui-radio-group',
   templateUrl: 'radio-group.component.html',
   styleUrls: ['radio-group.component.scss'],
   providers: [RADIO_GROUP_VALUE_ACCESSOR]

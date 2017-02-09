@@ -2,7 +2,7 @@ import {Component, OnInit, Input, trigger, state, style, transition, animate} fr
 import {Toggle} from 'ui-model';
 
 @Component({
-  selector: 'app-panel',
+  selector: 'ui-panel',
   templateUrl: 'panel.component.html',
   styleUrls: ['panel.component.scss'],
   animations: [

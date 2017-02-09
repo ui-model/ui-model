@@ -1,6 +1,6 @@
 {
   "name": "ui-model-angular-bootstrap",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "license": "MIT",
   "description": "angular binding for ui model using bootstrap as css framework",
   "repository": {
