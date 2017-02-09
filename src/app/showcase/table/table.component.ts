@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { TableField, DataType, TableSorter } from 'ui-model';
-import * as _ from 'lodash';
+import {Component, OnInit} from "@angular/core";
+import {TableField, DataType} from "ui-model";
+import * as _ from "lodash";
 
 class Item {
   id: number;
@@ -10,7 +10,7 @@ class Item {
   income: number;
 }
 
-const fields = [
+const fields: TableField[] = TableField.from([
   {
     name: 'id',
     title: 'ID',
@@ -38,7 +38,7 @@ const fields = [
     type: DataType.currency,
     scale: 2,
   },
-].map(TableField.from);
+]);
 
 const items: Item[] = _.times(100, (i) => {
   return {
@@ -59,9 +59,6 @@ export class TableComponent implements OnInit {
 
   fields: TableField[] = fields;
   items: Item[] = items;
-  sorter: TableSorter = new TableSorter(fields);
-  delta: {[field: string]: {x: number, y: number}} = {};
-  size: {[field: string]: {x: number, y: number}} = {};
 
   constructor() {
   }

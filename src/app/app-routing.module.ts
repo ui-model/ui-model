@@ -7,7 +7,7 @@ import { FormComponent } from './showcase/form/form.component';
 const routes: Route[] = [
   {
     path: '',
-    redirectTo: '/select',
+    redirectTo: '/form',
     pathMatch: 'full',
   },
   {

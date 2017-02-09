@@ -1,3 +1,8 @@
+@import "../../shared/styles/common";
+:host {
+  display: block;
+}
+
 .modal {
   display: block;
 }
@@ -10,4 +15,12 @@
   /deep/ .card-block {
     height: 13em;
   }
+}
+
+.custom-button {
+  display: inline-block;
+  border: 1px solid $brand-primary;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 2px;
 }

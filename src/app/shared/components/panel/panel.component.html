@@ -1,12 +1,8 @@
 <div class="card">
   <div class="card-header" *ngIf="title">
     {{title}}
-    <i class="fa pull-right"
-       [class.fa-chevron-up]="toggle.isOn"
-       [class.fa-chevron-down]="toggle.isOff"
-       (click)="toggle.toggle()"
-       *ngIf="toggleable"
-    ></i>
+    <img class="icon" src="_images/icon-chevron-up.svg" *ngIf="toggleable && toggle.isOn" (click)="toggle.close()"/>
+    <img class="icon" src="_images/icon-chevron-down.svg" *ngIf="toggleable && toggle.isOff" (click)="toggle.open()"/>
   </div>
   <div class="card-block" [@slide]="toggle.isOn" *ngIf="toggle.isOn">
     <ng-content></ng-content>
