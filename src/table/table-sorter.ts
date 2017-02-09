@@ -33,6 +33,24 @@ export class TableSorter extends Subject<TableField> {
     return this._field;
   }
 
+  enabled: boolean = true;
+
+  get disabled(): boolean {
+    return !this.enabled;
+  }
+
+  set disabled(value: boolean) {
+    this.enabled = !value;
+  }
+
+  enable(): void {
+    this.enabled = true;
+  }
+
+  disable(): void {
+    this.enabled = false;
+  }
+
   compare(v1: any, v2: any): number {
     const field = this._field;
     if (!field) {
@@ -43,7 +61,7 @@ export class TableSorter extends Subject<TableField> {
   }
 
   toggle(field: TableField, defaultOrder: SortOrder = SortOrder.Asc): void {
-    if (!field.sortable) {
+    if (this.disabled || !field.sortable) {
       return;
     }
 

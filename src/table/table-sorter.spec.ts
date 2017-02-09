@@ -32,4 +32,10 @@ describe('TableSorter', () => {
     sorter.toggle(fields[0]);
     expect(sorter.compare({a: 1}, {a: 2})).to.lessThan(0);
   });
+  it('enabled', () => {
+    const sorter = new TableSorter(fields);
+    sorter.disable();
+    sorter.toggle(fields[0]);
+    expect(sorter.field).to.be.undefined;
+  });
 });
