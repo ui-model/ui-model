@@ -5,6 +5,7 @@ import {TableField, TableSorter} from "ui-model";
   selector: 'ui-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
+  inputs: ['fields', 'sortable'],
 })
 export class TableComponent<T> implements OnInit {
 
@@ -13,13 +14,22 @@ export class TableComponent<T> implements OnInit {
     return this._fields;
   }
 
-  @Input() set fields(value: TableField[]) {
+  set fields(value: TableField[]) {
     if (this._fields !== value) {
       this._fields = value;
       this.sorter = new TableSorter(this._fields);
     }
   }
+
   @Input() items: T[];
+
+  get sortable(): boolean {
+    return this.sorter.enabled;
+  }
+
+  set sortable(value: boolean) {
+    this.sorter.enabled = value;
+  }
 
   sorter: TableSorter;
 

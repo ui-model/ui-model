@@ -27,8 +27,8 @@
     "moment": "^2.16.0",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
-    "ui-model": "0.0.10",
-    "ui-model-angular": "0.0.10",
+    "ui-model": "0.0.11",
+    "ui-model-angular": "0.0.11",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {

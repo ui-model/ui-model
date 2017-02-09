@@ -4,11 +4,11 @@
     <tr>
       <th class="resizable" [style.width.px]="size[field.name]?.width + delta[field.name]?.x" #resize="uiResize"
           [(uiResize)]="size[field.name]" *ngFor="let field of fields"
-          [class.sortable]="field.sortable"
+          [class.sortable]="sortable && field.sortable"
           [ngClass]="field.type|typeName:'data-type-'"
           (click)="sorter.toggle(field)">
         {{field.title}}
-        <ng-container *ngIf="field.sortable">
+        <ng-container *ngIf="sortable && field.sortable">
           <img class="icon" src="_images/icon-sort.svg" *ngIf="field.isNonOrder()">
           <img class="icon" src="_images/icon-sort-asc.svg" *ngIf="field.isAscOrder()">
           <img class="icon" src="_images/icon-sort-desc.svg" *ngIf="field.isDescOrder()">
