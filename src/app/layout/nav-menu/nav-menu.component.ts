@@ -25,6 +25,10 @@ export class NavMenuComponent implements OnInit {
       route: '/table'
     },
     {
+      title: 'Tree',
+      route: '/tree'
+    },
+    {
       title: 'Form',
       route: '/form',
     },

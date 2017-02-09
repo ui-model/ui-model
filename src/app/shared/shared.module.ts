@@ -7,6 +7,7 @@ import { RadioGroupComponent } from './components/radio-group/radio-group.compon
 import { PaginationComponent } from './components/pagination/pagination.component';
 import {TableComponent} from "./components/table/table.component";
 import {FormsModule} from "@angular/forms";
+import {TreeNodeComponent} from "./components/tree-node/tree-node.component";
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import {FormsModule} from "@angular/forms";
     RadioGroupComponent,
     PaginationComponent,
     TableComponent,
+    TreeNodeComponent,
   ],
   exports: [
     UiModelModule,
@@ -28,6 +30,7 @@ import {FormsModule} from "@angular/forms";
     RadioGroupComponent,
     PaginationComponent,
     TableComponent,
+    TreeNodeComponent,
   ],
 })
 export class SharedModule {

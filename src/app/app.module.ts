@@ -12,6 +12,7 @@ import {SharedModule} from './shared/shared.module';
 import { TableComponent } from './showcase/table/table.component';
 import { FormComponent } from './showcase/form/form.component';
 import { FormSectionComponent } from './showcase/form-section/form-section.component';
+import { TreeComponent } from './showcase/tree/tree.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormSectionComponent } from './showcase/form-section/form-section.compo
     TableComponent,
     FormComponent,
     FormSectionComponent,
+    TreeComponent,
   ],
   imports: [
     BrowserModule,
