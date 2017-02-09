@@ -1,6 +1,8 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {UiModelModule} from 'ui-model-angular';
+
 import {ModalComponent} from "./components/modal/modal.component";
 import {PaginationComponent} from "./components/pagination/pagination.component";
 import {PanelComponent} from "./components/panel/panel.component";
@@ -12,6 +14,7 @@ import {TreeNodeComponent} from "./components/tree-node/tree-node.component";
   imports: [
     CommonModule,
     FormsModule,
+    UiModelModule,
   ],
   declarations: [
     ModalComponent,
@@ -22,6 +25,7 @@ import {TreeNodeComponent} from "./components/tree-node/tree-node.component";
     TreeNodeComponent,
   ],
   exports: [
+    UiModelModule,
     ModalComponent,
     PaginationComponent,
     PanelComponent,
