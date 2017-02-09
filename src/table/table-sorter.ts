@@ -38,7 +38,7 @@ export class TableSorter extends Subject<TableField> {
     if (!field) {
       return NaN;
     }
-    const reverse = field && field.order === SortOrder.Desc;
+    const reverse = field && field.sortOrder === SortOrder.Desc;
     return field.compare(v1, v2) * (reverse ? -1 : 1);
   }
 
@@ -47,17 +47,17 @@ export class TableSorter extends Subject<TableField> {
       return;
     }
 
-    const order = field.order;
+    const order = field.sortOrder;
 
-    this.fields.forEach((field) => field.order = SortOrder.None);
+    this.fields.forEach((field) => field.sortOrder = SortOrder.None);
 
     if (this._field === field) {
       const nextOrder = nextOf(order, defaultOrder);
       if (nextOrder !== order) {
-        field.order = nextOrder;
+        field.sortOrder = nextOrder;
       }
     } else {
-      field.order = defaultOrder;
+      field.sortOrder = defaultOrder;
     }
 
     this._field = field;

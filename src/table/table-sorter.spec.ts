@@ -13,7 +13,7 @@ const fields: TableField[] = [
     title: 'B',
     type: DataType.string,
   },
-].map(TableField.from);
+].map(TableField.of);
 describe('TableSorter', () => {
   it('changes', (done) => {
     const sorter = new TableSorter(fields);
