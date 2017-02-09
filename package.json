@@ -29,6 +29,7 @@
     "ts-helpers": "^1.1.1",
     "ui-model": "0.0.11",
     "ui-model-angular": "0.0.11",
+    "ui-model-angular-bootstrap": "0.0.12",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
