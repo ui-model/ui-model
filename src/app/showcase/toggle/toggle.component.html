@@ -1,4 +1,4 @@
-<app-panel title="Basic: Switch icons and text" uiToggle #toggle="uiToggle">
+<ui-panel title="Basic: Switch icons and text" uiToggle #toggle="uiToggle">
   <span class="custom-button" (click)="toggle.turnOff()" *ngIf="toggle.isOn">
     <img class="icon" src="_images/icon-toggle-on.svg" />
     On
@@ -8,9 +8,9 @@
     <img class="icon" src="_images/icon-toggle-off.svg" />
     Off
   </span>
-</app-panel>
+</ui-panel>
 
-<app-panel title="Of course, Dropdown is also a very obvious Toggle" class="demo-dropdown">
+<ui-panel title="Of course, Dropdown is also a very obvious Toggle" class="demo-dropdown">
   <div class="dropdown open" uiToggle #dropdown="uiToggle" (uiClickOutside)="dropdown.close()">
     <button class="btn btn-secondary dropdown-toggle" type="button" (click)="dropdown.toggle()">
       Dropdown button
@@ -22,15 +22,15 @@
       <a class="dropdown-item">Something else here</a>
     </div>
   </div>
-</app-panel>
+</ui-panel>
 
-<app-panel title="We can also access the toggle object inside this panel" #panel>
+<ui-panel title="We can also access the toggle object inside this panel" #panel>
   <button type="button" class="btn btn-primary" (click)="panel.toggle.turnOff()">
     Close this panel
   </button>
-</app-panel>
+</ui-panel>
 
-<app-panel title="The main logic of the modal dialog box is also toggle" uiToggle #modal="uiToggle">
+<ui-panel title="The main logic of the modal dialog box is also toggle" uiToggle #modal="uiToggle">
   <button type="button" class="btn btn-primary" (click)="modal.open()">
     Open Modal Dialog
   </button>
@@ -54,9 +54,9 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-</app-panel>
+</ui-panel>
 
-<app-panel title="The various form of expand / collapse logic is also toggle" uiToggle #more="uiToggle">
+<ui-panel title="The various form of expand / collapse logic is also toggle" uiToggle #more="uiToggle">
   This is a brief
   <div class="btn btn-link" (click)="more.open()" *ngIf="more.isOff">Click me to see more...</div>
   <div *ngIf="more.isOn">
@@ -64,15 +64,15 @@
 
     <div class="btn btn-link" (click)="more.close()">Click me to see brief only</div>
   </div>
-</app-panel>
+</ui-panel>
 
-<app-panel title="Two-class switching is also a kind of Toggle logic" uiToggle #btn="uiToggle">
+<ui-panel title="Two-class switching is also a kind of Toggle logic" uiToggle #btn="uiToggle">
   <span class="btn" [class.btn-primary]="btn.isOn" (click)="btn.toggle()">
     isOn? {{btn.isOn}}
   </span>
-</app-panel>
+</ui-panel>
 
-<app-panel title="Two-picture switching is also a kind of Toggle logic" uiToggle #img="uiToggle">
+<ui-panel title="Two-picture switching is also a kind of Toggle logic" uiToggle #img="uiToggle">
   <img src="_images/dog.jpg" alt="dog" *ngIf="img.isOff" (click)="img.turnOn()"/>
   <img src="_images/cat.jpg" alt="cat" *ngIf="img.isOn" (click)="img.turnOff()"/>
-</app-panel>
+</ui-panel>
