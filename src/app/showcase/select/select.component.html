@@ -2,7 +2,7 @@
   {{select.selection|json}}
 </ui-panel>
 <ui-panel title="Traditional usage: select[ngModel]">
-  <select [(ngModel)]="select.selection">
+  <select class="form-control" [(ngModel)]="select.selection">
     <option>-</option>
     <option *ngFor="let option of options" [ngValue]="option">{{option.label}}</option>
   </select>

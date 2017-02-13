@@ -31,12 +31,12 @@
 </ui-panel>
 
 <ui-panel title="The main logic of the modal dialog box is also toggle" uiToggle #modal="uiToggle">
-  <button type="button" class="btn btn-primary" (click)="modal.open()">
+  <button type="button" class="btn btn-primary" (click)="modal.open();$event.stopPropagation()">
     Open Modal Dialog
   </button>
   <div class="modal-backdrop" *ngIf="modal.isOn"></div>
   <div class="modal" *ngIf="modal.isOn">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" (uiClickOutside)="modal.close()">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" aria-label="Close" (click)="modal.close()">
