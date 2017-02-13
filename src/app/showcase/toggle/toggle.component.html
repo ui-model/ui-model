@@ -13,9 +13,20 @@
 <ui-panel title="Of course, Dropdown is also a very obvious Toggle" class="demo-dropdown">
   <div class="dropdown open" uiToggle #dropdown="uiToggle" (uiClickOutside)="dropdown.close()">
     <button class="btn btn-secondary dropdown-toggle" type="button" (click)="dropdown.toggle()">
-      Dropdown button
+      Dropdown Button
     </button>
     <div class="dropdown-menu" *ngIf="dropdown.isOn">
+      <a class="dropdown-item">Action</a>
+      <a class="dropdown-item">Another action</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item">Something else here</a>
+    </div>
+  </div>
+  <div class="dropdown open" uiToggle #dropdown1="uiToggle" (uiClickOutside)="dropdown1.close()">
+    <button class="btn btn-secondary dropdown-toggle" type="button" (click)="dropdown1.toggle()">
+      Another Dropdown Button
+    </button>
+    <div class="dropdown-menu" *ngIf="dropdown1.isOn">
       <a class="dropdown-item">Action</a>
       <a class="dropdown-item">Another action</a>
       <div class="dropdown-divider"></div>
