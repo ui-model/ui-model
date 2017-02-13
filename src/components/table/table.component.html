@@ -7,7 +7,7 @@
           [class.sortable]="sortable && field.sortable"
           [ngClass]="field.type|typeName:'data-type-'"
           (click)="sorter.toggle(field)">
-        {{field.title}}
+        <span [title]="field.title">{{field.title}}</span>
         <ng-container *ngIf="sortable && field.sortable">
           <img class="icon" src="_images/icon-sort.svg" *ngIf="field.isNonOrder()">
           <img class="icon" src="_images/icon-sort-asc.svg" *ngIf="field.isAscOrder()">
@@ -19,9 +19,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let item of items | orderBy:sorter | slice:pager.begin:pager.end">
+    <tr *ngFor="let item of items | slice:pager.begin:pager.end">
       <td *ngFor="let field of fields" [ngClass]="field.type|typeName:'data-type-'">
-        {{item[field.name]|format:field}}
+        <span [title]="item[field.name]|format:field">{{item[field.name]|format:field}}</span>
       </td>
     </tr>
     </tbody>

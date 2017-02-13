@@ -27,6 +27,16 @@ th {
   }
 }
 
+th, td {
+  > [title] {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
 ui-pagination {
   margin: 0;
 }
