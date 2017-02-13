@@ -1,5 +1,5 @@
-import { Directive, Output, EventEmitter, ElementRef, OnInit } from '@angular/core';
-import { isNullOrUndefined } from 'util';
+import {Directive, Output, EventEmitter, ElementRef, OnInit} from "@angular/core";
+import {isNullOrUndefined} from "util";
 
 class Size {
   width: number;
@@ -13,15 +13,10 @@ class Size {
 export class ResizeDirective implements OnInit {
   @Output('uiResizeChange') resize: EventEmitter<Size> = new EventEmitter();
 
-  get size(): Size {
-    if (!this.element.nativeElement) {
-      return;
-    }
+  _size: Size = {width: 0, height: 0};
 
-    return {
-      width: this.element.nativeElement.clientWidth,
-      height: this.element.nativeElement.clientHeight,
-    };
+  get size(): Size {
+    return this._size;
   }
 
   // TODO: box-sizing
@@ -54,10 +49,10 @@ export class ResizeDirective implements OnInit {
   }
 
   update(): void {
-    if (!this.size) {
-      return;
-    }
-
+    this._size = {
+      width: this.element.nativeElement.clientWidth,
+      height: this.element.nativeElement.clientHeight,
+    };
     this.resize.emit({width: this.size.width, height: this.size.height});
   }
 }

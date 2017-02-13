@@ -1,6 +1,7 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import {TableField, DataType, dataTypeOf, Suppliers} from 'ui-model';
 import * as moment from 'moment';
+import {isUndefined} from 'util';
 
 @Pipe({
   name: 'format'
@@ -10,6 +11,10 @@ export class FormatPipe implements PipeTransform {
   transform(value: any, field: TableField): string {
     if (field && field.formatter !== Suppliers.identity) {
       return field.formatter(value);
+    }
+
+    if (isUndefined(value)) {
+      return value;
     }
 
     const type: DataType = field ? field.type : dataTypeOf(value);
