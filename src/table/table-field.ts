@@ -31,7 +31,7 @@ export class TableField {
     return this.comparator(v1, v2);
   }
 
-  static of(rawData: TableField): TableField {
+  static of(rawData: any): TableField {
     const result = new TableField();
     if (!isUndefined(rawData.name)) {
       result.name = rawData.name;
