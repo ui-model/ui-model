@@ -7,6 +7,8 @@ export * from './pager/pagination';
 export * from './table/table-field';
 export * from './table/table-sorter';
 
+export * from './calendar/calendar';
+
 export * from './utils/comparator';
 export * from './utils/data-type';
 export * from './utils/predicate';
