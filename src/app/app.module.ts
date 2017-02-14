@@ -13,6 +13,7 @@ import { TableComponent } from './showcase/table/table.component';
 import { FormComponent } from './showcase/form/form.component';
 import { FormSectionComponent } from './showcase/form-section/form-section.component';
 import { TreeComponent } from './showcase/tree/tree.component';
+import { CalendarComponent } from './showcase/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TreeComponent } from './showcase/tree/tree.component';
     FormComponent,
     FormSectionComponent,
     TreeComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,

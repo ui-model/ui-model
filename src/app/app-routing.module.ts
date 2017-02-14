@@ -5,6 +5,7 @@ import {ToggleComponent} from './showcase/toggle/toggle.component';
 import {TableComponent} from './showcase/table/table.component';
 import { FormComponent } from './showcase/form/form.component';
 import {TreeComponent} from "./showcase/tree/tree.component";
+import {CalendarComponent} from "./showcase/calendar/calendar.component";
 const routes: Route[] = [
   {
     path: '',
@@ -34,7 +35,11 @@ const routes: Route[] = [
   {
     path: 'form',
     component: FormComponent,
-  }
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent,
+  },
 ];
 
 export const routing = RouterModule.forRoot(routes);
