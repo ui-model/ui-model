@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SelectDirective } from './ui-model/select.directive';
-import { MultiSelectDirective } from './ui-model/multi-select.directive';
-import { ToggleDirective } from './ui-model/toggle.directive';
-import { PagerDirective } from './ui-model/pager.directive';
-import { PaginationDirective } from './ui-model/pagination.directive';
+import { SelectDirective } from './directives/select.directive';
+import { MultiSelectDirective } from './directives/multi-select.directive';
+import { ToggleDirective } from './directives/toggle.directive';
+import { PagerDirective } from './directives/pager.directive';
+import { PaginationDirective } from './directives/pagination.directive';
 
 import { ClickOutsideDirective } from './utils/click-outside.directive';
 import { ResizeDirective } from './utils/resize.directive';
@@ -54,11 +54,13 @@ import { TypeNamePipe } from './utils/type-name.pipe';
 export class UiModelModule {
 }
 
-export * from './ui-model/toggle.directive';
-export * from './ui-model/select.directive';
-export * from './ui-model/pager.directive';
-export * from './ui-model/pagination.directive';
-export * from './ui-model/multi-select.directive';
+export * from './accessors/calendar-value-accessor';
+
+export * from './directives/toggle.directive';
+export * from './directives/select.directive';
+export * from './directives/pager.directive';
+export * from './directives/pagination.directive';
+export * from './directives/multi-select.directive';
 
 export * from './utils/click-outside.directive';
 export * from './utils/draggable.directive';
