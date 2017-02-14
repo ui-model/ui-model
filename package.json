@@ -30,17 +30,20 @@
     "@types/gulp-mocha": "0.0.29",
     "@types/gulp-tslint": "^3.6.30",
     "@types/mocha": "^2.2.35",
+    "@types/moment": "^2.13.0",
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-mocha": "^3.0.1",
     "gulp-tslint": "^7.0.1",
     "mocha": "^3.2.0",
+    "moment": "^2.17.1",
     "rxjs": "^5.0.0",
     "ts-node": "^2.0.0",
     "tslint": "^4.3.1",
     "typescript": "^2.1.4"
   },
   "peerDependencies": {
+    "moment": "^2.0.0",
     "rxjs": "^5.0.0"
   }
 }
