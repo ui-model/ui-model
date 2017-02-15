@@ -15,3 +15,7 @@ export * from './utils/predicate';
 export * from './utils/provider';
 export * from './utils/sort-order';
 export * from './utils/supplier';
+export * from './utils/rect';
+export * from './utils/point';
+export * from './utils/size';
+export * from './utils/distance';
