@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class FormComponent implements OnInit {
 
   email: string;
+  report: string;
   constructor() { }
 
   ngOnInit() {
   }
 
+  submit(value): void {
+    this.report = JSON.stringify(value, null, 2);
+  }
 }
