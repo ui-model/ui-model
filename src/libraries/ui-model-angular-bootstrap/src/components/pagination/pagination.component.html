@@ -1,0 +1,32 @@
+<ul class="pagination">
+  <li class="page-item" [class.disabled]="!pager.hasFirst" *ngIf="showFirstLast">
+    <a href="javascript:void(0)" (click)="pager.goToFirst()" class="page-link" title="First">
+      <img class="icon" src="_images/icon-first.svg"/>
+    </a>
+  </li>
+  <li class="page-item" [class.disabled]="!pager.hasPrev" *ngIf="showPrevNext">
+    <a href="javascript:void(0)" (click)="pager.prev()" class="page-link" title="Prev">
+      <img class="icon" src="_images/icon-prev.svg"/>
+    </a>
+  </li>
+  <ng-container *ngIf="!pager.isEmpty">
+    <li class="page-item" *ngFor="let page of pager.pages" [class.active]="pager.isActive(page)">
+      <a class="page-link" href="javascript:void(0)" (click)="pager.goTo(page)">{{page + 1}}</a>
+    </li>
+  </ng-container>
+  <li class="page-item" [class.disabled]="!pager.hasNext" *ngIf="showPrevNext">
+    <a href="javascript:void(0)" (click)="pager.next()" class="page-link" title="Next">
+      <img class="icon" src="_images/icon-next.svg"/>
+    </a>
+  </li>
+  <li class="page-item" [class.disabled]="!pager.hasLast" *ngIf="showFirstLast">
+    <a href="javascript:void(0)" (click)="pager.goToLast()" class="page-link" title="Last">
+      <img class="icon" src="_images/icon-last.svg"/>
+    </a>
+  </li>
+  <li class="page-item disabled" *ngIf="showBrief">
+    <span class="page-link">
+      共{{pager.recordCount}}条/{{pager.count}}页
+    </span>
+  </li>
+</ul>
