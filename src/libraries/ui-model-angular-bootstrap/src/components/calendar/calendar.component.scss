@@ -19,6 +19,12 @@ caption {
       }
     }
   }
+  a {
+    color: $gray-light;
+    &:hover, &:focus {
+      color: $link-hover-color;
+    }
+  }
 }
 
 .icon {
