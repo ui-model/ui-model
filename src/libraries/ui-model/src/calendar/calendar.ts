@@ -7,7 +7,7 @@ type MomentInput = moment.MomentInput;
 
 export class Calendar {
   constructor(value: MomentInput = new Date()) {
-    this.value = value;
+    this.goTo(value);
   }
 
   private _changes: Subject<Date> = new Subject<Date>();
@@ -23,17 +23,19 @@ export class Calendar {
 
   private _value: Moment;
 
-  get value(): MomentInput {
+  get value(): Date {
     return this._value && this._value.toDate();
   }
 
-  set value(value: MomentInput) {
-    if (!value) {
-      this._value = undefined;
-    } else if (!this._value || !this._value.isSame(value, 'day')) {
-      this._value = moment(value);
+  set value(value: Date) {
+    if (!this._value || !this._value.isSame(value, 'date')) {
+      this._value = value && moment(value);
       this.changed();
     }
+  }
+
+  setValue(value: MomentInput): void {
+    this.value = value && moment(value).toDate();
   }
 
   get year(): number {
@@ -59,19 +61,19 @@ export class Calendar {
   }
 
   isActive(date: MomentInput): boolean {
-    return this._value && this._value.isSame(date, 'day');
+    return !!(this._value && this._value.isSame(date, 'date'));
   }
 
   isToday(date: MomentInput): boolean {
-    return moment().isSame(date, 'day');
+    return moment().isSame(date, 'date');
   }
 
   isPast(date: MomentInput): boolean {
-    return this._value && this._value.isAfter(date, 'day');
+    return this._value && this._value.isAfter(date, 'date');
   }
 
   isFuture(date: MomentInput): boolean {
-    return this._value && this._value.isBefore(date, 'day');
+    return this._value && this._value.isBefore(date, 'date');
   }
 
   inSameMonth(date: MomentInput): boolean {
@@ -103,12 +105,12 @@ export class Calendar {
   }
 
   isValid(date: MomentInput): boolean {
-    return (!this._minValue || this._minValue.isSameOrBefore(date, 'day')) &&
-      (!this._maxValue || this._maxValue.isSameOrAfter(date, 'day'));
+    return (!this._minValue || this._minValue.isSameOrBefore(date, 'date')) &&
+      (!this._maxValue || this._maxValue.isSameOrAfter(date, 'date'));
   }
 
   goTo(date: MomentInput): void {
-    this.value = date;
+    this.setValue(date);
   }
 
   goToToday(): void {

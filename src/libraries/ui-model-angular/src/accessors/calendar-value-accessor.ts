@@ -6,27 +6,27 @@ export class CalendarValueAccessor extends Calendar implements ControlValueAcces
     super();
   }
 
-  value: Date;
-
   private onChange: (value: Date) => void;
 
-  changed(): void {
+  protected changed(): void {
+    super.changed();
     if (this.onChange) {
       this.onChange(this.value);
     }
   }
+
   private onTouched: () => void;
 
   writeValue(value: Date): void {
-    if (value !== this.value) {
-
-    }
+    this.value = value;
   }
 
-  registerOnChange(fn: Date): void {
+  registerOnChange(fn: (value: Date) => void): void {
+    this.onChange = fn;
   }
 
-  registerOnTouched(fn: Date): void {
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
   }
 
 }
