@@ -1,19 +1,19 @@
 <table>
   <caption>
     <div>
-      <a href="javascript:void(0)" (click)="calendar.prevMonth()" title="Previous Month">
+      <a href="javascript:void(0)" (click)="calendar.goToPrevMonth()" title="Previous Month">
         <img class="icon" src="_images/icon-prev.svg"/>
       </a>
       <select class="form-control" name="month" [(ngModel)]="calendar.month">
-        <option *ngFor="let month of calendar.months;let index = index" [ngValue]="index">{{month}}</option>
+        <option *ngFor="let month of calendar.monthNames;let index = index" [ngValue]="index">{{month}}</option>
       </select>
       <select class="form-control" name="year" [(ngModel)]="calendar.year">
-        <option *ngFor="let year of calendar.years" [ngValue]="year">{{year}}</option>
+        <option *ngFor="let year of calendar.nearlyYears" [ngValue]="year">{{year}}</option>
       </select>
       <a href="javascript:void(0)" (click)="calendar.goToToday()" title="Today">
         <img class="icon" src="_images/icon-today.svg"/>
       </a>
-      <a href="javascript:void(0)" (click)="calendar.nextMonth()" title="Next Month">
+      <a href="javascript:void(0)" (click)="calendar.goToNextMonth()" title="Next Month">
         <img class="icon" src="_images/icon-next.svg"/>
       </a>
     </div>
@@ -21,7 +21,7 @@
   <thead>
   <tr>
     <th></th>
-    <th *ngFor="let name of calendar.weekdays">{{name}}</th>
+    <th *ngFor="let name of calendar.weekdayNames">{{name}}</th>
   </tr>
   </thead>
   <tbody>

@@ -1,12 +1,12 @@
-import * as moment from 'moment';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import * as moment from "moment";
+import {Subject} from "rxjs/Subject";
+import {Observable} from "rxjs/Observable";
 
 type Moment = moment.Moment;
 type MomentInput = moment.MomentInput;
 
 export class Calendar {
-  constructor(value?: MomentInput) {
+  constructor(value: MomentInput = new Date()) {
     this.value = value;
   }
 
@@ -14,28 +14,30 @@ export class Calendar {
 
   protected changed(): void {
     this.update();
-    this._changes.next(this._value.toDate());
+    this._changes.next(this._value && this._value.toDate());
   }
 
   get changes(): Observable<Date> {
     return this._changes;
   }
 
-  private _value: Moment = moment();
+  private _value: Moment;
 
   get value(): MomentInput {
-    return this._value.toDate();
+    return this._value && this._value.toDate();
   }
 
   set value(value: MomentInput) {
-    if (value !== this.value) {
+    if (!value) {
+      this._value = undefined;
+    } else if (!this._value || !this._value.isSame(value, 'day')) {
       this._value = moment(value);
       this.changed();
     }
   }
 
   get year(): number {
-    return this._value.year();
+    return this._value && this._value.year();
   }
 
   set year(value: number) {
@@ -46,7 +48,7 @@ export class Calendar {
   }
 
   get month(): number {
-    return this._value.month();
+    return this._value && this._value.month();
   }
 
   set month(value: number) {
@@ -56,24 +58,24 @@ export class Calendar {
     }
   }
 
-  isActive(date: Date): boolean {
-    return this._value.isSame(date, 'day');
+  isActive(date: MomentInput): boolean {
+    return this._value && this._value.isSame(date, 'day');
   }
 
-  isToday(date: Date): boolean {
-    return moment(date).isSame(new Date(), 'day');
+  isToday(date: MomentInput): boolean {
+    return moment().isSame(date, 'day');
   }
 
-  isPast(date: Date): boolean {
-    return this._value.isAfter(date, 'day');
+  isPast(date: MomentInput): boolean {
+    return this._value && this._value.isAfter(date, 'day');
   }
 
-  isFuture(date: Date): boolean {
-    return this._value.isBefore(date, 'day');
+  isFuture(date: MomentInput): boolean {
+    return this._value && this._value.isBefore(date, 'day');
   }
 
-  inSameMonth(date: Date): boolean {
-    return this._value.isSame(date, 'month');
+  inSameMonth(date: MomentInput): boolean {
+    return this._value && this._value.isSame(date, 'month');
   }
 
   isWeekEnd(date: Date): boolean {
@@ -83,7 +85,7 @@ export class Calendar {
 
   private _minValue: Moment;
   get minValue(): MomentInput {
-    return this._minValue.toDate();
+    return this._minValue && this._minValue.toDate();
   }
 
   set minValue(value: MomentInput) {
@@ -93,7 +95,7 @@ export class Calendar {
   private _maxValue: Moment;
 
   get maxValue(): MomentInput {
-    return this._maxValue.toDate();
+    return this._maxValue && this._maxValue.toDate();
   }
 
   set maxValue(value: MomentInput) {
@@ -101,14 +103,11 @@ export class Calendar {
   }
 
   isValid(date: MomentInput): boolean {
-    if (this._minValue && this._minValue.isSameOrBefore(date, 'day')) {
-      return true;
-    }
-    return !!(this._maxValue && this._maxValue.isSameOrAfter(date, 'day'));
-
+    return (!this._minValue || this._minValue.isSameOrBefore(date, 'day')) &&
+      (!this._maxValue || this._maxValue.isSameOrAfter(date, 'day'));
   }
 
-  goTo(date: Date): void {
+  goTo(date: MomentInput): void {
     this.value = date;
   }
 
@@ -140,14 +139,14 @@ export class Calendar {
     return this._dates[week - this.weeks[0]];
   }
 
-  readonly weekdays: string[] = moment.weekdaysMin(true);
+  readonly weekdayNames: string[] = moment.weekdaysMin(true);
 
-  readonly months: string[] = moment.months();
+  readonly monthNames: string[] = moment.months();
 
-  private _years: number[] = [];
+  private _nearlyYears: number[] = [];
 
-  get years(): number[] {
-    return this._years;
+  get nearlyYears(): number[] {
+    return this._nearlyYears;
   }
 
   update(): void {
@@ -161,7 +160,7 @@ export class Calendar {
         return moment(firstSunday).add(week - firstWeek, 'week').add(day, 'day').toDate();
       });
     });
-    this._years = range(this.year - 5, this.year + 6);
+    this._nearlyYears = range(this.year - 5, this.year + 6);
   }
 }
 
