@@ -24,6 +24,60 @@ describe('Calendar', () => {
     calendar.month = 1;
     expect(calendar.value).to.eql(new Date('2016-02-29T00:00:00+0800'));
   });
+  describe('nullable', () => {
+    let calendar: Calendar;
+    beforeEach(()=> {
+      calendar = new Calendar();
+    });
+    it('initial state', () => {
+      expect(calendar.value).to.be.undefined;
+    });
+    it('today should be not active', () => {
+      expect(calendar.isActive(new Date())).to.be.false;
+    });
+    it('can go to today', () => {
+      const today = new Date();
+      calendar.goTo(today);
+      expect(calendar.isActive(today)).to.be.true;
+    });
+    it('states should be the same as today', () => {
+      calendar.setMockValue('2017-01-10T00:00:00+0800');
+      expect(calendar.inSameMonth('2017-01-01T00:00:00+0800')).to.be.true;
+      expect(calendar.inSameMonth('2017-02-01T00:00:00+0800')).to.be.false;
+    });
+    it('years & months should be the same as today', () => {
+      calendar.setMockValue('2013-01-10T00:00:00+0800');
+      expect(calendar.nearlyYears).to.eql([
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+      ]);
+      expect(calendar.monthNames).to.eql([
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ]);
+      expect(calendar.year).to.eql(2013);
+      expect(calendar.month).to.eql(0);
+    });
+  });
   it('weeks && dates', () => {
     const calendar = new Calendar();
     calendar.value = new Date('2017-02-13');

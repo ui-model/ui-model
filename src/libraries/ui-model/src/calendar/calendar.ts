@@ -23,10 +23,14 @@ export class Calendar {
 
   private _value: Moment = moment();
 
-  isNull: boolean = true;
+  _isNull: boolean = true;
+
+  get isNull(): boolean {
+    return this._isNull;
+  }
 
   get value(): Date {
-    if (this.isNull) {
+    if (this._isNull) {
       return undefined;
     } else {
       return this._value.toDate();
@@ -35,11 +39,11 @@ export class Calendar {
 
   set value(value: Date) {
     if (!value) {
-      this.isNull = true;
+      this._isNull = true;
       this._value = moment();
       this.changed();
     } else if (!this.value || !this._value.isSame(value, 'date')) {
-      this.isNull = !value;
+      this._isNull = !value;
       this._value = moment(value);
       this.changed();
     }
@@ -49,6 +53,10 @@ export class Calendar {
     this.value = value && moment(value).toDate();
   }
 
+  setMockValue(value: MomentInput): void {
+    this._value = moment(value);
+    this.update();
+  }
   clear(): void {
     this.value = undefined;
   }
@@ -76,7 +84,7 @@ export class Calendar {
   }
 
   isActive(date: MomentInput): boolean {
-    return !this.isNull && this._value.isSame(date, 'date');
+    return !this._isNull && this._value.isSame(date, 'date');
   }
 
   isToday(date: MomentInput): boolean {
