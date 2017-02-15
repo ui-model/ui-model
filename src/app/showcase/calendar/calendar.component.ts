@@ -8,7 +8,7 @@ import "moment/locale/zh-cn";
 })
 export class CalendarComponent implements OnInit {
 
-  value = new Date('2017-02-03T00:00:00+08:00');
+  value;
 
   constructor() {
   }

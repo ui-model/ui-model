@@ -28,5 +28,4 @@ export class CalendarValueAccessor extends Calendar implements ControlValueAcces
   registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
-
 }

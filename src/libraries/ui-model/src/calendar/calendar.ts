@@ -6,7 +6,7 @@ type Moment = moment.Moment;
 type MomentInput = moment.MomentInput;
 
 export class Calendar {
-  constructor(value: MomentInput = new Date()) {
+  constructor(value?: MomentInput) {
     this.goTo(value);
   }
 
@@ -14,22 +14,33 @@ export class Calendar {
 
   protected changed(): void {
     this.update();
-    this._changes.next(this._value && this._value.toDate());
+    this._changes.next(this.value);
   }
 
   get changes(): Observable<Date> {
     return this._changes;
   }
 
-  private _value: Moment;
+  private _value: Moment = moment();
+
+  isNull: boolean = true;
 
   get value(): Date {
-    return this._value && this._value.toDate();
+    if (this.isNull) {
+      return undefined;
+    } else {
+      return this._value.toDate();
+    }
   }
 
   set value(value: Date) {
-    if (!this._value || !this._value.isSame(value, 'date')) {
-      this._value = value && moment(value);
+    if (!value) {
+      this.isNull = true;
+      this._value = moment();
+      this.changed();
+    } else if (!this.value || !this._value.isSame(value, 'date')) {
+      this.isNull = !value;
+      this._value = moment(value);
       this.changed();
     }
   }
@@ -38,8 +49,12 @@ export class Calendar {
     this.value = value && moment(value).toDate();
   }
 
+  clear(): void {
+    this.value = undefined;
+  }
+
   get year(): number {
-    return this._value && this._value.year();
+    return this._value.year();
   }
 
   set year(value: number) {
@@ -50,7 +65,7 @@ export class Calendar {
   }
 
   get month(): number {
-    return this._value && this._value.month();
+    return this._value.month();
   }
 
   set month(value: number) {
@@ -61,7 +76,7 @@ export class Calendar {
   }
 
   isActive(date: MomentInput): boolean {
-    return !!(this._value && this._value.isSame(date, 'date'));
+    return !this.isNull && this._value.isSame(date, 'date');
   }
 
   isToday(date: MomentInput): boolean {
@@ -69,15 +84,15 @@ export class Calendar {
   }
 
   isPast(date: MomentInput): boolean {
-    return this._value && this._value.isAfter(date, 'date');
+    return this._value.isAfter(date, 'date');
   }
 
   isFuture(date: MomentInput): boolean {
-    return this._value && this._value.isBefore(date, 'date');
+    return this._value.isBefore(date, 'date');
   }
 
   inSameMonth(date: MomentInput): boolean {
-    return this._value && this._value.isSame(date, 'month');
+    return this._value.isSame(date, 'month');
   }
 
   isWeekEnd(date: Date): boolean {
