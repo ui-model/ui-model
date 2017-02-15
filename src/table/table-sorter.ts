@@ -14,7 +14,7 @@ function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
 }
 
 export class TableSorter extends Subject<TableField> {
-  constructor(private fields: TableField[]) {
+  constructor(public fields: TableField[]) {
     super();
   }
 
