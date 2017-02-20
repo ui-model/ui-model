@@ -13,6 +13,9 @@ import {OrderByPipe} from "./pipes/order-by.pipe";
 import {OrderNamePipe} from "./pipes/order-name.pipe";
 import {TypeNamePipe} from "./pipes/type-name.pipe";
 import {MomentPipe} from "./pipes/moment.pipe";
+import {ResourceUrlPipe} from "./pipes/resource-url.pipe";
+import {ImgSrcFileDirective} from "./directives/img-src-file.directive";
+import {FileChangeDetectDirective} from "./directives/file-change-detect.directive";
 
 @NgModule({
   imports: [
@@ -28,12 +31,15 @@ import {MomentPipe} from "./pipes/moment.pipe";
     ClickOutsideDirective,
     DraggableDirective,
     ResizeDirective,
+    ImgSrcFileDirective,
+    FileChangeDetectDirective,
 
     FormatPipe,
     OrderByPipe,
     OrderNamePipe,
     TypeNamePipe,
     MomentPipe,
+    ResourceUrlPipe,
   ],
   exports: [
     SelectDirective,
@@ -45,12 +51,15 @@ import {MomentPipe} from "./pipes/moment.pipe";
     ClickOutsideDirective,
     DraggableDirective,
     ResizeDirective,
+    ImgSrcFileDirective,
+    FileChangeDetectDirective,
 
     FormatPipe,
     OrderByPipe,
     OrderNamePipe,
     TypeNamePipe,
     MomentPipe,
+    ResourceUrlPipe,
   ],
 })
 export class UiModelModule {
@@ -67,8 +76,12 @@ export * from './directives/multi-select.directive';
 export * from './directives/click-outside.directive';
 export * from './directives/draggable.directive';
 export * from './directives/resize.directive';
+export * from './directives/img-src-file.directive';
+export * from './directives/file-change-detect.directive';
+
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';
 export * from './pipes/order-name.pipe';
 export * from './pipes/type-name.pipe';
 export * from './pipes/moment.pipe';
+export * from './pipes/resource-url.pipe';

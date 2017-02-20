@@ -36,6 +36,10 @@ export class NavMenuComponent implements OnInit {
       title: 'Calendar',
       route: '/calendar',
     },
+    {
+      title: 'Preview',
+      route: '/preview',
+    },
   ];
 
   constructor() { }
