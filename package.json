@@ -7,6 +7,7 @@
     "start": "ng serve --port 4300",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
+    "build": "ng build -prod",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
@@ -33,7 +34,7 @@
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
-    "@angular/cli": "git+https://github.com/asnowwolf/ng-cli-2.git#v1.0.0-beta.30",
+    "@angular/cli": "git+https://github.com/asnowwolf/ng-cli-2.git#v1.0.0-beta.30-2",
     "@angular/compiler-cli": "^2.3.1",
     "@types/jasmine": "2.5.38",
     "@types/mocha": "^2.2.39",
