@@ -7,6 +7,7 @@ import { FormComponent } from './showcase/form/form.component';
 import {TreeComponent} from "./showcase/tree/tree.component";
 import {CalendarComponent} from "./showcase/calendar/calendar.component";
 import {PreviewComponent} from "./showcase/preview/preview.component";
+import {DraggableComponent} from "./showcase/draggable/draggable.component";
 const routes: Route[] = [
   {
     path: '',
@@ -44,6 +45,10 @@ const routes: Route[] = [
   {
     path: 'preview',
     component: PreviewComponent,
+  },
+  {
+    path: 'draggable',
+    component: DraggableComponent,
   },
 ];
 

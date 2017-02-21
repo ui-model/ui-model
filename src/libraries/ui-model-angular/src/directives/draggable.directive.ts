@@ -1,19 +1,31 @@
-import { Directive, HostListener, EventEmitter, Output, Input } from '@angular/core';
+import {Directive, HostListener, EventEmitter, Output} from "@angular/core";
+import {Point, Distance} from 'ui-model';
 
 @Directive({
-  selector: '[uiDraggable]'
+  selector: '[uiDraggable]',
+  exportAs: 'uiDraggable',
 })
 export class DraggableDirective {
-  @Output('uiDragStart') start: EventEmitter<void> = new EventEmitter<void>();
-  @Output('uiDragMove') move: EventEmitter<any> = new EventEmitter();
-  @Output('uiDragStop') stop: EventEmitter<void> = new EventEmitter<void>();
+  @Output('uiDragStart') onStart: EventEmitter<void> = new EventEmitter<void>();
+  @Output('uiDragMove') onMove: EventEmitter<any> = new EventEmitter<any>();
+  @Output('uiDragStop') onStop: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() {
   }
 
-  pressed: boolean = false;
-  startX: number = NaN;
-  startY: number = NaN;
+  dragging: boolean = false;
+
+  startPos: Point = new Point();
+  latestPos: Point = new Point();
+  pos: Point = new Point();
+
+  get offset(): Distance {
+    return this.pos.getDistanceTo(this.startPos);
+  }
+
+  get delta(): Distance {
+    return this.pos.getDistanceTo(this.latestPos);
+  }
 
   @HostListener('click', ['$event'])
   private click(event: MouseEvent): void {
@@ -22,30 +34,46 @@ export class DraggableDirective {
 
   @HostListener('mousedown', ['$event'])
   private mouseDown(event: MouseEvent): void {
+    if (!isMajorButton(event)) {
+      return;
+    }
     event.srcElement.setPointerCapture(1);
     event.stopPropagation();
-    this.pressed = true;
-    this.startX = event.clientX;
-    this.startY = event.clientY;
-    this.start.emit();
+    this.dragging = true;
+    this.startPos = new Point(event.screenX, event.screenY);
+    this.pos = new Point(event.screenX, event.screenY);
+    this.onStart.emit();
+    this.onMove.emit({x: 0, y: 0});
   }
 
   @HostListener('mouseup', ['$event'])
   private mouseUp(event: MouseEvent): void {
+    if (!isMajorButton(event)) {
+      return;
+    }
     event.srcElement.releasePointerCapture(1);
     event.stopPropagation();
-    this.pressed = false;
-    this.startX = NaN;
-    this.startY = NaN;
-    this.stop.emit();
-    this.move.emit({x: 0, y: 0});
+    this.dragging = false;
+    this.onMove.emit(this.delta);
+    this.onStop.emit();
+    this.startPos = new Point(event.screenX, event.screenY);
+    this.pos = new Point(event.screenX, event.screenY);
   }
 
   @HostListener('mousemove', ['$event'])
   private mouseMove(event: MouseEvent): void {
+    if (!isMajorButton(event)) {
+      return;
+    }
     event.stopPropagation();
-    if (this.pressed) {
-      this.move.emit({x: event.clientX - this.startX, y: event.clientY - this.startY});
+    if (this.dragging) {
+      this.latestPos = this.pos;
+      this.pos = new Point(event.screenX, event.screenY);
+      this.onMove.emit(this.delta);
     }
   }
+}
+
+function isMajorButton(event: MouseEvent): boolean {
+  return event.button === 0;
 }

@@ -40,6 +40,10 @@ export class NavMenuComponent implements OnInit {
       title: 'Preview',
       route: '/preview',
     },
+    {
+      title: 'Draggable',
+      route: '/draggable',
+    },
   ];
 
   constructor() { }

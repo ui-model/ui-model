@@ -16,6 +16,7 @@ import {MomentPipe} from "./pipes/moment.pipe";
 import {ResourceUrlPipe} from "./pipes/resource-url.pipe";
 import {ImgSrcFileDirective} from "./directives/img-src-file.directive";
 import {FileChangeDetectDirective} from "./directives/file-change-detect.directive";
+import {MeasureDirective} from "./directives/measure.directive";
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import {FileChangeDetectDirective} from "./directives/file-change-detect.directi
     ClickOutsideDirective,
     DraggableDirective,
     ResizeDirective,
+    MeasureDirective,
     ImgSrcFileDirective,
     FileChangeDetectDirective,
 
@@ -51,6 +53,7 @@ import {FileChangeDetectDirective} from "./directives/file-change-detect.directi
     ClickOutsideDirective,
     DraggableDirective,
     ResizeDirective,
+    MeasureDirective,
     ImgSrcFileDirective,
     FileChangeDetectDirective,
 
@@ -76,6 +79,7 @@ export * from './directives/multi-select.directive';
 export * from './directives/click-outside.directive';
 export * from './directives/draggable.directive';
 export * from './directives/resize.directive';
+export * from './directives/measure.directive';
 export * from './directives/img-src-file.directive';
 export * from './directives/file-change-detect.directive';
 

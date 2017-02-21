@@ -1,0 +1,18 @@
+<div [class.no-selectable]="draggable.dragging">
+  <div class="alert alert-info">
+    <p>offset: {{draggable.offset | json}}</p>
+    <p>delta: {{draggable.delta | json}}</p>
+
+    <p>bounding: {{inner.boundingClientRect|json}}</p>
+    <p>offset: {{inner.offsetRect|json}}</p>
+  </div>
+  <div class="playground">
+    <div class="draggable"
+         uiMeasure #inner="uiMeasure"
+         uiDraggable #draggable="uiDraggable" (uiDragStop)="inner.update()"
+         [style.left.px]="inner.offsetRect.left + draggable.offset.x"
+         [style.top.px]="inner.offsetRect.top + draggable.offset.y"
+    >
+    </div>
+  </div>
+</div>

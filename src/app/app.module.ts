@@ -15,6 +15,7 @@ import { FormSectionComponent } from './showcase/form-section/form-section.compo
 import { TreeComponent } from './showcase/tree/tree.component';
 import { CalendarComponent } from './showcase/calendar/calendar.component';
 import { PreviewComponent } from './showcase/preview/preview.component';
+import { DraggableComponent } from './showcase/draggable/draggable.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PreviewComponent } from './showcase/preview/preview.component';
     TreeComponent,
     CalendarComponent,
     PreviewComponent,
+    DraggableComponent,
   ],
   imports: [
     BrowserModule,
