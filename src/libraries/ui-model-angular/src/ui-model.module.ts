@@ -6,7 +6,6 @@ import {ToggleDirective} from "./directives/toggle.directive";
 import {PagerDirective} from "./directives/pager.directive";
 import {PaginationDirective} from "./directives/pagination.directive";
 import {ClickOutsideDirective} from "./directives/click-outside.directive";
-import {ResizeDirective} from "./directives/resize.directive";
 import {DraggableDirective} from "./directives/draggable.directive";
 import {FormatPipe} from "./pipes/format.pipe";
 import {OrderByPipe} from "./pipes/order-by.pipe";
@@ -31,7 +30,6 @@ import {MeasureDirective} from "./directives/measure.directive";
 
     ClickOutsideDirective,
     DraggableDirective,
-    ResizeDirective,
     MeasureDirective,
     ImgSrcFileDirective,
     FileChangeDetectDirective,
@@ -52,7 +50,6 @@ import {MeasureDirective} from "./directives/measure.directive";
 
     ClickOutsideDirective,
     DraggableDirective,
-    ResizeDirective,
     MeasureDirective,
     ImgSrcFileDirective,
     FileChangeDetectDirective,
@@ -78,7 +75,6 @@ export * from './directives/multi-select.directive';
 
 export * from './directives/click-outside.directive';
 export * from './directives/draggable.directive';
-export * from './directives/resize.directive';
 export * from './directives/measure.directive';
 export * from './directives/img-src-file.directive';
 export * from './directives/file-change-detect.directive';

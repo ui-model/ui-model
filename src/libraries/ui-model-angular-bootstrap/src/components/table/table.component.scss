@@ -15,24 +15,31 @@ table {
   text-align: right;
 }
 
+@mixin sortOrder($image) {
+  padding-right: 1em;
+  background: $image no-repeat center right;
+}
+
 th {
   &.sortable {
     cursor: pointer;
-    .fa {
-      margin-left: 0.5em;
-      &.fa-sort {
-        color: darken($gray-lighter, 20%);
-      }
+    > .sort-order-none {
+      @include sortOrder(url(./_images/icon-sort.svg))
+    }
+    > .sort-order-asc {
+      @include sortOrder(url(./_images/icon-sort-asc.svg));
+    }
+    > .sort-order-desc {
+      @include sortOrder(url(./_images/icon-sort-desc.svg));
     }
   }
 }
 
 th, td {
   > [title] {
-    display: inline-block;
+    display: block;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 100%;
     overflow: hidden;
   }
 }
@@ -43,11 +50,10 @@ ui-pagination {
 
 .resizable {
   position: relative;
-  &.test {
-    background: $brand-primary;
-    overflow: hidden;
-    width: 50%;
-  }
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+
   > .splitter {
     z-index: 100;
     position: absolute;

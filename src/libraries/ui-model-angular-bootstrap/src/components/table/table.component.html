@@ -2,19 +2,14 @@
   <table class="table table-hover table-striped table-bordered">
     <thead>
     <tr>
-      <th class="resizable" [style.width.px]="size[field.name]?.width + delta[field.name]?.x" #resize="uiResize"
-          [(uiResize)]="size[field.name]" *ngFor="let field of fields"
+      <th class="resizable" *ngFor="let field of fields"
+          uiMeasure #measure="uiMeasure"
+          [style.width.px]="(measure.clientRect.width + draggable.offset.x)||100"
           [class.sortable]="sortable && field.sortable"
           [ngClass]="field.type|typeName:'data-type-'"
           (click)="sorter.toggle(field)">
-        <span [title]="field.title">{{field.title}}</span>
-        <ng-container *ngIf="sortable && field.sortable">
-          <img class="icon" src="_images/icon-sort.svg" *ngIf="field.isNonOrder()">
-          <img class="icon" src="_images/icon-sort-asc.svg" *ngIf="field.isAscOrder()">
-          <img class="icon" src="_images/icon-sort-desc.svg" *ngIf="field.isDescOrder()">
-        </ng-container>
-        <div class="splitter" uiDraggable (uiDragMove)="delta[field.name] = $event"
-             (uiDragStop)="resize.update()"></div>
+        <span [class]="field.sortOrder|orderName:'sort-order-'" [title]="field.title">{{field.title}}</span>
+        <div class="splitter" uiDraggable #draggable="uiDraggable" (uiDragStop)="measure.update()"></div>
       </th>
     </tr>
     </thead>
