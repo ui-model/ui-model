@@ -44,6 +44,10 @@ export class NavMenuComponent implements OnInit {
       title: 'Draggable',
       route: '/draggable',
     },
+    {
+      title: 'Modal',
+      route: '/modal',
+    },
   ];
 
   constructor() { }

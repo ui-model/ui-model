@@ -16,6 +16,8 @@ import { TreeComponent } from './showcase/tree/tree.component';
 import { CalendarComponent } from './showcase/calendar/calendar.component';
 import { PreviewComponent } from './showcase/preview/preview.component';
 import { DraggableComponent } from './showcase/draggable/draggable.component';
+import { ModalComponent } from './showcase/modal/modal.component';
+import { ModalContentComponent } from './showcase/modal-content/modal-content.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { DraggableComponent } from './showcase/draggable/draggable.component';
     CalendarComponent,
     PreviewComponent,
     DraggableComponent,
+    ModalComponent,
+    ModalContentComponent,
   ],
   imports: [
     BrowserModule,

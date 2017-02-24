@@ -8,6 +8,7 @@ import {TreeComponent} from "./showcase/tree/tree.component";
 import {CalendarComponent} from "./showcase/calendar/calendar.component";
 import {PreviewComponent} from "./showcase/preview/preview.component";
 import {DraggableComponent} from "./showcase/draggable/draggable.component";
+import {ModalComponent} from "./showcase/modal/modal.component";
 const routes: Route[] = [
   {
     path: '',
@@ -50,6 +51,10 @@ const routes: Route[] = [
     path: 'draggable',
     component: DraggableComponent,
   },
+  {
+    path: 'modal',
+    component: ModalComponent,
+  }
 ];
 
 export const routing = RouterModule.forRoot(routes);
