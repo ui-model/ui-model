@@ -1,15 +1,16 @@
 <div class="modal-header">
   <h5 class="modal-title">
-    Modal title
+    {{title}}
     <button type="button" class="close" aria-label="Close" (click)="cancel.emit()">
       <span aria-hidden="true">&times;</span>
     </button>
   </h5>
 </div>
 <div class="modal-body">
-  <p>Modal body text goes here.</p>
+  <ng-content></ng-content>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-primary" (click)="close.emit()">Save changes</button>
-  <button type="button" class="btn btn-secondary" (click)="cancel.emit()">Close</button>
+  <button type="button" class="btn btn-primary" [disabled]="time>0" (click)="doClose()">Save changes {{countDown}}
+  </button>
+  <button type="button" class="btn btn-secondary" (click)="cancel.emit()">Cancel</button>
 </div>

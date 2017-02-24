@@ -2,5 +2,7 @@
   Toggle
 </button>
 <ui-modal *ngIf="toggle.isOn" (cancel)="toggle.close()">
-  <app-modal-content (cancel)="toggle.close()" (close)="save()"></app-modal-content>
+  <app-modal-content (cancel)="toggle.close()" (close)="toggle.close()" title="Modal title">
+    This is a test
+  </app-modal-content>
 </ui-modal>

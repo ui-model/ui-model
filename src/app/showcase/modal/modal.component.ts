@@ -14,9 +14,4 @@ export class ModalComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  save() {
-    alert(1);
-    this.toggle.close();
-  }
 }
