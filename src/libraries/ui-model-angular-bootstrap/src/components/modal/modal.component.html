@@ -1,7 +1,7 @@
 <div class="modal-backdrop fade" (click)="cancel.emit()"></div>
 <div class="modal">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" [@slide] *ngIf="visible">
       <ng-content></ng-content>
     </div>
   </div>
