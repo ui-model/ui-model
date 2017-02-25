@@ -85,3 +85,5 @@ export * from './pipes/order-name.pipe';
 export * from './pipes/type-name.pipe';
 export * from './pipes/moment.pipe';
 export * from './pipes/resource-url.pipe';
+
+export * from './services/modal.service';

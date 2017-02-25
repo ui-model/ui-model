@@ -16,7 +16,7 @@ export class ModalContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('init');
+    console.log('Initializing inner content...');
   }
 
   time: number = 0;

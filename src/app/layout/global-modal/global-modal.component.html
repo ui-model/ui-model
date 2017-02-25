@@ -1,0 +1,16 @@
+<ui-modal *ngFor="let item of modal.items">
+  <div class="modal-header">
+    <h5 class="modal-title">
+      {{item.title}}
+      <button type="button" class="close" aria-label="Close" (click)="modal.close(item)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </h5>
+  </div>
+  <div class="modal-body">
+    {{item.message}}
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close(item)">Cancel</button>
+  </div>
+</ui-modal>

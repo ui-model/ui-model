@@ -1,5 +1,8 @@
 <button type="button" class="btn btn-primary" (click)="toggle.toggle()">
-  Toggle
+  Toggle (Embedded Content)
+</button>
+<button type="button" class="btn btn-primary" (click)="open()">
+  Toggle (Service)
 </button>
 <ui-modal *ngIf="toggle.isOn" (cancel)="toggle.close()">
   <app-modal-content (cancel)="toggle.close()" (close)="toggle.close()" title="Modal title">
