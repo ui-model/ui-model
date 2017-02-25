@@ -1,0 +1,64 @@
+@import "~bootstrap/scss/variables";
+
+:host {
+  display: block;
+}
+
+caption {
+  caption-side: top;
+  text-align: center;
+  > div {
+    display: table;
+    width: 100%;
+    > * {
+      display: table-cell;
+      width: auto;
+      &.form-control {
+        border: none;
+        width: 50%;
+      }
+    }
+  }
+  a {
+    color: $gray-light;
+    &:hover, &:focus {
+      color: $link-hover-color;
+    }
+  }
+}
+
+.icon {
+  vertical-align: middle;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  padding: 0.2em 0.5em;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  &.week {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    color: $gray-light;
+    font-size: smaller;
+    border-right: 1px solid $gray-lighter;
+  }
+  &.weekend {
+    color: $gray-light;
+  }
+  &.other-month {
+    color: $gray-lighter;
+  }
+  &.today {
+    color: $gray-lightest;
+    background: $brand-info;
+  }
+  &.active {
+    background: $brand-primary;
+    color: $gray-lightest;
+  }
+}
