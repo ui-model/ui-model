@@ -58,8 +58,4 @@ export class Pagination extends Pager {
     }
     return result;
   }
-
-  get required(): boolean {
-    return this.hasPrev && this.hasNext;
-  }
 }

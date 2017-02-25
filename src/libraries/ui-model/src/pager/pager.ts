@@ -147,4 +147,9 @@ export class Pager {
   goToLast(): void {
     this.goTo(this.indexMax);
   }
+
+
+  get required(): boolean {
+    return this.totalItems > this.size;
+  }
 }

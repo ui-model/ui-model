@@ -48,6 +48,12 @@ describe('Pager', () => {
 
     pager.prev();
     expect(pager.offset).to.equal(100);
+
+    pager.goToFirst();
+    expect(pager.offset).to.equal(0);
+
+    pager.goToLast();
+    expect(pager.offset).to.equal(1000);
   });
 
   it('navigation: out of bounds', () => {
@@ -91,5 +97,13 @@ describe('Pager', () => {
     expect(pager.isLast).to.be.false;
     expect(pager.hasPrev).to.be.false;
     expect(pager.hasNext).to.be.true;
+  });
+  it('required', () => {
+    const pager = new Pager(10);
+    expect(pager.required).to.be.false;
+    pager.totalItems = 10;
+    expect(pager.required).to.be.false;
+    pager.totalItems = 11;
+    expect(pager.required).to.be.true;
   });
 });
