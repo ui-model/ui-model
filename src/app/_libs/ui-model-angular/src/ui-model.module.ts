@@ -87,3 +87,5 @@ export * from './pipes/moment.pipe';
 export * from './pipes/resource-url.pipe';
 
 export * from './services/modal.service';
+
+export * from './utils/animations';
