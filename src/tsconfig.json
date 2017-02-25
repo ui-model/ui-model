@@ -15,9 +15,9 @@
       "../node_modules/@types"
     ],
     "paths": {
-      "ui-model": ["./libraries/ui-model"],
-      "ui-model-angular": ["./libraries/ui-model-angular"],
-      "ui-model-angular-bootstrap": ["./libraries/ui-model-angular-bootstrap"]
+      "ui-model": ["./app/_libs/ui-model"],
+      "ui-model-angular": ["./app/_libs/ui-model-angular"],
+      "ui-model-angular-bootstrap": ["./app/_libs/ui-model-angular-bootstrap"]
     }
   }
 }

@@ -3,8 +3,8 @@ import {Pagination} from 'ui-model';
 
 @Component({
   selector: 'ui-pagination',
-  templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss']
+  templateUrl: 'pagination.component.html',
+  styleUrls: ['pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
   @Input() showBrief: boolean = true;

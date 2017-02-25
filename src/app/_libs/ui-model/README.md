@@ -18,9 +18,9 @@ No matter what framework you use, and regardless of their appearance, the logic 
 
 Let's elaborate the above statement with an example. What do the following controls have in common?
 
-![Select](./images/select.png)
+![Select](images/select.png)
 
-![Radio Group](./images/radio.png)
+![Radio Group](images/radio.png)
 
 You guessed right. Their logics are the same i.e. *n* choose *1*.
 
@@ -48,7 +48,7 @@ Now you have seen some controls with *n* choose *1* logic, but can you list some
 
 ## The conceptual model of ui-model
 
-![Architecture](./images/architecture.png)
+![Architecture](images/architecture.png)
 
 In the above conceptual model, ui-model is parallel to JavaScript frameworks and CSS frameworks. These three components should be independent of each other. You can freely mix and match them. JavaScript frameworks are responsible for synchronising model and view. CSS frameworks are responsible for presentation. ui-model is focused on interactive logic. 
 

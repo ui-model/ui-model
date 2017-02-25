@@ -3,8 +3,8 @@ import {TableField, TableSorter} from "ui-model";
 
 @Component({
   selector: 'ui-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss'],
+  templateUrl: 'table.component.html',
+  styleUrls: ['table.component.scss'],
   inputs: ['fields', 'items', 'sortable'],
 })
 export class TableComponent<T> {
