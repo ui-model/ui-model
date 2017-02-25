@@ -1,7 +1,7 @@
-import {expect} from 'chai';
-import { Pager } from './pager';
+import {expect} from "chai";
+import {Pager} from "./pager";
 
-describe('Pager', ()=> {
+describe('Pager', () => {
   it('constructor:default', () => {
     const pager = new Pager();
     expect(pager.index).to.equal(0);
@@ -11,15 +11,17 @@ describe('Pager', ()=> {
     expect(pager.count).to.equal(0);
   });
   it('changes', (done) => {
-    const pager = new Pager(10, 1001);
-    pager.changes.subscribe((value)=> {
+    const pager = new Pager(10);
+    pager.totalItems = 1001;
+    pager.changes.subscribe((value) => {
       expect(value).to.equal(5);
       done();
     });
     pager.goTo(5);
   });
   it('constructor: normal', () => {
-    const pager = new Pager(10, 1001);
+    const pager = new Pager(10);
+    pager.totalItems = 1001;
     expect(pager.index).to.equal(0);
     expect(pager.indexMax).to.equal(100);
     expect(pager.begin).to.equal(0);
@@ -27,13 +29,16 @@ describe('Pager', ()=> {
     expect(pager.count).to.equal(101);
   });
   it('constructor: less than one page', () => {
-    const pager = new Pager(20, 10);
+    const pager = new Pager(20);
+    pager.totalItems = 10;
     expect(pager.count).to.equal(1);
     expect(pager.isFirst).to.be.true;
     expect(pager.isLast).to.be.true;
   });
   it('navigation', () => {
-    const pager = new Pager(10, 1001);
+    const pager = new Pager(10);
+    pager.totalItems = 1001;
+
     pager.goTo(10);
     expect(pager.offset).to.equal(100);
 
@@ -46,7 +51,9 @@ describe('Pager', ()=> {
   });
 
   it('navigation: out of bounds', () => {
-    const pager = new Pager(10, 1000);
+    const pager = new Pager(10);
+    pager.totalItems = 1000;
+
     pager.goTo(-1);
     expect(pager.index).to.equal(0);
 
@@ -55,14 +62,17 @@ describe('Pager', ()=> {
   });
 
   it('modify recordCount should change pageCount and keep page', () => {
-    const pager = new Pager(10, 1001);
+    const pager = new Pager(10);
+    pager.totalItems = 1001;
     pager.goTo(90);
-    pager.recordCount = 21;
+    pager.totalItems = 21;
     expect(pager.count).to.equal(3);
     expect(pager.index).to.equal(2);
   });
   it('modify pageSize should keep offset', () => {
-    const pager = new Pager(10, 1000);
+    const pager = new Pager(10);
+    pager.totalItems = 1000;
+
     pager.goTo(10);
     expect(pager.offset).to.equal(100);
     pager.size = 20;
@@ -73,7 +83,9 @@ describe('Pager', ()=> {
     expect(pager.offset).to.equal(92);
   });
   it('states', () => {
-    const pager = new Pager(10, 1001);
+    const pager = new Pager(10);
+    pager.totalItems = 1001;
+
     pager.goTo(0);
     expect(pager.isFirst).to.be.true;
     expect(pager.isLast).to.be.false;

@@ -1,17 +1,19 @@
 import { Pager } from './pager';
 export class Pagination extends Pager {
-  constructor(size: number = 10, recordCount: number = 0, viewport: number = 5) {
-    super(size, recordCount);
+  constructor(size: number = 10, viewport: number = 5) {
+    super(size);
     this.viewport = viewport;
   }
 
+  private _originViewport: number;
   private _viewport: number;
   get viewport(): number {
-    return this._viewport;
+    return Math.min(this._viewport, this.count);
   }
 
   set viewport(value: number) {
-    if (value !== this._viewport) {
+    if (value !== this._originViewport) {
+      this._originViewport = value;
       this._viewport = value;
       this.changed();
     }
@@ -55,5 +57,9 @@ export class Pagination extends Pager {
       result.push(i);
     }
     return result;
+  }
+
+  get required(): boolean {
+    return this.hasPrev && this.hasNext;
   }
 }
