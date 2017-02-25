@@ -2,8 +2,7 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
 export class Pager {
-  constructor(size: number = 10, recordCount: number = 0) {
-    this.recordCount = recordCount;
+  constructor(size: number = 10) {
     this.size = size;
   }
 
@@ -80,37 +79,37 @@ export class Pager {
   }
 
   get end(): number {
-    return Math.min(this.offset + this.size, this.recordCount);
+    return Math.min(this.offset + this.size, this.totalItems);
   }
 
-  private _recordCount: number = 0;
-  get recordCount(): number {
-    return this._recordCount;
+  private _totalItems: number = 0;
+  get totalItems(): number {
+    return this._totalItems;
   }
 
-  set recordCount(value: number) {
+  set totalItems(value: number) {
     value = +value;
     if (value < 0) {
       throw new Error('`recordCount` cannot be less than 0');
     }
 
-    if (this._recordCount !== value) {
+    if (this._totalItems !== value) {
       const latestPage = this.index;
-      this._recordCount = value;
+      this._totalItems = value;
       this.goTo(latestPage);
       this.changed();
     }
   }
 
   get isEmpty(): boolean {
-    return this.recordCount === 0;
+    return this.totalItems === 0;
   }
 
   get count(): number {
     if (this.size === 0) {
       return 0;
     }
-    return Math.ceil(this.recordCount / this.size);
+    return Math.ceil(this.totalItems / this.size);
   }
 
   get indexMin(): number {
@@ -147,5 +146,10 @@ export class Pager {
 
   goToLast(): void {
     this.goTo(this.indexMax);
+  }
+
+
+  get required(): boolean {
+    return this.totalItems > this.size;
   }
 }

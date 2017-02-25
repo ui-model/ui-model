@@ -8,9 +8,9 @@
 
 下列控件的交互逻辑有什么共同点？
 
-![Select](./images/select.png)
+![Select](images/select.png)
 
-![Radio Group](./images/radio.png)
+![Radio Group](images/radio.png)
 
 事实上，它们的交互逻辑完全相同，那就是“N选1”。
 
@@ -42,7 +42,7 @@ Pagination（多个中只有一个能激活）
 
 ## ui-model的概念模型
 
-![Architecture](./images/architecture.png)
+![Architecture](images/architecture.png)
 
 可以看到，在这个概念模型中，ui-model是一个与JS框架和CSS框架平行的构造，因此三者可以自由组合。JS框架负责对模型和视图进行同步，CSS框架负责外观，而ui-model专注于处理交互逻辑。
 

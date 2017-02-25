@@ -1,4 +1,4 @@
-@import "~bootstrap/scss/variables";
+@import "../../../../../../../node_modules/bootstrap/scss/variables";
 
 :host {
   display: block;
@@ -24,13 +24,13 @@ th {
   &.sortable {
     cursor: pointer;
     > .sort-order-none {
-      @include sortOrder(url(./_images/icon-sort.svg))
+      @include sortOrder(url(_images/icon-sort.svg))
     }
     > .sort-order-asc {
-      @include sortOrder(url(./_images/icon-sort-asc.svg));
+      @include sortOrder(url(_images/icon-sort-asc.svg));
     }
     > .sort-order-desc {
-      @include sortOrder(url(./_images/icon-sort-desc.svg));
+      @include sortOrder(url(_images/icon-sort-desc.svg));
     }
   }
 }

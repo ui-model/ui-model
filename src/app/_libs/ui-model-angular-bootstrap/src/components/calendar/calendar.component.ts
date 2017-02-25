@@ -9,8 +9,8 @@ export const CALENDAR_VALUE_ACCESSOR = {
 };
 @Component({
   selector: 'ui-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss'],
+  templateUrl: 'calendar.component.html',
+  styleUrls: ['calendar.component.scss'],
   providers: [CALENDAR_VALUE_ACCESSOR],
 })
 export class CalendarComponent extends CalendarValueAccessor implements OnInit {

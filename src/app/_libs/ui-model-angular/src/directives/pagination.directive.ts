@@ -3,7 +3,7 @@ import { Pagination } from 'ui-model';
 @Directive({
   selector: '[uiPagination]',
   exportAs: 'uiPagination',
-  inputs: ['index', 'recordCount', 'size', 'viewport'],
+  inputs: ['index', 'totalItems', 'size', 'viewport'],
 })
 export class PaginationDirective extends Pagination implements OnInit, OnDestroy {
   constructor() {
