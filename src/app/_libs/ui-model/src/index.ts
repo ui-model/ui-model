@@ -10,6 +10,7 @@ export * from './table/table-sorter';
 export * from './calendar/calendar';
 
 export * from './utils/comparator';
+export * from './utils/coordinate';
 export * from './utils/data-type';
 export * from './utils/predicate';
 export * from './utils/provider';
