@@ -48,6 +48,10 @@ export class NavMenuComponent implements OnInit {
       title: 'Modal',
       route: '/modal',
     },
+    {
+      title: 'Chart',
+      route: '/chart',
+    },
   ];
 
   constructor() { }

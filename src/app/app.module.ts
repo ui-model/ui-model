@@ -19,7 +19,8 @@ import {DraggableComponent} from "./showcase/draggable/draggable.component";
 import {ModalComponent} from "./showcase/modal/modal.component";
 import {ModalContentComponent} from "./showcase/modal-content/modal-content.component";
 import {ModalService} from "ui-model-angular";
-import { GlobalModalComponent } from './layout/global-modal/global-modal.component';
+import {GlobalModalComponent} from "./layout/global-modal/global-modal.component";
+import {ChartComponent} from "./showcase/chart/chart.component";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { GlobalModalComponent } from './layout/global-modal/global-modal.compone
     ModalComponent,
     ModalContentComponent,
     GlobalModalComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
