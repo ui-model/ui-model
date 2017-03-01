@@ -21,6 +21,7 @@ import {ModalContentComponent} from './showcase/modal-content/modal-content.comp
 import {ModalService} from 'ui-model-angular';
 import {GlobalModalComponent} from './layout/global-modal/global-modal.component';
 import {ChartComponent} from './showcase/chart/chart.component';
+import { TypeAheadComponent } from './showcase/type-ahead/type-ahead.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {ChartComponent} from './showcase/chart/chart.component';
     ModalContentComponent,
     GlobalModalComponent,
     ChartComponent,
+    TypeAheadComponent,
   ],
   imports: [
     BrowserModule,

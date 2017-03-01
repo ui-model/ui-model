@@ -1,0 +1,14 @@
+<div class="input-group">
+  <input type="text" class="form-control" name="term"
+         [(ngModel)]="term"
+         (keyup)="checker.next(term)"
+         (focus)="checker.next(term)"
+         (uiClickOutside)="dropDown.close()"
+  />
+  <div class="input-group-btn">
+    <button type="button" class="btn btn-primary" (click)="clear()">X</button>
+  </div>
+</div>
+<div class="dropdown-menu" *ngIf="dropDown.isOn && items?.length">
+  <div class="dropdown-item" *ngFor="let item of items" (click)="select(item)">{{item.name}}</div>
+</div>

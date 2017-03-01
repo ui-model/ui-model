@@ -10,6 +10,7 @@ import {PreviewComponent} from './showcase/preview/preview.component';
 import {DraggableComponent} from './showcase/draggable/draggable.component';
 import {ModalComponent} from './showcase/modal/modal.component';
 import {ChartComponent} from './showcase/chart/chart.component';
+import {TypeAheadComponent} from './showcase/type-ahead/type-ahead.component';
 const routes: Route[] = [
   {
     path: '',
@@ -59,7 +60,11 @@ const routes: Route[] = [
   {
     path: 'chart',
     component: ChartComponent,
-  }
+  },
+  {
+    path: 'type-ahead',
+    component: TypeAheadComponent,
+  },
 ];
 
 export const routing = RouterModule.forRoot(routes);

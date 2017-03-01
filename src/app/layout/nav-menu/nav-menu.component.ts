@@ -52,6 +52,10 @@ export class NavMenuComponent implements OnInit {
       title: 'Chart',
       route: '/chart',
     },
+    {
+      title: 'Type Ahead',
+      route: '/type-ahead',
+    },
   ];
 
   constructor() {

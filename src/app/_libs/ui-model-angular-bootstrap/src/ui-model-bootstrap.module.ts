@@ -9,6 +9,7 @@ import {RadioGroupComponent} from './components/radio-group/radio-group.componen
 import {TableComponent} from './components/table/table.component';
 import {TreeNodeComponent} from './components/tree-node/tree-node.component';
 import {CalendarComponent} from './components/calendar/calendar.component';
+import { TypeAheadComponent } from './components/type-ahead/type-ahead.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import {CalendarComponent} from './components/calendar/calendar.component';
     TableComponent,
     TreeNodeComponent,
     CalendarComponent,
+    TypeAheadComponent,
   ],
   exports: [
     UiModelModule,
@@ -34,6 +36,7 @@ import {CalendarComponent} from './components/calendar/calendar.component';
     TableComponent,
     TreeNodeComponent,
     CalendarComponent,
+    TypeAheadComponent,
   ],
 })
 export class UiModelBootstrapModule {
