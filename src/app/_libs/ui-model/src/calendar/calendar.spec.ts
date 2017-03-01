@@ -1,5 +1,5 @@
-import {expect} from "chai";
-import {Calendar} from "./calendar";
+import {expect} from 'chai';
+import {Calendar} from './calendar';
 
 describe('Calendar', () => {
   it('constructor', () => {
@@ -26,7 +26,7 @@ describe('Calendar', () => {
   });
   describe('nullable', () => {
     let calendar: Calendar;
-    beforeEach(()=> {
+    beforeEach(() => {
       calendar = new Calendar();
     });
     it('initial state', () => {
@@ -61,18 +61,18 @@ describe('Calendar', () => {
         2018,
       ]);
       expect(calendar.monthNames).to.eql([
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
       ]);
       expect(calendar.year).to.eql(2013);
       expect(calendar.month).to.eql(0);
@@ -167,27 +167,27 @@ describe('Calendar', () => {
         2022,
       ]);
       expect(calendar.monthNames).to.eql([
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
       ]);
       expect(calendar.weekdayNames).to.eql([
-        "Su",
-        "Mo",
-        "Tu",
-        "We",
-        "Th",
-        "Fr",
-        "Sa",
+        'Su',
+        'Mo',
+        'Tu',
+        'We',
+        'Th',
+        'Fr',
+        'Sa',
       ]);
     });
   });

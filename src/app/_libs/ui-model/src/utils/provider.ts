@@ -1,7 +1,5 @@
 import {isFunction} from 'util';
-export interface Provider<T> {
-  (): T;
-}
+export type Provider<T>  = () => T;
 
 export function getOrCall<T>(value: T | Provider<T>, context?: any): T {
   if (isFunction(value)) {

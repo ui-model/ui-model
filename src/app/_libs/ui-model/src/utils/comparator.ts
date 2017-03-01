@@ -1,7 +1,6 @@
 import {isString, isNumber, isBoolean, isDate} from 'util';
-export interface Comparator<T> {
-  (v1: T, v2: T): number;
-}
+
+export type Comparator<T> = (v1: T, v2: T) => number;
 
 export class Comparators {
   static any(v1: any, v2: any): number {
@@ -33,6 +32,7 @@ export class Comparators {
     }
     return -1;
   };
+
   static date(v1: any, v2: any): number {
     return new Date(v1).getTime() - new Date(v2).getTime();
   }

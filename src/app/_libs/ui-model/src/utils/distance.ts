@@ -1,6 +1,7 @@
 export class Distance {
-  constructor(public x: number = 0, public y: number = 0) {
+  constructor(public x = 0, public y = 0) {
   }
+
   zoom(scale: number): void {
     this.x *= scale;
     this.y *= scale;

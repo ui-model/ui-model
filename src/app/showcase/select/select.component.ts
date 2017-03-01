@@ -7,7 +7,7 @@ class Option {
 }
 
 @Component({
-  selector: 'app-select',
+  selector: 'ui-app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss']
 })
@@ -36,7 +36,7 @@ export class SelectComponent implements OnInit {
     },
   ];
 
-  select: Select<Option> = new Select<Option>();
+  select = new Select<Option>();
 
   constructor() {
   }

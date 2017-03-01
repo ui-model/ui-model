@@ -5,7 +5,8 @@ import {Directive, HostListener, ChangeDetectorRef} from '@angular/core';
 })
 export class FileChangeDetectDirective {
 
-  constructor(private changeDetector: ChangeDetectorRef) { }
+  constructor(private changeDetector: ChangeDetectorRef) {
+  }
 
   @HostListener('change')
   private onChange(): void {

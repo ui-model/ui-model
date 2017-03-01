@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {TreeNode} from "ui-model-angular-bootstrap";
+import {Component, OnInit} from '@angular/core';
+import {TreeNode} from 'ui-model-angular-bootstrap';
 
 @Component({
-  selector: 'app-tree',
+  selector: 'ui-app-tree',
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.scss']
 })
@@ -35,7 +35,9 @@ export class TreeComponent implements OnInit {
 
     ],
   };
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

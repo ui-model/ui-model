@@ -1,5 +1,5 @@
-import {expect} from "chai";
-import {Pager} from "./pager";
+import {expect} from 'chai';
+import {Pager} from './pager';
 
 describe('Pager', () => {
   it('constructor:default', () => {

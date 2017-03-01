@@ -1,10 +1,10 @@
-import { isObject, isUndefined } from 'util';
+import {isObject, isUndefined} from 'util';
 
-export interface Supplier<FromType, ToType> {
-  (value: FromType): ToType;
-}
+export type Supplier<FromType, ToType> = (value: FromType) => ToType;
 
 export class Suppliers {
+  static objectById = Suppliers.objectByField('id');
+
   static identity(fromData: any): any {
     return fromData;
   }
@@ -23,8 +23,6 @@ export class Suppliers {
       }
     };
   }
-
-  static objectById: Supplier<Object, any> = Suppliers.objectByField('id');
 
   static toString(fromData: any): string {
     if (!fromData) {

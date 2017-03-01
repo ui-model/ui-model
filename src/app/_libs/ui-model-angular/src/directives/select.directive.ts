@@ -1,5 +1,5 @@
-import { Directive, OnDestroy, OnInit, EventEmitter, Output } from '@angular/core';
-import { Select } from 'ui-model';
+import {Directive, OnDestroy, OnInit, EventEmitter, Output} from '@angular/core';
+import {Select} from 'ui-model';
 
 @Directive({
   selector: '[uiSelect]',
@@ -11,7 +11,7 @@ export class SelectDirective<T> extends Select<T> implements OnInit, OnDestroy {
     super();
   }
 
-  @Output() selectionChange: EventEmitter<T> = new EventEmitter();
+  @Output() selectionChange = new EventEmitter();
 
   sub: any;
 

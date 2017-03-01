@@ -1,9 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { DraggableComponent } from './draggable.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {DraggableComponent} from './draggable.component';
 
 describe('DraggableComponent', () => {
   let component: DraggableComponent;
@@ -11,9 +8,9 @@ describe('DraggableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DraggableComponent ]
-    })
-    .compileComponents();
+        declarations: [DraggableComponent]
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

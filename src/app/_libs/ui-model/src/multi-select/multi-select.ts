@@ -1,6 +1,6 @@
-import { Supplier, Suppliers } from '../utils/supplier';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import {Supplier, Suppliers} from '../utils/supplier';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 interface State<T> {
   option: T;
@@ -8,9 +8,9 @@ interface State<T> {
 }
 
 export class MultiSelect<T> {
-  private selectedStates: Map<T, boolean> = new Map<T, boolean>();
+  private selectedStates = new Map<T, boolean>();
 
-  private _changes: Subject<State<T>> = new Subject();
+  private _changes = new Subject();
 
   get changes(): Observable<State<T>> {
     return this._changes;

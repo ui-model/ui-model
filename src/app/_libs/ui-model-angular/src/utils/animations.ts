@@ -1,4 +1,4 @@
-import {animate, transition, style, state, trigger, AnimationEntryMetadata} from "@angular/core";
+import {animate, transition, style, state, trigger, AnimationEntryMetadata} from '@angular/core';
 export class Animations {
   static slide(enterDuration: number = 300, leaveDuration: number = 100): AnimationEntryMetadata {
     return trigger('slide', [
@@ -12,6 +12,7 @@ export class Animations {
       transition(':leave', animate(`${leaveDuration}ms`)),
     ]);
   }
+
   static fade(enterDuration: number = 300, leaveDuration: number = 100): AnimationEntryMetadata {
     return trigger('fade', [
       state('void', style({

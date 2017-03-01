@@ -1,5 +1,5 @@
-import {Component, OnInit, Output, EventEmitter} from "@angular/core";
-import {Animations} from "ui-model-angular";
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Animations} from 'ui-model-angular';
 
 @Component({
   selector: 'ui-modal',
@@ -11,7 +11,7 @@ import {Animations} from "ui-model-angular";
 })
 export class ModalComponent implements OnInit {
 
-  @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
+  @Output() cancel = new EventEmitter<void>();
 
   visible = false;
 

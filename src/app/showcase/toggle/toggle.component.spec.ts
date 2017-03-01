@@ -1,9 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { ToggleComponent } from './toggle.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ToggleComponent} from './toggle.component';
 
 describe('ToggleComponent', () => {
   let component: ToggleComponent;
@@ -11,9 +8,9 @@ describe('ToggleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToggleComponent ]
-    })
-    .compileComponents();
+        declarations: [ToggleComponent]
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

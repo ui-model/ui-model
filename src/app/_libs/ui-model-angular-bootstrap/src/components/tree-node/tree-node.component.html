@@ -1,5 +1,7 @@
-<img class="icon" src="_images/icon-square-plus.svg" *ngIf="data.items?.length && toggle.isOff" (click)="toggle.open()"/>
-<img class="icon" src="_images/icon-square-minus.svg" *ngIf="data.items?.length && toggle.isOn" (click)="toggle.close()"/>
+<img class="icon" src="_images/icon-square-plus.svg" *ngIf="data.items?.length && toggle.isOff"
+     (click)="toggle.open()"/>
+<img class="icon" src="_images/icon-square-minus.svg" *ngIf="data.items?.length && toggle.isOn"
+     (click)="toggle.close()"/>
 <label>{{data.label}}</label>
 <ul *ngIf="data && toggle.isOn">
   <li *ngFor="let item of data.items">

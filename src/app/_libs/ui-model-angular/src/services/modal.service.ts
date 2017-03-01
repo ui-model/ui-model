@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 
 export enum ModalType {
   Tip,
@@ -27,7 +27,7 @@ export class ModalService {
   constructor() {
   }
 
-  items: Modal[] = [];
+  items = [];
 
   open(modal: Modal): void {
     this.items.push(modal);

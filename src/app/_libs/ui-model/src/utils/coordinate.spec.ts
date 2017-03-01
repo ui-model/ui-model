@@ -1,5 +1,5 @@
-import {expect} from "chai";
-import {Coordinate} from "./coordinate";
+import {expect} from 'chai';
+import {Coordinate} from './coordinate';
 
 const Precision = 0.001;
 

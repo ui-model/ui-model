@@ -1,12 +1,12 @@
-import {Pipe, PipeTransform, OnDestroy} from "@angular/core";
-import {SafeResourceUrl, DomSanitizer} from "@angular/platform-browser";
-import {isString} from "util";
+import {Pipe, PipeTransform, OnDestroy} from '@angular/core';
+import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser';
+import {isString} from 'util';
 
 @Pipe({
   name: 'resourceUrl'
 })
 export class ResourceUrlPipe implements PipeTransform, OnDestroy {
-  private blobUrls: string[] = [];
+  private blobUrls = [];
 
   constructor(private sanitizer: DomSanitizer) {
   }

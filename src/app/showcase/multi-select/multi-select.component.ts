@@ -25,15 +25,15 @@ const options = [
   }
 ];
 @Component({
-  selector: 'app-multi-select',
+  selector: 'ui-app-multi-select',
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss']
 })
 export class MultiSelectComponent implements OnInit {
 
-  options: Data[] = options;
+  options = options;
 
-  select: MultiSelect<Data> = new MultiSelect<Data>(options, Suppliers.objectByField('code'));
+  select = new MultiSelect<Data>(options, Suppliers.objectByField('code'));
 
   constructor() {
   }

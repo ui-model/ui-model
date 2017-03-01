@@ -4,7 +4,10 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "mapRoot": "./",
     "module": "es6",
     "moduleResolution": "node",
@@ -15,7 +18,9 @@
       "./node_modules/@types"
     ],
     "paths": {
-      "ui-model": ["../ui-model"]
+      "ui-model": [
+        "../ui-model"
+      ]
     }
   }
 }

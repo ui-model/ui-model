@@ -1,11 +1,10 @@
-export interface Predicate<T> {
-  (v1: T, v2: T): boolean;
-}
+export type Predicate<T> = (v1: T, v2: T) => boolean;
 
 export class Predicates {
   static any(v1: any, v2: any): boolean {
     return v1 === v2;
   }
+
   static string(v1: any, v2: any): boolean {
     return (v1 || '').toString() === (v2 || '').toString();
   };

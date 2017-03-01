@@ -1,8 +1,8 @@
-import { TableSorter } from './table-sorter';
-import { TableField } from './table-field';
-import { DataType } from '../utils/data-type';
-import { expect } from 'chai';
-const fields: TableField[] = [
+import {TableSorter} from './table-sorter';
+import {TableField} from './table-field';
+import {DataType} from '../utils/data-type';
+import {expect} from 'chai';
+const fields: TableField[] = TableField.from([
   {
     name: 'a',
     title: 'A',
@@ -13,7 +13,7 @@ const fields: TableField[] = [
     title: 'B',
     type: DataType.string,
   },
-].map(TableField.of);
+]);
 describe('TableSorter', () => {
   it('changes', (done) => {
     const sorter = new TableSorter(fields);

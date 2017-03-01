@@ -1,6 +1,6 @@
-import {Component, OnInit} from "@angular/core";
-import {TableField, DataType} from "ui-model";
-import * as _ from "lodash";
+import {Component, OnInit} from '@angular/core';
+import {TableField, DataType} from 'ui-model';
+import * as _ from 'lodash';
 
 class Item {
   id: number;
@@ -51,14 +51,14 @@ const items: Item[] = _.times(100, (i) => {
 });
 
 @Component({
-  selector: 'app-table',
+  selector: 'ui-app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
 
-  fields: TableField[] = fields;
-  items: Item[] = items;
+  fields = fields;
+  items = items;
 
   constructor() {
   }

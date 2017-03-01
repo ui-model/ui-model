@@ -1,8 +1,8 @@
-import {Component, OnInit} from "@angular/core";
-import "moment/locale/zh-cn";
+import {Component, OnInit} from '@angular/core';
+import 'moment/locale/zh-cn';
 
 @Component({
-  selector: 'app-calendar',
+  selector: 'ui-app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })

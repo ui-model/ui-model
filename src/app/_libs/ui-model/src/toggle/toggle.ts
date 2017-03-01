@@ -1,11 +1,12 @@
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 export class Toggle {
+  static readonly ON = true;
+  static readonly OFF = false;
+
   constructor(private _isOn: boolean = Toggle.OFF) {
   }
-
-  private _changes: Subject<boolean> = new Subject();
 
   get changes(): Observable<boolean> {
     return this._changes;
@@ -14,9 +15,6 @@ export class Toggle {
   protected changed(): void {
     this._changes.next(this._isOn);
   }
-
-  static readonly ON: boolean = true;
-  static readonly OFF: boolean = false;
 
   get isOn(): boolean {
     return this._isOn;
@@ -60,4 +58,7 @@ export class Toggle {
   toggle(): void {
     this.turnTo(!this.isOn);
   }
+
+  private _changes = new Subject();
+
 }

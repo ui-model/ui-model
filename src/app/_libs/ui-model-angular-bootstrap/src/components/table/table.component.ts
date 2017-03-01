@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {TableField, TableSorter} from "ui-model";
+import {Component} from '@angular/core';
+import {TableField, TableSorter} from 'ui-model';
 
 @Component({
   selector: 'ui-table',
@@ -31,10 +31,10 @@ export class TableComponent<T> {
     this.sorter.enabled = value;
   }
 
-  sorter: TableSorter = new TableSorter([]);
+  sorter = new TableSorter([]);
 
-  delta: {[field: string]: {x: number, y: number}} = {};
-  size: {[field: string]: {x: number, y: number}} = {};
+  delta = {};
+  size = {};
 
   constructor() {
   }

@@ -1,5 +1,5 @@
-import { Directive, OnDestroy, OnInit, EventEmitter, Output } from '@angular/core';
-import { MultiSelect } from 'ui-model';
+import {Directive, OnDestroy, OnInit, EventEmitter, Output} from '@angular/core';
+import {MultiSelect} from 'ui-model';
 @Directive({
   selector: '[uiMultiSelect]',
   inputs: ['allSelected', 'selection']
@@ -9,8 +9,8 @@ export class MultiSelectDirective<T> extends MultiSelect<T> implements OnInit, O
     super();
   }
 
-  @Output() selectionChange: EventEmitter<T[]> = new EventEmitter();
-  @Output() allSelectedChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() selectionChange = new EventEmitter();
+  @Output() allSelectedChange = new EventEmitter();
 
   sub: any;
 

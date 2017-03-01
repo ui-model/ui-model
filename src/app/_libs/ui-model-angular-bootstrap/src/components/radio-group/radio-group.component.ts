@@ -17,7 +17,7 @@ export class RadioGroupComponent<T> implements ControlValueAccessor, OnInit, OnD
 
   @Input() options: T[];
 
-  select: Select<T> = new Select<T>();
+  select = new Select<T>();
 
   sub;
   onChange: (_: any) => {};

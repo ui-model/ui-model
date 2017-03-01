@@ -1,7 +1,7 @@
 import {expect} from 'chai';
-import {PieChart} from "./pie-chart";
+import {PieChart} from './pie-chart';
 
-describe('PieChart', ()=> {
+describe('PieChart', () => {
   it('constructor', () => {
     const chart = new PieChart();
     chart.cx = 125;

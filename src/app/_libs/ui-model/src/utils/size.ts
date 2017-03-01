@@ -1,5 +1,5 @@
 export class Size {
-  constructor(public width: number = 0, public height: number = 0) {
+  constructor(public width = 0, public height = 0) {
   }
 
   zoom(scale: number): void {

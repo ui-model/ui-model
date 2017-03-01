@@ -1,4 +1,4 @@
-import {Directive, HostListener, EventEmitter, Output} from "@angular/core";
+import {Directive, HostListener, EventEmitter, Output} from '@angular/core';
 import {Point, Distance} from 'ui-model';
 
 @Directive({
@@ -6,18 +6,18 @@ import {Point, Distance} from 'ui-model';
   exportAs: 'uiDraggable',
 })
 export class DraggableDirective {
-  @Output('uiDragStart') onStart: EventEmitter<void> = new EventEmitter<void>();
-  @Output('uiDragMove') onMove: EventEmitter<any> = new EventEmitter<any>();
-  @Output('uiDragStop') onStop: EventEmitter<void> = new EventEmitter<void>();
+  @Output('uiDragStart') onStart = new EventEmitter<void>();
+  @Output('uiDragMove') onMove = new EventEmitter<any>();
+  @Output('uiDragStop') onStop = new EventEmitter<void>();
 
   constructor() {
   }
 
-  dragging: boolean = false;
+  dragging = false;
 
-  startPos: Point = new Point();
-  latestPos: Point = new Point();
-  pos: Point = new Point();
+  startPos = new Point();
+  latestPos = new Point();
+  pos = new Point();
 
   get offset(): Distance {
     return this.pos.getDistanceTo(this.startPos);

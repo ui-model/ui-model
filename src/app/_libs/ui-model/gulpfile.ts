@@ -9,7 +9,7 @@ task('default', () => {
 task('lint', () => {
   return src('./src/**/*.ts')
     .pipe(tslint({
-      configuration: "./tslint.json",
+      configuration: './tslint.json',
     }))
     .pipe(tslint.report());
 });

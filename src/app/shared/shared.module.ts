@@ -1,7 +1,7 @@
-import {NgModule} from "@angular/core";
-import {CommonModule} from "@angular/common";
-import {UiModelModule} from "ui-model-angular";
-import {UiModelBootstrapModule} from "ui-model-angular-bootstrap";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {UiModelModule} from 'ui-model-angular';
+import {UiModelBootstrapModule} from 'ui-model-angular-bootstrap';
 
 @NgModule({
   imports: [
@@ -9,8 +9,7 @@ import {UiModelBootstrapModule} from "ui-model-angular-bootstrap";
     UiModelModule,
     UiModelBootstrapModule,
   ],
-  declarations: [
-  ],
+  declarations: [],
   exports: [
     UiModelModule,
     UiModelBootstrapModule,

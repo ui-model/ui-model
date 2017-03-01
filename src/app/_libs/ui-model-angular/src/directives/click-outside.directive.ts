@@ -1,10 +1,10 @@
-import { Directive, Output, EventEmitter, OnDestroy, OnInit, ElementRef } from '@angular/core';
+import {Directive, Output, EventEmitter, OnDestroy, OnInit, ElementRef} from '@angular/core';
 
 @Directive({
   selector: '[uiClickOutside]'
 })
 export class ClickOutsideDirective implements OnInit, OnDestroy {
-  @Output('uiClickOutside') onClickOutside: EventEmitter<any> = new EventEmitter();
+  @Output('uiClickOutside') onClickOutside = new EventEmitter();
 
   constructor(private element: ElementRef) {
 

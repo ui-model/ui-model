@@ -1,10 +1,15 @@
 export class Rect {
-  constructor(public left: number = 0, public top: number = 0, public width: number = 0, public height: number = 0) {
+  constructor(public left = 0, public top = 0, public width = 0, public height = 0) {
   }
 
-  static readonly InfinityRect: Rect = Object.freeze(new Rect(-Number.MAX_VALUE / 2, -Number.MAX_VALUE / 2, Number.MAX_VALUE / 2, Number.MAX_VALUE / 2));
+  static readonly InfinityRect = Object.freeze(new Rect(
+    -Number.MAX_VALUE / 2,
+    -Number.MAX_VALUE / 2,
+    Number.MAX_VALUE / 2,
+    Number.MAX_VALUE / 2
+  ));
 
-  limit: Rect = Rect.InfinityRect;
+  limit = Rect.InfinityRect;
 
   limitTo(limit: Rect): Rect {
     this.limit = limit;

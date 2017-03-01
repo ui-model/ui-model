@@ -21,11 +21,12 @@ import {Toggle} from 'ui-model';
 export class PanelComponent implements OnInit {
 
   @Input() title: string;
-  @Input() toggleable: boolean = true;
+  @Input() toggleable = true;
 
-  toggle: Toggle = new Toggle(Toggle.ON);
+  toggle = new Toggle(Toggle.ON);
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

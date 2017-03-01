@@ -1,9 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { GlobalModalComponent } from './global-modal.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {GlobalModalComponent} from './global-modal.component';
 
 describe('GlobalModalComponent', () => {
   let component: GlobalModalComponent;
@@ -11,9 +8,9 @@ describe('GlobalModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GlobalModalComponent ]
-    })
-    .compileComponents();
+        declarations: [GlobalModalComponent]
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,5 +1,5 @@
-import { Directive, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
-import { Pagination } from 'ui-model';
+import {Directive, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';
+import {Pagination} from 'ui-model';
 @Directive({
   selector: '[uiPagination]',
   exportAs: 'uiPagination',
@@ -10,7 +10,7 @@ export class PaginationDirective extends Pagination implements OnInit, OnDestroy
     super();
   }
 
-  @Output() indexChange: EventEmitter<number> = new EventEmitter();
+  @Output() indexChange = new EventEmitter();
 
   sub: any;
 

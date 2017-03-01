@@ -1,5 +1,5 @@
-import { Directive, OnDestroy, OnInit, Output, EventEmitter } from '@angular/core';
-import { Toggle } from 'ui-model';
+import {Directive, OnDestroy, OnInit, Output, EventEmitter} from '@angular/core';
+import {Toggle} from 'ui-model';
 
 @Directive({
   selector: '[uiToggle]',
@@ -11,8 +11,8 @@ export class ToggleDirective extends Toggle implements OnInit, OnDestroy {
     super();
   }
 
-  @Output() isOnChange: EventEmitter<boolean> = new EventEmitter();
-  @Output() isOffChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() isOnChange = new EventEmitter();
+  @Output() isOffChange = new EventEmitter();
 
   sub: any;
 

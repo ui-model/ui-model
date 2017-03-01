@@ -1,4 +1,4 @@
-import {Directive, Input, OnInit, ElementRef, Renderer, HostListener} from '@angular/core';
+import {Directive, ElementRef, Renderer, HostListener} from '@angular/core';
 
 @Directive({
   selector: 'img[srcFile]',

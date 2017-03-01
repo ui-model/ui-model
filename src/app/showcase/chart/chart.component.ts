@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import {PieChart} from "../../_libs/ui-model/src/chart/pie-chart";
+import {Component, OnInit} from '@angular/core';
+import {PieChart} from '../../_libs/ui-model/src/chart/pie-chart';
 
 @Component({
-  selector: 'app-chart',
+  selector: 'ui-app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent implements OnInit {
 
-  chart: PieChart = new PieChart(125, 80, 45, 45, 0);
+  chart = new PieChart(125, 80, 45, 45, 0);
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

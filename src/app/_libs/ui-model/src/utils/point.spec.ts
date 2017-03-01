@@ -1,7 +1,7 @@
 import {expect} from 'chai';
-import {Point} from "./point";
+import {Point} from './point';
 
-describe('Point', ()=> {
+describe('Point', () => {
   it('constructor', () => {
     const value = new Point(10, 20);
     expect(value.x).to.eql(10);

@@ -17,7 +17,7 @@ export class FormatPipe implements PipeTransform {
       return value;
     }
 
-    const type: DataType = field ? field.type : dataTypeOf(value);
+    const type = field ? field.type : dataTypeOf(value);
     switch (type) {
       case DataType.string:
         return `${value}`;

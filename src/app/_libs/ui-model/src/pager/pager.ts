@@ -1,12 +1,12 @@
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 export class Pager {
   constructor(size: number = 10) {
     this.size = size;
   }
 
-  private _changes: Subject<number> = new Subject();
+  private _changes = new Subject();
 
   get changes(): Observable<number> {
     return this._changes;
@@ -16,7 +16,7 @@ export class Pager {
     this._changes.next(this.index);
   }
 
-  private _index: number = 0;
+  private _index = 0;
 
   get index(): number {
     return this._index;
@@ -53,7 +53,7 @@ export class Pager {
     return Math.max(this.index * this.size, 0);
   }
 
-  private _size: number = 0;
+  private _size = 0;
   get size(): number {
     return this._size;
   }
@@ -82,7 +82,7 @@ export class Pager {
     return Math.min(this.offset + this.size, this.totalItems);
   }
 
-  private _totalItems: number = 0;
+  private _totalItems = 0;
   get totalItems(): number {
     return this._totalItems;
   }

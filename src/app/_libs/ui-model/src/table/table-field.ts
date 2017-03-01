@@ -1,16 +1,16 @@
 import {SortOrder} from '../utils/sort-order';
-import {Comparators} from '../utils/comparator';
+import {Comparators, Comparator} from '../utils/comparator';
 import {DataType} from '../utils/data-type';
 import {Supplier, Suppliers} from '../utils/supplier';
 import {isUndefined} from 'util';
 export class TableField {
   name: string;
   title: string;
-  type: DataType = DataType.any;
+  type = DataType.any;
   sortable?: boolean = true;
   sortOrder?: SortOrder = SortOrder.None;
   scale?: number = 0;
-  comparator?: (v1: any, v2: any) => number = Comparators.any;
+  comparator?: Comparator<any> = Comparators.any;
   formatter?: Supplier<any, string> = Suppliers.identity;
 
   isNonOrder(): boolean {
@@ -60,6 +60,7 @@ export class TableField {
 
     return result;
   }
+
   static from(rawData: any[]): TableField[] {
     return rawData.map(TableField.of);
   }

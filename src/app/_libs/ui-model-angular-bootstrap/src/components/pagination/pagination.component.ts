@@ -7,9 +7,9 @@ import {Pagination} from 'ui-model';
   styleUrls: ['pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
-  @Input() showBrief: boolean = true;
-  @Input() showPrevNext: boolean = true;
-  @Input() showFirstLast: boolean = true;
+  @Input() showBrief = true;
+  @Input() showPrevNext = true;
+  @Input() showFirstLast = true;
   @Input() pager: Pagination;
 
   constructor() {

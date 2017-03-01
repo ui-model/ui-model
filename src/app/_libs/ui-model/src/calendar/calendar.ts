@@ -1,6 +1,6 @@
-import * as moment from "moment";
-import {Subject} from "rxjs/Subject";
-import {Observable} from "rxjs/Observable";
+import * as moment from 'moment';
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 type Moment = moment.Moment;
 type MomentInput = moment.MomentInput;
@@ -10,7 +10,7 @@ export class Calendar {
     this.goTo(value);
   }
 
-  private _changes: Subject<Date> = new Subject<Date>();
+  private _changes = new Subject<Date>();
 
   protected changed(): void {
     this.update();
@@ -21,9 +21,9 @@ export class Calendar {
     return this._changes;
   }
 
-  private _value: Moment = moment();
+  private _value = moment();
 
-  _isNull: boolean = true;
+  _isNull = true;
 
   get isNull(): boolean {
     return this._isNull;
@@ -57,6 +57,7 @@ export class Calendar {
     this._value = moment(value);
     this.update();
   }
+
   clear(): void {
     this.value = undefined;
   }
@@ -152,23 +153,23 @@ export class Calendar {
     this.addMonth(step);
   }
 
-  private _weeks: number[] = [];
+  private _weeks = [];
 
   get weeks(): number[] {
     return this._weeks;
   }
 
-  private _dates: Date[][] = [];
+  private _dates = [];
 
   dates(week: number): Date[] {
     return this._dates[week - this.weeks[0]];
   }
 
-  readonly weekdayNames: string[] = moment.weekdaysMin(true);
+  readonly weekdayNames = moment.weekdaysMin(true);
 
-  readonly monthNames: string[] = moment.months();
+  readonly monthNames = moment.months();
 
-  private _nearlyYears: number[] = [];
+  private _nearlyYears = [];
 
   get nearlyYears(): number[] {
     return this._nearlyYears;

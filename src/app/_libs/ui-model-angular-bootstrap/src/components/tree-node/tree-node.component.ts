@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {TreeNode} from "./tree-node";
+import {TreeNode} from './tree-node';
 import {Toggle} from 'ui-model';
 
 @Component({
@@ -10,8 +10,10 @@ import {Toggle} from 'ui-model';
 export class TreeNodeComponent implements OnInit {
 
   @Input() data: TreeNode;
-  toggle: Toggle = new Toggle(true);
-  constructor() { }
+  toggle = new Toggle(true);
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

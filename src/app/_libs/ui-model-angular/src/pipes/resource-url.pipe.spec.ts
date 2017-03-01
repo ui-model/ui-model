@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-
-import { TestBed, async } from '@angular/core/testing';
-import { ResourceUrlPipe } from './resource-url.pipe';
+import {ResourceUrlPipe} from './resource-url.pipe';
 
 describe('ResourceUrlPipe', () => {
   it('create an instance', () => {

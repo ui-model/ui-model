@@ -1,12 +1,10 @@
-import {ControlValueAccessor} from "@angular/forms";
-import {Calendar} from "ui-model";
+import {ControlValueAccessor} from '@angular/forms';
+import {Calendar} from 'ui-model';
 
 export class CalendarValueAccessor extends Calendar implements ControlValueAccessor {
   constructor() {
     super();
   }
-
-  private onChange: (value: Date) => void;
 
   protected changed(): void {
     super.changed();
@@ -14,8 +12,6 @@ export class CalendarValueAccessor extends Calendar implements ControlValueAcces
       this.onChange(this.value);
     }
   }
-
-  private onTouched: () => void;
 
   writeValue(value: Date): void {
     this.value = value;
@@ -28,4 +24,7 @@ export class CalendarValueAccessor extends Calendar implements ControlValueAcces
   registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
+
+  private onChange: (value: Date) => void;
+  private onTouched: () => void;
 }
