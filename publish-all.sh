@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-cd src/libraries/ui-model && npm publish && cd -
-cd src/libraries/ui-model-angular && npm publish && cd -
-cd src/libraries/ui-model-angular-bootstrap && npm publish && cd -
+cd src/app/_libs/ui-model && npm publish && cd -
+cd src/app/_libs/ui-model-angular && npm publish && cd -
+cd src/app/_libs/ui-model-angular-bootstrap && npm publish && cd -
