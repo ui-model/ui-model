@@ -1,7 +1,10 @@
-import {Component, OnInit, OnDestroy, Input, Output, EventEmitter, forwardRef} from '@angular/core';
-import {Toggle} from 'ui-model';
-import {Subject, Subscription} from 'rxjs';
+import {Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Provider, Supplier, Toggle} from 'ui-model';
+import {Subject} from 'rxjs/Subject';
+import {Subscription} from 'rxjs/Subscription';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {isFunction} from 'util';
+import {SafeHtml} from '@angular/platform-browser';
 
 export const TYPE_AHEAD_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -15,14 +18,41 @@ export const TYPE_AHEAD_ACCESSOR = {
   styleUrls: ['./type-ahead.component.scss'],
   providers: [TYPE_AHEAD_ACCESSOR],
 })
-export class TypeAheadComponent<T extends {name: string}> implements ControlValueAccessor, OnInit, OnDestroy {
+export class TypeAheadComponent<T extends { format?: Provider<SafeHtml>, parse?: Provider<string> }> implements ControlValueAccessor, OnInit, OnDestroy {
 
   dropDown = new Toggle();
 
   checker = new Subject();
 
   @Input() items: T[];
+  @Input() displayField = 'name';
+  @Input() placeholder = '-';
+  @Input() formatter: Supplier<any, SafeHtml> = this.defaultFormatter.bind(this);
+  @Input() parser: Supplier<any, string> = this.defaultParser.bind(this);
   @Output() search = new EventEmitter<string>();
+
+  defaultFormatter(value: T): string | SafeHtml {
+    if (!value) {
+      return '';
+    }
+
+    if (value.hasOwnProperty('format') && isFunction(value.format)) {
+      return value.format();
+    } else {
+      return value[this.displayField];
+    }
+  };
+
+  defaultParser(value: T): string {
+    if (!value) {
+      return '';
+    }
+    if (value.hasOwnProperty('parse') && isFunction(value.format)) {
+      return value.parse();
+    } else {
+      return value[this.displayField];
+    }
+  }
 
   constructor() {
   }
@@ -53,7 +83,7 @@ export class TypeAheadComponent<T extends {name: string}> implements ControlValu
 
   set value(value: T) {
     this._value = value;
-    this.term = value && value.name;
+    this.term = value && this.parser(value);
   }
 
   _change: (value: T) => void;

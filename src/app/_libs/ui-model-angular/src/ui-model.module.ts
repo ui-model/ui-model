@@ -16,6 +16,7 @@ import {ResourceUrlPipe} from './pipes/resource-url.pipe';
 import {ImgSrcFileDirective} from './directives/img-src-file.directive';
 import {FileChangeDetectDirective} from './directives/file-change-detect.directive';
 import {MeasureDirective} from './directives/measure.directive';
+import {TypeAheadDirective} from './directives/type-ahead.directive';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import {MeasureDirective} from './directives/measure.directive';
     TypeNamePipe,
     MomentPipe,
     ResourceUrlPipe,
+    TypeAheadDirective,
   ],
   exports: [
     SelectDirective,
@@ -53,6 +55,7 @@ import {MeasureDirective} from './directives/measure.directive';
     MeasureDirective,
     ImgSrcFileDirective,
     FileChangeDetectDirective,
+    TypeAheadDirective,
 
     FormatPipe,
     OrderByPipe,
@@ -78,6 +81,7 @@ export * from './directives/draggable.directive';
 export * from './directives/measure.directive';
 export * from './directives/img-src-file.directive';
 export * from './directives/file-change-detect.directive';
+export * from './directives/type-ahead.directive';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';

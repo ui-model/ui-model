@@ -1,9 +1,21 @@
+@import "~bootstrap/scss/variables";
+
 :host {
   display: inline-block;
+}
+
+[uiClickOutside] {
   position: relative;
 }
 
 .dropdown-menu {
   display: block;
   width: 100%;
+  top: initial;
+}
+
+.dropdown-item {
+  &.not-found {
+    color: $brand-danger;
+  }
 }

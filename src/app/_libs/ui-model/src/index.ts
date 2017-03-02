@@ -9,14 +9,14 @@ export * from './table/table-sorter';
 
 export * from './calendar/calendar';
 
-export * from './utils/comparator';
-export * from './utils/coordinate';
-export * from './utils/data-type';
-export * from './utils/predicate';
-export * from './utils/provider';
-export * from './utils/sort-order';
-export * from './utils/supplier';
-export * from './utils/rect';
-export * from './utils/point';
-export * from './utils/size';
-export * from './utils/distance';
+export {Comparator, Comparators} from './utils/comparator';
+export {Coordinate} from './utils/coordinate';
+export {DataType, dataTypeOf} from './utils/data-type';
+export {Predicate, Predicates} from './utils/predicate';
+export {Provider, getOrCall} from './utils/provider';
+export {SortOrder} from './utils/sort-order';
+export {Supplier, Suppliers} from './utils/supplier';
+export {Rect} from './utils/rect';
+export {Point} from './utils/point';
+export {Size} from './utils/size';
+export {Distance} from './utils/distance';

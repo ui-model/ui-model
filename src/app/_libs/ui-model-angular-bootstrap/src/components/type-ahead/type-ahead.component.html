@@ -1,14 +1,18 @@
-<div class="input-group">
-  <input type="text" class="form-control" name="term"
-         [(ngModel)]="term"
-         (keyup)="checker.next(term)"
-         (focus)="checker.next(term)"
-         (uiClickOutside)="dropDown.close()"
-  />
-  <div class="input-group-btn">
-    <button type="button" class="btn btn-primary" (click)="clear()">X</button>
+<div (uiClickOutside)="dropDown.close()">
+  <div class="input-group">
+    <input type="text" class="form-control" name="term"
+           uiTypeAhead #typeAhead="uiTypeAhead" (uiTypeAheadSearch)="search.emit($event)"
+           (uiTypeAheadOpen)="dropDown.open()" (uiTypeAheadClose)="dropDown.close()" [(ngModel)]="term"
+
+    />
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-primary" (click)="clear()">X</button>
+    </div>
+  </div>
+  <div class="dropdown-menu" *ngIf="dropDown.isOn">
+    <div class="dropdown-item not-found" *ngIf="!items.length">{{placeholder}}</div>
+    <div class="dropdown-item" *ngFor="let item of items" (click)="select(item);dropDown.close()" [innerHTML]="formatter(item)">
+    </div>
   </div>
 </div>
-<div class="dropdown-menu" *ngIf="dropDown.isOn && items?.length">
-  <div class="dropdown-item" *ngFor="let item of items" (click)="select(item)">{{item.name}}</div>
-</div>
+
