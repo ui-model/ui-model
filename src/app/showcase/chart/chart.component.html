@@ -1,3 +1,33 @@
-<svg width="325" height="325" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 100 100" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
   <path [attr.d]="chart.toPath()"></path>
 </svg>
+<p>
+  <label>
+    起始角度
+    <input type="number" [(ngModel)]="chart.beginPercent" step="0.1">
+  </label>
+
+  <label>
+    终止角度
+    <input type="number" [(ngModel)]="chart.endPercent" step="0.1">
+  </label>
+</p>
+<p>
+  <label>
+    半径
+    <input type="number" [(ngModel)]="chart.radius" step="1">
+  </label>
+</p>
+<p>
+  <label>
+    圆心X
+    <input type="number" [(ngModel)]="chart.cx" step="1">
+  </label>
+  <label>
+    圆心Y
+    <input type="number" [(ngModel)]="chart.cy" step="1">
+  </label>
+</p>
+<p>
+  {{chart.beginPercent}} {{chart.endPercent}}
+</p>

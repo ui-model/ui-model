@@ -1,11 +1,53 @@
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
+
 export class Coordinate {
-  cx: number;
-  cy: number;
-  radius: number;
-  radian: number;
+  get cx(): number {
+    return this._cx;
+  }
+
+  set cx(value: number) {
+    if (this._cx !== value) {
+      this._cx = fixRoundOffError(value);
+      this.changed();
+    }
+  }
+
+  get cy(): number {
+    return this._cy;
+  }
+
+  set cy(value: number) {
+    if (this._cy !== value) {
+      this._cy = fixRoundOffError(value);
+      this.changed();
+    }
+  }
+
+  get radius(): number {
+    return this._radius;
+  }
+
+  set radius(value: number) {
+    if (this._radius !== value) {
+      this._radius = fixRoundOffError(value);
+      this.changed();
+    }
+  }
+
+  get radian(): number {
+    return this._radian;
+  }
+
+  set radian(value: number) {
+    if (this._radian !== value) {
+      this._radian = fixRoundOffError(value);
+      this.changed();
+    }
+  }
 
   get x(): number {
-    return this.cx + this.radius * Math.cos(this.radian);
+    return fixRoundOffError(this.cx + this.radius * Math.cos(this.radian));
   }
 
   set x(value: number) {
@@ -16,7 +58,7 @@ export class Coordinate {
   }
 
   get y(): number {
-    return this.cy + this.radius * Math.sin(this.radian);
+    return fixRoundOffError(this.cy + this.radius * Math.sin(this.radian));
   }
 
   set y(value: number) {
@@ -131,21 +173,40 @@ export class Coordinate {
   rotateByPercent(percent: number): Coordinate {
     return this.rotate(percentToRadian(percent));
   }
+
+  get changes(): Observable<Coordinate> {
+    return this._changes.asObservable();
+  }
+
+  protected changed(): void {
+    this._changes.next(this);
+  }
+
+  private _cx: number;
+  private _cy: number;
+  private _radius: number;
+  private _radian: number;
+
+  private _changes = new Subject<Coordinate>();
 }
 
 export function degreeToRadian(degree: number): number {
-  return degree / 180 * Math.PI;
+  return fixRoundOffError(degree / 180 * Math.PI);
 }
 
 export function radianToDegree(radian: number): number {
-  return radian * 180 / Math.PI;
+  return fixRoundOffError(radian * 180 / Math.PI);
 }
 
 export function percentToRadian(percent: number): number {
-  return percent * (2 * Math.PI);
+  return fixRoundOffError(percent * (2 * Math.PI));
 }
 
 export function radianToPercent(radian: number): number {
-  return radian / (2 * Math.PI);
+  return fixRoundOffError(radian / (2 * Math.PI));
 }
 
+function fixRoundOffError(value: number): number {
+  const precision = 10000000;
+  return Math.round(value * precision) / precision;
+}

@@ -1,13 +1,12 @@
+export * from './calendar/calendar';
+export * from './chart/pie-chart';
 export * from './multi-select/multi-select';
-export * from './select/select';
-export * from './toggle/toggle';
 export * from './pager/pager';
 export * from './pager/pagination';
-
+export * from './select/select';
 export * from './table/table-field';
 export * from './table/table-sorter';
-
-export * from './calendar/calendar';
+export * from './toggle/toggle';
 
 export {Comparator, Comparators} from './utils/comparator';
 export {Coordinate} from './utils/coordinate';

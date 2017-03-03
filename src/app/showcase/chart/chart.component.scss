@@ -1,0 +1,9 @@
+@import "../../shared/styles/common";
+
+:host {
+  display: block;
+}
+
+svg {
+  background: $gray-lighter;
+}
