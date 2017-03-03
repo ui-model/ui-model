@@ -81,7 +81,7 @@ export class PieChart {
     }
   }
 
-  toPath(): string {
+  get path(): string {
     // Full Arc
     if (this.endPercent >= this.beginPercent + 1 || this.beginPercent > this.endPercent + 1) {
       return `M ${this.cx + this.radius} ${this.cy}
