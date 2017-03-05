@@ -2,11 +2,10 @@
   <g class="chart" *ngFor="let pie of chart.pies; let index = index" [attr.index]="index">
     <path [attr.d]="pie.path" class="serial"
           [style.stroke-width]="gutter"></path>
-    <circle r="5" [uiMultiBinding]="pie.mapToXY(pie.middlePercent, pie.radius + noteOffset)" uiMultiBindingPrefix="c">
-    </circle>
-    <text dy="2" [uiMultiBinding]="pie.mapToXY(pie.middlePercent, pie.radius + noteOffset)">
-      {{chart.serials[index]}}
-    </text>
+    <g class="markup" [style.transform]="translateOf(pie)|safeStyle">
+      <circle r="5"></circle>
+      <text dy="2">{{chart.serials[index]}}</text>
+    </g>
   </g>
 </svg>
 <p>
@@ -30,6 +29,6 @@
   </label>
   <label>
     标注距离
-    <input type="number" [(ngModel)]="noteOffset" step="1">
+    <input type="number" [(ngModel)]="noteOffset" step="2">
   </label>
 </p>

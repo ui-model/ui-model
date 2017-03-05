@@ -9,12 +9,18 @@ svg {
 }
 
 .chart {
+  .markup {
+    transition: 1s;
+  }
+  circle {
+  }
   text {
     text-anchor: middle;
     font-size: 5px;
     fill: white;
   }
 }
+
 .chart {
   &[index="0"] {
     fill: #1f77b4;
@@ -47,6 +53,7 @@ svg {
     fill: #17becf;
   }
 }
+
 .serial {
   stroke: $gray-lighter;
 }
