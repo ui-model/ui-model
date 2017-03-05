@@ -18,6 +18,7 @@ import {FileChangeDetectDirective} from './directives/file-change-detect.directi
 import {MeasureDirective} from './directives/measure.directive';
 import {TypeAheadDirective} from './directives/type-ahead.directive';
 import {MultiBindingDirective} from './directives/multi-binding.directive';
+import { SafeStylePipe } from './pipes/safe-style.pipe';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import {MultiBindingDirective} from './directives/multi-binding.directive';
     ResourceUrlPipe,
     TypeAheadDirective,
     MultiBindingDirective,
+    SafeStylePipe,
   ],
   exports: [
     SelectDirective,
@@ -66,6 +68,7 @@ import {MultiBindingDirective} from './directives/multi-binding.directive';
     TypeNamePipe,
     MomentPipe,
     ResourceUrlPipe,
+    SafeStylePipe,
   ],
 })
 export class UiModelModule {
