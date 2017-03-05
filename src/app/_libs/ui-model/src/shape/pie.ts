@@ -50,6 +50,19 @@ export class Pie {
     this._end.setPercent(value);
   }
 
+  get middlePercent(): number {
+    return this.beginPercent + (this.endPercent - this.beginPercent) / 2;
+  }
+
+  mapToXY(percent: number, radius: number): {x: number, y: number} {
+    const coordinate = new Coordinate();
+    coordinate.cx = this.cx;
+    coordinate.cy = this.cy;
+    coordinate.percent = percent;
+    coordinate.radius = radius;
+    return {x: coordinate.x, y: coordinate.y};
+  }
+
   constructor(cx: number = 0, cy: number = 0, radius: number = 0, beginPercent: number = 0, endPercent: number = 0) {
     this.cx = cx;
     this.cy = cy;

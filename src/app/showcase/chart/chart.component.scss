@@ -8,8 +8,14 @@ svg {
   background: $gray-lighter;
 }
 
-.serial {
-  stroke: $gray-lighter;
+.chart {
+  text {
+    text-anchor: middle;
+    font-size: 5px;
+    fill: white;
+  }
+}
+.chart {
   &[index="0"] {
     fill: #1f77b4;
   }
@@ -40,4 +46,7 @@ svg {
   &[index="9"] {
     fill: #17becf;
   }
+}
+.serial {
+  stroke: $gray-lighter;
 }
