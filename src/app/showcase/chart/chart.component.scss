@@ -9,10 +9,8 @@ svg {
 }
 
 .chart {
-  .markup {
+  .markup, .serial {
     transition: 1s;
-  }
-  circle {
   }
   text {
     text-anchor: middle;
