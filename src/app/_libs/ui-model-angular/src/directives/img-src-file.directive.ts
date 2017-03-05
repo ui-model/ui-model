@@ -1,8 +1,7 @@
-import {Directive, ElementRef, Renderer, HostListener} from '@angular/core';
+import {Directive, ElementRef, Renderer, HostListener, Input} from '@angular/core';
 
 @Directive({
   selector: 'img[srcFile]',
-  inputs: ['srcFile'],
 })
 export class ImgSrcFileDirective {
   private url: string;
@@ -13,6 +12,7 @@ export class ImgSrcFileDirective {
     return this._srcFile;
   }
 
+  @Input()
   set srcFile(value: Blob) {
     this._srcFile = value;
     this.cleanUp();

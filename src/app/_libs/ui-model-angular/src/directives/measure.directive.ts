@@ -1,10 +1,9 @@
-import {Directive, Output, EventEmitter, ElementRef, OnInit} from '@angular/core';
+import {Directive, Output, EventEmitter, ElementRef, OnInit, Input} from '@angular/core';
 import {Rect} from 'ui-model';
 
 @Directive({
   selector: '[uiMeasure]',
   exportAs: 'uiMeasure',
-  inputs: ['signal:uiMeasureSignal']
 })
 export class MeasureDirective implements OnInit {
   @Output('uiMeasureChange') changed = new EventEmitter<void>();
@@ -14,6 +13,7 @@ export class MeasureDirective implements OnInit {
     return this._signal;
   }
 
+  @Input('uiMeasureSignal')
   set signal(value: any) {
     this._signal = value;
     this.update();
