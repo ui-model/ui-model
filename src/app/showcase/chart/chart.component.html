@@ -2,10 +2,9 @@
   <g class="chart" *ngFor="let pie of chart.pies; let index = index" [attr.index]="index">
     <path [attr.d]="pie.path" class="serial"
           [style.stroke-width]="gutter"></path>
-    <circle [attr.cx]="pie.mapToXY(pie.middlePercent, pie.radius + noteOffset).x"
-            [attr.cy]="pie.mapToXY(pie.middlePercent, pie.radius + noteOffset).y" r="5"></circle>
-    <text [attr.x]="pie.mapToXY(pie.middlePercent, pie.radius + noteOffset).x"
-            [attr.y]="pie.mapToXY(pie.middlePercent, pie.radius + noteOffset).y" dy="2">
+    <circle r="5" [uiMultiBinding]="pie.mapToXY(pie.middlePercent, pie.radius + noteOffset)" uiMultiBindingPrefix="c">
+    </circle>
+    <text dy="2" [uiMultiBinding]="pie.mapToXY(pie.middlePercent, pie.radius + noteOffset)">
       {{chart.serials[index]}}
     </text>
   </g>

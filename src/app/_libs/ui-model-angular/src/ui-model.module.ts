@@ -17,6 +17,7 @@ import {ImgSrcFileDirective} from './directives/img-src-file.directive';
 import {FileChangeDetectDirective} from './directives/file-change-detect.directive';
 import {MeasureDirective} from './directives/measure.directive';
 import {TypeAheadDirective} from './directives/type-ahead.directive';
+import {MultiBindingDirective} from './directives/multi-binding.directive';
 
 @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import {TypeAheadDirective} from './directives/type-ahead.directive';
     MomentPipe,
     ResourceUrlPipe,
     TypeAheadDirective,
+    MultiBindingDirective,
   ],
   exports: [
     SelectDirective,
@@ -50,6 +52,7 @@ import {TypeAheadDirective} from './directives/type-ahead.directive';
     PagerDirective,
     PaginationDirective,
 
+    MultiBindingDirective,
     ClickOutsideDirective,
     DraggableDirective,
     MeasureDirective,
