@@ -11,6 +11,7 @@ import {DraggableComponent} from './showcase/draggable/draggable.component';
 import {ModalComponent} from './showcase/modal/modal.component';
 import {ChartComponent} from './showcase/chart/chart.component';
 import {TypeAheadComponent} from './showcase/type-ahead/type-ahead.component';
+import {ZoomComponent} from './showcase/zoom/zoom.component';
 const routes: Route[] = [
   {
     path: '',
@@ -64,6 +65,10 @@ const routes: Route[] = [
   {
     path: 'type-ahead',
     component: TypeAheadComponent,
+  },
+  {
+    path: 'zoom',
+    component: ZoomComponent,
   },
 ];
 

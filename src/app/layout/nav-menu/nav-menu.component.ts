@@ -56,6 +56,10 @@ export class NavMenuComponent implements OnInit {
       title: 'Type Ahead',
       route: '/type-ahead',
     },
+    {
+      title: 'Zoom',
+      route: '/zoom',
+    },
   ];
 
   constructor() {

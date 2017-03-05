@@ -22,6 +22,7 @@ import {ModalService} from 'ui-model-angular';
 import {GlobalModalComponent} from './layout/global-modal/global-modal.component';
 import {ChartComponent} from './showcase/chart/chart.component';
 import { TypeAheadComponent } from './showcase/type-ahead/type-ahead.component';
+import { ZoomComponent } from './showcase/zoom/zoom.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TypeAheadComponent } from './showcase/type-ahead/type-ahead.component';
     GlobalModalComponent,
     ChartComponent,
     TypeAheadComponent,
+    ZoomComponent,
   ],
   imports: [
     BrowserModule,

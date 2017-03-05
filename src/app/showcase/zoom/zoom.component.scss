@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.small {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid lightgray;
+}
+.large {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid lightgray;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+}
