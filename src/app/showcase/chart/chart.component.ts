@@ -1,29 +1,16 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {PieChart} from 'ui-model';
-import {Subscription} from 'rxjs/Subscription';
+import {Component} from "@angular/core";
+import {PieChart} from "ui-model";
 
 @Component({
   selector: 'ui-app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
-export class ChartComponent implements OnInit, OnDestroy {
+export class ChartComponent {
 
-  chart = new PieChart(50, 50, 10, -0.25, 0.6);
+  chart = new PieChart([10, 20, 30, 40, 50, 60], 30, 50, 50);
+  gutter = 0.5;
 
   constructor() {
   }
-
-  sub: Subscription;
-
-  ngOnInit() {
-    this.sub = this.chart.changes.subscribe((chart) => {
-      console.log(chart);
-    });
-  }
-
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
-
 }

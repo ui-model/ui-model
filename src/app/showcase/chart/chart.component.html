@@ -1,23 +1,7 @@
 <svg viewBox="0 0 100 100" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-  <path [attr.d]="chart.path"></path>
+  <path *ngFor="let pie of chart.pies; let index = index" [attr.d]="pie.path" class="serial"
+        [style.stroke-width]="gutter" [attr.index]="index"></path>
 </svg>
-<p>
-  <label>
-    起始角度
-    <input type="number" [(ngModel)]="chart.beginPercent" step="0.1">
-  </label>
-
-  <label>
-    终止角度
-    <input type="number" [(ngModel)]="chart.endPercent" step="0.1">
-  </label>
-</p>
-<p>
-  <label>
-    半径
-    <input type="number" [(ngModel)]="chart.radius" step="1">
-  </label>
-</p>
 <p>
   <label>
     圆心X
@@ -29,5 +13,12 @@
   </label>
 </p>
 <p>
-  {{chart.beginPercent}} {{chart.endPercent}}
+  <label>
+    半径
+    <input type="number" [(ngModel)]="chart.radius" step="1">
+  </label>
+  <label>
+    间隙
+    <input type="number" [(ngModel)]="gutter" step="0.5">
+  </label>
 </p>

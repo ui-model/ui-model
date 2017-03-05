@@ -1,50 +1,13 @@
-import {expect} from 'chai';
-import {PieChart} from './pie-chart';
-import 'rxjs/add/operator/merge';
-import 'rxjs/add/operator/map';
+import {expect} from "chai";
+import {PieChart} from "./pie-chart";
 
-describe('PieChart', () => {
-  it('negative arc', () => {
-    const chart = new PieChart(100, 100, 100, -0.5, 0);
-    expect(chart.path).to.eql(`M 0,100.0000046
-A 100 100, 0 1 1, 200 100
-L 100,100Z`);
-  });
-
-  it('zero arc', () => {
-    const chart = new PieChart(100, 100, 100, 0, 0);
-    expect(chart.path).to.eql(`M 200,100
-A 100 100, 0 0 1, 200 100
-L 100,100Z`);
-  });
-  it('small arc', () => {
-    const chart = new PieChart(100, 100, 100, 0, 0.5);
-    expect(chart.path).to.eql(`M 200,100
-A 100 100, 0 1 1, 0 99.9999954
-L 100,100Z`);
-  });
-  it('large arc', () => {
-    const chart = new PieChart(100, 100, 100, 0, 0.75);
-    expect(chart.path).to.eql(`M 200,100
-A 100 100, 0 1 1, 100.000002 0
-L 100,100Z`);
-  });
-  it('full arc', () => {
-    const chart = new PieChart(100, 100, 100, 0, 1);
-    expect(chart.path).to.eql(`M 200 100
-A 100 100, 0 1 0, 200 100.001
-Z`);
-  });
-  it('negative full arc', () => {
-    const chart = new PieChart(100, 100, 100, -1, 1);
-    expect(chart.path).to.eql(`M 200 100
-A 100 100, 0 1 0, 200 100.001
-Z`);
-  });
-  it('positive full arc', () => {
-    const chart = new PieChart(100, 100, 100, 0, 1.2);
-    expect(chart.path).to.eql(`M 200 100
-A 100 100, 0 1 0, 200 100.001
-Z`);
+describe("PieChart", ()=> {
+  it("pies", ()=> {
+    const chart = new PieChart([10, 10, 20], 50, 60, 60);
+    expect(chart.pies.map((pie)=>pie.beginPercent)).to.eql([0, 0.25, 0.5]);
+    expect(chart.pies.map((pie)=>pie.endPercent)).to.eql([0.25, 0.5, 1]);
+    expect(chart.cx).to.eql(60);
+    expect(chart.cy).to.eql(60);
+    expect(chart.radius).to.eql(50);
   });
 });
