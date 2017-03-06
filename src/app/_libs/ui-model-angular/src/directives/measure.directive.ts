@@ -1,4 +1,4 @@
-import {Directive, Output, EventEmitter, ElementRef, OnInit, Input} from '@angular/core';
+import {Directive, Output, EventEmitter, ElementRef, OnInit, Input, HostListener} from '@angular/core';
 import {Rect} from 'ui-model';
 
 @Directive({
@@ -16,6 +16,11 @@ export class MeasureDirective implements OnInit {
   @Input('uiMeasureSignal')
   set signal(value: any) {
     this._signal = value;
+    this.update();
+  }
+
+  @HostListener('load')
+  onLoad() {
     this.update();
   }
 
