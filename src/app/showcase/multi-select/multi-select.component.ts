@@ -35,6 +35,10 @@ export class MultiSelectComponent implements OnInit {
 
   select = new MultiSelect<Data>(options, Transformers.objectByField('code'));
 
+  getCode = (value: Data) => {
+    return value.code;
+  };
+
   constructor() {
   }
 

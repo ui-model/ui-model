@@ -24,12 +24,12 @@ describe('Select', () => {
     select.select(1);
     expect(select.selection).to.equal(1);
   });
-  it('if use identity supplier, we cant lookup object properly', () => {
+  it('if use identity transformer, we cant lookup object properly', () => {
     const select = new Select(Transformers.identity);
     select.select({a: 1});
     expect(select.selected({a: 1})).to.not.be.ok;
   });
-  it('when using object supplier, we can lookup object properly', () => {
+  it('when using object transformer, we can lookup object properly', () => {
     const select = new Select(Transformers.objectByField('a'));
     select.select({a: 1});
     expect(select.selected({a: 1})).to.be.ok;

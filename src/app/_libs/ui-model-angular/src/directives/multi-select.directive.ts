@@ -1,27 +1,46 @@
-import {Directive, OnDestroy, OnInit, EventEmitter, Output} from '@angular/core';
-import {MultiSelect} from 'ui-model';
+import {Directive, forwardRef, Input} from '@angular/core';
+import {MultiSelect, Transformer} from 'ui-model';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+
+export const MULTI_SELECT_VALUE_ACCESSOR = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => MultiSelectDirective),
+  multi: true,
+};
+
 @Directive({
   selector: '[uiMultiSelect]',
-  inputs: ['allSelected', 'selection']
+  inputs: ['options:uiMultiSelect'],
+  exportAs: 'uiMultiSelect',
+  providers: [MULTI_SELECT_VALUE_ACCESSOR],
 })
-export class MultiSelectDirective<T> extends MultiSelect<T> implements OnInit, OnDestroy {
+export class MultiSelectDirective<T> extends MultiSelect<T> implements ControlValueAccessor {
   constructor() {
     super();
   }
 
-  @Output() selectionChange = new EventEmitter();
-  @Output() allSelectedChange = new EventEmitter();
+  @Input('uiMultiSelectTransformer') transformer: Transformer<T, any>;
 
-  sub: any;
-
-  ngOnInit(): void {
-    this.sub = this.changes.subscribe(() => {
-      this.selectionChange.emit(this.selection);
-      this.allSelectedChange.emit(this.allSelected);
-    });
+  protected changed(value: T): void {
+    super.changed(value);
+    if (this.onChange) {
+      this.onChange(this.selection);
+    }
   }
 
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
+  writeValue(value: T[]): void {
+    this.selection = value;
+  }
+
+  onChange: (value: T[]) => void;
+
+  registerOnChange(callback: (value: T[]) => void): void {
+    this.onChange = callback;
+  }
+
+  onTouched: () => void;
+
+  registerOnTouched(callback: () => void): void {
+    this.onTouched = callback;
   }
 }

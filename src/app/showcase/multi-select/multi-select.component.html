@@ -46,3 +46,22 @@
     </div>
   </div>
 </ui-panel>
+
+<ui-panel title="NgModel" [uiMultiSelect]="options" [uiMultiSelectTransformer]="getCode" [(ngModel)]="selection" #checker="uiMultiSelect">
+  <div class="card">
+    <div class="card-header">
+      <input type="checkbox" [indeterminate]="checker.indeterminate" [(ngModel)]="checker.allSelected"/>
+      All
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let option of checker.options">
+        <label>
+          <input type="checkbox" [ngModel]="checker.selected(option)"
+                 (ngModelChange)="checker.selectAs(option, $event)"/>
+          <span [innerHTML]="option.label"></span>
+        </label>
+      </li>
+    </ul>
+  </div>
+  {{selection|json}}
+</ui-panel>

@@ -31,7 +31,7 @@ describe('Multi Select', () => {
     expect(select.unselected(2)).to.be.ok;
   });
 
-  it('no options', ()=> {
+  it('no options', () => {
     const select = new MultiSelect();
     expect(select.allSelected).to.not.be.ok;
     expect(select.anySelected).to.not.be.ok;
@@ -44,8 +44,7 @@ describe('Multi Select', () => {
   it('changes', (done) => {
     const select = new MultiSelect(options);
     select.changes.subscribe((value) => {
-      expect(value.option).to.equal(1);
-      expect(value.value).to.be.true;
+      expect(value).to.equal(1);
       done();
     });
     select.select(1);
@@ -92,7 +91,7 @@ describe('Multi Select', () => {
         2,
       ]);
   });
-  it('supplier', () => {
+  it('transformer', () => {
     const select = new MultiSelect<{a: string}>([
       {a: '1'},
       {a: '2'},

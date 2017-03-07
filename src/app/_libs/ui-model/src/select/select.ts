@@ -2,7 +2,7 @@ import {Transformer, Transformers} from '../utils/transformer';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 export class Select<T> {
-  constructor(private supplier: Transformer<T, any> = Transformers.objectById) {
+  constructor(private transformer: Transformer<T, any> = Transformers.objectById) {
   }
 
   private _changes = new Subject();
@@ -27,7 +27,7 @@ export class Select<T> {
   }
 
   selected(item: T): boolean {
-    return this.supplier(this.selection) === this.supplier(item);
+    return this.transformer(this.selection) === this.transformer(item);
   }
 
   select(item: T): void {

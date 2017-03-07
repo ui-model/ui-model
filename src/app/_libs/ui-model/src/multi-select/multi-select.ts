@@ -2,25 +2,20 @@ import {Transformer, Transformers} from '../utils/transformer';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 
-interface State<T> {
-  option: T;
-  value: boolean;
-}
-
 export class MultiSelect<T> {
   private selectedStates = new Map<T, boolean>();
 
   private _changes = new Subject();
 
-  get changes(): Observable<State<T>> {
+  get changes(): Observable<T> {
     return this._changes;
   }
 
-  protected changed(value: State<T>): void {
+  protected changed(value: T): void {
     this._changes.next(value);
   }
 
-  constructor(public options: T[] = [], private supplier: Transformer<T, any> = Transformers.objectById) {
+  constructor(public options: T[] = [], public transformer: Transformer<T, any> = Transformers.objectById) {
   }
 
   get allSelected(): boolean {
@@ -48,7 +43,7 @@ export class MultiSelect<T> {
   }
 
   selected(option: T): boolean {
-    return !!this.selectedStates[this.supplier(option)];
+    return this.selectedStates.get(this.transformer(option));
   }
 
   unselected(option: T): boolean {
@@ -56,11 +51,8 @@ export class MultiSelect<T> {
   }
 
   selectAs(option: T, value: any): void {
-    this.selectedStates[this.supplier(option)] = !!value;
-    this.changed({
-      option: option,
-      value: !!value,
-    });
+    this.selectedStates.set(this.transformer(option), !!value);
+    this.changed(option);
   }
 
   select(option: T): void {
@@ -96,6 +88,9 @@ export class MultiSelect<T> {
   }
 
   set selection(selections: T[]) {
+    if (!selections) {
+      return;
+    }
     selections.forEach((value) => {
       this.select(value);
     });
