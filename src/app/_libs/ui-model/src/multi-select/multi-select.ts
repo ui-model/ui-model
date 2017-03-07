@@ -24,7 +24,7 @@ export class MultiSelect<T> {
   }
 
   get allSelected(): boolean {
-    return !this.anyUnselected;
+    return this.options && this.options.length && !this.anyUnselected;
   }
 
   set allSelected(value: boolean) {
