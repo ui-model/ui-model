@@ -1,4 +1,4 @@
-import {Supplier, Suppliers} from '../utils/supplier';
+import {Transformer, Transformers} from '../utils/transformer';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 
@@ -20,7 +20,7 @@ export class MultiSelect<T> {
     this._changes.next(value);
   }
 
-  constructor(public options: T[] = [], private supplier: Supplier<T, any> = Suppliers.objectById) {
+  constructor(public options: T[] = [], private supplier: Transformer<T, any> = Transformers.objectById) {
   }
 
   get allSelected(): boolean {

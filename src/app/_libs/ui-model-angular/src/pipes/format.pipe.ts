@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {TableField, DataType, dataTypeOf, Suppliers} from 'ui-model';
+import {TableField, DataType, dataTypeOf, Transformers} from 'ui-model';
 import * as moment from 'moment';
 import {isUndefined} from 'util';
 
@@ -9,7 +9,7 @@ import {isUndefined} from 'util';
 export class FormatPipe implements PipeTransform {
 
   transform(value: any, field: TableField): string {
-    if (field && field.formatter !== Suppliers.identity) {
+    if (field && field.formatter !== Transformers.identity) {
       return field.formatter(value);
     }
 

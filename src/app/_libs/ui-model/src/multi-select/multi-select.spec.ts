@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import {MultiSelect} from './multi-select';
-import {Suppliers} from '../utils/supplier';
+import {Transformers} from '../utils/transformer';
 
 const options = [
   1,
@@ -97,7 +97,7 @@ describe('Multi Select', () => {
       {a: '1'},
       {a: '2'},
       {a: '3'},
-    ], Suppliers.objectByField('a'));
+    ], Transformers.objectByField('a'));
     select.select({a: '1'});
     expect(select.selected({a: '1'})).to.be.ok;
   });

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MultiSelect, Suppliers} from 'ui-model';
+import {MultiSelect, Transformers} from 'ui-model';
 
 class Data {
   code: string;
@@ -33,7 +33,7 @@ export class MultiSelectComponent implements OnInit {
 
   options = options;
 
-  select = new MultiSelect<Data>(options, Suppliers.objectByField('code'));
+  select = new MultiSelect<Data>(options, Transformers.objectByField('code'));
 
   constructor() {
   }

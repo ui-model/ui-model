@@ -1,5 +1,5 @@
 import {Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Provider, Supplier, Toggle} from 'ui-model';
+import {Provider, Transformer, Toggle} from 'ui-model';
 import {Subject} from 'rxjs/Subject';
 import {Subscription} from 'rxjs/Subscription';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
@@ -27,8 +27,8 @@ export class TypeAheadComponent<T extends { format?: Provider<SafeHtml>, parse?:
   @Input() items: T[];
   @Input() displayField = 'name';
   @Input() placeholder = '-';
-  @Input() formatter: Supplier<any, SafeHtml> = this.defaultFormatter.bind(this);
-  @Input() parser: Supplier<any, string> = this.defaultParser.bind(this);
+  @Input() formatter: Transformer<any, SafeHtml> = this.defaultFormatter.bind(this);
+  @Input() parser: Transformer<any, string> = this.defaultParser.bind(this);
   @Output() search = new EventEmitter<string>();
 
   defaultFormatter(value: T): string | SafeHtml {

@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import {Select} from './select';
-import {Suppliers} from '../utils/supplier';
+import {Transformers} from '../utils/transformer';
 
 describe('Select', () => {
   it('select', () => {
@@ -25,12 +25,12 @@ describe('Select', () => {
     expect(select.selection).to.equal(1);
   });
   it('if use identity supplier, we cant lookup object properly', () => {
-    const select = new Select(Suppliers.identity);
+    const select = new Select(Transformers.identity);
     select.select({a: 1});
     expect(select.selected({a: 1})).to.not.be.ok;
   });
   it('when using object supplier, we can lookup object properly', () => {
-    const select = new Select(Suppliers.objectByField('a'));
+    const select = new Select(Transformers.objectByField('a'));
     select.select({a: 1});
     expect(select.selected({a: 1})).to.be.ok;
   });

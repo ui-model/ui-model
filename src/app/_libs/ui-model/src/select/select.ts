@@ -1,8 +1,8 @@
-import {Supplier, Suppliers} from '../utils/supplier';
+import {Transformer, Transformers} from '../utils/transformer';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 export class Select<T> {
-  constructor(private supplier: Supplier<T, any> = Suppliers.objectById) {
+  constructor(private supplier: Transformer<T, any> = Transformers.objectById) {
   }
 
   private _changes = new Subject();

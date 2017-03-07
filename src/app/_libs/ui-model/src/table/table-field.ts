@@ -1,7 +1,7 @@
 import {SortOrder} from '../utils/sort-order';
 import {Comparators, Comparator} from '../utils/comparator';
 import {DataType} from '../utils/data-type';
-import {Supplier, Suppliers} from '../utils/supplier';
+import {Transformer, Transformers} from '../utils/transformer';
 import {isUndefined} from 'util';
 export class TableField {
   name: string;
@@ -11,7 +11,7 @@ export class TableField {
   sortOrder?: SortOrder = SortOrder.None;
   scale?: number = 0;
   comparator?: Comparator<any> = Comparators.any;
-  formatter?: Supplier<any, string> = Suppliers.identity;
+  formatter?: Transformer<any, string> = Transformers.identity;
 
   isNonOrder(): boolean {
     return !this.isAscOrder() && !this.isDescOrder();

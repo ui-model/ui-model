@@ -1,15 +1,15 @@
 import {isObject, isUndefined} from 'util';
 
-export type Supplier<FromType, ToType> = (value: FromType) => ToType;
+export type Transformer<FromType, ToType> = (value: FromType) => ToType;
 
-export class Suppliers {
-  static objectById = Suppliers.objectByField('id');
+export class Transformers {
+  static objectById = Transformers.objectByField('id');
 
   static identity(fromData: any): any {
     return fromData;
   }
 
-  static objectByField(field: string): Supplier<Object, any> {
+  static objectByField(field: string): Transformer<Object, any> {
     return (fromData: Object) => {
       if (isObject(fromData)) {
         if (!isUndefined(fromData[field])) {

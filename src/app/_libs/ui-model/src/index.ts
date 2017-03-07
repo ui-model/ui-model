@@ -15,7 +15,7 @@ export {DataType, dataTypeOf} from './utils/data-type';
 export {Predicate, Predicates} from './utils/predicate';
 export {Provider, getOrCall} from './utils/provider';
 export {SortOrder} from './utils/sort-order';
-export {Supplier, Suppliers} from './utils/supplier';
+export {Transformer, Transformers} from './utils/transformer';
 export {Rect} from './utils/rect';
 export {Point} from './utils/point';
 export {Size} from './utils/size';
