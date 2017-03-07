@@ -1,5 +1,5 @@
 import {Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Provider, Transformer, Toggle} from 'ui-model';
+import {Transformer, Toggle, Supplier} from 'ui-model';
 import {Subject} from 'rxjs/Subject';
 import {Subscription} from 'rxjs/Subscription';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
@@ -18,7 +18,7 @@ export const TYPE_AHEAD_ACCESSOR = {
   styleUrls: ['./type-ahead.component.scss'],
   providers: [TYPE_AHEAD_ACCESSOR],
 })
-export class TypeAheadComponent<T extends { format?: Provider<SafeHtml>, parse?: Provider<string> }> implements ControlValueAccessor, OnInit, OnDestroy {
+export class TypeAheadComponent<T extends {format?: Supplier<SafeHtml>, parse?: Supplier<string>}> implements ControlValueAccessor, OnInit, OnDestroy {
 
   dropDown = new Toggle();
 

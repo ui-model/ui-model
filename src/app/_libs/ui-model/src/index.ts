@@ -13,7 +13,7 @@ export {Comparator, Comparators} from './utils/comparator';
 export {Coordinate} from './utils/coordinate';
 export {DataType, dataTypeOf} from './utils/data-type';
 export {Predicate, Predicates} from './utils/predicate';
-export {Provider, getOrCall} from './utils/provider';
+export {Supplier, getOrCall} from './utils/supplier';
 export {SortOrder} from './utils/sort-order';
 export {Transformer, Transformers} from './utils/transformer';
 export {Rect} from './utils/rect';
