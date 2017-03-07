@@ -47,11 +47,14 @@
   </div>
 </ui-panel>
 
-<ui-panel title="NgModel" [uiMultiSelect]="options" [uiMultiSelectTransformer]="getCode" [(ngModel)]="selection" #checker="uiMultiSelect">
+<ui-panel title="uiMultiSelect directive & NgModel" [uiMultiSelect]="options" [uiMultiSelectTransformer]="getCode"
+          [(ngModel)]="selection" #checker="uiMultiSelect">
   <div class="card">
     <div class="card-header">
-      <input type="checkbox" [indeterminate]="checker.indeterminate" [(ngModel)]="checker.allSelected"/>
-      All
+      <label>
+        <input type="checkbox" [indeterminate]="checker.indeterminate" [(ngModel)]="checker.allSelected"/>
+        All
+      </label>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item" *ngFor="let option of checker.options">
