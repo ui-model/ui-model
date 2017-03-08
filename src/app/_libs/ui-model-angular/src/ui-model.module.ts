@@ -19,6 +19,7 @@ import {MeasureDirective} from './directives/measure.directive';
 import {TypeAheadDirective} from './directives/type-ahead.directive';
 import {MultiBindingDirective} from './directives/multi-binding.directive';
 import { SafeStylePipe } from './pipes/safe-style.pipe';
+import { DisabledDirective } from './directives/disabled.directive';
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import { SafeStylePipe } from './pipes/safe-style.pipe';
     TypeAheadDirective,
     MultiBindingDirective,
     SafeStylePipe,
+    DisabledDirective,
   ],
   exports: [
     SelectDirective,
@@ -61,6 +63,7 @@ import { SafeStylePipe } from './pipes/safe-style.pipe';
     ImgSrcFileDirective,
     FileChangeDetectDirective,
     TypeAheadDirective,
+    DisabledDirective,
 
     FormatPipe,
     OrderByPipe,
@@ -88,6 +91,7 @@ export * from './directives/measure.directive';
 export * from './directives/img-src-file.directive';
 export * from './directives/file-change-detect.directive';
 export * from './directives/type-ahead.directive';
+export * from './directives/disabled.directive';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';
