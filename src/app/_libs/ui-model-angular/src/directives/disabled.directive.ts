@@ -1,44 +1,56 @@
-import {Directive, ElementRef} from '@angular/core';
+import {Directive, ElementRef, Input, HostBinding} from '@angular/core';
 
 @Directive({
-  selector: '.disabled,[disabled]'
+  selector: '[uiDisabled]'
 })
 export class DisabledDirective {
+  private _disabled: boolean = true;
+  get disabled(): boolean {
+    return this._disabled;
+  }
+
+  @Input('uiDisabled')
+  set disabled(value: boolean) {
+    this._disabled = value;
+    this.classDisabled = value;
+  }
+
+  @HostBinding('class.disabled') classDisabled;
 
   constructor(private element: ElementRef) {
-    const e = element.nativeElement;
-    e.disabled = false;
-    e.classList.add('disabled');
+    const e = this.element.nativeElement;
     // cancel all events but mouseenter/mouseleave/mouseover/mouseout - they are necessary for tooltip
-    e.addEventListener('click', preventDefault);
-    e.addEventListener('mousedown', preventDefault);
-    e.addEventListener('mouseup', preventDefault);
-    e.addEventListener('mousewheel', preventDefault);
-    e.addEventListener('dblclick', preventDefault);
-    e.addEventListener('keydown', preventDefault);
-    e.addEventListener('keyup', preventDefault);
-    e.addEventListener('keypress', preventDefault);
-    e.addEventListener('focus', preventDefault);
-    e.addEventListener('touchcancel', preventDefault);
-    e.addEventListener('touchend', preventDefault);
-    e.addEventListener('touchenter', preventDefault);
-    e.addEventListener('touchleave', preventDefault);
-    e.addEventListener('touchmove', preventDefault);
-    e.addEventListener('touchstart', preventDefault);
-    e.addEventListener('pointerover', preventDefault);
-    e.addEventListener('pointerenter', preventDefault);
-    e.addEventListener('pointerdown', preventDefault);
-    e.addEventListener('pointermove', preventDefault);
-    e.addEventListener('pointerup', preventDefault);
-    e.addEventListener('pointercancel', preventDefault);
-    e.addEventListener('pointerout', preventDefault);
-    e.addEventListener('pointerleave', preventDefault);
+    e.addEventListener('click', this.preventDefault);
+    e.addEventListener('mousedown', this.preventDefault);
+    e.addEventListener('mouseup', this.preventDefault);
+    e.addEventListener('mousewheel', this.preventDefault);
+    e.addEventListener('dblclick', this.preventDefault);
+    e.addEventListener('keydown', this.preventDefault);
+    e.addEventListener('keyup', this.preventDefault);
+    e.addEventListener('keypress', this.preventDefault);
+    e.addEventListener('focus', this.preventDefault);
+    e.addEventListener('touchcancel', this.preventDefault);
+    e.addEventListener('touchend', this.preventDefault);
+    e.addEventListener('touchenter', this.preventDefault);
+    e.addEventListener('touchleave', this.preventDefault);
+    e.addEventListener('touchmove', this.preventDefault);
+    e.addEventListener('touchstart', this.preventDefault);
+    e.addEventListener('pointerover', this.preventDefault);
+    e.addEventListener('pointerenter', this.preventDefault);
+    e.addEventListener('pointerdown', this.preventDefault);
+    e.addEventListener('pointermove', this.preventDefault);
+    e.addEventListener('pointerup', this.preventDefault);
+    e.addEventListener('pointercancel', this.preventDefault);
+    e.addEventListener('pointerout', this.preventDefault);
+    e.addEventListener('pointerleave', this.preventDefault);
   }
-}
 
-function preventDefault(event) {
-  event.preventDefault();
-  event.stopPropagation();
-  event.stopImmediatePropagation();
-  return false;
+  preventDefault = (event) => {
+    if (this.disabled) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      return false;
+    }
+  }
 }
