@@ -1,18 +1,18 @@
 import {Directive, ElementRef, Input, HostBinding} from '@angular/core';
 
 @Directive({
-  selector: '[uiDisabled]'
+  selector: '[uiDisabled],[ui-disabled]'
 })
 export class DisabledDirective {
-  private _disabled: boolean = true;
-  get disabled(): boolean {
+  private _disabled: boolean | string = true;
+  get disabled(): boolean | string {
     return this._disabled;
   }
 
   @Input('uiDisabled')
-  set disabled(value: boolean) {
-    this._disabled = value;
-    this.classDisabled = value;
+  set disabled(value: boolean | string) {
+    this._disabled = value || value === '';
+    this.classDisabled = this._disabled;
   }
 
   @HostBinding('class.disabled') classDisabled;
