@@ -1,0 +1,32 @@
+@import "~bootstrap/scss/variables";
+:host {
+  display: block;
+}
+
+.playground {
+  position: relative;
+  margin: 30px auto;
+  width: 500px;
+  height: 500px;
+  background: $gray-lighter;
+  > * {
+    position: absolute;
+  }
+
+  .top {
+    top: 4px;
+  }
+  .left {
+    left: 4px;
+  }
+  .bottom {
+    bottom: 4px;
+  }
+  .right {
+    right: 4px;
+  }
+}
+
+.tooltip {
+  opacity: 1;
+}

@@ -12,6 +12,7 @@ import {ModalComponent} from './showcase/modal/modal.component';
 import {ChartComponent} from './showcase/chart/chart.component';
 import {TypeAheadComponent} from './showcase/type-ahead/type-ahead.component';
 import {ZoomComponent} from './showcase/zoom/zoom.component';
+import {TooltipComponent} from './showcase/tooltip/tooltip.component';
 const routes: Route[] = [
   {
     path: '',
@@ -69,6 +70,10 @@ const routes: Route[] = [
   {
     path: 'zoom',
     component: ZoomComponent,
+  },
+  {
+    path: 'tooltip',
+    component: TooltipComponent,
   },
 ];
 

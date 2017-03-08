@@ -23,6 +23,7 @@ import {DisabledDirective} from './directives/disabled.directive';
 import {SafeHtmlPipe} from './pipes/safe-html.pipe';
 import {SafeScriptPipe} from './pipes/safe-script.pipe';
 import {SafeUrlPipe} from './pipes/safe-url.pipe';
+import {TooltipDirective} from './directives/tooltip.directive';
 
 @NgModule({
   imports: [
@@ -50,6 +51,7 @@ import {SafeUrlPipe} from './pipes/safe-url.pipe';
     TypeAheadDirective,
     MultiBindingDirective,
     SafeStylePipe,
+    TooltipDirective,
     DisabledDirective,
     SafeHtmlPipe,
     SafeScriptPipe,
@@ -69,6 +71,7 @@ import {SafeUrlPipe} from './pipes/safe-url.pipe';
     ImgSrcFileDirective,
     FileChangeDetectDirective,
     TypeAheadDirective,
+    TooltipDirective,
     DisabledDirective,
 
     FormatPipe,
@@ -99,6 +102,7 @@ export * from './directives/measure.directive';
 export * from './directives/img-src-file.directive';
 export * from './directives/file-change-detect.directive';
 export * from './directives/type-ahead.directive';
+export * from './directives/tooltip.directive';
 export * from './directives/disabled.directive';
 
 export * from './pipes/format.pipe';
@@ -112,5 +116,6 @@ export * from './pipes/safe-html.pipe';
 export * from './pipes/safe-script.pipe';
 
 export * from './services/modal.service';
+export * from './services/tooltip.service';
 
 export * from './utils/animations';

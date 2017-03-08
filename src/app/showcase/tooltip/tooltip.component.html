@@ -1,0 +1,15 @@
+<div class="playground" uiMeasure #playground="uiMeasure">
+  <button type="button" class="btn btn-primary top left" uiMeasure uiTooltip>
+    Top & Left
+  </button>
+  <button type="button" class="btn btn-primary top right" uiMeasure uiTooltip="total: {{total}}">
+    Top & right
+  </button>
+  <button type="button" class="btn btn-primary bottom left" uiMeasure #btnBL="uiMeasure" uiTooltip="width: {{btnBL.boundingRect.width}}">
+    Bottom & Left
+  </button>
+  <button type="button" class="btn btn-primary bottom right" uiMeasure [uiTooltip]="html|safeHtml" uiDisabled>
+    Bottom & Right & Disabled
+  </button>
+  <ui-tooltip *ngIf="tooltip.visible"><div [innerHTML]="tooltip.message"></div></ui-tooltip>
+</div>

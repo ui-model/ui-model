@@ -60,6 +60,10 @@ export class NavMenuComponent implements OnInit {
       title: 'Zoom',
       route: '/zoom',
     },
+    {
+      title: 'Tooltip',
+      route: '/tooltip',
+    },
   ];
 
   constructor() {

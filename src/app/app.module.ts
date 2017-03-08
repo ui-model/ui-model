@@ -18,11 +18,12 @@ import {PreviewComponent} from './showcase/preview/preview.component';
 import {DraggableComponent} from './showcase/draggable/draggable.component';
 import {ModalComponent} from './showcase/modal/modal.component';
 import {ModalContentComponent} from './showcase/modal-content/modal-content.component';
-import {ModalService} from 'ui-model-angular';
+import {ModalService, TooltipService} from 'ui-model-angular';
 import {GlobalModalComponent} from './layout/global-modal/global-modal.component';
 import {ChartComponent} from './showcase/chart/chart.component';
 import { TypeAheadComponent } from './showcase/type-ahead/type-ahead.component';
 import { ZoomComponent } from './showcase/zoom/zoom.component';
+import { TooltipComponent } from './showcase/tooltip/tooltip.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ZoomComponent } from './showcase/zoom/zoom.component';
     ChartComponent,
     TypeAheadComponent,
     ZoomComponent,
+    TooltipComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,7 @@ import { ZoomComponent } from './showcase/zoom/zoom.component';
   ],
   providers: [
     ModalService,
+    TooltipService,
   ],
   bootstrap: [AppComponent]
 })
