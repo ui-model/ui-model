@@ -3,9 +3,9 @@ import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser';
 import {isString} from 'util';
 
 @Pipe({
-  name: 'resourceUrl'
+  name: 'safeResourceUrl'
 })
-export class ResourceUrlPipe implements PipeTransform, OnDestroy {
+export class SafeResourceUrlPipe implements PipeTransform, OnDestroy {
   private blobUrls = [];
 
   constructor(private sanitizer: DomSanitizer) {
