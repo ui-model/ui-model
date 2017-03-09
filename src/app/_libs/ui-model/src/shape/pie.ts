@@ -1,5 +1,5 @@
-import {Coordinate} from "../utils/coordinate";
-import {Observable} from "rxjs";
+import {Coordinate} from '../utils/coordinate';
+import {Observable} from 'rxjs';
 export class Pie {
   get cx(): number {
     return this._begin.cx;

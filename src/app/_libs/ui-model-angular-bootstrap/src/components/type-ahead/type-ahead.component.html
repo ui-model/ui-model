@@ -11,7 +11,8 @@
   </div>
   <div class="dropdown-menu" *ngIf="dropDown.isOn">
     <div class="dropdown-item not-found" *ngIf="!items.length">{{placeholder}}</div>
-    <div class="dropdown-item" *ngFor="let item of items" (click)="select(item);dropDown.close()" [innerHTML]="formatter(item)">
+    <div class="dropdown-item" *ngFor="let item of items" (click)="select(item);dropDown.close()"
+         [innerHTML]="formatter(item)">
     </div>
   </div>
 </div>

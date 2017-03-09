@@ -1,4 +1,4 @@
-import {Pie} from "../shape/pie";
+import {Pie} from '../shape/pie';
 export class PieChart {
   constructor(serials: number[] = [], radius: number, cx: number = 0, cy: number = 0) {
     this.serials = serials;

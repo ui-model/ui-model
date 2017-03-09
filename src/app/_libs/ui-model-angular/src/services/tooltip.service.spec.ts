@@ -1,7 +1,6 @@
 /* tslint:disable:no-unused-variable */
-
-import { TestBed, async, inject } from '@angular/core/testing';
-import { TooltipService } from './tooltip.service';
+import {TestBed, inject} from '@angular/core/testing';
+import {TooltipService} from './tooltip.service';
 
 describe('TooltipService', () => {
   beforeEach(() => {

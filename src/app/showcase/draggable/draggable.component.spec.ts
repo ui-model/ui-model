@@ -8,8 +8,8 @@ describe('DraggableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-        declarations: [DraggableComponent]
-      })
+      declarations: [DraggableComponent]
+    })
       .compileComponents();
   }));
 

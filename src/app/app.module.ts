@@ -21,9 +21,9 @@ import {ModalContentComponent} from './showcase/modal-content/modal-content.comp
 import {ModalService, TooltipService} from 'ui-model-angular';
 import {GlobalModalComponent} from './layout/global-modal/global-modal.component';
 import {ChartComponent} from './showcase/chart/chart.component';
-import { TypeAheadComponent } from './showcase/type-ahead/type-ahead.component';
-import { ZoomComponent } from './showcase/zoom/zoom.component';
-import { TooltipComponent } from './showcase/tooltip/tooltip.component';
+import {TypeAheadComponent} from './showcase/type-ahead/type-ahead.component';
+import {ZoomComponent} from './showcase/zoom/zoom.component';
+import {TooltipComponent} from './showcase/tooltip/tooltip.component';
 
 @NgModule({
   declarations: [

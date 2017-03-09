@@ -1,9 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { TooltipComponent } from './tooltip.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {TooltipComponent} from './tooltip.component';
 
 describe('TooltipComponent', () => {
   let component: TooltipComponent;
@@ -11,9 +8,9 @@ describe('TooltipComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TooltipComponent ]
+      declarations: [TooltipComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

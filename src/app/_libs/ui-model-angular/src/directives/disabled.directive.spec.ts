@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-
-import { TestBed, async } from '@angular/core/testing';
-import { DisabledDirective } from './disabled.directive';
+import {DisabledDirective} from './disabled.directive';
 
 describe('DisabledDirective', () => {
   it('should create an instance', () => {

@@ -1,9 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { TypeAheadComponent } from './type-ahead.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {TypeAheadComponent} from './type-ahead.component';
 
 describe('TypeAheadComponent', () => {
   let component: TypeAheadComponent;
@@ -11,9 +8,9 @@ describe('TypeAheadComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TypeAheadComponent ]
+      declarations: [TypeAheadComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

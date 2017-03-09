@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-
-import { TestBed, async } from '@angular/core/testing';
-import { SafeStylePipe } from './safe-style.pipe';
+import {SafeStylePipe} from './safe-style.pipe';
 
 describe('SafeStylePipe', () => {
   it('create an instance', () => {
