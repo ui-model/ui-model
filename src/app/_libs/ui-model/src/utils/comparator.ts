@@ -1,4 +1,4 @@
-import {isString, isNumber, isBoolean, isDate} from 'util';
+import {isString, isNumber, isBoolean, isDate} from './typings';
 
 export type Comparator<T> = (v1: T, v2: T) => number;
 

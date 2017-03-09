@@ -2,7 +2,7 @@ import {Component, OnInit, forwardRef} from '@angular/core';
 import {CalendarValueAccessor} from 'ui-model-angular';
 import {NG_VALUE_ACCESSOR} from '@angular/forms';
 
-export const CALENDAR_VALUE_ACCESSOR = {
+const CALENDAR_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => CalendarComponent),
   multi: true,

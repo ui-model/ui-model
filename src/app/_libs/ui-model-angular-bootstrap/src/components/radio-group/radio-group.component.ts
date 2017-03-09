@@ -2,7 +2,7 @@ import {Component, OnInit, forwardRef, Input, OnDestroy} from '@angular/core';
 import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 import {Select} from 'ui-model';
 
-export const RADIO_GROUP_VALUE_ACCESSOR = {
+const RADIO_GROUP_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => RadioGroupComponent),
   multi: true,

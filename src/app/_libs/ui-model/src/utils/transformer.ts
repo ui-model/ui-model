@@ -1,4 +1,4 @@
-import {isObject, isUndefined} from 'util';
+import {isObject, isUndefined} from './typings';
 
 export type Transformer<FromType, ToType> = (value: FromType) => ToType;
 
@@ -23,7 +23,7 @@ export class Transformers {
     };
   }
 
-  static objectById(): Transformer<Object, any> {
+  static get objectById(): Transformer<Object, any> {
     return Transformers.objectByField('id');
   }
 

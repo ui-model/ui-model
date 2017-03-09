@@ -1,6 +1,6 @@
 {
   "name": "ui-model-angular-bootstrap",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "license": "MIT",
   "main": "index.ts",
   "description": "angular binding for ui model using bootstrap as css framework",
@@ -18,17 +18,12 @@
     "url": "https://github.com/ui-model/ui-model-angular-bootstrap/issues"
   },
   "homepage": "https://github.com/ui-model/ui-model-angular-bootstrap#readme",
-  "scripts": {},
   "peerDependencies": {
     "@angular/common": "^2.0.0",
     "@angular/core": "^2.0.0",
     "@angular/forms": "^2.0.0",
-    "ui-model": "0.0.19",
-    "ui-model-angular": "0.0.19",
+    "ui-model": "0.0.20",
+    "ui-model-angular": "0.0.20",
     "moment": "^2.0.0"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.0.0",
-    "ts-helpers": "^1.0.0"
   }
 }

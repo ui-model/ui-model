@@ -2,7 +2,7 @@ import {SortOrder} from '../utils/sort-order';
 import {Comparators, Comparator} from '../utils/comparator';
 import {DataType} from '../utils/data-type';
 import {Transformer, Transformers} from '../utils/transformer';
-import {isUndefined} from 'util';
+import {isUndefined} from '../utils/typings';
 export class TableField {
   name: string;
   title: string;

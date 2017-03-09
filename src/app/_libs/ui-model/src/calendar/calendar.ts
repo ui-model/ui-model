@@ -1,9 +1,7 @@
 import * as moment from 'moment';
+import {Moment, MomentInput} from 'moment';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
-
-type Moment = moment.Moment;
-type MomentInput = moment.MomentInput;
 
 export class Calendar {
   constructor(value?: MomentInput) {

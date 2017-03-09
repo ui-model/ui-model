@@ -1,12 +1,11 @@
 import {Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Transformer, Toggle, Supplier} from 'ui-model';
+import {Transformer, Toggle, Supplier, isFunction} from 'ui-model';
 import {Subject} from 'rxjs/Subject';
 import {Subscription} from 'rxjs/Subscription';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {isFunction} from 'util';
 import {SafeHtml} from '@angular/platform-browser';
 
-export const TYPE_AHEAD_ACCESSOR = {
+const TYPE_AHEAD_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => TypeAheadComponent),
   multi: true,

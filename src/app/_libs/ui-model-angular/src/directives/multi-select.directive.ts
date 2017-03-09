@@ -2,7 +2,7 @@ import {Directive, forwardRef, Input} from '@angular/core';
 import {MultiSelect, Transformer} from 'ui-model';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
-export const MULTI_SELECT_VALUE_ACCESSOR = {
+const MULTI_SELECT_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => MultiSelectDirective),
   multi: true,

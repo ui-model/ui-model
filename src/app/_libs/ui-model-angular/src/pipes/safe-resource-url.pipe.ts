@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform, OnDestroy} from '@angular/core';
 import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser';
-import {isString} from 'util';
+import {isString} from 'ui-model';
 
 @Pipe({
   name: 'safeResourceUrl'

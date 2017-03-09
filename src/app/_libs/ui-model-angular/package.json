@@ -1,6 +1,6 @@
 {
   "name": "ui-model-angular",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "license": "MIT",
   "description": "angular binding for ui model",
   "main": "index.ts",
@@ -18,20 +18,12 @@
     "url": "https://github.com/ui-model/ui-model-angular/issues"
   },
   "homepage": "https://github.com/ui-model/ui-model-angular#readme",
-  "scripts": {},
   "peerDependencies": {
     "@angular/common": "^2.0.0",
     "@angular/core": "^2.0.0",
     "@angular/forms": "^2.0.0",
     "rxjs": "^5.0.0",
     "moment": "^2.0.0",
-    "ui-model": "0.0.19"
-  },
-  "devDependencies": {
-    "@angular/common": "^2.0.0",
-    "@angular/core": "^2.0.0",
-    "@angular/forms": "^2.0.0",
-    "@types/lodash": "^4.0.0",
-    "ts-helpers": "^1.0.0"
+    "ui-model": "0.0.20"
   }
 }
