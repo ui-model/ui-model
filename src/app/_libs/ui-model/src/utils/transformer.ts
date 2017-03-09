@@ -3,7 +3,6 @@ import {isObject, isUndefined} from 'util';
 export type Transformer<FromType, ToType> = (value: FromType) => ToType;
 
 export class Transformers {
-  static objectById = Transformers.objectByField('id');
 
   static identity(fromData: any): any {
     return fromData;
@@ -22,6 +21,10 @@ export class Transformers {
         return fromData;
       }
     };
+  }
+
+  static objectById(): Transformer<Object, any> {
+    return Transformers.objectByField('id');
   }
 
   static toString(fromData: any): string {
