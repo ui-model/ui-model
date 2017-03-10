@@ -5,10 +5,12 @@ import {StateListener} from '../utils/state-listener';
 export class PieChart extends Ui {
   constructor(serials: number[] = [], radius: number, cx: number = 0, cy: number = 0, stateListener?: StateListener, stateKey?: string) {
     super(stateListener, stateKey);
-    this.serials = serials;
-    this.radius = radius;
-    this.cx = cx;
-    this.cy = cy;
+    setTimeout(()=> {
+      this.serials = serials;
+      this.radius = radius;
+      this.cx = cx;
+      this.cy = cy;
+    });
   }
 
   get serials(): number[] {

@@ -4,11 +4,13 @@ import {StateListener} from '../utils/state-listener';
 export class Pie extends Ui {
   constructor(cx: number = 0, cy: number = 0, radius: number = 0, beginPercent: number = 0, endPercent: number = 0, stateListener?: StateListener, stateKey?: string) {
     super(stateListener, stateKey);
-    this.cx = cx;
-    this.cy = cy;
-    this.radius = radius;
-    this.beginPercent = beginPercent;
-    this.endPercent = endPercent;
+    setTimeout(()=> {
+      this.cx = cx;
+      this.cy = cy;
+      this.radius = radius;
+      this.beginPercent = beginPercent;
+      this.endPercent = endPercent;
+    });
   }
 
   get changes(): PromiseLike<this> {

@@ -4,7 +4,9 @@ import {StateListener} from '../utils/state-listener';
 export class Pager extends Ui {
   constructor(size: number = 10, stateListener?: StateListener, stateKey?: string) {
     super(stateListener, stateKey);
-    this.size = size;
+    setTimeout(() => {
+      this.size = size;
+    });
   }
 
   private _index = 0;

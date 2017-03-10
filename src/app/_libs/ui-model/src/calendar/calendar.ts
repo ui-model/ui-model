@@ -6,7 +6,9 @@ import {StateListener} from '../utils/state-listener';
 export class Calendar extends Ui {
   constructor(value?: MomentInput, stateListener?: StateListener, stateKey?: string) {
     super(stateListener, stateKey);
-    this.goTo(value);
+    setTimeout(() => {
+      this.goTo(value);
+    });
   }
 
   private _value = moment();
@@ -29,14 +31,12 @@ export class Calendar extends Ui {
     if (!value) {
       this._isNull = true;
       this._value = moment();
-      this.update();
-      this.changed();
     } else if (!this.value || !this._value.isSame(value, 'date')) {
       this._isNull = !value;
       this._value = moment(value);
-      this.update();
-      this.changed();
     }
+    this.update();
+    this.changed();
   }
 
   setValue(value: MomentInput): void {
