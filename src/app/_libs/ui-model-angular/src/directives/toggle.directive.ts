@@ -14,7 +14,8 @@ export class ToggleDirective extends Toggle {
   @Output() isOnChange = new EventEmitter();
   @Output() isOffChange = new EventEmitter();
 
-  changed(): void {
+  protected changed(): void {
+    super.changed();
     this.isOnChange.emit(this.isOn);
     this.isOffChange.emit(this.isOff);
   }

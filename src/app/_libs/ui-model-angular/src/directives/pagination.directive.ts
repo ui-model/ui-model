@@ -1,26 +1,21 @@
-import {Directive, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';
+import {Directive, Output, EventEmitter} from '@angular/core';
 import {Pagination} from 'ui-model';
 @Directive({
   selector: '[uiPagination]',
   exportAs: 'uiPagination',
   inputs: ['index', 'totalItems', 'size', 'viewport'],
 })
-export class PaginationDirective extends Pagination implements OnInit, OnDestroy {
+export class PaginationDirective extends Pagination {
   constructor() {
     super();
   }
 
   @Output() indexChange = new EventEmitter();
 
-  sub: any;
-
-  ngOnInit(): void {
-    this.sub = this.changes.subscribe((pager) => {
-      this.indexChange.emit(pager.index);
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
+  protected changed(): void {
+    super.changed();
+    if (this.indexChange) {
+      this.indexChange.emit(this.index);
+    }
   }
 }

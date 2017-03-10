@@ -1,6 +1,5 @@
 import {Pie} from '../shape/pie';
 import {Ui} from '../common/ui';
-import {Observable} from 'rxjs/Observable';
 import {StateListener} from '../utils/state-listener';
 import 'rxjs/add/operator/map';
 
@@ -22,8 +21,8 @@ export class PieChart extends Ui {
     this._pies = this.buildPies(serials);
   }
 
-  get changes(): Observable<this> {
-    return Observable.merge(this._pies).map(()=>this);
+  get changes(): PromiseLike<this> {
+    return Promise.race(this._pies.map(pie => pie.changes)).then(()=>this);
   }
 
   get pies(): Pie[] {

@@ -1,4 +1,4 @@
-import {Component, OnInit, forwardRef, Input, OnDestroy} from '@angular/core';
+import {Component, forwardRef, Input} from '@angular/core';
 import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 import {Select} from 'ui-model';
 
@@ -13,36 +13,28 @@ const RADIO_GROUP_VALUE_ACCESSOR = {
   styleUrls: ['radio-group.component.scss'],
   providers: [RADIO_GROUP_VALUE_ACCESSOR]
 })
-export class RadioGroupComponent<T> implements ControlValueAccessor, OnInit, OnDestroy {
+export class RadioGroupComponent<T> extends Select<T> implements ControlValueAccessor {
+  constructor() {
+    super();
+  }
 
   @Input() options: T[];
 
-  select = new Select<T>();
-
-  sub;
   onChange: (_: any) => {};
   onTouched: () => {};
 
-  constructor() {
-  }
-
-  ngOnInit() {
-    this.sub = this.select.changes.subscribe((select) => {
-      if (this.onChange) {
-        this.onChange(select.selection);
-      }
-      if (this.onTouched) {
-        this.onTouched();
-      }
-    });
-  }
-
-  ngOnDestroy() {
-    this.sub.unsubscribe();
+  protected changed() {
+    super.changed();
+    if (this.onChange) {
+      this.onChange(this.selection);
+    }
+    if (this.onTouched) {
+      this.onTouched();
+    }
   }
 
   writeValue(value: T): void {
-    this.select.select(value);
+    this.select(value);
   }
 
   registerOnChange(fn: (_: any) => {}): void {

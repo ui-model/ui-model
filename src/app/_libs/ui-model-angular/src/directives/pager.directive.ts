@@ -1,4 +1,4 @@
-import {Directive, OnDestroy, OnInit, Output, EventEmitter} from '@angular/core';
+import {Directive, Output, EventEmitter} from '@angular/core';
 import {Pager} from 'ui-model';
 
 @Directive({
@@ -6,22 +6,15 @@ import {Pager} from 'ui-model';
   exportAs: 'uiPager',
   inputs: ['index', 'recordCount', 'size'],
 })
-export class PagerDirective extends Pager implements OnInit, OnDestroy {
+export class PagerDirective extends Pager {
   constructor() {
     super();
   }
 
   @Output() indexChange = new EventEmitter();
 
-  sub: any;
-
-  ngOnInit(): void {
-    this.sub = this.changes.subscribe((pager) => {
-      this.indexChange.emit(pager.index);
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
+  protected changed(): void {
+    super.changed();
+    this.indexChange.emit(this.index);
   }
 }

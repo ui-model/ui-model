@@ -1,4 +1,4 @@
-import {Directive, OnDestroy, OnInit, EventEmitter, Output} from '@angular/core';
+import {Directive, EventEmitter, Output} from '@angular/core';
 import {Select} from 'ui-model';
 
 @Directive({
@@ -6,22 +6,15 @@ import {Select} from 'ui-model';
   exportAs: 'uiSelect',
   inputs: ['selection'],
 })
-export class SelectDirective<T> extends Select<T> implements OnInit, OnDestroy {
+export class SelectDirective<T> extends Select<T> {
   constructor() {
     super();
   }
 
   @Output() selectionChange = new EventEmitter();
 
-  sub: any;
-
-  ngOnInit(): void {
-    this.sub = this.changes.subscribe((select) => {
-      this.selectionChange.emit(select.selection);
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
+  protected changed(): void {
+    super.changed();
+    this.selectionChange.emit(this.selection);
   }
 }

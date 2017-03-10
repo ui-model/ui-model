@@ -4,6 +4,8 @@ import {Subject} from 'rxjs/Subject';
 import {Subscription} from 'rxjs/Subscription';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {SafeHtml} from '@angular/platform-browser';
+import 'rxjs/add/operator/skipWhile';
+import 'rxjs/add/operator/do';
 
 const TYPE_AHEAD_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -71,6 +73,7 @@ export class TypeAheadComponent<T extends {format?: Supplier<SafeHtml>, parse?: 
   }
 
   ngOnDestroy() {
+    this.checker.complete();
     this.sub.unsubscribe();
   }
 

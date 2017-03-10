@@ -12,7 +12,7 @@ describe('Select', () => {
 
   it('changes', (done) => {
     const select = new Select();
-    select.changes.subscribe((select) => {
+    select.changes.then((select) => {
       expect(select.selection).to.equal(1);
       done();
     });

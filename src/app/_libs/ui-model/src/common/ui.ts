@@ -1,18 +1,22 @@
 import {StateListener} from '../utils/state-listener';
 import {isFunction, isString} from '../utils/typings';
-import {Observable} from 'rxjs/Observable';
-import {Subject} from 'rxjs/Subject';
 export abstract class Ui {
   constructor(private stateListener: StateListener, private stateKey: string) {
   }
 
-  protected _changes = new Subject<this>();
-  get changes(): Observable<this> {
-    return this._changes.asObservable();
+  private resolve: (value?: this | PromiseLike<this>) => void;
+  private reject: (reason?: any) => void;
+  protected _changes: PromiseLike<this> = new Promise((resolve, reject) => {
+    this.resolve = resolve;
+    this.reject = reject;
+  });
+
+  get changes(): PromiseLike<this> {
+    return this._changes;
   }
 
   protected changed(): void {
-    this._changes.next(this);
+    this.resolve(this);
     if (this.stateListener && isFunction(this.stateListener.setState)) {
       if (!isString(this.stateKey)) {
         throw new Error('State key is required');

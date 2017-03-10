@@ -1,5 +1,4 @@
 import {Coordinate} from '../utils/coordinate';
-import {Observable} from 'rxjs/Observable';
 import {Ui} from '../common/ui';
 import {StateListener} from '../utils/state-listener';
 export class Pie extends Ui {
@@ -12,8 +11,8 @@ export class Pie extends Ui {
     this.endPercent = endPercent;
   }
 
-  get changes(): Observable<this> {
-    return this._begin.changes.merge(this._end.changes).map(() => this);
+  get changes(): PromiseLike<this> {
+    return Promise.race([this._begin.changes, this._end.changes]).then(()=>this);
   }
 
   get cx(): number {

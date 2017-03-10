@@ -1,6 +1,6 @@
 import {Directive, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
-import {Subscription} from 'rxjs/Subscription';
+import 'rxjs/add/operator/debounceTime';
 
 @Directive({
   selector: '[uiTypeAhead]',
@@ -8,7 +8,6 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class TypeAheadDirective implements OnInit, OnDestroy {
   private typing = new Subject();
-  private sub: Subscription;
 
   @Output('uiTypeAheadSearch') search = new EventEmitter<any>();
   @Output('uiTypeAheadOpen') open = new EventEmitter<void>();
@@ -30,7 +29,7 @@ export class TypeAheadDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.sub = this.typing
+    this.typing
       .debounceTime(this.delay)
       .subscribe((term) => {
         this.open.emit();
@@ -40,7 +39,7 @@ export class TypeAheadDirective implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.close.emit();
-    this.sub.unsubscribe();
+    this.typing.complete();
   }
 
 }

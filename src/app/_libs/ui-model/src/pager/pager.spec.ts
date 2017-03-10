@@ -13,7 +13,7 @@ describe('Pager', () => {
   it('changes', (done) => {
     const pager = new Pager(10);
     pager.totalItems = 1001;
-    pager.changes.subscribe((pager) => {
+    pager.changes.then((pager) => {
       expect(pager.index).to.equal(5);
       done();
     });
