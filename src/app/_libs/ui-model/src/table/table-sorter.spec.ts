@@ -17,8 +17,8 @@ const fields: TableField[] = TableField.from([
 describe('TableSorter', () => {
   it('changes', (done) => {
     const sorter = new TableSorter(fields);
-    sorter.changes.subscribe((value) => {
-      expect(value.name).to.equal('a');
+    sorter.changes.then((sorter) => {
+      expect(sorter.field.name).to.equal('a');
       done();
     });
     sorter.toggle(fields[0]);

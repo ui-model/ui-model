@@ -1,7 +1,7 @@
 import {TableField} from './table-field';
 import {SortOrder} from '../utils/sort-order';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
+import {Ui} from '../common/ui';
+import {StateListener} from '../utils/state-listener';
 
 function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
   if (!order) {
@@ -13,13 +13,9 @@ function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
   }
 }
 
-export class TableSorter extends Subject<TableField> {
-  constructor(public fields: TableField[]) {
-    super();
-  }
-
-  get changes(): Observable<TableField> {
-    return this._changes;
+export class TableSorter extends Ui {
+  constructor(public fields: TableField[], stateListener?: StateListener, stateKey?: string) {
+    super(stateListener, stateKey);
   }
 
   get field(): TableField {
@@ -75,10 +71,5 @@ export class TableSorter extends Subject<TableField> {
     this.changed();
   }
 
-  protected changed(): void {
-    this._changes.next(this._field);
-  }
-
-  private _changes = new Subject();
   private _field: TableField;
 }

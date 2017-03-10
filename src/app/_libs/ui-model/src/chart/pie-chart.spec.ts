@@ -1,5 +1,4 @@
 import {expect} from 'chai';
-import 'rxjs/add/operator/mergeAll';
 import {PieChart} from './pie-chart';
 
 describe("PieChart", () => {

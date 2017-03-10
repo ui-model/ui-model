@@ -1,7 +1,6 @@
 import {Pie} from '../shape/pie';
 import {Ui} from '../common/ui';
 import {StateListener} from '../utils/state-listener';
-import 'rxjs/add/operator/map';
 
 export class PieChart extends Ui {
   constructor(serials: number[] = [], radius: number, cx: number = 0, cy: number = 0, stateListener?: StateListener, stateKey?: string) {

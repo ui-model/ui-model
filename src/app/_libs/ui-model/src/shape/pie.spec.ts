@@ -1,7 +1,5 @@
 import {expect} from 'chai';
 import {Pie} from './pie';
-import 'rxjs/add/operator/merge';
-import 'rxjs/add/operator/map';
 
 describe('Pie', () => {
   it('negative arc', () => {
