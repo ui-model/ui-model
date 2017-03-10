@@ -1,7 +1,11 @@
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
+import {Ui} from '../common/ui';
+import {StateListener} from './state-listener';
 
-export class Coordinate {
+export class Coordinate extends Ui {
+  constructor(stateListener?: StateListener, stateKey?: string) {
+    super(stateListener, stateKey);
+  }
+
   get cx(): number {
     return this._cx;
   }
@@ -174,20 +178,10 @@ export class Coordinate {
     return this.rotate(percentToRadian(percent));
   }
 
-  get changes(): Observable<Coordinate> {
-    return this._changes.asObservable();
-  }
-
-  protected changed(): void {
-    this._changes.next(this);
-  }
-
   private _cx: number;
   private _cy: number;
   private _radius: number;
   private _radian: number;
-
-  private _changes = new Subject<Coordinate>();
 }
 
 export function degreeToRadian(degree: number): number {

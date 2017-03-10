@@ -27,9 +27,9 @@ export class RadioGroupComponent<T> implements ControlValueAccessor, OnInit, OnD
   }
 
   ngOnInit() {
-    this.sub = this.select.changes.subscribe((selection) => {
+    this.sub = this.select.changes.subscribe((select) => {
       if (this.onChange) {
-        this.onChange(selection);
+        this.onChange(select.selection);
       }
       if (this.onTouched) {
         this.onTouched();

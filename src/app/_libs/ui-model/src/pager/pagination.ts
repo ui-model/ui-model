@@ -1,7 +1,8 @@
 import {Pager} from './pager';
+import {StateListener} from '../utils/state-listener';
 export class Pagination extends Pager {
-  constructor(size: number = 10, viewport: number = 5) {
-    super(size);
+  constructor(size: number = 10, viewport: number = 5, stateListener?: StateListener, stateKey?: string) {
+    super(size, stateListener, stateKey);
     this.viewport = viewport;
   }
 

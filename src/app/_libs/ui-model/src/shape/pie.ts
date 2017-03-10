@@ -1,6 +1,21 @@
 import {Coordinate} from '../utils/coordinate';
-import {Observable} from 'rxjs';
-export class Pie {
+import {Observable} from 'rxjs/Observable';
+import {Ui} from '../common/ui';
+import {StateListener} from '../utils/state-listener';
+export class Pie extends Ui {
+  constructor(cx: number = 0, cy: number = 0, radius: number = 0, beginPercent: number = 0, endPercent: number = 0, stateListener?: StateListener, stateKey?: string) {
+    super(stateListener, stateKey);
+    this.cx = cx;
+    this.cy = cy;
+    this.radius = radius;
+    this.beginPercent = beginPercent;
+    this.endPercent = endPercent;
+  }
+
+  get changes(): Observable<this> {
+    return this._begin.changes.merge(this._end.changes).map(() => this);
+  }
+
   get cx(): number {
     return this._begin.cx;
   }
@@ -63,18 +78,8 @@ export class Pie {
     return {x: coordinate.x, y: coordinate.y};
   }
 
-  constructor(cx: number = 0, cy: number = 0, radius: number = 0, beginPercent: number = 0, endPercent: number = 0) {
-    this.cx = cx;
-    this.cy = cy;
-    this.radius = radius;
-    this.beginPercent = beginPercent;
-    this.endPercent = endPercent;
-  }
-
   private _begin: Coordinate = new Coordinate();
   private _end: Coordinate = new Coordinate();
-
-  readonly changes: Observable<Pie> = this._begin.changes.merge(this._end.changes).map(() => this);
 
   get largeArc(): number {
     if ((this._begin.percent - 0.5) > this._end.percent) {

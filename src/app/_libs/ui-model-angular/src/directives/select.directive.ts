@@ -16,8 +16,8 @@ export class SelectDirective<T> extends Select<T> implements OnInit, OnDestroy {
   sub: any;
 
   ngOnInit(): void {
-    this.sub = this.changes.subscribe((selection) => {
-      this.selectionChange.emit(selection);
+    this.sub = this.changes.subscribe((select) => {
+      this.selectionChange.emit(select.selection);
     });
   }
 

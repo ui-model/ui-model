@@ -43,8 +43,8 @@ describe('Multi Select', () => {
 
   it('changes', (done) => {
     const select = new MultiSelect(options);
-    select.changes.subscribe((value) => {
-      expect(value).to.equal(1);
+    select.changes.subscribe((select) => {
+      expect(select.selection).to.equal(1);
       done();
     });
     select.select(1);

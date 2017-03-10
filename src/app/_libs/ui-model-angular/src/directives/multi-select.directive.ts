@@ -21,8 +21,8 @@ export class MultiSelectDirective<T> extends MultiSelect<T> implements ControlVa
 
   @Input('uiMultiSelectTransformer') transformer: Transformer<T, any>;
 
-  protected changed(value: T): void {
-    super.changed(value);
+  protected changed(): void {
+    super.changed();
     if (this.onChange) {
       this.onChange(this.selection);
     }

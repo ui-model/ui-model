@@ -1,21 +1,13 @@
 import {Transformer, Transformers} from '../utils/transformer';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
+import {Ui} from '../common/ui';
+import {StateListener} from '../utils/state-listener';
 
-export class MultiSelect<T> {
+export class MultiSelect<T> extends Ui {
   private selectedStates = new Map<T, boolean>();
 
-  private _changes = new Subject();
-
-  get changes(): Observable<T> {
-    return this._changes;
-  }
-
-  protected changed(value: T): void {
-    this._changes.next(value);
-  }
-
-  constructor(public options: T[] = [], public transformer: Transformer<T, any> = Transformers.objectById) {
+  constructor(public options: T[] = [], public transformer: Transformer<T, any> = Transformers.objectById,
+              stateListener?: StateListener, stateKey?: string) {
+    super(stateListener, stateKey);
   }
 
   get allSelected(): boolean {
@@ -52,7 +44,7 @@ export class MultiSelect<T> {
 
   selectAs(option: T, value: any): void {
     this.selectedStates.set(this.transformer(option), !!value);
-    this.changed(option);
+    this.changed();
   }
 
   select(option: T): void {

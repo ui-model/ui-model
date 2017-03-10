@@ -1,6 +1,12 @@
 import {Pie} from '../shape/pie';
-export class PieChart {
-  constructor(serials: number[] = [], radius: number, cx: number = 0, cy: number = 0) {
+import {Ui} from '../common/ui';
+import {Observable} from 'rxjs/Observable';
+import {StateListener} from '../utils/state-listener';
+import 'rxjs/add/operator/map';
+
+export class PieChart extends Ui {
+  constructor(serials: number[] = [], radius: number, cx: number = 0, cy: number = 0, stateListener?: StateListener, stateKey?: string) {
+    super(stateListener, stateKey);
     this.serials = serials;
     this.radius = radius;
     this.cx = cx;
@@ -14,6 +20,10 @@ export class PieChart {
   set serials(serials: number[]) {
     this._serials = serials;
     this._pies = this.buildPies(serials);
+  }
+
+  get changes(): Observable<this> {
+    return Observable.merge(this._pies).map(()=>this);
   }
 
   get pies(): Pie[] {

@@ -16,8 +16,8 @@ export class PagerDirective extends Pager implements OnInit, OnDestroy {
   sub: any;
 
   ngOnInit(): void {
-    this.sub = this.changes.subscribe((index) => {
-      this.indexChange.emit(index);
+    this.sub = this.changes.subscribe((pager) => {
+      this.indexChange.emit(pager.index);
     });
   }
 

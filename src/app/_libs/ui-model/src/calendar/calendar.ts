@@ -1,22 +1,12 @@
 import * as moment from 'moment';
 import {Moment, MomentInput} from 'moment';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
+import {Ui} from '../common/ui';
+import {StateListener} from '../utils/state-listener';
 
-export class Calendar {
-  constructor(value?: MomentInput) {
+export class Calendar extends Ui {
+  constructor(value?: MomentInput, stateListener?: StateListener, stateKey?: string) {
+    super(stateListener, stateKey);
     this.goTo(value);
-  }
-
-  private _changes = new Subject<Date>();
-
-  protected changed(): void {
-    this.update();
-    this._changes.next(this.value);
-  }
-
-  get changes(): Observable<Date> {
-    return this._changes;
   }
 
   private _value = moment();
@@ -39,10 +29,12 @@ export class Calendar {
     if (!value) {
       this._isNull = true;
       this._value = moment();
+      this.update();
       this.changed();
     } else if (!this.value || !this._value.isSame(value, 'date')) {
       this._isNull = !value;
       this._value = moment(value);
+      this.update();
       this.changed();
     }
   }
@@ -67,6 +59,7 @@ export class Calendar {
   set year(value: number) {
     if (value !== this.year) {
       this._value.year(value);
+      this.update();
       this.changed();
     }
   }
@@ -78,6 +71,7 @@ export class Calendar {
   set month(value: number) {
     if (value !== this.month) {
       this._value.month(value);
+      this.update();
       this.changed();
     }
   }

@@ -21,3 +21,4 @@ export {Point} from './utils/point';
 export {Size} from './utils/size';
 export {Distance} from './utils/distance';
 export * from './utils/typings';
+export {StateListener} from './utils/state-listener';

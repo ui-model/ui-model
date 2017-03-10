@@ -1,19 +1,10 @@
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
+import {Ui} from '../common/ui';
+import {StateListener} from '../utils/state-listener';
 
-export class Pager {
-  constructor(size: number = 10) {
+export class Pager extends Ui {
+  constructor(size: number = 10, stateListener?: StateListener, stateKey?: string) {
+    super(stateListener, stateKey);
     this.size = size;
-  }
-
-  private _changes = new Subject();
-
-  get changes(): Observable<number> {
-    return this._changes;
-  }
-
-  protected changed(): void {
-    this._changes.next(this.index);
   }
 
   private _index = 0;

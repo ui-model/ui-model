@@ -1,18 +1,9 @@
 import {Transformer, Transformers} from '../utils/transformer';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
-export class Select<T> {
-  constructor(private transformer: Transformer<T, any> = Transformers.objectById) {
-  }
-
-  private _changes = new Subject();
-
-  get changes(): Observable<T> {
-    return this._changes;
-  }
-
-  protected changed(): void {
-    this._changes.next(this._selection);
+import {Ui} from '../common/ui';
+import {StateListener} from '../utils/state-listener';
+export class Select<T> extends Ui {
+  constructor(private transformer: Transformer<T, any> = Transformers.objectById, stateListener?: StateListener, stateKey?: string) {
+    super(stateListener, stateKey);
   }
 
   _selection: T;
