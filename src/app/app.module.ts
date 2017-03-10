@@ -24,6 +24,7 @@ import {ChartComponent} from './showcase/chart/chart.component';
 import {TypeAheadComponent} from './showcase/type-ahead/type-ahead.component';
 import {ZoomComponent} from './showcase/zoom/zoom.component';
 import {TooltipComponent} from './showcase/tooltip/tooltip.component';
+import { NavHeaderComponent } from './layout/nav-header/nav-header.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import {TooltipComponent} from './showcase/tooltip/tooltip.component';
     TypeAheadComponent,
     ZoomComponent,
     TooltipComponent,
+    NavHeaderComponent,
   ],
   imports: [
     BrowserModule,
