@@ -1,20 +1,8 @@
 import {Coordinate} from '../utils/coordinate';
-import {Ui} from '../common/ui';
-import {StateListener} from '../utils/state-listener';
-export class Pie extends Ui {
-  constructor(cx: number = 0, cy: number = 0, radius: number = 0, beginPercent: number = 0, endPercent: number = 0, stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
-    setTimeout(()=> {
-      this.cx = cx;
-      this.cy = cy;
-      this.radius = radius;
-      this.beginPercent = beginPercent;
-      this.endPercent = endPercent;
-    });
-  }
-
+import {Stateful} from '../common/ui';
+export class Pie extends Stateful {
   get changes(): PromiseLike<this> {
-    return Promise.race([this._begin.changes, this._end.changes]).then(()=>this);
+    return Promise.race([this._begin.changes, this._end.changes]).then(() => this);
   }
 
   get cx(): number {
@@ -28,6 +16,11 @@ export class Pie extends Ui {
     }
   }
 
+  setCx(value: number): this {
+    this.cx = value;
+    return this;
+  }
+
   get cy(): number {
     return this._begin.cy;
   }
@@ -37,6 +30,11 @@ export class Pie extends Ui {
       this._begin.setCy(value);
       this._end.setCy(value);
     }
+  }
+
+  setCy(value: number): this {
+    this.cy = value;
+    return this;
   }
 
   get radius(): number {
@@ -50,6 +48,11 @@ export class Pie extends Ui {
     }
   }
 
+  setRadius(value: number): this {
+    this.radius = value;
+    return this;
+  }
+
   get beginPercent(): number {
     return this._begin.percent;
   }
@@ -58,12 +61,22 @@ export class Pie extends Ui {
     this._begin.setPercent(value);
   }
 
+  setBeginPercent(value: number): this {
+    this.beginPercent = value;
+    return this;
+  }
+
   get endPercent(): number {
     return this._end.percent;
   }
 
   set endPercent(value: number) {
     this._end.setPercent(value);
+  }
+
+  setEndPercent(value: number): this {
+    this.endPercent = value;
+    return this;
   }
 
   get middlePercent(): number {

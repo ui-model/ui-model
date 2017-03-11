@@ -1,16 +1,8 @@
 import * as moment from 'moment';
 import {Moment, MomentInput} from 'moment';
-import {Ui} from '../common/ui';
-import {StateListener} from '../utils/state-listener';
+import {Stateful} from '../common/ui';
 
-export class Calendar extends Ui {
-  constructor(value?: MomentInput, stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
-    setTimeout(() => {
-      this.goTo(value);
-    });
-  }
-
+export class Calendar extends Stateful {
   private _value = moment();
 
   _isNull = true;
@@ -39,8 +31,9 @@ export class Calendar extends Ui {
     this.changed();
   }
 
-  setValue(value: MomentInput): void {
+  setValue(value: MomentInput): this {
     this.value = value && moment(value).toDate();
+    return this;
   }
 
   setMockValue(value: MomentInput): void {
@@ -64,6 +57,11 @@ export class Calendar extends Ui {
     }
   }
 
+  setYear(value: number): this {
+    this.year = value;
+    return this;
+  }
+
   get month(): number {
     return this._value.month();
   }
@@ -74,6 +72,11 @@ export class Calendar extends Ui {
       this.update();
       this.changed();
     }
+  }
+
+  setMonth(value: number): this {
+    this.month = value;
+    return this;
   }
 
   isActive(date: MomentInput): boolean {
@@ -110,6 +113,11 @@ export class Calendar extends Ui {
     this._minValue = moment(value);
   }
 
+  setMinValue(value: MomentInput): this {
+    this.minValue = value;
+    return this;
+  }
+
   private _maxValue: Moment;
 
   get maxValue(): MomentInput {
@@ -118,6 +126,11 @@ export class Calendar extends Ui {
 
   set maxValue(value: MomentInput) {
     this._maxValue = moment(value);
+  }
+
+  setMaxValue(value: MomentInput): this {
+    this.maxValue = value;
+    return this;
   }
 
   isValid(date: MomentInput): boolean {

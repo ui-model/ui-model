@@ -1,29 +1,23 @@
 import {Pie} from '../shape/pie';
-import {Ui} from '../common/ui';
-import {StateListener} from '../utils/state-listener';
+import {Stateful} from '../common/ui';
 
-export class PieChart extends Ui {
-  constructor(serials: number[] = [], radius: number, cx: number = 0, cy: number = 0, stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
-    setTimeout(()=> {
-      this.serials = serials;
-      this.radius = radius;
-      this.cx = cx;
-      this.cy = cy;
-    });
-  }
-
+export class PieChart extends Stateful {
   get serials(): number[] {
     return this._serials;
   }
 
-  set serials(serials: number[]) {
-    this._serials = serials;
-    this._pies = this.buildPies(serials);
+  set serials(value: number[]) {
+    this._serials = value;
+    this._pies = this.buildPies(value);
+  }
+
+  setSerials(value: number[]): this {
+    this.serials = value;
+    return this;
   }
 
   get changes(): PromiseLike<this> {
-    return Promise.race(this._pies.map(pie => pie.changes)).then(()=>this);
+    return Promise.race(this._pies.map(pie => pie.changes)).then(() => this);
   }
 
   get pies(): Pie[] {
@@ -40,6 +34,11 @@ export class PieChart extends Ui {
     }
   }
 
+  setCx(value: number): this {
+    this.cx = value;
+    return this;
+  }
+
   get cy(): number {
     return this._pies && this._pies[0].cy || 0;
   }
@@ -50,6 +49,11 @@ export class PieChart extends Ui {
     }
   }
 
+  setCy(value: number): this {
+    this.cy = value;
+    return this;
+  }
+
   get radius(): number {
     return this._pies && this._pies[0].radius || 0;
   }
@@ -58,6 +62,11 @@ export class PieChart extends Ui {
     if (value !== this.radius) {
       this._pies.forEach((pie) => pie.radius = value);
     }
+  }
+
+  setRadius(value: number): this {
+    this.radius = value;
+    return this;
   }
 
   private _pies: Pie[] = [];
@@ -75,6 +84,6 @@ export class PieChart extends Ui {
       });
       totalPercent += percent;
     });
-    return ranges.map((range) => new Pie(0, 0, 0, range.begin, range.end));
+    return ranges.map((range) => new Pie().setRadius(0).setCx(0).setCy(0).setBeginPercent(range.begin).setEndPercent(range.end));
   }
 }

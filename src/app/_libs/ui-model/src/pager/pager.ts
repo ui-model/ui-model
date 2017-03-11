@@ -1,14 +1,6 @@
-import {Ui} from '../common/ui';
-import {StateListener} from '../utils/state-listener';
+import {Stateful} from '../common/ui';
 
-export class Pager extends Ui {
-  constructor(size: number = 10, stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
-    setTimeout(() => {
-      this.size = size;
-    });
-  }
-
+export class Pager extends Stateful {
   private _index = 0;
 
   get index(): number {
@@ -30,6 +22,11 @@ export class Pager extends Ui {
     }
   }
 
+  setIndex(value: number): this {
+    this.index = value;
+    return this;
+  }
+
   isActive(page: number): boolean {
     return this.index === page;
   }
@@ -46,7 +43,7 @@ export class Pager extends Ui {
     return Math.max(this.index * this.size, 0);
   }
 
-  private _size = 0;
+  private _size = 10;
   get size(): number {
     return this._size;
   }
@@ -65,6 +62,11 @@ export class Pager extends Ui {
       }
       this.changed();
     }
+  }
+
+  setSize(value: number): this {
+    this.size = value;
+    return this;
   }
 
   get begin(): number {
@@ -92,6 +94,11 @@ export class Pager extends Ui {
       this.goTo(latestPage);
       this.changed();
     }
+  }
+
+  setTotalItems(value: number): this {
+    this.totalItems = value;
+    return this;
   }
 
   get isEmpty(): boolean {

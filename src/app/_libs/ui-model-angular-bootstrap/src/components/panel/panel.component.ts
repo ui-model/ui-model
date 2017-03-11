@@ -23,7 +23,7 @@ export class PanelComponent implements OnInit {
   @Input() title: string;
   @Input() toggleable = true;
 
-  toggle = new Toggle(Toggle.ON);
+  toggle = new Toggle().setIsOn(Toggle.ON);
 
   constructor() {
   }

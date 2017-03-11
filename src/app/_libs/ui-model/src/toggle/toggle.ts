@@ -1,21 +1,25 @@
-import {StateListener} from '../utils/state-listener';
-import {Ui} from '../common/ui';
+import {Stateful} from '../common/ui';
 
-export class Toggle extends Ui {
+export class Toggle extends Stateful {
   static readonly ON = true;
   static readonly OFF = false;
 
-  constructor(private _isOn: boolean = Toggle.OFF, stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
-  }
+  private _isOn: boolean = Toggle.OFF;
 
   get isOn(): boolean {
     return this._isOn;
   }
 
   set isOn(value: boolean) {
-    this._isOn = value;
-    this.changed();
+    if (value !== this._isOn) {
+      this._isOn = value;
+      this.changed();
+    }
+  }
+
+  setIsOn(value: boolean): this {
+    this.isOn = value;
+    return this;
   }
 
   get isOff(): boolean {
@@ -24,6 +28,11 @@ export class Toggle extends Ui {
 
   set isOff(value: boolean) {
     this.isOn = !value;
+  }
+
+  setIsOff(value: boolean): this {
+    this.isOff = value;
+    return this;
   }
 
   turnOn(): void {

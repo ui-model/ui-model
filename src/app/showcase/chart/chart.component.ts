@@ -8,7 +8,7 @@ import {PieChart, Pie} from 'ui-model';
 })
 export class ChartComponent {
 
-  chart = new PieChart([10, 20, 30, 40, 50, 60], 30, 50, 50);
+  chart = new PieChart().setSerials([10, 20, 30, 40, 50, 60]).setRadius(30).setCx(50).setCy(50);
   gutter = 0.5;
   noteOffset = 8;
 

@@ -4,11 +4,11 @@ import {Calendar} from './calendar';
 describe('Calendar', () => {
   it('constructor', () => {
     const now = new Date();
-    const c1 = new Calendar(now);
+    const c1 = new Calendar().setValue(now);
     expect(c1.value).to.eql(now);
-    const c2 = new Calendar(now.getTime());
+    const c2 = new Calendar().setValue(now.getTime());
     expect(c2.value).to.eql(now);
-    const c3 = new Calendar(now.toISOString());
+    const c3 = new Calendar().setValue(now.toISOString());
     expect(c3.value).to.eql(now);
   });
   it('set value && year && month', () => {
@@ -95,7 +95,7 @@ describe('Calendar', () => {
   describe('states', () => {
     let calendar;
     beforeEach(() => {
-      calendar = new Calendar(new Date('2017-02-16T00:00:00+0800'));
+      calendar = new Calendar().setValue(new Date('2017-02-16T00:00:00+0800'));
     });
     it('normal compare', () => {
       expect(calendar.isActive(new Date('2017-02-16T00:00:00+0800'))).to.be.true;
@@ -131,7 +131,7 @@ describe('Calendar', () => {
   describe('navigation', () => {
     let calendar;
     beforeEach(() => {
-      calendar = new Calendar('2017-02-16T00:00:00+0800');
+      calendar = new Calendar().setValue('2017-02-16T00:00:00+0800');
     });
     it('today', () => {
       calendar.goToToday();
@@ -152,7 +152,7 @@ describe('Calendar', () => {
   });
   describe('ui helper', () => {
     it('years && months && weekdays', () => {
-      const calendar = new Calendar('2017-02-16T00:00:00+0800');
+      const calendar = new Calendar().setValue('2017-02-16T00:00:00+0800');
       expect(calendar.nearlyYears).to.eql([
         2012,
         2013,

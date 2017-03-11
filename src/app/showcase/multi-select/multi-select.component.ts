@@ -33,7 +33,7 @@ export class MultiSelectComponent implements OnInit {
 
   options = options;
 
-  select = new MultiSelect<Data>(options, Transformers.objectByField('code'));
+  select = new MultiSelect<Data>().setOptions(options).setTransformer(Transformers.objectByField('code'));
 
   getCode = (value: Data) => {
     return value.code;

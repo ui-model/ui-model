@@ -1,7 +1,7 @@
 import {StateListener} from '../utils/state-listener';
 import {isFunction, isString} from '../utils/typings';
-export abstract class Ui {
-  constructor(private stateListener: StateListener, private stateKey: string) {
+export abstract class Stateful {
+  constructor(private stateListener?: StateListener, private stateKey?: string) {
   }
 
   private resolve: (value?: this | PromiseLike<this>) => void;

@@ -32,7 +32,7 @@ export class TableComponent<T> {
     this.sorter.enabled = value;
   }
 
-  sorter = new TableSorter([]);
+  sorter = new TableSorter().setFields(this.fields);
 
   delta = {};
   size = {};

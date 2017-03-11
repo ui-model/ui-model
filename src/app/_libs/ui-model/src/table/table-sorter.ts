@@ -1,7 +1,6 @@
 import {TableField} from './table-field';
 import {SortOrder} from '../utils/sort-order';
-import {Ui} from '../common/ui';
-import {StateListener} from '../utils/state-listener';
+import {Stateful} from '../common/ui';
 
 function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
   if (!order) {
@@ -13,9 +12,22 @@ function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
   }
 }
 
-export class TableSorter extends Ui {
-  constructor(public fields: TableField[], stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
+export class TableSorter extends Stateful {
+
+  private _fields: TableField[] = [];
+
+  get fields(): TableField[] {
+    return this._fields;
+  }
+
+  set fields(value: TableField[]) {
+    this._fields = value;
+    this.changed();
+  }
+
+  setFields(value: TableField[]): this {
+    this.fields = value;
+    return this;
   }
 
   get field(): TableField {
@@ -30,6 +42,11 @@ export class TableSorter extends Ui {
 
   set disabled(value: boolean) {
     this.enabled = !value;
+  }
+
+  setDisabled(value: boolean): this {
+    this.disabled = value;
+    return this;
   }
 
   enable(): void {

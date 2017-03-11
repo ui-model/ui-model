@@ -1,11 +1,6 @@
-import {Ui} from '../common/ui';
-import {StateListener} from './state-listener';
+import {Stateful} from '../common/ui';
 
-export class Coordinate extends Ui {
-  constructor(stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
-  }
-
+export class Coordinate extends Stateful {
   get cx(): number {
     return this._cx;
   }
@@ -15,6 +10,11 @@ export class Coordinate extends Ui {
       this._cx = fixRoundOffError(value);
       this.changed();
     }
+  }
+
+  setCx(value: number): this {
+    this.cx = value;
+    return this;
   }
 
   get cy(): number {
@@ -28,6 +28,11 @@ export class Coordinate extends Ui {
     }
   }
 
+  setCy(value: number): this {
+    this.cy = value;
+    return this;
+  }
+
   get radius(): number {
     return this._radius;
   }
@@ -37,6 +42,11 @@ export class Coordinate extends Ui {
       this._radius = fixRoundOffError(value);
       this.changed();
     }
+  }
+
+  setRadius(value: number): this {
+    this.radius = value;
+    return this;
   }
 
   get radian(): number {
@@ -50,6 +60,11 @@ export class Coordinate extends Ui {
     }
   }
 
+  setRadian(value: number): this {
+    this.radian = value;
+    return this;
+  }
+
   get x(): number {
     return fixRoundOffError(this.cx + this.radius * Math.cos(this.radian));
   }
@@ -59,6 +74,11 @@ export class Coordinate extends Ui {
     const y = this.y - this.cy;
     this.radius = Math.sqrt(x * x + y * y);
     this.radian = Math.atan2(y, x);
+  }
+
+  setX(value: number): this {
+    this.x = value;
+    return this;
   }
 
   get y(): number {
@@ -72,12 +92,22 @@ export class Coordinate extends Ui {
     this.radian = Math.atan2(y, x);
   }
 
+  setY(value: number): this {
+    this.y = value;
+    return this;
+  }
+
   get degree(): number {
     return radianToDegree(this.radian);
   }
 
   set degree(value: number) {
     this.radian = degreeToRadian(value);
+  }
+
+  setDegree(value: number): this {
+    this.degree = value;
+    return this;
   }
 
   get percent(): number {
@@ -88,42 +118,7 @@ export class Coordinate extends Ui {
     this.radian = percentToRadian(value);
   }
 
-  setCx(value: number): Coordinate {
-    this.cx = value;
-    return this;
-  }
-
-  setCy(value: number): Coordinate {
-    this.cy = value;
-    return this;
-  }
-
-  setX(value: number): Coordinate {
-    this.x = value;
-    return this;
-  }
-
-  setY(value: number): Coordinate {
-    this.y = value;
-    return this;
-  }
-
-  setRadius(value: number): Coordinate {
-    this.radius = value;
-    return this;
-  }
-
-  setRadian(value: number): Coordinate {
-    this.radian = value;
-    return this;
-  }
-
-  setDegree(value: number): Coordinate {
-    this.degree = value;
-    return this;
-  }
-
-  setPercent(value: number): Coordinate {
+  setPercent(value: number): this {
     this.percent = value;
     return this;
   }

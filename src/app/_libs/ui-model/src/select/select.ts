@@ -1,12 +1,22 @@
 import {Transformer, Transformers} from '../utils/transformer';
-import {Ui} from '../common/ui';
-import {StateListener} from '../utils/state-listener';
-export class Select<T> extends Ui {
-  constructor(private transformer: Transformer<T, any> = Transformers.objectById, stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
+import {Stateful} from '../common/ui';
+export class Select<T> extends Stateful {
+  _selection: T;
+
+  private _transformer: Transformer<T, any> = Transformers.objectById;
+  get transformer(): Transformer<T, any> {
+    return this._transformer;
   }
 
-  _selection: T;
+  set transformer(value: Transformer<T, any>) {
+    this._transformer = value;
+    this.changed();
+  }
+
+  setTransformer(value: Transformer<T, any>) {
+    this.transformer = value;
+    return this;
+  }
 
   get selection(): T {
     return this._selection;
@@ -15,6 +25,11 @@ export class Select<T> extends Ui {
   set selection(item: T) {
     this._selection = item;
     this.changed();
+  }
+
+  setSelection(value: T): this {
+    this.selection = value;
+    return this;
   }
 
   selected(item: T): boolean {

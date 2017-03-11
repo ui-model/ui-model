@@ -1,15 +1,7 @@
 import {Pager} from './pager';
-import {StateListener} from '../utils/state-listener';
 export class Pagination extends Pager {
-  constructor(size: number = 10, viewport: number = 5, stateListener?: StateListener, stateKey?: string) {
-    super(size, stateListener, stateKey);
-    setTimeout(() => {
-      this.viewport = viewport;
-    });
-  }
-
   private _originViewport: number;
-  private _viewport: number;
+  private _viewport: number = 5;
   get viewport(): number {
     return Math.min(this._viewport, this.count);
   }
@@ -20,6 +12,11 @@ export class Pagination extends Pager {
       this._viewport = value;
       this.changed();
     }
+  }
+
+  setViewport(value: number): this {
+    this.viewport = value;
+    return this;
   }
 
   private get halfViewport(): number {

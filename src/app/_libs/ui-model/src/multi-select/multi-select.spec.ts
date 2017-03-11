@@ -10,7 +10,7 @@ const options = [
 
 describe('Multi Select', () => {
   it('constructor', () => {
-    const select = new MultiSelect(options);
+    const select = new MultiSelect().setOptions(options);
     expect(select.options)
       .to.eql([
       1,
@@ -19,7 +19,7 @@ describe('Multi Select', () => {
     ]);
   });
   it('select', () => {
-    const select = new MultiSelect(options);
+    const select = new MultiSelect().setOptions(options);
     select.select(1);
     expect(select.anySelected).to.be.ok;
     expect(select.allSelected).to.not.be.ok;
@@ -42,7 +42,7 @@ describe('Multi Select', () => {
   });
 
   it('changes', (done) => {
-    const select = new MultiSelect(options);
+    const select = new MultiSelect().setOptions(options);
     select.changes.then((select) => {
       expect(select.selection).to.eql([1]);
       done();
@@ -51,7 +51,7 @@ describe('Multi Select', () => {
   });
 
   it('select & deselect & toggle', () => {
-    const select = new MultiSelect(options);
+    const select = new MultiSelect().setOptions(options);
     select.select(1);
     expect(select.selected(1)).to.be.ok;
     select.deselect(1);
@@ -64,7 +64,7 @@ describe('Multi Select', () => {
     expect(select.selected(1)).to.be.ok;
   });
   it('selectAll & deselectAll', () => {
-    const select = new MultiSelect(options);
+    const select = new MultiSelect().setOptions(options);
     select.selectAll();
     expect(select.allSelected).to.be.ok;
     select.deselectAll();
@@ -73,14 +73,14 @@ describe('Multi Select', () => {
     expect(select.allSelected).to.be.ok;
   });
   it('toggleAll', () => {
-    const select = new MultiSelect(options);
+    const select = new MultiSelect().setOptions(options);
     select.toggleAll();
     expect(select.allSelected).to.be.ok;
     select.toggleAll();
     expect(select.anySelected).to.not.be.ok;
   });
   it('selection', () => {
-    const select = new MultiSelect(options);
+    const select = new MultiSelect().setOptions(options);
     select.select(1);
     expect(select.selection).to.eql([1]);
     select.select(2);
@@ -92,11 +92,13 @@ describe('Multi Select', () => {
       ]);
   });
   it('transformer', () => {
-    const select = new MultiSelect<{a: string}>([
-      {a: '1'},
-      {a: '2'},
-      {a: '3'},
-    ], Transformers.objectByField('a'));
+    const select = new MultiSelect<{a: string}>()
+      .setOptions([
+        {a: '1'},
+        {a: '2'},
+        {a: '3'},
+      ])
+      .setTransformer(Transformers.objectByField('a'));
     select.select({a: '1'});
     expect(select.selected({a: '1'})).to.be.ok;
   });

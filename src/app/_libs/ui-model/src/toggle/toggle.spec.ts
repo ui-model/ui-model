@@ -8,7 +8,7 @@ describe('Toggle', () => {
     expect(toggle.isOn).to.not.be.ok;
   });
   it('changes', (done) => {
-    const toggle = new Toggle(Toggle.OFF);
+    const toggle = new Toggle().setIsOn(Toggle.OFF);
     toggle.changes.then((toggle) => {
       expect(toggle.isOn).to.be.true;
       done();
@@ -16,7 +16,7 @@ describe('Toggle', () => {
     toggle.toggle();
   });
   it('initial state: on', () => {
-    const toggle = new Toggle(Toggle.ON);
+    const toggle = new Toggle().setIsOn(Toggle.ON);
     expect(toggle.isOn).to.be.ok;
   });
   it('set state with isOn', () => {

@@ -16,7 +16,7 @@ const fields: TableField[] = TableField.from([
 ]);
 describe('TableSorter', () => {
   it('changes', (done) => {
-    const sorter = new TableSorter(fields);
+    const sorter = new TableSorter().setFields(fields);
     sorter.changes.then((sorter) => {
       expect(sorter.field.name).to.equal('a');
       done();
@@ -24,16 +24,16 @@ describe('TableSorter', () => {
     sorter.toggle(fields[0]);
   });
   it('no sort', () => {
-    const sorter = new TableSorter(fields);
+    const sorter = new TableSorter().setFields(fields);
     expect(sorter.compare({a: 1}, {a: 2})).to.be.NaN;
   });
   it('sort by a', () => {
-    const sorter = new TableSorter(fields);
+    const sorter = new TableSorter().setFields(fields);
     sorter.toggle(fields[0]);
     expect(sorter.compare({a: 1}, {a: 2})).to.lessThan(0);
   });
   it('enabled', () => {
-    const sorter = new TableSorter(fields);
+    const sorter = new TableSorter().setFields(fields);
     sorter.disable();
     sorter.toggle(fields[0]);
     expect(sorter.field).to.be.undefined;

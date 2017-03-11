@@ -1,13 +1,37 @@
 import {Transformer, Transformers} from '../utils/transformer';
-import {Ui} from '../common/ui';
-import {StateListener} from '../utils/state-listener';
+import {Stateful} from '../common/ui';
 
-export class MultiSelect<T> extends Ui {
+export class MultiSelect<T> extends Stateful {
   private selectedStates = new Map<T, boolean>();
 
-  constructor(public options: T[] = [], public transformer: Transformer<T, any> = Transformers.objectById,
-              stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
+  private _options: T[] = [];
+  get options(): T[] {
+    return this._options;
+  }
+
+  set options(value: T[]) {
+    this._options = value;
+    this.changed();
+  }
+
+  setOptions(value: T[]): this {
+    this.options = value;
+    return this;
+  }
+
+  private _transformer: Transformer<T, any> = Transformers.objectById;
+  get transformer(): Transformer<T, any> {
+    return this._transformer;
+  }
+
+  set transformer(value: Transformer<T, any>) {
+    this._transformer = value;
+    this.changed();
+  }
+
+  setTransformer(value: Transformer<T, any>): this {
+    this.transformer = value;
+    return this;
   }
 
   get allSelected(): boolean {
@@ -20,6 +44,11 @@ export class MultiSelect<T> extends Ui {
     } else {
       this.deselectAll();
     }
+  }
+
+  setAllSelected(value: boolean): this {
+    this.allSelected = value;
+    return this;
   }
 
   get indeterminate(): boolean {
@@ -86,5 +115,10 @@ export class MultiSelect<T> extends Ui {
     selections.forEach((value) => {
       this.select(value);
     });
+  }
+
+  setSelection(value: T[]): this {
+    this.selection = value;
+    return this;
   }
 }

@@ -10,7 +10,7 @@ import {Toggle} from 'ui-model';
 export class TreeNodeComponent implements OnInit {
 
   @Input() data: TreeNode;
-  toggle = new Toggle(true);
+  toggle = new Toggle().setIsOn(Toggle.ON);
 
   constructor() {
   }
