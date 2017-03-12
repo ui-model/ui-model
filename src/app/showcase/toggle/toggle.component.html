@@ -35,6 +35,14 @@
   </div>
 </ui-panel>
 
+<ui-panel title="In-place editor? It's a toggle" uiToggle #editor="uiToggle">
+  <div class="form-control-static" (click)="editor.turnOn()" *ngIf="editor.isOff">
+    {{editorValue}}
+  </div>
+  <input type="text" class="form-control" uiFocus
+         [(ngModel)]="editorValue" (keyup.enter)="editor.turnOff()" *ngIf="editor.isOn"/>
+</ui-panel>
+
 <ui-panel title="We can also access the toggle object inside this panel" #panel>
   <button type="button" class="btn btn-primary" (click)="panel.toggle.turnOff()">
     Close this panel

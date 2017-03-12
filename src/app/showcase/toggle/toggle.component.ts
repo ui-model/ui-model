@@ -6,11 +6,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./toggle.component.scss']
 })
 export class ToggleComponent implements OnInit {
-
   constructor() {
   }
 
   ngOnInit() {
   }
-
+  editorValue = 'Click to edit & press enter to submit';
 }
