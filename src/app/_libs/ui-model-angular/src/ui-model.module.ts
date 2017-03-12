@@ -24,6 +24,7 @@ import {SafeHtmlPipe} from './pipes/safe-html.pipe';
 import {SafeScriptPipe} from './pipes/safe-script.pipe';
 import {SafeUrlPipe} from './pipes/safe-url.pipe';
 import {TooltipDirective} from './directives/tooltip.directive';
+import { FocusDirective } from './directives/focus.directive';
 
 @NgModule({
   imports: [
@@ -56,6 +57,7 @@ import {TooltipDirective} from './directives/tooltip.directive';
     SafeHtmlPipe,
     SafeScriptPipe,
     SafeUrlPipe,
+    FocusDirective,
   ],
   exports: [
     SelectDirective,
@@ -73,6 +75,7 @@ import {TooltipDirective} from './directives/tooltip.directive';
     TypeAheadDirective,
     TooltipDirective,
     DisabledDirective,
+    FocusDirective,
 
     FormatPipe,
     OrderByPipe,
