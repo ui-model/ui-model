@@ -6,7 +6,7 @@ import {Rect} from 'ui-model';
   exportAs: 'uiMeasure',
 })
 export class MeasureDirective implements OnInit {
-  @Output('uiMeasureChange') changed = new EventEmitter<void>();
+  @Output('uiMeasure') changed = new EventEmitter<MeasureDirective>();
 
   private _signal: any;
   get signal(): any {
@@ -60,9 +60,9 @@ export class MeasureDirective implements OnInit {
 
   update(): void {
     this._boundingClientRect = Rect.fromClientRect(this.element.getBoundingClientRect());
-    this._offsetRect = new Rect(this.element.offsetLeft, this.element.offsetTop, this.element.offsetWidth, this.element.offsetHeight);
-    this._clientRect = new Rect(this.element.clientLeft, this.element.clientTop, this.element.clientWidth, this.element.clientHeight);
-    this._scrollRect = new Rect(this.element.scrollLeft, this.element.scrollTop, this.element.scrollWidth, this.element.scrollHeight);
-    this.changed.emit();
+    this._offsetRect = Rect.from(this.element.offsetLeft, this.element.offsetTop, this.element.offsetWidth, this.element.offsetHeight);
+    this._clientRect = Rect.from(this.element.clientLeft, this.element.clientTop, this.element.clientWidth, this.element.clientHeight);
+    this._scrollRect = Rect.from(this.element.scrollLeft, this.element.scrollTop, this.element.scrollWidth, this.element.scrollHeight);
+    this.changed.emit(this);
   }
 }

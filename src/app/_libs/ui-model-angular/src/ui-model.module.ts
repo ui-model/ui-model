@@ -24,7 +24,7 @@ import {SafeHtmlPipe} from './pipes/safe-html.pipe';
 import {SafeScriptPipe} from './pipes/safe-script.pipe';
 import {SafeUrlPipe} from './pipes/safe-url.pipe';
 import {TooltipDirective} from './directives/tooltip.directive';
-import { FocusDirective } from './directives/focus.directive';
+import {FocusDirective} from './directives/focus.directive';
 
 @NgModule({
   imports: [
@@ -107,6 +107,7 @@ export * from './directives/file-change-detect.directive';
 export * from './directives/type-ahead.directive';
 export * from './directives/tooltip.directive';
 export * from './directives/disabled.directive';
+export * from './directives/focus.directive';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';
