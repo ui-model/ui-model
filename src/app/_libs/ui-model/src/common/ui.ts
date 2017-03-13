@@ -1,22 +1,19 @@
 import {StateListener} from '../utils/state-listener';
 import {isFunction, isString} from '../utils/typings';
+import {Observable} from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
 export abstract class Stateful {
   constructor(private stateListener?: StateListener, private stateKey?: string) {
   }
 
-  private resolve: (value?: this | PromiseLike<this>) => void;
-  private reject: (reason?: any) => void;
-  protected _changes: PromiseLike<this> = new Promise((resolve, reject) => {
-    this.resolve = resolve;
-    this.reject = reject;
-  });
+  private _changes = new Subject<this>();
 
-  get changes(): PromiseLike<this> {
-    return this._changes;
+  get changes(): Observable<this> {
+    return this._changes.asObservable();
   }
 
   protected changed(): void {
-    this.resolve(this);
+    this._changes.next(this);
     if (this.stateListener && isFunction(this.stateListener.setState)) {
       if (!isString(this.stateKey)) {
         throw new Error('State key is required');

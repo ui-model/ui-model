@@ -1,3 +1,3 @@
 export interface StateListener {
-  setState(state: Object): void;
+  setState(state: {[name: string]: any}): void;
 }

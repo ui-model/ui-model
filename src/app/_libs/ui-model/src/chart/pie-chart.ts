@@ -1,5 +1,7 @@
 import {Pie} from '../shape/pie';
 import {Stateful} from '../common/ui';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/merge';
 
 export class PieChart extends Stateful {
   get serials(): number[] {
@@ -16,8 +18,8 @@ export class PieChart extends Stateful {
     return this;
   }
 
-  get changes(): PromiseLike<this> {
-    return Promise.race(this._pies.map(pie => pie.changes)).then(() => this);
+  get changes(): Observable<this> {
+    return Observable.merge(this._pies.map(pie => pie.changes)).map(() => this);
   }
 
   get pies(): Pie[] {

@@ -1,8 +1,12 @@
 import {Coordinate} from '../utils/coordinate';
 import {Stateful} from '../common/ui';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/merge';
+import 'rxjs/add/operator/map';
+
 export class Pie extends Stateful {
-  get changes(): PromiseLike<this> {
-    return Promise.race([this._begin.changes, this._end.changes]).then(() => this);
+  get changes(): Observable<this> {
+    return Observable.merge([this._begin.changes, this._end.changes]).map(() => this);
   }
 
   get cx(): number {

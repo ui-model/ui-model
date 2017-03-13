@@ -1,13 +1,71 @@
-export class Rect {
-  constructor(public left = 0, public top = 0, public width = 0, public height = 0) {
+import {Stateful} from '../common/ui';
+export class Rect extends Stateful {
+  private _left = 0;
+  get left(): number {
+    return this._left;
   }
 
-  static readonly InfinityRect = Object.freeze(new Rect(
-    -Number.MAX_VALUE / 2,
-    -Number.MAX_VALUE / 2,
-    Number.MAX_VALUE / 2,
-    Number.MAX_VALUE / 2
-  ));
+  set left(value: number) {
+    this._left = value;
+    this.changed();
+  }
+
+  setLeft(value: number): this {
+    this.left = value;
+    return this;
+  }
+
+  private _top = 0;
+  get top(): number {
+    return this._top;
+  }
+
+  set top(value: number) {
+    this._top = value;
+    this.changed();
+  }
+
+  setTop(value: number): this {
+    this.top = value;
+    return this;
+  }
+
+  private _width = 0;
+  get width(): number {
+    return this._width;
+  }
+
+  set width(value: number) {
+    this._width = value;
+    this.changed();
+  }
+
+  setWidth(value: number): this {
+    this.width = value;
+    return this;
+  }
+
+  private _height = 0;
+  get height(): number {
+    return this._height;
+  }
+
+  set height(value: number) {
+    this._height = value;
+    this.changed();
+  }
+
+  setHeight(value: number): this {
+    this.height = value;
+    return this;
+  }
+
+  static readonly InfinityRect = Object.freeze(new Rect()
+    .setLeft(-Number.MAX_VALUE / 2)
+    .setTop(-Number.MAX_VALUE / 2)
+    .setWidth(Number.MAX_VALUE)
+    .setHeight(Number.MAX_VALUE)
+  );
 
   limit = Rect.InfinityRect;
 
@@ -75,7 +133,7 @@ export class Rect {
   moveY(deltaY: number): Rect {
     const top = this.top + deltaY;
     const minTop = this.limit.top;
-    const maxTop = this.limit.right - this.width;
+    const maxTop = this.limit.bottom - this.height;
     this.top = Math.min(Math.max(top, minTop), maxTop);
     return this;
   }
@@ -94,7 +152,19 @@ export class Rect {
     return this.moveTo(x - this.halfWidth, y - this.halfHeight);
   }
 
+  copyFrom(rect: Rect): this {
+    this.left = rect.left;
+    this.top = rect.top;
+    this.width = rect.width;
+    this.height = rect.height;
+    return this;
+  }
+
+  static from(left: number, top: number, width: number, height: number): Rect {
+    return new Rect().setLeft(left).setTop(top).setWidth(width).setHeight(height);
+  }
+
   static fromClientRect(rect: ClientRect): Rect {
-    return new Rect(rect.left, rect.top, rect.width, rect.height);
+    return Rect.from(rect.left, rect.top, rect.width, rect.height);
   }
 }

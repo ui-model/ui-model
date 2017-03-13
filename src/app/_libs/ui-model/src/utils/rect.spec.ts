@@ -3,7 +3,7 @@ import {Rect} from './rect';
 
 describe('Rect', () => {
   it('constructor', () => {
-    const value = new Rect(10, 20, 6, 8);
+    const value = Rect.from(10, 20, 6, 8);
     expect(value.right).to.eql(16);
     expect(value.bottom).to.eql(28);
     expect(value.halfWidth).to.eql(3);
@@ -14,7 +14,7 @@ describe('Rect', () => {
 
   });
   it('zoom', () => {
-    const value = new Rect(10, 20, 6, 8).limitTo(new Rect(0, 0, 50, 50));
+    const value = Rect.from(10, 20, 6, 8).limitTo(Rect.from(0, 0, 50, 50));
     value.zoom(2);
     expect(value.right).to.eql(22);
     expect(value.bottom).to.eql(36);
@@ -31,7 +31,7 @@ describe('Rect', () => {
     expect(value.bottom).to.eql(40);
   });
   it('move', () => {
-    const value = new Rect(10, 20, 6, 8).limitTo(new Rect(0, 0, 50, 50));
+    const value = Rect.from(10, 20, 6, 8).limitTo(Rect.from(0, 0, 50, 50));
     value.moveX(-100);
     expect(value.left).to.eql(0);
     value.moveX(100);
