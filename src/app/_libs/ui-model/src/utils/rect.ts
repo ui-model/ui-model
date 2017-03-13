@@ -1,4 +1,4 @@
-import {Stateful} from '../common/ui';
+import {Stateful} from '../common/stateful';
 export class Rect extends Stateful {
   private _left = 0;
   get left(): number {
@@ -60,12 +60,11 @@ export class Rect extends Stateful {
     return this;
   }
 
-  static readonly InfinityRect = Object.freeze(new Rect()
+  static readonly InfinityRect = new Rect()
     .setLeft(-Number.MAX_VALUE / 2)
     .setTop(-Number.MAX_VALUE / 2)
     .setWidth(Number.MAX_VALUE)
-    .setHeight(Number.MAX_VALUE)
-  );
+    .setHeight(Number.MAX_VALUE);
 
   limit = Rect.InfinityRect;
 
@@ -105,6 +104,8 @@ export class Rect extends Stateful {
   zoom(scale: number): Rect {
     scale = Math.min(scale, this.limit.width / this.width);
     scale = Math.min(scale, this.limit.height / this.height);
+    this.left *= scale;
+    this.top *= scale;
     this.width *= scale;
     this.height *= scale;
     return this;
@@ -162,6 +163,10 @@ export class Rect extends Stateful {
 
   static from(left: number, top: number, width: number, height: number): Rect {
     return new Rect().setLeft(left).setTop(top).setWidth(width).setHeight(height);
+  }
+
+  static copyFrom(rect: Rect): Rect {
+    return Rect.from(rect.left, rect.top, rect.width, rect.height);
   }
 
   static fromClientRect(rect: ClientRect): Rect {

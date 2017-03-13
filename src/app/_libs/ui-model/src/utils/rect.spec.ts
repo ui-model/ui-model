@@ -16,8 +16,10 @@ describe('Rect', () => {
   it('zoom', () => {
     const value = Rect.from(10, 20, 6, 8).limitTo(Rect.from(0, 0, 50, 50));
     value.zoom(2);
-    expect(value.right).to.eql(22);
-    expect(value.bottom).to.eql(36);
+    expect(value.left).to.eql(20);
+    expect(value.top).to.eql(40);
+    expect(value.right).to.eql(32);
+    expect(value.bottom).to.eql(56);
     value.zoom(10);
     expect(value.width).to.eql(37.5);
     expect(value.height).to.eql(50);
@@ -26,9 +28,9 @@ describe('Rect', () => {
     expect(value.width).to.eql(37.5);
     expect(value.height).to.eql(50);
     value.zoomToWidth(15);
-    expect(value.right).to.eql(25);
+    expect(value.right).to.eql(40);
     value.zoomToHeight(20);
-    expect(value.bottom).to.eql(40);
+    expect(value.bottom).to.eql(70);
   });
   it('move', () => {
     const value = Rect.from(10, 20, 6, 8).limitTo(Rect.from(0, 0, 50, 50));
@@ -39,7 +41,7 @@ describe('Rect', () => {
     value.moveY(-100);
     expect(value.top).to.eql(0);
     value.moveY(100);
-    expect(value.top).to.eql(44);
+    expect(value.top).to.eql(42);
     value.centerTo(30, 20);
     expect(value.centerX).to.eql(30);
     expect(value.centerY).to.eql(20);

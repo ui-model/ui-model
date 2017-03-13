@@ -1,5 +1,5 @@
 import {Transformer, Transformers} from '../utils/transformer';
-import {Stateful} from '../common/ui';
+import {Stateful} from '../common/stateful';
 export class Select<T> extends Stateful {
   _selection: T;
 

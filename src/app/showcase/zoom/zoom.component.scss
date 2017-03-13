@@ -1,18 +1,45 @@
+@import "~bootstrap/scss/variables";
+
 :host {
   display: block;
 }
 
-.small {
+.playground {
   display: inline-block;
-  vertical-align: top;
-  border: 1px solid lightgray;
+  background: $gray-lighter;
+  padding: 20px;
 }
 
-.large {
+.active-rect {
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: top;
+  position: relative;
+  > .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  > .viewport {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 64px;
+    background: rgba(green, 0.2);
+  }
+}
+
+.passive-rect {
+  position: relative;
   display: inline-block;
   vertical-align: top;
-  border: 1px solid lightgray;
   overflow: hidden;
-  width: 500px;
-  height: 500px;
+  width: 330px;
+  height: 330px;
+  > img {
+    position: absolute;
+  }
 }

@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 import {Moment, MomentInput} from 'moment';
-import {Stateful} from '../common/ui';
+import {Stateful} from '../common/stateful';
 
 export class Calendar extends Stateful {
   private _value = moment();

@@ -8,6 +8,7 @@ export * from './shape/pie';
 export * from './table/table-field';
 export * from './table/table-sorter';
 export * from './toggle/toggle';
+export * from './zoom/zoom';
 
 export {Comparator, Comparators} from './utils/comparator';
 export {Coordinate} from './utils/coordinate';

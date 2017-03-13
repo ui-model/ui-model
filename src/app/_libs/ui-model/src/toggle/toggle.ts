@@ -1,4 +1,4 @@
-import {Stateful} from '../common/ui';
+import {Stateful} from '../common/stateful';
 
 export class Toggle extends Stateful {
   static readonly ON = true;

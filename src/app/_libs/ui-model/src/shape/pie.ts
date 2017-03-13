@@ -1,5 +1,5 @@
 import {Coordinate} from '../utils/coordinate';
-import {Stateful} from '../common/ui';
+import {Stateful} from '../common/stateful';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';

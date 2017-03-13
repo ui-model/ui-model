@@ -1,6 +1,6 @@
 import {TableField} from './table-field';
 import {SortOrder} from '../utils/sort-order';
-import {Stateful} from '../common/ui';
+import {Stateful} from '../common/stateful';
 
 function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
   if (!order) {

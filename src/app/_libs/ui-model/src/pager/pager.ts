@@ -1,4 +1,4 @@
-import {Stateful} from '../common/ui';
+import {Stateful} from '../common/stateful';
 
 export class Pager extends Stateful {
   private _index = 0;
