@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Metadata} from '../_common/meta-data';
 
 @Component({
   selector: 'ui-app-draggable',
@@ -15,4 +16,10 @@ export class DraggableComponent implements OnInit {
   ngOnInit() {
   }
 
+  static meta = new Metadata()
+    .setId('draggable')
+    .setTitle('Draggable')
+    .setTags(['draggable'])
+    .setDescription('')
+    .setAuthors(['wzc']);
 }

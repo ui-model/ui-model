@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Metadata} from '../_common/meta-data';
 
 @Component({
   selector: 'ui-app-preview',
@@ -15,4 +16,10 @@ export class PreviewComponent implements OnInit {
   ngOnInit() {
   }
 
+  static meta = new Metadata()
+    .setId('preview')
+    .setTitle('Preview')
+    .setTags(['preview'])
+    .setDescription('')
+    .setAuthors(['wzc']);
 }

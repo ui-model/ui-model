@@ -24,7 +24,9 @@ import {ChartComponent} from './showcase/chart/chart.component';
 import {TypeAheadComponent} from './showcase/type-ahead/type-ahead.component';
 import {ZoomComponent} from './showcase/zoom/zoom.component';
 import {TooltipComponent} from './showcase/tooltip/tooltip.component';
-import { NavHeaderComponent } from './layout/nav-header/nav-header.component';
+import {NavHeaderComponent} from './layout/nav-header/nav-header.component';
+import {SourceViewerComponent} from './layout/source-viewer/source-viewer.component';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -48,12 +50,14 @@ import { NavHeaderComponent } from './layout/nav-header/nav-header.component';
     ZoomComponent,
     TooltipComponent,
     NavHeaderComponent,
+    SourceViewerComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     SharedModule,
+    CoreModule,
     routing,
   ],
   providers: [

@@ -1,12 +1,17 @@
 <app-nav-header></app-nav-header>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-md-2">
       <ui-app-nav-menu></ui-app-nav-menu>
     </div>
-    <div class="col-sm-10">
+    <div class="col-md-5">
+      <h3>{{meta?.title}}</h3>
       <router-outlet></router-outlet>
+      <div [innerHTML]="meta?.document | async | markdown"></div>
+    </div>
+    <div class="col-md-5" *ngIf="meta.title">
+      <ui-app-source-viewer></ui-app-source-viewer>
     </div>
   </div>
 </div>

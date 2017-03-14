@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TooltipService} from 'ui-model-angular';
+import {Metadata} from '../_common/meta-data';
 
 @Component({
   selector: 'app-tooltip',
@@ -19,4 +20,11 @@ export class TooltipComponent implements OnInit {
   alert() {
     alert(1);
   }
+
+  static meta = new Metadata()
+    .setId('tooltip')
+    .setTitle('Tooltip')
+    .setTags(['tooltip'])
+    .setDescription('')
+    .setAuthors(['wzc']);
 }

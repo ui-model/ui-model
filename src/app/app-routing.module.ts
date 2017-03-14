@@ -13,67 +13,75 @@ import {ChartComponent} from './showcase/chart/chart.component';
 import {TypeAheadComponent} from './showcase/type-ahead/type-ahead.component';
 import {ZoomComponent} from './showcase/zoom/zoom.component';
 import {TooltipComponent} from './showcase/tooltip/tooltip.component';
+import {Metadata} from './showcase/_common/meta-data';
+import {ChildrenGuardService} from './core/children-guard.service';
 const routes: Route[] = [
   {
     path: '',
-    redirectTo: '/form',
-    pathMatch: 'full',
-  },
-  {
-    path: 'select',
-    component: SelectComponent,
-  },
-  {
-    path: 'multi-select',
-    component: MultiSelectComponent,
-  },
-  {
-    path: 'toggle',
-    component: ToggleComponent,
-  },
-  {
-    path: 'table',
-    component: TableComponent,
-  },
-  {
-    path: 'tree',
-    component: TreeComponent,
-  },
-  {
-    path: 'form',
-    component: FormComponent,
-  },
-  {
-    path: 'calendar',
-    component: CalendarComponent,
-  },
-  {
-    path: 'preview',
-    component: PreviewComponent,
-  },
-  {
-    path: 'draggable',
-    component: DraggableComponent,
-  },
-  {
-    path: 'modal',
-    component: ModalComponent,
-  },
-  {
-    path: 'chart',
-    component: ChartComponent,
-  },
-  {
-    path: 'type-ahead',
-    component: TypeAheadComponent,
-  },
-  {
-    path: 'zoom',
-    component: ZoomComponent,
-  },
-  {
-    path: 'tooltip',
-    component: TooltipComponent,
+    canActivateChild: [ChildrenGuardService],
+    children: [
+      {
+        path: '',
+        redirectTo: '/form',
+        pathMatch: 'full',
+      },
+      {
+        path: 'select',
+        component: SelectComponent,
+      },
+      {
+        path: 'multi-select',
+        component: MultiSelectComponent,
+      },
+      {
+        path: 'toggle',
+        component: ToggleComponent,
+      },
+      {
+        path: 'table',
+        component: TableComponent,
+      },
+      {
+        path: 'tree',
+        component: TreeComponent,
+      },
+      {
+        path: 'form',
+        component: FormComponent,
+      },
+      {
+        path: 'calendar',
+        component: CalendarComponent,
+      },
+      {
+        path: 'preview',
+        component: PreviewComponent,
+      },
+      {
+        path: 'draggable',
+        component: DraggableComponent,
+      },
+      {
+        path: 'modal',
+        component: ModalComponent,
+      },
+      {
+        path: 'chart',
+        component: ChartComponent,
+      },
+      {
+        path: 'type-ahead',
+        component: TypeAheadComponent,
+      },
+      {
+        path: 'zoom',
+        component: ZoomComponent,
+      },
+      {
+        path: 'tooltip',
+        component: TooltipComponent,
+      },
+    ],
   },
 ];
 

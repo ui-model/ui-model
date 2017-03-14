@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Metadata} from '../_common/meta-data';
 
 @Component({
   selector: 'ui-app-toggle',
@@ -11,5 +12,13 @@ export class ToggleComponent implements OnInit {
 
   ngOnInit() {
   }
+
   editorValue = 'Click to edit & press enter to submit';
+
+  static meta = new Metadata()
+    .setId('toggle')
+    .setTitle('Toggle')
+    .setTags(['toggle'])
+    .setDescription('')
+    .setAuthors(['wzc']);
 }

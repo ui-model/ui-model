@@ -1,0 +1,21 @@
+<div *ngIf="meta">
+  <p class="tag-list">
+    Authors:
+    <a *ngFor="let author of meta.authors" [routerLink]="['/authors', author.id]">{{author.name}}</a>
+  </p>
+  <p class="tag-list">
+    Tags:
+    <label class="tag tag-info" *ngFor="let tag of meta.tags">{{tag}}</label>
+  </p>
+  <div class="alert alert-info" *ngIf="meta.description" [innerHTML]="meta.description"></div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let ext of files">
+      <a href uiPreventDefault (click)="load(ext)" class="nav-link" [class.active]="types.selected(ext)">
+        {{ext}}
+      </a>
+    </li>
+  </ul>
+  <pre [innerHTML]="source | async">
+
+  </pre>
+</div>

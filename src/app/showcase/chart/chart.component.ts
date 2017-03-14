@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {PieChart, Pie} from 'ui-model';
+import {Metadata} from '../_common/meta-data';
 
 @Component({
   selector: 'ui-app-chart',
@@ -19,4 +20,11 @@ export class ChartComponent {
     const {x, y} = pie.mapToXY(pie.middlePercent, pie.radius + this.noteOffset);
     return `translateX(${x}px) translateY(${y}px)`;
   }
+
+  static meta = new Metadata()
+    .setId('chart')
+    .setTitle('Chart')
+    .setTags(['Chart', 'Pie'])
+    .setDescription('')
+    .setAuthors(['wzc']);
 }

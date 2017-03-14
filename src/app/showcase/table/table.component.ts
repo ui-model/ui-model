@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TableField, DataType} from 'ui-model';
 import * as _ from 'lodash';
+import {Metadata} from '../_common/meta-data';
 
 class Item {
   id: number;
@@ -65,4 +66,11 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  static meta = new Metadata()
+    .setId('table')
+    .setTitle('Table')
+    .setTags(['table'])
+    .setDescription('')
+    .setAuthors(['wzc']);
 }

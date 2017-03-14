@@ -67,7 +67,7 @@ task('compile', ['clean'], () => {
 });
 
 task('build.readme', () => {
-  return src('./src/app/_libs/**/*.md')
+  return src('./src/app/_libs/**/*.markdown')
     .pipe(dest(distDir));
 });
 

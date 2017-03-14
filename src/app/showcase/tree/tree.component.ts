@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TreeNode} from 'ui-model-angular-bootstrap';
+import {Metadata} from '../_common/meta-data';
 
 @Component({
   selector: 'ui-app-tree',
@@ -42,4 +43,10 @@ export class TreeComponent implements OnInit {
   ngOnInit() {
   }
 
+  static meta = new Metadata()
+    .setId('tree')
+    .setTitle('Tree')
+    .setTags(['tree'])
+    .setDescription('')
+    .setAuthors(['wzc']);
 }

@@ -1,0 +1,10 @@
+@import "../../shared/styles/common";
+:host {
+  display: block;
+}
+
+pre {
+  border: 1px solid $nav-tabs-active-link-hover-border-color;
+  border-top: none;
+  padding: 0.5em;
+}
