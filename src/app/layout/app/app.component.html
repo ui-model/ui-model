@@ -8,7 +8,7 @@
     <div class="col-md-5">
       <h3>{{meta?.title}}</h3>
       <router-outlet></router-outlet>
-      <div [innerHTML]="meta?.document | async | markdown"></div>
+      <app-document-viewer></app-document-viewer>
     </div>
     <div class="col-md-5" *ngIf="meta.title">
       <ui-app-source-viewer></ui-app-source-viewer>

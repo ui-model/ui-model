@@ -27,6 +27,7 @@ import {TooltipComponent} from './showcase/tooltip/tooltip.component';
 import {NavHeaderComponent} from './layout/nav-header/nav-header.component';
 import {SourceViewerComponent} from './layout/source-viewer/source-viewer.component';
 import {CoreModule} from './core/core.module';
+import { DocumentViewerComponent } from './showcase/document-viewer/document-viewer.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {CoreModule} from './core/core.module';
     TooltipComponent,
     NavHeaderComponent,
     SourceViewerComponent,
+    DocumentViewerComponent,
   ],
   imports: [
     BrowserModule,
