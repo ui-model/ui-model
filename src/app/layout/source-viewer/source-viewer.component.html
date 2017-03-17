@@ -4,7 +4,7 @@
 </p>
 <p class="tag-list" *ngIf="meta?.tags.length > 0">
   Tags:
-  <label class="tag tag-info" *ngFor="let tag of meta.tags">{{tag}}</label>
+  <label class="tag tag-info" *ngFor="let tag of meta.tags">{{tag.keyword}}</label>
 </p>
 <div class="alert alert-info" *ngIf="meta?.description" [innerHTML]="meta.description"></div>
 <ul class="nav nav-tabs">

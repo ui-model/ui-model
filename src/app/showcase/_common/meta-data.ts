@@ -1,11 +1,11 @@
 import {Author} from './author';
-import {Observable} from 'rxjs/Observable';
+import {Tag} from './tag';
 export class Metadata {
   id = '';
   title = '';
-  tags: string[] = [];
+  tags: Tag[] = [];
   description = '';
-  document: Observable<string>;
+  document: string;
   authors: Author[] = [];
 
   setId(value: string): this {
@@ -24,12 +24,22 @@ export class Metadata {
   }
 
   setTags(value: string[]): this {
-    this.tags = value;
+    this.tags = value.map((tag) => {
+      return {
+        keyword: tag,
+        weight: 0,
+      };
+    });
     return this;
   }
 
   setAuthors(value: string[]): this {
     this.authors = value.map(Author.of);
+    return this;
+  }
+
+  setDocument(value: string): this {
+    this.document = value;
     return this;
   }
 }

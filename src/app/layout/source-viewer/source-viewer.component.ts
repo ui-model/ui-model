@@ -23,7 +23,8 @@ export class SourceViewerComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(({id, ext = 'ts'}) => {
-      this.meta = this.route.parent.children[0].children.find((route) => route.outlet === 'primary').snapshot.data as Metadata;
+      const primeRoute = this.route.parent.children[0].children.find((route) => route.outlet === 'primary');
+      this.meta = primeRoute.snapshot.data as Metadata;
       this.id = id;
       this.currentExt = ext;
       this.source = this.sourceCode.loadFile(id, ext)

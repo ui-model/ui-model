@@ -1,3 +1,13 @@
 :host {
   display: block;
 }
+
+.form-control-static {
+  margin-bottom: 0;
+  > .tag {
+    cursor: pointer;
+    margin-bottom: 0;
+    vertical-align: top;
+    margin-right: 0.5em;
+  }
+}
