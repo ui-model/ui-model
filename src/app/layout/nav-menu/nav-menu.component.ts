@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {routes} from '../../app-routing.module';
+import {Metadata} from '../../showcase/_common/meta-data';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,62 +9,10 @@ import {Component} from '@angular/core';
 })
 export class NavMenuComponent {
 
-  items = [
-    {
-      title: 'Select',
-      route: 'select'
-    },
-    {
-      title: 'Multiple Select',
-      route: 'multi-select'
-    },
-    {
-      title: 'Toggle',
-      route: 'toggle'
-    },
-    {
-      title: 'Table',
-      route: 'table'
-    },
-    {
-      title: 'Tree',
-      route: 'tree'
-    },
-    {
-      title: 'Form',
-      route: 'form',
-    },
-    {
-      title: 'Calendar',
-      route: 'calendar',
-    },
-    {
-      title: 'Preview',
-      route: 'preview',
-    },
-    {
-      title: 'Draggable',
-      route: 'draggable',
-    },
-    {
-      title: 'Modal',
-      route: 'modal',
-    },
-    {
-      title: 'Chart',
-      route: 'chart',
-    },
-    {
-      title: 'Type Ahead',
-      route: 'type-ahead',
-    },
-    {
-      title: 'Zoom',
-      route: 'zoom',
-    },
-    {
-      title: 'Tooltip',
-      route: 'tooltip',
-    },
-  ];
+  items = routes[0].children.map((route)=> {
+    return {
+      title: (route.data as Metadata || {title: ''}).title,
+      route: route.path,
+    }
+  });
 }
