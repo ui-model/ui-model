@@ -18,11 +18,11 @@ export class SourceViewerComponent implements OnInit {
   id: string;
   currentExt: string;
   meta: Metadata;
-  extensions = ['ts', 'html', 'scss', 'spec.ts'];
+  extensions = ['html', 'ts', 'scss', 'spec.ts'];
   source: Observable<string>;
 
   ngOnInit() {
-    this.route.params.subscribe(({id, ext = 'ts'}) => {
+    this.route.params.subscribe(({id, ext = 'html'}) => {
       const primeRoute = this.route.parent.children[0].children.find((route) => route.outlet === 'primary');
       this.meta = primeRoute.snapshot.data as Metadata;
       this.id = id;

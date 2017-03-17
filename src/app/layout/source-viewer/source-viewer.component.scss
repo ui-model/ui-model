@@ -12,3 +12,7 @@ pre {
 .tag {
   font-weight: normal;
 }
+
+/deep/ .empty {
+  color: $brand-warning;
+}

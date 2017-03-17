@@ -14,5 +14,5 @@
     </a>
   </li>
 </ul>
-<pre [innerHTML]="source | async">
+<pre [innerHTML]="source | async | default:'<div class=empty>(Empty)</div>'">
 </pre>
