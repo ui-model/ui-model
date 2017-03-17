@@ -4,7 +4,7 @@ import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/take';
 
 @Component({
-  selector: 'ui-app-modal-content',
+  selector: 'app-modal-content',
   templateUrl: './modal-content.component.html',
   styleUrls: ['./modal-content.component.scss']
 })
@@ -13,9 +13,6 @@ export class ModalContentComponent implements OnInit {
   @Input() title: string;
   @Output() close = new EventEmitter<void>();
   @Output() cancel = new EventEmitter<void>();
-
-  constructor() {
-  }
 
   ngOnInit() {
     console.log('Initializing inner content...');

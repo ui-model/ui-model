@@ -7,9 +7,9 @@ export class TableField {
   name: string;
   title: string;
   type = DataType.any;
-  sortable?: boolean = true;
+  sortable? = true;
   sortOrder?: SortOrder = SortOrder.None;
-  scale?: number = 0;
+  scale? = 0;
   comparator?: Comparator<any> = Comparators.any;
   formatter?: Transformer<any, string> = Transformers.identity;
 

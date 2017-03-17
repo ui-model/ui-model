@@ -3,7 +3,7 @@ import {FormatPipe} from './format.pipe';
 
 describe('FormatPipe', () => {
   it('create an instance', () => {
-    let pipe = new FormatPipe();
+    const pipe = new FormatPipe();
     expect(pipe).toBeTruthy();
   });
 });

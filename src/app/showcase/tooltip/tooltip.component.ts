@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {TooltipService} from 'ui-model-angular';
 import {Metadata} from '../_common/meta-data';
 
@@ -7,15 +7,12 @@ import {Metadata} from '../_common/meta-data';
   templateUrl: './tooltip.component.html',
   styleUrls: ['./tooltip.component.scss']
 })
-export class TooltipComponent implements OnInit {
+export class TooltipComponent {
+  constructor(public tooltip: TooltipService) {
+  }
+
   total = 10;
   html = '<strong>strong</strong><em>def</em>';
-
-  constructor(private tooltip: TooltipService) {
-  }
-
-  ngOnInit() {
-  }
 
   alert() {
     alert(1);

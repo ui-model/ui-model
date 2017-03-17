@@ -7,15 +7,7 @@ import {Toggle} from 'ui-model';
   templateUrl: 'tree-node.component.html',
   styleUrls: ['tree-node.component.scss']
 })
-export class TreeNodeComponent implements OnInit {
-
+export class TreeNodeComponent {
   @Input() data: TreeNode;
   toggle = new Toggle().setIsOn(Toggle.ON);
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
 }

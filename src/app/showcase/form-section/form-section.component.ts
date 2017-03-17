@@ -2,7 +2,7 @@ import {Component, ViewChildren, QueryList, OnInit} from '@angular/core';
 import {NgModel, NgModelGroup} from '@angular/forms';
 
 @Component({
-  selector: 'ui-app-form-section',
+  selector: 'app-form-section',
   templateUrl: './form-section.component.html',
   styleUrls: ['./form-section.component.scss'],
 })

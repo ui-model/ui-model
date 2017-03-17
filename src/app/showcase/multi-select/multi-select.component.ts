@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MultiSelect, Transformers} from 'ui-model';
 import {Metadata} from '../_common/meta-data';
 
@@ -26,11 +26,11 @@ const options = [
   }
 ];
 @Component({
-  selector: 'ui-app-multi-select',
+  selector: 'app-multi-select',
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss']
 })
-export class MultiSelectComponent implements OnInit {
+export class MultiSelectComponent {
 
   options = options;
 
@@ -38,12 +38,6 @@ export class MultiSelectComponent implements OnInit {
 
   getCode = (value: Data) => {
     return value.code;
-  };
-
-  constructor() {
-  }
-
-  ngOnInit() {
   }
 
   static meta = new Metadata()

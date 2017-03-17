@@ -4,17 +4,16 @@ import {Directive, Output, EventEmitter, OnDestroy, OnInit, ElementRef} from '@a
   selector: '[uiClickOutside]'
 })
 export class ClickOutsideDirective implements OnInit, OnDestroy {
-  @Output('uiClickOutside') onClickOutside = new EventEmitter();
-
   constructor(private element: ElementRef) {
-
   }
+
+  @Output('uiClickOutside') onClickOutside = new EventEmitter();
 
   eventListener = (event) => {
     if (!isSelfOrAncestorNode(this.element.nativeElement, event.target  as Node || event.srcElement)) {
       this.onClickOutside.emit();
     }
-  };
+  }
 
   ngOnInit(): void {
     document.addEventListener('click', this.eventListener);

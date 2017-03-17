@@ -10,14 +10,13 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./document-viewer.component.scss']
 })
 export class DocumentViewerComponent implements OnInit {
-
-  document: Observable<string>;
-
   constructor(public meta: MetaService, private router: Router, private sourceCode: SourceCodeService) {
     this.router.events.subscribe(() => {
       this.document = this.sourceCode.loadFile(meta.id, 'md');
     });
   }
+
+  document: Observable<string>;
 
   ngOnInit() {
   }

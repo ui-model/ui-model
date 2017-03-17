@@ -1,6 +1,6 @@
 import {animate, transition, style, state, trigger, AnimationEntryMetadata} from '@angular/core';
 export class Animations {
-  static slide(enterDuration: number = 300, leaveDuration: number = 100): AnimationEntryMetadata {
+  static slide(enterDuration = 300, leaveDuration = 100): AnimationEntryMetadata {
     return trigger('slide', [
       state('void', style({
         transform: 'translateY(-100%)',
@@ -13,7 +13,7 @@ export class Animations {
     ]);
   }
 
-  static fade(enterDuration: number = 300, leaveDuration: number = 100): AnimationEntryMetadata {
+  static fade(enterDuration = 300, leaveDuration = 100): AnimationEntryMetadata {
     return trigger('fade', [
       state('void', style({
         opacity: 0,

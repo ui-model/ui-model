@@ -44,7 +44,7 @@ export class TypeAheadComponent {
   selection = this.originItems[1];
 
   search(term): void {
-    this.items = this.originItems.filter((item) => item.name.indexOf(term) !== -1)
+    this.items = this.originItems.filter((item) => item.name.indexOf(term) !== -1);
   }
 
   select(item): void {

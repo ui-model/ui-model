@@ -27,8 +27,13 @@
     "member-access": false,
     "member-ordering": [
       true,
-      "static-before-instance",
-      "variables-before-functions"
+      {
+        "order": [
+          "constructor",
+          "instance-field",
+          "static-field"
+        ]
+      }
     ],
     "no-arg": true,
     "no-bitwise": true,
@@ -98,13 +103,13 @@
       "check-type"
     ],
 
-    "directive-selector": [true, "attribute", "ui", "camelCase"],
-    "component-selector": [true, "element", "ui", "kebab-case"],
+    "directive-selector": [true, "attribute", ["ui", "app"], "camelCase"],
+    "component-selector": [true, "element", ["ui", "app"], "kebab-case"],
     "use-input-property-decorator": false,
     "use-output-property-decorator": false,
     "use-host-property-decorator": false,
-    "no-input-rename": true,
-    "no-output-rename": true,
+    "no-input-rename": false,
+    "no-output-rename": false,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,

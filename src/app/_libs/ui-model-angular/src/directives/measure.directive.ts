@@ -6,6 +6,10 @@ import {Rect} from 'ui-model';
   exportAs: 'uiMeasure',
 })
 export class MeasureDirective implements OnInit {
+  constructor(element: ElementRef) {
+    this.element = element.nativeElement;
+  }
+
   @Output('uiMeasure') changed = new EventEmitter<MeasureDirective>();
 
   private _signal: any;
@@ -49,10 +53,6 @@ export class MeasureDirective implements OnInit {
   }
 
   private element: HTMLElement;
-
-  constructor(element: ElementRef) {
-    this.element = element.nativeElement;
-  }
 
   ngOnInit(): void {
     this.update();

@@ -3,7 +3,7 @@ import {ToggleDirective} from './toggle.directive';
 
 describe('ToggleDirective', () => {
   it('should create an instance', () => {
-    let directive = new ToggleDirective();
+    const directive = new ToggleDirective();
     expect(directive).toBeTruthy();
   });
 });

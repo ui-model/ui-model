@@ -52,7 +52,7 @@ const items: Item[] = _.times(100, (i) => {
 });
 
 @Component({
-  selector: 'ui-app-table',
+  selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
@@ -60,9 +60,6 @@ export class TableComponent implements OnInit {
 
   fields = fields;
   items = items;
-
-  constructor() {
-  }
 
   ngOnInit() {
   }

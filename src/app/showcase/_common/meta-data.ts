@@ -1,10 +1,10 @@
 import {Author} from './author';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
 export class Metadata {
-  id: string = '';
-  title: string = '';
+  id = '';
+  title = '';
   tags: string[] = [];
-  description: string = '';
+  description = '';
   document: Observable<string>;
   authors: Author[] = [];
 

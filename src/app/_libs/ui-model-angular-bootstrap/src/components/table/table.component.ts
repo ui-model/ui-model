@@ -34,9 +34,5 @@ export class TableComponent<T> {
 
   sorter = new TableSorter().setFields(this.fields);
 
-  delta = {};
   size = {};
-
-  constructor() {
-  }
 }

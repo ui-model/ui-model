@@ -73,7 +73,7 @@ export class TableSorter extends Stateful {
 
     const order = field.sortOrder;
 
-    this.fields.forEach((field) => field.sortOrder = SortOrder.None);
+    this.fields.forEach((value) => value.sortOrder = SortOrder.None);
 
     if (this._field === field) {
       const nextOrder = nextOf(order, defaultOrder);

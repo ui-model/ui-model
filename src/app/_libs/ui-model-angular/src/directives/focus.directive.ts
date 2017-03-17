@@ -4,6 +4,10 @@ import {Directive, Input, ElementRef, Output, EventEmitter, HostListener} from '
   selector: '[uiFocus]'
 })
 export class FocusDirective {
+  constructor(element: ElementRef) {
+    this.element = element.nativeElement as HTMLElement;
+  }
+
   private element: HTMLElement;
 
   get focus(): boolean | string {
@@ -26,9 +30,4 @@ export class FocusDirective {
   onBlur(): void {
     this.focusChange.emit(false);
   }
-
-  constructor(element: ElementRef) {
-    this.element = element.nativeElement as HTMLElement;
-  }
-
 }

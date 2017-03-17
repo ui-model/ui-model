@@ -6,17 +6,9 @@ import {Pagination} from 'ui-model';
   templateUrl: 'pagination.component.html',
   styleUrls: ['pagination.component.scss']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent {
   @Input() showBrief = true;
   @Input() showPrevNext = true;
   @Input() showFirstLast = true;
   @Input() pager: Pagination;
-
-  constructor() {
-
-  }
-
-  ngOnInit() {
-  }
-
 }

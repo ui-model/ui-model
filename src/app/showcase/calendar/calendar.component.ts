@@ -1,21 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import 'moment/locale/zh-cn';
 import {Metadata} from '../_common/meta-data';
 
 @Component({
-  selector: 'ui-app-calendar',
+  selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent {
 
-  value;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
+  value: Date;
 
   static meta = new Metadata()
     .setId('calendar')

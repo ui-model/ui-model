@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'ui-app-nav-menu',
+  selector: 'app-nav-menu',
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.scss']
 })
-export class NavMenuComponent implements OnInit {
+export class NavMenuComponent {
 
   items = [
     {
@@ -65,11 +65,4 @@ export class NavMenuComponent implements OnInit {
       route: '/tooltip',
     },
   ];
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
 }

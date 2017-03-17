@@ -5,7 +5,7 @@
   Toggle (Service)
 </button>
 <ui-modal *ngIf="toggle.isOn" (cancel)="toggle.close()">
-  <ui-app-modal-content (cancel)="toggle.close()" (close)="toggle.close()" title="Modal title">
+  <app-modal-content (cancel)="toggle.close()" (close)="toggle.close()" title="Modal title">
     This is a test
-  </ui-app-modal-content>
+  </app-modal-content>
 </ui-modal>

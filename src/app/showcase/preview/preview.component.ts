@@ -1,20 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Metadata} from '../_common/meta-data';
 
 @Component({
-  selector: 'ui-app-preview',
+  selector: 'app-preview',
   templateUrl: './preview.component.html',
   styleUrls: ['./preview.component.scss']
 })
-export class PreviewComponent implements OnInit {
+export class PreviewComponent {
 
   files = [];
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   static meta = new Metadata()
     .setId('preview')

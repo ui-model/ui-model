@@ -19,13 +19,13 @@ export class MultiBindingDirective {
     }
   }
 
-  private _prefix: string = '';
+  private _prefix = '';
   get prefix(): string {
     return this._prefix;
   }
 
   @Input('uiMultiBindingPrefix') set prefix(value: string) {
-    if (this._prefix != value) {
+    if (this._prefix !== value) {
       this._prefix = value;
       this.update();
     }
@@ -33,8 +33,10 @@ export class MultiBindingDirective {
 
   private update() {
     const element = this.element.nativeElement as Element;
-    for (let key in this._value) {
-      element.setAttribute(this._prefix + key, this._value[key]);
+    for (const key in this._value) {
+      if (this._value.hasOwnProperty(key)) {
+        element.setAttribute(this._prefix + key, this._value[key]);
+      }
     }
   }
 }

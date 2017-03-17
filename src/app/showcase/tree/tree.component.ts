@@ -1,13 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {TreeNode} from 'ui-model-angular-bootstrap';
 import {Metadata} from '../_common/meta-data';
 
 @Component({
-  selector: 'ui-app-tree',
+  selector: 'app-tree',
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.scss']
 })
-export class TreeComponent implements OnInit {
+export class TreeComponent {
   data: TreeNode = {
     label: '1',
     items: [
@@ -36,12 +36,6 @@ export class TreeComponent implements OnInit {
 
     ],
   };
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   static meta = new Metadata()
     .setId('tree')

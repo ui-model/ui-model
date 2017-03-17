@@ -13,7 +13,7 @@ export class Modal {
   icon: string;
   type: ModalType;
 
-  static tip(message: string, title: string = 'Tip'): Modal {
+  static tip(message: string, title = 'Tip'): Modal {
     const result = new Modal();
     result.message = message;
     result.title = title;
@@ -34,6 +34,6 @@ export class ModalService {
   }
 
   close(modal: Modal): void {
-    this.items = this.items.filter(item => item != modal);
+    this.items = this.items.filter(item => item !== modal);
   }
 }

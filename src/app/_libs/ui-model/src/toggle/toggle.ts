@@ -1,10 +1,7 @@
 import {Stateful} from '../common/stateful';
 
 export class Toggle extends Stateful {
-  static readonly ON = true;
-  static readonly OFF = false;
-
-  private _isOn: boolean = Toggle.OFF;
+  private _isOn = Toggle.OFF;
 
   get isOn(): boolean {
     return this._isOn;
@@ -60,4 +57,7 @@ export class Toggle extends Stateful {
   toggle(): void {
     this.turnTo(!this.isOn);
   }
+
+  static readonly ON = true;
+  static readonly OFF = false;
 }

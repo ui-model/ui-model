@@ -19,7 +19,8 @@ const TYPE_AHEAD_ACCESSOR = {
   styleUrls: ['./type-ahead.component.scss'],
   providers: [TYPE_AHEAD_ACCESSOR],
 })
-export class TypeAheadComponent<T extends {format?: Supplier<SafeHtml>, parse?: Supplier<string>}> implements ControlValueAccessor, OnInit, OnDestroy {
+export class TypeAheadComponent<T extends {format?: Supplier<SafeHtml>, parse?: Supplier<string>}>
+implements ControlValueAccessor, OnInit, OnDestroy {
 
   dropDown = new Toggle();
 
@@ -53,9 +54,6 @@ export class TypeAheadComponent<T extends {format?: Supplier<SafeHtml>, parse?: 
     } else {
       return value[this.displayField];
     }
-  }
-
-  constructor() {
   }
 
   sub: Subscription;

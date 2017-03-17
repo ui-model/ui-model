@@ -1,9 +1,13 @@
+/* tslint:disable:directive-selector */
 import {Directive, ElementRef, Renderer, HostListener, Input} from '@angular/core';
 
 @Directive({
   selector: 'img[srcFile]',
 })
 export class ImgSrcFileDirective {
+  constructor(private element: ElementRef, private renderer: Renderer) {
+  }
+
   private url: string;
 
   private _srcFile: Blob;
@@ -18,9 +22,6 @@ export class ImgSrcFileDirective {
     this.cleanUp();
     this.url = URL.createObjectURL(value, {oneTimeOnly: true});
     this.renderer.setElementAttribute(this.element.nativeElement, 'src', this.url);
-  }
-
-  constructor(private element: ElementRef, private renderer: Renderer) {
   }
 
   @HostListener('load')

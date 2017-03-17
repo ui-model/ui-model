@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, trigger, state, style, transition, animate} from '@angular/core';
+import {Component, Input, trigger, state, style, transition, animate} from '@angular/core';
 import {Toggle} from 'ui-model';
 
 @Component({
@@ -18,17 +18,9 @@ import {Toggle} from 'ui-model';
     ])
   ]
 })
-export class PanelComponent implements OnInit {
-
+export class PanelComponent {
   @Input() title: string;
   @Input() toggleable = true;
 
   toggle = new Toggle().setIsOn(Toggle.ON);
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
 }

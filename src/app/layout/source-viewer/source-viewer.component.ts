@@ -7,7 +7,7 @@ import 'rxjs/add/operator/switchMap';
 import {Observable} from 'rxjs/Observable';
 
 @Component({
-  selector: 'ui-app-source-viewer',
+  selector: 'app-source-viewer',
   templateUrl: './source-viewer.component.html',
   styleUrls: ['./source-viewer.component.scss']
 })

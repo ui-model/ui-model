@@ -1,7 +1,7 @@
 import {Pager} from './pager';
 export class Pagination extends Pager {
   private _originViewport: number;
-  private _viewport: number = 5;
+  private _viewport = 5;
   get viewport(): number {
     return Math.min(this._viewport, this.count);
   }

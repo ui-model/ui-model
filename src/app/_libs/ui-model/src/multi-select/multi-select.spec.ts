@@ -43,8 +43,8 @@ describe('Multi Select', () => {
 
   it('changes', (done) => {
     const select = new MultiSelect().setOptions(options);
-    select.changes.subscribe((select) => {
-      expect(select.selection).to.eql([1]);
+    select.changes.subscribe((value) => {
+      expect(value.selection).to.eql([1]);
       done();
     });
     select.select(1);

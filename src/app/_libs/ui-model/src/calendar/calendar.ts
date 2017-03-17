@@ -150,11 +150,11 @@ export class Calendar extends Stateful {
     this.goTo(moment(this._value).add(step, 'month').toDate());
   }
 
-  goToPrevMonth(step: number = 1): void {
+  goToPrevMonth(step = 1): void {
     this.addMonth(-step);
   }
 
-  goToNextMonth(step: number = 1): void {
+  goToNextMonth(step = 1): void {
     this.addMonth(step);
   }
 

@@ -7,6 +7,8 @@ import {MeasureDirective} from './measure.directive';
   selector: '[uiTooltip]'
 })
 export class TooltipDirective {
+  constructor(private service: TooltipService, private measure: MeasureDirective) {
+  }
 
   @Input('uiTooltip') message: string | SafeHtml;
 
@@ -24,8 +26,5 @@ export class TooltipDirective {
       return;
     }
     this.service.hide();
-  }
-
-  constructor(private service: TooltipService, private measure: MeasureDirective) {
   }
 }

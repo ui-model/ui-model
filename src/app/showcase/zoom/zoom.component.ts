@@ -7,14 +7,8 @@ import {Metadata} from '../_common/meta-data';
   templateUrl: './zoom.component.html',
   styleUrls: ['./zoom.component.scss']
 })
-export class ZoomComponent implements OnInit {
+export class ZoomComponent {
   zoom: Zoom = new Zoom();
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   static meta = new Metadata()
     .setId('zoom')

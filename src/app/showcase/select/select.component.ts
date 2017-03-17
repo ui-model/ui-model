@@ -8,7 +8,7 @@ class Option {
 }
 
 @Component({
-  selector: 'ui-app-select',
+  selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss']
 })
@@ -38,9 +38,6 @@ export class SelectComponent implements OnInit {
   ];
 
   select = new Select<Option>();
-
-  constructor() {
-  }
 
   ngOnInit() {
     this.select.select(this.options[1]);

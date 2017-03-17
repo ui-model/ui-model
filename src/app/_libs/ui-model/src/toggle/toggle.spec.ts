@@ -9,8 +9,8 @@ describe('Toggle', () => {
   });
   it('changes', (done) => {
     const toggle = new Toggle().setIsOn(Toggle.OFF);
-    toggle.changes.subscribe((toggle) => {
-      expect(toggle.isOn).to.be.true;
+    toggle.changes.subscribe((value) => {
+      expect(value.isOn).to.be.true;
       done();
     });
     toggle.toggle();

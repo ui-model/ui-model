@@ -3,7 +3,7 @@ import {TypeNamePipe} from './type-name.pipe';
 
 describe('TypeNamePipe', () => {
   it('create an instance', () => {
-    let pipe = new TypeNamePipe();
+    const pipe = new TypeNamePipe();
     expect(pipe).toBeTruthy();
   });
 });

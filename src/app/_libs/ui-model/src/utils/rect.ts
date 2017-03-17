@@ -60,12 +60,6 @@ export class Rect extends Stateful {
     return this;
   }
 
-  static readonly InfinityRect = new Rect()
-    .setLeft(-Number.MAX_VALUE / 2)
-    .setTop(-Number.MAX_VALUE / 2)
-    .setWidth(Number.MAX_VALUE)
-    .setHeight(Number.MAX_VALUE);
-
   limit = Rect.InfinityRect;
 
   limitTo(limit: Rect): Rect {
@@ -160,6 +154,12 @@ export class Rect extends Stateful {
     this.height = rect.height;
     return this;
   }
+
+  static readonly InfinityRect = new Rect()
+    .setLeft(-Number.MAX_VALUE / 2)
+    .setTop(-Number.MAX_VALUE / 2)
+    .setWidth(Number.MAX_VALUE)
+    .setHeight(Number.MAX_VALUE);
 
   static from(left: number, top: number, width: number, height: number): Rect {
     return new Rect().setLeft(left).setTop(top).setWidth(width).setHeight(height);

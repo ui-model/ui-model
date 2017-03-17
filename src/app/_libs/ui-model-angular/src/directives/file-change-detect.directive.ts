@@ -1,3 +1,4 @@
+/* tslint:disable:directive-selector */
 import {Directive, HostListener, ChangeDetectorRef} from '@angular/core';
 
 @Directive({

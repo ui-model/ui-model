@@ -6,10 +6,10 @@ import {isString} from 'ui-model';
   name: 'safeResourceUrl'
 })
 export class SafeResourceUrlPipe implements PipeTransform, OnDestroy {
-  private blobUrls = [];
-
   constructor(private sanitizer: DomSanitizer) {
   }
+
+  private blobUrls = [];
 
   transform(value: string|File): SafeResourceUrl {
     let url;

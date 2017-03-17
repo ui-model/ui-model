@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Metadata} from '../_common/meta-data';
 
 @Component({
-  selector: 'ui-app-toggle',
+  selector: 'app-toggle',
   templateUrl: './toggle.component.html',
   styleUrls: ['./toggle.component.scss']
 })

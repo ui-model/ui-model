@@ -4,15 +4,15 @@ import {ModalService, Modal} from 'ui-model-angular';
 import {Metadata} from '../_common/meta-data';
 
 @Component({
-  selector: 'ui-app-modal',
+  selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-  toggle = new Toggle();
-
   constructor(private modal: ModalService) {
   }
+
+  toggle = new Toggle();
 
   ngOnInit() {
   }

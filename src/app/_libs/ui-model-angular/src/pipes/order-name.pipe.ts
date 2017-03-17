@@ -5,7 +5,7 @@ import {SortOrder, isUndefined} from 'ui-model';
   name: 'orderName'
 })
 export class OrderNamePipe implements PipeTransform {
-  transform(value: SortOrder, prefix: string = ''): string {
+  transform(value: SortOrder, prefix = ''): string {
     if (isUndefined(value) || isUndefined(SortOrder[value])) {
       return '';
     }

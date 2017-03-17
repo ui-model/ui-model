@@ -7,6 +7,9 @@ import 'rxjs/add/operator/debounceTime';
   exportAs: 'uiTypeAhead',
 })
 export class TypeAheadDirective implements OnInit, OnDestroy {
+  constructor(private element: ElementRef) {
+  }
+
   private typing = new Subject();
 
   @Output('uiTypeAheadSearch') search = new EventEmitter<any>();
@@ -23,10 +26,6 @@ export class TypeAheadDirective implements OnInit, OnDestroy {
   }
 
   @Input() delay = 200;
-
-  constructor(private element: ElementRef) {
-
-  }
 
   ngOnInit(): void {
     this.typing
