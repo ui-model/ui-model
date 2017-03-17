@@ -25,7 +25,8 @@ import {SafeScriptPipe} from './pipes/safe-script.pipe';
 import {SafeUrlPipe} from './pipes/safe-url.pipe';
 import {TooltipDirective} from './directives/tooltip.directive';
 import {FocusDirective} from './directives/focus.directive';
-import { PreventDefaultDirective } from './directives/prevent-default.directive';
+import {PreventDefaultDirective} from './directives/prevent-default.directive';
+import {DefaultPipe} from './pipes/default.pipe';
 
 @NgModule({
   imports: [
@@ -60,6 +61,7 @@ import { PreventDefaultDirective } from './directives/prevent-default.directive'
     SafeUrlPipe,
     FocusDirective,
     PreventDefaultDirective,
+    DefaultPipe,
   ],
   exports: [
     SelectDirective,
@@ -89,6 +91,7 @@ import { PreventDefaultDirective } from './directives/prevent-default.directive'
     SafeStylePipe,
     SafeHtmlPipe,
     SafeScriptPipe,
+    DefaultPipe,
   ],
 })
 export class UiModelModule {
