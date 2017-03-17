@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {showcaseRoutes} from '../../app-routing.module';
-import {Metadata} from '../../showcase/_common/meta-data';
+import {Metadata} from '../../utils/meta-data';
 import {SourceCodeService} from '../../core/source-code.service';
+import {showcaseRoutes} from '../../utils/showcase-routes';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   filter: string;
   tags = showcaseRoutes
     .map((route) => route.data)
-    .map((data: Metadata) => data.tags)
+    .map((data) => (data as Metadata).tags)
     .reduce((result, tags) => result.concat(tags), [])
     .sort((v1, v2) => v2.weight - v1.weight)
     .slice(0, 5);
@@ -27,8 +27,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     showcaseRoutes
       .map((route) => route.data)
-      .forEach((data: Metadata) => {
-        this.sourceCode.loadFile(data.id, 'md').subscribe((content) => data.document = content);
+      .forEach((data) => {
+        const meta = data as Metadata;
+        this.sourceCode.loadFile(meta.id, 'md').subscribe((content) => meta.document = content);
       });
   }
 }

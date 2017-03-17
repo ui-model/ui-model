@@ -4,7 +4,7 @@ import {SourceCodeService} from '../../core/source-code.service';
 import 'rxjs/add/operator/switchMap';
 import {Observable} from 'rxjs/Observable';
 import {ActivatedRoute} from '@angular/router';
-import {Metadata} from '../../showcase/_common/meta-data';
+import {Metadata} from '../../utils/meta-data';
 
 @Component({
   selector: 'app-source-viewer',

@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {showcaseRoutes} from '../../app-routing.module';
-import {Metadata} from '../../showcase/_common/meta-data';
-import {Author} from '../../showcase/_common/author';
-import {Tag} from '../../showcase/_common/tag';
+import {Metadata} from '../../utils/meta-data';
+import {Author} from '../../utils/author';
+import {Tag} from '../../utils/tag';
+import {showcaseRoutes} from '../../utils/showcase-routes';
 
 @Component({
   selector: 'app-nav-menu',
@@ -12,7 +12,7 @@ import {Tag} from '../../showcase/_common/tag';
 export class NavMenuComponent {
   items = showcaseRoutes;
 
-  private _filter: string = '';
+  private _filter = '';
   get filter(): string {
     return this._filter;
   }
@@ -31,10 +31,17 @@ function testAuthor(pattern: RegExp, author: Author): boolean {
 function testTag(pattern: RegExp, tag: Tag): boolean {
   return tag && pattern.test(tag.keyword);
 }
+function matchAuthors(meta: Metadata, pattern: RegExp): boolean {
+  return !!meta.authors.find((author) => testAuthor(pattern, author));
+}
+function matchTags(meta: Metadata, pattern: RegExp): boolean {
+  return !!meta.tags.find((tag) => testTag(pattern, tag));
+}
+
 function match(pattern: RegExp, meta: Metadata): boolean {
   return pattern.test(meta.id) ||
     pattern.test(meta.title) ||
     pattern.test(meta.description) ||
     pattern.test(meta.document) ||
-    pattern.test(meta.id) || !!meta.authors.find((author) => testAuthor(pattern, author)) || !!meta.tags.find((tag) => testTag(pattern, tag));
+    pattern.test(meta.id) || matchAuthors(meta, pattern) || matchTags(meta, pattern);
 }

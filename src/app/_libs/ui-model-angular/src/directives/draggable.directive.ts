@@ -10,9 +10,6 @@ export class DraggableDirective {
   @Output('uiDragMove') onMove = new EventEmitter<any>();
   @Output('uiDragStop') onStop = new EventEmitter<void>();
 
-  constructor() {
-  }
-
   dragging = false;
 
   startPos = new Point();

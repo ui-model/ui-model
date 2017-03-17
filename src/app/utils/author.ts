@@ -13,8 +13,7 @@ export class Author {
   homepage?: string;
 
   static of(id: string): Author {
-    const result = authors[id];
-    result.id = id;
-    return result;
+    return authors[id];
   }
 }
+

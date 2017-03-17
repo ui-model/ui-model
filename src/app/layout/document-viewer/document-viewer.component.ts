@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {SourceCodeService} from '../../core/source-code.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import {Metadata} from '../_common/meta-data';
+import {Metadata} from '../../utils/meta-data';
 
 @Component({
   selector: 'app-document-viewer',
@@ -12,8 +12,8 @@ import {Metadata} from '../_common/meta-data';
 })
 export class DocumentViewerComponent implements OnInit {
   constructor(private route: ActivatedRoute, private sourceCode: SourceCodeService) {
-    const primeRoute = this.route.parent.children[0].children.find((route) => route.outlet === 'primary');
-    const data = primeRoute.snapshot.data as Metadata;
+    const primaryRoute = this.route.parent.children[0].children.find((value) => value.outlet === 'primary');
+    const data = primaryRoute.snapshot.data as Metadata;
     if (data.document) {
       this.document = Observable.of(data.document);
     } else {

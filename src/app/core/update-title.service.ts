@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import {Title} from '@angular/platform-browser';
-import {Metadata} from '../showcase/_common/meta-data';
+import {Metadata} from '../utils/meta-data';
 
 @Injectable()
 export class UpdateTitleGuard implements CanActivateChild {
