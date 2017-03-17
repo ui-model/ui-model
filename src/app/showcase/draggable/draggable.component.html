@@ -9,7 +9,13 @@
     </div>
   </div>
   <div class="alert alert-info">
-    <p>offset: {{draggable.offset.x}}</p>
-    <p>offset: {{draggable.offset.y}}</p>
+    <div class="row">
+      <div class="col-md-6">
+        delta ( x: {{draggable.offset.x}}, y: {{draggable.offset.y}} )
+      </div>
+      <div class="col-md-6">
+        pos ( x: {{inner.offsetRect.left}}, y: {{inner.offsetRect.top}} )
+      </div>
+    </div>
   </div>
 </div>

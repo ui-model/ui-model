@@ -46,7 +46,7 @@
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
-    "@angular/cli": "git+https://github.com/asnowwolf/ng-cli-2.git#v1.0.0-beta.30-2",
+    "@angular/cli": "git+https://github.com/asnowwolf/ng-cli-2.git#v1.0.0-rc.2",
     "@angular/compiler-cli": "^2.3.1",
     "@types/chai": "^3.4.35",
     "@types/core-js": "^0.9.36",
