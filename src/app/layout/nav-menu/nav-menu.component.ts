@@ -10,59 +10,59 @@ export class NavMenuComponent {
   items = [
     {
       title: 'Select',
-      route: '/select'
+      route: 'select'
     },
     {
       title: 'Multiple Select',
-      route: '/multi-select'
+      route: 'multi-select'
     },
     {
       title: 'Toggle',
-      route: '/toggle'
+      route: 'toggle'
     },
     {
       title: 'Table',
-      route: '/table'
+      route: 'table'
     },
     {
       title: 'Tree',
-      route: '/tree'
+      route: 'tree'
     },
     {
       title: 'Form',
-      route: '/form',
+      route: 'form',
     },
     {
       title: 'Calendar',
-      route: '/calendar',
+      route: 'calendar',
     },
     {
       title: 'Preview',
-      route: '/preview',
+      route: 'preview',
     },
     {
       title: 'Draggable',
-      route: '/draggable',
+      route: 'draggable',
     },
     {
       title: 'Modal',
-      route: '/modal',
+      route: 'modal',
     },
     {
       title: 'Chart',
-      route: '/chart',
+      route: 'chart',
     },
     {
       title: 'Type Ahead',
-      route: '/type-ahead',
+      route: 'type-ahead',
     },
     {
       title: 'Zoom',
-      route: '/zoom',
+      route: 'zoom',
     },
     {
       title: 'Tooltip',
-      route: '/tooltip',
+      route: 'tooltip',
     },
   ];
 }

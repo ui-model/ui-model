@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {Metadata} from '../_common/meta-data';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -15,10 +14,4 @@ export class FormComponent {
     this.report = JSON.stringify(value, null, 2);
   }
 
-  static meta = new Metadata()
-    .setId('form')
-    .setTitle('Form')
-    .setTags(['form'])
-    .setDescription('')
-    .setAuthors(['wzc']);
 }

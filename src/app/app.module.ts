@@ -28,6 +28,7 @@ import {NavHeaderComponent} from './layout/nav-header/nav-header.component';
 import {SourceViewerComponent} from './layout/source-viewer/source-viewer.component';
 import {CoreModule} from './core/core.module';
 import { DocumentViewerComponent } from './showcase/document-viewer/document-viewer.component';
+import { HomeComponent } from './showcase/home/home.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { DocumentViewerComponent } from './showcase/document-viewer/document-vie
     NavHeaderComponent,
     SourceViewerComponent,
     DocumentViewerComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

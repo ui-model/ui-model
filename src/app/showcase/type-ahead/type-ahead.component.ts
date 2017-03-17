@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {Metadata} from '../_common/meta-data';
 
 @Component({
   selector: 'app-type-ahead',
@@ -50,11 +49,4 @@ export class TypeAheadComponent {
   select(item): void {
     this.selection = item;
   }
-
-  static meta = new Metadata()
-    .setId('type-ahead')
-    .setTitle('Type-ahead')
-    .setTags(['type-ahead'])
-    .setDescription('')
-    .setAuthors(['wzc']);
 }

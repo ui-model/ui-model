@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {MultiSelect, Transformers} from 'ui-model';
-import {Metadata} from '../_common/meta-data';
 
 class Data {
   code: string;
@@ -39,11 +38,4 @@ export class MultiSelectComponent {
   getCode = (value: Data) => {
     return value.code;
   }
-
-  static meta = new Metadata()
-    .setId('multi-select')
-    .setTitle('Multi-select')
-    .setTags(['multi-select'])
-    .setDescription('')
-    .setAuthors(['wzc']);
 }

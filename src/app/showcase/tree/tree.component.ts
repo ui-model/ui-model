@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {TreeNode} from 'ui-model-angular-bootstrap';
-import {Metadata} from '../_common/meta-data';
 
 @Component({
   selector: 'app-tree',
@@ -36,11 +35,4 @@ export class TreeComponent {
 
     ],
   };
-
-  static meta = new Metadata()
-    .setId('tree')
-    .setTitle('Tree')
-    .setTags(['tree'])
-    .setDescription('')
-    .setAuthors(['wzc']);
 }

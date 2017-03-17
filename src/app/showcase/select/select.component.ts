@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Select} from 'ui-model';
-import {Metadata} from '../_common/meta-data';
 
 class Option {
   label: string;
@@ -42,12 +41,5 @@ export class SelectComponent implements OnInit {
   ngOnInit() {
     this.select.select(this.options[1]);
   }
-
-  static meta = new Metadata()
-    .setId('select')
-    .setTitle('Select')
-    .setTags(['select', 'radio group', 'dropdown', 'tabset', 'menu'])
-    .setDescription('')
-    .setAuthors(['wzc']);
 }
 

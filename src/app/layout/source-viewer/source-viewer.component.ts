@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {MetaService} from '../../core/meta.service';
-import {Select} from 'ui-model';
 import * as hljs from 'highlight.js';
 import {SourceCodeService} from '../../core/source-code.service';
 import 'rxjs/add/operator/switchMap';
 import {Observable} from 'rxjs/Observable';
+import {ActivatedRoute} from '@angular/router';
+import {Metadata} from '../../showcase/_common/meta-data';
 
 @Component({
   selector: 'app-source-viewer',
@@ -12,23 +12,22 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./source-viewer.component.scss']
 })
 export class SourceViewerComponent implements OnInit {
-  constructor(public meta: MetaService, private sourceCode: SourceCodeService) {
+  constructor(private sourceCode: SourceCodeService, private route: ActivatedRoute) {
   }
 
-  types = new Select<string>();
-  files = ['ts', 'html', 'scss', 'spec.ts'];
+  id: string;
+  currentExt: string;
+  meta: Metadata;
+  extensions = ['ts', 'html', 'scss', 'spec.ts'];
   source: Observable<string>;
 
   ngOnInit() {
-    this.source = this.types.changes
-      .switchMap((ext) => this.sourceCode.loadFile(this.meta.id, this.types.selection))
-      .map((content) => hljs.highlightAuto(content, ['ts', 'js', 'html', 'scss', 'css']).value);
-    setTimeout(() => {
-      this.types.select('ts');
+    this.route.params.subscribe(({id, ext = 'ts'}) => {
+      this.meta = this.route.parent.children.find((route) => route.outlet === 'primary').snapshot.data as Metadata;
+      this.id = id;
+      this.currentExt = ext;
+      this.source = this.sourceCode.loadFile(id, ext)
+        .map((content) => hljs.highlightAuto(content, ['ts', 'js', 'html', 'scss', 'css']).value);
     });
-  }
-
-  load(ext) {
-    this.types.select(ext);
   }
 }

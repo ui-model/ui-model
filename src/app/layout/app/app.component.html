@@ -6,12 +6,11 @@
       <app-nav-menu></app-nav-menu>
     </div>
     <div class="col-md-5">
-      <h3>{{meta?.title}}</h3>
       <router-outlet></router-outlet>
-      <app-document-viewer></app-document-viewer>
+      <router-outlet name="doc"></router-outlet>
     </div>
-    <div class="col-md-5" *ngIf="meta.title">
-      <app-source-viewer></app-source-viewer>
+    <div class="col-md-5">
+      <router-outlet name="src"></router-outlet>
     </div>
   </div>
 </div>
