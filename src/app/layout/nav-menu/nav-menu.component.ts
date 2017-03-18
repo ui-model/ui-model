@@ -31,17 +31,17 @@ function testAuthor(pattern: RegExp, author: Author): boolean {
 function testTag(pattern: RegExp, tag: Tag): boolean {
   return tag && pattern.test(tag.keyword);
 }
-function matchAuthors(meta: Metadata, pattern: RegExp): boolean {
-  return !!meta.authors.find((author) => testAuthor(pattern, author));
+function matchAuthors(authors: Author[], pattern: RegExp): boolean {
+  return authors && !!authors.find((author) => testAuthor(pattern, author));
 }
-function matchTags(meta: Metadata, pattern: RegExp): boolean {
-  return !!meta.tags.find((tag) => testTag(pattern, tag));
+function matchTags(tags: Tag[], pattern: RegExp): boolean {
+  return tags && !!tags.find((tag) => testTag(pattern, tag));
 }
 
 function match(pattern: RegExp, meta: Metadata): boolean {
-  return pattern.test(meta.id) ||
+  return meta && pattern.test(meta.id) ||
     pattern.test(meta.title) ||
     pattern.test(meta.description) ||
     pattern.test(meta.document) ||
-    pattern.test(meta.id) || matchAuthors(meta, pattern) || matchTags(meta, pattern);
+    matchAuthors(meta.authors, pattern) || matchTags(meta.tags, pattern);
 }

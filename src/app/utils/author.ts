@@ -13,7 +13,9 @@ export class Author {
   homepage?: string;
 
   static of(id: string): Author {
-    return authors[id];
+    const result = authors[id];
+    result.id = id;
+    return result;
   }
 }
 
