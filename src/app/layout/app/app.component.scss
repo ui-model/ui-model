@@ -2,12 +2,11 @@
   display: block;
 }
 
-.form-control-static {
+.tag-list {
   margin-bottom: 0;
+  line-height: 1;
   > .tag {
     cursor: pointer;
-    margin-bottom: 0;
-    vertical-align: top;
-    margin-right: 0.5em;
+    margin-bottom: 3px;
   }
 }

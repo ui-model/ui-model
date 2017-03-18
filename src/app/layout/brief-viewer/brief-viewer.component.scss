@@ -1,0 +1,15 @@
+@import "../../shared/styles/common";
+:host {
+  display: block;
+}
+
+.alert {
+  padding-bottom: 0;
+}
+
+/deep/ {
+  strong {
+    color: $brand-danger;
+    font-weight: normal;
+  }
+}

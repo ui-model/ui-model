@@ -34,7 +34,7 @@ export const showcaseRoutes: Route[] = [
       id: 'select',
       title: 'Select',
       tags: ['select', 'radio group', 'dropdown', 'tabset', 'menu'].map(Tag.of),
-      description: '',
+      description: '`select` means: choose `1` from `N`',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -45,7 +45,7 @@ export const showcaseRoutes: Route[] = [
       id: 'multi-select',
       title: 'Multi-select',
       tags: ['multi-select'].map(Tag.of),
-      description: '',
+      description: '`multi-select` means: choose `n` from `M`, and it has an undetermined state',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -55,8 +55,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'toggle',
       title: 'Toggle',
-      tags: ['toggle'].map(Tag.of),
-      description: '',
+      tags: ['toggle', 'dropdown', 'modal', 'more', 'panel', 'collapse', 'fold'].map(Tag.of),
+      description: '`toggle` means: it has two states, which can be toggled between the two states',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -66,8 +66,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'table',
       title: 'Table',
-      tags: ['table'].map(Tag.of),
-      description: '',
+      tags: ['table', 'sort', 'resize', 'drag', 'measure', 'pagination', 'viewport'].map(Tag.of),
+      description: '`table` is **composed** of `sort`/`slice`/`resize`/`pagination`...',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -77,8 +77,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'tree',
       title: 'Tree',
-      tags: ['tree'].map(Tag.of),
-      description: '',
+      tags: ['tree', 'recursive', 'fold'].map(Tag.of),
+      description: '`tree` is a simple **recursive** showcase',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -88,8 +88,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'form',
       title: 'Form',
-      tags: ['form'].map(Tag.of),
-      description: '',
+      tags: ['form', 'recursive', 'nested', 'accessor', 'ngModel'].map(Tag.of),
+      description: 'How to **split** a form into a number of separated components',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -99,8 +99,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'calendar',
       title: 'Calendar',
-      tags: ['calendar'].map(Tag.of),
-      description: '',
+      tags: ['calendar', 'moment'].map(Tag.of),
+      description: 'How to simplify a **complex** components into ui-model',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -110,8 +110,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'preview',
       title: 'Preview',
-      tags: ['preview'].map(Tag.of),
-      description: '',
+      tags: ['preview', 'upload', 'safe', 'resource'].map(Tag.of),
+      description: 'How to **upload** file and preview it locally',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -121,8 +121,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'draggable',
       title: 'Draggable',
-      tags: ['draggable'].map(Tag.of),
-      description: '',
+      tags: ['draggable', 'move', 'measure'].map(Tag.of),
+      description: 'How to use the **helper directive** to **bridge** between ui-model and view',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -132,8 +132,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'modal',
       title: 'Modal',
-      tags: ['modal'].map(Tag.of),
-      description: '',
+      tags: ['modal', 'toggle', 'service'].map(Tag.of),
+      description: 'How to use the global **service** to encapsulate ui-model',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -143,8 +143,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'chart',
       title: 'Chart',
-      tags: ['Chart', 'Pie'].map(Tag.of),
-      description: '',
+      tags: ['chart', 'pie', 'svg', 'math', 'coordinate'].map(Tag.of),
+      description: `How to use **svg** as the ui-model's view layer`,
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -154,8 +154,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'type-ahead',
       title: 'Type-ahead',
-      tags: ['type-ahead'].map(Tag.of),
-      description: '',
+      tags: ['type-ahead', 'autocomplete', 'search'].map(Tag.of),
+      description: '`type-ahead` is composed of `toggle` and a helper directive',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -165,8 +165,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'zoom',
       title: 'Zoom',
-      tags: ['zoom'].map(Tag.of),
-      description: '',
+      tags: ['zoom', 'measure', 'size', 'mapping', 'rect'].map(Tag.of),
+      description: 'Zoom is composed of two logic: `measure` & `mapping`',
       authors: ['wzc'].map(Author.of),
     }
   },
@@ -176,8 +176,8 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'tooltip',
       title: 'Tooltip',
-      tags: ['tooltip'].map(Tag.of),
-      description: '',
+      tags: ['tooltip', 'measure', 'size', 'locate', 'rect'].map(Tag.of),
+      description: '`tooltip` is an instance of `measure`',
       authors: ['wzc'].map(Author.of),
     }
   },

@@ -1,12 +1,7 @@
 <p class="tag-list" *ngIf="meta?.authors|isNotEmpty">
   <span i18n>Authors:</span>
-  <a *ngFor="let author of meta.authors" [routerLink]="['/authors', author.id]">{{author.name}}</a>
+  <a class="author" *ngFor="let author of meta.authors" [routerLink]="['/authors', author.id]">{{author.name}}</a>
 </p>
-<p class="tag-list" *ngIf="meta?.tags|isNotEmpty">
-  <span i18n>Tags:</span>
-  <label class="tag tag-info" *ngFor="let tag of meta.tags">{{tag.keyword}}</label>
-</p>
-<div class="alert alert-info" *ngIf="meta?.description" [innerHTML]="meta.description"></div>
 <ul class="nav nav-tabs">
   <li class="nav-item" *ngFor="let extension of extensions">
     <a [routerLink]="[{ext: extension}]" class="nav-link" [class.active]="currentExt === extension">

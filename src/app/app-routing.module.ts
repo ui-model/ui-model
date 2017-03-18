@@ -3,6 +3,7 @@ import {DocumentViewerComponent} from './layout/document-viewer/document-viewer.
 import {SourceViewerComponent} from './layout/source-viewer/source-viewer.component';
 import {UpdateTitleGuard} from './core/update-title.service';
 import {showcaseRoutes} from './utils/showcase-routes';
+import {BriefViewerComponent} from './layout/brief-viewer/brief-viewer.component';
 
 export const routes: Route[] = [
   {
@@ -12,18 +13,23 @@ export const routes: Route[] = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/home(doc:doc/home//src:src/home)'
+        redirectTo: '/home(doc:home//src:home//brief:home)'
       },
       ...showcaseRoutes
     ],
   },
   {
-    path: 'doc/:id',
+    path: ':id',
     outlet: 'doc',
     component: DocumentViewerComponent,
   },
   {
-    path: 'src/:id',
+    path: ':id',
+    outlet: 'brief',
+    component: BriefViewerComponent,
+  },
+  {
+    path: ':id',
     outlet: 'src',
     component: SourceViewerComponent,
   },

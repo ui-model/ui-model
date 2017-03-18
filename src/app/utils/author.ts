@@ -4,6 +4,9 @@ const authors: {[index: string]: Author} = {
     email: 'asnowwolf@gmail.com',
     homepage: 'https://github.com/asnowwolf'
   },
+  rex: {
+    name: 'Zhimin YE',
+  }
 };
 
 export class Author {

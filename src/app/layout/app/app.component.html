@@ -1,33 +1,35 @@
 <app-nav-header></app-nav-header>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-2 text-xs-right">
+    <div class="col-md-1 text-xs-right">
       <label class="form-control-static" for="filter">
         <span i18n>Search</span>
       </label>
     </div>
-    <div class="col-md-5">
-      <input type="search" id="filter" class="form-control" [(ngModel)]="filter"
-             placeholder="Name / Description/ Author / Document / Tags" i18n-placeholder/>
+    <div class="col-md-4">
+      <div class="input-group">
+        <input type="search" id="filter" class="form-control" [(ngModel)]="filter"
+               placeholder="Name / Description/ Author / Document / Tags" i18n-placeholder/>
+        <div class="input-group-btn">
+          <button type="button" tabindex="-1" class="btn btn-primary" (click)="setFilter('')">X</button>
+        </div>
+      </div>
     </div>
-    <div class="col-md-5">
-      <div class="form-control-static">
-        <label class="tag tag-info" (click)="setFilter('')">
-          <span i18n>All</span>
-        </label>
-        <label class="tag tag-info" *ngFor="let tag of tags" (click)="setFilter(tag.keyword)">{{tag.keyword}}</label>
+    <div class="col-md-7">
+      <div class="tag-list">
+        <label class="tag tag-info" *ngFor="let tag of tags | slice:0:20" (click)="setFilter(tag.keyword)">{{tag.keyword}}</label>
+        <label *ngIf="tags.length > 20">...</label>
       </div>
     </div>
   </div>
-</div>
-<div class="container-fluid">
   <hr/>
   <div class="row">
     <div class="col-md-2">
       <app-nav-menu [filter]="filter"></app-nav-menu>
     </div>
     <div class="col-md-5">
+      <router-outlet name="brief"></router-outlet>
       <router-outlet></router-outlet>
       <router-outlet name="doc"></router-outlet>
     </div>

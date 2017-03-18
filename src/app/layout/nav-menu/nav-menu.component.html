@@ -1,7 +1,7 @@
 <ul class="nav nav-pills nav-stacked">
   <li class="nav-item" *ngFor="let item of items">
     <a class="nav-link"
-       [routerLink]="[{outlets: {primary: item.path, doc: ['doc', item.path], src: ['src', item.path]}}]"
+       [routerLink]="[{outlets: {primary: item.path, doc: item.path, src: item.path, brief: item.path}}]"
        routerLinkActive="active">{{item.data?.title}}</a>
   </li>
 </ul>

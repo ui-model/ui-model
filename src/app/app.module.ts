@@ -29,6 +29,7 @@ import {SourceViewerComponent} from './layout/source-viewer/source-viewer.compon
 import {CoreModule} from './core/core.module';
 import {DocumentViewerComponent} from './layout/document-viewer/document-viewer.component';
 import {HomeComponent} from './showcase/home/home.component';
+import { BriefViewerComponent } from './layout/brief-viewer/brief-viewer.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {HomeComponent} from './showcase/home/home.component';
     SourceViewerComponent,
     DocumentViewerComponent,
     HomeComponent,
+    BriefViewerComponent,
   ],
   imports: [
     BrowserModule,
