@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {isFunction, isUndefined, isDate, isNumber, isObject, isString, isBoolean} from './typings';
+import {isFunction, isUndefined, isDate, isNumber, isObject, isString, isBoolean, isArray, isEmpty} from './typings';
 
 describe('Typings', () => {
   it('isFunction', () => {
@@ -37,4 +37,13 @@ describe('Typings', () => {
     expect(isString('123')).to.be.ok;
     expect(isString(1)).to.not.be.ok;
   });
+  it('isArray', () => {
+    expect(isArray([1, 2, 3])).to.be.ok;
+  });
+
+  it('isEmpty', () => {
+    expect(isEmpty({})).to.be.ok;
+    expect(isEmpty([])).to.be.ok;
+    expect(isEmpty(1)).to.not.be.ok;
+  })
 });

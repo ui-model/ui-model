@@ -27,6 +27,8 @@ import {TooltipDirective} from './directives/tooltip.directive';
 import {FocusDirective} from './directives/focus.directive';
 import {PreventDefaultDirective} from './directives/prevent-default.directive';
 import {DefaultPipe} from './pipes/default.pipe';
+import { IsEmptyPipe } from './pipes/is-empty.pipe';
+import { IsNotEmptyPipe } from './pipes/is-not-empty.pipe';
 
 @NgModule({
   imports: [
@@ -62,6 +64,8 @@ import {DefaultPipe} from './pipes/default.pipe';
     FocusDirective,
     PreventDefaultDirective,
     DefaultPipe,
+    IsEmptyPipe,
+    IsNotEmptyPipe,
   ],
   exports: [
     SelectDirective,
@@ -92,6 +96,8 @@ import {DefaultPipe} from './pipes/default.pipe';
     SafeHtmlPipe,
     SafeScriptPipe,
     DefaultPipe,
+    IsEmptyPipe,
+    IsNotEmptyPipe,
   ],
 })
 export class UiModelModule {
@@ -125,6 +131,9 @@ export * from './pipes/safe-resource-url.pipe';
 export * from './pipes/safe-url.pipe';
 export * from './pipes/safe-html.pipe';
 export * from './pipes/safe-script.pipe';
+export * from './pipes/default.pipe';
+export * from './pipes/is-empty.pipe';
+export * from './pipes/is-not-empty.pipe';
 
 export * from './services/modal.service';
 export * from './services/tooltip.service';

@@ -1,8 +1,8 @@
-<p class="tag-list" *ngIf="meta?.authors.length>0">
+<p class="tag-list" *ngIf="meta?.authors|isNotEmpty">
   Authors:
   <a *ngFor="let author of meta.authors" [routerLink]="['/authors', author.id]">{{author.name}}</a>
 </p>
-<p class="tag-list" *ngIf="meta?.tags.length > 0">
+<p class="tag-list" *ngIf="meta?.tags|isNotEmpty">
   Tags:
   <label class="tag tag-info" *ngFor="let tag of meta.tags">{{tag.keyword}}</label>
 </p>
