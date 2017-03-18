@@ -8,10 +8,12 @@
     "lint": "tslint -c tslint.json \"src/**/*.ts\"",
     "test": "ng test",
     "build": "ng build -prod",
+    "build-cn": "ng build --aot --i18n-file=src/i18n/messages.zh.xlf --locale=zh --i18n-format=xlf",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
     "build-libs": "gulp build",
-    "publish": "./scripts/publish.sh"
+    "publish": "./scripts/publish.sh",
+    "i18n": "ng xi18n --output-path src/i18n"
   },
   "private": true,
   "dependencies": {

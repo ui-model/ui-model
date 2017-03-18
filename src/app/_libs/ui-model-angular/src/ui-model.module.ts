@@ -27,8 +27,8 @@ import {TooltipDirective} from './directives/tooltip.directive';
 import {FocusDirective} from './directives/focus.directive';
 import {PreventDefaultDirective} from './directives/prevent-default.directive';
 import {DefaultPipe} from './pipes/default.pipe';
-import { IsEmptyPipe } from './pipes/is-empty.pipe';
-import { IsNotEmptyPipe } from './pipes/is-not-empty.pipe';
+import {IsEmptyPipe} from './pipes/is-empty.pipe';
+import {IsNotEmptyPipe} from './pipes/is-not-empty.pipe';
 
 @NgModule({
   imports: [
@@ -137,5 +137,3 @@ export * from './pipes/is-not-empty.pipe';
 
 export * from './services/modal.service';
 export * from './services/tooltip.service';
-
-export * from './utils/animations';

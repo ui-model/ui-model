@@ -1,19 +1,21 @@
 <form name="form" #form="ngForm" (submit)="submit(form.value)">
   <app-form-section ngModelGroup="basic"></app-form-section>
   <div class="form-group">
-    <label for="email">Email</label>
+    <label for="email" i18n>Email</label>
     <input class="form-control" [(ngModel)]="email" id="email" name="email" required/>
   </div>
 
   <div class="alert alert-info">
-    Result: {{form.value|json}}
+    <span i18n>Result:</span>
+    {{form.value|json}}
   </div>
 
   <div class="form-group">
-    <button type="submit" class="btn btn-primary" [uiDisabled]="form.invalid" title="Submit this form">Submit</button>
+    <button type="submit" class="btn btn-primary" [uiDisabled]="form.invalid" title="Submit this form" i18n>Submit
+    </button>
   </div>
   <div class="card card-success" *ngIf="report">
-    <h3 class="card-header">
+    <h3 class="card-header" i18n>
       Final Report
     </h3>
     <div class="card-block">

@@ -3,15 +3,19 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2 text-xs-right">
-      <label class="form-control-static" for="filter">Search</label>
+      <label class="form-control-static" for="filter">
+        <span i18n>Search</span>
+      </label>
     </div>
     <div class="col-md-5">
       <input type="search" id="filter" class="form-control" [(ngModel)]="filter"
-             placeholder="Name / Description/ Author / Document / Tags"/>
+             placeholder="Name / Description/ Author / Document / Tags" i18n-placeholder/>
     </div>
     <div class="col-md-5">
       <div class="form-control-static">
-        <label class="tag tag-info" (click)="setFilter('')">All</label>
+        <label class="tag tag-info" (click)="setFilter('')">
+          <span i18n>All</span>
+        </label>
         <label class="tag tag-info" *ngFor="let tag of tags" (click)="setFilter(tag.keyword)">{{tag.keyword}}</label>
       </div>
     </div>

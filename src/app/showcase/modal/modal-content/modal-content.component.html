@@ -10,7 +10,7 @@
   <ng-content></ng-content>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-primary" [disabled]="time>0" (click)="doClose()">Save changes {{countDown}}
+  <button type="button" class="btn btn-primary" [disabled]="time>0" (click)="doClose()" i18n>Save changes {{countDown}}
   </button>
-  <button type="button" class="btn btn-secondary" (click)="cancel.emit()">Cancel</button>
+  <button type="button" class="btn btn-secondary" (click)="cancel.emit()" i18n>Cancel</button>
 </div>

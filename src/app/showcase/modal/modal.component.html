@@ -1,11 +1,11 @@
-<button type="button" class="btn btn-primary" (click)="toggle.toggle()">
+<button type="button" class="btn btn-primary" (click)="toggle.toggle()" i18n>
   Toggle (Embedded Content)
 </button>
-<button type="button" class="btn btn-primary" (click)="open()">
+<button type="button" class="btn btn-primary" (click)="open()" i18n>
   Toggle (Service)
 </button>
 <ui-modal *ngIf="toggle.isOn" (cancel)="toggle.close()">
-  <app-modal-content (cancel)="toggle.close()" (close)="toggle.close()" title="Modal title">
+  <app-modal-content (cancel)="toggle.close()" (close)="toggle.close()" title="Modal title" i18n>
     This is a test
   </app-modal-content>
 </ui-modal>
