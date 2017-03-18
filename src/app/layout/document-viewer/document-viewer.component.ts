@@ -18,7 +18,7 @@ export class DocumentViewerComponent implements OnInit {
       this.document = Observable.of(data.document);
     } else {
       this.route.params.subscribe(({id}) => {
-        this.document = this.sourceCode.loadFile(id, 'md')
+        this.document = this.sourceCode.loadDocument(id)
           .do((content) => {
             data.document = content;
           });

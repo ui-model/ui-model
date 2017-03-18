@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
       .map((route) => route.data)
       .forEach((data) => {
         const meta = data as Metadata;
-        this.sourceCode.loadFile(meta.id, 'md').subscribe((content) => meta.document = content);
+        this.sourceCode.loadDocument(meta.id).subscribe((content) => meta.document = content);
       });
   }
 }
