@@ -11,6 +11,7 @@ markdown.use(require('markdown-it-mark'));
 markdown.use(require('markdown-it-sub'));
 markdown.use(require('markdown-it-sup'));
 markdown.use(require('markdown-it-table-of-contents'));
+markdown.use(require('markdown-it-highlightjs'));
 
 @Pipe({
   name: 'markdown'
