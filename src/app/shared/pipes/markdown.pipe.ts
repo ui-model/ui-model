@@ -1,5 +1,6 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import * as MarkdownIt from 'markdown-it';
+import * as hljs from 'highlight.js';
 
 const markdown = new MarkdownIt();
 markdown.use(require('markdown-it-abbr'));
@@ -11,7 +12,7 @@ markdown.use(require('markdown-it-mark'));
 markdown.use(require('markdown-it-sub'));
 markdown.use(require('markdown-it-sup'));
 markdown.use(require('markdown-it-table-of-contents'));
-markdown.use(require('markdown-it-highlightjs'));
+markdown.use(highlighter);
 
 @Pipe({
   name: 'markdown'
@@ -23,4 +24,10 @@ export class MarkdownPipe implements PipeTransform {
     }
     return markdown.render(value);
   }
+}
+
+function highlighter(md: MarkdownIt.MarkdownIt) {
+  md['options'].highlight = function (code, lang) {
+    return hljs.highlightAuto(code, lang ? [lang] : ['ts', 'js', 'html', 'scss', 'css']).value;
+  };
 }
