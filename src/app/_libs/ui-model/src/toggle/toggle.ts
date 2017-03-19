@@ -36,16 +36,8 @@ export class Toggle extends Stateful {
     this.turnTo(true);
   }
 
-  open(): void {
-    this.turnOn();
-  }
-
   turnOff(): void {
     this.turnTo(false);
-  }
-
-  close(): void {
-    this.turnOff();
   }
 
   turnTo(state: boolean): void {
@@ -56,6 +48,22 @@ export class Toggle extends Stateful {
 
   toggle(): void {
     this.turnTo(!this.isOn);
+  }
+
+  open(): void {
+    this.turnOn();
+  }
+
+  close(): void {
+    this.turnOff();
+  }
+
+  show(): void {
+    this.turnOn();
+  }
+
+  hide(): void {
+    this.turnOff();
   }
 
   static readonly ON = true;

@@ -68,6 +68,17 @@ describe('Toggle', () => {
     toggle.close();
     expect(toggle.isOn).to.not.be.ok;
   });
+  it('show', () => {
+    const toggle = new Toggle();
+    toggle.show();
+    expect(toggle.isOn).to.be.ok;
+  });
+  it('hide', () => {
+    const toggle = new Toggle();
+    toggle.show();
+    toggle.hide();
+    expect(toggle.isOn).to.not.be.ok;
+  });
   it('toggle', () => {
     const toggle = new Toggle();
     expect(toggle.isOn).to.not.be.ok;
