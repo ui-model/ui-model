@@ -1,17 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {Toggle} from 'ui-model';
 
 @Component({
   selector: 'app-toggle',
   templateUrl: './toggle.component.html',
   styleUrls: ['./toggle.component.scss']
 })
-export class ToggleComponent implements OnInit {
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
-  editorValue = 'Click to edit & press enter to submit';
-
+export class ToggleComponent {
+  toggle = new Toggle();
 }

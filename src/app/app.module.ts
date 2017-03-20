@@ -37,6 +37,11 @@ import {TabSetUsingDirectiveComponent} from './showcase/tab-set-using-directive/
 import { MenuComponent } from './showcase/menu/menu.component';
 import { MultiSelectCheckboxComponent } from './showcase/multi-select-checkbox/multi-select-checkbox.component';
 import { MultiSelectNgModelComponent } from './showcase/multi-select-ng-model/multi-select-ng-model.component';
+import { DropdownComponent } from './showcase/dropdown/dropdown.component';
+import { InplaceEditorComponent } from './showcase/inplace-editor/inplace-editor.component';
+import { PanelComponent } from './showcase/panel/panel.component';
+import { ToggleDetailsComponent } from './showcase/toggle-details/toggle-details.component';
+import { ToggleImagesComponent } from './showcase/toggle-images/toggle-images.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +76,11 @@ import { MultiSelectNgModelComponent } from './showcase/multi-select-ng-model/mu
     MenuComponent,
     MultiSelectCheckboxComponent,
     MultiSelectNgModelComponent,
+    DropdownComponent,
+    InplaceEditorComponent,
+    PanelComponent,
+    ToggleDetailsComponent,
+    ToggleImagesComponent,
   ],
   imports: [
     BrowserModule,

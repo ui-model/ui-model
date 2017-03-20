@@ -1,108 +1,14 @@
-<ui-panel title="Basic: Switch icons and text" uiToggle #toggle="uiToggle" i18n-title>
-  <span class="custom-button" (click)="toggle.turnOff()" *ngIf="toggle.isOn">
-    <img class="icon" src="_images/icon-toggle-on.svg"/>
-    <span i18n>On</span>
-  </span>
+<span class="custom-button" (click)="toggle.turnOff()" *ngIf="toggle.isOn">
+  <img class="icon" src="_images/icon-toggle-on.svg"/>
+  <span i18n>On</span>
+</span>
 
-  <span class="custom-button" (click)="toggle.turnOn()" *ngIf="toggle.isOff">
-    <img class="icon" src="_images/icon-toggle-off.svg"/>
-    <span i18n>Off</span>
-  </span>
-</ui-panel>
+<span class="custom-button" (click)="toggle.turnOn()" *ngIf="toggle.isOff">
+  <img class="icon" src="_images/icon-toggle-off.svg"/>
+  <span i18n>Off</span>
+</span>
 
-<ui-panel title="Of course, Dropdown is also a very obvious Toggle" class="demo-dropdown" i18n-title>
-  <div class="dropdown open" uiToggle #dropdown="uiToggle" (uiClickOutside)="dropdown.close()">
-    <button class="btn btn-secondary dropdown-toggle" type="button" (click)="dropdown.toggle()">
-      <span i18n>Dropdown Button</span>
-    </button>
-    <div class="dropdown-menu" *ngIf="dropdown.isOn">
-      <a class="dropdown-item" i18n>Action</a>
-      <a class="dropdown-item" i18n>Another action</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" i18n>Something else here</a>
-    </div>
-  </div>
-  <div class="dropdown open" uiToggle #dropdown1="uiToggle" (uiClickOutside)="dropdown1.close()">
-    <button class="btn btn-secondary dropdown-toggle" type="button" (click)="dropdown1.toggle()">
-      <span i18n>Another Dropdown Button</span>
-    </button>
-    <div class="dropdown-menu" *ngIf="dropdown1.isOn">
-      <a class="dropdown-item" i18n>Action</a>
-      <a class="dropdown-item" i18n>Another action</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" i18n>Something else here</a>
-    </div>
-  </div>
-</ui-panel>
-
-<ui-panel title="In-place editor? It's a toggle" uiToggle #editor="uiToggle" i18n-title>
-  <div class="form-control-static" (click)="editor.turnOn()" *ngIf="editor.isOff">
-    {{editorValue}}
-  </div>
-  <input type="text" class="form-control" uiFocus
-         [(ngModel)]="editorValue" (keyup.enter)="editor.turnOff()" *ngIf="editor.isOn"/>
-</ui-panel>
-
-<ui-panel title="We can also access the toggle object inside this panel" #panel i18n-title>
-  <button type="button" class="btn btn-primary" (click)="panel.toggle.turnOff()">
-    <span i18n>Close this panel</span>
-  </button>
-</ui-panel>
-
-<ui-panel title="The main logic of the modal dialog box is also toggle" uiToggle #modal="uiToggle" i18n-title>
-  <button type="button" class="btn btn-primary" (click)="modal.open();$event.stopPropagation()">
-    <span i18n>Open Modal Dialog</span>
-  </button>
-  <div class="modal-backdrop" *ngIf="modal.isOn"></div>
-  <div class="modal" *ngIf="modal.isOn">
-    <div class="modal-dialog" role="document" (uiClickOutside)="modal.close()">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" aria-label="Close" (click)="modal.close()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title">
-            <span i18n>Modal title</span>
-          </h4>
-        </div>
-        <div class="modal-body">
-          <span i18n>One fine body</span>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="modal.close()">
-            <span i18n>Close</span>
-          </button>
-          <button type="button" class="btn btn-primary">
-            <span i18n>Save changes</span>
-          </button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-</ui-panel>
-
-<ui-panel title="The various form of expand / collapse logic is also toggle" uiToggle #more="uiToggle" i18n-title>
-  <span i18n>This is a brief</span>
-  <div class="btn btn-link" (click)="more.open()" *ngIf="more.isOff">
-    <span i18n>Click me to see more...</span>
-  </div>
-  <div *ngIf="more.isOn">
-    <span i18n>this are detail with many many lines</span>
-
-    <div class="btn btn-link" (click)="more.close()">
-      <span i18n>Click me to see brief only</span>
-    </div>
-  </div>
-</ui-panel>
-
-<ui-panel title="Two-class switching is also a kind of Toggle logic" uiToggle #btn="uiToggle" i18n-title>
-  <span class="btn" [class.btn-primary]="btn.isOn" (click)="btn.toggle()">
-    <span i18n>isOn?</span>
-    {{btn.isOn}}
-  </span>
-</ui-panel>
-
-<ui-panel title="Two-picture switching is also a kind of Toggle logic" uiToggle #img="uiToggle" i18n-title>
-  <img src="_images/dog.jpg" alt="dog" *ngIf="img.isOff" (click)="img.turnOn()"/>
-  <img src="_images/cat.jpg" alt="cat" *ngIf="img.isOn" (click)="img.turnOff()"/>
-</ui-panel>
+<span class="btn" [class.btn-primary]="toggle.isOn" (click)="toggle.toggle()">
+  <span i18n>isOn?</span>
+  {{toggle.isOn}}
+</span>

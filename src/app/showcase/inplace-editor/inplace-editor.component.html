@@ -1,0 +1,8 @@
+<div uiToggle #editor="uiToggle">
+  <div class="form-control-static" (click)="editor.turnOn()" *ngIf="editor.isOff">
+    {{editorValue}}
+  </div>
+  <input type="text" class="form-control" uiFocus *ngIf="editor.isOn"
+         [(ngModel)]="editorValue" (keyup.enter)="editor.turnOff()" (blur)="editor.turnOff()"/>
+</div>
+

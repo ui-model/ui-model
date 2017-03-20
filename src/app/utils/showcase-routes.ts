@@ -23,6 +23,11 @@ import {TabSetUsingDirectiveComponent} from '../showcase/tab-set-using-directive
 import {MenuComponent} from '../showcase/menu/menu.component';
 import {MultiSelectCheckboxComponent} from '../showcase/multi-select-checkbox/multi-select-checkbox.component';
 import {MultiSelectNgModelComponent} from '../showcase/multi-select-ng-model/multi-select-ng-model.component';
+import {DropdownComponent} from '../showcase/dropdown/dropdown.component';
+import {InplaceEditorComponent} from '../showcase/inplace-editor/inplace-editor.component';
+import {PanelComponent} from '../showcase/panel/panel.component';
+import {ToggleDetailsComponent} from '../showcase/toggle-details/toggle-details.component';
+import {ToggleImagesComponent} from '../showcase/toggle-images/toggle-images.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -140,6 +145,61 @@ export const showcaseRoutes: Route[] = [
       id: 'toggle',
       title: 'Toggle',
       tags: ['toggle', 'dropdown', 'modal', 'more', 'panel', 'collapse', 'fold'].map(Tag.of),
+      description: '`toggle` means: it has two states, which can be toggled between the two states',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'dropdown',
+    component: DropdownComponent,
+    data: {
+      id: 'dropdown',
+      title: 'Dropdown',
+      tags: ['toggle', 'dropdown'].map(Tag.of),
+      description: '`toggle` means: it has two states, which can be toggled between the two states',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'inplace-editor',
+    component: InplaceEditorComponent,
+    data: {
+      id: 'inplace-editor',
+      title: 'Inplace Editor',
+      tags: ['toggle', 'inplace-editor'].map(Tag.of),
+      description: '`toggle` means: it has two states, which can be toggled between the two states',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'panel',
+    component: PanelComponent,
+    data: {
+      id: 'panel',
+      title: 'Panel',
+      tags: ['toggle', 'panel'].map(Tag.of),
+      description: '`toggle` means: it has two states, which can be toggled between the two states',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'toggle-details',
+    component: ToggleDetailsComponent,
+    data: {
+      id: 'toggle-details',
+      title: 'Toggle Details',
+      tags: ['toggle'].map(Tag.of),
+      description: '`toggle` means: it has two states, which can be toggled between the two states',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'toggle-images',
+    component: ToggleImagesComponent,
+    data: {
+      id: 'toggle-images',
+      title: 'Toggle Images',
+      tags: ['toggle'].map(Tag.of),
       description: '`toggle` means: it has two states, which can be toggled between the two states',
       authors: ['wzc'].map(Author.of),
     }
