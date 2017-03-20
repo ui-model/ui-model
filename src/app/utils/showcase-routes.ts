@@ -16,6 +16,11 @@ import {ZoomComponent} from '../showcase/zoom/zoom.component';
 import {TooltipComponent} from '../showcase/tooltip/tooltip.component';
 import {Author} from './author';
 import {Tag} from './tag';
+import {RadioGroupComponent} from '../showcase/radio-group/radio-group.component';
+import {RadioButtonComponent} from '../showcase/radio-button/radio-button.component';
+import {TabSetComponent} from '../showcase/tab-set/tab-set.component';
+import {TabSetUsingDirectiveComponent} from '../showcase/tab-set-using-directive/tab-set-using-directive.component';
+import {MenuComponent} from '../showcase/menu/menu.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -33,7 +38,62 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'select',
       title: 'Select',
-      tags: ['select', 'radio group', 'dropdown', 'tabset', 'menu'].map(Tag.of),
+      tags: ['select'].map(Tag.of),
+      description: '`select` means: choose `1` from `N`',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'radio-group',
+    component: RadioGroupComponent,
+    data: {
+      id: 'radio-group',
+      title: 'Radio Group',
+      tags: ['radio group'].map(Tag.of),
+      description: '`select` means: choose `1` from `N`',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'radio-button',
+    component: RadioButtonComponent,
+    data: {
+      id: 'radio-button',
+      title: 'Radio Button',
+      tags: ['radio button'].map(Tag.of),
+      description: '`select` means: choose `1` from `N`',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'tab-set',
+    component: TabSetComponent,
+    data: {
+      id: 'tab-set',
+      title: 'Tab Set',
+      tags: ['tab set', 'multi-page'].map(Tag.of),
+      description: '`select` means: choose `1` from `N`',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'tab-set-using-directive',
+    component: TabSetUsingDirectiveComponent,
+    data: {
+      id: 'tab-set-using-directive',
+      title: 'Tab Set(Directive)',
+      tags: ['tab set', 'multi-page'].map(Tag.of),
+      description: '`select` means: choose `1` from `N`',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'menu',
+    component: MenuComponent,
+    data: {
+      id: 'menu',
+      title: 'Menu',
+      tags: ['menu'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
       authors: ['wzc'].map(Author.of),
     }

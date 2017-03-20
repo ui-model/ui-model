@@ -1,0 +1,38 @@
+:host {
+  display: block;
+}
+
+.dropdown-menu.static {
+  display: block;
+  float: none;
+  position: static;
+}
+
+.nav-item {
+  position: relative;
+  > .dropdown-menu {
+    display: block;
+    position: absolute;
+  }
+}
+
+.dropdown-item {
+  cursor: pointer;
+  &.active {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.nav.nav-pills {
+  margin-bottom: 6em;
+}
+
+.nav-item.float-sm-right {
+  > .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+}

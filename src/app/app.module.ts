@@ -29,7 +29,12 @@ import {SourceViewerComponent} from './layout/source-viewer/source-viewer.compon
 import {CoreModule} from './core/core.module';
 import {DocumentViewerComponent} from './layout/document-viewer/document-viewer.component';
 import {HomeComponent} from './showcase/home/home.component';
-import { BriefViewerComponent } from './layout/brief-viewer/brief-viewer.component';
+import {BriefViewerComponent} from './layout/brief-viewer/brief-viewer.component';
+import {RadioGroupComponent} from './showcase/radio-group/radio-group.component';
+import {RadioButtonComponent} from './showcase/radio-button/radio-button.component';
+import {TabSetComponent} from './showcase/tab-set/tab-set.component';
+import {TabSetUsingDirectiveComponent} from './showcase/tab-set-using-directive/tab-set-using-directive.component';
+import { MenuComponent } from './showcase/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +62,11 @@ import { BriefViewerComponent } from './layout/brief-viewer/brief-viewer.compone
     DocumentViewerComponent,
     HomeComponent,
     BriefViewerComponent,
+    RadioGroupComponent,
+    RadioButtonComponent,
+    TabSetComponent,
+    TabSetUsingDirectiveComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

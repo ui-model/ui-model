@@ -1,12 +1,11 @@
 import {Component} from '@angular/core';
-import {Select} from 'ui-model';
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss']
+  selector: 'app-tab-set-using-directive',
+  templateUrl: './tab-set-using-directive.component.html',
+  styleUrls: ['./tab-set-using-directive.component.scss']
 })
-export class SelectComponent {
+export class TabSetUsingDirectiveComponent {
   options = [
     {
       label: 'A1',
@@ -29,7 +28,5 @@ export class SelectComponent {
       id: 'e1',
     },
   ];
-
-  select = new Select<{label: string, id: string}>().select(this.options[1]);
+  selection = this.options[1];
 }
-

@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 import {Select} from 'ui-model';
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss']
+  selector: 'app-tab-set',
+  templateUrl: './tab-set.component.html',
+  styleUrls: ['./tab-set.component.scss']
 })
-export class SelectComponent {
+export class TabSetComponent {
   options = [
     {
       label: 'A1',
@@ -32,4 +32,3 @@ export class SelectComponent {
 
   select = new Select<{label: string, id: string}>().select(this.options[1]);
 }
-

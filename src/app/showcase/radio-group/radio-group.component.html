@@ -1,0 +1,16 @@
+<p>
+  Normal Radio Group
+</p>
+<label class="form-check-inline" *ngFor="let option of options">
+  <input class="form-check-input" type="radio" (change)="select.select(option)"
+         [checked]="select.selected(option)"/>
+  {{option.label}}
+</label>
+
+<hr>
+
+<p>
+  Radio Group with ngModel
+</p>
+<ui-radio-group [options]="options" [(ngModel)]="select.selection"></ui-radio-group>
+

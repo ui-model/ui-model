@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 import {Select} from 'ui-model';
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss']
+  selector: 'app-radio-button',
+  templateUrl: './radio-button.component.html',
+  styleUrls: ['./radio-button.component.scss']
 })
-export class SelectComponent {
+export class RadioButtonComponent {
   options = [
     {
       label: 'A1',
@@ -32,4 +32,3 @@ export class SelectComponent {
 
   select = new Select<{label: string, id: string}>().select(this.options[1]);
 }
-

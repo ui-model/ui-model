@@ -1,0 +1,6 @@
+<ul class="nav nav-tabs" [(uiSelect)]="selection" #select="uiSelect">
+  <li class="nav-item" *ngFor="let option of options">
+    <a class="nav-link" [class.active]="select.selected(option)"
+       (click)="select.select(option)">{{option.label}}</a>
+  </li>
+</ul>
