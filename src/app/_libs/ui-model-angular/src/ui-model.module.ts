@@ -29,6 +29,7 @@ import {PreventDefaultDirective} from './directives/prevent-default.directive';
 import {DefaultPipe} from './pipes/default.pipe';
 import {IsEmptyPipe} from './pipes/is-empty.pipe';
 import {IsNotEmptyPipe} from './pipes/is-not-empty.pipe';
+import { TimesPipe } from './pipes/times.pipe';
 
 @NgModule({
   imports: [
@@ -66,6 +67,7 @@ import {IsNotEmptyPipe} from './pipes/is-not-empty.pipe';
     DefaultPipe,
     IsEmptyPipe,
     IsNotEmptyPipe,
+    TimesPipe,
   ],
   exports: [
     SelectDirective,
@@ -98,6 +100,7 @@ import {IsNotEmptyPipe} from './pipes/is-not-empty.pipe';
     DefaultPipe,
     IsEmptyPipe,
     IsNotEmptyPipe,
+    TimesPipe,
   ],
 })
 export class UiModelModule {
@@ -134,6 +137,7 @@ export * from './pipes/safe-script.pipe';
 export * from './pipes/default.pipe';
 export * from './pipes/is-empty.pipe';
 export * from './pipes/is-not-empty.pipe';
+export * from './pipes/times.pipe';
 
 export * from './services/modal.service';
 export * from './services/tooltip.service';
