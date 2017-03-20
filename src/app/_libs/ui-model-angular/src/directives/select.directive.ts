@@ -4,17 +4,17 @@ import {Select} from 'ui-model';
 @Directive({
   selector: '[uiSelect]',
   exportAs: 'uiSelect',
-  inputs: ['selection'],
+  inputs: ['selection:uiSelect'],
 })
 export class SelectDirective<T> extends Select<T> {
   constructor() {
     super();
   }
 
-  @Output() selectionChange = new EventEmitter();
+  @Output() uiSelectChange = new EventEmitter();
 
   protected changed(): void {
     super.changed();
-    this.selectionChange.emit(this.selection);
+    this.uiSelectChange.emit(this.selection);
   }
 }
