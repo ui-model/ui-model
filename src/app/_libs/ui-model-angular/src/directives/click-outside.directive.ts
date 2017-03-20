@@ -9,18 +9,26 @@ export class ClickOutsideDirective implements OnInit, OnDestroy {
 
   @Output('uiClickOutside') onClickOutside = new EventEmitter();
 
-  eventListener = (event) => {
+  escKeyListener = (event: KeyboardEvent) => {
+    if (event.keyCode === 27) {
+      this.onClickOutside.emit();
+    }
+  }
+
+  clickListener = (event) => {
     if (!isSelfOrAncestorNode(this.element.nativeElement, event.target  as Node || event.srcElement)) {
       this.onClickOutside.emit();
     }
   }
 
   ngOnInit(): void {
-    document.addEventListener('click', this.eventListener);
+    document.addEventListener('click', this.clickListener);
+    document.addEventListener('keyup', this.escKeyListener);
   }
 
   ngOnDestroy(): void {
-    document.removeEventListener('click', this.eventListener);
+    document.removeEventListener('click', this.clickListener);
+    document.removeEventListener('keyup', this.escKeyListener);
   }
 }
 
