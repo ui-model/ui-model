@@ -23,10 +23,10 @@
   </table>
 
   <div class="row">
-    <div class="col-md-8">
-      <ui-pagination [pager]="pager"></ui-pagination>
+    <div class="col-md-10">
+      <ui-pagination [pager]="pager" [showBrief]="false"></ui-pagination>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-2">
       <select class="form-control" name="pageSize" [(ngModel)]="pager.size">
         <option value="10">10</option>
         <option value="20">20</option>

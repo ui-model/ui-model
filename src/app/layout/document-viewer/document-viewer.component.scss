@@ -32,4 +32,9 @@
   h5, h6 {
     font-size: 1rem;
   }
+  blockquote {
+    border-left: 3px solid $brand-info;
+    color: $gray-light;
+    padding-left: 0.5em;
+  }
 }
