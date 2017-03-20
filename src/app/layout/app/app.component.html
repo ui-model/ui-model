@@ -17,9 +17,8 @@
       </div>
     </div>
     <div class="col-md-7">
-      <div class="tag-list">
-        <label class="tag tag-info" *ngFor="let tag of tags | slice:0:20" (click)="setFilter(tag.keyword)">{{tag.keyword}}</label>
-        <label *ngIf="tags.length > 20">...</label>
+      <div class="tag-list form-control-static">
+        <label class="tag tag-info" *ngFor="let tag of tags" (click)="setFilter(tag)">{{tag}}</label>
       </div>
     </div>
   </div>

@@ -210,7 +210,7 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'table',
       title: 'Table',
-      tags: ['table', 'sort', 'resize', 'drag', 'measure', 'pagination', 'viewport'].map(Tag.of),
+      tags: ['table', 'sort', 'pager', 'resize', 'drag', 'measure', 'pagination', 'viewport'].map(Tag.of),
       description: '`table` is **composed** of `sort`/`slice`/`resize`/`pagination`...',
       authors: ['wzc'].map(Author.of),
     }

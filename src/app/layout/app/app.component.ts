@@ -14,7 +14,8 @@ export class AppComponent implements OnInit {
   constructor(private sourceCode: SourceCodeService) {
   }
 
-  tags: Tag[];
+  tags = ['toggle', 'select', 'multi-select', 'pager', 'viewport', 'calendar', 'zoom'];
+
   private _filter: string;
   get filter(): string {
     return this._filter;
@@ -22,16 +23,6 @@ export class AppComponent implements OnInit {
 
   set filter(value: string) {
     this._filter = value;
-    const pattern = new RegExp(value, 'i');
-    this.tags = showcaseRoutes
-      .map((route) => route.data)
-      .map((data) => (data as Metadata).tags)
-      .reduce((result, tags) => result.concat(tags), [])
-      .filter((tag) => !!tag)
-      .filter((tag) => !this._filter || pattern.test(tag.keyword))
-      .sort((v1, v2) => v2.weight - v1.weight);
-    this.tags = _.uniqBy(this.tags, 'keyword');
-
   }
 
   setFilter(filter: string): void {
