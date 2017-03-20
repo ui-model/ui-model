@@ -21,6 +21,8 @@ import {RadioButtonComponent} from '../showcase/radio-button/radio-button.compon
 import {TabSetComponent} from '../showcase/tab-set/tab-set.component';
 import {TabSetUsingDirectiveComponent} from '../showcase/tab-set-using-directive/tab-set-using-directive.component';
 import {MenuComponent} from '../showcase/menu/menu.component';
+import {MultiSelectCheckboxComponent} from '../showcase/multi-select-checkbox/multi-select-checkbox.component';
+import {MultiSelectNgModelComponent} from '../showcase/multi-select-ng-model/multi-select-ng-model.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -105,6 +107,28 @@ export const showcaseRoutes: Route[] = [
       id: 'multi-select',
       title: 'Multi-select',
       tags: ['multi-select'].map(Tag.of),
+      description: '`multi-select` means: choose `n` from `M`, and it has an undetermined state',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'multi-select-checkbox',
+    component: MultiSelectCheckboxComponent,
+    data: {
+      id: 'multi-select-checkbox',
+      title: 'Multi-select(customized)',
+      tags: ['multi-select', 'checkbox'].map(Tag.of),
+      description: '`multi-select` means: choose `n` from `M`, and it has an undetermined state',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'multi-select-ng-model',
+    component: MultiSelectNgModelComponent,
+    data: {
+      id: 'multi-select-ng-model',
+      title: 'Multi-select(ngModel)',
+      tags: ['multi-select', 'ng-model'].map(Tag.of),
       description: '`multi-select` means: choose `n` from `M`, and it has an undetermined state',
       authors: ['wzc'].map(Author.of),
     }

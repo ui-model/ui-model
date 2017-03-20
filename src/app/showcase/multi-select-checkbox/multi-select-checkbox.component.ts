@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 import {MultiSelect, Transformers} from 'ui-model';
 
 @Component({
-  selector: 'app-multi-select',
-  templateUrl: './multi-select.component.html',
-  styleUrls: ['./multi-select.component.scss']
+  selector: 'app-multi-select-checkbox',
+  templateUrl: './multi-select-checkbox.component.html',
+  styleUrls: ['./multi-select-checkbox.component.scss']
 })
-export class MultiSelectComponent {
+export class MultiSelectCheckboxComponent {
   options = [
     {
       code: 'a',

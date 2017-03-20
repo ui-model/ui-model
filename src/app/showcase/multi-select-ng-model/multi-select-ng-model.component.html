@@ -1,0 +1,18 @@
+<div [uiMultiSelect]="options" [uiMultiSelectTransformer]="getCode" [(ngModel)]="selection" #checker="uiMultiSelect">
+  <div class="card">
+    <div class="card-header">
+      <label>
+        <input type="checkbox" [indeterminate]="checker.indeterminate" [(ngModel)]="checker.allSelected"/>
+        <span i18n>All</span>
+      </label>
+    </div>
+    <div class="card-block">
+      <label class="form-check-label" *ngFor="let option of checker.options">
+        <input type="checkbox" class="form-check-input" [ngModel]="checker.selected(option)"
+               (ngModelChange)="checker.selectAs(option, $event)"/>
+        {{option.label}}
+      </label>
+    </div>
+  </div>
+  {{selection|json}}
+</div>

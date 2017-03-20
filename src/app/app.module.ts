@@ -35,6 +35,8 @@ import {RadioButtonComponent} from './showcase/radio-button/radio-button.compone
 import {TabSetComponent} from './showcase/tab-set/tab-set.component';
 import {TabSetUsingDirectiveComponent} from './showcase/tab-set-using-directive/tab-set-using-directive.component';
 import { MenuComponent } from './showcase/menu/menu.component';
+import { MultiSelectCheckboxComponent } from './showcase/multi-select-checkbox/multi-select-checkbox.component';
+import { MultiSelectNgModelComponent } from './showcase/multi-select-ng-model/multi-select-ng-model.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { MenuComponent } from './showcase/menu/menu.component';
     TabSetComponent,
     TabSetUsingDirectiveComponent,
     MenuComponent,
+    MultiSelectCheckboxComponent,
+    MultiSelectNgModelComponent,
   ],
   imports: [
     BrowserModule,
