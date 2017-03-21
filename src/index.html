@@ -7,8 +7,32 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    img.loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      animation: spin 2s ease-in;
+      transform-origin: center;
+    }
+
+    @keyframes spin {
+      from {
+        transform: scale(0);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 <body>
-<app-root>Loading...</app-root>
+<app-root>
+  <img class="loading" src="./app/layout/nav-header/_images/ui-model.png"/>
+</app-root>
 </body>
 </html>
