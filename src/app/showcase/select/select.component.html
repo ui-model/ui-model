@@ -1,5 +1,7 @@
-<select class="form-control" [(ngModel)]="select.selection">
-  <option>-</option>
+<select class="form-control" [(ngModel)]="selection">
+  <option [ngValue]="undefined">-</option>
   <option *ngFor="let option of options" [ngValue]="option">{{option.label}}</option>
 </select>
-{{select.selection|json}}
+<p>
+  {{selection|json}}
+</p>

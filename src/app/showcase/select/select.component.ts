@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Select} from 'ui-model';
 
 @Component({
   selector: 'app-select',
@@ -30,6 +29,6 @@ export class SelectComponent {
     },
   ];
 
-  select = new Select<{label: string, id: string}>().select(this.options[1]);
+  selection = this.options[1];
 }
 
