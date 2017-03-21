@@ -17,15 +17,19 @@
       margin: auto;
       animation: spin 2s ease-in;
       transform-origin: center;
+      transform: scale(2);
+      opacity: 0;
     }
 
     @keyframes spin {
       from {
         transform: scale(0);
+        opacity: 1;
       }
 
       to {
-        transform: scale(1);
+        transform: scale(2);
+        opacity: 0;
       }
     }
   </style>
