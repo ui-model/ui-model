@@ -18,7 +18,7 @@ ui-model的核心是SoC —— 关注点分离。在ui-model的设计思想下�
     
 1. ui-model-angular
 
-    用于定义辅助指令、辅助管道等，还有对一些ui-model的包装，让它们更便于在模板中使用。当使用Angular时，这部分也很有复用价值，它与具体的CSS框架无关 —— 既可以用于bootstrap，也可以用于Symantec等。
+    用于定义辅助指令、辅助管道等，还有对一些ui-model的包装，让它们更便于在模板中使用。当使用Angular时，这部分也很有复用价值，它与具体的CSS框架无关 —— 既可以用于bootstrap，也可以用于Semantic等。
     
 1. ui-model-angular-bootstrap
 
