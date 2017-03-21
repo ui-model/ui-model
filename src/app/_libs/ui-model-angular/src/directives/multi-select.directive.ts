@@ -26,21 +26,28 @@ export class MultiSelectDirective<T> extends MultiSelect<T> implements ControlVa
     if (this.onChange) {
       this.onChange(this.selection);
     }
+    this.touched();
+  }
+
+  protected touched(): void {
+    if (this.onTouched) {
+      this.onTouched();
+    }
   }
 
   writeValue(value: T[]): void {
     this.selection = value;
   }
 
-  onChange: (value: T[]) => void;
+  onChange: (value: T[]) => {};
 
-  registerOnChange(callback: (value: T[]) => void): void {
+  registerOnChange(callback: (value: T[]) => {}): void {
     this.onChange = callback;
   }
 
-  onTouched: () => void;
+  onTouched: () => {};
 
-  registerOnTouched(callback: () => void): void {
+  registerOnTouched(callback: () => {}): void {
     this.onTouched = callback;
   }
 }

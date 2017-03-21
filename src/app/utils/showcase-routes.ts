@@ -28,6 +28,8 @@ import {InplaceEditorComponent} from '../showcase/inplace-editor/inplace-editor.
 import {PanelComponent} from '../showcase/panel/panel.component';
 import {ToggleDetailsComponent} from '../showcase/toggle-details/toggle-details.component';
 import {ToggleImagesComponent} from '../showcase/toggle-images/toggle-images.component';
+import {ToggleNgModelComponent} from '../showcase/toggle-ng-model/toggle-ng-model.component';
+import {SelectNgModelComponent} from '../showcase/select-ng-model/select-ng-model.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -46,6 +48,17 @@ export const showcaseRoutes: Route[] = [
       id: 'select',
       title: 'Select',
       tags: ['select'].map(Tag.of),
+      description: '`select` means: choose `1` from `N`',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'select-ng-model',
+    component: SelectNgModelComponent,
+    data: {
+      id: 'select-ng-model',
+      title: 'Select(ngModel)',
+      tags: ['select', 'ngModel'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
       authors: ['wzc'].map(Author.of),
     }
@@ -145,6 +158,17 @@ export const showcaseRoutes: Route[] = [
       id: 'toggle',
       title: 'Toggle',
       tags: ['toggle', 'dropdown', 'modal', 'more', 'panel', 'collapse', 'fold'].map(Tag.of),
+      description: '`toggle` means: it has two states, which can be toggled between the two states',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'toggle-ng-model',
+    component: ToggleNgModelComponent,
+    data: {
+      id: 'toggle-ng-model',
+      title: 'Toggle(ngModel)',
+      tags: ['toggle', 'ngModel'].map(Tag.of),
       description: '`toggle` means: it has two states, which can be toggled between the two states',
       authors: ['wzc'].map(Author.of),
     }

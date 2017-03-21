@@ -7,5 +7,22 @@ import {Toggle} from 'ui-model';
   styleUrls: ['./toggle-images.component.scss']
 })
 export class ToggleImagesComponent {
-  img = new Toggle();
+  toggle = new Toggle();
+}
+
+
+interface Calendar {
+  value: Date;
+  year: number;
+  month: number;
+  weeks: number[];
+  getDays(week: number): Date[];
+  goTo(date: Date): void;
+  goToPrevMonth(): void;
+  goToNextMonth(): void;
+  isToday(date: Date): void;
+  isActive(date: Date): void;
+  isWeekEnd(date: Date): void;
+  readonly weekdayNames: string[];
+  readonly monthNames: string[];
 }

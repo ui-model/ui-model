@@ -42,6 +42,8 @@ import { InplaceEditorComponent } from './showcase/inplace-editor/inplace-editor
 import { PanelComponent } from './showcase/panel/panel.component';
 import { ToggleDetailsComponent } from './showcase/toggle-details/toggle-details.component';
 import { ToggleImagesComponent } from './showcase/toggle-images/toggle-images.component';
+import { ToggleNgModelComponent } from './showcase/toggle-ng-model/toggle-ng-model.component';
+import { SelectNgModelComponent } from './showcase/select-ng-model/select-ng-model.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,8 @@ import { ToggleImagesComponent } from './showcase/toggle-images/toggle-images.co
     PanelComponent,
     ToggleDetailsComponent,
     ToggleImagesComponent,
+    ToggleNgModelComponent,
+    SelectNgModelComponent,
   ],
   imports: [
     BrowserModule,

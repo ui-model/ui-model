@@ -20,14 +20,18 @@ export class RadioGroupComponent<T> extends Select<T> implements ControlValueAcc
 
   @Input() options: T[];
 
-  onChange: (_: any) => {};
+  onChange: (value: T) => {};
   onTouched: () => {};
 
-  protected changed() {
+  protected changed(): void {
     super.changed();
     if (this.onChange) {
       this.onChange(this.selection);
     }
+    this.touched();
+  }
+
+  protected touched(): void {
     if (this.onTouched) {
       this.onTouched();
     }
@@ -37,7 +41,7 @@ export class RadioGroupComponent<T> extends Select<T> implements ControlValueAcc
     this.select(value);
   }
 
-  registerOnChange(fn: (_: any) => {}): void {
+  registerOnChange(fn: (value: T) => {}): void {
     this.onChange = fn;
   }
 
