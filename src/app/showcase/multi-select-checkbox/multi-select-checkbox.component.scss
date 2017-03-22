@@ -1,3 +1,5 @@
+@import "../../shared/styles/common";
+
 :host {
   display: block;
 }
@@ -6,3 +8,14 @@
   margin-right: 1em;
 }
 
+.btn-primary {
+  background: $gray;
+  border-color: transparent;
+  &.active {
+    background: $brand-primary;
+  }
+}
+
+.indeterminate {
+  background: lighten($brand-primary, 30%);
+}

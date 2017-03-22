@@ -7,16 +7,3 @@
 .form-check-label {
   margin-right: 1em;
 }
-
-.demo-checkbox {
-  .btn-primary {
-    background: $gray-dark;
-    border-color: transparent;
-    &.active {
-      background: $brand-primary;
-    }
-  }
-  .indeterminate {
-    background: lighten($brand-primary, 30%);
-  }
-}

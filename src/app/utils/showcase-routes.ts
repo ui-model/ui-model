@@ -69,7 +69,7 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'radio-group',
       title: 'Radio Group',
-      tags: ['radio group'].map(Tag.of),
+      tags: ['select', 'radio group'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
       authors: ['wzc'].map(Author.of),
     }
@@ -80,7 +80,7 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'radio-button',
       title: 'Radio Button',
-      tags: ['radio button'].map(Tag.of),
+      tags: ['select', 'radio button'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
       authors: ['wzc'].map(Author.of),
     }
@@ -91,7 +91,7 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'tab-set',
       title: 'Tab Set',
-      tags: ['tab set', 'multi-page'].map(Tag.of),
+      tags: ['select', 'tab set', 'multi-page'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
       authors: ['wzc'].map(Author.of),
     }
@@ -102,7 +102,7 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'tab-set-using-directive',
       title: 'Tab Set(Directive)',
-      tags: ['tab set', 'multi-page'].map(Tag.of),
+      tags: ['select', 'tab set', 'multi-page'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
       authors: ['wzc'].map(Author.of),
     }
@@ -113,7 +113,7 @@ export const showcaseRoutes: Route[] = [
     data: {
       id: 'menu',
       title: 'Menu',
-      tags: ['menu'].map(Tag.of),
+      tags: ['select', 'menu'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
       authors: ['wzc'].map(Author.of),
     }
