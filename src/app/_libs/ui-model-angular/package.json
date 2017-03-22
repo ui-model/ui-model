@@ -1,6 +1,6 @@
 {
   "name": "ui-model-angular",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "license": "MIT",
   "description": "angular binding for ui model",
   "main": "index.ts",
@@ -24,6 +24,6 @@
     "@angular/forms": "^2.0.0",
     "rxjs": "^5.0.0",
     "moment": "^2.0.0",
-    "ui-model": "0.0.22"
+    "ui-model": "0.0.23"
   }
 }

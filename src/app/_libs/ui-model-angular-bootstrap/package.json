@@ -1,6 +1,6 @@
 {
   "name": "ui-model-angular-bootstrap",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "license": "MIT",
   "main": "index.ts",
   "description": "angular binding for ui model using bootstrap as css framework",
@@ -22,8 +22,8 @@
     "@angular/common": "^2.0.0",
     "@angular/core": "^2.0.0",
     "@angular/forms": "^2.0.0",
-    "ui-model": "0.0.22",
-    "ui-model-angular": "0.0.22",
+    "ui-model": "0.0.23",
+    "ui-model-angular": "0.0.23",
     "moment": "^2.0.0"
   }
 }
