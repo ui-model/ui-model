@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+.nav-item {
+  + .nav-item {
+    margin-left: 0;
+  }
+  .nav-link {
+    padding: 4px 8px;
+  }
+}

@@ -4,6 +4,8 @@ import {SourceViewerComponent} from './layout/source-viewer/source-viewer.compon
 import {UpdateTitleGuard} from './core/update-title.service';
 import {showcaseRoutes} from './utils/showcase-routes';
 import {BriefViewerComponent} from './layout/brief-viewer/brief-viewer.component';
+import {Author} from './utils/author';
+import {HomeComponent} from './showcase/home/home.component';
 
 export const routes: Route[] = [
   {
@@ -14,6 +16,15 @@ export const routes: Route[] = [
         path: '',
         pathMatch: 'full',
         redirectTo: '/home(doc:home//src:home//brief:home)'
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+        data: {
+          id: 'home',
+          title: 'Home',
+          authors: ['wzc'].map(Author.of),
+        }
       },
       ...showcaseRoutes
     ],

@@ -1,4 +1,4 @@
-<ul class="nav nav-pills nav-stacked">
+<ul class="nav nav-pills">
   <li class="nav-item" *ngFor="let item of items">
     <a class="nav-link"
        [routerLink]="[{outlets: {primary: item.path, doc: item.path, src: item.path, brief: item.path}}]"

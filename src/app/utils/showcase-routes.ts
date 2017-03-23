@@ -30,17 +30,9 @@ import {ToggleDetailsComponent} from '../showcase/toggle-details/toggle-details.
 import {ToggleImagesComponent} from '../showcase/toggle-images/toggle-images.component';
 import {ToggleNgModelComponent} from '../showcase/toggle-ng-model/toggle-ng-model.component';
 import {SelectNgModelComponent} from '../showcase/select-ng-model/select-ng-model.component';
+import {D3Component} from '../showcase/d3/d3.component';
 
 export const showcaseRoutes: Route[] = [
-  {
-    path: 'home',
-    component: HomeComponent,
-    data: {
-      id: 'home',
-      title: 'Home',
-      authors: ['wzc'].map(Author.of),
-    }
-  },
   {
     path: 'select',
     component: SelectComponent,
@@ -313,6 +305,17 @@ export const showcaseRoutes: Route[] = [
       title: 'Chart',
       tags: ['chart', 'pie', 'svg', 'math', 'coordinate'].map(Tag.of),
       description: `How to use **svg** as the ui-model's view layer`,
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'd3',
+    component: D3Component,
+    data: {
+      id: 'd3',
+      title: 'D3 Basic',
+      tags: ['chart', 'd3', 'bar'].map(Tag.of),
+      description: `How to simply integrate with d3 library`,
       authors: ['wzc'].map(Author.of),
     }
   },

@@ -1,0 +1,7 @@
+<svg viewBox="0 0 1000 1000" width="250" height="250">
+  <g *ngFor="let item of items; let index=index" [style.fill]="colorOf(index)">
+    <rect [style.height]="heightOf(item)" width="100"
+          [style.x]="offsetOf(index)" [style.y]="900 - heightOf(item)"></rect>
+    <text [attr.x]="offsetOf(index)" [attr.y]="1000">{{item}}</text>
+  </g>
+</svg>
