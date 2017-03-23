@@ -10,6 +10,13 @@ describe('Select', () => {
     expect(select.selected(2)).to.not.be.ok;
   });
 
+  it('deselect', ()=> {
+    const select = new Select();
+    select.select(1);
+    select.deselect();
+    expect(select.selection).to.be.undefined;
+  });
+
   it('changes', (done) => {
     const select = new Select();
     select.changes.subscribe((value) => {

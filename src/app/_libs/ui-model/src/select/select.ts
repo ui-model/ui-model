@@ -42,4 +42,8 @@ export class Select<T> extends Stateful {
     }
     return this;
   }
+  deselect(): this {
+    this.selection = undefined;
+    return this;
+  }
 }
