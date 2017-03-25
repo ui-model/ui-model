@@ -1,29 +1,35 @@
 {
   "compilerOptions": {
-    "baseUrl": "",
-    "declaration": false,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "mapRoot": "./",
-    "module": "es6",
+    "lib": ["es6", "es2015", "dom"],
+    "module": "es2015",
     "moduleResolution": "node",
-    "outDir": "./dist/out-tsc",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "outDir": "../../../../publish/ui-model-angular-bootstrap",
+    "rootDir": ".",
     "sourceMap": true,
-    "target": "es5",
+    "target": "es6",
+    "inlineSources": true,
+    "stripInternal": false,
+    "baseUrl": "",
     "typeRoots": [
-      "./node_modules/@types"
+      "../../../../node_modules/@types"
+    ],
+    "types": [
+      "rxjs"
     ],
     "paths": {
-      "ui-model": [
-        "../ui-model"
-      ],
-      "ui-model-angular": [
-        "../ui-model-angular"
-      ]
+      "ui-model": ["../ui-model"],
+      "ui-model-angular": ["../ui-model-angular"]
     }
+  },
+  "exclude": ["**/*.spec.ts"],
+  "angularCompilerOptions": {
+    "genDir": "../../../../dist",
+    "skipTemplateCodegen": true,
+    "debug": true
   }
 }

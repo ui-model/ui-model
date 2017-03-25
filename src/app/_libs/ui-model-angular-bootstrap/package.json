@@ -1,5 +1,5 @@
 {
-  "name": "ui-model-angular-bootstrap",
+  "name": "@ui-model/angular-bootstrap",
   "version": "0.0.23",
   "license": "MIT",
   "main": "index.ts",
@@ -22,8 +22,8 @@
     "@angular/common": "^2.0.0",
     "@angular/core": "^2.0.0",
     "@angular/forms": "^2.0.0",
-    "ui-model": "0.0.23",
-    "ui-model-angular": "0.0.23",
+    "@ui-model/core": "0.0.23",
+    "@ui-model/angular": "0.0.23",
     "moment": "^2.0.0"
   }
 }

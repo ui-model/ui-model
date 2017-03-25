@@ -1,21 +1,31 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "emitDecoratorMetadata": false,
-    "experimentalDecorators": false,
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "mapRoot": "./",
-    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "es2015", "dom"],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "outDir": "../../../../publish/ui-model",
+    "rootDir": ".",
     "sourceMap": true,
-    "target": "es5",
+    "target": "es6",
+    "inlineSources": true,
+    "stripInternal": false,
+    "baseUrl": "",
     "typeRoots": [
-      "./node_modules/@types"
+      "../../../../node_modules/@types"
+    ],
+    "types": [
+      "rxjs"
     ]
   },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  "exclude": ["**/*.spec.ts"],
+  "angularCompilerOptions": {
+    "genDir": "../../../../dist",
+    "skipTemplateCodegen": true,
+    "debug": true
+  }
 }
