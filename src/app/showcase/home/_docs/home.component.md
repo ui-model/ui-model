@@ -4,7 +4,7 @@ ui-model is a **software architectural pattern**. You may be surprised to realis
 
 The core of ui-model is SoC, Separate of Concerns. With ui-model pattern, you separate the soul (logic) of an interactive ui component from its body (contents and styles etc.). 
 
-Interactive ui components share with very few common logics and therefore ui-model is highly reusable with no configuration required, which lead to limitless customizability. 
+Interactive ui components share very few common logics and therefore ui-model is highly reusable with no configuration required, which lead to limitless customizability. 
 
 # Showcase Introduction
 
