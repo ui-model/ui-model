@@ -18,15 +18,12 @@
       "../node_modules/@types"
     ],
     "paths": {
-      "ui-model": [
-        "./app/_libs/ui-model"
-      ],
-      "ui-model-angular": [
-        "./app/_libs/ui-model-angular"
-      ],
-      "ui-model-angular-bootstrap": [
-        "./app/_libs/ui-model-angular-bootstrap"
-      ]
+      "@ui-model/core": ["./app/@ui-model/core"],
+      "@ui-model/common": ["./app/@ui-model/common"],
+      "@ui-model/chart": ["./app/@ui-model/chart"],
+      "@ui-model/calendar": ["./app/@ui-model/calendar"],
+      "@ui-model/angular": ["./app/@ui-model/angular"],
+      "@ui-model/angular-bootstrap": ["./app/@ui-model/angular-bootstrap"]
     }
   }
 }

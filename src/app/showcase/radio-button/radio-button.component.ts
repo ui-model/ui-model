@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Select} from 'ui-model';
+import {Select} from '@ui-model/core';
 
 @Component({
   selector: 'app-radio-button',

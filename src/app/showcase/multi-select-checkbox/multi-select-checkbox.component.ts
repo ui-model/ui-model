@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {MultiSelect, Transformers} from 'ui-model';
+import {MultiSelect} from '@ui-model/core';
+import {Transformers} from '@ui-model/common';
 
 @Component({
   selector: 'app-multi-select-checkbox',

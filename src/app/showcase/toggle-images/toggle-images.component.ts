@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Toggle} from 'ui-model';
+import {Toggle} from '@ui-model/core';
 
 @Component({
   selector: 'app-toggle-images',

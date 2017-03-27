@@ -1,5 +1,4 @@
 import {Route} from '@angular/router';
-import {HomeComponent} from '../showcase/home/home.component';
 import {SelectComponent} from '../showcase/select/select.component';
 import {MultiSelectComponent} from '../showcase/multi-select/multi-select.component';
 import {TableComponent} from '../showcase/table/table.component';

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {TableField, DataType} from 'ui-model';
+import {TableField} from '@ui-model/core';
 import * as _ from 'lodash';
+import {DataType} from '@ui-model/common';
 
 class Item {
   id: number;

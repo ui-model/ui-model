@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {TooltipService} from 'ui-model-angular';
+import {TooltipService} from '@ui-model/angular';
 
 @Component({
   selector: 'app-tooltip',

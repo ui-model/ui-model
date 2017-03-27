@@ -11,7 +11,7 @@
     "build-cn": "ng build --aot --i18n-file=src/i18n/messages.zh.xlf --locale=zh --i18n-format=xlf",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "build-libs": "rm -fr ./publish && mkdir ./publish && cp -r ./src/app/_libs/* ./publish && ngc -p src/app/_libs/tsconfig.json",
+    "build-libs": "rm -fr ./publish && mkdir ./publish && cp -r ./src/app/@ui-model/* ./publish && ngc -p src/app/@ui-model/tsconfig.json",
     "publish": "./publish.sh",
     "i18n": "ng xi18n --output-path src/i18n"
   },

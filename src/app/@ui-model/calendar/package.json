@@ -1,0 +1,28 @@
+{
+  "name": "@ui-model/calendar",
+  "version": "0.0.24",
+  "description": "ui model calendar",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ui-model/ui-model-calendar.git"
+  },
+  "keywords": [
+    "ui-model",
+    "no component",
+    "lean-ui"
+  ],
+  "author": "Zhicheng Wang<asnowwolf@gmail.com>, Rex<rexebin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ui-model/ui-model/issues"
+  },
+  "homepage": "https://github.com/ui-model/ui-model#readme",
+  "dependencies": {
+    "moment": "^2.0.0",
+    "@ui-model/common": "0.0.24"
+  },
+  "peerDependencies": {
+    "rxjs": "^5.0.0"
+  }
+}

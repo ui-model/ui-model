@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {TreeNode} from 'ui-model-angular-bootstrap';
+import {TreeNode} from '@ui-model/angular-bootstrap';
 
 @Component({
   selector: 'app-tree',

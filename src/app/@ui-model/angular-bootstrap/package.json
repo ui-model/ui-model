@@ -1,0 +1,31 @@
+{
+  "name": "@ui-model/angular-bootstrap",
+  "version": "0.0.24",
+  "license": "MIT",
+  "main": "index.ts",
+  "description": "angular binding for ui model using bootstrap as css framework",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ui-model/ui-model-angular-bootstrap.git"
+  },
+  "keywords": [
+    "ui-model",
+    "no component",
+    "angular"
+  ],
+  "author": "Zhicheng Wang<asnowwolf@gmail.com>, Rex<rexebin@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/ui-model/ui-model-angular-bootstrap/issues"
+  },
+  "homepage": "https://github.com/ui-model/ui-model-angular-bootstrap#readme",
+  "dependencies": {
+    "@ui-model/angular": "0.0.24",
+    "bootstrap": "^4.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^2.0.0",
+    "@angular/core": "^2.0.0",
+    "@angular/forms": "^2.0.0",
+    "moment": "^2.0.0"
+  }
+}

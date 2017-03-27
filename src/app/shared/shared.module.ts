@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {UiModelModule} from 'ui-model-angular';
-import {UiModelBootstrapModule} from 'ui-model-angular-bootstrap';
-import { MarkdownPipe } from './pipes/markdown.pipe';
+import {MarkdownPipe} from './pipes/markdown.pipe';
+import {UiModelModule} from '@ui-model/angular';
+import {UiModelBootstrapModule} from '@ui-model/angular-bootstrap';
 
 @NgModule({
   imports: [

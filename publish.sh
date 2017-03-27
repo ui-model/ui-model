@@ -1,6 +1,8 @@
 #!/bin/sh
 
-npm publish --access public ./publish/ui-model
-npm publish --access public ./publish/ui-model-angular
-npm publish --access public ./publish/ui-model-angular-bootstrap
-
+npm publish --access public ./publish/core/
+npm publish --access public ./publish/common/
+npm publish --access public ./publish/chart/
+npm publish --access public ./publish/calendar/
+npm publish --access public ./publish/angular/
+npm publish --access public ./publish/angular-bootstrap/

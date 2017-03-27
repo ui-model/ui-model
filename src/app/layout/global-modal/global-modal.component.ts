@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalService} from 'ui-model-angular';
+import {ModalService} from '@ui-model/angular';
 
 @Component({
   selector: 'app-global-modal',
