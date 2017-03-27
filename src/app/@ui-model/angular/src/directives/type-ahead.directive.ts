@@ -40,5 +40,4 @@ export class TypeAheadDirective implements OnInit, OnDestroy {
     this.close.emit();
     this.typing.complete();
   }
-
 }

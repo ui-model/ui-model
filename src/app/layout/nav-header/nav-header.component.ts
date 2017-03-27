@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 
 @Component({
@@ -8,7 +8,8 @@ import {Title} from '@angular/platform-browser';
 })
 export class NavHeaderComponent implements OnInit {
 
-  constructor(public title: Title) { }
+  constructor(public title: Title) {
+  }
 
   ngOnInit() {
   }

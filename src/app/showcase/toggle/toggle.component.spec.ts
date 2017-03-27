@@ -1,6 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {ToggleComponent} from './toggle.component';
+import {UiModelModule} from '@ui-model/angular';
 
 describe('ToggleComponent', () => {
   let component: ToggleComponent;
@@ -8,7 +9,8 @@ describe('ToggleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ToggleComponent]
+      declarations: [ToggleComponent],
+      imports: [UiModelModule],
     })
       .compileComponents();
   }));

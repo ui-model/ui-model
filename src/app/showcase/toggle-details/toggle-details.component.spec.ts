@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToggleDetailsComponent } from './toggle-details.component';
+import {UiModelModule} from '@ui-model/angular';
 
 describe('ToggleDetailsComponent', () => {
   let component: ToggleDetailsComponent;
@@ -8,7 +9,8 @@ describe('ToggleDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToggleDetailsComponent ]
+      declarations: [ ToggleDetailsComponent ],
+      imports: [UiModelModule],
     })
     .compileComponents();
   }));

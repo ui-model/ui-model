@@ -1,6 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {PreviewComponent} from './preview.component';
+import {UiModelModule} from '@ui-model/angular';
 
 describe('PreviewComponent', () => {
   let component: PreviewComponent;
@@ -8,7 +9,8 @@ describe('PreviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PreviewComponent]
+      declarations: [PreviewComponent],
+      imports: [UiModelModule],
     })
       .compileComponents();
   }));

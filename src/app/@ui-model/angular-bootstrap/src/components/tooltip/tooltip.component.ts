@@ -4,7 +4,7 @@ import {MeasureDirective, TooltipService} from '@ui-model/angular';
 @Component({
   selector: 'ui-tooltip',
   templateUrl: './tooltip.component.html',
-  styleUrls: ['./tooltip.component.scss']
+  styleUrls: ['./tooltip.component.scss'],
 })
 export class TooltipComponent {
   constructor(public tooltip: TooltipService) {

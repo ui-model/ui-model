@@ -20,6 +20,7 @@ describe('TreeNodeComponent', () => {
   });
 
   it('should create', () => {
+    component.data = {label: 't', items: []};
     expect(component).toBeTruthy();
   });
 });

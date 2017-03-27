@@ -7,7 +7,7 @@ export class ClickOutsideDirective implements OnInit, OnDestroy {
   constructor(private element: ElementRef) {
   }
 
-  @Output('uiClickOutside') onClickOutside = new EventEmitter();
+  @Output('uiClickOutside') onClickOutside = new EventEmitter<void>();
 
   escKeyListener = (event: KeyboardEvent) => {
     if (event.keyCode === 27) {

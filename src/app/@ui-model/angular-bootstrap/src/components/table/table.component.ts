@@ -9,7 +9,7 @@ import {SortOrder} from '@ui-model/common';
 })
 export class TableComponent<T> {
 
-  _fields: TableField[];
+  _fields: TableField[] = [];
   get fields(): TableField[] {
     return this._fields;
   }
@@ -22,7 +22,7 @@ export class TableComponent<T> {
     }
   }
 
-  @Input() items: T[];
+  @Input() items: T[] = [];
 
   get sortable(): boolean {
     return this.sorter.enabled;

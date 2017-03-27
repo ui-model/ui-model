@@ -1,6 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormComponent} from './form.component';
+import {FormsModule} from '@angular/forms';
+import {FormSectionComponent} from './form-section/form-section.component';
+import {UiModelModule} from '@ui-model/angular';
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -8,7 +11,8 @@ describe('FormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FormComponent]
+      declarations: [FormComponent, FormSectionComponent],
+      imports: [FormsModule, UiModelModule],
     })
       .compileComponents();
   }));

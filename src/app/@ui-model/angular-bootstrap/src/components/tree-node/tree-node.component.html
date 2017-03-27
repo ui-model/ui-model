@@ -1,8 +1,10 @@
-<i class="fa fa-plus-square-o" *ngIf="data.items?.length && toggle.isOff" (click)="toggle.open()"></i>
-<i class="fa fa-minus-square-o" *ngIf="data.items?.length && toggle.isOn" (click)="toggle.close()"></i>
-<label>{{data.label}}</label>
-<ul *ngIf="data && toggle.isOn">
-  <li *ngFor="let item of data.items">
-    <ui-tree-node [data]="item"></ui-tree-node>
-  </li>
-</ul>
+<ng-container *ngIf="data">
+  <i class="fa fa-plus-square-o" *ngIf="data.items?.length && toggle.isOff" (click)="toggle.open()"></i>
+  <i class="fa fa-minus-square-o" *ngIf="data.items?.length && toggle.isOn" (click)="toggle.close()"></i>
+  <label>{{data.label}}</label>
+  <ul *ngIf="data && toggle.isOn">
+    <li *ngFor="let item of data.items">
+      <ui-tree-node [data]="item"></ui-tree-node>
+    </li>
+  </ul>
+</ng-container>

@@ -1,13 +1,33 @@
 /* tslint:disable:no-unused-variable */
-import {TestBed, async} from '@angular/core/testing';
+import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
+import {NavHeaderComponent} from '../nav-header/nav-header.component';
+import {NavMenuComponent} from '../nav-menu/nav-menu.component';
+import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {GlobalModalComponent} from '../global-modal/global-modal.component';
+import {UiModelBootstrapModule} from '@ui-model/angular-bootstrap';
+import {SourceCodeService} from '../../core/source-code.service';
+import {Http, HttpModule} from '@angular/http';
 
-describe('AppComponent', () => {
+xdescribe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        NavHeaderComponent,
+        NavMenuComponent,
+        GlobalModalComponent,
       ],
+      imports: [
+        RouterModule,
+        FormsModule,
+        HttpModule,
+        UiModelBootstrapModule,
+      ],
+      providers: [
+        SourceCodeService,
+      ]
     });
   });
 

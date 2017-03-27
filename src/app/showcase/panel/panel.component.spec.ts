@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PanelComponent } from './panel.component';
+import {UiModelModule} from '@ui-model/angular';
+import {UiModelBootstrapModule} from '@ui-model/angular-bootstrap';
 
 describe('PanelComponent', () => {
   let component: PanelComponent;
@@ -8,7 +10,8 @@ describe('PanelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PanelComponent ]
+      declarations: [ PanelComponent ],
+      imports: [UiModelBootstrapModule],
     })
     .compileComponents();
   }));

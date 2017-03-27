@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RadioButtonComponent } from './radio-button.component';
+import {UiModelModule} from '@ui-model/angular';
 
 describe('RadioButtonComponent', () => {
   let component: RadioButtonComponent;
@@ -8,7 +9,8 @@ describe('RadioButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RadioButtonComponent ]
+      declarations: [ RadioButtonComponent ],
+      imports: [UiModelModule],
     })
     .compileComponents();
   }));

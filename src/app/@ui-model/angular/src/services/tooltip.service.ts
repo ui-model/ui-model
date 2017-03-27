@@ -34,7 +34,6 @@ export class TooltipService {
     return !!this._message && !!this.targetRect;
   }
 
-
   show(message: string | SafeHtml, targetRect: Rect): void {
     this.message = message;
     this.targetRect = targetRect;

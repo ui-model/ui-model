@@ -1,28 +1,37 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {async, inject, TestBed} from '@angular/core/testing';
 
-import { SourceViewerComponent } from './source-viewer.component';
+import {SourceViewerComponent} from './source-viewer.component';
+import {UiModelModule} from '@ui-model/angular';
+import {ActivatedRoute, RouterModule} from '@angular/router';
+import {SourceCodeService} from '../../core/source-code.service';
+import {Subject} from 'rxjs';
+
+class MySourceCodeService {
+
+}
+
+class MyActivatedRoute {
+  params = new Subject();
+}
 
 describe('SourceViewerComponent', () => {
-  let component: SourceViewerComponent;
-  let fixture: ComponentFixture<SourceViewerComponent>;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SourceViewerComponent ]
+      declarations: [SourceViewerComponent],
+      imports: [UiModelModule, RouterModule],
+      providers: [
+        MySourceCodeService,
+        MyActivatedRoute,
+        {provide: SourceCodeService, useClass: MySourceCodeService},
+        {provide: ActivatedRoute, useClass: MyActivatedRoute},
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SourceViewerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
+  it('should create', inject([MySourceCodeService, MyActivatedRoute], (sourceCode, route) => {
+    const component = new SourceViewerComponent(sourceCode, route);
     expect(component).toBeTruthy();
-  });
+  }));
 });

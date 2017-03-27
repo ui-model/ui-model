@@ -1,6 +1,5 @@
 import {TableSorter} from './table-sorter';
 import {TableField} from './table-field';
-import {expect} from 'chai';
 import {DataType} from '@ui-model/common';
 const fields: TableField[] = TableField.from([
   {
@@ -18,24 +17,24 @@ describe('TableSorter', () => {
   it('changes', (done) => {
     const sorter = new TableSorter().setFields(fields);
     sorter.changes.subscribe((value) => {
-      expect(value.field.name).to.equal('a');
+      expect(value.field.name).toEqual('a');
       done();
     });
     sorter.toggle(fields[0]);
   });
   it('no sort', () => {
     const sorter = new TableSorter().setFields(fields);
-    expect(sorter.compare({a: 1}, {a: 2})).to.be.NaN;
+    expect(sorter.compare({a: 1}, {a: 2})).toBeNaN();
   });
   it('sort by a', () => {
     const sorter = new TableSorter().setFields(fields);
     sorter.toggle(fields[0]);
-    expect(sorter.compare({a: 1}, {a: 2})).to.lessThan(0);
+    expect(sorter.compare({a: 1}, {a: 2})).toBeLessThan(0);
   });
   it('enabled', () => {
     const sorter = new TableSorter().setFields(fields);
     sorter.disable();
     sorter.toggle(fields[0]);
-    expect(sorter.field).to.be.undefined;
+    expect(sorter.field).toBeUndefined();
   });
 });

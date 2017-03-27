@@ -1,6 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {TableComponent} from './table.component';
+import {UiModelModule} from '@ui-model/angular';
+import {PaginationComponent} from '@ui-model/angular-bootstrap';
+import {FormsModule} from '@angular/forms';
 
 describe('TableComponent', () => {
   let component: TableComponent<any>;
@@ -8,7 +11,8 @@ describe('TableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TableComponent]
+      declarations: [TableComponent, PaginationComponent],
+      imports: [UiModelModule, FormsModule]
     })
       .compileComponents();
   }));

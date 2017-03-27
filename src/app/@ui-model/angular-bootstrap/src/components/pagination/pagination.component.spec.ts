@@ -1,6 +1,7 @@
 /* tslint:disable:no-unused-variable */
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {PaginationComponent} from './pagination.component';
+import {Pagination} from '@ui-model/core';
 
 describe('PaginationComponent', () => {
   let component: PaginationComponent;
@@ -16,6 +17,7 @@ describe('PaginationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
+    component.pager = new Pagination();
     fixture.detectChanges();
   });
 

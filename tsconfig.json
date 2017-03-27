@@ -17,7 +17,7 @@
       "dom"
     ],
     "mapRoot": "./",
-    "module": "es6",
+    "module": "es2015",
     "paths": {
       "@ui-model/core": ["./app/@ui-model/core"],
       "@ui-model/common": ["./app/@ui-model/common"],

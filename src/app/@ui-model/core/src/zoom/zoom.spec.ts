@@ -1,4 +1,3 @@
-import {expect} from 'chai';
 import {Zoom} from './zoom';
 import {Rect} from '@ui-model/common';
 describe('Zoom', () => {
@@ -8,6 +7,6 @@ describe('Zoom', () => {
     zoom.activeViewport = Rect.from(0, 0, 10, 10);
     zoom.passiveRect = Rect.from(0, 0, 1000, 1000);
     zoom.update();
-    expect(zoom.passiveViewport.width).to.eql(100);
+    expect(zoom.passiveViewport.width).toEqual(100);
   });
 });

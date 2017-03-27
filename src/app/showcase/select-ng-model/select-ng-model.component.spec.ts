@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectNgModelComponent } from './select-ng-model.component';
+import {UiModelModule} from '@ui-model/angular';
+import {FormsModule} from '@angular/forms';
 
 describe('SelectNgModelComponent', () => {
   let component: SelectNgModelComponent;
@@ -8,7 +10,8 @@ describe('SelectNgModelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectNgModelComponent ]
+      declarations: [ SelectNgModelComponent ],
+      imports: [UiModelModule, FormsModule],
     })
     .compileComponents();
   }));
