@@ -1,6 +1,6 @@
 <div uiToggle [(ngModel)]="more">
   <div i18n>This is a brief</div>
-  <a uiPreventDefault href (click)="open()" *ngIf="more" i18n>Click me to see more...</a>
+  <a uiPreventDefault href (click)="open()" *ngIf="!more" i18n>Click me to see more...</a>
   <div *ngIf="more" class="alert alert-success">
     <div i18n *ngFor="let i of 10|times">this are detail with many many lines</div>
 
