@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {TableField, TableSorter} from '@ui-model/core';
+import {SortOrder} from '@ui-model/common';
 
 @Component({
   selector: 'ui-table',
@@ -35,4 +36,16 @@ export class TableComponent<T> {
   sorter = new TableSorter().setFields(this.fields);
 
   size = {};
+
+  orderCss(order: SortOrder): string {
+    switch (order) {
+      case SortOrder.Asc:
+        return 'fa-sort-asc';
+      case SortOrder.Desc:
+        return 'fa-sort-desc';
+      case SortOrder.None:
+      default:
+        return 'fa-sort';
+    }
+  }
 }

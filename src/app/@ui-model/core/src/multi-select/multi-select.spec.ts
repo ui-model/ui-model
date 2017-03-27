@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import {MultiSelect} from './multi-select';
-import {Transformers} from '../utils/transformer';
+import {Transformers} from '@ui-model/common';
 
 const options = [
   1,

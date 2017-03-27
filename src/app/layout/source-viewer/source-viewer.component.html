@@ -1,4 +1,4 @@
-<p class="tag-list" *ngIf="meta?.authors|isNotEmpty">
+<p class="badge-list" *ngIf="meta?.authors|isNotEmpty">
   <span i18n>Authors:</span>
   <a class="author" *ngFor="let author of meta.authors" [routerLink]="['/authors', author.id]">{{author.name}}</a>
 </p>

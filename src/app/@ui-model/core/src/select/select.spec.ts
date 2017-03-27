@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import {Select} from './select';
-import {Transformers} from '../utils/transformer';
+import {Transformers} from '@ui-model/common';
 
 describe('Select', () => {
   it('select', () => {

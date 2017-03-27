@@ -20,12 +20,12 @@
   "homepage": "https://github.com/ui-model/ui-model-angular-bootstrap#readme",
   "dependencies": {
     "@ui-model/angular": "0.0.24",
-    "bootstrap": "^4.0.0"
+    "bootstrap": "4.0.0-alpha.6",
+    "font-awesome": "^4.0.0"
   },
   "peerDependencies": {
     "@angular/common": "^2.0.0",
     "@angular/core": "^2.0.0",
-    "@angular/forms": "^2.0.0",
-    "moment": "^2.0.0"
+    "@angular/forms": "^2.0.0"
   }
 }

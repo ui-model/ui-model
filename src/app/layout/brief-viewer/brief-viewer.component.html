@@ -1,5 +1,5 @@
 <div class="alert alert-info" *ngIf="meta?.description" [innerHTML]="meta.description | markdown"></div>
-<p class="tag-list" *ngIf="meta?.tags|isNotEmpty">
+<p class="badge-list" *ngIf="meta?.tags|isNotEmpty">
   <span i18n>Tags:</span>
-  <label class="tag tag-info" *ngFor="let tag of meta.tags">{{tag.keyword}}</label>
+  <label class="badge badge-info" *ngFor="let tag of meta.tags">{{tag.keyword}}</label>
 </p>

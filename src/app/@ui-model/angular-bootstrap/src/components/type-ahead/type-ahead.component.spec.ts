@@ -3,8 +3,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {TypeAheadComponent} from './type-ahead.component';
 
 describe('TypeAheadComponent', () => {
-  let component: TypeAheadComponent;
-  let fixture: ComponentFixture<TypeAheadComponent>;
+  let component: TypeAheadComponent<any>;
+  let fixture: ComponentFixture<TypeAheadComponent<any>>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

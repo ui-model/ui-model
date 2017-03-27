@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6">
-    <div class="dropdown open" uiToggle #dropdown="uiToggle" (uiClickOutside)="dropdown.close()">
+    <div class="dropdown" uiToggle #dropdown="uiToggle" (uiClickOutside)="dropdown.close()">
       <button class="btn btn-secondary dropdown-toggle" type="button" (click)="dropdown.toggle()">
         <span i18n>Dropdown Button</span>
       </button>
@@ -13,9 +13,9 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="dropdown open" uiToggle #dropdown1="uiToggle" (uiClickOutside)="dropdown1.close()">
+    <div class="dropdown" uiToggle #dropdown1="uiToggle" (uiClickOutside)="dropdown1.close()">
       <button class="btn btn-secondary dropdown-toggle" type="button" (click)="dropdown1.toggle()">
-        <span i18n>Another Dropdown Button</span>
+        <span i18n>Another Dropdown</span>
       </button>
       <div class="dropdown-menu" *ngIf="dropdown1.isOn">
         <a class="dropdown-item" i18n>Action</a>

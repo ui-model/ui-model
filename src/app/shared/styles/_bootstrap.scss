@@ -1,8 +1,18 @@
 @import "~bootstrap/scss/bootstrap";
 
-.tag-list {
-  .tag {
+.badge-list {
+  .badge {
     margin-right: 0.5em;
     font-weight: normal;
+  }
+}
+
+.form-check-input {
+  margin-left: 0;
+}
+
+.modal-header {
+  .modal-title {
+    flex: auto;
   }
 }

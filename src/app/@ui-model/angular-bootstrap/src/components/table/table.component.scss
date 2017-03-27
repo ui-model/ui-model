@@ -1,4 +1,6 @@
 @import "~bootstrap/scss/variables";
+@import "~font-awesome/scss/variables";
+@import "~font-awesome/scss/mixins";
 
 :host {
   display: block;
@@ -23,14 +25,17 @@ table {
 th {
   &.sortable {
     cursor: pointer;
-    > .sort-order-none {
-      @include sortOrder(url(_images/icon-sort.svg))
+    > .fa-sort-none {
+      @include fa-icon();
+      &:after {
+        content: $fa-var-sort;
+      }
     }
-    > .sort-order-asc {
-      @include sortOrder(url(_images/icon-sort-asc.svg));
+    > .fa-sort-asc {
+      @include fa-icon();
     }
-    > .sort-order-desc {
-      @include sortOrder(url(_images/icon-sort-desc.svg));
+    > .fa-sort-desc {
+      @include fa-icon();
     }
   }
 }

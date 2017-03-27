@@ -2,6 +2,8 @@ import {Pipe, PipeTransform} from '@angular/core';
 import * as MarkdownIt from 'markdown-it';
 import * as hljs from 'highlight.js';
 
+declare function require(id: string): any;
+
 const markdown = new MarkdownIt();
 markdown.use(require('markdown-it-abbr'));
 markdown.use(require('markdown-it-deflist'));

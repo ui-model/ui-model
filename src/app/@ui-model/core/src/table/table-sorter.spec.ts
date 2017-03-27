@@ -1,7 +1,7 @@
 import {TableSorter} from './table-sorter';
 import {TableField} from './table-field';
-import {DataType} from '../utils/data-type';
 import {expect} from 'chai';
+import {DataType} from '@ui-model/common';
 const fields: TableField[] = TableField.from([
   {
     name: 'a',

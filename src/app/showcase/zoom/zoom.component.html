@@ -1,6 +1,6 @@
 <div class="playground">
   <div class="active-rect">
-    <img src="_images/small.jpg"
+    <img src="../../../assets/zoom/small.jpg"
          (uiMeasure)="zoom.activeRect.copyFrom($event.offsetRect);zoom.activeViewport.limitTo($event.offsetRect)">
     <div class="viewport" [style.left.px]="zoom.activeViewport.left" [style.top.px]="zoom.activeViewport.top"
          (uiMeasure)="zoom.activeViewport.copyFrom($event.offsetRect)"></div>
@@ -9,7 +9,7 @@
   </div>
   <div class="passive-rect" [style.width.px]="zoom.passiveViewport.width"
        [style.height.px]="zoom.passiveViewport.height">
-    <img src="_images/large.jpg" (uiMeasure)="zoom.passiveRect.copyFrom($event.offsetRect)"
+    <img src="../../../assets/zoom/large.jpg" (uiMeasure)="zoom.passiveRect.copyFrom($event.offsetRect)"
          [style.left.px]="-zoom.passiveViewport.left" [style.top.px]="-zoom.passiveViewport.top"/>
   </div>
 </div>

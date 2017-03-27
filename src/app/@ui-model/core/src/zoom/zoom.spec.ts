@@ -1,6 +1,6 @@
 import {expect} from 'chai';
-import {Rect} from '../utils/Rect';
 import {Zoom} from './zoom';
+import {Rect} from '@ui-model/common';
 describe('Zoom', () => {
   it('1:1', () => {
     const zoom = new Zoom();

@@ -1,3 +1,6 @@
 @import "common";
+@import "~highlight.js/styles/xcode";
 @import "bootstrap";
+$fa-font-path: '~font-awesome/fonts';
+@import "~font-awesome/scss/font-awesome";
 @import "app";

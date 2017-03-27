@@ -1,12 +1,12 @@
 <ul class="pagination">
   <li class="page-item" [class.disabled]="!pager.hasFirst" *ngIf="showFirstLast">
     <a href="javascript:void(0)" (click)="pager.goToFirst()" class="page-link" title="First">
-      <img class="icon" src="_images/icon-first.svg"/>
+      <i class="fa fa-step-backward"></i>
     </a>
   </li>
   <li class="page-item" [class.disabled]="!pager.hasPrev" *ngIf="showPrevNext">
     <a href="javascript:void(0)" (click)="pager.prev()" class="page-link" title="Prev">
-      <img class="icon" src="_images/icon-prev.svg"/>
+      <i class="fa fa-backward"></i>
     </a>
   </li>
   <ng-container *ngIf="!pager.isEmpty">
@@ -16,12 +16,12 @@
   </ng-container>
   <li class="page-item" [class.disabled]="!pager.hasNext" *ngIf="showPrevNext">
     <a href="javascript:void(0)" (click)="pager.next()" class="page-link" title="Next">
-      <img class="icon" src="_images/icon-next.svg"/>
+      <i class="fa fa-forward"></i>
     </a>
   </li>
   <li class="page-item" [class.disabled]="!pager.hasLast" *ngIf="showFirstLast">
     <a href="javascript:void(0)" (click)="pager.goToLast()" class="page-link" title="Last">
-      <img class="icon" src="_images/icon-last.svg"/>
+      <i class="fa fa-step-forward"></i>
     </a>
   </li>
   <li class="page-item disabled" *ngIf="showBrief">

@@ -34,17 +34,17 @@ import {RadioGroupComponent} from './showcase/radio-group/radio-group.component'
 import {RadioButtonComponent} from './showcase/radio-button/radio-button.component';
 import {TabSetComponent} from './showcase/tab-set/tab-set.component';
 import {TabSetUsingDirectiveComponent} from './showcase/tab-set-using-directive/tab-set-using-directive.component';
-import { MenuComponent } from './showcase/menu/menu.component';
-import { MultiSelectCheckboxComponent } from './showcase/multi-select-checkbox/multi-select-checkbox.component';
-import { MultiSelectNgModelComponent } from './showcase/multi-select-ng-model/multi-select-ng-model.component';
-import { DropdownComponent } from './showcase/dropdown/dropdown.component';
-import { InplaceEditorComponent } from './showcase/inplace-editor/inplace-editor.component';
-import { PanelComponent } from './showcase/panel/panel.component';
-import { ToggleDetailsComponent } from './showcase/toggle-details/toggle-details.component';
-import { ToggleImagesComponent } from './showcase/toggle-images/toggle-images.component';
-import { ToggleNgModelComponent } from './showcase/toggle-ng-model/toggle-ng-model.component';
-import { SelectNgModelComponent } from './showcase/select-ng-model/select-ng-model.component';
-import { D3Component } from './showcase/d3/d3.component';
+import {MenuComponent} from './showcase/menu/menu.component';
+import {MultiSelectCheckboxComponent} from './showcase/multi-select-checkbox/multi-select-checkbox.component';
+import {MultiSelectNgModelComponent} from './showcase/multi-select-ng-model/multi-select-ng-model.component';
+import {DropdownComponent} from './showcase/dropdown/dropdown.component';
+import {InplaceEditorComponent} from './showcase/inplace-editor/inplace-editor.component';
+import {PanelComponent} from './showcase/panel/panel.component';
+import {ToggleDetailsComponent} from './showcase/toggle-details/toggle-details.component';
+import {ToggleImagesComponent} from './showcase/toggle-images/toggle-images.component';
+import {ToggleNgModelComponent} from './showcase/toggle-ng-model/toggle-ng-model.component';
+import {SelectNgModelComponent} from './showcase/select-ng-model/select-ng-model.component';
+import {D3Component} from './showcase/d3/d3.component';
 
 @NgModule({
   declarations: [
