@@ -3,7 +3,6 @@
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
     "module": "es2015",
-    "target": "es6",
     "baseUrl": "",
     "types": [
       "jasmine",

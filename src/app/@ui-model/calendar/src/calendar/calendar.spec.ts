@@ -17,16 +17,16 @@ describe('Calendar', () => {
   });
   it('set value && year && month', () => {
     const calendar = new Calendar();
-    calendar.value = new Date('2017-01-31T00:00:00+0800');
-    expect(calendar.value).toEqual(new Date('2017-01-31T00:00:00+0800'));
+    calendar.value = moment('2017-01-31T00:00:00+0800').toDate();
+    expect(calendar.value).toEqual(moment('2017-01-31T00:00:00+0800').toDate());
     calendar.year = 2016;
-    expect(calendar.value).toEqual(new Date('2016-01-31T00:00:00+0800'));
+    expect(calendar.value).toEqual(moment('2016-01-31T00:00:00+0800').toDate());
     calendar.month = 2;
-    expect(calendar.value).toEqual(new Date('2016-03-31T00:00:00+0800'));
+    expect(calendar.value).toEqual(moment('2016-03-31T00:00:00+0800').toDate());
     calendar.month = 3;
-    expect(calendar.value).toEqual(new Date('2016-04-30T00:00:00+0800'));
+    expect(calendar.value).toEqual(moment('2016-04-30T00:00:00+0800').toDate());
     calendar.month = 1;
-    expect(calendar.value).toEqual(new Date('2016-02-29T00:00:00+0800'));
+    expect(calendar.value).toEqual(moment('2016-02-29T00:00:00+0800').toDate());
   });
   describe('nullable', () => {
     let calendar: Calendar;
@@ -84,43 +84,43 @@ describe('Calendar', () => {
   });
   it('weeks && dates', () => {
     const calendar = new Calendar();
-    calendar.value = new Date('2017-02-13');
+    calendar.value = moment('2017-02-13').toDate();
     expect(calendar.weeks).toEqual([5, 6, 7, 8, 9, 10]);
     expect(calendar.dates(5)).toEqual([
-      new Date('2017-01-29T00:00:00+0800'),
-      new Date('2017-01-30T00:00:00+0800'),
-      new Date('2017-01-31T00:00:00+0800'),
-      new Date('2017-02-01T00:00:00+0800'),
-      new Date('2017-02-02T00:00:00+0800'),
-      new Date('2017-02-03T00:00:00+0800'),
-      new Date('2017-02-04T00:00:00+0800'),
+      moment('2017-01-29T00:00:00+0800').toDate(),
+      moment('2017-01-30T00:00:00+0800').toDate(),
+      moment('2017-01-31T00:00:00+0800').toDate(),
+      moment('2017-02-01T00:00:00+0800').toDate(),
+      moment('2017-02-02T00:00:00+0800').toDate(),
+      moment('2017-02-03T00:00:00+0800').toDate(),
+      moment('2017-02-04T00:00:00+0800').toDate(),
     ]);
   });
   describe('states', () => {
     let calendar;
     beforeEach(() => {
-      calendar = new Calendar().setValue(new Date('2017-02-16T00:00:00+0800'));
+      calendar = new Calendar().setValue(moment('2017-02-16T00:00:00+0800').toDate());
     });
     it('normal compare', () => {
-      expect(calendar.isActive(new Date('2017-02-16T00:00:00+0800'))).toBeTruthy();
-      expect(calendar.isActive(new Date('2017-03-16T00:00:00+0800'))).toBeFalsy();
-      expect(calendar.isPast(new Date('2017-01-01'))).toBeTruthy();
-      expect(calendar.isPast(new Date('2017-03-18'))).toBeFalsy();
-      expect(calendar.isFuture(new Date('2017-01-01'))).toBeFalsy();
-      expect(calendar.isFuture(new Date('2017-03-18'))).toBeTruthy();
+      expect(calendar.isActive(moment('2017-02-16T00:00:00+0800').toDate())).toBeTruthy();
+      expect(calendar.isActive(moment('2017-03-16T00:00:00+0800').toDate())).toBeFalsy();
+      expect(calendar.isPast(moment('2017-01-01').toDate())).toBeTruthy();
+      expect(calendar.isPast(moment('2017-03-18').toDate())).toBeFalsy();
+      expect(calendar.isFuture(moment('2017-01-01').toDate())).toBeFalsy();
+      expect(calendar.isFuture(moment('2017-03-18').toDate())).toBeTruthy();
     });
     it('when compare, we should ignore time fields', () => {
-      expect(calendar.isActive(new Date('2017-02-16T00:30:00+0800'))).toBeTruthy();
+      expect(calendar.isActive(moment('2017-02-16T00:30:00+0800').toDate())).toBeTruthy();
     });
     it('weekend', () => {
-      expect(calendar.isWeekEnd(new Date('2017-02-13'))).toBeFalsy();
-      expect(calendar.isWeekEnd(new Date('2017-02-12'))).toBeTruthy();
-      expect(calendar.isWeekEnd(new Date('2017-02-18'))).toBeTruthy();
+      expect(calendar.isWeekEnd(moment('2017-02-13').toDate())).toBeFalsy();
+      expect(calendar.isWeekEnd(moment('2017-02-12').toDate())).toBeTruthy();
+      expect(calendar.isWeekEnd(moment('2017-02-18').toDate())).toBeTruthy();
     });
     it('same month', () => {
-      expect(calendar.inSameMonth(new Date('2017-02-13'))).toBeTruthy();
-      expect(calendar.inSameMonth(new Date('2017-01-31'))).toBeFalsy();
-      expect(calendar.inSameMonth(new Date('2017-03-01'))).toBeFalsy();
+      expect(calendar.inSameMonth(moment('2017-02-13').toDate())).toBeTruthy();
+      expect(calendar.inSameMonth(moment('2017-01-31').toDate())).toBeFalsy();
+      expect(calendar.inSameMonth(moment('2017-03-01').toDate())).toBeFalsy();
     });
     it('is valid', () => {
       calendar.minValue = '2017-01-05';
@@ -143,15 +143,15 @@ describe('Calendar', () => {
     });
     it('goTo', () => {
       calendar.goTo('2017-01-01T00:00:00+0800');
-      expect(calendar.value).toEqual(new Date('2017-01-01T00:00:00+0800'));
+      expect(calendar.value).toEqual(moment('2017-01-01T00:00:00+0800').toDate());
     });
     it('prevMonth', () => {
       calendar.goToPrevMonth();
-      expect(calendar.value).toEqual(new Date('2017-01-16T00:00:00+0800'));
+      expect(calendar.value).toEqual(moment('2017-01-16T00:00:00+0800').toDate());
     });
     it('nextMonth', () => {
       calendar.goToNextMonth();
-      expect(calendar.value).toEqual(new Date('2017-03-16T00:00:00+0800'));
+      expect(calendar.value).toEqual(moment('2017-03-16T00:00:00+0800').toDate());
     });
   });
   describe('ui helper', () => {
