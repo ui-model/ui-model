@@ -11,6 +11,7 @@ export class FormSectionComponent implements OnInit {
   constructor(private group: NgModelGroup) {
   }
 
+  test: string;
   @ViewChildren(NgModel) models: QueryList<NgModel>;
 
   ngOnInit() {
@@ -20,5 +21,4 @@ export class FormSectionComponent implements OnInit {
       });
     });
   }
-
 }

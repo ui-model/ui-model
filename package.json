@@ -5,10 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4300",
+    "start-cn": "ng serve --aot --port 4301 --i18n-file=src/i18n/messages.zh.xlf --locale=zh --i18n-format=xlf --open",
     "lint": "tslint -c tslint.json \"src/**/*.ts\"",
-    "test": "ng test",
+    "test": "ng test -sr",
     "build": "ng build --prod && cp -r ./src dist/",
-    "build-cn": "ng build --aot --i18n-file=src/i18n/messages.zh.xlf --locale=zh --i18n-format=xlf",
+    "build-cn": "ng build --prod --aot --i18n-file=src/i18n/messages.zh.xlf --locale=zh --i18n-format=xlf",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
     "build-libs": "rm -fr ./publish && mkdir ./publish && cp -r ./src/app/@ui-model/* ./publish && ngc -p src/app/@ui-model/tsconfig.json",

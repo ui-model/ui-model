@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./multi-select-ng-model.component.scss']
 })
 export class MultiSelectNgModelComponent {
+  selection;
   options = [
     {
       code: 'a',
