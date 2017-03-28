@@ -28,7 +28,7 @@ export class D3Component {
   }
 
   offsetOf(index): number {
-    const scale = scaleBand().domain(this.items.map((v, index) => index.toString())).paddingOuter(10).range([0, 1000]);
+    const scale = scaleBand().domain(this.items.map((v, i) => i.toString())).paddingOuter(10).range([0, 1000]);
     return scale(index.toString());
   }
 }

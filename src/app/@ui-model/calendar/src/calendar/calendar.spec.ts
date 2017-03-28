@@ -2,7 +2,7 @@ import {Calendar} from './calendar';
 import * as moment from 'moment';
 
 describe('Calendar', () => {
-  beforeEach(()=> {
+  beforeEach(() => {
     moment.locale('en');
   });
 

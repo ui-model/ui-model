@@ -5,7 +5,7 @@ import {SourceViewerComponent} from './source-viewer.component';
 import {UiModelModule} from '@ui-model/angular';
 import {ActivatedRoute, RouterModule} from '@angular/router';
 import {SourceCodeService} from '../../core/source-code.service';
-import {Subject} from 'rxjs';
+import {Subject} from 'rxjs/Subject';
 
 class MySourceCodeService {
 

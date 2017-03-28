@@ -9,7 +9,7 @@ describe('Select', () => {
     expect(select.selected(2)).toBeFalsy();
   });
 
-  it('deselect', ()=> {
+  it('deselect', () => {
     const select = new Select();
     select.select(1);
     select.deselect();

@@ -1,4 +1,4 @@
-import {isFunction, isUndefined, isDate, isNumber, isObject, isString, isBoolean, isArray, isEmpty} from './typings';
+import {isArray, isBoolean, isDate, isEmpty, isFunction, isNumber, isObject, isString, isUndefined} from './typings';
 
 describe('Typings', () => {
   it('isFunction', () => {
@@ -44,5 +44,5 @@ describe('Typings', () => {
     expect(isEmpty({})).toBeTruthy();
     expect(isEmpty([])).toBeTruthy();
     expect(isEmpty(1)).toBeFalsy();
-  })
+  });
 });

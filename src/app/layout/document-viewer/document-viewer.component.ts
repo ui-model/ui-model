@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {SourceCodeService} from '../../core/source-code.service';
 import {Observable} from 'rxjs/Observable';
@@ -19,7 +19,7 @@ export class DocumentViewerComponent implements OnInit, OnDestroy {
   document: Observable<string>;
 
   ngOnInit() {
-    this.sub = this.route.url.subscribe(()=> {
+    this.sub = this.route.url.subscribe(() => {
       const primaryRoute = this.route.parent.children[0].children.find((value) => value.outlet === 'primary');
       const data = primaryRoute.snapshot.data as Metadata;
       if (data.document) {
