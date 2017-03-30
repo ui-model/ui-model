@@ -1,11 +1,14 @@
 import {Author} from './author';
 import {Tag} from './tag';
 
-export interface Metadata {
-  id: string;
-  title: string;
-  tags?: Tag[];
-  description?: string;
-  document?: string;
+export class Metadata {
+  id = '';
+  title = '';
+  tags?: Tag[] = [];
+  description? = '';
+  document? = '';
+  types?: string[] = [];
+  source = '';
+  sources?: string[] = [];
   authors: Author[];
 }

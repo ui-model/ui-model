@@ -1,29 +1,12 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Subscription} from 'rxjs/Subscription';
-import {Metadata} from '../../utils/meta-data';
+import {Component} from '@angular/core';
+import {MetadataService} from '../../core/metadata.service';
 
 @Component({
   selector: 'app-brief-viewer',
   templateUrl: './brief-viewer.component.html',
   styleUrls: ['./brief-viewer.component.scss']
 })
-export class BriefViewerComponent implements OnInit, OnDestroy {
-
-  constructor(private route: ActivatedRoute) {
-  }
-
-  sub: Subscription;
-  meta: Metadata;
-
-  ngOnInit(): void {
-    this.sub = this.route.url.subscribe(() => {
-      const primaryRoute = this.route.parent.children[0].children.find((value) => value.outlet === 'primary');
-      this.meta = primaryRoute.snapshot.data as Metadata;
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
+export class BriefViewerComponent {
+  constructor(public meta: MetadataService) {
   }
 }

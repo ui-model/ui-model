@@ -1,1 +1,1 @@
-<div *ngIf="document | async" [innerHTML]="document | async | markdown"></div>
+<div *ngIf="meta?.document" [innerHTML]="meta.document | markdown"></div>

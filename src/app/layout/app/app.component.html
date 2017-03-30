@@ -28,12 +28,12 @@
       <app-nav-menu [filter]="filter"></app-nav-menu>
     </div>
     <div class="col-md-5">
-      <router-outlet name="brief"></router-outlet>
+      <app-brief-viewer></app-brief-viewer>
       <router-outlet></router-outlet>
-      <router-outlet name="doc"></router-outlet>
+      <app-document-viewer></app-document-viewer>
     </div>
     <div class="col-md-5">
-      <router-outlet name="src"></router-outlet>
+      <app-source-viewer></app-source-viewer>
     </div>
   </div>
 </div>

@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {SourceCodeService} from './source-code.service';
 import {HttpModule} from '@angular/http';
 import {UpdateTitleGuard} from './update-title.service';
+import {UpdateMetadataGuard} from './update-metadata-guard.service';
+import {MetadataService} from './metadata.service';
 
 @NgModule({
   imports: [
@@ -10,7 +12,7 @@ import {UpdateTitleGuard} from './update-title.service';
     HttpModule,
   ],
   declarations: [],
-  providers: [SourceCodeService, UpdateTitleGuard]
+  providers: [SourceCodeService, UpdateTitleGuard, UpdateMetadataGuard, MetadataService]
 })
 export class CoreModule {
 }

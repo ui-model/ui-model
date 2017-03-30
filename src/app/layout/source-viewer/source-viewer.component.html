@@ -2,12 +2,12 @@
   <span i18n>Authors:</span>
   <a class="author" *ngFor="let author of meta.authors" [routerLink]="['/authors', author.id]">{{author.name}}</a>
 </p>
-<ul class="nav nav-tabs">
-  <li class="nav-item" *ngFor="let extension of extensions">
-    <a [routerLink]="[{ext: extension}]" class="nav-link" [class.active]="currentExt === extension">
-      {{extension}}
+<ul class="nav nav-tabs" uiSelect #types="uiSelect" [(ngModel)]="meta.type">
+  <li class="nav-item" *ngFor="let type of meta.types">
+    <a class="nav-link" [class.active]="types.selected(type)" (click)="types.select(type)">
+      {{type}}
     </a>
   </li>
 </ul>
-<pre [innerHTML]="source | async | default:'<div class=empty>(Empty)</div>'">
+<pre [innerHTML]="meta.source | highlight | default:'<div class=empty>(Empty)</div>'">
 </pre>

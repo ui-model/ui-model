@@ -36,7 +36,6 @@ export const showcaseRoutes: Route[] = [
     path: 'select',
     component: SelectComponent,
     data: {
-      id: 'select',
       title: 'Select',
       tags: ['select'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
@@ -47,7 +46,6 @@ export const showcaseRoutes: Route[] = [
     path: 'select-ng-model',
     component: SelectNgModelComponent,
     data: {
-      id: 'select-ng-model',
       title: 'Select(ngModel)',
       tags: ['select', 'ngModel'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
@@ -58,7 +56,6 @@ export const showcaseRoutes: Route[] = [
     path: 'radio-group',
     component: RadioGroupComponent,
     data: {
-      id: 'radio-group',
       title: 'Radio Group',
       tags: ['select', 'radio group'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
@@ -69,7 +66,6 @@ export const showcaseRoutes: Route[] = [
     path: 'radio-button',
     component: RadioButtonComponent,
     data: {
-      id: 'radio-button',
       title: 'Radio Button',
       tags: ['select', 'radio button'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
@@ -80,7 +76,6 @@ export const showcaseRoutes: Route[] = [
     path: 'tab-set',
     component: TabSetComponent,
     data: {
-      id: 'tab-set',
       title: 'Tab Set',
       tags: ['select', 'tab set', 'multi-page'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
@@ -91,7 +86,6 @@ export const showcaseRoutes: Route[] = [
     path: 'tab-set-using-directive',
     component: TabSetUsingDirectiveComponent,
     data: {
-      id: 'tab-set-using-directive',
       title: 'Tab Set(Directive)',
       tags: ['select', 'tab set', 'multi-page'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
@@ -102,7 +96,6 @@ export const showcaseRoutes: Route[] = [
     path: 'menu',
     component: MenuComponent,
     data: {
-      id: 'menu',
       title: 'Menu',
       tags: ['select', 'menu'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
@@ -113,7 +106,6 @@ export const showcaseRoutes: Route[] = [
     path: 'multi-select',
     component: MultiSelectComponent,
     data: {
-      id: 'multi-select',
       title: 'Multi-select',
       tags: ['multi-select'].map(Tag.of),
       description: '`multi-select` means: choose `n` from `M`, and it has an undetermined state',
@@ -124,7 +116,6 @@ export const showcaseRoutes: Route[] = [
     path: 'multi-select-checkbox',
     component: MultiSelectCheckboxComponent,
     data: {
-      id: 'multi-select-checkbox',
       title: 'Multi-select(customized)',
       tags: ['multi-select', 'checkbox'].map(Tag.of),
       description: '`multi-select` means: choose `n` from `M`, and it has an undetermined state',
@@ -135,7 +126,6 @@ export const showcaseRoutes: Route[] = [
     path: 'multi-select-ng-model',
     component: MultiSelectNgModelComponent,
     data: {
-      id: 'multi-select-ng-model',
       title: 'Multi-select(ngModel)',
       tags: ['multi-select', 'ng-model'].map(Tag.of),
       description: '`multi-select` means: choose `n` from `M`, and it has an undetermined state',
@@ -146,7 +136,6 @@ export const showcaseRoutes: Route[] = [
     path: 'toggle',
     component: ToggleComponent,
     data: {
-      id: 'toggle',
       title: 'Toggle',
       tags: ['toggle', 'dropdown', 'modal', 'more', 'panel', 'collapse', 'fold'].map(Tag.of),
       description: '`toggle` means: it has two states, which can be toggled between the two states',
@@ -157,7 +146,6 @@ export const showcaseRoutes: Route[] = [
     path: 'toggle-ng-model',
     component: ToggleNgModelComponent,
     data: {
-      id: 'toggle-ng-model',
       title: 'Toggle(ngModel)',
       tags: ['toggle', 'ngModel'].map(Tag.of),
       description: '`toggle` means: it has two states, which can be toggled between the two states',
@@ -168,7 +156,6 @@ export const showcaseRoutes: Route[] = [
     path: 'dropdown',
     component: DropdownComponent,
     data: {
-      id: 'dropdown',
       title: 'Dropdown',
       tags: ['toggle', 'dropdown'].map(Tag.of),
       description: '`toggle` means: it has two states, which can be toggled between the two states',
@@ -179,7 +166,6 @@ export const showcaseRoutes: Route[] = [
     path: 'inplace-editor',
     component: InplaceEditorComponent,
     data: {
-      id: 'inplace-editor',
       title: 'Inplace Editor',
       tags: ['toggle', 'inplace-editor'].map(Tag.of),
       description: '`toggle` means: it has two states, which can be toggled between the two states',
@@ -190,7 +176,6 @@ export const showcaseRoutes: Route[] = [
     path: 'panel',
     component: PanelComponent,
     data: {
-      id: 'panel',
       title: 'Panel',
       tags: ['toggle', 'panel'].map(Tag.of),
       description: '`toggle` means: it has two states, which can be toggled between the two states',
@@ -201,7 +186,6 @@ export const showcaseRoutes: Route[] = [
     path: 'toggle-details',
     component: ToggleDetailsComponent,
     data: {
-      id: 'toggle-details',
       title: 'Toggle Details',
       tags: ['toggle'].map(Tag.of),
       description: '`toggle` means: it has two states, which can be toggled between the two states',
@@ -212,7 +196,6 @@ export const showcaseRoutes: Route[] = [
     path: 'toggle-images',
     component: ToggleImagesComponent,
     data: {
-      id: 'toggle-images',
       title: 'Toggle Images',
       tags: ['toggle'].map(Tag.of),
       description: '`toggle` means: it has two states, which can be toggled between the two states',
@@ -223,7 +206,6 @@ export const showcaseRoutes: Route[] = [
     path: 'table',
     component: TableComponent,
     data: {
-      id: 'table',
       title: 'Table',
       tags: ['table', 'sort', 'pager', 'resize', 'drag', 'measure', 'pagination', 'viewport'].map(Tag.of),
       description: '`table` is **composed** of `sort`/`slice`/`resize`/`pagination`...',
@@ -234,7 +216,6 @@ export const showcaseRoutes: Route[] = [
     path: 'tree',
     component: TreeComponent,
     data: {
-      id: 'tree',
       title: 'Tree',
       tags: ['tree', 'recursive', 'fold'].map(Tag.of),
       description: '`tree` is a simple **recursive** showcase',
@@ -245,7 +226,6 @@ export const showcaseRoutes: Route[] = [
     path: 'form',
     component: FormComponent,
     data: {
-      id: 'form',
       title: 'Form',
       tags: ['form', 'recursive', 'nested', 'accessor', 'ngModel'].map(Tag.of),
       description: 'How to **split** a form into a number of separated components',
@@ -256,7 +236,6 @@ export const showcaseRoutes: Route[] = [
     path: 'calendar',
     component: CalendarComponent,
     data: {
-      id: 'calendar',
       title: 'Calendar',
       tags: ['calendar', 'moment'].map(Tag.of),
       description: 'How to simplify a **complex** components into ui-model',
@@ -267,7 +246,6 @@ export const showcaseRoutes: Route[] = [
     path: 'preview',
     component: PreviewComponent,
     data: {
-      id: 'preview',
       title: 'Preview',
       tags: ['preview', 'upload', 'safe', 'resource'].map(Tag.of),
       description: 'How to **upload** file and preview it locally',
@@ -278,7 +256,6 @@ export const showcaseRoutes: Route[] = [
     path: 'draggable',
     component: DraggableComponent,
     data: {
-      id: 'draggable',
       title: 'Draggable',
       tags: ['draggable', 'move', 'measure'].map(Tag.of),
       description: 'How to use the **helper directive** to **bridge** between ui-model and view',
@@ -289,7 +266,6 @@ export const showcaseRoutes: Route[] = [
     path: 'modal',
     component: ModalComponent,
     data: {
-      id: 'modal',
       title: 'Modal',
       tags: ['modal', 'toggle', 'service'].map(Tag.of),
       description: 'How to use the global **service** to encapsulate ui-model',
@@ -300,7 +276,6 @@ export const showcaseRoutes: Route[] = [
     path: 'chart',
     component: ChartComponent,
     data: {
-      id: 'chart',
       title: 'Chart',
       tags: ['chart', 'pie', 'svg', 'math', 'coordinate'].map(Tag.of),
       description: `How to use **svg** as the ui-model's view layer`,
@@ -311,7 +286,6 @@ export const showcaseRoutes: Route[] = [
     path: 'd3',
     component: D3Component,
     data: {
-      id: 'd3',
       title: 'D3 Basic',
       tags: ['chart', 'd3', 'bar'].map(Tag.of),
       description: `How to simply integrate with d3 library`,
@@ -322,7 +296,6 @@ export const showcaseRoutes: Route[] = [
     path: 'type-ahead',
     component: TypeAheadComponent,
     data: {
-      id: 'type-ahead',
       title: 'Type-ahead',
       tags: ['type-ahead', 'autocomplete', 'search'].map(Tag.of),
       description: '`type-ahead` is composed of `toggle` and a helper directive',
@@ -333,7 +306,6 @@ export const showcaseRoutes: Route[] = [
     path: 'zoom',
     component: ZoomComponent,
     data: {
-      id: 'zoom',
       title: 'Zoom',
       tags: ['zoom', 'measure', 'size', 'mapping', 'rect'].map(Tag.of),
       description: 'Zoom is composed of two logic: `measure` & `mapping`',
@@ -344,7 +316,6 @@ export const showcaseRoutes: Route[] = [
     path: 'tooltip',
     component: TooltipComponent,
     data: {
-      id: 'tooltip',
       title: 'Tooltip',
       tags: ['tooltip', 'measure', 'size', 'locate', 'rect'].map(Tag.of),
       description: '`tooltip` is an instance of `measure`',

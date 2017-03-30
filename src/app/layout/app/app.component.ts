@@ -1,9 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Metadata} from '../../utils/meta-data';
-import {SourceCodeService} from '../../core/source-code.service';
-import {showcaseRoutes} from '../../utils/showcase-routes';
-import {Tag} from '../../utils/tag';
-import * as _ from 'lodash';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +7,6 @@ import * as _ from 'lodash';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private sourceCode: SourceCodeService) {
-  }
-
   tags = ['toggle', 'select', 'multi-select', 'pager', 'viewport', 'calendar', 'zoom'];
 
   private _filter: string;
@@ -31,11 +24,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.setFilter('');
-    showcaseRoutes
-      .map((route) => route.data)
-      .forEach((data) => {
-        const meta = data as Metadata;
-        this.sourceCode.loadDocument(meta.id).subscribe((content) => meta.document = content);
-      });
   }
 }

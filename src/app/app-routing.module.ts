@@ -1,21 +1,19 @@
 import {Route, RouterModule} from '@angular/router';
-import {DocumentViewerComponent} from './layout/document-viewer/document-viewer.component';
-import {SourceViewerComponent} from './layout/source-viewer/source-viewer.component';
 import {UpdateTitleGuard} from './core/update-title.service';
 import {showcaseRoutes} from './utils/showcase-routes';
-import {BriefViewerComponent} from './layout/brief-viewer/brief-viewer.component';
 import {Author} from './utils/author';
 import {HomeComponent} from './showcase/home/home.component';
+import {UpdateMetadataGuard} from './core/update-metadata-guard.service';
 
 export const routes: Route[] = [
   {
     path: '',
-    canActivateChild: [UpdateTitleGuard],
+    canActivateChild: [UpdateTitleGuard, UpdateMetadataGuard],
     children: [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/home(doc:home//src:home//brief:home)'
+        redirectTo: '/home'
       },
       {
         path: 'home',
@@ -28,21 +26,6 @@ export const routes: Route[] = [
       },
       ...showcaseRoutes
     ],
-  },
-  {
-    path: ':id',
-    outlet: 'doc',
-    component: DocumentViewerComponent,
-  },
-  {
-    path: ':id',
-    outlet: 'brief',
-    component: BriefViewerComponent,
-  },
-  {
-    path: ':id',
-    outlet: 'src',
-    component: SourceViewerComponent,
   },
 ];
 
