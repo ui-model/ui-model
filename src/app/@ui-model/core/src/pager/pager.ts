@@ -120,7 +120,7 @@ export class Pager extends Stateful {
     return this.count - 1;
   }
 
-  prev(step = 1): void {
+  prev(step: number = 1): void {
     this.index -= step;
   }
 
@@ -128,7 +128,7 @@ export class Pager extends Stateful {
     return !this.isFirst;
   }
 
-  next(step = 1): void {
+  next(step: number = 1): void {
     this.index += step;
   }
 

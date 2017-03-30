@@ -61,6 +61,6 @@ export class TableComponent implements OnInit {
   fields = fields;
   items = items;
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 }

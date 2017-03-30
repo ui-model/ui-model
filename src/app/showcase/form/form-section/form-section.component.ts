@@ -14,7 +14,7 @@ export class FormSectionComponent implements OnInit {
   test: string;
   @ViewChildren(NgModel) models: QueryList<NgModel>;
 
-  ngOnInit() {
+  ngOnInit(): void {
     Promise.resolve().then(() => {
       this.models.forEach((model) => {
         this.group.control.addControl(model.name, model.control);

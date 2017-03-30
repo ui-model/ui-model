@@ -13,7 +13,7 @@ export class ModalComponent implements OnInit {
 
   toggle = new Toggle();
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   open(): void {

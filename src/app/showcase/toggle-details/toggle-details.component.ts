@@ -9,7 +9,7 @@ export class ToggleDetailsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

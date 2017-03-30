@@ -91,6 +91,7 @@
         "variable-declaration": "nospace"
       }
     ],
+    "typedef": [true, "call-signature", "parameter"],
     "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,

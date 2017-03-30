@@ -11,7 +11,7 @@ export class NavHeaderComponent implements OnInit {
   constructor(public title: Title) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

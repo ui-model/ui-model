@@ -13,12 +13,5 @@ const CALENDAR_VALUE_ACCESSOR = {
   styleUrls: ['calendar.component.scss'],
   providers: [CALENDAR_VALUE_ACCESSOR],
 })
-export class CalendarComponent extends CalendarValueAccessor implements OnInit {
-
-  constructor() {
-    super();
-  }
-
-  ngOnInit() {
-  }
+export class CalendarComponent extends CalendarValueAccessor {
 }

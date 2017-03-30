@@ -16,14 +16,14 @@ export class BriefViewerComponent implements OnInit, OnDestroy {
   sub: Subscription;
   meta: Metadata;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sub = this.route.url.subscribe(() => {
       const primaryRoute = this.route.parent.children[0].children.find((value) => value.outlet === 'primary');
       this.meta = primaryRoute.snapshot.data as Metadata;
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 }

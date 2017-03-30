@@ -31,7 +31,7 @@ export class MultiBindingDirective {
     }
   }
 
-  private update() {
+  private update(): void {
     const element = this.element.nativeElement as Element;
     for (const key in this._value) {
       if (this._value.hasOwnProperty(key)) {

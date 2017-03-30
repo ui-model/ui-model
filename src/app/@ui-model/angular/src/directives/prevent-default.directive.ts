@@ -1,13 +1,15 @@
 import {Directive, HostListener} from '@angular/core';
 
 @Directive({
-  selector: '[uiPreventDefault]'
+  selector: '[uiPreventDefault]',
 })
 export class PreventDefaultDirective {
 
-  constructor() { }
+  constructor() {
+  }
+
   @HostListener('click', ['$event'])
-  click($event): void {
+  click($event: MouseEvent): void {
     $event.preventDefault();
   }
 }

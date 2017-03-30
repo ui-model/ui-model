@@ -18,7 +18,7 @@ export class DocumentViewerComponent implements OnInit, OnDestroy {
   sub: Subscription;
   document: Observable<string>;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sub = this.route.url.subscribe(() => {
       const primaryRoute = this.route.parent.children[0].children.find((value) => value.outlet === 'primary');
       const data = primaryRoute.snapshot.data as Metadata;
@@ -35,7 +35,7 @@ export class DocumentViewerComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 }

@@ -14,13 +14,13 @@ export class ModalContentComponent implements OnInit {
   @Output() close = new EventEmitter<void>();
   @Output() cancel = new EventEmitter<void>();
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log('Initializing inner content...');
   }
 
   time = 0;
 
-  doClose() {
+  doClose(): void {
     this.time = 5;
     Observable.interval(500).take(5).subscribe(
       (time) => this.time--,

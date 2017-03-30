@@ -11,6 +11,6 @@ export class GlobalModalComponent implements OnInit {
   constructor(public modal: ModalService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 }

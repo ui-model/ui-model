@@ -12,7 +12,7 @@ export class Select<T> extends Stateful {
     this.changed();
   }
 
-  setTransformer(value: Transformer<T, any>) {
+  setTransformer(value: Transformer<T, any>): this {
     this.transformer = value;
     return this;
   }

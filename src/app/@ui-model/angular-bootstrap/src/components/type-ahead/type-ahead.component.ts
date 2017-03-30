@@ -6,7 +6,7 @@ import {SafeHtml} from '@angular/platform-browser';
 import 'rxjs/add/operator/skipWhile';
 import 'rxjs/add/operator/do';
 import {Toggle} from '@ui-model/core';
-import {Transformer, Supplier, isFunction} from '@ui-model/common';
+import {isFunction, Supplier, Transformer} from '@ui-model/common';
 
 const TYPE_AHEAD_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -20,8 +20,8 @@ const TYPE_AHEAD_ACCESSOR = {
   styleUrls: ['./type-ahead.component.scss'],
   providers: [TYPE_AHEAD_ACCESSOR],
 })
-export class TypeAheadComponent<T extends {format?: Supplier<SafeHtml>, parse?: Supplier<string>}>
-implements ControlValueAccessor, OnInit, OnDestroy {
+export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?: Supplier<string> }>
+  implements ControlValueAccessor, OnInit, OnDestroy {
 
   dropDown = new Toggle();
 
@@ -59,7 +59,7 @@ implements ControlValueAccessor, OnInit, OnDestroy {
 
   sub: Subscription;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sub = this.checker.asObservable()
       .skipWhile((term) => !term)
       .debounceTime(200)
@@ -71,7 +71,7 @@ implements ControlValueAccessor, OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.checker.complete();
     this.sub.unsubscribe();
   }

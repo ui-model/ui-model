@@ -18,16 +18,16 @@ export class D3Component {
     150,
   ];
 
-  colorOf(index): string {
+  colorOf(index: number): string {
     return schemeCategory10[index];
   }
 
-  heightOf(item): number {
+  heightOf(item: number): number {
     const scale = scaleLinear().domain([0, max(this.items)]).range([0, 1000]);
     return scale(item);
   }
 
-  offsetOf(index): number {
+  offsetOf(index: number): number {
     const scale = scaleBand().domain(this.items.map((v, i) => i.toString())).paddingOuter(10).range([0, 1000]);
     return scale(index.toString());
   }

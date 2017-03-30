@@ -13,7 +13,7 @@ export class TooltipComponent {
   total = 10;
   html = '<strong>strong</strong><em>def</em>';
 
-  alert() {
+  alert(): void {
     alert(1);
   }
 }

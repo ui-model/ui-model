@@ -23,7 +23,7 @@ export class SourceViewerComponent implements OnInit, OnDestroy {
   source: Observable<string>;
 
   sub: Subscription;
-  ngOnInit() {
+  ngOnInit(): void {
     this.sub = this.route.params.subscribe(({id, ext = 'html'}) => {
       const primeRoute = this.route.parent.children[0].children.find((route) => route.outlet === 'primary');
       this.meta = primeRoute.snapshot.data as Metadata;
@@ -34,7 +34,7 @@ export class SourceViewerComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 }

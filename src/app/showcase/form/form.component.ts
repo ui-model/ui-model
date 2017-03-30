@@ -10,7 +10,7 @@ export class FormComponent {
   email: string;
   report: string;
 
-  submit(value): void {
+  submit(value: any): void {
     this.report = JSON.stringify(value, null, 2);
   }
 

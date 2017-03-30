@@ -13,7 +13,7 @@ export class Modal {
   icon: string;
   type: ModalType;
 
-  static tip(message: string, title = 'Tip'): Modal {
+  static tip(message: string, title: string = 'Tip'): Modal {
     const result = new Modal();
     result.message = message;
     result.title = title;

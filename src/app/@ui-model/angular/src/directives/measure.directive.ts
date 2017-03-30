@@ -24,7 +24,7 @@ export class MeasureDirective implements OnInit {
   }
 
   @HostListener('load')
-  onLoad() {
+  onLoad(): void {
     this.update();
   }
 
