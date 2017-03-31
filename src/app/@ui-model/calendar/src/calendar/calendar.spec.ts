@@ -1,6 +1,5 @@
 import {Calendar} from './calendar';
 import * as moment from 'moment';
-import {ISO_8601} from 'moment';
 
 fdescribe('Calendar', () => {
   beforeEach(() => {

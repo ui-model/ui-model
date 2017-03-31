@@ -7,20 +7,31 @@ import 'rxjs/add/observable/zip';
 import {SourceCodeService} from './source-code.service';
 
 @Injectable()
-export class MetadataService extends Metadata {
+export class MetadataService {
   constructor(private api: SourceCodeService) {
-    super();
   }
 
-  id: string;
-  title: string;
-  tags: Tag[];
-  description: string;
+  meta: Metadata = new Metadata();
+  get id(): string {
+    return this.meta.id;
+  }
+  get title(): string {
+    return this.meta.title;
+  }
+  get tags(): Tag[] {
+    return this.meta.tags;
+  }
+  get description(): string {
+    return this.meta.description;
+  }
+  get authors(): Author[] {
+    return this.meta.authors;
+  }
+
   document: string;
   types = ['html', 'ts', 'scss', 'spec.ts'];
   source: string;
   sources: string[] = [];
-  authors: Author[];
 
   private _type: string = this.types[0];
 
@@ -35,7 +46,7 @@ export class MetadataService extends Metadata {
   }
 
   load(id: string, metadata: Metadata): Observable<any> {
-    Object.assign(this, new Metadata(), metadata);
+    this.meta = metadata;
     return Observable.zip(
       this.api.loadDocument(id)
         .do((doc) => this.document = doc),
