@@ -1,4 +1,4 @@
-import { IsNotEmptyPipe } from './is-not-empty.pipe';
+import {IsNotEmptyPipe} from './is-not-empty.pipe';
 
 describe('IsNotEmptyPipe', () => {
   it('create an instance', () => {

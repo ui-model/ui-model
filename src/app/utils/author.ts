@@ -1,4 +1,4 @@
-const authors: {[index: string]: Author} = {
+const authors: { [index: string]: Author } = {
   wzc: {
     name: 'Zhicheng Wang',
     email: 'asnowwolf@gmail.com',

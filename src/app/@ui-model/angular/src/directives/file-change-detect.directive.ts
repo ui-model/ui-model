@@ -1,5 +1,5 @@
 /* tslint:disable:directive-selector */
-import {Directive, HostListener, ChangeDetectorRef} from '@angular/core';
+import {ChangeDetectorRef, Directive, HostListener} from '@angular/core';
 
 @Directive({
   selector: 'input[type=file]'

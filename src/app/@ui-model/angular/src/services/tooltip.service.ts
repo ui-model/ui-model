@@ -21,11 +21,11 @@ export class TooltipService {
   targetRect: Rect;
 
   private _message: string | SafeHtml;
-  get message(): string|SafeHtml {
+  get message(): string | SafeHtml {
     return this._message;
   }
 
-  set message(value: string|SafeHtml) {
+  set message(value: string | SafeHtml) {
     this._message = value;
     this.changed();
   }

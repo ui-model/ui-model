@@ -12,18 +12,23 @@ export class MetadataService {
   }
 
   meta: Metadata = new Metadata();
+
   get id(): string {
     return this.meta.id;
   }
+
   get title(): string {
     return this.meta.title;
   }
+
   get tags(): Tag[] {
     return this.meta.tags;
   }
+
   get description(): string {
     return this.meta.description;
   }
+
   get authors(): Author[] {
     return this.meta.authors;
   }

@@ -1,9 +1,8 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {By, Title} from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {Title} from '@angular/platform-browser';
 
-import { NavHeaderComponent } from './nav-header.component';
+import {NavHeaderComponent} from './nav-header.component';
 import {RouterModule} from '@angular/router';
 
 xdescribe('NavHeaderComponent', () => {
@@ -12,11 +11,11 @@ xdescribe('NavHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavHeaderComponent ],
+      declarations: [NavHeaderComponent],
       imports: [RouterModule],
       providers: [Title],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

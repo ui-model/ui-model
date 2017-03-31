@@ -30,5 +30,5 @@ export class RadioGroupComponent {
     },
   ];
 
-  select = new Select<{label: string, id: string}>().select(this.options[1]);
+  select = new Select<{ label: string, id: string }>().select(this.options[1]);
 }

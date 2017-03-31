@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {SafeScript, DomSanitizer} from '@angular/platform-browser';
+import {DomSanitizer, SafeScript} from '@angular/platform-browser';
 
 @Pipe({
   name: 'safeScript'

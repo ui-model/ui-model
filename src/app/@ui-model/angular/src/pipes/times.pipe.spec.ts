@@ -1,4 +1,4 @@
-import { TimesPipe } from './times.pipe';
+import {TimesPipe} from './times.pipe';
 
 describe('TimesPipe', () => {
   it('create an instance', () => {

@@ -1,17 +1,17 @@
-    <div class="card">
-      <div class="card-header">
-        <label>
-          <input type="checkbox" [indeterminate]="select.indeterminate" [(ngModel)]="select.allSelected"/>
-          <span i18n>All</span>
-        </label>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let option of options">
-          <label>
-            <input type="checkbox" [ngModel]="select.selected(option)"
-                   (ngModelChange)="select.selectAs(option, $event)"/>
-            <span [innerHTML]="option.label"></span>
-          </label>
-        </li>
-      </ul>
-    </div>
+<div class="card">
+  <div class="card-header">
+    <label>
+      <input type="checkbox" [indeterminate]="select.indeterminate" [(ngModel)]="select.allSelected"/>
+      <span i18n>All</span>
+    </label>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let option of options">
+      <label>
+        <input type="checkbox" [ngModel]="select.selected(option)"
+               (ngModelChange)="select.selectAs(option, $event)"/>
+        <span [innerHTML]="option.label"></span>
+      </label>
+    </li>
+  </ul>
+</div>

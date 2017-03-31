@@ -1,4 +1,4 @@
-import {Directive, Output, EventEmitter, ElementRef, OnInit, Input, HostListener} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import {Rect} from '@ui-model/common';
 
 @Directive({

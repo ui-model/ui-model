@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TabSetUsingDirectiveComponent } from './tab-set-using-directive.component';
+import {TabSetUsingDirectiveComponent} from './tab-set-using-directive.component';
 import {UiModelModule} from '@ui-model/angular';
 import {FormsModule} from '@angular/forms';
 
@@ -10,10 +10,10 @@ describe('TabSetUsingDirectiveComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TabSetUsingDirectiveComponent ],
+      declarations: [TabSetUsingDirectiveComponent],
       imports: [UiModelModule, FormsModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

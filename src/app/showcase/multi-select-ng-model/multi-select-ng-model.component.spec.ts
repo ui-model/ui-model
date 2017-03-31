@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MultiSelectNgModelComponent } from './multi-select-ng-model.component';
+import {MultiSelectNgModelComponent} from './multi-select-ng-model.component';
 import {UiModelModule} from '@ui-model/angular';
 import {FormsModule} from '@angular/forms';
 
@@ -10,10 +10,10 @@ describe('MultiSelectNgModelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MultiSelectNgModelComponent ],
+      declarations: [MultiSelectNgModelComponent],
       imports: [UiModelModule, FormsModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

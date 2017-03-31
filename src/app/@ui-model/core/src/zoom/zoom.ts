@@ -1,4 +1,4 @@
-import {Stateful, Rect} from '@ui-model/common';
+import {Rect, Stateful} from '@ui-model/common';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';

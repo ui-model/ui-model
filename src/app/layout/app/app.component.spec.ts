@@ -8,7 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {GlobalModalComponent} from '../global-modal/global-modal.component';
 import {UiModelBootstrapModule} from '@ui-model/angular-bootstrap';
 import {SourceCodeService} from '../../core/source-code.service';
-import {Http, HttpModule} from '@angular/http';
+import {HttpModule} from '@angular/http';
 
 xdescribe('AppComponent', () => {
   beforeEach(() => {

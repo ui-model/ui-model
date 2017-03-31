@@ -1,4 +1,4 @@
-import {Directive, Input, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, HostListener, Input, Output} from '@angular/core';
 
 @Directive({
   selector: '[uiFocus]'
@@ -13,6 +13,7 @@ export class FocusDirective {
   get focus(): boolean | string {
     return this.element === document.activeElement;
   }
+
   @Input('uiFocus')
   set focus(value: boolean | string) {
     if (value === '' || value) {
@@ -21,6 +22,7 @@ export class FocusDirective {
   }
 
   @Output('uiFocusChange') focusChange = new EventEmitter<boolean>();
+
   @HostListener('focus')
   onFocus(): void {
     this.focusChange.emit(true);

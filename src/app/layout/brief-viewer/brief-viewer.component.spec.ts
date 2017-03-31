@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {BriefViewerComponent} from './brief-viewer.component';
 import {SharedModule} from '../../shared/shared.module';
-import {ActivatedRoute, RouterModule} from '@angular/router';
+import {RouterModule} from '@angular/router';
 
 xdescribe('BriefViewerComponent', () => {
   let component: BriefViewerComponent;

@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import {RadioGroupComponent} from './radio-group.component';
-import {ComponentFixture, async, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 describe('RadioGroupComponent', () => {
   let component: RadioGroupComponent<boolean>;

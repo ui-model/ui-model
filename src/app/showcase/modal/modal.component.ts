@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Toggle} from '@ui-model/core';
-import {ModalService, Modal} from '@ui-model/angular';
+import {Modal, ModalService} from '@ui-model/angular';
 
 @Component({
   selector: 'app-modal',

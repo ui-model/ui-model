@@ -1,4 +1,4 @@
-import {Stateful, Coordinate} from '@ui-model/common';
+import {Coordinate, Stateful} from '@ui-model/common';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
@@ -86,7 +86,7 @@ export class Pie extends Stateful {
     return this.beginPercent + (this.endPercent - this.beginPercent) / 2;
   }
 
-  mapToXY(percent: number, radius: number): {x: number, y: number} {
+  mapToXY(percent: number, radius: number): { x: number, y: number } {
     const coordinate = new Coordinate();
     coordinate.cx = this.cx;
     coordinate.cy = this.cy;

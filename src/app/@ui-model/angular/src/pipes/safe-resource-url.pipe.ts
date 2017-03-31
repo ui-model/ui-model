@@ -1,5 +1,5 @@
-import {Pipe, PipeTransform, OnDestroy} from '@angular/core';
-import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser';
+import {OnDestroy, Pipe, PipeTransform} from '@angular/core';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 import {isString} from '@ui-model/common';
 
 @Pipe({
@@ -11,7 +11,7 @@ export class SafeResourceUrlPipe implements PipeTransform, OnDestroy {
 
   private blobUrls = [];
 
-  transform(value: string|File): SafeResourceUrl {
+  transform(value: string | File): SafeResourceUrl {
     let url;
     if (isString(value)) {
       url = value as string;

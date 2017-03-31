@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MultiSelectCheckboxComponent } from './multi-select-checkbox.component';
+import {MultiSelectCheckboxComponent} from './multi-select-checkbox.component';
 import {UiModelModule} from '@ui-model/angular';
 import {FormsModule} from '@angular/forms';
 
@@ -10,10 +10,10 @@ describe('MultiSelectCheckboxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MultiSelectCheckboxComponent ],
+      declarations: [MultiSelectCheckboxComponent],
       imports: [UiModelModule, FormsModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -7,9 +7,11 @@ import {Component} from '@angular/core';
 })
 export class ToggleNgModelComponent {
   more = false;
+
   open(): void {
     this.more = true;
   }
+
   close(): void {
     this.more = false;
   }

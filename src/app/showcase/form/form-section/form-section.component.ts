@@ -1,4 +1,4 @@
-import {Component, ViewChildren, QueryList, OnInit} from '@angular/core';
+import {Component, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {NgModel, NgModelGroup} from '@angular/forms';
 
 @Component({

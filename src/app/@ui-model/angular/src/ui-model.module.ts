@@ -29,7 +29,7 @@ import {PreventDefaultDirective} from './directives/prevent-default.directive';
 import {DefaultPipe} from './pipes/default.pipe';
 import {IsEmptyPipe} from './pipes/is-empty.pipe';
 import {IsNotEmptyPipe} from './pipes/is-not-empty.pipe';
-import { TimesPipe } from './pipes/times.pipe';
+import {TimesPipe} from './pipes/times.pipe';
 
 @NgModule({
   imports: [

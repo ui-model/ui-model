@@ -1,5 +1,5 @@
 import {Component, forwardRef, Input} from '@angular/core';
-import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {Select} from '@ui-model/core';
 
 const RADIO_GROUP_VALUE_ACCESSOR = {

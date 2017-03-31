@@ -77,7 +77,7 @@ export class PieChart extends Stateful {
   private buildPies(serials: number[]): Pie[] {
     const total = serials.reduce((result, current) => result + current, 0);
     const percents = serials.map((serial) => serial / total);
-    const ranges: {begin: number, end: number}[] = [];
+    const ranges: { begin: number, end: number }[] = [];
     let totalPercent = 0;
     percents.forEach((percent) => {
       ranges.push({

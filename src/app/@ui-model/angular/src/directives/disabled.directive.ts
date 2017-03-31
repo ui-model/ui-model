@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input, HostBinding} from '@angular/core';
+import {Directive, ElementRef, HostBinding, Input} from '@angular/core';
 
 @Directive({
   selector: '[uiDisabled],[ui-disabled]'

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ToggleImagesComponent } from './toggle-images.component';
+import {ToggleImagesComponent} from './toggle-images.component';
 import {UiModelModule} from '@ui-model/angular';
 
 describe('ToggleImagesComponent', () => {
@@ -9,10 +9,10 @@ describe('ToggleImagesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToggleImagesComponent ],
+      declarations: [ToggleImagesComponent],
       imports: [UiModelModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

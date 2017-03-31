@@ -1,7 +1,7 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import {TableField} from '@ui-model/core';
 import * as moment from 'moment';
-import {Transformers, isUndefined, dataTypeOf, DataType} from '@ui-model/common';
+import {DataType, dataTypeOf, isUndefined, Transformers} from '@ui-model/common';
 
 @Pipe({
   name: 'format'

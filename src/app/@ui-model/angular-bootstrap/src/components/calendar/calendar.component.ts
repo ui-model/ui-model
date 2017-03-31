@@ -1,4 +1,4 @@
-import {Component, OnInit, forwardRef} from '@angular/core';
+import {Component, forwardRef} from '@angular/core';
 import {CalendarValueAccessor} from '@ui-model/angular';
 import {NG_VALUE_ACCESSOR} from '@angular/forms';
 

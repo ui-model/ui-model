@@ -1,4 +1,4 @@
-import {Directive, Output, EventEmitter, OnDestroy, OnInit, ElementRef} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 
 @Directive({
   selector: '[uiClickOutside]'

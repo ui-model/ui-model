@@ -1,4 +1,4 @@
-import {Directive, Input, HostListener} from '@angular/core';
+import {Directive, HostListener, Input} from '@angular/core';
 import {TooltipService} from '../services/tooltip.service';
 import {MeasureDirective} from './measure.directive';
 import {SafeHtml} from '@angular/platform-browser';

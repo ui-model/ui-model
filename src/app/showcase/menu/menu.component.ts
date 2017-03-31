@@ -80,6 +80,6 @@ export class MenuComponent {
     },
   ];
 
-  select = new Select<{label: string, id: string}>().select(this.options[1]);
-  subMenu = new Select<{label: string, id: string}>();
+  select = new Select<{ label: string, id: string }>().select(this.options[1]);
+  subMenu = new Select<{ label: string, id: string }>();
 }

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TabSetComponent } from './tab-set.component';
+import {TabSetComponent} from './tab-set.component';
 import {UiModelModule} from '@ui-model/angular';
 
 describe('TabSetComponent', () => {
@@ -9,10 +9,10 @@ describe('TabSetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TabSetComponent ],
+      declarations: [TabSetComponent],
       imports: [UiModelModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

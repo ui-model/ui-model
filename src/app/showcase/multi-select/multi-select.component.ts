@@ -27,7 +27,7 @@ export class MultiSelectComponent {
     }
   ];
 
-  select = new MultiSelect<{code: string, label: string}>().setOptions(this.options).setTransformer(Transformers.objectByField('code'));
+  select = new MultiSelect<{ code: string, label: string }>().setOptions(this.options).setTransformer(Transformers.objectByField('code'));
 
   getCode = ({code}) => {
     return code;
