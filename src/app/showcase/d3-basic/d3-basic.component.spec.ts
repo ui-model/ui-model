@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { D3Component } from './d3.component';
+import { D3BasicComponent } from './d3-basic.component';
 
-describe('D3Component', () => {
-  let component: D3Component;
-  let fixture: ComponentFixture<D3Component>;
+describe('D3BasicComponent', () => {
+  let component: D3BasicComponent;
+  let fixture: ComponentFixture<D3BasicComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ D3Component ]
+      declarations: [ D3BasicComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(D3Component);
+    fixture = TestBed.createComponent(D3BasicComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

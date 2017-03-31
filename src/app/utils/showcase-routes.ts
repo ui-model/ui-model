@@ -29,7 +29,7 @@ import {ToggleDetailsComponent} from '../showcase/toggle-details/toggle-details.
 import {ToggleImagesComponent} from '../showcase/toggle-images/toggle-images.component';
 import {ToggleNgModelComponent} from '../showcase/toggle-ng-model/toggle-ng-model.component';
 import {SelectNgModelComponent} from '../showcase/select-ng-model/select-ng-model.component';
-import {D3Component} from '../showcase/d3/d3.component';
+import {D3BasicComponent} from '../showcase/d3-basic/d3-basic.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -283,8 +283,8 @@ export const showcaseRoutes: Route[] = [
     }
   },
   {
-    path: 'd3',
-    component: D3Component,
+    path: 'd3-basic',
+    component: D3BasicComponent,
     data: {
       title: 'D3 Basic',
       tags: ['chart', 'd3', 'bar'].map(Tag.of),
