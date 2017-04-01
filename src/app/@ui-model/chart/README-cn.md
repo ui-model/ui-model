@@ -1,4 +1,4 @@
-# 新年新思路：ui-model
+# ui-model
 
 ## 什么是ui-model？
 

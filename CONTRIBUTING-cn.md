@@ -18,14 +18,18 @@
 
 # 如何开发？
 
-我们这个实现的技术栈目前是TypeScript / Mocha / Chai，都已经在package.json中配置好了。如果在命令行模式下，请执行`npm test`命令。如果使用IntelliJ / WebStorm，请根据package.json中的test脚本配置上mocha，并运行，建议开启监控模式。
+我们这个实现的技术栈目前是TypeScript / Angular CLI，都已经在package.json中配置好了。
 
-如果不使用IDE，请执行`npm start`命令，它将开启监控模式，src目录下任何ts文件的变化都会触发单元测试以及lint任务。
+库的开发调试过程完全基于Angular CLI，但是它发布出的包并不会依赖这些，而且除了名字中含有angular字样的包之外，都不依赖任何具体的前端框架
 
-请确保`npm test`命令和`npm run lint`命令通过，CI服务器上将会检查它们。
+如果使用IntelliJ / WebStorm，可以通过"Edit Configuration"来配置karma，配置文件使用`./karma.conf.js`，并运行测试，建议开启监控模式。
+
+如果不使用IDE，请执行`npm run test-dev`命令，它将开启监控模式，src目录下任何ts文件的变化都会触发单元测试。
+
+提交PR前请确保`npm test`命令和`npm run lint`命令通过，CI服务器上将会检查它们。
 
 # 设计原则
 
 1. 善用TypeScript语法特性，特别是类型注解和泛型等。
 2. 测试驱动开发。
-3. 所有model都直接或间接派生自Subject，当引起变化时往流中推送事件。除了“变化”之外的事件不要直接推送到流中，通常不要利用某个字段来区分事件类型（方式待定）。
+3. 遵循官方的风格指南。
