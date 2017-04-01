@@ -30,6 +30,7 @@ import {ToggleImagesComponent} from '../showcase/toggle-images/toggle-images.com
 import {ToggleNgModelComponent} from '../showcase/toggle-ng-model/toggle-ng-model.component';
 import {SelectNgModelComponent} from '../showcase/select-ng-model/select-ng-model.component';
 import {D3BasicComponent} from '../showcase/d3-basic/d3-basic.component';
+import {InfiniteScrollComponent} from '../showcase/infinite-scroll/infinite-scroll.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -319,6 +320,16 @@ export const showcaseRoutes: Route[] = [
       title: 'Tooltip',
       tags: ['tooltip', 'measure', 'size', 'locate', 'rect'].map(Tag.of),
       description: '`tooltip` is an instance of `measure`',
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'infinite-scroll',
+    component: InfiniteScrollComponent,
+    data: {
+      title: 'Infinite Scroll',
+      tags: ['scroll', 'measure', 'super list', 'locate'].map(Tag.of),
+      description: 'List of millions of rows',
       authors: ['wzc'].map(Author.of),
     }
   },

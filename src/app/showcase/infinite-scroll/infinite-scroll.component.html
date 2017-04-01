@@ -1,0 +1,7 @@
+<div class="scroll-pane" uiMeasure #box="uiMeasure" (scroll)="box.update();viewport.scrollTo(box.scrollRect)">
+  <div class="before" [style.height.px]="viewport.headerHeight"></div>
+  <div class="list-group">
+    <div class="list-group-item" *ngFor="let item of viewport.items">{{item}}</div>
+  </div>
+  <div class="after" [style.height.px]="viewport.footerHeight"></div>
+</div>
