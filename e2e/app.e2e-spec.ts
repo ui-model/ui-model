@@ -1,6 +1,6 @@
 import { UiModelAngularShowcasePage } from './app.po';
 
-describe('ui-model-angular-showcase App', function() {
+describe('ui-model App', function() {
   let page: UiModelAngularShowcasePage;
 
   beforeEach(() => {
