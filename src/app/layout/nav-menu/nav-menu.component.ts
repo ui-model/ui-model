@@ -42,6 +42,5 @@ function match(pattern: RegExp, meta: Metadata): boolean {
   return meta && pattern.test(meta.id) ||
     pattern.test(meta.title) ||
     pattern.test(meta.description) ||
-    pattern.test(meta.document) ||
     matchAuthors(meta.authors, pattern) || matchTags(meta.tags, pattern);
 }

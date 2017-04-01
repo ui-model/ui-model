@@ -45,6 +45,7 @@ import {ToggleImagesComponent} from './showcase/toggle-images/toggle-images.comp
 import {ToggleNgModelComponent} from './showcase/toggle-ng-model/toggle-ng-model.component';
 import {SelectNgModelComponent} from './showcase/select-ng-model/select-ng-model.component';
 import {D3BasicComponent} from './showcase/d3-basic/d3-basic.component';
+import { ShowcaseComponent } from './layout/showcase/showcase.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import {D3BasicComponent} from './showcase/d3-basic/d3-basic.component';
     ToggleNgModelComponent,
     SelectNgModelComponent,
     D3BasicComponent,
+    ShowcaseComponent,
   ],
   imports: [
     BrowserModule,

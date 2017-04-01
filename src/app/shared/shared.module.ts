@@ -4,6 +4,7 @@ import {MarkdownPipe} from './pipes/markdown.pipe';
 import {UiModelModule} from '@ui-model/angular';
 import {UiModelBootstrapModule} from '@ui-model/angular-bootstrap';
 import {HighlightPipe} from './pipes/highlight.pipe';
+import {MarkdownViewerComponent} from './components/markdown-viewer/markdown-viewer.component';
 
 @NgModule({
   imports: [
@@ -11,12 +12,13 @@ import {HighlightPipe} from './pipes/highlight.pipe';
     UiModelModule,
     UiModelBootstrapModule,
   ],
-  declarations: [MarkdownPipe, HighlightPipe],
+  declarations: [MarkdownPipe, HighlightPipe, MarkdownViewerComponent],
   exports: [
     UiModelModule,
     UiModelBootstrapModule,
     MarkdownPipe,
     HighlightPipe,
+    MarkdownViewerComponent,
   ],
 })
 export class SharedModule {

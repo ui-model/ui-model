@@ -4,6 +4,7 @@ import {showcaseRoutes} from './utils/showcase-routes';
 import {Author} from './utils/author';
 import {HomeComponent} from './showcase/home/home.component';
 import {UpdateMetadataGuard} from './core/update-metadata-guard.service';
+import {ShowcaseComponent} from './layout/showcase/showcase.component';
 
 export const routes: Route[] = [
   {
@@ -24,7 +25,11 @@ export const routes: Route[] = [
           authors: ['wzc'].map(Author.of),
         }
       },
-      ...showcaseRoutes
+      {
+        path: '',
+        component: ShowcaseComponent,
+        children: showcaseRoutes,
+      },
     ],
   },
 ];

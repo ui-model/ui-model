@@ -1,0 +1,38 @@
+@import "../../styles/common";
+
+:host {
+  display: block;
+}
+
+/deep/ {
+  h1 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid $gray-lighter;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  h5, h6 {
+    font-size: 1rem;
+  }
+  blockquote {
+    border-left: 3px solid $brand-info;
+    color: $gray-light;
+    padding-left: 0.5em;
+  }
+  ul, ol {
+    padding-left: 1em;
+  }
+}
