@@ -60,7 +60,7 @@ export class MetadataService {
           .do((source) => {
             this.sources[index] = source;
           });
-      }))
-      .do(() => this.type = this.types[0]);
+      }),
+    ).do(() => this.type = this.types[0]);
   }
 }
