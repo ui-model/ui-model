@@ -45,8 +45,10 @@ import {ToggleImagesComponent} from './showcase/toggle-images/toggle-images.comp
 import {ToggleNgModelComponent} from './showcase/toggle-ng-model/toggle-ng-model.component';
 import {SelectNgModelComponent} from './showcase/select-ng-model/select-ng-model.component';
 import {D3BasicComponent} from './showcase/d3-basic/d3-basic.component';
-import { InfiniteScrollComponent } from './showcase/infinite-scroll/infinite-scroll.component';
-import { ShowcaseComponent } from './layout/showcase/showcase.component';
+import {InfiniteScrollComponent} from './showcase/infinite-scroll/infinite-scroll.component';
+import {ShowcaseComponent} from './layout/showcase/showcase.component';
+import {D3LineChartComponent} from './showcase/d3-line-chart/d3-line-chart.component';
+import {UiModelD3Module} from './@ui-model/angular-d3/src/ui-model-d3.module';
 
 @NgModule({
   declarations: [
@@ -91,6 +93,7 @@ import { ShowcaseComponent } from './layout/showcase/showcase.component';
     D3BasicComponent,
     InfiniteScrollComponent,
     ShowcaseComponent,
+    D3LineChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,6 +101,7 @@ import { ShowcaseComponent } from './layout/showcase/showcase.component';
     HttpModule,
     SharedModule,
     CoreModule,
+    UiModelD3Module,
     routing,
   ],
   providers: [

@@ -6,6 +6,10 @@ export function isUndefined(value?: any): boolean {
   return typeof value === 'undefined';
 }
 
+export function isDefined(value?: any): boolean {
+  return !isUndefined(value);
+}
+
 export function isString(value: any): boolean {
   return typeof value === 'string';
 }

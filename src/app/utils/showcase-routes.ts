@@ -31,6 +31,7 @@ import {ToggleNgModelComponent} from '../showcase/toggle-ng-model/toggle-ng-mode
 import {SelectNgModelComponent} from '../showcase/select-ng-model/select-ng-model.component';
 import {D3BasicComponent} from '../showcase/d3-basic/d3-basic.component';
 import {InfiniteScrollComponent} from '../showcase/infinite-scroll/infinite-scroll.component';
+import {D3LineChartComponent} from '../showcase/d3-line-chart/d3-line-chart.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -290,6 +291,16 @@ export const showcaseRoutes: Route[] = [
       title: 'D3 Basic',
       tags: ['chart', 'd3', 'bar'].map(Tag.of),
       description: `How to simply integrate with d3 library`,
+      authors: ['wzc'].map(Author.of),
+    }
+  },
+  {
+    path: 'd3-line-chart',
+    component: D3LineChartComponent,
+    data: {
+      title: 'D3 Line Chart',
+      tags: ['chart', 'd3', 'line'].map(Tag.of),
+      description: `How to integrate with d3 library through ui-model`,
       authors: ['wzc'].map(Author.of),
     }
   },

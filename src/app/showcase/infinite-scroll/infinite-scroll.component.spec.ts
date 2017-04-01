@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InfiniteScrollComponent } from './infinite-scroll.component';
+import {InfiniteScrollComponent} from './infinite-scroll.component';
+import {MeasureDirective} from '@ui-model/angular';
 
 describe('InfiniteScrollComponent', () => {
   let component: InfiniteScrollComponent;
@@ -8,9 +9,9 @@ describe('InfiniteScrollComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InfiniteScrollComponent ]
+      declarations: [InfiniteScrollComponent, MeasureDirective]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -51,7 +51,7 @@ export class MetadataService {
   }
 
   load(id: string, metadata: Metadata): Observable<any> {
-    this.meta = metadata;
+    this.meta = Object.assign({}, metadata, {id: id});
     return Observable.zip(
       this.api.loadDocument(id)
         .do((doc) => this.document = doc),
