@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {Metadata} from '../utils/meta-data';
-import {Tag} from '../utils/tag';
-import {Author} from '../utils/author';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Metadata } from '../utils/meta-data';
+import { Tag } from '../utils/tag';
+import { Author } from '../utils/author';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/zip';
-import {SourceCodeService} from './source-code.service';
+import { SourceCodeService } from './source-code.service';
 
 @Injectable()
 export class MetadataService {
@@ -54,12 +54,10 @@ export class MetadataService {
     this.meta = Object.assign({}, metadata, {id: id});
     return Observable.zip(
       this.api.loadDocument(id)
-        .do((doc) => this.document = doc),
+        .do((doc) => this.document = doc, () => this.document = ''),
       ...this.types.map((type, index) => {
         return this.api.loadFile(id, type)
-          .do((source) => {
-            this.sources[index] = source;
-          });
+          .do((source) => this.sources[index] = source, () => this.sources[index] = '');
       }),
     ).do(() => this.type = this.types[0]);
   }
