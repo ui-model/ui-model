@@ -16,8 +16,8 @@ export class SourceCodeService {
   }
 
   loadDocument(name: string, locale: string = navigator.language): Observable<string> {
-    return this.http.get(`/src/app/showcase/${name}/_docs/${name}.component.${locale}.md`)
-      .catch(() => this.http.get(`/src/app/showcase/${name}/_docs/${name}.component.md`))
+    return this.http.get(`/src/app/showcase/${name}/_docs/readme.${locale}.md`)
+      .catch(() => this.http.get(`/src/app/showcase/${name}/_docs/readme.md`))
       .map(resp => resp.text());
   }
 }
