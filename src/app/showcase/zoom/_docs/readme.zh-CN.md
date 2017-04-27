@@ -13,3 +13,22 @@
 除此之外，在具体实现中，我们还需要获取这些大小。我们可以用**辅助指令**来实现。辅助指令不是专用于某个ui-model的，甚至不必配合ui-model也能使用，它是ui-model和DOM之间的桥梁，每一个都相当精简。
 
 至于取这些坐标，我们只要使用内置的(mousemove)事件就可以了，不必做特别处理。
+
+
+# 提示
+
+## 如何设置鼠标未进入时隐藏镜头和原图？
+1. 在缩略图所在的元素上添加`(mouseenter)`和`(mouseleave)`来设置变量标识鼠标状态,例如：
+    `(mouseenter)="isMouseInPicture = true" (mouseleave)="isMouseInPicture = false"`
+1. 在镜头和原图元素上添加`[ngStyle]="{'visibility': !isMouseInPicture?'hidden':''}"`，在鼠标没有进入图片的时候隐藏。
+注意，隐藏元素有两种，这里只能用`visibility:hidden`，不能用`display:none`。因为后者对布局无影响，而`zoom`初始化时依赖元素在布局中的大小。
+
+## 如何将原图剥离出来放到缩略图的右边？
+
+用CSS可以轻松实现：
+
+1. 将`.passive-rect`的`position`改为`absoulte`，确认`.active-rect`的`position`为`relative`，这样原图的位置就只以缩略图为准
+1. 调整原图位置，这样修改`.passive-rect`：
+1. 添加`z-index:100`，确保原图在其他元素的上面
+1. 设置原图的置顶位置：`top:0`
+1. 将原图靠左位置设置为缩略图的宽度，如果你的缩略图是固定宽度，比如340px，那么可以添加: `left: 340px`。你也可以动态将`left`设置为缩略图的宽度：在`.passive-rect`所在的元素上添加：`[style.left.px]="zoom.activeRect.width + 10"`
