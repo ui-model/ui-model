@@ -1,6 +1,6 @@
 {
   "name": "@ui-model/core",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "ui model library",
   "main": "index.ts",
   "repository": {
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ui-model/ui-model#readme",
   "dependencies": {
-    "@ui-model/common": "0.0.26"
+    "@ui-model/common": "0.0.27"
   },
   "peerDependencies": {
     "rxjs": "^5.0.0"

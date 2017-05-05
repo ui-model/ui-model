@@ -1,6 +1,6 @@
 {
   "name": "@ui-model/angular",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "license": "MIT",
   "description": "angular binding for ui model",
   "main": "index.ts",
@@ -19,10 +19,10 @@
   },
   "homepage": "https://github.com/ui-model/ui-model-angular#readme",
   "dependencies": {
-    "@ui-model/common": "0.0.26",
-    "@ui-model/core": "0.0.26",
-    "@ui-model/calendar": "0.0.26",
-    "@ui-model/chart": "0.0.26"
+    "@ui-model/common": "0.0.27",
+    "@ui-model/core": "0.0.27",
+    "@ui-model/calendar": "0.0.27",
+    "@ui-model/chart": "0.0.27"
   },
   "peerDependencies": {
     "@angular/common": "^2.0.0 || ^4.0.0",
