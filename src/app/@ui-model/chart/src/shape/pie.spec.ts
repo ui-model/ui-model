@@ -1,4 +1,4 @@
-import {Pie} from './pie';
+import { Pie } from './pie';
 
 describe('Pie', () => {
   it('negative arc', () => {

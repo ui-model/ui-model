@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {PaginationComponent} from './pagination.component';
-import {Pagination} from '@ui-model/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { PaginationComponent } from './pagination.component';
+import { Pagination } from '@ui-model/core';
 
 describe('PaginationComponent', () => {
   let component: PaginationComponent;
@@ -9,7 +9,7 @@ describe('PaginationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PaginationComponent]
+      declarations: [PaginationComponent],
     })
       .compileComponents();
   }));

@@ -1,7 +1,7 @@
-import {Directive, forwardRef, Input} from '@angular/core';
-import {Transformer} from '@ui-model/common';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {MultiSelect} from '@ui-model/core';
+import { Directive, forwardRef, Input } from '@angular/core';
+import { Transformer } from '@ui-model/common';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { MultiSelect } from '@ui-model/core';
 
 const MULTI_SELECT_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,

@@ -1,39 +1,39 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {SelectDirective} from './directives/select.directive';
-import {MultiSelectDirective} from './directives/multi-select.directive';
-import {ToggleDirective} from './directives/toggle.directive';
-import {PagerDirective} from './directives/pager.directive';
-import {PaginationDirective} from './directives/pagination.directive';
-import {ClickOutsideDirective} from './directives/click-outside.directive';
-import {DraggableDirective} from './directives/draggable.directive';
-import {FormatPipe} from './pipes/format.pipe';
-import {OrderByPipe} from './pipes/order-by.pipe';
-import {OrderNamePipe} from './pipes/order-name.pipe';
-import {TypeNamePipe} from './pipes/type-name.pipe';
-import {MomentPipe} from './pipes/moment.pipe';
-import {SafeResourceUrlPipe} from './pipes/safe-resource-url.pipe';
-import {ImgSrcFileDirective} from './directives/img-src-file.directive';
-import {FileChangeDetectDirective} from './directives/file-change-detect.directive';
-import {MeasureDirective} from './directives/measure.directive';
-import {TypeAheadDirective} from './directives/type-ahead.directive';
-import {MultiBindingDirective} from './directives/multi-binding.directive';
-import {SafeStylePipe} from './pipes/safe-style.pipe';
-import {DisabledDirective} from './directives/disabled.directive';
-import {SafeHtmlPipe} from './pipes/safe-html.pipe';
-import {SafeScriptPipe} from './pipes/safe-script.pipe';
-import {SafeUrlPipe} from './pipes/safe-url.pipe';
-import {TooltipDirective} from './directives/tooltip.directive';
-import {FocusDirective} from './directives/focus.directive';
-import {PreventDefaultDirective} from './directives/prevent-default.directive';
-import {DefaultPipe} from './pipes/default.pipe';
-import {IsEmptyPipe} from './pipes/is-empty.pipe';
-import {IsNotEmptyPipe} from './pipes/is-not-empty.pipe';
-import {TimesPipe} from './pipes/times.pipe';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SelectDirective } from './directives/select.directive';
+import { MultiSelectDirective } from './directives/multi-select.directive';
+import { ToggleDirective } from './directives/toggle.directive';
+import { PagerDirective } from './directives/pager.directive';
+import { PaginationDirective } from './directives/pagination.directive';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { DraggableDirective } from './directives/draggable.directive';
+import { FormatPipe } from './pipes/format.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
+import { OrderNamePipe } from './pipes/order-name.pipe';
+import { TypeNamePipe } from './pipes/type-name.pipe';
+import { MomentPipe } from './pipes/moment.pipe';
+import { SafeResourceUrlPipe } from './pipes/safe-resource-url.pipe';
+import { ImgSrcFileDirective } from './directives/img-src-file.directive';
+import { FileChangeDetectDirective } from './directives/file-change-detect.directive';
+import { MeasureDirective } from './directives/measure.directive';
+import { TypeAheadDirective } from './directives/type-ahead.directive';
+import { MultiBindingDirective } from './directives/multi-binding.directive';
+import { SafeStylePipe } from './pipes/safe-style.pipe';
+import { DisabledDirective } from './directives/disabled.directive';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { SafeScriptPipe } from './pipes/safe-script.pipe';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { TooltipDirective } from './directives/tooltip.directive';
+import { FocusDirective } from './directives/focus.directive';
+import { PreventDefaultDirective } from './directives/prevent-default.directive';
+import { DefaultPipe } from './pipes/default.pipe';
+import { IsEmptyPipe } from './pipes/is-empty.pipe';
+import { IsNotEmptyPipe } from './pipes/is-not-empty.pipe';
+import { TimesPipe } from './pipes/times.pipe';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [
     SelectDirective,

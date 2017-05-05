@@ -1,5 +1,5 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {schemeCategory10, schemeCategory20} from 'd3';
+import { Pipe, PipeTransform } from '@angular/core';
+import { schemeCategory10, schemeCategory20 } from 'd3';
 
 @Pipe({
   name: 'd3Colors',

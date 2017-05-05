@@ -1,5 +1,5 @@
-import {Rect, Stateful} from '@ui-model/common';
-import {Observable} from 'rxjs/Observable';
+import { Rect, Stateful } from '@ui-model/common';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -71,7 +71,7 @@ export class Zoom extends Stateful {
       this.activeRect.changes,
       this.activeViewport.changes,
       this.passiveRect.changes,
-      this.passiveViewport.changes
+      this.passiveViewport.changes,
     ])
       .map(() => this);
   }

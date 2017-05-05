@@ -1,11 +1,20 @@
-import {inject, TestBed} from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
-import {UpdateMetadataGuard} from './update-metadata-guard.service';
+import { UpdateMetadataGuard } from './update-metadata-guard.service';
+import { MetadataService } from './metadata.service';
+import { Observable } from 'rxjs';
 
-xdescribe('UpdateMetadataGuard', () => {
+describe('UpdateMetadataGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [UpdateMetadataGuard]
+      providers: [UpdateMetadataGuard, {
+        provide: MetadataService,
+        useValue: {
+          load: () => {
+            return Observable.of(true);
+          },
+        },
+      }],
     });
   });
 

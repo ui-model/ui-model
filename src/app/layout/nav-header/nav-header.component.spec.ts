@@ -1,18 +1,18 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Title} from '@angular/platform-browser';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Title } from '@angular/platform-browser';
 
-import {NavHeaderComponent} from './nav-header.component';
-import {RouterModule} from '@angular/router';
+import { NavHeaderComponent } from './nav-header.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
-xdescribe('NavHeaderComponent', () => {
+describe('NavHeaderComponent', () => {
   let component: NavHeaderComponent;
   let fixture: ComponentFixture<NavHeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [NavHeaderComponent],
-      imports: [RouterModule],
+      imports: [RouterTestingModule],
       providers: [Title],
     })
       .compileComponents();

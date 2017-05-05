@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import {DisabledDirective} from './disabled.directive';
+import { DisabledDirective } from './disabled.directive';
 
 describe('DisabledDirective', () => {
 });

@@ -1,4 +1,4 @@
-import {Distance} from './distance';
+import { Distance } from './distance';
 
 describe('Distance', () => {
   it('constructor', () => {

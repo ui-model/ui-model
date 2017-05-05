@@ -1,4 +1,4 @@
-import {Calendar} from './calendar';
+import { Calendar } from './calendar';
 import * as moment from 'moment';
 
 describe('Calendar', () => {

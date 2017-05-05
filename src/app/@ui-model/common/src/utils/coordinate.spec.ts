@@ -1,4 +1,4 @@
-import {Coordinate} from './coordinate';
+import { Coordinate } from './coordinate';
 
 const precision = 0.001;
 

@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Toggle} from '@ui-model/core';
+import { Component, Input } from '@angular/core';
+import { Toggle } from '@ui-model/core';
 
 @Component({
   selector: 'ui-panel',

@@ -1,5 +1,5 @@
 /* tslint:disable:directive-selector */
-import {Directive, ElementRef, HostListener, Input, Renderer} from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, Renderer } from '@angular/core';
 
 @Directive({
   selector: 'img[srcFile]',

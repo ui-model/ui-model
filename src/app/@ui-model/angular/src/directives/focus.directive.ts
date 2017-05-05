@@ -1,7 +1,7 @@
-import {Directive, ElementRef, EventEmitter, HostListener, Input, Output} from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
 @Directive({
-  selector: '[uiFocus]'
+  selector: '[uiFocus]',
 })
 export class FocusDirective {
   constructor(element: ElementRef) {

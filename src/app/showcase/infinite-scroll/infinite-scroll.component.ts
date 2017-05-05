@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
-import {Viewport} from '@ui-model/core';
+import { Viewport } from '@ui-model/core';
 
 @Component({
   selector: 'app-infinite-scroll',
   templateUrl: './infinite-scroll.component.html',
-  styleUrls: ['./infinite-scroll.component.scss']
+  styleUrls: ['./infinite-scroll.component.scss'],
 })
 export class InfiniteScrollComponent implements OnInit {
 

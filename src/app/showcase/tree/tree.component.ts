@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {TreeNode} from '@ui-model/angular-bootstrap';
+import { Component } from '@angular/core';
+import { TreeNode } from '@ui-model/angular-bootstrap';
 
 @Component({
   selector: 'app-tree',
   templateUrl: './tree.component.html',
-  styleUrls: ['./tree.component.scss']
+  styleUrls: ['./tree.component.scss'],
 })
 export class TreeComponent {
   data: TreeNode = {
@@ -18,8 +18,8 @@ export class TreeComponent {
           },
           {
             label: '112',
-          }
-        ]
+          },
+        ],
       },
       {
         label: '12',
@@ -30,7 +30,7 @@ export class TreeComponent {
           {
             label: '122',
           },
-        ]
+        ],
       },
 
     ],

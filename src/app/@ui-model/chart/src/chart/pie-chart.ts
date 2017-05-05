@@ -1,6 +1,6 @@
-import {Pie} from '../shape/pie';
-import {Stateful} from '@ui-model/common';
-import {Observable} from 'rxjs/Observable';
+import { Pie } from '../shape/pie';
+import { Stateful } from '@ui-model/common';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
 
 export class PieChart extends Stateful {
@@ -82,7 +82,7 @@ export class PieChart extends Stateful {
     percents.forEach((percent) => {
       ranges.push({
         begin: totalPercent,
-        end: totalPercent + percent
+        end: totalPercent + percent,
       });
       totalPercent += percent;
     });

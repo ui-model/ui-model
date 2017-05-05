@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {InplaceEditorComponent} from './inplace-editor.component';
-import {UiModelModule} from '@ui-model/angular';
-import {FormsModule} from '@angular/forms';
+import { InplaceEditorComponent } from './inplace-editor.component';
+import { UiModelModule } from '@ui-model/angular';
+import { FormsModule } from '@angular/forms';
 
 describe('InplaceEditorComponent', () => {
   let component: InplaceEditorComponent;

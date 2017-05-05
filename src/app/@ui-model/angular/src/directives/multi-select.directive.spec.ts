@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import {MultiSelectDirective} from './multi-select.directive';
+import { MultiSelectDirective } from './multi-select.directive';
 
 describe('MultiSelectDirective', () => {
   it('should create an instance', () => {

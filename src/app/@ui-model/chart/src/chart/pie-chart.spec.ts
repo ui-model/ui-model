@@ -1,4 +1,4 @@
-import {PieChart} from './pie-chart';
+import { PieChart } from './pie-chart';
 
 describe('PieChart', () => {
   it('pies', () => {

@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {Toggle} from '@ui-model/core';
-import {Modal, ModalService} from '@ui-model/angular';
+import { Component, OnInit } from '@angular/core';
+import { Toggle } from '@ui-model/core';
+import { Modal, ModalService } from '@ui-model/angular';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss']
+  styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent implements OnInit {
   constructor(private modal: ModalService) {

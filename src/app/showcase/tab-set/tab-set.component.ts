@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {Select} from '@ui-model/core';
+import { Component } from '@angular/core';
+import { Select } from '@ui-model/core';
 
 @Component({
   selector: 'app-tab-set',
   templateUrl: './tab-set.component.html',
-  styleUrls: ['./tab-set.component.scss']
+  styleUrls: ['./tab-set.component.scss'],
 })
 export class TabSetComponent {
   options = [

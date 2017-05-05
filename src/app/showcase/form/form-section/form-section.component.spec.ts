@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {FormSectionComponent} from './form-section.component';
-import {FormsModule, NgModelGroup} from '@angular/forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormSectionComponent } from './form-section.component';
+import { FormsModule, NgModelGroup } from '@angular/forms';
 
-xdescribe('FormSectionComponent', () => {
+describe('FormSectionComponent', () => {
   let component: FormSectionComponent;
   let fixture: ComponentFixture<FormSectionComponent>;
 
@@ -11,7 +11,9 @@ xdescribe('FormSectionComponent', () => {
     TestBed.configureTestingModule({
       declarations: [FormSectionComponent],
       imports: [FormsModule],
-      providers: [NgModelGroup],
+      providers: [
+        {provide: NgModelGroup, useValue: {}},
+      ],
     })
       .compileComponents();
   }));

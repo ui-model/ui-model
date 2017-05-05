@@ -1,4 +1,4 @@
-import {DefaultPipe} from './default.pipe';
+import { DefaultPipe } from './default.pipe';
 
 describe('DefaultPipe', () => {
   it('create an instance', () => {

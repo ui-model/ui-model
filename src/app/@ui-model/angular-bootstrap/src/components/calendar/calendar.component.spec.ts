@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {CalendarComponent} from './calendar.component';
-import {FormsModule} from '@angular/forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CalendarComponent } from './calendar.component';
+import { FormsModule } from '@angular/forms';
 
 describe('CalendarComponent', () => {
   let component: CalendarComponent;

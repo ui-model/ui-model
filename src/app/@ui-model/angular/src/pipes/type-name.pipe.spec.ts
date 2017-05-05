@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import {TypeNamePipe} from './type-name.pipe';
+import { TypeNamePipe } from './type-name.pipe';
 
 describe('TypeNamePipe', () => {
   it('create an instance', () => {

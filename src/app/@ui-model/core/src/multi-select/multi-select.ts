@@ -1,4 +1,4 @@
-import {Stateful, Transformer, Transformers} from '@ui-model/common';
+import { Stateful, Transformer, Transformers } from '@ui-model/common';
 
 export class MultiSelect<T> extends Stateful {
   private selectedStates = new Map<T, boolean>();

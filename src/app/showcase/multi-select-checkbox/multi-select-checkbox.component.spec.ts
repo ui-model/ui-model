@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {MultiSelectCheckboxComponent} from './multi-select-checkbox.component';
-import {UiModelModule} from '@ui-model/angular';
-import {FormsModule} from '@angular/forms';
+import { MultiSelectCheckboxComponent } from './multi-select-checkbox.component';
+import { UiModelModule } from '@ui-model/angular';
+import { FormsModule } from '@angular/forms';
 
 describe('MultiSelectCheckboxComponent', () => {
   let component: MultiSelectCheckboxComponent;

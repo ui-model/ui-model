@@ -1,4 +1,4 @@
-import {Point} from './point';
+import { Point } from './point';
 
 describe('Point', () => {
   it('constructor', () => {

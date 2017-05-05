@@ -1,17 +1,17 @@
-import {Component} from '@angular/core';
-import {MultiSelect} from '@ui-model/core';
-import {Transformers} from '@ui-model/common';
+import { Component } from '@angular/core';
+import { MultiSelect } from '@ui-model/core';
+import { Transformers } from '@ui-model/common';
 
 @Component({
   selector: 'app-multi-select',
   templateUrl: './multi-select.component.html',
-  styleUrls: ['./multi-select.component.scss']
+  styleUrls: ['./multi-select.component.scss'],
 })
 export class MultiSelectComponent {
   options = [
     {
       code: 'a',
-      label: 'A'
+      label: 'A',
     },
     {
       code: 'b',
@@ -24,12 +24,12 @@ export class MultiSelectComponent {
     {
       code: 'd',
       label: 'D',
-    }
+    },
   ];
 
   select = new MultiSelect<{ code: string, label: string }>().setOptions(this.options).setTransformer(Transformers.objectByField('code'));
 
   getCode = ({code}) => {
     return code;
-  }
+  };
 }

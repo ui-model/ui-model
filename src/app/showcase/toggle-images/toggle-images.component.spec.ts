@@ -1,7 +1,7 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {ToggleImagesComponent} from './toggle-images.component';
-import {UiModelModule} from '@ui-model/angular';
+import { ToggleImagesComponent } from './toggle-images.component';
+import { UiModelModule } from '@ui-model/angular';
 
 describe('ToggleImagesComponent', () => {
   let component: ToggleImagesComponent;

@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import {MomentPipe} from './moment.pipe';
+import { MomentPipe } from './moment.pipe';
 
 describe('MomentPipe', () => {
   it('create an instance', () => {

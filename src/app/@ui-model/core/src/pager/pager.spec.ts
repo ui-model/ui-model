@@ -1,4 +1,4 @@
-import {Pager} from './pager';
+import { Pager } from './pager';
 
 describe('Pager', () => {
   it('constructor:default', () => {

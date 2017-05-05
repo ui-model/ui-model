@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {scaleBand, scaleLinear, schemeCategory10} from 'd3-scale';
-import {max} from 'd3-array';
+import { Component } from '@angular/core';
+import { scaleBand, scaleLinear, schemeCategory10 } from 'd3-scale';
+import { max } from 'd3-array';
 
 @Component({
   selector: 'app-d3-basic',
   templateUrl: './d3-basic.component.html',
-  styleUrls: ['./d3-basic.component.scss']
+  styleUrls: ['./d3-basic.component.scss'],
 })
 export class D3BasicComponent {
   items = [

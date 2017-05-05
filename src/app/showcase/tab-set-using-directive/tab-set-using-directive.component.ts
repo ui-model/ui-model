@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-tab-set-using-directive',
   templateUrl: './tab-set-using-directive.component.html',
-  styleUrls: ['./tab-set-using-directive.component.scss']
+  styleUrls: ['./tab-set-using-directive.component.scss'],
 })
 export class TabSetUsingDirectiveComponent {
   options = [

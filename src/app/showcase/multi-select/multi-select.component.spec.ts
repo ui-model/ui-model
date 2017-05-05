@@ -1,8 +1,8 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {MultiSelectComponent} from './multi-select.component';
-import {UiModelModule} from '@ui-model/angular';
-import {FormsModule} from '@angular/forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MultiSelectComponent } from './multi-select.component';
+import { UiModelModule } from '@ui-model/angular';
+import { FormsModule } from '@angular/forms';
 
 describe('MultiSelectComponent', () => {
   let component: MultiSelectComponent;

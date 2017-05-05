@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-select-ng-model',
   templateUrl: './select-ng-model.component.html',
-  styleUrls: ['./select-ng-model.component.scss']
+  styleUrls: ['./select-ng-model.component.scss'],
 })
 export class SelectNgModelComponent {
   selection;

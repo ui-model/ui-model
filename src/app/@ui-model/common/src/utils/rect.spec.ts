@@ -1,4 +1,4 @@
-import {Rect} from './rect';
+import { Rect } from './rect';
 
 describe('Rect', () => {
   it('constructor', () => {

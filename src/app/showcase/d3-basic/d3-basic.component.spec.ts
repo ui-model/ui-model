@@ -1,6 +1,6 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {D3BasicComponent} from './d3-basic.component';
+import { D3BasicComponent } from './d3-basic.component';
 
 describe('D3BasicComponent', () => {
   let component: D3BasicComponent;
@@ -8,7 +8,7 @@ describe('D3BasicComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [D3BasicComponent]
+      declarations: [D3BasicComponent],
     })
       .compileComponents();
   }));

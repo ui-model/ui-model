@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {PreviewComponent} from './preview.component';
-import {UiModelModule} from '@ui-model/angular';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { PreviewComponent } from './preview.component';
+import { UiModelModule } from '@ui-model/angular';
 
-xdescribe('PreviewComponent', () => {
+describe('PreviewComponent', () => {
   let component: PreviewComponent;
   let fixture: ComponentFixture<PreviewComponent>;
 

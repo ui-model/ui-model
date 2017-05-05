@@ -1,10 +1,10 @@
-import {Directive, HostListener, Input} from '@angular/core';
-import {TooltipService} from '../services/tooltip.service';
-import {MeasureDirective} from './measure.directive';
-import {SafeHtml} from '@angular/platform-browser';
+import { Directive, HostListener, Input } from '@angular/core';
+import { TooltipService } from '../services/tooltip.service';
+import { MeasureDirective } from './measure.directive';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Directive({
-  selector: '[uiTooltip]'
+  selector: '[uiTooltip]',
 })
 export class TooltipDirective {
   constructor(private service: TooltipService, private measure: MeasureDirective) {

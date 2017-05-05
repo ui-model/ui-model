@@ -1,4 +1,4 @@
-import {Rect, Stateful} from '@ui-model/common';
+import { Rect, Stateful } from '@ui-model/common';
 export class Viewport<T> extends Stateful {
   get dataSource(): T[] {
     return this._dataSource;

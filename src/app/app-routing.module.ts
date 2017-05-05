@@ -1,10 +1,10 @@
-import {Route, RouterModule} from '@angular/router';
-import {UpdateTitleGuard} from './core/update-title.service';
-import {showcaseRoutes} from './utils/showcase-routes';
-import {Author} from './utils/author';
-import {HomeComponent} from './showcase/home/home.component';
-import {UpdateMetadataGuard} from './core/update-metadata-guard.service';
-import {ShowcaseComponent} from './layout/showcase/showcase.component';
+import { Route, RouterModule } from '@angular/router';
+import { UpdateTitleGuard } from './core/update-title.service';
+import { showcaseRoutes } from './utils/showcase-routes';
+import { Author } from './utils/author';
+import { HomeComponent } from './showcase/home/home.component';
+import { UpdateMetadataGuard } from './core/update-metadata-guard.service';
+import { ShowcaseComponent } from './layout/showcase/showcase.component';
 
 export const routes: Route[] = [
   {
@@ -14,7 +14,7 @@ export const routes: Route[] = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/home'
+        redirectTo: '/home',
       },
       {
         path: 'home',
@@ -23,7 +23,7 @@ export const routes: Route[] = [
           id: 'home',
           title: 'Home',
           authors: ['wzc'].map(Author.of),
-        }
+        },
       },
       {
         path: '',

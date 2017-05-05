@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import {FormatPipe} from './format.pipe';
+import { FormatPipe } from './format.pipe';
 
 describe('FormatPipe', () => {
   it('create an instance', () => {

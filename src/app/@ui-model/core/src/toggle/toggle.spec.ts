@@ -1,4 +1,4 @@
-import {Toggle} from './toggle';
+import { Toggle } from './toggle';
 
 describe('Toggle', () => {
   it('initial state: default to off', () => {

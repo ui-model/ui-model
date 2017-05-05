@@ -1,8 +1,8 @@
-import {async, inject, TestBed} from '@angular/core/testing';
+import { async, inject, TestBed } from '@angular/core/testing';
 
-import {SourceCodeService} from './source-code.service';
-import {BaseRequestOptions, Http, HttpModule, Response, ResponseOptions} from '@angular/http';
-import {MockBackend} from '@angular/http/testing';
+import { SourceCodeService } from './source-code.service';
+import { BaseRequestOptions, Http, HttpModule, Response, ResponseOptions } from '@angular/http';
+import { MockBackend } from '@angular/http/testing';
 
 describe('SourceCodeService', () => {
   beforeEach(() => {

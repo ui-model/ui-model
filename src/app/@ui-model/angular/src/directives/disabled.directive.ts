@@ -1,7 +1,7 @@
-import {Directive, ElementRef, HostBinding, Input} from '@angular/core';
+import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[uiDisabled],[ui-disabled]'
+  selector: '[uiDisabled],[ui-disabled]',
 })
 export class DisabledDirective {
   constructor(private element: ElementRef) {
@@ -52,5 +52,5 @@ export class DisabledDirective {
       event.stopImmediatePropagation();
       return false;
     }
-  }
+  };
 }

@@ -1,5 +1,5 @@
-import {MultiSelect} from './multi-select';
-import {Transformers} from '@ui-model/common';
+import { MultiSelect } from './multi-select';
+import { Transformers } from '@ui-model/common';
 
 const options = [
   1,

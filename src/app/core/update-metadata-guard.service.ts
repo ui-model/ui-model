@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {MetadataService} from './metadata.service';
-import {Metadata} from '../utils/meta-data';
+import { MetadataService } from './metadata.service';
+import { Metadata } from '../utils/meta-data';
 
 @Injectable()
 export class UpdateMetadataGuard implements CanActivateChild {

@@ -1,9 +1,9 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import * as moment from 'moment';
-import {MomentInput} from 'moment';
+import { MomentInput } from 'moment';
 
 @Pipe({
-  name: 'moment'
+  name: 'moment',
 })
 export class MomentPipe implements PipeTransform {
   transform(value: MomentInput, format?: string): string {

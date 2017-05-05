@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
+import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-type-ahead',
   templateUrl: './type-ahead.component.html',
-  styleUrls: ['./type-ahead.component.scss']
+  styleUrls: ['./type-ahead.component.scss'],
 })
 export class TypeAheadComponent {
   constructor(private sanitizer: DomSanitizer) {

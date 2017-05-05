@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {MultiSelectNgModelComponent} from './multi-select-ng-model.component';
-import {UiModelModule} from '@ui-model/angular';
-import {FormsModule} from '@angular/forms';
+import { MultiSelectNgModelComponent } from './multi-select-ng-model.component';
+import { UiModelModule } from '@ui-model/angular';
+import { FormsModule } from '@angular/forms';
 
 describe('MultiSelectNgModelComponent', () => {
   let component: MultiSelectNgModelComponent;

@@ -1,12 +1,12 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/take';
 
 @Component({
   selector: 'app-modal-content',
   templateUrl: './modal-content.component.html',
-  styleUrls: ['./modal-content.component.scss']
+  styleUrls: ['./modal-content.component.scss'],
 })
 export class ModalContentComponent implements OnInit {
 
@@ -27,7 +27,7 @@ export class ModalContentComponent implements OnInit {
       null,
       () => {
         this.close.emit();
-      }
+      },
     );
   }
 

@@ -1,5 +1,5 @@
-import {Component, ViewChild} from '@angular/core';
-import {MeasureDirective, TooltipService} from '@ui-model/angular';
+import { Component, ViewChild } from '@angular/core';
+import { MeasureDirective, TooltipService } from '@ui-model/angular';
 
 @Component({
   selector: 'ui-tooltip',

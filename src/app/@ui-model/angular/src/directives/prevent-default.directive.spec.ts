@@ -1,4 +1,4 @@
-import {PreventDefaultDirective} from './prevent-default.directive';
+import { PreventDefaultDirective } from './prevent-default.directive';
 
 describe('PreventDefaultDirective', () => {
   it('should create an instance', () => {

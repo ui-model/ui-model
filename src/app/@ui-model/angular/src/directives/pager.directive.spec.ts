@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import {PagerDirective} from './pager.directive';
+import { PagerDirective } from './pager.directive';
 
 describe('PagerDirective', () => {
   it('should create an instance', () => {

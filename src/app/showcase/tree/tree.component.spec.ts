@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {TreeComponent} from './tree.component';
-import {UiModelBootstrapModule} from '@ui-model/angular-bootstrap';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TreeComponent } from './tree.component';
+import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 
 describe('TreeComponent', () => {
   let component: TreeComponent;

@@ -1,16 +1,15 @@
-import {Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
-import {Title} from '@angular/platform-browser';
-import {Metadata} from '../utils/meta-data';
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Title } from '@angular/platform-browser';
+import { Metadata } from '../utils/meta-data';
 
 @Injectable()
 export class UpdateTitleGuard implements CanActivateChild {
   constructor(private title: Title) {
   }
 
-  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot):
-    Observable<boolean>
+  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean>
     | Promise<boolean>
     | boolean {
     if (childRoute.data) {

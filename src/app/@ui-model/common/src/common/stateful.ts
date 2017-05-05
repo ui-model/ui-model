@@ -1,7 +1,7 @@
-import {StateListener} from '@ui-model/common';
-import {isFunction, isString} from '../utils/typings';
-import {Observable} from 'rxjs/Observable';
-import {Subject} from 'rxjs/Subject';
+import { StateListener } from '@ui-model/common';
+import { isFunction, isString } from '../utils/typings';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 export abstract class Stateful {
   constructor(private stateListener?: StateListener, private stateKey?: string) {
   }

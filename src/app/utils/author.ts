@@ -2,11 +2,11 @@ const authors: { [index: string]: Author } = {
   wzc: {
     name: 'Zhicheng Wang',
     email: 'asnowwolf@gmail.com',
-    homepage: 'https://github.com/asnowwolf'
+    homepage: 'https://github.com/asnowwolf',
   },
   rex: {
     name: 'Zhimin YE',
-  }
+  },
 };
 
 export class Author {

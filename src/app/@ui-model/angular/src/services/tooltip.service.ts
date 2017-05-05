@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {SafeHtml} from '@angular/platform-browser';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
-import {Rect} from '@ui-model/common';
+import { Injectable } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { Rect } from '@ui-model/common';
 
 @Injectable()
 export class TooltipService {

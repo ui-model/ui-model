@@ -1,5 +1,5 @@
-import {Directive, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Subject} from 'rxjs/Subject';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
 
 @Directive({

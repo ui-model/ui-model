@@ -1,4 +1,4 @@
-import {Comparators} from './comparator';
+import { Comparators } from './comparator';
 
 describe('Comparator interface', () => {
   it('string', () => {

@@ -1,7 +1,7 @@
-import {Directive, ElementRef, Input} from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
-  selector: '[uiMultiBinding]'
+  selector: '[uiMultiBinding]',
 })
 export class MultiBindingDirective {
   constructor(private element: ElementRef) {

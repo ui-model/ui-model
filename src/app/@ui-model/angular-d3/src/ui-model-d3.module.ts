@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {UiModelModule} from '@ui-model/angular';
-import {D3ColorsPipe} from './pipes/d3-colors.pipe';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UiModelModule } from '@ui-model/angular';
+import { D3ColorsPipe } from './pipes/d3-colors.pipe';
 
 @NgModule({
   imports: [

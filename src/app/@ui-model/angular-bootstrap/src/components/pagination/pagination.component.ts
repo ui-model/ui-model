@@ -1,10 +1,10 @@
-import {Component, Input} from '@angular/core';
-import {Pagination} from '@ui-model/core';
+import { Component, Input } from '@angular/core';
+import { Pagination } from '@ui-model/core';
 
 @Component({
   selector: 'ui-pagination',
   templateUrl: 'pagination.component.html',
-  styleUrls: ['pagination.component.scss']
+  styleUrls: ['pagination.component.scss'],
 })
 export class PaginationComponent {
   @Input() showBrief = true;

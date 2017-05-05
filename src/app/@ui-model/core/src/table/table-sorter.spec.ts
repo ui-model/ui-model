@@ -1,6 +1,6 @@
-import {TableSorter} from './table-sorter';
-import {TableField} from './table-field';
-import {DataType} from '@ui-model/common';
+import { TableSorter } from './table-sorter';
+import { TableField } from './table-field';
+import { DataType } from '@ui-model/common';
 const fields: TableField[] = TableField.from([
   {
     name: 'a',

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {TableField} from '@ui-model/core';
+import { Component, OnInit } from '@angular/core';
+import { TableField } from '@ui-model/core';
 import * as _ from 'lodash';
-import {DataType} from '@ui-model/common';
+import { DataType } from '@ui-model/common';
 
 class Item {
   id: number;
@@ -15,12 +15,12 @@ const fields: TableField[] = TableField.from([
   {
     name: 'id',
     title: 'ID',
-    type: DataType.int
+    type: DataType.int,
   },
   {
     name: 'name',
     title: 'User Name',
-    type: DataType.string
+    type: DataType.string,
   },
   {
     name: 'birthday',
@@ -47,14 +47,14 @@ const items: Item[] = _.times(100, (i) => {
     name: `user-${i}`,
     birthday: new Date(1900 + i, 0, 1),
     age: i % 20,
-    income: i * 300.05
+    income: i * 300.05,
   };
 });
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
 

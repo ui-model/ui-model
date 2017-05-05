@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {Select} from '@ui-model/core';
+import { Component } from '@angular/core';
+import { Select } from '@ui-model/core';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
   options = [
@@ -19,8 +19,8 @@ export class MenuComponent {
         {
           label: 'A2',
           id: 'a2',
-        }
-      ]
+        },
+      ],
     },
     {
       label: 'B',
@@ -33,8 +33,8 @@ export class MenuComponent {
         {
           label: 'B2',
           id: 'b2',
-        }
-      ]
+        },
+      ],
     },
     {
       label: 'C',
@@ -47,8 +47,8 @@ export class MenuComponent {
         {
           label: 'C2',
           id: 'c2',
-        }
-      ]
+        },
+      ],
     },
     {
       label: 'D',
@@ -61,8 +61,8 @@ export class MenuComponent {
         {
           label: 'D2',
           id: 'd2',
-        }
-      ]
+        },
+      ],
     },
     {
       label: 'E',
@@ -75,8 +75,8 @@ export class MenuComponent {
         {
           label: 'E2',
           id: 'e2',
-        }
-      ]
+        },
+      ],
     },
   ];
 

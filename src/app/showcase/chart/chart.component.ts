@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {Pie, PieChart} from '@ui-model/chart';
+import { Component } from '@angular/core';
+import { Pie, PieChart } from '@ui-model/chart';
 
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss']
+  styleUrls: ['./chart.component.scss'],
 })
 export class ChartComponent {
 

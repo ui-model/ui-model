@@ -1,4 +1,4 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import * as MarkdownIt from 'markdown-it';
 import * as hljs from 'highlight.js';
 
@@ -17,7 +17,7 @@ markdown.use(require('markdown-it-table-of-contents'));
 markdown.use(highlighter);
 
 @Pipe({
-  name: 'markdown'
+  name: 'markdown',
 })
 export class MarkdownPipe implements PipeTransform {
   transform(value: string): string {

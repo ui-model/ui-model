@@ -1,4 +1,4 @@
-import {isDate, isNumber, isString} from './typings';
+import { isDate, isNumber, isString } from './typings';
 export enum DataType {
   any, boolean, string, int, float, currency, date, time, dateTime, reference,
 }

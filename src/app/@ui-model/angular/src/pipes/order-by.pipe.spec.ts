@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import {OrderByPipe} from './order-by.pipe';
+import { OrderByPipe } from './order-by.pipe';
 
 describe('OrderByPipe', () => {
   it('create an instance', () => {

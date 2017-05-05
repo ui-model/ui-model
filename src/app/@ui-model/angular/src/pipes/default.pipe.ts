@@ -1,8 +1,8 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {isEmpty} from '@ui-model/common';
+import { Pipe, PipeTransform } from '@angular/core';
+import { isEmpty } from '@ui-model/common';
 
 @Pipe({
-  name: 'default'
+  name: 'default',
 })
 export class DefaultPipe<T> implements PipeTransform {
   transform(value: any, defaultValue: T): T {

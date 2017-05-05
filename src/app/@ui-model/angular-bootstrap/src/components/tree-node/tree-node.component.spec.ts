@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {TreeNodeComponent} from './tree-node.component';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TreeNodeComponent } from './tree-node.component';
 
 describe('TreeNodeComponent', () => {
   let component: TreeNodeComponent;
@@ -8,7 +8,7 @@ describe('TreeNodeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TreeNodeComponent]
+      declarations: [TreeNodeComponent],
     })
       .compileComponents();
   }));

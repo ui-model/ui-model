@@ -1,9 +1,9 @@
-import {async, inject, TestBed} from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
-import {MetadataService} from './metadata.service';
-import {SourceCodeService} from './source-code.service';
-import {Observable} from 'rxjs/Observable';
-import {Metadata} from '../utils/meta-data';
+import { MetadataService } from './metadata.service';
+import { SourceCodeService } from './source-code.service';
+import { Observable } from 'rxjs/Observable';
+import { Metadata } from '../utils/meta-data';
 
 class MySourceCodeService {
   loadFile(name: string, ext: string): Observable<string> {
@@ -19,8 +19,8 @@ describe('MetadataService', () => {
     TestBed.configureTestingModule({
       providers: [
         MetadataService,
-        {provide: SourceCodeService, useClass: MySourceCodeService}
-      ]
+        {provide: SourceCodeService, useClass: MySourceCodeService},
+      ],
     });
   });
 

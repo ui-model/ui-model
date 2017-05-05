@@ -1,4 +1,4 @@
-import {Pager} from './pager';
+import { Pager } from './pager';
 export class Pagination extends Pager {
   private _originViewport: number;
   private _viewport = 5;

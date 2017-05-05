@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {Select} from '@ui-model/core';
+import { Component } from '@angular/core';
+import { Select } from '@ui-model/core';
 
 @Component({
   selector: 'app-radio-group',
   templateUrl: './radio-group.component.html',
-  styleUrls: ['./radio-group.component.scss']
+  styleUrls: ['./radio-group.component.scss'],
 })
 export class RadioGroupComponent {
   options = [

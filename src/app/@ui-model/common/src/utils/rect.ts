@@ -1,4 +1,4 @@
-import {Stateful} from '../common/stateful';
+import { Stateful } from '../common/stateful';
 export class Rect extends Stateful {
   private _left = 0;
   get left(): number {

@@ -1,7 +1,7 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {MarkdownViewerComponent} from './markdown-viewer.component';
-import {MarkdownPipe} from '../../pipes/markdown.pipe';
+import { MarkdownViewerComponent } from './markdown-viewer.component';
+import { MarkdownPipe } from '../../pipes/markdown.pipe';
 
 describe('MarkdownViewerComponent', () => {
   let component: MarkdownViewerComponent;
@@ -9,7 +9,7 @@ describe('MarkdownViewerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MarkdownViewerComponent, MarkdownPipe]
+      declarations: [MarkdownViewerComponent, MarkdownPipe],
     })
       .compileComponents();
   }));

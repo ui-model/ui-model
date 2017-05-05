@@ -1,8 +1,8 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {DataType} from '@ui-model/common';
+import { Pipe, PipeTransform } from '@angular/core';
+import { DataType } from '@ui-model/common';
 
 @Pipe({
-  name: 'typeName'
+  name: 'typeName',
 })
 export class TypeNamePipe implements PipeTransform {
   transform(value: DataType, prefix: string): string {

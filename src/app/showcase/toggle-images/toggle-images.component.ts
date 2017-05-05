@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {Toggle} from '@ui-model/core';
+import { Component } from '@angular/core';
+import { Toggle } from '@ui-model/core';
 
 @Component({
   selector: 'app-toggle-images',
   templateUrl: './toggle-images.component.html',
-  styleUrls: ['./toggle-images.component.scss']
+  styleUrls: ['./toggle-images.component.scss'],
 })
 export class ToggleImagesComponent {
   toggle = new Toggle();

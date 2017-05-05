@@ -1,5 +1,5 @@
-import {Component, OnInit, QueryList, ViewChildren} from '@angular/core';
-import {NgModel, NgModelGroup} from '@angular/forms';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { NgModel, NgModelGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-section',

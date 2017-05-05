@@ -1,4 +1,4 @@
-import {Stateful} from '../common/stateful';
+import { Stateful } from '../common/stateful';
 
 export class Coordinate extends Stateful {
   get cx(): number {

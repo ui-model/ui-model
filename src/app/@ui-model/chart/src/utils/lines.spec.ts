@@ -1,4 +1,4 @@
-import {lines} from './lines';
+import { lines } from './lines';
 describe('Line Chart', () => {
   it('convert points to point pairs', () => {
     const data = [{x: 0, y: 1}, {x: 1, y: 2}, {x: 2, y: 0}];

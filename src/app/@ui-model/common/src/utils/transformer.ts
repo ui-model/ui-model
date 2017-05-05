@@ -1,4 +1,4 @@
-import {isObject, isUndefined} from './typings';
+import { isObject, isUndefined } from './typings';
 
 export type Transformer<FromType, ToType> = (value: FromType) => ToType;
 

@@ -1,4 +1,4 @@
-import {Distance} from './distance';
+import { Distance } from './distance';
 export class Point {
   constructor(public x: number = 0, public y: number = 0) {
   }

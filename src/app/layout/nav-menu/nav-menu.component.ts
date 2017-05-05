@@ -1,13 +1,13 @@
-import {Component, Input} from '@angular/core';
-import {Metadata} from '../../utils/meta-data';
-import {Author} from '../../utils/author';
-import {Tag} from '../../utils/tag';
-import {showcaseRoutes} from '../../utils/showcase-routes';
+import { Component, Input } from '@angular/core';
+import { Metadata } from '../../utils/meta-data';
+import { Author } from '../../utils/author';
+import { Tag } from '../../utils/tag';
+import { showcaseRoutes } from '../../utils/showcase-routes';
 
 @Component({
   selector: 'app-nav-menu',
   templateUrl: './nav-menu.component.html',
-  styleUrls: ['./nav-menu.component.scss']
+  styleUrls: ['./nav-menu.component.scss'],
 })
 export class NavMenuComponent {
   items = showcaseRoutes;

@@ -1,16 +1,16 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-multi-select-ng-model',
   templateUrl: './multi-select-ng-model.component.html',
-  styleUrls: ['./multi-select-ng-model.component.scss']
+  styleUrls: ['./multi-select-ng-model.component.scss'],
 })
 export class MultiSelectNgModelComponent {
   selection;
   options = [
     {
       code: 'a',
-      label: 'A'
+      label: 'A',
     },
     {
       code: 'b',
@@ -23,10 +23,10 @@ export class MultiSelectNgModelComponent {
     {
       code: 'd',
       label: 'D',
-    }
+    },
   ];
 
   getCode = ({code}) => {
     return code;
-  }
+  };
 }

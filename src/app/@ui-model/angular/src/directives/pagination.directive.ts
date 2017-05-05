@@ -1,5 +1,5 @@
-import {Directive, EventEmitter, Output} from '@angular/core';
-import {Pagination} from '@ui-model/core';
+import { Directive, EventEmitter, Output } from '@angular/core';
+import { Pagination } from '@ui-model/core';
 @Directive({
   selector: '[uiPagination]',
   exportAs: 'uiPagination',

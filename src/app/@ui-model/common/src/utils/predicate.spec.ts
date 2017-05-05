@@ -1,4 +1,4 @@
-import {Predicates} from './predicate';
+import { Predicates } from './predicate';
 
 describe('Predicate interface', () => {
   it('any', () => {

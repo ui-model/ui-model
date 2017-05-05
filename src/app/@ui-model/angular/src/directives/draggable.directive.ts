@@ -1,5 +1,5 @@
-import {Directive, EventEmitter, HostListener, Output} from '@angular/core';
-import {Distance, Point} from '@ui-model/common';
+import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
+import { Distance, Point } from '@ui-model/common';
 
 @Directive({
   selector: '[uiDraggable]',

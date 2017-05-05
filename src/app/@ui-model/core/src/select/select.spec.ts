@@ -1,5 +1,5 @@
-import {Select} from './select';
-import {Transformers} from '@ui-model/common';
+import { Select } from './select';
+import { Transformers } from '@ui-model/common';
 
 describe('Select', () => {
   it('select', () => {

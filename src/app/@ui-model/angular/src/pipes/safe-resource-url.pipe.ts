@@ -1,9 +1,9 @@
-import {OnDestroy, Pipe, PipeTransform} from '@angular/core';
-import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
-import {isString} from '@ui-model/common';
+import { OnDestroy, Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { isString } from '@ui-model/common';
 
 @Pipe({
-  name: 'safeResourceUrl'
+  name: 'safeResourceUrl',
 })
 export class SafeResourceUrlPipe implements PipeTransform, OnDestroy {
   constructor(private sanitizer: DomSanitizer) {

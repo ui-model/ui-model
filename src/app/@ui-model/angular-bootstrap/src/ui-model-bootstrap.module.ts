@@ -1,16 +1,16 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {UiModelModule} from '@ui-model/angular';
-import {ModalComponent} from './components/modal/modal.component';
-import {PaginationComponent} from './components/pagination/pagination.component';
-import {PanelComponent} from './components/panel/panel.component';
-import {RadioGroupComponent} from './components/radio-group/radio-group.component';
-import {TableComponent} from './components/table/table.component';
-import {TreeNodeComponent} from './components/tree-node/tree-node.component';
-import {CalendarComponent} from './components/calendar/calendar.component';
-import {TypeAheadComponent} from './components/type-ahead/type-ahead.component';
-import {TooltipComponent} from './components/tooltip/tooltip.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { UiModelModule } from '@ui-model/angular';
+import { ModalComponent } from './components/modal/modal.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { PanelComponent } from './components/panel/panel.component';
+import { RadioGroupComponent } from './components/radio-group/radio-group.component';
+import { TableComponent } from './components/table/table.component';
+import { TreeNodeComponent } from './components/tree-node/tree-node.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { TypeAheadComponent } from './components/type-ahead/type-ahead.component';
+import { TooltipComponent } from './components/tooltip/tooltip.component';
 
 @NgModule({
   imports: [

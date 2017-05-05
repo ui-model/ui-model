@@ -1,4 +1,4 @@
-import {isDefined} from '@ui-model/common';
+import { isDefined } from '@ui-model/common';
 export function lines(data: { x: number, y: number }[]): { x1: number, y1: number, x2: number, y2: number }[] {
   return data.map((point, index, points) => {
     const nextPoint = points[index + 1];

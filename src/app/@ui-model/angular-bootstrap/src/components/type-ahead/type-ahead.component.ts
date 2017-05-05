@@ -1,12 +1,12 @@
-import {Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Subject} from 'rxjs/Subject';
-import {Subscription} from 'rxjs/Subscription';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {SafeHtml} from '@angular/platform-browser';
+import { Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SafeHtml } from '@angular/platform-browser';
 import 'rxjs/add/operator/skipWhile';
 import 'rxjs/add/operator/do';
-import {Toggle} from '@ui-model/core';
-import {isFunction, Supplier, Transformer} from '@ui-model/common';
+import { Toggle } from '@ui-model/core';
+import { isFunction, Supplier, Transformer } from '@ui-model/common';
 
 const TYPE_AHEAD_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,

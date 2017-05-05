@@ -1,7 +1,7 @@
-import {Directive, ElementRef, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import { Directive, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 
 @Directive({
-  selector: '[uiClickOutside]'
+  selector: '[uiClickOutside]',
 })
 export class ClickOutsideDirective implements OnInit, OnDestroy {
   constructor(private element: ElementRef) {
@@ -13,13 +13,13 @@ export class ClickOutsideDirective implements OnInit, OnDestroy {
     if (event.keyCode === 27) {
       this.onClickOutside.emit();
     }
-  }
+  };
 
   clickListener = (event) => {
     if (!isSelfOrAncestorNode(this.element.nativeElement, event.target  as Node || event.srcElement)) {
       this.onClickOutside.emit();
     }
-  }
+  };
 
   ngOnInit(): void {
     document.addEventListener('click', this.clickListener);

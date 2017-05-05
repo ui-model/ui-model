@@ -1,5 +1,5 @@
-import {Author} from './author';
-import {Tag} from './tag';
+import { Author } from './author';
+import { Tag } from './tag';
 
 export class Metadata {
   id = '';

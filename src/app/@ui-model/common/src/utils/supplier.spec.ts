@@ -1,4 +1,4 @@
-import {getOrCall} from './supplier';
+import { getOrCall } from './supplier';
 
 describe('Supplier', () => {
   it('getOrCall', () => {

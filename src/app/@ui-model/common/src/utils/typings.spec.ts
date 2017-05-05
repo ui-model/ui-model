@@ -1,4 +1,4 @@
-import {isArray, isBoolean, isDate, isEmpty, isFunction, isNumber, isObject, isString, isUndefined} from './typings';
+import { isArray, isBoolean, isDate, isEmpty, isFunction, isNumber, isObject, isString, isUndefined } from './typings';
 
 describe('Typings', () => {
   it('isFunction', () => {

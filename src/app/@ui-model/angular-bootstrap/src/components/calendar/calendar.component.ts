@@ -1,6 +1,6 @@
-import {Component, forwardRef} from '@angular/core';
-import {CalendarValueAccessor} from '@ui-model/angular';
-import {NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, forwardRef } from '@angular/core';
+import { CalendarValueAccessor } from '@ui-model/angular';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const CALENDAR_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,

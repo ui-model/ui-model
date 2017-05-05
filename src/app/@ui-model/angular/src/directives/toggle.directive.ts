@@ -1,6 +1,6 @@
-import {Directive, forwardRef} from '@angular/core';
-import {Toggle} from '@ui-model/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Directive, forwardRef } from '@angular/core';
+import { Toggle } from '@ui-model/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const TOGGLE_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,

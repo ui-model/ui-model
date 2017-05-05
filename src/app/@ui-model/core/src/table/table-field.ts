@@ -1,4 +1,4 @@
-import {Comparator, Comparators, DataType, isUndefined, SortOrder, Transformer, Transformers} from '@ui-model/common';
+import { Comparator, Comparators, DataType, isUndefined, SortOrder, Transformer, Transformers } from '@ui-model/common';
 export class TableField {
   name: string;
   title: string;
