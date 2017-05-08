@@ -5,6 +5,7 @@ import { UiModelModule } from '@ui-model/angular';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { HighlightPipe } from './pipes/highlight.pipe';
 import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-viewer.component';
+import { FieldErrorComponent } from './components/field-error/field-error.component';
 
 @NgModule({
   imports: [
@@ -12,13 +13,14 @@ import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-v
     UiModelModule,
     UiModelBootstrapModule,
   ],
-  declarations: [MarkdownPipe, HighlightPipe, MarkdownViewerComponent],
+  declarations: [MarkdownPipe, HighlightPipe, MarkdownViewerComponent, FieldErrorComponent],
   exports: [
     UiModelModule,
     UiModelBootstrapModule,
     MarkdownPipe,
     HighlightPipe,
     MarkdownViewerComponent,
+    FieldErrorComponent,
   ],
 })
 export class SharedModule {

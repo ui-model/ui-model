@@ -32,6 +32,7 @@ import { SelectNgModelComponent } from '../showcase/select-ng-model/select-ng-mo
 import { D3BasicComponent } from '../showcase/d3-basic/d3-basic.component';
 import { InfiniteScrollComponent } from '../showcase/infinite-scroll/infinite-scroll.component';
 import { D3LineChartComponent } from '../showcase/d3-line-chart/d3-line-chart.component';
+import { ReactiveFormComponent } from '../showcase/reactive-form/reactive-form.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -231,6 +232,16 @@ export const showcaseRoutes: Route[] = [
       title: 'Form',
       tags: ['form', 'recursive', 'nested', 'accessor', 'ngModel'].map(Tag.of),
       description: 'How to **split** a form into a number of separated components',
+      authors: ['wzc'].map(Author.of),
+    },
+  },
+  {
+    path: 'reactive-form',
+    component: ReactiveFormComponent,
+    data: {
+      title: 'Reactive Form',
+      tags: ['form', 'reactive', 'nested', 'dynamic'].map(Tag.of),
+      description: 'How to **split** a form into a number of separated components using reactive form',
       authors: ['wzc'].map(Author.of),
     },
   },

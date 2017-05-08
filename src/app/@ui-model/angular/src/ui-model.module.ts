@@ -141,3 +141,6 @@ export * from './pipes/times.pipe';
 
 export * from './services/modal.service';
 export * from './services/tooltip.service';
+
+export * from './validators/min-value.validator';
+export * from './validators/max-value.validator';
