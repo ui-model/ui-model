@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReactiveFormComponent } from './reactive-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ReactiveFormComponent', () => {
   let component: ReactiveFormComponent;
@@ -8,9 +10,11 @@ describe('ReactiveFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReactiveFormComponent ]
+      imports: [ReactiveFormsModule],
+      declarations: [ReactiveFormComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

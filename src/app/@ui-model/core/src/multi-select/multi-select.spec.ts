@@ -96,4 +96,9 @@ describe('Multi Select', () => {
     select.select({a: '1'});
     expect(select.selected({a: '1'})).toBeTruthy();
   });
+  it('valueField', () => {
+    const select = new MultiSelect<{ a: string }>()
+      .setValueField('a');
+    expect(select.transformer({a: '1'})).toEqual('1');
+  });
 });

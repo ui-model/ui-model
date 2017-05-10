@@ -106,7 +106,9 @@ import { TimesPipe } from './pipes/times.pipe';
 export class UiModelModule {
 }
 
-export * from './accessors/calendar-value-accessor';
+export * from './accessors/calendar.value-accessor';
+export * from './accessors/select.value-accessor';
+export * from './accessors/multi-select.value-accessor';
 
 export * from './directives/toggle.directive';
 export * from './directives/select.directive';

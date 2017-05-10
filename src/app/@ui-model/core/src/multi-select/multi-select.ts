@@ -33,6 +33,23 @@ export class MultiSelect<T> extends Stateful {
     return this;
   }
 
+  private _valueField = 'id';
+  get valueField(): string {
+    return this._valueField;
+  }
+
+  set valueField(value: string) {
+    if (value !== this._valueField) {
+      this._valueField = value;
+      this.transformer = Transformers.objectByField(value);
+    }
+  }
+
+  setValueField(field: string): this {
+    this.valueField = field;
+    return this;
+  }
+
   get allSelected(): boolean {
     return this.options && this.options.length && !this.anyUnselected;
   }

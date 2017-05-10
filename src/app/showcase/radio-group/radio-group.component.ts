@@ -29,6 +29,30 @@ export class RadioGroupComponent {
       id: 'e1',
     },
   ];
+  options2 = [
+    {
+      label: 'A1',
+      code: 'a1',
+    },
+    {
+      label: 'B1',
+      code: 'b1',
+    },
+    {
+      label: 'C1',
+      code: 'c1',
+    },
+    {
+      label: 'D1',
+      code: 'd1',
+    },
+    {
+      label: 'E1',
+      code: 'e1',
+    },
+  ];
 
-  select = new Select<{ label: string, id: string }>().select(this.options[1]);
+  select = new Select<{ label: string, id: string }>()
+    .setValueField('id')
+    .select(this.options[1]);
 }

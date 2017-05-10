@@ -14,3 +14,13 @@
 </p>
 <ui-radio-group [options]="options" [(ngModel)]="select.selection"></ui-radio-group>
 
+<hr>
+
+<p>
+  Radio Group with ngModel(code & value)
+</p>
+<ui-radio-group [options]="options2" [(ngModel)]="select.selection" valueField="code"></ui-radio-group>
+
+<div class="alert alert-info">
+  {{select.selection|json}}
+</div>

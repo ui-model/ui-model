@@ -17,6 +17,23 @@ export class Select<T> extends Stateful {
     return this;
   }
 
+  private _valueField = 'id';
+  get valueField(): string {
+    return this._valueField;
+  }
+
+  set valueField(value: string) {
+    if (value !== this._valueField) {
+      this._valueField = value;
+      this.transformer = Transformers.objectByField(value);
+    }
+  }
+
+  setValueField(field: string): this {
+    this.valueField = field;
+    return this;
+  }
+
   get selection(): T {
     return this._selection;
   }
@@ -32,7 +49,7 @@ export class Select<T> extends Stateful {
   }
 
   selected(item: T): boolean {
-    return this.transformer(this.selection) === this.transformer(item);
+    return this.selection === item || this.transformer(this.selection) === this.transformer(item);
   }
 
   select(item: T): this {
