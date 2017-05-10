@@ -13,7 +13,7 @@ describe('DocumentViewerComponent', () => {
     TestBed.configureTestingModule({
       declarations: [DocumentViewerComponent],
       providers: [
-        {provide: MetadataService, useValue: {document: 'doc'},},
+        {provide: MetadataService, useValue: {document: 'doc'}},
       ],
       schemas: [NO_ERRORS_SCHEMA],
     })

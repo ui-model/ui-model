@@ -1,5 +1,6 @@
-import {Directive, forwardRef} from '@angular/core';
-import { NG_VALUE_ACCESSOR} from '@angular/forms';import { SelectValueAccessor } from '../accessors/select.value-accessor';
+import { Directive, forwardRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SelectValueAccessor } from '../accessors/select.value-accessor';
 
 const SELECT_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,

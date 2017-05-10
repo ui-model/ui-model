@@ -52,5 +52,5 @@ export class DisabledDirective {
       event.stopImmediatePropagation();
       return false;
     }
-  };
+  }
 }

@@ -12,7 +12,11 @@
     "curly": true,
     "eofline": true,
     "forin": true,
-    "import-blacklist": [true, "rxjs", "rxjs/Rx"],
+    "import-blacklist": [
+      true,
+      "rxjs",
+      "rxjs/Rx"
+    ],
     "import-spacing": true,
     "indent": [
       true,
@@ -52,7 +56,10 @@
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [true, "ignore-params"],
+    "no-inferrable-types": [
+      true,
+      "ignore-params"
+    ],
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,
@@ -76,6 +83,7 @@
     ],
     "radix": true,
     "semicolon": [
+      true,
       "always"
     ],
     "triple-equals": [
@@ -92,7 +100,11 @@
         "variable-declaration": "nospace"
       }
     ],
-    "typedef": [true, "call-signature", "parameter"],
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter"
+    ],
     "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
@@ -104,9 +116,24 @@
       "check-separator",
       "check-type"
     ],
-
-    "directive-selector": [true, "attribute", ["ui", "app"], "camelCase"],
-    "component-selector": [true, "element", ["ui", "app"], "kebab-case"],
+    "directive-selector": [
+      true,
+      "attribute",
+      [
+        "ui",
+        "app"
+      ],
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      [
+        "ui",
+        "app"
+      ],
+      "kebab-case"
+    ],
     "use-input-property-decorator": false,
     "use-output-property-decorator": false,
     "use-host-property-decorator": false,

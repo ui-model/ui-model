@@ -2,7 +2,7 @@ import { inject, TestBed } from '@angular/core/testing';
 
 import { UpdateMetadataGuard } from './update-metadata-guard.service';
 import { MetadataService } from './metadata.service';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 describe('UpdateMetadataGuard', () => {
   beforeEach(() => {

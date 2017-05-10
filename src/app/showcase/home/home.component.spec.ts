@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 import { SharedModule } from '../../shared/shared.module';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { SourceCodeService } from '../../core/source-code.service';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
