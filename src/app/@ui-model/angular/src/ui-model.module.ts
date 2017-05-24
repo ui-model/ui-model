@@ -30,6 +30,7 @@ import { DefaultPipe } from './pipes/default.pipe';
 import { IsEmptyPipe } from './pipes/is-empty.pipe';
 import { IsNotEmptyPipe } from './pipes/is-not-empty.pipe';
 import { TimesPipe } from './pipes/times.pipe';
+import { CountDownDirective } from './directives/count-down.directive';
 
 @NgModule({
   imports: [
@@ -68,6 +69,7 @@ import { TimesPipe } from './pipes/times.pipe';
     IsEmptyPipe,
     IsNotEmptyPipe,
     TimesPipe,
+    CountDownDirective,
   ],
   exports: [
     SelectDirective,
@@ -87,6 +89,7 @@ import { TimesPipe } from './pipes/times.pipe';
     DisabledDirective,
     FocusDirective,
     PreventDefaultDirective,
+    CountDownDirective,
 
     FormatPipe,
     OrderByPipe,
@@ -126,6 +129,7 @@ export * from './directives/tooltip.directive';
 export * from './directives/disabled.directive';
 export * from './directives/focus.directive';
 export * from './directives/prevent-default.directive';
+export * from './directives/count-down.directive';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';

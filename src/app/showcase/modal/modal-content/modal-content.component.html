@@ -9,8 +9,12 @@
 <div class="modal-body">
   <ng-content></ng-content>
 </div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-primary" [disabled]="time>0" (click)="doClose()" i18n>Save changes {{countDown}}
+<div class="modal-footer" uiCountDown #countDown="uiCountDown" [initialValue]="5" (done)="cancel.emit()">
+  <button type="button" class="btn btn-primary" [disabled]="countDown.running" (click)="countDown.start()" i18n>
+    Save changes
+    <span *ngIf="countDown.running">
+    ( {{countDown.value}} )
+    </span>
   </button>
   <button type="button" class="btn btn-secondary" (click)="cancel.emit()" i18n>Cancel</button>
 </div>
