@@ -15,7 +15,6 @@ export class ModalContentComponent implements OnInit {
   @Output() cancel = new EventEmitter<void>();
 
   ngOnInit(): void {
-    console.log('Initializing inner content...');
   }
 
   time = 0;

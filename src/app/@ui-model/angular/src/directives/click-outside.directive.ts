@@ -22,12 +22,12 @@ export class ClickOutsideDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    document.addEventListener('click', this.clickListener);
+    document.addEventListener('mouseup', this.clickListener);
     document.addEventListener('keyup', this.escKeyListener);
   }
 
   ngOnDestroy(): void {
-    document.removeEventListener('click', this.clickListener);
+    document.removeEventListener('mouseup', this.clickListener);
     document.removeEventListener('keyup', this.escKeyListener);
   }
 }
