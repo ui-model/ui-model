@@ -37,6 +37,8 @@ export class FieldErrorComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.latestSubscription.unsubscribe();
+    if (this.latestSubscription) {
+      this.latestSubscription.unsubscribe();
+    }
   }
 }
