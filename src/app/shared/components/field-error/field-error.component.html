@@ -1,5 +1,5 @@
-<ul class="alert alert-danger" *ngIf="errors?.length && !field.pristine">
-  <li *ngFor="let error of errors" [ngSwitch]="error.key">
+<ul class="alert alert-danger" *ngIf="field && !field.pristine && field.invalid && field.errors">
+  <li *ngFor="let error of field.errors | objectToArray" [ngSwitch]="error.key">
     <div *ngSwitchCase="'minlength'">
       Min Length: {{error.value.requiredLength}}, actual: {{error.value.actualLength}}
     </div>
@@ -7,14 +7,22 @@
       Max Length: {{error.value.requiredLength}}, actual: {{error.value.actualLength}}
     </div>
     <div *ngSwitchCase="'minValue'">
-      Min Value: {{error.value.required}}, actual: {{error.value.actual}}
+      Min Value: {{error.value.requiredValue}}, actual: {{error.value.actualValue}}
     </div>
     <div *ngSwitchCase="'maxValue'">
-      Max Value: {{error.value.required}}, actual: {{error.value.actual}}
+      Max Value: {{error.value.requiredValue}}, actual: {{error.value.actualValue}}
+    </div>
+    <div *ngSwitchCase="'pattern'">
+      Pattern: {{error.value.requiredPattern}}, actual: {{error.value.actualValue}}
     </div>
     <div *ngSwitchCase="'required'">
       Required!
     </div>
-
+    <div *ngSwitchCase="'email'">
+      Should be a valid email!
+    </div>
+    <div *ngSwitchDefault>
+      {{error.key}} - {{error.value|json}}
+    </div>
   </li>
 </ul>

@@ -1,0 +1,49 @@
+<div *ngIf="form" [formGroup]="form">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" name="username"
+           formControlName="username"/>
+    <app-field-error fieldName="username"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" name="email"
+           formControlName="email"/>
+    <app-field-error fieldName="email"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label for="mobile">Mobile</label>
+    <input type="text" class="form-control" id="mobile" name="mobile"
+           formControlName="mobile"/>
+    <app-field-error fieldName="mobile"></app-field-error>
+  </div>
+
+  <ui-panel title="Profile" formGroupName="profile">
+    <div class="form-group">
+      <label for="birthday">Birthday</label>
+      <input type="date" class="form-control" id="birthday" name="birthday"
+             formControlName="birthday"/>
+      <app-field-error fieldName="birthday"></app-field-error>
+    </div>
+    <div class="form-group">
+      <label>Gender</label>
+      <ui-radio-group formControlName="gender" [options]="genders"></ui-radio-group>
+      <app-field-error fieldName="gender"></app-field-error>
+    </div>
+    <div class="form-group">
+      <label for="height">Height(CM)</label>
+      <input type="number" class="form-control" id="height" name="height"
+             formControlName="height"/>
+      <app-field-error fieldName="height"></app-field-error>
+    </div>
+    <div class="form-group">
+      <label for="weight">Weight</label>
+      <input type="number" class="form-control" id="weight" name="weight"
+             formControlName="weight"/>
+      <app-field-error fieldName="weight"></app-field-error>
+    </div>
+  </ui-panel>
+  <app-field-error fieldName="profile"></app-field-error>
+</div>
+
+<pre class="alert alert-info">{{form.value|json:2}}</pre>

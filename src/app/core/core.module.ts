@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { UpdateTitleGuard } from './update-title.service';
 import { UpdateMetadataGuard } from './update-metadata-guard.service';
 import { MetadataService } from './metadata.service';
+import { FormModelBuilder } from '@ui-model/angular';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { MetadataService } from './metadata.service';
     HttpModule,
   ],
   declarations: [],
-  providers: [SourceCodeService, UpdateTitleGuard, UpdateMetadataGuard, MetadataService],
+  providers: [SourceCodeService, UpdateTitleGuard, UpdateMetadataGuard, MetadataService, FormModelBuilder],
 })
 export class CoreModule {
 }

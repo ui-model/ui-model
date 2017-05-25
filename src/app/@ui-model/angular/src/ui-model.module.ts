@@ -31,6 +31,7 @@ import { IsEmptyPipe } from './pipes/is-empty.pipe';
 import { IsNotEmptyPipe } from './pipes/is-not-empty.pipe';
 import { TimesPipe } from './pipes/times.pipe';
 import { CountDownDirective } from './directives/count-down.directive';
+import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
 
 @NgModule({
   imports: [
@@ -69,6 +70,7 @@ import { CountDownDirective } from './directives/count-down.directive';
     IsEmptyPipe,
     IsNotEmptyPipe,
     TimesPipe,
+    ObjectToArrayPipe,
     CountDownDirective,
   ],
   exports: [
@@ -104,6 +106,7 @@ import { CountDownDirective } from './directives/count-down.directive';
     IsEmptyPipe,
     IsNotEmptyPipe,
     TimesPipe,
+    ObjectToArrayPipe,
   ],
 })
 export class UiModelModule {
@@ -112,6 +115,9 @@ export class UiModelModule {
 export * from './accessors/calendar.value-accessor';
 export * from './accessors/select.value-accessor';
 export * from './accessors/multi-select.value-accessor';
+
+export * from './decorators/rules';
+export * from './decorators/form-model.decorator';
 
 export * from './directives/toggle.directive';
 export * from './directives/select.directive';
@@ -147,6 +153,7 @@ export * from './pipes/times.pipe';
 
 export * from './services/modal.service';
 export * from './services/tooltip.service';
+export * from './services/form-model-builder.service';
 
 export * from './validators/min-value.validator';
 export * from './validators/max-value.validator';

@@ -51,6 +51,7 @@ import {D3LineChartComponent} from './showcase/d3-line-chart/d3-line-chart.compo
 import {UiModelD3Module} from './@ui-model/angular-d3/src/ui-model-d3.module';
 import { ReactiveFormComponent } from './showcase/reactive-form/reactive-form.component';
 import { BasicInfoGroupComponent } from './showcase/reactive-form/basic-info-group/basic-info-group.component';
+import { FormModelComponent } from './showcase/form-model/form-model.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { BasicInfoGroupComponent } from './showcase/reactive-form/basic-info-gro
     D3LineChartComponent,
     ReactiveFormComponent,
     BasicInfoGroupComponent,
+    FormModelComponent,
   ],
   imports: [
     BrowserModule,

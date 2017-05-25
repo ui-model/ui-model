@@ -33,6 +33,7 @@ import { D3BasicComponent } from '../showcase/d3-basic/d3-basic.component';
 import { InfiniteScrollComponent } from '../showcase/infinite-scroll/infinite-scroll.component';
 import { D3LineChartComponent } from '../showcase/d3-line-chart/d3-line-chart.component';
 import { ReactiveFormComponent } from '../showcase/reactive-form/reactive-form.component';
+import { FormModelComponent } from '../showcase/form-model/form-model.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -242,6 +243,16 @@ export const showcaseRoutes: Route[] = [
       title: 'Reactive Form',
       tags: ['form', 'reactive', 'nested', 'dynamic'].map(Tag.of),
       description: 'How to **split** a form into a number of separated components using reactive form',
+      authors: ['wzc'].map(Author.of),
+    },
+  },
+  {
+    path: 'form-model',
+    component: FormModelComponent,
+    data: {
+      title: 'Form Model',
+      tags: ['form', 'model', 'dynamic'].map(Tag.of),
+      description: 'How to build a form from a form model',
       authors: ['wzc'].map(Author.of),
     },
   },

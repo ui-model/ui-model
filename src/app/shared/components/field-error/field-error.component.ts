@@ -1,44 +1,42 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
-import * as _ from 'lodash';
-import { Subscription } from 'rxjs/Subscription';
+import { Component, Input, OnInit, Optional } from '@angular/core';
+import { AbstractControl, FormGroupDirective, FormGroupName } from '@angular/forms';
 
 @Component({
   selector: 'app-field-error',
   templateUrl: './field-error.component.html',
   styleUrls: ['./field-error.component.scss'],
 })
-export class FieldErrorComponent implements OnInit, OnDestroy {
-  constructor() {
+export class FieldErrorComponent implements OnInit {
+  constructor(@Optional() private group: FormGroupName, @Optional() private form: FormGroupDirective) {
   }
 
-  latestSubscription: Subscription;
-  private _field: AbstractControl;
+  @Input() field: AbstractControl;
 
-  get field(): AbstractControl {
-    return this._field;
+  private _fieldName: string;
+
+  get fieldName(): string {
+    return this._fieldName;
   }
 
-  @Input() set field(value: AbstractControl) {
-    if (value !== this._field) {
-      this._field = value;
-      if (this.latestSubscription) {
-        this.latestSubscription.unsubscribe();
-      }
-      this.latestSubscription = value.statusChanges.subscribe(() => {
-        this.errors = _.map(value.errors, (v, k) => ({key: k, value: v}));
-      });
+  @Input() set fieldName(value: string) {
+    if (this._fieldName !== value) {
+      this._fieldName = value;
+      this.fieldNameChanged();
     }
   }
 
-  errors: { key, value }[];
+  fieldNameChanged(): void {
+    if (!this.fieldName) {
+      return;
+    }
+    if (this.group) {
+      this.field = this.group.control.get(this.fieldName);
+    } else if (this.form) {
+      this.field = this.form.control.get(this.fieldName);
+    }
+  }
 
   ngOnInit(): void {
-  }
-
-  ngOnDestroy(): void {
-    if (this.latestSubscription) {
-      this.latestSubscription.unsubscribe();
-    }
+    this.fieldNameChanged();
   }
 }
