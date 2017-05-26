@@ -18,6 +18,15 @@
     <app-field-error fieldName="mobile"></app-field-error>
   </div>
 
+  <div class="form-group" formArrayName="tags">
+    <label for="tags">Tags</label>
+    <div *ngFor="let tag of form.get('tags').controls; let i = index">
+      <input type="text" class="form-control" id="tags" name="tags"
+             [formControlName]="i"/>
+      <app-field-error [field]="tag"></app-field-error>
+    </div>
+  </div>
+
   <ui-panel title="Profile" formGroupName="profile">
     <div class="form-group">
       <label for="birthday">Birthday</label>

@@ -1,9 +1,11 @@
+import { metaAsyncValidators, metaElementTypes, metaTypes, metaValidators } from './reflect-utils';
 const Reflect = window['Reflect'];
 
 export function FormModel(): any {
   return function (target: any): void {
-    Reflect.defineMetadata('design:fields', {}, target);
-    Reflect.defineMetadata('design:validators', {}, target);
-    Reflect.defineMetadata('design:async-validators', {}, target);
+    Reflect.defineMetadata(metaElementTypes, {}, target);
+    Reflect.defineMetadata(metaTypes, {}, target);
+    Reflect.defineMetadata(metaValidators, {}, target);
+    Reflect.defineMetadata(metaAsyncValidators, {}, target);
   };
 }

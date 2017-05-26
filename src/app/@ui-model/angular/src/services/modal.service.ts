@@ -27,7 +27,7 @@ export class ModalService {
   constructor() {
   }
 
-  items = [];
+  items: Modal[] = [];
 
   open(modal: Modal): void {
     this.items.push(modal);

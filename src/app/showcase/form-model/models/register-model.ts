@@ -1,4 +1,4 @@
-import { Custom, Email, FormModel, MinLength, Null, Pattern, Required } from '@ui-model/angular';
+import { Custom, ElementType, Email, FormModel, MinLength, Null, Pattern, Required } from '@ui-model/angular';
 import { ProfileModel } from './profile-model';
 import { FormGroup } from '@angular/forms';
 
@@ -15,6 +15,10 @@ export class RegisterModel {
   @Required()
   @Pattern(/^1\d{10}$/)
   mobile: string;
+
+  @Required()
+  @ElementType(String)
+  tags: string[];
 
   @Null()
   @Custom((c: FormGroup) => {

@@ -118,6 +118,7 @@ export * from './accessors/multi-select.value-accessor';
 
 export * from './decorators/rules';
 export * from './decorators/form-model.decorator';
+export * from './decorators/element-type.decorator';
 
 export * from './directives/toggle.directive';
 export * from './directives/select.directive';
