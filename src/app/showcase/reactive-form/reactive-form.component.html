@@ -5,11 +5,33 @@
     <app-field-error [field]="name"></app-field-error>
   </div>
   <app-basic-info-group [group]="basic"></app-basic-info-group>
+  <div formArrayName="tags">
+    <div class="form-group tags">
+      <label>Tags:
+      </label>
+      <div *ngFor="let control of tags.controls;let i = index">
+        <div class="input-group">
+          <input type="text" class="form-control" [formControlName]="i" placeholder="please input a tag"/>
+          <div class="input-group-btn">
+            <button class="btn btn-secondary btn-sm" (click)="removeTag(i)">
+              <i class="fa fa-remove"></i>
+            </button>
+          </div>
+        </div>
+        <app-field-error [field]="control"></app-field-error>
+      </div>
+      <button class="btn btn-secondary btn-block" (click)="newTag()">
+        <i class="fa fa-plus-circle text-primary"></i>
+        Add New Tag
+      </button>
+    </div>
+
+  </div>
   <div class="form-group">
     <button type="submit" class="btn btn-primary btn-block" [uiDisabled]="form.invalid">Submit</button>
   </div>
 </form>
 
-<p>
-  {{form.value|json}}
-</p>
+<pre class="alert alert-info">
+  {{form.value|json:2}}
+</pre>
