@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormModelComponent } from './form-model.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormModelBuilder } from '@ui-model/angular';
+import { RadioGroupComponent } from '@ui-model/angular-bootstrap';
 
 describe('FormModelComponent', () => {
   let component: FormModelComponent;
@@ -8,9 +12,14 @@ describe('FormModelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormModelComponent ]
+      imports: [
+        ReactiveFormsModule,
+      ],
+      declarations: [FormModelComponent, RadioGroupComponent],
+      providers: [FormModelBuilder],
+      schemas: [NO_ERRORS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FieldErrorComponent } from './field-error.component';
+import { ObjectToArrayPipe } from '../../../@ui-model/angular/src/pipes/object-to-array.pipe';
 
 describe('FieldErrorComponent', () => {
   let component: FieldErrorComponent;
@@ -8,9 +9,9 @@ describe('FieldErrorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FieldErrorComponent ]
+      declarations: [FieldErrorComponent, ObjectToArrayPipe],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
