@@ -1,5 +1,4 @@
-import { metaAsyncValidators, metaElementTypes, metaTypes, metaValidators } from './reflect-utils';
-const Reflect = window['Reflect'];
+import { metaAsyncValidators, metaElementTypes, metaTypes, metaValidators, Reflect } from './reflect-utils';
 
 export function FormModel(): any {
   return function (target: any): void {

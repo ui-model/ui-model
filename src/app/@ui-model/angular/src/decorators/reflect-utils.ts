@@ -1,6 +1,6 @@
 import { AsyncValidatorFn, ValidatorFn } from '@angular/forms';
-const Reflect = window['Reflect'];
 
+export const Reflect = window['Reflect'];
 export const metaElementTypes = 'design:elementTypes';
 export const metaTypes = 'design:types';
 export const metaType = 'design:type';
