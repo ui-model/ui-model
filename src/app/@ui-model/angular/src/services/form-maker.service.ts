@@ -77,7 +77,7 @@ export class FormMaker<T> {
         control.removeAt(i);
       }
       (value || []).forEach((item) => {
-        // TODO: create item according to element type(from reflect metadata)
+        // TODO: create item according to element type(get from reflect metadata)
         control.push(new FormControl(item));
       });
     }
