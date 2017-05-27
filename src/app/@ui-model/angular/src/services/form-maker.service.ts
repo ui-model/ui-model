@@ -55,17 +55,21 @@ export class FormMaker<T> {
   }
 
   patchValue(control: AbstractControl, value: T): void {
-    this.setValue(control, value);
+    this._setValue(control, value);
   }
 
-  setValue(control: AbstractControl, value: T | any): void {
+  setValue(control: AbstractControl, value: T): void {
+    this._setValue(control, value);
+  }
+
+  private _setValue(control: AbstractControl, value: any): void {
     if (control instanceof FormControl) {
       control.setValue(value);
     } else if (control instanceof FormGroup) {
       Object.keys(control.controls).forEach((name) => {
         const c = control.controls[name];
         const v = value && value[name];
-        this.setValue(c, v);
+        this._setValue(c, v);
       });
     } else if (control instanceof FormArray) {
       // clear
@@ -73,6 +77,7 @@ export class FormMaker<T> {
         control.removeAt(i);
       }
       (value || []).forEach((item) => {
+        // TODO: create item according to element type(from reflect metadata)
         control.push(new FormControl(item));
       });
     }
