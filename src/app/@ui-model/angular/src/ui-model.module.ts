@@ -168,6 +168,7 @@ export * from './pipes/field-error-message.pipe';
 export * from './services/modal.service';
 export * from './services/tooltip.service';
 export * from './services/form-model-builder.service';
+export * from './services/field-error-formatter.service';
 
 export * from './validators/min-value.validator';
 export * from './validators/max-value.validator';
