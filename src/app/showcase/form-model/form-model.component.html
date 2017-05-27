@@ -15,7 +15,7 @@
     <label for="mobile">Mobile</label>
     <input type="text" class="form-control" id="mobile" name="mobile"
            formControlName="mobile"/>
-    <ui-field-error fieldName="mobile"></ui-field-error>
+    <ui-field-error fieldName="mobile" [messages]="{pattern: 'Should be a valid mobile'}"></ui-field-error>
   </div>
 
   <div class="form-group">

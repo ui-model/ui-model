@@ -11,6 +11,7 @@ export class FieldErrorComponent implements OnInit {
   }
 
   @Input() field: AbstractControl;
+  @Input() messages: { [key: string]: string };
 
   private _fieldName: string;
 

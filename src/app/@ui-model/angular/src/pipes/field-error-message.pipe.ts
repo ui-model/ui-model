@@ -8,7 +8,12 @@ export class FieldErrorMessagePipe implements PipeTransform {
   constructor() {
   }
 
-  transform({key, value}: { key: string, value: any }): string {
+  transform({key, value}: { key: string, value: any }, customMessages: { [key: string]: string } = {}): string {
+    const customMessage = customMessages[key];
+    if (customMessage) {
+      return customMessage;
+    }
+
     switch (key) {
       case 'minlength':
         return `The length <span class="text-muted field-error-actual">( ${value.actualLength} )</span> is less than minimum length 
