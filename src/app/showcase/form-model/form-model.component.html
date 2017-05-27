@@ -18,16 +18,29 @@
     <app-field-error fieldName="mobile"></app-field-error>
   </div>
 
-  <div class="form-group" formArrayName="tags">
+  <div class="form-group" formArrayName="tags" #tags="uiFormArray">
     <label for="tags">Tags</label>
-    <div *ngFor="let tag of form.get('tags').controls; let i = index">
-      <input type="text" class="form-control" id="tags" name="tags"
-             [formControlName]="i"/>
-      <app-field-error [field]="tag"></app-field-error>
+    <div class="form-group" *ngFor="let control of tags.controls">
+      <div class="input-group">
+        <input type="text" class="form-control" id="tags" name="tags"
+               [formControl]="control"/>
+        <div class="input-group-btn">
+          <button class="btn btn-primary" (click)="tags.removeControl(control)">
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+      </div>
+      <app-field-error [field]="control"></app-field-error>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" (click)="tags.createControl()">
+        <i class="fa fa-plus-circle"></i>
+        Add a new tag
+      </button>
     </div>
   </div>
 
-  <ui-panel title="Profile" formGroupName="profile">
+  <ui-panel title="Profile" formGroupName="profile" #profile="uiFormGroup">
     <div class="form-group">
       <label for="birthday">Birthday</label>
       <input type="date" class="form-control" id="birthday" name="birthday"
@@ -51,6 +64,7 @@
              formControlName="weight"/>
       <app-field-error fieldName="weight"></app-field-error>
     </div>
+    <pre class="alert alert-info">{{profile.group.value|json:2}}</pre>
   </ui-panel>
   <app-field-error fieldName="profile"></app-field-error>
 </div>

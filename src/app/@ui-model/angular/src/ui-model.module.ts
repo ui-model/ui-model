@@ -32,6 +32,8 @@ import { IsNotEmptyPipe } from './pipes/is-not-empty.pipe';
 import { TimesPipe } from './pipes/times.pipe';
 import { CountDownDirective } from './directives/count-down.directive';
 import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
+import { FormArrayDirective } from './directives/form-array.directive';
+import { FormGroupDirective } from './directives/form-group.directive';
 
 @NgModule({
   imports: [
@@ -72,6 +74,8 @@ import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
     TimesPipe,
     ObjectToArrayPipe,
     CountDownDirective,
+    FormArrayDirective,
+    FormGroupDirective,
   ],
   exports: [
     SelectDirective,
@@ -92,6 +96,8 @@ import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
     FocusDirective,
     PreventDefaultDirective,
     CountDownDirective,
+    FormArrayDirective,
+    FormGroupDirective,
 
     FormatPipe,
     OrderByPipe,
@@ -137,6 +143,8 @@ export * from './directives/disabled.directive';
 export * from './directives/focus.directive';
 export * from './directives/prevent-default.directive';
 export * from './directives/count-down.directive';
+export * from './directives/form-array.directive';
+export * from './directives/form-group.directive';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';
