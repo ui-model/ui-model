@@ -11,21 +11,21 @@ export class FormArrayExporterDirective {
   constructor(private formArrayName: FormArrayName) {
   }
 
-  get array(): FormArray {
+  get control(): FormArray {
     return this.formArrayName && this.formArrayName.control;
   }
 
-  get controls(): AbstractControl[] {
-    return this.array && this.array.controls;
+  get items(): AbstractControl[] {
+    return this.control && this.control.controls;
   }
 
-  createControl(): void {
+  createItem(): void {
     const control = new FormControl();
-    this.array.push(control);
+    this.control.push(control);
   }
 
-  removeControl(control: AbstractControl): void {
-    this.array.removeAt(this.array.controls.indexOf(control));
+  removeItem(item: AbstractControl): void {
+    this.control.removeAt(this.control.controls.indexOf(item));
   }
 
 }

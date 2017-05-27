@@ -27,12 +27,12 @@
 
   <div class="form-group" formArrayName="tags" #tags="uiFormArray">
     <label for="tags">Tags</label>
-    <div class="form-group" *ngFor="let control of tags.controls">
+    <div class="form-group" *ngFor="let control of tags.items">
       <div class="input-group">
         <input type="text" class="form-control" id="tags" name="tags"
                [formControl]="control"/>
         <div class="input-group-btn">
-          <button class="btn btn-primary" (click)="tags.removeControl(control)">
+          <button class="btn btn-primary" (click)="tags.removeItem(control)">
             <i class="fa fa-close"></i>
           </button>
         </div>
@@ -40,7 +40,7 @@
       <ui-field-error [field]="control"></ui-field-error>
     </div>
     <div>
-      <button type="button" class="btn btn-primary" (click)="tags.createControl()">
+      <button type="button" class="btn btn-primary" (click)="tags.createItem()">
         <i class="fa fa-plus-circle"></i>
         Add a new tag
       </button>
@@ -71,7 +71,7 @@
              formControlName="weight"/>
       <ui-field-error fieldName="weight"></ui-field-error>
     </div>
-    <pre class="alert alert-info">{{profile.group.value|json:2}}</pre>
+    <pre class="alert alert-info">{{profile.control.value|json:2}}</pre>
   </ui-panel>
   <ui-field-error fieldName="profile"></ui-field-error>
 </div>

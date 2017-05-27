@@ -11,7 +11,7 @@ export class FormGroupExporterDirective {
   constructor(private formGroupName: FormGroupName) {
   }
 
-  get group(): FormGroup {
+  get control(): FormGroup {
     return this.formGroupName && this.formGroupName.control;
   }
 }
