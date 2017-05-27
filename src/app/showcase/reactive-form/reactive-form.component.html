@@ -2,7 +2,7 @@
   <div class="form-group">
     <label for="name">Name: </label>
     <input type="text" id="name" class="form-control" [formControl]="name"/>
-    <app-field-error [field]="name"></app-field-error>
+    <ui-field-error [field]="name"></ui-field-error>
   </div>
   <app-basic-info-group [group]="basic"></app-basic-info-group>
   <div formArrayName="tags">
@@ -18,7 +18,7 @@
             </button>
           </div>
         </div>
-        <app-field-error [field]="control"></app-field-error>
+        <ui-field-error [field]="control"></ui-field-error>
       </div>
       <button class="btn btn-secondary btn-block" (click)="newTag()">
         <i class="fa fa-plus-circle text-primary"></i>

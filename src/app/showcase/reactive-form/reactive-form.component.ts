@@ -10,9 +10,9 @@ import { maxValue, minValue } from '@ui-model/angular';
 export class ReactiveFormComponent implements OnInit {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      name: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])],
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
       basic: fb.group({
-        age: [0, Validators.compose([Validators.required, minValue(10), maxValue(20)])],
+        age: [0, [Validators.required, minValue(10), maxValue(20)]],
       }),
       tags: fb.array([]),
     });

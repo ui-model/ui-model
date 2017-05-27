@@ -34,6 +34,7 @@ import { CountDownDirective } from './directives/count-down.directive';
 import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
 import { FormArrayExporterDirective } from './directives/form-array-exporter.directive';
 import { FormGroupExporterDirective } from './directives/form-group-exporter.directive';
+import { FieldErrorMessagePipe } from './pipes/field-error-message.pipe';
 
 @NgModule({
   imports: [
@@ -76,6 +77,7 @@ import { FormGroupExporterDirective } from './directives/form-group-exporter.dir
     CountDownDirective,
     FormArrayExporterDirective,
     FormGroupExporterDirective,
+    FieldErrorMessagePipe,
   ],
   exports: [
     SelectDirective,
@@ -113,6 +115,7 @@ import { FormGroupExporterDirective } from './directives/form-group-exporter.dir
     IsNotEmptyPipe,
     TimesPipe,
     ObjectToArrayPipe,
+    FieldErrorMessagePipe,
   ],
 })
 export class UiModelModule {
@@ -160,6 +163,7 @@ export * from './pipes/is-empty.pipe';
 export * from './pipes/is-not-empty.pipe';
 export * from './pipes/times.pipe';
 export * from './pipes/object-to-array.pipe';
+export * from './pipes/field-error-message.pipe';
 
 export * from './services/modal.service';
 export * from './services/tooltip.service';
@@ -167,3 +171,4 @@ export * from './services/form-model-builder.service';
 
 export * from './validators/min-value.validator';
 export * from './validators/max-value.validator';
+export * from './validators/url.validator';

@@ -1,6 +1,7 @@
 export * from './custom.decorator';
 export * from './custom-async.decorator';
 export * from './email.decorator';
+export * from './url.decorator';
 export * from './max-length.decorator';
 export * from './min-length.decorator';
 export * from './max-value.decorator';

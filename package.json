@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 0 --hmr --open",
+    "start": "ng serve --port 0 --open",
     "start-cn": "ng serve --aot --port 4301 --i18n-file=src/i18n/messages.zh.xlf --locale=zh --i18n-format=xlf --open",
     "lint": "tslint -c tslint.json \"src/**/*.ts\"",
     "test": "npm run lint && ng test -sr --browsers=PhantomJS",
