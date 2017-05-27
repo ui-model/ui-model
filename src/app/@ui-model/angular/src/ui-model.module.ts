@@ -32,8 +32,8 @@ import { IsNotEmptyPipe } from './pipes/is-not-empty.pipe';
 import { TimesPipe } from './pipes/times.pipe';
 import { CountDownDirective } from './directives/count-down.directive';
 import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
-import { FormArrayDirective } from './directives/form-array.directive';
-import { FormGroupDirective } from './directives/form-group.directive';
+import { FormArrayExporterDirective } from './directives/form-array-exporter.directive';
+import { FormGroupExporterDirective } from './directives/form-group-exporter.directive';
 
 @NgModule({
   imports: [
@@ -74,8 +74,8 @@ import { FormGroupDirective } from './directives/form-group.directive';
     TimesPipe,
     ObjectToArrayPipe,
     CountDownDirective,
-    FormArrayDirective,
-    FormGroupDirective,
+    FormArrayExporterDirective,
+    FormGroupExporterDirective,
   ],
   exports: [
     SelectDirective,
@@ -96,8 +96,8 @@ import { FormGroupDirective } from './directives/form-group.directive';
     FocusDirective,
     PreventDefaultDirective,
     CountDownDirective,
-    FormArrayDirective,
-    FormGroupDirective,
+    FormArrayExporterDirective,
+    FormGroupExporterDirective,
 
     FormatPipe,
     OrderByPipe,
@@ -143,8 +143,8 @@ export * from './directives/disabled.directive';
 export * from './directives/focus.directive';
 export * from './directives/prevent-default.directive';
 export * from './directives/count-down.directive';
-export * from './directives/form-array.directive';
-export * from './directives/form-group.directive';
+export * from './directives/form-array-exporter.directive';
+export * from './directives/form-group-exporter.directive';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';
@@ -159,6 +159,7 @@ export * from './pipes/default.pipe';
 export * from './pipes/is-empty.pipe';
 export * from './pipes/is-not-empty.pipe';
 export * from './pipes/times.pipe';
+export * from './pipes/object-to-array.pipe';
 
 export * from './services/modal.service';
 export * from './services/tooltip.service';

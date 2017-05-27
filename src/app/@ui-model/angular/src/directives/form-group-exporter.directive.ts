@@ -6,7 +6,7 @@ import { FormGroup, FormGroupName } from '@angular/forms';
   selector: '[formGroupName]',
   exportAs: 'uiFormGroup',
 })
-export class FormGroupDirective {
+export class FormGroupExporterDirective {
 
   constructor(private formGroupName: FormGroupName) {
   }

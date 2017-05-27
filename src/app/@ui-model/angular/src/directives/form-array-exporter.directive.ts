@@ -6,7 +6,7 @@ import { AbstractControl, FormArray, FormArrayName, FormControl } from '@angular
   selector: '[formArrayName]',
   exportAs: 'uiFormArray',
 })
-export class FormArrayDirective {
+export class FormArrayExporterDirective {
 
   constructor(private formArrayName: FormArrayName) {
   }
