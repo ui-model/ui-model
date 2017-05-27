@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup } from '@angular/forms';
-import { metaAsyncValidators, metaElementTypes, metaTypes, metaValidators } from '../decorators/reflect-utils';
+import {
+  metaAsyncValidators,
+  metaElementType,
+  metaElementTypes,
+  metaTypes,
+  metaValidators,
+} from '../decorators/reflect-utils';
+import { CanBeNew } from '@ui-model/common';
 const Reflect = window['Reflect'];
 
 @Injectable()
-export class FormModelBuilder {
+export class FormMaker {
 
   constructor() {
   }
 
-  _buildFrom(data: {}): AbstractControl {
+  private _createFrom(data: {}): AbstractControl {
     const types = Reflect.getMetadata(metaTypes, data);
     const elementTypes = Reflect.getMetadata(metaElementTypes, data);
     const validators = Reflect.getMetadata(metaValidators, data);
@@ -28,13 +35,10 @@ export class FormModelBuilder {
 
       let control;
       if (isSubModel) {
-        control = this._buildFrom(fieldType);
+        control = this._createFrom(fieldType);
       } else if (isArray) {
         control = new FormArray([]);
-        if (!control.length) {
-          control.push(new FormControl());
-        }
-        control['metaElementType'] = fieldElementType;
+        Reflect.defineMetadata(metaElementType, control, fieldElementType);
       } else {
         control = new FormControl();
       }
@@ -46,7 +50,10 @@ export class FormModelBuilder {
     return new FormGroup(controls);
   }
 
-  buildFrom(data: {}): FormGroup {
-    return this._buildFrom(data.constructor) as FormGroup;
+  createFromModel<T>(model: CanBeNew<T>): FormGroup {
+    if (!Reflect.hasMetadata(metaTypes, model)) {
+      throw 'The `model` parameter must be a class with the `@FormModel()` decorator!';
+    }
+    return this._createFrom(model) as FormGroup;
   }
 }

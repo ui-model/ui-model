@@ -1,5 +1,6 @@
 export * from './common/stateful';
 
+export { CanBeNew } from './utils/can-be-new';
 export { Comparator, Comparators } from './utils/comparator';
 export { Coordinate } from './utils/coordinate';
 export { DataType, dataTypeOf } from './utils/data-type';

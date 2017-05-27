@@ -2,6 +2,7 @@ import { AsyncValidatorFn, ValidatorFn } from '@angular/forms';
 
 export const Reflect = window['Reflect'];
 export const metaElementTypes = 'design:elementTypes';
+export const metaElementType = 'design:elementType';
 export const metaTypes = 'design:types';
 export const metaType = 'design:type';
 export const metaValidators = 'design:validators';

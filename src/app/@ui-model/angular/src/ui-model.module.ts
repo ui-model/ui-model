@@ -38,11 +38,11 @@ import { FieldErrorMessagePipe } from './pipes/field-error-message.pipe';
 
 import { Modal, ModalService } from './services/modal.service';
 import { TooltipService } from './services/tooltip.service';
-import { FormModelBuilder } from './services/form-model-builder.service';
+import { FormMaker } from './services/form-maker.service';
 import { FieldErrorFormatter } from './services/field-error-formatter.service';
 
-export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormModelBuilder, FieldErrorFormatter];
-export { Modal, ModalService, TooltipService, FormModelBuilder, FieldErrorFormatter };
+export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorFormatter];
+export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter };
 
 @NgModule({
   imports: [

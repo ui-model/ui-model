@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterModel } from './models/register-model';
-import { FormModelBuilder } from '@ui-model/angular';
+import { FormMaker } from '@ui-model/angular';
 import { FormGroup } from '@angular/forms';
 
 const Reflect = window['Reflect'];
@@ -11,10 +11,9 @@ const Reflect = window['Reflect'];
 })
 export class FormModelComponent implements OnInit {
 
-  constructor(private builder: FormModelBuilder) {
+  constructor(private maker: FormMaker) {
   }
 
-  data = new RegisterModel();
   form: FormGroup;
 
   genders = [
@@ -29,7 +28,7 @@ export class FormModelComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.form = this.builder.buildFrom(this.data);
+    this.form = this.maker.createFromModel(RegisterModel);
   }
 
 }

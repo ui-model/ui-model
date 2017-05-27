@@ -1,15 +1,15 @@
 import { inject, TestBed } from '@angular/core/testing';
 
-import { FormModelBuilder } from './form-model-builder.service';
+import { FormMaker } from './form-maker.service';
 
 describe('FormModelBuilder', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FormModelBuilder],
+      providers: [FormMaker],
     });
   });
 
-  it('should ...', inject([FormModelBuilder], (service: FormModelBuilder) => {
+  it('should ...', inject([FormMaker], (service: FormMaker) => {
     expect(service).toBeTruthy();
   }));
 });
