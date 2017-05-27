@@ -36,6 +36,14 @@ import { FormArrayExporterDirective } from './directives/form-array-exporter.dir
 import { FormGroupExporterDirective } from './directives/form-group-exporter.directive';
 import { FieldErrorMessagePipe } from './pipes/field-error-message.pipe';
 
+import { Modal, ModalService } from './services/modal.service';
+import { TooltipService } from './services/tooltip.service';
+import { FormModelBuilder } from './services/form-model-builder.service';
+import { FieldErrorFormatter } from './services/field-error-formatter.service';
+
+export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormModelBuilder, FieldErrorFormatter];
+export { Modal, ModalService, TooltipService, FormModelBuilder, FieldErrorFormatter };
+
 @NgModule({
   imports: [
     CommonModule,
@@ -119,6 +127,7 @@ import { FieldErrorMessagePipe } from './pipes/field-error-message.pipe';
   ],
 })
 export class UiModelModule {
+  static services = ALL_SERVICES_OF_UI_MODEL_ANGULAR;
 }
 
 export * from './accessors/calendar.value-accessor';
@@ -164,11 +173,6 @@ export * from './pipes/is-not-empty.pipe';
 export * from './pipes/times.pipe';
 export * from './pipes/object-to-array.pipe';
 export * from './pipes/field-error-message.pipe';
-
-export * from './services/modal.service';
-export * from './services/tooltip.service';
-export * from './services/form-model-builder.service';
-export * from './services/field-error-formatter.service';
 
 export * from './validators/min-value.validator';
 export * from './validators/max-value.validator';
