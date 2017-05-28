@@ -15,7 +15,6 @@ export class FormModelComponent implements OnInit {
   constructor(private maker: FormMaker<RegisterModel>) {
   }
 
-  value = new RegisterModel();
   form: FormGroup;
 
   genders = [
@@ -30,18 +29,23 @@ export class FormModelComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.value.username = 'test';
-    this.value.tags = ['1', '2', '3'];
-    this.value.profile = new ProfileModel();
-    this.value.profile.birthday = new Date('1901-01-01');
-    this.form = this.maker.createFromValue(this.value);
+    this.form = this.maker.createFromModel(RegisterModel);
   }
 
-  setValue(): void {
+  setValue1(): void {
     const value = new RegisterModel();
     value.username = 'demo';
     value.profile = new ProfileModel();
     value.profile.height = 60;
+    this.maker.setValue(this.form, value);
+  }
+
+  setValue2(): void {
+    const value = new RegisterModel();
+    value.username = 'test';
+    value.tags = ['1', '2', '3'];
+    value.profile = new ProfileModel();
+    value.profile.birthday = new Date('1901-01-01');
     this.maker.setValue(this.form, value);
   }
 }

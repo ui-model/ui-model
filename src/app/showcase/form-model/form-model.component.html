@@ -1,4 +1,9 @@
 <div *ngIf="form" [formGroup]="form">
+  <p>
+    <button type="button" class="btn btn-primary" (click)="setValue1()">Set value 1</button>
+    <button type="button" class="btn btn-primary" (click)="setValue2()">Set value 2</button>
+  </p>
+
   <div class="form-group">
     <label for="username">Username</label>
     <input type="text" class="form-control" id="username" name="username"
@@ -74,8 +79,5 @@
     <pre class="alert alert-info">{{profile.control.value|json:2}}</pre>
   </ui-panel>
   <ui-field-error fieldName="profile"></ui-field-error>
-</div>
-<div>
-  <button type="button" class="btn btn-primary btn-block" (click)="setValue()">Set value</button>
 </div>
 <pre class="alert alert-info">{{form.value|json:2}}</pre>

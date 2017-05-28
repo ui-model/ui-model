@@ -1,49 +1,75 @@
 import { AsyncValidatorFn, ValidatorFn } from '@angular/forms';
 
 export const Reflect = window['Reflect'];
-export const metaElementTypes = 'design:elementTypes';
-export const metaElementType = 'design:elementType';
-export const metaTypes = 'design:types';
 export const metaType = 'design:type';
-export const metaValidators = 'design:validators';
-export const metaAsyncValidators = 'design:asyncValidators';
+export const metaForm = 'design:ui-model:form';
+
+export class FieldMetadata {
+  name: string;
+  type: any;
+  arrayElementType: any;
+  validators: ValidatorFn[] = [];
+  asyncValidators: AsyncValidatorFn[] = [];
+
+  addValidator(validator: ValidatorFn): void {
+    if (validator && this.validators.indexOf(validator)) {
+      this.validators.push(validator);
+    }
+  }
+
+  addAsyncValidator(asyncValidator: AsyncValidatorFn): void {
+    if (asyncValidator && this.asyncValidators.indexOf(asyncValidator)) {
+      this.asyncValidators.push(asyncValidator);
+    }
+  }
+}
+
+export class FormMetadata {
+  fields: FieldMetadata[] = [];
+
+  fieldOf(name: string): FieldMetadata {
+    let field = this.fields.find((item) => item.name === name);
+    if (!field) {
+      field = new FieldMetadata();
+      field.name = name;
+      this.fields.push(field);
+    }
+    return field;
+  }
+
+  static of(target: any): FormMetadata {
+    const clazz = target.constructor;
+    FormMetadata.ensure(clazz);
+    return Reflect.getMetadata(metaForm, clazz) as FormMetadata;
+  }
+
+  static ensure(clazz: any): void {
+    if (!Reflect.hasMetadata(metaForm, clazz)) {
+      Reflect.defineMetadata(metaForm, new FormMetadata(), clazz);
+    }
+  }
+}
 
 export function addValidator(target: any, name: string, validator: ValidatorFn): void {
-  if (!validator) {
-    return;
-  }
-  Promise.resolve().then(() => {
-    const meta = Reflect.getMetadata(metaValidators, target.constructor);
-    if (!meta[name]) {
-      meta[name] = [];
-    }
-    meta[name].push(validator);
-  });
+  const meta = FormMetadata.of(target);
+  const field = meta.fieldOf(name);
+  field.addValidator(validator);
 }
 
 export function addAsyncValidator(target: any, name: string, validator: AsyncValidatorFn): void {
-  if (!validator) {
-    return;
-  }
-  Promise.resolve().then(() => {
-    const meta = Reflect.getMetadata(metaAsyncValidators, target.constructor);
-    if (!meta[name]) {
-      meta[name] = [];
-    }
-    meta[name].push(validator);
-  });
+  const meta = FormMetadata.of(target);
+  const field = meta.fieldOf(name);
+  field.addAsyncValidator(validator);
 }
 
 export function addFieldType(target: any, name: string): void {
-  Promise.resolve().then(() => {
-    const metaField = Reflect.getMetadata(metaTypes, target.constructor);
-    metaField[name] = Reflect.getMetadata(metaType, target, name);
-  });
+  const meta = FormMetadata.of(target);
+  const field = meta.fieldOf(name);
+  field.type = Reflect.getMetadata(metaType, target, name);
 }
 
 export function addFieldElementType(target: any, name: string, type: any): void {
-  Promise.resolve().then(() => {
-    const metaField = Reflect.getMetadata(metaElementTypes, target.constructor);
-    metaField[name] = type;
-  });
+  const meta = FormMetadata.of(target);
+  const field = meta.fieldOf(name);
+  field.arrayElementType = type;
 }
