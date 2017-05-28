@@ -54,9 +54,8 @@
 
   <ui-panel title="Profile" formGroupName="profile" #profile="uiFormGroup">
     <div class="form-group">
-      <label for="birthday">Birthday</label>
-      <input type="text" class="form-control" id="birthday" name="birthday"
-             formControlName="birthday"/>
+      <label>Birthday</label>
+      <ui-calendar formControlName="birthday"></ui-calendar>
       <ui-field-error fieldName="birthday"></ui-field-error>
     </div>
     <div class="form-group">
