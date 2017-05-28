@@ -3,6 +3,7 @@ import { AsyncValidatorFn, ValidatorFn } from '@angular/forms';
 export const Reflect = window['Reflect'];
 export const metaType = 'design:type';
 export const metaForm = 'design:ui-model:form';
+export const metaField = 'design:ui-model:form-field';
 
 export class FieldMetadata {
   name: string;
@@ -10,6 +11,14 @@ export class FieldMetadata {
   arrayElementType: any;
   validators: ValidatorFn[] = [];
   asyncValidators: AsyncValidatorFn[] = [];
+
+  get isArray(): boolean {
+    return this.type === Array;
+  }
+
+  get isSubModel(): boolean {
+    return Reflect.hasMetadata(metaForm, this.type);
+  }
 
   addValidator(validator: ValidatorFn): void {
     if (validator && this.validators.indexOf(validator)) {
@@ -21,6 +30,10 @@ export class FieldMetadata {
     if (asyncValidator && this.asyncValidators.indexOf(asyncValidator)) {
       this.asyncValidators.push(asyncValidator);
     }
+  }
+
+  static of(field: any): FieldMetadata {
+    return Reflect.getMetadata(metaField, field) as FieldMetadata;
   }
 }
 

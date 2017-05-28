@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup } from '@angular/forms';
 import { CanBeNew } from '@ui-model/common';
-import { FormMetadata, metaForm } from '../decorators/reflect-utils';
+import { FormMetadata, metaField, metaForm } from '../decorators/reflect-utils';
 const Reflect = window['Reflect'];
 
 @Injectable()
@@ -24,17 +24,17 @@ export class FormMaker<T> {
     const controls: { [name: string]: AbstractControl } = {};
 
     meta.fields.forEach((field) => {
-      const isArray = field.type === Array;
-      const isSubModel = Reflect.hasMetadata(metaForm, field.type);
-
       let control;
-      if (isSubModel) {
+      if (field.isSubModel) {
         control = this._createFromModel(field.type);
-      } else if (isArray) {
+      } else if (field.isArray) {
         control = new FormArray([]);
       } else {
         control = new FormControl();
       }
+
+      Reflect.defineMetadata(metaField, field, control);
+
       control.setValidators(field.validators);
       control.setAsyncValidators(field.asyncValidators);
       controls[field.name] = control;
@@ -62,7 +62,6 @@ export class FormMaker<T> {
         control.removeAt(i);
       }
       (value || []).forEach((item) => {
-        // TODO: create item according to element type(get from reflect metadata)
         control.push(new FormControl(item));
       });
     }
