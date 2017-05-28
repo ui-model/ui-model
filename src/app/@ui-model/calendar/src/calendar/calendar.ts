@@ -26,7 +26,10 @@ export class Calendar extends Stateful {
     } else if (!this.value || !this._value.isSame(value, 'date')) {
       this._isNull = !value;
       this._value = moment(value);
+    } else {
+      return;
     }
+
     this.update();
     this.changed();
   }
