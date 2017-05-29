@@ -23,15 +23,15 @@ export class Calendar extends Stateful {
     if (!value) {
       this._isNull = true;
       this._value = moment();
+      this.update();
+      this.changed();
     } else if (!this.value || !this._value.isSame(value, 'date')) {
       this._isNull = !value;
       this._value = moment(value);
-    } else {
-      return;
+      this.update();
+      this.changed();
     }
 
-    this.update();
-    this.changed();
   }
 
   setValue(value: MomentInput): this {

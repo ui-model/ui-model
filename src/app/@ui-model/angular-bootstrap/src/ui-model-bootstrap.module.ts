@@ -33,7 +33,6 @@ import { FieldErrorComponent } from './components/field-error/field-error.compon
     FieldErrorComponent,
   ],
   exports: [
-    UiModelModule,
     ModalComponent,
     PaginationComponent,
     PanelComponent,
@@ -49,12 +48,12 @@ import { FieldErrorComponent } from './components/field-error/field-error.compon
 export class UiModelBootstrapModule {
 }
 
-export * from './components/modal';
-export * from './components/pagination';
-export * from './components/panel';
-export * from './components/radio-group';
-export * from './components/table';
-export * from './components/tree-node';
-export * from './components/calendar';
-export * from './components/type-ahead';
-export * from './components/tooltip';
+export * from './components/modal/modal.component';
+export * from './components/pagination/pagination.component';
+export * from './components/panel/panel.component';
+export * from './components/radio-group/radio-group.component';
+export * from './components/table/table.component';
+export * from './components/tree-node/tree-node.component';
+export * from './components/calendar/calendar.component';
+export * from './components/type-ahead/type-ahead.component';
+export * from './components/tooltip/tooltip.component';

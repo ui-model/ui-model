@@ -11,3 +11,5 @@ export class TreeNodeComponent {
   @Input() data: TreeNode;
   toggle = new Toggle().setIsOn(Toggle.ON);
 }
+
+export * from './tree-node';
