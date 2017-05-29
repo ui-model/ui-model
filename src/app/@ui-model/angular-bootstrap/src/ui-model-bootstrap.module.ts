@@ -33,6 +33,7 @@ import { FieldErrorComponent } from './components/field-error/field-error.compon
     FieldErrorComponent,
   ],
   exports: [
+    UiModelModule,
     ModalComponent,
     PaginationComponent,
     PanelComponent,
