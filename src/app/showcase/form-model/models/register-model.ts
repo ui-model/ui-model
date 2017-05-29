@@ -1,38 +1,35 @@
-import { Custom, ElementType, Email, FormModel, MinLength, Null, Pattern, Required, Url } from '@ui-model/angular';
+import { Field, Form, url } from '@ui-model/angular';
 import { ProfileModel } from './profile-model';
-import { FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
-@FormModel()
+@Form()
 export class RegisterModel {
-  @Required()
-  @MinLength(3)
+  @Field({
+    validators: [Validators.required, Validators.minLength(3)],
+  })
   username: string;
 
-  @Required()
-  @Email()
+  @Field({
+    validators: [Validators.required, Validators.email],
+  })
   email: string;
 
-  @Required()
-  @Pattern(/^1\d{10}$/)
+  @Field({
+    validators: [Validators.required, Validators.pattern(/^1\d{10}$/)],
+  })
   mobile: string;
 
-  @Required()
-  @MinLength(3)
-  @Url()
+  @Field({
+    validators: [Validators.required, Validators.minLength(3), url],
+  })
   homepage: string;
 
-  @Required()
-  @ElementType(String)
+  @Field({
+    validators: [Validators.required],
+    arrayElementType: String,
+  })
   tags: string[];
 
-  @Null()
-  @Custom((c: FormGroup) => {
-    const profile = c.value as ProfileModel;
-    if (ProfileModel.bmiOf(profile) <= 18.4) {
-      return {
-        tooThin: true,
-      };
-    }
-  })
+  @Field([Validators.required])
   profile: ProfileModel;
 }

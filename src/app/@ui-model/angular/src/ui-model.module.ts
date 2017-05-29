@@ -134,8 +134,7 @@ export * from './accessors/calendar.value-accessor';
 export * from './accessors/select.value-accessor';
 export * from './accessors/multi-select.value-accessor';
 
-export * from './decorators/rules';
-export * from './decorators/metas';
+export * from './decorators/form-maker';
 
 export * from './directives/toggle.directive';
 export * from './directives/select.directive';

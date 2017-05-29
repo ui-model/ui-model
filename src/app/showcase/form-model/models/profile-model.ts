@@ -1,22 +1,54 @@
-import { FormModel, MinValue, Null } from '@ui-model/angular';
+import { Field, Form, minValue } from '@ui-model/angular';
+import { FormGroup, ValidationErrors } from '@angular/forms';
 
-@FormModel()
+@Form({
+  validators: [notTooThin],
+})
 export class ProfileModel {
-  @Null()
+  @Field()
   birthday: Date;
 
-  @Null()
+  @Field()
   gender: string;
 
-  @MinValue(50)
+  @Field({
+    validators: [minValue(50)],
+  })
   height: number;
 
-  @MinValue(20)
+  @Field({
+    validators: [minValue(20)],
+  })
   weight: number;
 
-  static bmiOf(profile: ProfileModel): number {
-    const weight = +profile.weight;
-    const height = +profile.height / 100;
+  get bmi(): number {
+    const weight = +this.weight;
+    const height = +this.height / 100;
     return weight / (height * height);
+  }
+
+  static of(rawData: any): ProfileModel {
+    if (!rawData) {
+      return;
+    }
+    const result = new ProfileModel();
+
+    Object.assign(result, rawData);
+
+    return result;
+  }
+
+  static from(rawData: any[] = []): ProfileModel[] {
+    return rawData.map(ProfileModel.of);
+  }
+
+}
+
+function notTooThin(c: FormGroup): ValidationErrors {
+  const profile = ProfileModel.of(c.value);
+  if (profile.bmi <= 18.4) {
+    return {
+      tooThin: true,
+    };
   }
 }
