@@ -1,9 +1,9 @@
 import { Validators } from '@angular/forms';
-import { addFieldType, addValidator } from '../reflect-utils';
+import { FieldMetadata } from '../reflect-utils';
 
 export function Email(): any {
   return function (target: any, name: string): void {
-    addFieldType(target, name);
-    addValidator(target, name, Validators.email);
+    const field = FieldMetadata.of(target, name);
+    field.addValidator(Validators.email);
   };
 }

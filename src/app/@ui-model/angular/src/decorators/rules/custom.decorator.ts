@@ -1,8 +1,8 @@
 import { ValidatorFn } from '@angular/forms';
-import { addFieldType, addValidator } from '../reflect-utils';
+import { FieldMetadata } from '../reflect-utils';
 export function Custom(validator: ValidatorFn): any {
   return function (target: any, name: string): void {
-    addFieldType(target, name);
-    addValidator(target, name, validator);
+    const field = FieldMetadata.of(target, name);
+    field.addValidator(validator);
   };
 }

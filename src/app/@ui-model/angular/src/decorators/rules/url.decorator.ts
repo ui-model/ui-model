@@ -1,9 +1,9 @@
-import { addFieldType, addValidator } from '../reflect-utils';
+import { FieldMetadata } from '../reflect-utils';
 import { url } from '../../validators/url.validator';
 
 export function Url(): any {
   return function (target: any, name: string): void {
-    addFieldType(target, name);
-    addValidator(target, name, url);
+    const field = FieldMetadata.of(target, name);
+    field.addValidator(url);
   };
 }

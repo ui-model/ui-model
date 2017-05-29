@@ -1,6 +1,7 @@
-import { addFieldElementType } from './reflect-utils';
+import { FieldMetadata } from './reflect-utils';
 export function ElementType(type: any): any {
   return function (target: any, name: string): void {
-    addFieldElementType(target, name, type);
+    const field = FieldMetadata.of(target, name);
+    field.setArrayElementType(type);
   };
 }

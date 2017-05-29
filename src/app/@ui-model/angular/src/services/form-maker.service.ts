@@ -33,7 +33,7 @@ export class FormMaker<T> {
         control = new FormControl();
       }
 
-      Reflect.defineMetadata(metaField, field, control);
+      control[metaField] = field;
 
       control.setValidators(field.validators);
       control.setAsyncValidators(field.asyncValidators);
