@@ -1,6 +1,6 @@
 import { Directive } from '@angular/core';
 import { AbstractControl, FormArray, FormArrayName, FormControl } from '@angular/forms';
-import { metaField } from '../decorators/reflect-utils';
+import { metaField } from '../decorators/metas';
 
 // tslint:disable:directive-selector
 @Directive({

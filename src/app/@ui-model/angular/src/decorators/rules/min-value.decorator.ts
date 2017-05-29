@@ -1,4 +1,4 @@
-import { FieldMetadata } from '../reflect-utils';
+import { FieldMetadata } from '../metas';
 import { minValue } from '@ui-model/angular';
 
 export function MinValue(value: number): any {

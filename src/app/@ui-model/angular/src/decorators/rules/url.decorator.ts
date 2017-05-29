@@ -1,4 +1,4 @@
-import { FieldMetadata } from '../reflect-utils';
+import { FieldMetadata } from '../metas';
 import { url } from '../../validators/url.validator';
 
 export function Url(): any {

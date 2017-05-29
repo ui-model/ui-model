@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup } from '@angular/forms';
 import { CanBeNew } from '@ui-model/common';
-import { FormMetadata, metaField, metaForm } from '../decorators/reflect-utils';
+import { FormMetadata, metaField, metaForm } from '../decorators/metas';
 const Reflect = window['Reflect'];
 
 @Injectable()

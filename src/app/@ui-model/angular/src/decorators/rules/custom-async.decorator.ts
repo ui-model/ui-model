@@ -1,5 +1,5 @@
 import { AsyncValidatorFn } from '@angular/forms';
-import { FieldMetadata } from '../reflect-utils';
+import { FieldMetadata } from '../metas';
 
 export function CustomAsync(validator: AsyncValidatorFn): any {
   return function (target: any, name: string): void {

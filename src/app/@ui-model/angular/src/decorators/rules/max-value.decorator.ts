@@ -1,4 +1,4 @@
-import { FieldMetadata } from '../reflect-utils';
+import { FieldMetadata } from '../metas';
 import { maxValue } from '@ui-model/angular';
 
 export function MaxValue(value: number): any {

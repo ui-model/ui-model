@@ -1,5 +1,5 @@
 import { Validators } from '@angular/forms';
-import { FieldMetadata } from '../reflect-utils';
+import { FieldMetadata } from '../metas';
 
 export function Email(): any {
   return function (target: any, name: string): void {

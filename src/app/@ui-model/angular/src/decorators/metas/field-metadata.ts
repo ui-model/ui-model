@@ -1,10 +1,6 @@
 import { AsyncValidatorFn, ValidatorFn } from '@angular/forms';
-
-export const Reflect = window['Reflect'];
-export const metaType = 'design:type';
-export const metaForm = '_meta:ui-model:form';
-export const metaField = '_meta:ui-model:form-field';
-
+import { metaForm, metaType, Reflect } from './constants';
+import { FormMetadata } from './form-metadata';
 export class FieldMetadata {
   name: string;
   type: any;
@@ -59,30 +55,5 @@ export class FieldMetadata {
     const meta = FormMetadata.of(clazz);
     const type = Reflect.getMetadata(metaType, clazz, name);
     meta.fieldOf(name).setType(type);
-  }
-}
-
-export class FormMetadata {
-  fields: FieldMetadata[] = [];
-
-  fieldOf(name: string): FieldMetadata {
-    let field = this.fields.find((item) => item.name === name);
-    if (!field) {
-      field = new FieldMetadata().setName(name);
-      this.fields.push(field);
-    }
-    return field;
-  }
-
-  static of(target: any): FormMetadata {
-    const clazz = target.constructor;
-    FormMetadata.ensureMetadata(clazz);
-    return Reflect.getMetadata(metaForm, clazz) as FormMetadata;
-  }
-
-  static ensureMetadata(clazz: any): void {
-    if (!Reflect.hasMetadata(metaForm, clazz)) {
-      Reflect.defineMetadata(metaForm, new FormMetadata(), clazz);
-    }
   }
 }
