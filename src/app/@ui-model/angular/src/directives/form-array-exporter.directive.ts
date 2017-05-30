@@ -1,6 +1,6 @@
 import { Directive } from '@angular/core';
 import { AbstractControl, FormArray, FormArrayName, FormControl } from '@angular/forms';
-import { metaField } from '../decorators/form-maker';
+import { metaKeyField } from '../decorators/form-maker';
 
 // tslint:disable:directive-selector
 @Directive({
@@ -21,7 +21,7 @@ export class FormArrayExporterDirective {
   }
 
   createItem(): void {
-    const meta = this.control[metaField];
+    const meta = this.control[metaKeyField];
     const itemValue = meta.arrayElementType && meta.arrayElementType();
     const control = new FormControl(itemValue);
     this.control.push(control);

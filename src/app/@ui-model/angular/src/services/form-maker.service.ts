@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CanBeNew } from '@ui-model/common';
-import { FormMetadata, metaField, metaForm } from '../decorators/form-maker';
+import { FormMetadata, metaKeyField, metaKeyForm } from '../decorators/form-maker';
 const Reflect = window['Reflect'];
 
 @Injectable()
@@ -15,37 +15,39 @@ export class FormMaker<T> {
   }
 
   private _createFromModel(model: CanBeNew<T>): AbstractControl {
-    if (!Reflect.hasMetadata(metaForm, model)) {
+    if (!Reflect.hasMetadata(metaKeyForm, model)) {
       throw Error('The `model` parameter must be a class with the `@FormModel()` decorator!');
     }
 
-    const meta = Reflect.getMetadata(metaForm, model) as FormMetadata;
+    const meta = Reflect.getMetadata(metaKeyForm, model) as FormMetadata;
 
     const controls: { [name: string]: AbstractControl } = {};
 
     meta.fields.forEach((field) => {
       let control;
-      const subModel = Reflect.getMetadata(metaForm, field.type) as FormMetadata;
-      if (subModel) {
+      if (field.isGroup) {
         control = this._createFromModel(field.type);
-      } else if (field.type === Array) {
+      } else if (field.isArray) {
         control = new FormArray([]);
       } else {
         control = new FormControl();
       }
 
-      control[metaField] = field;
+      control[metaKeyField] = field;
 
-      const validators = [].concat(field.validators).concat((subModel || {}).validators);
+      const subModel = (Reflect.getMetadata(metaKeyForm, field.type) || {}) as FormMetadata;
+      const validators = [].concat(field.validators).concat(subModel.validators);
       control.setValidators(Validators.compose(validators));
 
-      const asyncValidators = [].concat(field.asyncValidators).concat((subModel || {}).asyncValidators);
+      const asyncValidators = [].concat(field.asyncValidators).concat(subModel.asyncValidators);
       control.setAsyncValidators(Validators.compose(asyncValidators));
 
       controls[field.name] = control;
     });
 
-    return new FormGroup(controls);
+    const result = new FormGroup(controls);
+    result[metaKeyForm] = meta;
+    return result;
   }
 
   setValue(control: AbstractControl, value: T): void {

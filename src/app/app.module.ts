@@ -53,6 +53,7 @@ import { ReactiveFormComponent } from './showcase/reactive-form/reactive-form.co
 import { BasicInfoGroupComponent } from './showcase/reactive-form/basic-info-group/basic-info-group.component';
 import { FormModelComponent } from './showcase/form-model/form-model.component';
 import { FieldErrorFormatter } from './@ui-model/angular/src/services/field-error-formatter.service';
+import { FormAutoUiComponent } from './showcase/form-auto-ui/form-auto-ui.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { FieldErrorFormatter } from './@ui-model/angular/src/services/field-erro
     ReactiveFormComponent,
     BasicInfoGroupComponent,
     FormModelComponent,
+    FormAutoUiComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+<div *ngIf="field" [formGroup]="group">
+  <div [formArrayName]="field.name" #values="uiFormArray">
+    <label for="values">{{field.label||field.name}}</label>
+    <div class="form-group" *ngFor="let control of values.items">
+      <div class="input-group">
+        <input type="text" class="form-control" id="values" name="values"
+               [formControl]="control"/>
+        <div class="input-group-btn">
+          <button class="btn btn-primary" (click)="values.removeItem(control)">
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+      </div>
+      <ui-field-error [field]="control"></ui-field-error>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" (click)="values.createItem()">
+        <i class="fa fa-plus-circle"></i>
+        Add a new tag
+      </button>
+    </div>
+  </div>
+</div>

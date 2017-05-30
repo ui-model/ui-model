@@ -12,6 +12,9 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { TypeAheadComponent } from './components/type-ahead/type-ahead.component';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { FieldErrorComponent } from './components/field-error/field-error.component';
+import { FormGroupComponent } from './components/form-group/form-group.component';
+import { FormArrayComponent } from './components/form-array/form-array.component';
+import { FormControlComponent } from './components/form-control/form-control.component';
 
 @NgModule({
   imports: [
@@ -31,6 +34,9 @@ import { FieldErrorComponent } from './components/field-error/field-error.compon
     TypeAheadComponent,
     TooltipComponent,
     FieldErrorComponent,
+    FormGroupComponent,
+    FormArrayComponent,
+    FormControlComponent,
   ],
   exports: [
     UiModelModule,
@@ -44,6 +50,9 @@ import { FieldErrorComponent } from './components/field-error/field-error.compon
     TypeAheadComponent,
     TooltipComponent,
     FieldErrorComponent,
+    FormGroupComponent,
+    FormArrayComponent,
+    FormControlComponent,
   ],
 })
 export class UiModelBootstrapModule {
@@ -58,3 +67,7 @@ export * from './components/tree-node/tree-node.component';
 export * from './components/calendar/calendar.component';
 export * from './components/type-ahead/type-ahead.component';
 export * from './components/tooltip/tooltip.component';
+export * from './components/field-error/field-error.component';
+export * from './components/form-group/form-group.component';
+export * from './components/form-array/form-array.component';
+export * from './components/form-control/form-control.component';

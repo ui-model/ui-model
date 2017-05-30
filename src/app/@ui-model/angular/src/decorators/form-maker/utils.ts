@@ -1,14 +1,14 @@
 import { FormMetadata } from './form-metadata';
-import { metaForm, Reflect } from './constants';
-import { FieldMetadata, metaType } from '@ui-model/angular';
+import { metaKeyForm, Reflect } from './constants';
+import { FieldMetadata, metaKeyType } from '@ui-model/angular';
 
 export function getOrCreateFormMetadata(target: any): FormMetadata {
-  const result = Reflect.getMetadata(metaForm, target);
+  const result = Reflect.getMetadata(metaKeyForm, target);
   if (result) {
     return result;
   } else {
     const meta: FormMetadata = {fields: []};
-    Reflect.defineMetadata(metaForm, meta, target);
+    Reflect.defineMetadata(metaKeyForm, meta, target);
     return meta;
   }
 }
@@ -22,7 +22,10 @@ export function getOrCreateField(target: any, fieldName: string): FieldMetadata 
   if (result) {
     return result;
   } else {
-    const field = {name: fieldName, type: Reflect.getMetadata(metaType, target, fieldName)};
+    const field: FieldMetadata = {name: fieldName, type: Reflect.getMetadata(metaKeyType, target, fieldName)};
+    field.isArray = field.type === Array;
+    field.isGroup = Reflect.hasMetadata(metaKeyForm, field.type);
+    field.isControl = !field.isArray && !field.isGroup;
     formMeta.fields.push(field);
     return field;
   }

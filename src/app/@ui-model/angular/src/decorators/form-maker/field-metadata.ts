@@ -5,4 +5,11 @@ export interface FieldMetadata {
   arrayElementType?: any;
   validators?: ValidatorFn[];
   asyncValidators?: AsyncValidatorFn[];
+
+  label?: string;
+  css?: string;
+
+  isGroup?: boolean;
+  isArray?: boolean;
+  isControl?: boolean;
 }
