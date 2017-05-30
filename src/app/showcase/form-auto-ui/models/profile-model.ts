@@ -1,5 +1,6 @@
 import { Field, Form, minValue } from '@ui-model/angular';
 import { FormGroup, ValidationErrors } from '@angular/forms';
+import { GenderEditorComponent } from '../editors/gender-editor/gender-editor.component';
 
 @Form({
   label: 'Profile',
@@ -9,7 +10,9 @@ export class ProfileModel {
   @Field()
   birthday: Date;
 
-  @Field()
+  @Field({
+    editor: GenderEditorComponent,
+  })
   gender: string;
 
   @Field({

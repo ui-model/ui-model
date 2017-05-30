@@ -1,9 +1,10 @@
 <ui-panel *ngIf="meta && group" [title]="meta.label || meta.name">
   <form [formGroup]="group">
-    <ng-container *ngFor="let field of meta.fields">
+    <ng-container *ngFor="let field of meta.fields" [uiFieldMetadata]="field">
       <ui-form-control *ngIf="field.isControl" [group]="group" [field]="field"></ui-form-control>
       <ui-form-array *ngIf="field.isArray" [group]="group" [field]="field"></ui-form-array>
       <ui-form-group *ngIf="field.isGroup" [group]="group.get(field.name)"></ui-form-group>
+      <ui-field-error [fieldName]="field.name"></ui-field-error>
     </ng-container>
   </form>
 </ui-panel>

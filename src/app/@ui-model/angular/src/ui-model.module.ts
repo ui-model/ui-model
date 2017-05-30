@@ -40,6 +40,7 @@ import { Modal, ModalService } from './services/modal.service';
 import { TooltipService } from './services/tooltip.service';
 import { FormMaker } from './services/form-maker.service';
 import { FieldErrorFormatter } from './services/field-error-formatter.service';
+import { FieldMetadataDirective } from './directives/field-metadata.directive';
 
 export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorFormatter];
 export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter };
@@ -86,6 +87,7 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter };
     FormArrayExporterDirective,
     FormGroupExporterDirective,
     FieldErrorMessagePipe,
+    FieldMetadataDirective,
   ],
   exports: [
     SelectDirective,
@@ -108,6 +110,7 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter };
     CountDownDirective,
     FormArrayExporterDirective,
     FormGroupExporterDirective,
+    FieldMetadataDirective,
 
     FormatPipe,
     OrderByPipe,
@@ -130,6 +133,7 @@ export class UiModelModule {
   static services = ALL_SERVICES_OF_UI_MODEL_ANGULAR;
 }
 
+export * from './accessors/base.value-accessor';
 export * from './accessors/calendar.value-accessor';
 export * from './accessors/select.value-accessor';
 export * from './accessors/multi-select.value-accessor';
@@ -155,6 +159,7 @@ export * from './directives/prevent-default.directive';
 export * from './directives/count-down.directive';
 export * from './directives/form-array-exporter.directive';
 export * from './directives/form-group-exporter.directive';
+export * from './directives/field-metadata.directive';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';

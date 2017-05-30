@@ -18,7 +18,6 @@ import { PreviewComponent } from './showcase/preview/preview.component';
 import { DraggableComponent } from './showcase/draggable/draggable.component';
 import { ModalComponent } from './showcase/modal/modal.component';
 import { ModalContentComponent } from './showcase/modal/modal-content/modal-content.component';
-import { ModalService, TooltipService } from '@ui-model/angular';
 import { GlobalModalComponent } from './layout/global-modal/global-modal.component';
 import { ChartComponent } from './showcase/chart/chart.component';
 import { TypeAheadComponent } from './showcase/type-ahead/type-ahead.component';
@@ -52,8 +51,8 @@ import { UiModelD3Module } from './@ui-model/angular-d3/src/ui-model-d3.module';
 import { ReactiveFormComponent } from './showcase/reactive-form/reactive-form.component';
 import { BasicInfoGroupComponent } from './showcase/reactive-form/basic-info-group/basic-info-group.component';
 import { FormModelComponent } from './showcase/form-model/form-model.component';
-import { FieldErrorFormatter } from './@ui-model/angular/src/services/field-error-formatter.service';
 import { FormAutoUiComponent } from './showcase/form-auto-ui/form-auto-ui.component';
+import { GenderEditorComponent } from './showcase/form-auto-ui/editors/gender-editor/gender-editor.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +102,7 @@ import { FormAutoUiComponent } from './showcase/form-auto-ui/form-auto-ui.compon
     BasicInfoGroupComponent,
     FormModelComponent,
     FormAutoUiComponent,
+    GenderEditorComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,9 +114,9 @@ import { FormAutoUiComponent } from './showcase/form-auto-ui/form-auto-ui.compon
     UiModelD3Module,
     routing,
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [GenderEditorComponent],
 })
 export class AppModule {
 }
