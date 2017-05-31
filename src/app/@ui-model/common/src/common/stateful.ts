@@ -1,4 +1,4 @@
-import { StateListener } from '@ui-model/common';
+import { StateListener } from '../utils/state-listener';
 import { isFunction, isString } from '../utils/typings';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';

@@ -1,5 +1,5 @@
 import { FieldLabelPipe } from './field-label.pipe';
-import { NameMapper } from '@ui-model/angular';
+import { NameMapper } from '../services/name-mapper.service';
 
 describe('FieldLabelPipe', () => {
   it('create an instance', () => {

@@ -37,6 +37,9 @@
       ],
       "@ui-model/calendar": [
         "./calendar"
+      ],
+      "@ui-model/angular": [
+        "./angular"
       ]
     }
   },

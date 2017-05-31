@@ -1,6 +1,6 @@
 import { FormMetadata } from './form-metadata';
-import { metaKeyForm, Reflect } from './constants';
-import { FieldMetadata, metaKeyType } from '@ui-model/angular';
+import { metaKeyForm, Reflect, metaKeyType } from './constants';
+import { FieldMetadata } from './field-metadata';
 
 export function getOrCreateFormMetadata(target: any): FormMetadata {
   const result = Reflect.getMetadata(metaKeyForm, target);

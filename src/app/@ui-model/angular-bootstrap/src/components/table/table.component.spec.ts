@@ -2,7 +2,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TableComponent } from './table.component';
 import { UiModelModule } from '@ui-model/angular';
-import { PaginationComponent } from '@ui-model/angular-bootstrap';
+import { PaginationComponent } from '../pagination/pagination.component';
 import { FormsModule } from '@angular/forms';
 
 describe('TableComponent', () => {
