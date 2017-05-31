@@ -44,7 +44,7 @@ export class ProfileModel {
 
 }
 
-function notTooThin(c: FormGroup): ValidationErrors {
+export function notTooThin(c: FormGroup): ValidationErrors {
   const profile = ProfileModel.of(c.value);
   if (profile.bmi <= 18.4) {
     return {

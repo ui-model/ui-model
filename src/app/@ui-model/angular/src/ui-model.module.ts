@@ -38,12 +38,15 @@ import { FieldErrorMessagePipe } from './pipes/field-error-message.pipe';
 
 import { Modal, ModalService } from './services/modal.service';
 import { TooltipService } from './services/tooltip.service';
+import { NameMapper } from './services/name-mapper.service';
+
 import { FormMaker } from './services/form-maker.service';
 import { FieldErrorFormatter } from './services/field-error-formatter.service';
 import { FieldMetadataDirective } from './directives/field-metadata.directive';
+import { FieldLabelPipe } from './pipes/field-label.pipe';
 
-export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorFormatter];
-export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter };
+export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorFormatter, NameMapper];
+export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter, NameMapper };
 
 @NgModule({
   imports: [
@@ -88,6 +91,7 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter };
     FormGroupExporterDirective,
     FieldErrorMessagePipe,
     FieldMetadataDirective,
+    FieldLabelPipe,
   ],
   exports: [
     SelectDirective,
@@ -127,6 +131,7 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter };
     TimesPipe,
     ObjectToArrayPipe,
     FieldErrorMessagePipe,
+    FieldLabelPipe,
   ],
 })
 export class UiModelModule {
@@ -176,6 +181,7 @@ export * from './pipes/is-not-empty.pipe';
 export * from './pipes/times.pipe';
 export * from './pipes/object-to-array.pipe';
 export * from './pipes/field-error-message.pipe';
+export * from './pipes/field-label.pipe';
 
 export * from './validators/min-value.validator';
 export * from './validators/max-value.validator';

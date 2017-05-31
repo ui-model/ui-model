@@ -1,4 +1,4 @@
-<ui-panel *ngIf="meta && group" [title]="meta.label || meta.name">
+<ui-panel *ngIf="meta && group" [title]="meta | fieldLabel">
   <form [formGroup]="group">
     <ng-container *ngFor="let field of meta.fields" [uiFieldMetadata]="field">
       <ui-form-control *ngIf="field.isControl" [group]="group" [field]="field"></ui-form-control>

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GenderEditorComponent } from './gender-editor.component';
+import { FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule } from '@angular/forms';
+import { FieldMetadataDirective } from '@ui-model/angular';
+import { RadioGroupComponent } from '@ui-model/angular-bootstrap';
 
 describe('GenderEditorComponent', () => {
   let component: GenderEditorComponent;
@@ -8,9 +11,16 @@ describe('GenderEditorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GenderEditorComponent ]
+      imports: [
+        ReactiveFormsModule,
+      ],
+      declarations: [GenderEditorComponent, RadioGroupComponent],
+      providers: [
+        {provide: FormGroupDirective, useValue: {control: new FormGroup({fieldName: new FormControl()})}},
+        {provide: FieldMetadataDirective, useValue: {meta: {name: 'fieldName'}}},
+      ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

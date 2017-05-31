@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormControlComponent } from './form-control.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FieldLabelPipe } from '../../../../angular/src/pipes/field-label.pipe';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NameMapper } from '../../../../angular/src/services/name-mapper.service';
 
 describe('FormControlComponent', () => {
   let component: FormControlComponent;
@@ -8,9 +12,14 @@ describe('FormControlComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormControlComponent ]
+      imports: [
+        ReactiveFormsModule,
+      ],
+      declarations: [FormControlComponent, FieldLabelPipe],
+      providers: [NameMapper],
+      schemas: [NO_ERRORS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

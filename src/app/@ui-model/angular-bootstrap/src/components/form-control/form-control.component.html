@@ -1,5 +1,5 @@
 <div *ngIf="group" class="form-group" [formGroup]="group">
-  <label for="{{field.name}}">{{field.label || field.name}}</label>
+  <label for="{{field.name}}">{{field | fieldLabel}}</label>
   <ng-container *ngIf="field.editor">
     <ng-container *ngComponentOutlet="field.editor"></ng-container>
   </ng-container>

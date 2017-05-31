@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@ui-model/angular": [
+        "../angular"
+      ]
+    }
+  }
+}

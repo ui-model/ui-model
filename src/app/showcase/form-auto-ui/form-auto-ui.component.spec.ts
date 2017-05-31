@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormAutoUiComponent } from './form-auto-ui.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormMaker } from '@ui-model/angular';
 
 describe('FormAutoUiComponent', () => {
   let component: FormAutoUiComponent;
@@ -8,9 +10,11 @@ describe('FormAutoUiComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormAutoUiComponent ]
+      declarations: [FormAutoUiComponent],
+      providers: [FormMaker],
+      schemas: [NO_ERRORS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
