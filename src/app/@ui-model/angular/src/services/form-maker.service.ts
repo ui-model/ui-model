@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Type } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { CanBeNew } from '@ui-model/common';
 import { FormMetadata, metaKeyField, metaKeyForm } from '../decorators/form-maker';
 const Reflect = window['Reflect'];
 
@@ -10,11 +9,11 @@ export class FormMaker<T> {
   constructor() {
   }
 
-  createFromModel(model: CanBeNew<T>): FormGroup {
+  createFromModel(model: Type<T>): FormGroup {
     return this._createFromModel(model) as FormGroup;
   }
 
-  private _createFromModel(model: CanBeNew<T>): AbstractControl {
+  private _createFromModel(model: Type<T>): AbstractControl {
     if (!Reflect.hasMetadata(metaKeyForm, model)) {
       throw Error('The `model` parameter must be a class with the `@FormModel()` decorator!');
     }

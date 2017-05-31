@@ -12,6 +12,8 @@
  See the Apache Version 2.0 License for specific language governing permissions
  and limitations under the License.
  ***************************************************************************** */
+
+// tsline:disable:unified-signatures
 export interface IReflect {
   /**
    * Applies a set of decorators to a target object.
@@ -63,7 +65,8 @@ export interface IReflect {
    *             Object.getOwnPropertyDescriptor(Example.prototype, "method")));
    *
    */
-  decorate(decorators: (PropertyDecorator | MethodDecorator)[], target: Object, propertyKey: string | symbol, attributes?: PropertyDescriptor): PropertyDescriptor;
+  decorate(decorators: (PropertyDecorator | MethodDecorator)[], target: Object, propertyKey: string | symbol,
+           attributes?: PropertyDescriptor): PropertyDescriptor;
   /**
    * A default metadata decorator factory that can be used on a class, class member, or parameter.
    * @param metadataKey The key for the metadata entry.
@@ -113,26 +116,6 @@ export interface IReflect {
    * @param metadataKey A key used to store and retrieve metadata.
    * @param metadataValue A value that contains attached metadata.
    * @param target The target object on which to define metadata.
-   * @example
-   *
-   *     class Example {
-      *     }
-   *
-   *     // constructor
-   *     Reflect.defineMetadata("custom:annotation", options, Example);
-   *
-   *     // decorator factory as metadata-producing annotation.
-   *     function MyAnnotation(options): ClassDecorator {
-      *         return target => Reflect.defineMetadata("custom:annotation", options, target);
-      *     }
-   *
-   */
-  defineMetadata(metadataKey: any, metadataValue: any, target: Object): void;
-  /**
-   * Define a unique metadata entry on the target.
-   * @param metadataKey A key used to store and retrieve metadata.
-   * @param metadataValue A value that contains attached metadata.
-   * @param target The target object on which to define metadata.
    * @param propertyKey The property key for the target.
    * @example
    *
@@ -163,22 +146,7 @@ export interface IReflect {
       *     }
    *
    */
-  defineMetadata(metadataKey: any, metadataValue: any, target: Object, propertyKey: string | symbol): void;
-  /**
-   * Gets a value indicating whether the target object or its prototype chain has the provided metadata key defined.
-   * @param metadataKey A key used to store and retrieve metadata.
-   * @param target The target object on which the metadata is defined.
-   * @returns `true` if the metadata key was defined on the target object or its prototype chain; otherwise, `false`.
-   * @example
-   *
-   *     class Example {
-      *     }
-   *
-   *     // constructor
-   *     result = Reflect.hasMetadata("custom:annotation", Example);
-   *
-   */
-  hasMetadata(metadataKey: any, target: Object): boolean;
+  defineMetadata(metadataKey: any, metadataValue: any, target: Object, propertyKey?: string | symbol): void;
   /**
    * Gets a value indicating whether the target object or its prototype chain has the provided metadata key defined.
    * @param metadataKey A key used to store and retrieve metadata.
@@ -209,22 +177,7 @@ export interface IReflect {
    *     result = Reflect.hasMetadata("custom:annotation", Example.prototype, "method");
    *
    */
-  hasMetadata(metadataKey: any, target: Object, propertyKey: string | symbol): boolean;
-  /**
-   * Gets a value indicating whether the target object has the provided metadata key defined.
-   * @param metadataKey A key used to store and retrieve metadata.
-   * @param target The target object on which the metadata is defined.
-   * @returns `true` if the metadata key was defined on the target object; otherwise, `false`.
-   * @example
-   *
-   *     class Example {
-      *     }
-   *
-   *     // constructor
-   *     result = Reflect.hasOwnMetadata("custom:annotation", Example);
-   *
-   */
-  hasOwnMetadata(metadataKey: any, target: Object): boolean;
+  hasMetadata(metadataKey: any, target: Object, propertyKey?: string | symbol): boolean;
   /**
    * Gets a value indicating whether the target object has the provided metadata key defined.
    * @param metadataKey A key used to store and retrieve metadata.
@@ -255,22 +208,7 @@ export interface IReflect {
    *     result = Reflect.hasOwnMetadata("custom:annotation", Example.prototype, "method");
    *
    */
-  hasOwnMetadata(metadataKey: any, target: Object, propertyKey: string | symbol): boolean;
-  /**
-   * Gets the metadata value for the provided metadata key on the target object or its prototype chain.
-   * @param metadataKey A key used to store and retrieve metadata.
-   * @param target The target object on which the metadata is defined.
-   * @returns The metadata value for the metadata key if found; otherwise, `undefined`.
-   * @example
-   *
-   *     class Example {
-      *     }
-   *
-   *     // constructor
-   *     result = Reflect.getMetadata("custom:annotation", Example);
-   *
-   */
-  getMetadata(metadataKey: any, target: Object): any;
+  hasOwnMetadata(metadataKey: any, target: Object, propertyKey?: string | symbol): boolean;
   /**
    * Gets the metadata value for the provided metadata key on the target object or its prototype chain.
    * @param metadataKey A key used to store and retrieve metadata.
@@ -301,22 +239,7 @@ export interface IReflect {
    *     result = Reflect.getMetadata("custom:annotation", Example.prototype, "method");
    *
    */
-  getMetadata(metadataKey: any, target: Object, propertyKey: string | symbol): any;
-  /**
-   * Gets the metadata value for the provided metadata key on the target object.
-   * @param metadataKey A key used to store and retrieve metadata.
-   * @param target The target object on which the metadata is defined.
-   * @returns The metadata value for the metadata key if found; otherwise, `undefined`.
-   * @example
-   *
-   *     class Example {
-      *     }
-   *
-   *     // constructor
-   *     result = Reflect.getOwnMetadata("custom:annotation", Example);
-   *
-   */
-  getOwnMetadata(metadataKey: any, target: Object): any;
+  getMetadata(metadataKey: any, target: Object, propertyKey?: string | symbol): any;
   /**
    * Gets the metadata value for the provided metadata key on the target object.
    * @param metadataKey A key used to store and retrieve metadata.
@@ -347,21 +270,7 @@ export interface IReflect {
    *     result = Reflect.getOwnMetadata("custom:annotation", Example.prototype, "method");
    *
    */
-  getOwnMetadata(metadataKey: any, target: Object, propertyKey: string | symbol): any;
-  /**
-   * Gets the metadata keys defined on the target object or its prototype chain.
-   * @param target The target object on which the metadata is defined.
-   * @returns An array of unique metadata keys.
-   * @example
-   *
-   *     class Example {
-      *     }
-   *
-   *     // constructor
-   *     result = Reflect.getMetadataKeys(Example);
-   *
-   */
-  getMetadataKeys(target: Object): any[];
+  getOwnMetadata(metadataKey: any, target: Object, propertyKey?: string | symbol): any;
   /**
    * Gets the metadata keys defined on the target object or its prototype chain.
    * @param target The target object on which the metadata is defined.
@@ -391,21 +300,7 @@ export interface IReflect {
    *     result = Reflect.getMetadataKeys(Example.prototype, "method");
    *
    */
-  getMetadataKeys(target: Object, propertyKey: string | symbol): any[];
-  /**
-   * Gets the unique metadata keys defined on the target object.
-   * @param target The target object on which the metadata is defined.
-   * @returns An array of unique metadata keys.
-   * @example
-   *
-   *     class Example {
-      *     }
-   *
-   *     // constructor
-   *     result = Reflect.getOwnMetadataKeys(Example);
-   *
-   */
-  getOwnMetadataKeys(target: Object): any[];
+  getMetadataKeys(target: Object, propertyKey?: string | symbol): any[];
   /**
    * Gets the unique metadata keys defined on the target object.
    * @param target The target object on which the metadata is defined.
@@ -435,22 +330,7 @@ export interface IReflect {
    *     result = Reflect.getOwnMetadataKeys(Example.prototype, "method");
    *
    */
-  getOwnMetadataKeys(target: Object, propertyKey: string | symbol): any[];
-  /**
-   * Deletes the metadata entry from the target object with the provided key.
-   * @param metadataKey A key used to store and retrieve metadata.
-   * @param target The target object on which the metadata is defined.
-   * @returns `true` if the metadata entry was found and deleted; otherwise, false.
-   * @example
-   *
-   *     class Example {
-      *     }
-   *
-   *     // constructor
-   *     result = Reflect.deleteMetadata("custom:annotation", Example);
-   *
-   */
-  deleteMetadata(metadataKey: any, target: Object): boolean;
+  getOwnMetadataKeys(target: Object, propertyKey?: string | symbol): any[];
   /**
    * Deletes the metadata entry from the target object with the provided key.
    * @param metadataKey A key used to store and retrieve metadata.
@@ -481,5 +361,5 @@ export interface IReflect {
    *     result = Reflect.deleteMetadata("custom:annotation", Example.prototype, "method");
    *
    */
-  deleteMetadata(metadataKey: any, target: Object, propertyKey: string | symbol): boolean;
+  deleteMetadata(metadataKey: any, target: Object, propertyKey?: string | symbol): boolean;
 }
