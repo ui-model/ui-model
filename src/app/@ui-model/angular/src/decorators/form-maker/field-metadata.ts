@@ -4,6 +4,7 @@ export interface FieldMetadata {
   name?: string;
   type?: Type<any>;
   arrayElementType?: Type<any>;
+  autoValidators?: ValidatorFn[];
   validators?: ValidatorFn[];
   asyncValidators?: AsyncValidatorFn[];
 

@@ -30,6 +30,14 @@ export class FieldErrorFormatter {
         return `The value is not a valid URL`;
       case 'unique':
         return `The value is already exists`;
+      case 'boolean':
+        return `The value must be a boolean`;
+      case 'number':
+        return `The value must be a number`;
+      case 'integer':
+        return `The value must be a integer`;
+      case 'date':
+        return `The value must be a date`;
       case 'sameAs':
         return `The value must be same as <span class="text-muted field-error-expected">( ${value.field} )</span>`;
       default:

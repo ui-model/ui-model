@@ -183,6 +183,10 @@ export * from './pipes/object-to-array.pipe';
 export * from './pipes/field-error-message.pipe';
 export * from './pipes/field-label.pipe';
 
+export * from './validators/is-boolean.validator';
+export * from './validators/is-integer.validator';
+export * from './validators/is-date.validator';
+export * from './validators/is-number.validator';
 export * from './validators/min-value.validator';
 export * from './validators/max-value.validator';
 export * from './validators/url.validator';

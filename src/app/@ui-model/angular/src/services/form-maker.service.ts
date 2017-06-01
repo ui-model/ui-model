@@ -35,7 +35,7 @@ export class FormMaker<T> {
       control[metaKeyField] = field;
 
       const subModel = (Reflect.getMetadata(metaKeyForm, field.type) || {}) as FormMetadata;
-      const validators = [].concat(field.validators).concat(subModel.validators);
+      const validators = [].concat(field.autoValidators).concat(field.validators).concat(subModel.validators);
       control.setValidators(Validators.compose(validators));
 
       const asyncValidators = [].concat(field.asyncValidators).concat(subModel.asyncValidators);
