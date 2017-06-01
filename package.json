@@ -13,7 +13,7 @@
     "build-cn": "ng build --prod --aot --i18n-file=src/i18n/messages.zh.xlf --locale=zh --i18n-format=xlf",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "build-libs": "rm -fr ./publish && mkdir ./publish && cp -r ./src/app/@ui-model/* ./publish && ngc -p src/app/@ui-model/tsconfig.json",
+    "build-libs": "rm -fr ./publish && mkdir ./publish && cp -r ./src/app/@ui-model/* ./publish && ngc -p src/app/@ui-model/tsconfig.libs.json",
     "publish": "./publish.sh",
     "i18n": "ng xi18n --output-path src/i18n"
   },
