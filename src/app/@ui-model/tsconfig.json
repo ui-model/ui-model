@@ -24,28 +24,15 @@
     ],
     "types": [
       "rxjs"
-    ],
-    "paths": {
-      "@ui-model/core": [
-        "./core"
-      ],
-      "@ui-model/common": [
-        "./common"
-      ],
-      "@ui-model/chart": [
-        "./chart"
-      ],
-      "@ui-model/calendar": [
-        "./calendar"
-      ],
-      "@ui-model/angular": [
-        "./angular"
-      ]
-    }
+    ]
   },
   "files": [
+    "common/index.ts",
     "core/index.ts",
+    "chart/index.ts",
+    "calendar/index.ts",
     "angular/index.ts",
+    "angular-d3/index.ts",
     "angular-bootstrap/index.ts"
   ],
   "exclude": [
