@@ -7,26 +7,31 @@ import { Validators } from '@angular/forms';
 })
 export class RegisterModel {
   @Field({
-    label: 'User Name',
+    label: 'User name',
     css: 'col-md-12',
     validators: [Validators.required, Validators.minLength(3)],
   })
   username: string;
 
   @Field({
-    label: 'Personal Email',
+    validators: [Validators.required],
+  })
+  nickName: string;
+
+  @Field({
+    label: 'Personal email',
     validators: [Validators.required, Validators.email],
   })
   email: string;
 
   @Field({
-    label: 'Personal Mobile',
+    label: 'Personal mobile',
     validators: [Validators.required, Validators.pattern(/^1\d{10}$/)],
   })
   mobile: string;
 
   @Field({
-    label: 'Home Page',
+    label: 'Home page',
     validators: [Validators.required, Validators.minLength(3), url],
   })
   homepage: string;
@@ -38,7 +43,7 @@ export class RegisterModel {
   tags: string[];
 
   @Field({
-    label: 'User Profile',
+    label: 'User profile',
     validators: [Validators.required],
   })
   profile: ProfileModel = new ProfileModel();

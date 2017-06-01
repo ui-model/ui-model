@@ -2,6 +2,9 @@ import { Stateful } from '@ui-model/common';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/take';
+
 export class CountDown extends Stateful {
   initialValue = 0;
   setInitialValue(value: number): this {
