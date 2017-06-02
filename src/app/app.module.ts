@@ -53,6 +53,7 @@ import { BasicInfoGroupComponent } from './showcase/reactive-form/basic-info-gro
 import { FormModelComponent } from './showcase/form-model/form-model.component';
 import { FormAutoUiComponent } from './showcase/form-auto-ui/form-auto-ui.component';
 import { GenderEditorComponent } from './showcase/form-auto-ui/editors/gender-editor/gender-editor.component';
+import { AgreeLicenseEditorComponent } from './showcase/form-auto-ui/editors/agree-license-editor/agree-license-editor.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { GenderEditorComponent } from './showcase/form-auto-ui/editors/gender-ed
     FormModelComponent,
     FormAutoUiComponent,
     GenderEditorComponent,
+    AgreeLicenseEditorComponent,
   ],
   imports: [
     BrowserModule,
@@ -116,7 +118,7 @@ import { GenderEditorComponent } from './showcase/form-auto-ui/editors/gender-ed
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [GenderEditorComponent],
+  entryComponents: [GenderEditorComponent, AgreeLicenseEditorComponent],
 })
 export class AppModule {
 }

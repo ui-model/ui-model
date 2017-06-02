@@ -20,6 +20,9 @@ export class FieldErrorFormatter {
       case 'pattern':
         return `The value <span class="text-muted field-error-actual">( ${value.actualValue} )</span> does not match the required pattern 
 <span class="text-muted field-error-expected">( ${value.requiredPattern} )</span>`;
+      case 'equals':
+        return `The value <span class="text-muted field-error-actual">( ${value.actualValue} )</span> must equals 
+<span class="text-muted field-error-expected">( ${value.requiredValue} )</span>`;
       case 'required':
         return `The value cannot be blank`;
       case 'requiredTrue':

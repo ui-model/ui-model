@@ -190,3 +190,4 @@ export * from './validators/is-number.validator';
 export * from './validators/min-value.validator';
 export * from './validators/max-value.validator';
 export * from './validators/url.validator';
+export * from './validators/equals.validator';

@@ -1,6 +1,7 @@
-import { Field, Form, url } from '@ui-model/angular';
+import { equals, Field, Form, url } from '@ui-model/angular';
 import { ProfileModel } from './profile-model';
 import { Validators } from '@angular/forms';
+import { AgreeLicenseEditorComponent } from '../editors/agree-license-editor/agree-license-editor.component';
 
 @Form({
   label: 'User Registration',
@@ -44,7 +45,9 @@ export class RegisterModel {
 
   @Field({
     label: '',
-    validators: [Validators.requiredTrue],
+    css: 'col-md-12',
+    validators: [equals(true)],
+    editor: AgreeLicenseEditorComponent,
   })
   agreeLicense: boolean;
 
