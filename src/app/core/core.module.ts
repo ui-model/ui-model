@@ -6,11 +6,15 @@ import { UpdateTitleGuard } from './update-title.service';
 import { UpdateMetadataGuard } from './update-metadata-guard.service';
 import { MetadataService } from './metadata.service';
 import { UiModelModule } from '@ui-model/angular';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { MockDbService } from './mock/mock-db.service';
+import { UserApi } from './apis/user-api.service';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpModule,
+    InMemoryWebApiModule.forRoot(MockDbService, {passThruUnknownUrl: true}),
   ],
   declarations: [],
   providers: [
@@ -19,6 +23,7 @@ import { UiModelModule } from '@ui-model/angular';
     UpdateMetadataGuard,
     MetadataService,
     UiModelModule.services,
+    UserApi,
   ],
 })
 export class CoreModule {

@@ -1,12 +1,20 @@
-import { Injectable, Type } from '@angular/core';
-import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Injectable, Injector, Type } from '@angular/core';
+import {
+  AbstractControl,
+  AsyncValidatorFn,
+  FormArray,
+  FormControl,
+  FormGroup,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 import { FormMetadata, metaKeyField, metaKeyForm } from '../decorators/form-maker';
 const Reflect = window['Reflect'];
 
 @Injectable()
 export class FormMaker<T> {
 
-  constructor() {
+  constructor(private injector: Injector) {
   }
 
   createFromModel(model: Type<T>): FormGroup {
@@ -35,11 +43,16 @@ export class FormMaker<T> {
       control[metaKeyField] = field;
 
       const subModel = (Reflect.getMetadata(metaKeyForm, field.type) || {}) as FormMetadata;
-      const validators = [].concat(field.autoValidators).concat(field.validators).concat(subModel.validators);
+      // bind all validators to injector, so that they can
+      const validators = [].concat(field.autoValidators).concat(field.validators).concat(subModel.validators)
+        .filter((fn) => !!fn)
+        .map((fn: ValidatorFn) => fn.bind(this.injector));
       control.setValidators(Validators.compose(validators));
 
-      const asyncValidators = [].concat(field.asyncValidators).concat(subModel.asyncValidators);
-      control.setAsyncValidators(Validators.compose(asyncValidators));
+      const asyncValidators = [].concat(field.asyncValidators).concat(subModel.asyncValidators)
+        .filter((fn) => !!fn)
+        .map((fn: AsyncValidatorFn) => fn.bind(this.injector));
+      control.setAsyncValidators(Validators.composeAsync(asyncValidators));
 
       controls[field.name] = control;
     });

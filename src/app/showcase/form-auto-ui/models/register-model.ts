@@ -2,6 +2,7 @@ import { equals, Field, Form, url } from '@ui-model/angular';
 import { ProfileModel } from './profile-model';
 import { Validators } from '@angular/forms';
 import { AgreeLicenseEditorComponent } from '../editors/agree-license-editor/agree-license-editor.component';
+import { checkUnique } from './unique.validator';
 
 @Form({
   label: 'User Registration',
@@ -11,6 +12,7 @@ export class RegisterModel {
     label: 'User name',
     css: 'col-md-12',
     validators: [Validators.required, Validators.minLength(3)],
+    asyncValidators: [checkUnique],
   })
   username: string;
 
