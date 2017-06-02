@@ -43,6 +43,12 @@ export class RegisterModel {
   tags: string[];
 
   @Field({
+    label: '',
+    validators: [Validators.requiredTrue],
+  })
+  agreeLicense: boolean;
+
+  @Field({
     label: 'User profile',
     validators: [Validators.required],
   })

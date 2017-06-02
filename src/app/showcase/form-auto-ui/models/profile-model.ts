@@ -1,5 +1,5 @@
 import { Field, Form, minValue } from '@ui-model/angular';
-import { FormGroup, ValidationErrors } from '@angular/forms';
+import { FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { GenderEditorComponent } from '../editors/gender-editor/gender-editor.component';
 
 @Form({
@@ -12,6 +12,7 @@ export class ProfileModel {
 
   @Field({
     editor: GenderEditorComponent,
+    validators: [Validators.required],
   })
   gender: string;
 

@@ -9,7 +9,10 @@ import { FormGroup } from '@angular/forms';
 })
 export class FormControlComponent implements OnInit {
   constructor() {
+    this.uniqueId = ++FormControlComponent.latestUniqueId;
   }
+
+  uniqueId: number;
 
   @Input() group: FormGroup;
   @Input() field: FieldMetadata;
@@ -17,4 +20,5 @@ export class FormControlComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  static latestUniqueId: number = new Date().getTime();
 }
