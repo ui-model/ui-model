@@ -1,3 +1,8 @@
-<ui-form-group *ngIf="form" [group]="form"></ui-form-group>
+<form (submit)="submit()">
+  <ui-form-group *ngIf="form" [group]="form"></ui-form-group>
 
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+  </div>
+</form>
 <pre class="alert alert-info">{{form.value|json:2}}</pre>
