@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { template } from 'lodash';
 
 @Injectable()
-export class FieldErrorFormatter {
-
-  lookup(key: string, value: any): string {
+export class FieldErrorMapper {
+  lookup(key: string, customMessages: { [key: string]: string } = {}): string {
+    const message = customMessages[key];
+    if (message) {
+      return message;
+    }
     switch (key) {
       case 'minlength':
         return 'The length <span class="text-muted field-error-actual">( <%= value.actualLength %> )</span> ' +
@@ -48,9 +50,4 @@ export class FieldErrorFormatter {
         return '( <%= key %> ) - ( <%= JSON.stringify(value) %> )';
     }
   }
-
-  format(messageTemplate: string = '', variables: { [key: string]: any } = {}): string {
-    return template(messageTemplate)(variables);
-  }
-
 }

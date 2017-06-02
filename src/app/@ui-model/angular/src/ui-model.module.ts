@@ -34,19 +34,20 @@ import { CountDownDirective } from './directives/count-down.directive';
 import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
 import { FormArrayExporterDirective } from './directives/form-array-exporter.directive';
 import { FormGroupExporterDirective } from './directives/form-group-exporter.directive';
-import { FieldErrorMessagePipe } from './pipes/field-error-message.pipe';
+import { FieldErrorMapperPipe } from './pipes/field-error-mapper.pipe';
 
 import { Modal, ModalService } from './services/modal.service';
 import { TooltipService } from './services/tooltip.service';
 import { NameMapper } from './services/name-mapper.service';
 
 import { FormMaker } from './services/form-maker.service';
-import { FieldErrorFormatter } from './services/field-error-formatter.service';
+import { FieldErrorMapper } from './services/field-error-mapper.service';
 import { FieldMetadataDirective } from './directives/field-metadata.directive';
 import { FieldLabelPipe } from './pipes/field-label.pipe';
+import { TemplatePipe } from './pipes/template.pipe';
 
-export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorFormatter, NameMapper];
-export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter, NameMapper };
+export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper];
+export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper };
 
 @NgModule({
   imports: [
@@ -89,9 +90,10 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter, Na
     CountDownDirective,
     FormArrayExporterDirective,
     FormGroupExporterDirective,
-    FieldErrorMessagePipe,
+    FieldErrorMapperPipe,
     FieldMetadataDirective,
     FieldLabelPipe,
+    TemplatePipe,
   ],
   exports: [
     SelectDirective,
@@ -130,8 +132,9 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorFormatter, Na
     IsNotEmptyPipe,
     TimesPipe,
     ObjectToArrayPipe,
-    FieldErrorMessagePipe,
+    FieldErrorMapperPipe,
     FieldLabelPipe,
+    TemplatePipe,
   ],
 })
 export class UiModelModule {
@@ -180,8 +183,9 @@ export * from './pipes/is-empty.pipe';
 export * from './pipes/is-not-empty.pipe';
 export * from './pipes/times.pipe';
 export * from './pipes/object-to-array.pipe';
-export * from './pipes/field-error-message.pipe';
+export * from './pipes/field-error-mapper.pipe';
 export * from './pipes/field-label.pipe';
+export * from './pipes/template.pipe';
 
 export * from './validators/is-boolean.validator';
 export * from './validators/is-integer.validator';
