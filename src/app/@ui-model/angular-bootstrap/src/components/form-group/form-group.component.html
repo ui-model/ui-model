@@ -5,7 +5,7 @@
       <ui-form-control *ngIf="field.isControl" [group]="group" [field]="field"></ui-form-control>
       <ui-form-array *ngIf="field.isArray" [group]="group" [field]="field"></ui-form-array>
       <ui-form-group *ngIf="field.isGroup" [group]="group.get(field.name)"></ui-form-group>
-      <ui-field-error [fieldName]="field.name"></ui-field-error>
+      <ui-field-error [fieldName]="field.name" [messages]="field.errors"></ui-field-error>
     </div>
   </div>
 </fieldset>

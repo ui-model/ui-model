@@ -48,6 +48,9 @@ export class RegisterModel {
     css: 'col-md-12',
     validators: [equals(true)],
     editor: AgreeLicenseEditorComponent,
+    errors: {
+      equals: 'Sorry, you must agree to the agreement to use the service.',
+    },
   })
   agreeLicense: boolean;
 

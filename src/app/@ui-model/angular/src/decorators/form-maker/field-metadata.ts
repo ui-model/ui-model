@@ -11,6 +11,7 @@ export interface FieldMetadata {
   label?: string;
   css?: string;
   editor?: Type<any>;
+  errors?: { [code: string]: string };
 
   isGroup?: boolean;
   isArray?: boolean;
