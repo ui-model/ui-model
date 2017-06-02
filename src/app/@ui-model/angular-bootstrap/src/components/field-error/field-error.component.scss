@@ -1,3 +1,8 @@
 :host {
   display: block;
+  > div {
+    min-height: 0.01px; // can not be 0, otherwise margin-bottom is invalid
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+  }
 }
