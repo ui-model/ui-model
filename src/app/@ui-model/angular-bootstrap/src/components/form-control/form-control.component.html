@@ -1,9 +1,13 @@
-<div *ngIf="group" class="form-group" [formGroup]="group">
+<div *ngIf="group && field" class="form-group" [formGroup]="group">
   <label *ngIf="field | fieldLabel" for="_{{field.name}}_{{uniqueId}}">{{field | fieldLabel}}</label>
-  <ng-container *ngIf="field.editor">
-    <ng-container *ngComponentOutlet="field.editor"></ng-container>
+  <ng-container *ngIf="isInput(field)">
+    <input [type]="field.editor || 'text'" class="form-control" id="_{{field.name}}_{{uniqueId}}"
+           [formControlName]="field.name"/>
   </ng-container>
-  <ng-container *ngIf="!field.editor">
-    <input type="text" class="form-control" id="_{{field.name}}_{{uniqueId}}" [formControlName]="field.name"/>
+  <ng-container *ngIf="isTextArea(field)">
+    <textarea class="form-control" id="_{{field.name}}_{{uniqueId}}" [formControlName]="field.name"></textarea>
+  </ng-container>
+  <ng-container *ngIf="isCustomEditor(field)">
+    <ng-container *ngComponentOutlet="field.editor"></ng-container>
   </ng-container>
 </div>

@@ -66,6 +66,12 @@ export class FormMaker<T> {
         .filter((fn) => !!fn)
         .map(toAsyncValidator);
       control.setAsyncValidators(Validators.composeAsync(asyncValidators));
+      control.valueChanges.subscribe(() => {
+        // delay to the next tick, so that listeners get the latest value
+        Promise.resolve().then(() => {
+          (field.listeners || []).forEach((listener) => listener(control));
+        });
+      });
 
       controls[field.name] = control;
     });

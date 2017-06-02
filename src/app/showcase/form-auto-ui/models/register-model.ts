@@ -1,6 +1,6 @@
 import { Field, Form, url } from '@ui-model/angular';
 import { ProfileModel } from './profile-model';
-import { Validators } from '@angular/forms';
+import { AbstractControl, Validators } from '@angular/forms';
 import { AgreeLicenseEditorComponent } from '../editors/agree-license-editor/agree-license-editor.component';
 import { RemoteUsernameValidator } from './remote-username.validator';
 
@@ -55,6 +55,27 @@ export class RegisterModel {
     },
   })
   agreeLicense: boolean;
+
+  @Field({
+    editor: 'password',
+    validators: [Validators.required],
+    listeners: [(c: AbstractControl) => {
+      c.parent.get('confirmPassword').updateValueAndValidity();
+    }],
+  })
+  password: string;
+
+  @Field({
+    editor: 'password',
+    validators: [Validators.required, (c: AbstractControl) => {
+      if (c.parent.value.password !== c.value) {
+        return {
+          confirmPassword: true,
+        };
+      }
+    }],
+  })
+  confirmPassword: string;
 
   @Field({
     label: 'User profile',
