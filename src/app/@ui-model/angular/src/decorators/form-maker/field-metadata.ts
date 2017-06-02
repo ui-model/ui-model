@@ -1,16 +1,16 @@
-import { AsyncValidatorFn, ValidatorFn } from '@angular/forms';
+import { AsyncValidator, AsyncValidatorFn, Validator, ValidatorFn } from '@angular/forms';
 import { Type } from '@angular/core';
 export interface FieldMetadata {
   name?: string;
   type?: Type<any>;
   arrayElementType?: Type<any>;
-  autoValidators?: ValidatorFn[];
-  validators?: ValidatorFn[];
-  asyncValidators?: AsyncValidatorFn[];
+  dataTypeValidators?: ValidatorFn[];
+  validators?: (ValidatorFn | Type<Validator>)[];
+  asyncValidators?: (AsyncValidatorFn | Type<AsyncValidator>)[];
 
   label?: string;
   css?: string;
-  editor?: Type<any>;
+  editor?: Type<Object>;
   errors?: { [code: string]: string };
 
   isGroup?: boolean;

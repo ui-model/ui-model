@@ -28,13 +28,13 @@ export function getOrCreateField(target: any, fieldName: string): FieldMetadata 
     field.isArray = field.type === Array;
     field.isGroup = Reflect.hasMetadata(metaKeyForm, field.type);
     field.isControl = !field.isArray && !field.isGroup;
-    field.autoValidators = [];
+    field.dataTypeValidators = [];
     switch (field.type) {
       case Number:
-        field.autoValidators.unshift(isNumber);
+        field.dataTypeValidators = [isNumber];
         break;
       case Boolean:
-        field.autoValidators.unshift(isBoolean);
+        field.dataTypeValidators = [isBoolean];
         break;
     }
     formMeta.fields.push(field);

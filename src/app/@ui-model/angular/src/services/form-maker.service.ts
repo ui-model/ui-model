@@ -1,10 +1,12 @@
 import { Injectable, Injector, Type } from '@angular/core';
 import {
   AbstractControl,
+  AsyncValidator,
   AsyncValidatorFn,
   FormArray,
   FormControl,
   FormGroup,
+  Validator,
   ValidatorFn,
   Validators,
 } from '@angular/forms';
@@ -42,16 +44,27 @@ export class FormMaker<T> {
 
       control[metaKeyField] = field;
 
+      const injector = this.injector;
+
+      function toValidator(validatorOrServiceClass: Type<Validator>): ValidatorFn {
+        const service = injector.get(validatorOrServiceClass, null);
+        return service && service.validate.bind(service) || validatorOrServiceClass;
+      }
+
+      function toAsyncValidator(validatorOrServiceClass: Type<AsyncValidator>): AsyncValidatorFn {
+        const service = injector.get(validatorOrServiceClass, null);
+        return service && service.validate.bind(service) || validatorOrServiceClass;
+      }
+
       const subModel = (Reflect.getMetadata(metaKeyForm, field.type) || {}) as FormMetadata;
-      // bind all validators to injector, so that they can
-      const validators = [].concat(field.autoValidators).concat(field.validators).concat(subModel.validators)
+      const validators = [].concat(field.dataTypeValidators).concat(field.validators).concat(subModel.validators)
         .filter((fn) => !!fn)
-        .map((fn: ValidatorFn) => fn.bind(this.injector));
+        .map(toValidator);
       control.setValidators(Validators.compose(validators));
 
       const asyncValidators = [].concat(field.asyncValidators).concat(subModel.asyncValidators)
         .filter((fn) => !!fn)
-        .map((fn: AsyncValidatorFn) => fn.bind(this.injector));
+        .map(toAsyncValidator);
       control.setAsyncValidators(Validators.composeAsync(asyncValidators));
 
       controls[field.name] = control;
