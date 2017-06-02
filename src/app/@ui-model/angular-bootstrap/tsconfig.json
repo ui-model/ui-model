@@ -4,7 +4,8 @@
     "baseUrl": "",
     "rootDir": ".",
     "paths": {
-      "@ui-model/common": ["../common"]
+      "@ui-model/common": ["../common"],
+      "@ui-model/angular": ["../angular"]
     }
   }
 }

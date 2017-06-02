@@ -1,5 +1,5 @@
 <div *ngIf="field" [formGroup]="group">
-  <div [formArrayName]="field.name" #values="uiFormArray">
+  <div class="form-group" [formArrayName]="field.name" #values="uiFormArray">
     <label for="values">{{field | fieldLabel}}</label>
     <div class="form-group" *ngFor="let control of values.items">
       <div class="input-group">
