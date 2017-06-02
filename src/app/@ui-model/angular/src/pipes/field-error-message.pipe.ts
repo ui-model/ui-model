@@ -10,11 +10,7 @@ export class FieldErrorMessagePipe implements PipeTransform {
   }
 
   transform({key, value}: { key: string, value: any }, customMessages: { [key: string]: string } = {}): string {
-    const customMessage = customMessages[key];
-    if (customMessage) {
-      return customMessage;
-    }
-    return this.formatter.format(key, value);
+    const template = customMessages[key] || this.formatter.lookup(key, value);
+    return this.formatter.format(template, {key, value});
   }
-
 }
