@@ -10,7 +10,7 @@ import { RemoteUsernameValidator } from './remote-username.validator';
 export class RegisterModel {
   @Property({
     label: 'User name',
-    css: 'col-md-12',
+    css: 'uppercase',
     validators: [Validators.required, Validators.minLength(3)],
     asyncValidators: [RemoteUsernameValidator],
   })
@@ -47,7 +47,6 @@ export class RegisterModel {
 
   @Property({
     label: '',
-    css: 'col-md-12',
     validators: [Validators.requiredTrue],
     editor: AgreeLicenseEditorComponent,
     errors: {

@@ -1,3 +1,16 @@
+@import "../../shared/styles/common";
+
 :host {
   display: block;
+}
+
+ui-form-group {
+  /deep/ {
+    .uppercase {
+      text-transform: uppercase;
+    }
+    .ui-model-field-username, .ui-model-field-agreeLicense {
+      @include make-col(12);
+    }
+  }
 }

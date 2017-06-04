@@ -27,6 +27,6 @@ export class FormGroupComponent implements OnInit {
     }
     const customCss = field.css || '';
     const autoCss = field.isControl ? 'col-md-6' : 'col-md-12';
-    return [`ui-model-field-${field.name}`, autoCss, customCss].join(' ');
+    return ['ui-model-field', `ui-model-field-${field.name}`, autoCss, customCss].join(' ');
   }
 }
