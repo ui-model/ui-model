@@ -10,7 +10,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { FormMetadata, metaKeyField, metaKeyForm } from '../decorators/form-maker';
+import { metaKeyModel, metaKeyProperty, ModelMetadata } from '../decorators/form-maker';
 const Reflect = window['Reflect'];
 
 @Injectable()
@@ -24,25 +24,25 @@ export class FormMaker<T> {
   }
 
   private _createFromModel(model: Type<T>): AbstractControl {
-    if (!Reflect.hasMetadata(metaKeyForm, model)) {
+    if (!Reflect.hasMetadata(metaKeyModel, model)) {
       throw Error('The `model` parameter must be a class with the `@FormModel()` decorator!');
     }
 
-    const meta = Reflect.getMetadata(metaKeyForm, model) as FormMetadata;
+    const meta = Reflect.getMetadata(metaKeyModel, model) as ModelMetadata;
 
     const controls: { [name: string]: AbstractControl } = {};
 
-    meta.fields.forEach((field) => {
+    meta.properties.forEach((property) => {
       let control;
-      if (field.isGroup) {
-        control = this._createFromModel(field.type);
-      } else if (field.isArray) {
+      if (property.isGroup) {
+        control = this._createFromModel(property.type);
+      } else if (property.isArray) {
         control = new FormArray([]);
       } else {
         control = new FormControl();
       }
 
-      control[metaKeyField] = field;
+      control[metaKeyProperty] = property;
 
       const injector = this.injector;
 
@@ -56,28 +56,28 @@ export class FormMaker<T> {
         return service && service.validate.bind(service) || validatorOrServiceClass;
       }
 
-      const subModel = (Reflect.getMetadata(metaKeyForm, field.type) || {}) as FormMetadata;
-      const validators = [].concat(field.dataTypeValidators).concat(field.validators).concat(subModel.validators)
+      const subModel = (Reflect.getMetadata(metaKeyModel, property.type) || {}) as ModelMetadata;
+      const validators = [].concat(property.dataTypeValidators).concat(property.validators).concat(subModel.validators)
         .filter((fn) => !!fn)
         .map(toValidator);
       control.setValidators(Validators.compose(validators));
 
-      const asyncValidators = [].concat(field.asyncValidators).concat(subModel.asyncValidators)
+      const asyncValidators = [].concat(property.asyncValidators).concat(subModel.asyncValidators)
         .filter((fn) => !!fn)
         .map(toAsyncValidator);
       control.setAsyncValidators(Validators.composeAsync(asyncValidators));
       control.valueChanges.subscribe(() => {
         // delay to the next tick, so that listeners get the latest value
         Promise.resolve().then(() => {
-          (field.listeners || []).forEach((listener) => listener(control));
+          (property.listeners || []).forEach((listener) => listener(control));
         });
       });
 
-      controls[field.name] = control;
+      controls[property.name] = control;
     });
 
     const result = new FormGroup(controls);
-    result[metaKeyForm] = meta;
+    result[metaKeyModel] = meta;
     return result;
   }
 

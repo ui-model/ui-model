@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FieldMetadata, FormMetadata, metaKeyForm } from '@ui-model/angular';
+import { PropertyMetadata, ModelMetadata, metaKeyModel } from '@ui-model/angular';
 
 @Component({
   selector: 'ui-form-group',
@@ -14,14 +14,14 @@ export class FormGroupComponent implements OnInit {
 
   @Input() group: FormGroup;
 
-  get form(): FormMetadata {
-    return this.group && this.group[metaKeyForm];
+  get form(): ModelMetadata {
+    return this.group && this.group[metaKeyModel];
   }
 
   ngOnInit(): void {
   }
 
-  cssOf(field: FieldMetadata): string {
+  cssOf(field: PropertyMetadata): string {
     if (!field) {
       return '';
     }

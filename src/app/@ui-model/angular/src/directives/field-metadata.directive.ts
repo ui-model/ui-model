@@ -1,14 +1,14 @@
 import { Directive, Input } from '@angular/core';
-import { FieldMetadata } from '../decorators/form-maker/field-metadata';
+import { PropertyMetadata } from '../decorators/form-maker/property-metadata';
 
 @Directive({
   selector: '[uiFieldMetadata]',
 })
-export class FieldMetadataDirective implements FieldMetadata {
+export class FieldMetadataDirective implements PropertyMetadata {
 
   constructor() {
   }
 
-  @Input('uiFieldMetadata') meta: FieldMetadata;
+  @Input('uiFieldMetadata') meta: PropertyMetadata;
 
 }

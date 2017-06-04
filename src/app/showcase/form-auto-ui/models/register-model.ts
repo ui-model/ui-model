@@ -1,14 +1,14 @@
-import { Field, Form, url } from '@ui-model/angular';
+import { Model, Property, url } from '@ui-model/angular';
 import { ProfileModel } from './profile-model';
 import { AbstractControl, Validators } from '@angular/forms';
 import { AgreeLicenseEditorComponent } from '../editors/agree-license-editor/agree-license-editor.component';
 import { RemoteUsernameValidator } from './remote-username.validator';
 
-@Form({
+@Model({
   label: 'User Registration',
 })
 export class RegisterModel {
-  @Field({
+  @Property({
     label: 'User name',
     css: 'col-md-12',
     validators: [Validators.required, Validators.minLength(3)],
@@ -16,36 +16,36 @@ export class RegisterModel {
   })
   username: string;
 
-  @Field({
+  @Property({
     validators: [Validators.required],
   })
   nickName: string;
 
-  @Field({
+  @Property({
     label: 'Personal email',
     validators: [Validators.required, Validators.email],
   })
   email: string;
 
-  @Field({
+  @Property({
     label: 'Personal mobile',
     validators: [Validators.required, Validators.pattern(/^1\d{10}$/)],
   })
   mobile: string;
 
-  @Field({
+  @Property({
     label: 'Home page',
     validators: [Validators.required, Validators.minLength(3), url],
   })
   homepage: string;
 
-  @Field({
+  @Property({
     validators: [Validators.required],
     arrayElementType: String,
   })
   tags: string[];
 
-  @Field({
+  @Property({
     label: '',
     css: 'col-md-12',
     validators: [Validators.requiredTrue],
@@ -56,7 +56,7 @@ export class RegisterModel {
   })
   agreeLicense: boolean;
 
-  @Field({
+  @Property({
     editor: 'password',
     validators: [Validators.required],
     listeners: [(c: AbstractControl) => {
@@ -65,7 +65,7 @@ export class RegisterModel {
   })
   password: string;
 
-  @Field({
+  @Property({
     editor: 'password',
     validators: [Validators.required, (c: AbstractControl) => {
       if (c.parent.value.password !== c.value) {
@@ -77,7 +77,7 @@ export class RegisterModel {
   })
   confirmPassword: string;
 
-  @Field({
+  @Property({
     label: 'User profile',
     validators: [Validators.required],
   })

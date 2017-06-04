@@ -1,27 +1,27 @@
-import { Field, Form, minValue } from '@ui-model/angular';
+import { Property, Model, minValue } from '@ui-model/angular';
 import { FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { GenderEditorComponent } from '../editors/gender-editor/gender-editor.component';
 
-@Form({
+@Model({
   label: 'Profile',
   validators: [notTooThin],
 })
 export class ProfileModel {
-  @Field()
+  @Property()
   birthday: Date;
 
-  @Field({
+  @Property({
     editor: GenderEditorComponent,
     validators: [Validators.required],
   })
   gender: string;
 
-  @Field({
+  @Property({
     validators: [minValue(50)],
   })
   height: number;
 
-  @Field({
+  @Property({
     validators: [minValue(20)],
   })
   weight: number;

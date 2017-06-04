@@ -1,43 +1,43 @@
-import { FormMetadata } from './form-metadata';
-import { metaKeyForm, metaKeyType, Reflect } from './constants';
-import { FieldMetadata } from './field-metadata';
+import { ModelMetadata } from './model-metadata';
+import { metaKeyModel, metaKeyType, Reflect } from './constants';
+import { PropertyMetadata } from './property-metadata';
 import { isNumber } from '../../validators/is-number.validator';
 import { isBoolean } from '../../validators/is-boolean.validator';
 
-export function getOrCreateFormMetadata(target: any): FormMetadata {
-  const result = Reflect.getMetadata(metaKeyForm, target);
+export function getOrCreateModelMetadata(target: any): ModelMetadata {
+  const result = Reflect.getMetadata(metaKeyModel, target);
   if (result) {
     return result;
   } else {
-    const meta: FormMetadata = {fields: []};
-    Reflect.defineMetadata(metaKeyForm, meta, target);
+    const meta: ModelMetadata = {properties: []};
+    Reflect.defineMetadata(metaKeyModel, meta, target);
     return meta;
   }
 }
 
-export function getOrCreateField(target: any, fieldName: string): FieldMetadata {
-  const formMeta = getOrCreateFormMetadata(target.constructor);
-  if (!formMeta.fields) {
-    formMeta.fields = [];
+export function getOrCreateProperty(target: any, propertyName: string): PropertyMetadata {
+  const formMeta = getOrCreateModelMetadata(target.constructor);
+  if (!formMeta.properties) {
+    formMeta.properties = [];
   }
-  const result = formMeta.fields.find((field) => field.name === fieldName);
+  const result = formMeta.properties.find((property) => property.name === propertyName);
   if (result) {
     return result;
   } else {
-    const field: FieldMetadata = {name: fieldName, type: Reflect.getMetadata(metaKeyType, target, fieldName)};
-    field.isArray = field.type === Array;
-    field.isGroup = Reflect.hasMetadata(metaKeyForm, field.type);
-    field.isControl = !field.isArray && !field.isGroup;
-    field.dataTypeValidators = [];
-    switch (field.type) {
+    const property: PropertyMetadata = {name: propertyName, type: Reflect.getMetadata(metaKeyType, target, propertyName)};
+    property.isArray = property.type === Array;
+    property.isGroup = Reflect.hasMetadata(metaKeyModel, property.type);
+    property.isControl = !property.isArray && !property.isGroup;
+    property.dataTypeValidators = [];
+    switch (property.type) {
       case Number:
-        field.dataTypeValidators = [isNumber];
+        property.dataTypeValidators = [isNumber];
         break;
       case Boolean:
-        field.dataTypeValidators = [isBoolean];
+        property.dataTypeValidators = [isBoolean];
         break;
     }
-    formMeta.fields.push(field);
-    return field;
+    formMeta.properties.push(property);
+    return property;
   }
 }

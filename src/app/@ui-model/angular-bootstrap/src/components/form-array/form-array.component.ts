@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FieldMetadata } from '@ui-model/angular';
+import { PropertyMetadata } from '@ui-model/angular';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ export class FormArrayComponent implements OnInit {
   }
 
   @Input() group: FormGroup;
-  @Input() field: FieldMetadata;
+  @Input() field: PropertyMetadata;
 
   ngOnInit(): void {
   }

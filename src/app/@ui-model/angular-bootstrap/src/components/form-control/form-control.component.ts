@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FieldMetadata } from '@ui-model/angular';
+import { PropertyMetadata } from '@ui-model/angular';
 import { FormGroup } from '@angular/forms';
 import { isString } from 'util';
 
@@ -16,20 +16,20 @@ export class FormControlComponent implements OnInit {
   uniqueId: number;
 
   @Input() group: FormGroup;
-  @Input() field: FieldMetadata;
+  @Input() field: PropertyMetadata;
 
   ngOnInit(): void {
   }
 
-  isCustomEditor(field: FieldMetadata): boolean {
+  isCustomEditor(field: PropertyMetadata): boolean {
     return field.editor instanceof Object;
   }
 
-  isInput(field: FieldMetadata): boolean {
+  isInput(field: PropertyMetadata): boolean {
     return !field.editor || isString(field.editor) && field.editor !== 'textarea';
   }
 
-  isTextArea(field: FieldMetadata): boolean {
+  isTextArea(field: PropertyMetadata): boolean {
     return field.editor === 'textarea';
   }
 

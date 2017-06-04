@@ -1,7 +1,7 @@
 <fieldset *ngIf="form && group">
   <legend *ngIf="form | fieldLabel">{{form | fieldLabel}}</legend>
   <div [formGroup]="group" class="row">
-    <div *ngFor="let field of form.fields" [uiFieldMetadata]="field" [ngClass]="cssOf(field)">
+    <div *ngFor="let field of form.properties" [uiFieldMetadata]="field" [ngClass]="cssOf(field)">
       <ui-form-control *ngIf="field.isControl" [group]="group" [field]="field"></ui-form-control>
       <ui-form-array *ngIf="field.isArray" [group]="group" [field]="field"></ui-form-array>
       <ui-form-group *ngIf="field.isGroup" [group]="group.get(field.name)"></ui-form-group>

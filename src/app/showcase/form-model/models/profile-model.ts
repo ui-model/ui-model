@@ -1,22 +1,22 @@
-import { Field, Form, minValue } from '@ui-model/angular';
+import { Property, Model, minValue } from '@ui-model/angular';
 import { FormGroup, ValidationErrors } from '@angular/forms';
 
-@Form({
+@Model({
   validators: [notTooThin],
 })
 export class ProfileModel {
-  @Field()
+  @Property()
   birthday: Date;
 
-  @Field()
+  @Property()
   gender: string;
 
-  @Field({
+  @Property({
     validators: [minValue(50)],
   })
   height: number;
 
-  @Field({
+  @Property({
     validators: [minValue(20)],
   })
   weight: number;
