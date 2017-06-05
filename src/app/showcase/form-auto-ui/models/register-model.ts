@@ -1,4 +1,4 @@
-import { Model, Property, url } from '@ui-model/angular';
+import { complexity, Model, Property, url } from '@ui-model/angular';
 import { ProfileModel } from './profile-model';
 import { AbstractControl, Validators } from '@angular/forms';
 import { AgreeLicenseEditorComponent } from '../editors/agree-license-editor/agree-license-editor.component';
@@ -57,7 +57,7 @@ export class RegisterModel {
 
   @Property({
     editor: 'password',
-    validators: [Validators.required],
+    validators: [Validators.required, complexity(3)],
     listeners: [(c: AbstractControl) => {
       c.parent.get('confirmPassword').updateValueAndValidity();
     }],

@@ -44,6 +44,9 @@ export class FieldErrorMapper {
         return 'The value must be a integer';
       case 'date':
         return 'The value must be a date';
+      case 'complexity':
+        return 'The password is too weak. Need <span class="text-muted field-error-expected"><%= value.requiredValue %></span> ' +
+          'kinds of characters, the actual kinds is <span class="text-muted field-error-actual"><%= value.actualValue %></span>';
       case 'sameAs':
         return 'The value must be same as <span class="text-muted field-error-expected">( <%= value.field %> )</span>';
       default:

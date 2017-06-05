@@ -196,6 +196,7 @@ export * from './validators/min-value.validator';
 export * from './validators/max-value.validator';
 export * from './validators/url.validator';
 export * from './validators/equals.validator';
+export * from './validators/complexity.validator';
 
 export * from './mappers/to-data';
 export * from './mappers/to-void';
