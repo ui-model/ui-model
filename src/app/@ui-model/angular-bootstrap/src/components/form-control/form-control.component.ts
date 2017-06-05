@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PropertyMetadata } from '@ui-model/angular';
-import { FormGroup } from '@angular/forms';
+import { AbstractControl, FormGroup } from '@angular/forms';
 import { isString } from 'util';
 
 @Component({
@@ -17,6 +17,13 @@ export class FormControlComponent implements OnInit {
 
   @Input() group: FormGroup;
   @Input() field: PropertyMetadata;
+
+  get control(): AbstractControl {
+    if (!this.group || !this.field) {
+      return;
+    }
+    return this.group.get(this.field.name);
+  }
 
   ngOnInit(): void {
   }

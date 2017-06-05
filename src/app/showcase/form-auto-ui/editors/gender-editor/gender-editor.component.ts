@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { AbstractControl, FormGroup, FormGroupDirective } from '@angular/forms';
 import { FieldMetadataDirective } from '@ui-model/angular';
 
 @Component({
@@ -13,6 +13,14 @@ export class GenderEditorComponent {
   }
 
   group: FormGroup;
+
+  get control(): AbstractControl {
+    if (!this.group || !this.field) {
+      return;
+    }
+
+    return this.group.get(this.field.meta.name);
+  }
 
   options = [
     {

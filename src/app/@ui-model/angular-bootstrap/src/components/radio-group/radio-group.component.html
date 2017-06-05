@@ -1,4 +1,4 @@
 <label class="form-check-label" *ngFor="let option of options">
-  <input type="radio" class="form-check-input" [checked]="selected(option)" (change)="select(option)"/>
+  <input type="radio" class="form-check-input" [checked]="selected(option)" [disabled]="disabled" (change)="select(option)"/>
   {{option.label}}
 </label>
