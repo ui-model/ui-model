@@ -20,7 +20,7 @@ export class FormAutoUiComponent implements OnInit {
   }
 
   submit(): void {
-    if (this.form.invalid) {
+    if (!this.form.valid) {
       this.helper.traverseTree(this.form, (c) => c.markAsDirty({onlySelf: true}));
       this.helper.scrollFirstFieldErrorIntoView(this.elementRef.nativeElement);
       return;
