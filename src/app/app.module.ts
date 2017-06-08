@@ -11,7 +11,6 @@ import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { SharedModule } from './shared/shared.module';
 import { TableComponent } from './showcase/table/table.component';
 import { FormComponent } from './showcase/form/form.component';
-import { FormSectionComponent } from './showcase/form/form-section/form-section.component';
 import { TreeComponent } from './showcase/tree/tree.component';
 import { CalendarComponent } from './showcase/calendar/calendar.component';
 import { PreviewComponent } from './showcase/preview/preview.component';
@@ -65,7 +64,6 @@ import { RemoteUsernameValidator } from './showcase/form-auto-ui/models/remote-u
     NavMenuComponent,
     TableComponent,
     FormComponent,
-    FormSectionComponent,
     TreeComponent,
     CalendarComponent,
     PreviewComponent,

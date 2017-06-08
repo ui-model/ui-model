@@ -1,25 +1,22 @@
-<form name="form" #form="ngForm" (submit)="submit(form.value)">
-  <app-form-section ngModelGroup="basic"></app-form-section>
+<form name="form" #form="ngForm" (submit)="submit(form)">
   <div class="form-group">
-    <label for="email" i18n>Email</label>
-    <input class="form-control" [(ngModel)]="email" id="email" name="email" required/>
-  </div>
-
-  <div class="alert alert-info">
-    <span i18n>Result:</span>
-    {{form.value|json}}
+    <label for="username">Username</label>
+    <input class="form-control" id="username" name="username"
+           #fieldUsername="ngModel" [(ngModel)]="user.username" required minlength="4"/>
+    <ui-field-error [field]="fieldUsername"></ui-field-error>
   </div>
 
   <div class="form-group">
-    <button type="submit" class="btn btn-primary" [uiDisabled]="form.invalid" title="Submit this form" i18n>Submit
-    </button>
+    <label for="email">Email</label>
+    <input class="form-control" id="email" name="email"
+           #fieldEmail="ngModel" [(ngModel)]="user.email" required email/>
+    <ui-field-error [field]="fieldEmail"></ui-field-error>
   </div>
-  <div class="card card-success" *ngIf="report">
-    <h3 class="card-header" i18n>
-      Final Report
-    </h3>
-    <div class="card-block">
-      <pre>{{report}}</pre>
-    </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondary" (click)="reset(form)">Reset</button>
   </div>
 </form>
+
+<pre class="alert alert-info" *ngIf="report">{{report|json:2}}</pre>

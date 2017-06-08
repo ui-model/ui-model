@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AbstractControl, FormArray, FormGroup } from '@angular/forms';
 
 @Injectable()
-export class FormHelper {
+export class FormUtils {
 
   constructor() {
   }

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { FormHelper, FormMaker } from '@ui-model/angular';
+import { FormMaker, FormUtils } from '@ui-model/angular';
 import { RegisterModel } from './models/register-model';
 import { FormGroup } from '@angular/forms';
 
@@ -10,7 +10,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class FormAutoUiComponent implements OnInit {
 
-  constructor(private maker: FormMaker<RegisterModel>, private helper: FormHelper, private elementRef: ElementRef) {
+  constructor(private maker: FormMaker<RegisterModel>, private utils: FormUtils, private elementRef: ElementRef) {
   }
 
   form: FormGroup;
@@ -21,8 +21,8 @@ export class FormAutoUiComponent implements OnInit {
 
   submit(): void {
     if (!this.form.valid) {
-      this.helper.traverseTree(this.form, (c) => c.markAsDirty({onlySelf: true}));
-      this.helper.scrollFirstFieldErrorIntoView(this.elementRef.nativeElement);
+      this.utils.traverseTree(this.form, (c) => c.markAsDirty({onlySelf: true}));
+      this.utils.scrollFirstFieldErrorIntoView(this.elementRef.nativeElement);
       return;
     }
 

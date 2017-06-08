@@ -41,14 +41,14 @@ import { TooltipService } from './services/tooltip.service';
 import { NameMapper } from './services/name-mapper.service';
 
 import { FormMaker } from './services/form-maker.service';
-import { FormHelper } from './services/form-helper.service';
+import { FormUtils } from './services/form-utils.service';
 import { FieldErrorMapper } from './services/field-error-mapper.service';
 import { FieldMetadataDirective } from './directives/field-metadata.directive';
 import { FieldLabelPipe } from './pipes/field-label.pipe';
 import { TemplatePipe } from './pipes/template.pipe';
 
-export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormHelper];
-export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormHelper };
+export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils];
+export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils };
 
 @NgModule({
   imports: [
