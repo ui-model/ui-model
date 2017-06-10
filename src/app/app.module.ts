@@ -53,7 +53,7 @@ import { FormModelComponent } from './showcase/form-model/form-model.component';
 import { FormAutoUiComponent } from './showcase/form-auto-ui/form-auto-ui.component';
 import { GenderEditorComponent } from './showcase/form-auto-ui/editors/gender-editor/gender-editor.component';
 import { AgreeLicenseEditorComponent } from './showcase/form-auto-ui/editors/agree-license-editor/agree-license-editor.component';
-import { RemoteUsernameValidator } from './showcase/form-auto-ui/models/remote-username.validator';
+import { RemoteUsernameValidator } from './showcase/form-auto-ui/validators/remote-username.validator';
 
 @NgModule({
   declarations: [

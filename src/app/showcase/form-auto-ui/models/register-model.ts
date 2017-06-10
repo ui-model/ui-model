@@ -2,7 +2,7 @@ import { complexity, Model, Property, url } from '@ui-model/angular';
 import { ProfileModel } from './profile-model';
 import { AbstractControl, Validators } from '@angular/forms';
 import { AgreeLicenseEditorComponent } from '../editors/agree-license-editor/agree-license-editor.component';
-import { RemoteUsernameValidator } from './remote-username.validator';
+import { RemoteUsernameValidator } from '../validators/remote-username.validator';
 
 @Model({
   label: 'User Registration',
