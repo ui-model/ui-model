@@ -1,23 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MarkdownPipe } from './pipes/markdown.pipe';
 import { UiModelModule } from '@ui-model/angular';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
-import { HighlightPipe } from './pipes/highlight.pipe';
 import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-viewer.component';
+import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
 
 @NgModule({
   imports: [
     CommonModule,
     UiModelModule,
+    UiModelMarkdownModule,
     UiModelBootstrapModule,
   ],
-  declarations: [MarkdownPipe, HighlightPipe, MarkdownViewerComponent],
+  declarations: [MarkdownViewerComponent],
   exports: [
     UiModelModule,
     UiModelBootstrapModule,
-    MarkdownPipe,
-    HighlightPipe,
+    UiModelMarkdownModule,
     MarkdownViewerComponent,
   ],
 })

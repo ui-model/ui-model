@@ -40,6 +40,15 @@
       ],
       "@ui-model/angular": [
         "./angular"
+      ],
+      "@ui-model/angular-d3": [
+        "./angular-d3"
+      ],
+      "@ui-model/angular-markdown": [
+        "./angular-markdown"
+      ],
+      "@ui-model/angular-bootstrap": [
+        "./angular-bootstrap"
       ]
     }
   },
@@ -50,6 +59,7 @@
     "calendar/index.ts",
     "angular/index.ts",
     "angular-d3/index.ts",
+    "angular-markdown/index.ts",
     "angular-bootstrap/index.ts"
   ],
   "exclude": [
