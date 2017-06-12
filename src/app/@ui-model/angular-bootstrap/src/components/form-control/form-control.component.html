@@ -2,11 +2,11 @@
   <label *ngIf="field | fieldLabel" for="_{{field.name}}_{{uniqueId}}">{{field | fieldLabel}}</label>
   <ng-container *ngIf="isInput(field)">
     <input [type]="field.editor || 'text'" class="form-control" id="_{{field.name}}_{{uniqueId}}"
-           [disabled]="control.disabled" [formControl]="control"/>
+           [formControl]="control"/>
   </ng-container>
   <ng-container *ngIf="isTextArea(field)">
     <textarea class="form-control" id="_{{field.name}}_{{uniqueId}}"
-              [disabled]="control.disabled" [formControl]="control"></textarea>
+              [formControl]="control"></textarea>
   </ng-container>
   <ng-container *ngIf="isCustomEditor(field)">
     <ng-container *ngComponentOutlet="field.editor"></ng-container>
