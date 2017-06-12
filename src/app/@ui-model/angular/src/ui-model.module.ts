@@ -198,7 +198,10 @@ export * from './validators/url.validator';
 export * from './validators/equals.validator';
 export * from './validators/complexity.validator';
 
+export * from './mappers/default-if-error';
+export * from './mappers/to-json';
 export * from './mappers/to-data';
+export * from './mappers/to-text';
 export * from './mappers/to-void';
 export * from './mappers/to-boolean';
 export * from './mappers/is-empty';

@@ -28,7 +28,7 @@ export class MarkdownPipe implements PipeTransform {
   }
 }
 
-function highlighter({ options }): void {
+function highlighter({options}: { options }): void {
   options.highlight = (code, lang) => {
     return hljs.highlightAuto(code, lang ? [lang] : ['ts', 'js', 'html', 'scss', 'css']).value;
   };
