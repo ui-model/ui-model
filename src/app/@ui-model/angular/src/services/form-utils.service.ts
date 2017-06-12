@@ -7,6 +7,26 @@ export class FormUtils {
   constructor() {
   }
 
+  markChildrenAsDirty(control: AbstractControl): void {
+    this.traverseTree(control, (c) => c.markAsDirty({onlySelf: true}));
+  }
+
+  markChildrenAsPristine(control: AbstractControl): void {
+    this.traverseTree(control, (c) => c.markAsPristine({onlySelf: true}));
+  }
+
+  markChildrenAsTouched(control: AbstractControl): void {
+    this.traverseTree(control, (c) => c.markAsTouched({onlySelf: true}));
+  }
+
+  markChildrenAsUntouched(control: AbstractControl): void {
+    this.traverseTree(control, (c) => c.markAsUntouched({onlySelf: true}));
+  }
+
+  markChildrenAsPending(control: AbstractControl): void {
+    this.traverseTree(control, (c) => c.markAsPending({onlySelf: true}));
+  }
+
   traverseTree(control: AbstractControl, visitFn: (c: AbstractControl) => void = () => 0): void {
     visitFn(control);
     if (control instanceof FormGroup || control instanceof FormArray) {
@@ -18,7 +38,7 @@ export class FormUtils {
   }
 
   scrollFirstFieldErrorIntoView(root: NodeSelector = document, selector: string = 'ui-field-error>div'): void {
-    setTimeout(() => {
+    Promise.resolve().then(() => {
       const firstFieldErrorContent = root.querySelector(selector);
       if (!firstFieldErrorContent) {
         return;
@@ -32,7 +52,7 @@ export class FormUtils {
         return;
       }
       field.scrollIntoView();
-    }, 100);
+    });
   }
 
 }

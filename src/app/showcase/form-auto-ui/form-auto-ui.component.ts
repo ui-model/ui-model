@@ -21,7 +21,7 @@ export class FormAutoUiComponent implements OnInit {
 
   submit(): void {
     if (!this.form.valid) {
-      this.utils.traverseTree(this.form, (c) => c.markAsDirty({onlySelf: true}));
+      this.utils.markChildrenAsDirty(this.form);
       this.utils.scrollFirstFieldErrorIntoView(this.elementRef.nativeElement);
       return;
     }
