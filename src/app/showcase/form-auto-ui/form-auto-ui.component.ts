@@ -10,7 +10,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class FormAutoUiComponent implements OnInit {
 
-  constructor(private maker: FormMaker<RegisterModel>, private utils: FormUtils, private elementRef: ElementRef) {
+  constructor(private maker: FormMaker, private utils: FormUtils, private elementRef: ElementRef) {
   }
 
   form: FormGroup;

@@ -12,7 +12,7 @@ const Reflect = window['Reflect'];
 })
 export class FormModelComponent implements OnInit {
 
-  constructor(private maker: FormMaker<RegisterModel>) {
+  constructor(private maker: FormMaker) {
   }
 
   form: FormGroup;

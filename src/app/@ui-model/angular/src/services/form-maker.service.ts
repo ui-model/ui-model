@@ -14,16 +14,16 @@ import { metaKeyModel, metaKeyProperty, ModelMetadata } from '../decorators/form
 const Reflect = window['Reflect'];
 
 @Injectable()
-export class FormMaker<T> {
+export class FormMaker {
 
   constructor(private injector: Injector) {
   }
 
-  createFromModel(model: Type<T>): FormGroup {
+  createFromModel<T>(model: Type<T>): FormGroup {
     return this._createFromModel(model) as FormGroup;
   }
 
-  private _createFromModel(model: Type<T>): AbstractControl {
+  private _createFromModel<T>(model: Type<T>): AbstractControl {
     if (!Reflect.hasMetadata(metaKeyModel, model)) {
       throw Error('The `model` parameter must be a class with the `@FormModel()` decorator!');
     }
@@ -81,7 +81,7 @@ export class FormMaker<T> {
     return result;
   }
 
-  setValue(control: AbstractControl, value: T): void {
+  setValue<T>(control: AbstractControl, value: T): void {
     this._setValue(control, value);
   }
 
