@@ -34,6 +34,23 @@ export class Select<T> extends Stateful {
     return this;
   }
 
+  private _labelField = 'label';
+  get labelField(): string {
+    return this._labelField;
+  }
+
+  set labelField(label: string) {
+    if (label !== this._labelField) {
+      this._labelField = label;
+      this.transformer = Transformers.objectByField(label);
+    }
+  }
+
+  setLabelField(field: string): this {
+    this.labelField = field;
+    return this;
+  }
+
   get selection(): T {
     return this._selection;
   }
