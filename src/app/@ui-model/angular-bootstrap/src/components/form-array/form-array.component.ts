@@ -18,4 +18,7 @@ export class FormArrayComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  log(value: any[]): void {
+    console.log(value);
+  }
 }

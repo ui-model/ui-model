@@ -5,7 +5,7 @@
       <div class="input-group">
         <input type="text" class="form-control" id="values" name="values" [formControl]="control"/>
         <div class="input-group-btn">
-          <button class="btn btn-primary" (click)="values.removeItem(control)">
+          <button class="btn btn-primary" (click)="values.removeItem(control)" [disabled]="control.disabled">
             <i class="fa fa-close"></i>
           </button>
         </div>
@@ -13,7 +13,8 @@
       <ui-field-error [field]="control"></ui-field-error>
     </div>
     <div>
-      <button type="button" class="btn btn-primary" (click)="values.createItem()">
+      <button type="button" class="btn btn-primary" (click)="values.createItem()"
+              [disabled]="group.disabled || group.root.disabled">
         <i class="fa fa-plus-circle"></i>
         Add a new tag
       </button>

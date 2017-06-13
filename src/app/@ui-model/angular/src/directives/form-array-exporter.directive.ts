@@ -24,6 +24,11 @@ export class FormArrayExporterDirective {
     const meta = this.control[metaKeyProperty];
     const itemValue = meta.arrayElementType && meta.arrayElementType();
     const control = new FormControl(itemValue);
+    if (this.control.disabled) {
+      control.disable();
+    } else {
+      control.enable();
+    }
     this.control.push(control);
   }
 
