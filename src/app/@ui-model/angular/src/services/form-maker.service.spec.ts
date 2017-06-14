@@ -13,7 +13,7 @@ describe('FormModelBuilder', () => {
     });
   });
 
-  it('should ...', inject([FormMaker], (service: FormMaker<Model>) => {
+  it('should ...', inject([FormMaker], (service: FormMaker) => {
     expect(service).toBeTruthy();
   }));
 });
