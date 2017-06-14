@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MarkdownViewerComponent } from './markdown-viewer.component';
-import { MarkdownPipe } from '../../pipes/markdown.pipe';
+import { MarkdownPipe } from '@ui-model/angular-markdown';
 
 describe('MarkdownViewerComponent', () => {
   let component: MarkdownViewerComponent;

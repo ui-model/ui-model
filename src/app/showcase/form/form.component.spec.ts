@@ -2,8 +2,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormComponent } from './form.component';
 import { FormsModule } from '@angular/forms';
-import { FormSectionComponent } from './form-section/form-section.component';
-import { UiModelModule } from '@ui-model/angular';
+import { FormUtils, UiModelModule } from '@ui-model/angular';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -11,8 +11,10 @@ describe('FormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FormComponent, FormSectionComponent],
+      declarations: [FormComponent],
       imports: [FormsModule, UiModelModule],
+      providers: [FormUtils],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));

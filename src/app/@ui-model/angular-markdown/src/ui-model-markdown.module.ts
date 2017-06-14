@@ -20,3 +20,6 @@ import { MarkdownPipe } from './pipes/markdown.pipe';
 })
 export class UiModelMarkdownModule {
 }
+
+export * from './pipes/highlight.pipe';
+export * from './pipes/markdown.pipe';
