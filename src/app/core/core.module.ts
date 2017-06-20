@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SourceCodeService } from './source-code.service';
 import { HttpModule } from '@angular/http';
-import { UpdateTitleGuard } from './update-title.service';
 import { UpdateMetadataGuard } from './update-metadata-guard.service';
 import { MetadataService } from './metadata.service';
 import { UiModelModule } from '@ui-model/angular';
@@ -19,7 +18,6 @@ import { UserApi } from './apis/user-api.service';
   declarations: [],
   providers: [
     SourceCodeService,
-    UpdateTitleGuard,
     UpdateMetadataGuard,
     MetadataService,
     UiModelModule.services,

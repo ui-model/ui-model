@@ -80,7 +80,7 @@ export class MultiSelect<T> extends Stateful {
   }
 
   selected(option: T): boolean {
-    return this.selectedStates.get(this.transformer(option));
+    return this.selectedStates.get(this._transformer(option));
   }
 
   unselected(option: T): boolean {
@@ -88,7 +88,7 @@ export class MultiSelect<T> extends Stateful {
   }
 
   selectAs(option: T, value: any): void {
-    this.selectedStates.set(this.transformer(option), !!value);
+    this.selectedStates.set(this._transformer(option), !!value);
     this.changed();
   }
 

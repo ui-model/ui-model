@@ -35,6 +35,9 @@ import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
 import { FormArrayExporterDirective } from './directives/form-array-exporter.directive';
 import { FormGroupExporterDirective } from './directives/form-group-exporter.directive';
 import { FieldErrorMapperPipe } from './pipes/field-error-mapper.pipe';
+import { FieldMetadataDirective } from './directives/field-metadata.directive';
+import { FieldLabelPipe } from './pipes/field-label.pipe';
+import { TemplatePipe } from './pipes/template.pipe';
 
 import { Modal, ModalService } from './services/modal.service';
 import { TooltipService } from './services/tooltip.service';
@@ -43,12 +46,12 @@ import { NameMapper } from './services/name-mapper.service';
 import { FormMaker } from './services/form-maker.service';
 import { FormUtils } from './services/form-utils.service';
 import { FieldErrorMapper } from './services/field-error-mapper.service';
-import { FieldMetadataDirective } from './directives/field-metadata.directive';
-import { FieldLabelPipe } from './pipes/field-label.pipe';
-import { TemplatePipe } from './pipes/template.pipe';
 
-export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils];
-export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils };
+import { UpdateTitleGuard } from './guards/update-title.guard';
+
+export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper,
+  FormUtils, UpdateTitleGuard];
+export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils, UpdateTitleGuard };
 
 @NgModule({
   imports: [
