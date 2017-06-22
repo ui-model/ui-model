@@ -20,11 +20,10 @@ export class Calendar extends Stateful {
   }
 
   set value(value: Date) {
-    if (!value) {
+    if (!value || !moment(value).isValid()) {
       this._isNull = true;
       this._value = moment();
       this.update();
-      this.changed();
     } else if (!this.value || !this._value.isSame(value, 'date')) {
       this._isNull = !value;
       this._value = moment(value);

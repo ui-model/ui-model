@@ -1,5 +1,14 @@
-<ui-calendar name="date" [(ngModel)]="value"></ui-calendar>
+<input type="text" uiDateInput required #inputRef="ngModel" class="form-control" [(ngModel)]="value"/>
+<ui-field-error [field]="inputRef"></ui-field-error>
 
-<p class="alert alert-info" *ngIf="value">
-  {{value|date:'shortDate'}}
-</p>
+<ui-calendar name="date" [(ngModel)]="value" #calendarRef="ngModel" required></ui-calendar>
+<ui-field-error [field]="calendarRef"></ui-field-error>
+
+<div class="alert alert-info" *ngIf="value">
+  <div *ngIf="value|isValidDate">
+    {{value.toISOString()}}
+  </div>
+  <div *ngIf="value|isInvalidDate">
+    Invalid Date
+  </div>
+</div>

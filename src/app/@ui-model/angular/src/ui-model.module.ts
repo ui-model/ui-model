@@ -48,6 +48,9 @@ import { FormUtils } from './services/form-utils.service';
 import { FieldErrorMapper } from './services/field-error-mapper.service';
 
 import { UpdateTitleGuard } from './guards/update-title.guard';
+import { DateInputDirective } from './directives/date-input.directive';
+import { IsValidDatePipe } from './pipes/is-valid-date.pipe';
+import { IsInvalidDatePipe } from './pipes/is-invalid-date.pipe';
 
 export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper,
   FormUtils, UpdateTitleGuard];
@@ -98,6 +101,9 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameM
     FieldMetadataDirective,
     FieldLabelPipe,
     TemplatePipe,
+    DateInputDirective,
+    IsValidDatePipe,
+    IsInvalidDatePipe,
   ],
   exports: [
     SelectDirective,
@@ -105,6 +111,7 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameM
     ToggleDirective,
     PagerDirective,
     PaginationDirective,
+    DateInputDirective,
 
     MultiBindingDirective,
     ClickOutsideDirective,
@@ -139,6 +146,8 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameM
     FieldErrorMapperPipe,
     FieldLabelPipe,
     TemplatePipe,
+    IsValidDatePipe,
+    IsInvalidDatePipe,
   ],
 })
 export class UiModelModule {
@@ -172,6 +181,7 @@ export * from './directives/count-down.directive';
 export * from './directives/form-array-exporter.directive';
 export * from './directives/form-group-exporter.directive';
 export * from './directives/field-metadata.directive';
+export * from './directives/date-input.directive';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';
@@ -190,6 +200,8 @@ export * from './pipes/object-to-array.pipe';
 export * from './pipes/field-error-mapper.pipe';
 export * from './pipes/field-label.pipe';
 export * from './pipes/template.pipe';
+export * from './pipes/is-valid-date.pipe';
+export * from './pipes/is-invalid-date.pipe';
 
 export * from './validators/is-boolean.validator';
 export * from './validators/is-integer.validator';

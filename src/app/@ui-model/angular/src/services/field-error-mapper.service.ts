@@ -37,13 +37,13 @@ export class FieldErrorMapper {
       case 'unique':
         return 'The value is already exists';
       case 'boolean':
-        return 'The value must be a boolean';
+        return 'The value must be a valid boolean';
       case 'number':
-        return 'The value must be a number';
+        return 'The value must be a valid number';
       case 'integer':
-        return 'The value must be a integer';
+        return 'The value must be a valid integer';
       case 'date':
-        return 'The value must be a date';
+        return 'The value must be a valid date';
       case 'complexity':
         return 'The password is too weak. Need <span class="text-muted field-error-expected"><%= value.requiredValue %></span> ' +
           'kinds of characters, the actual kinds is <span class="text-muted field-error-actual"><%= value.actualValue %></span>';
