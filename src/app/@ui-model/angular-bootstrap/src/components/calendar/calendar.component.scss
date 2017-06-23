@@ -6,6 +6,7 @@
 
 caption {
   caption-side: top;
+  padding: 0;
   text-align: center;
   > div {
     display: table;
@@ -29,6 +30,10 @@ caption {
 
 .icon {
   vertical-align: middle;
+}
+
+table {
+  margin: auto;
 }
 
 th {
