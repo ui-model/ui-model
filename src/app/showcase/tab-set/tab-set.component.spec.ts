@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TabSetComponent } from './tab-set.component';
 import { UiModelModule } from '@ui-model/angular';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ShowcaseTabSetComponent', () => {
   let component: TabSetComponent;
@@ -11,6 +12,7 @@ describe('ShowcaseTabSetComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TabSetComponent],
       imports: [UiModelModule],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));

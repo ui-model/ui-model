@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MultiSelectNgModelComponent } from './multi-select-ng-model.component';
 import { UiModelModule } from '@ui-model/angular';
 import { FormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ShowcaseMultiSelectNgModelComponent', () => {
   let component: MultiSelectNgModelComponent;
@@ -12,6 +13,7 @@ describe('ShowcaseMultiSelectNgModelComponent', () => {
     TestBed.configureTestingModule({
       declarations: [MultiSelectNgModelComponent],
       imports: [UiModelModule, FormsModule],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));

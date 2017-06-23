@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SelectNgModelComponent } from './select-ng-model.component';
 import { UiModelModule } from '@ui-model/angular';
 import { FormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ShowcaseSelectNgModelComponent', () => {
   let component: SelectNgModelComponent;
@@ -12,6 +13,7 @@ describe('ShowcaseSelectNgModelComponent', () => {
     TestBed.configureTestingModule({
       declarations: [SelectNgModelComponent],
       imports: [UiModelModule, FormsModule],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));

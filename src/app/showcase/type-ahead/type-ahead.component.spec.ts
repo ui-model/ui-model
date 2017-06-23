@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TypeAheadComponent } from './type-ahead.component';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ShowcaseTypeAheadComponent', () => {
   let component: TypeAheadComponent;
@@ -11,6 +12,7 @@ describe('ShowcaseTypeAheadComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TypeAheadComponent],
       imports: [UiModelBootstrapModule, FormsModule],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));

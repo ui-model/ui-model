@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MenuComponent } from './menu.component';
 import { UiModelModule } from '@ui-model/angular';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ShowcaseMenuComponent', () => {
   let component: MenuComponent;
@@ -10,6 +11,7 @@ describe('ShowcaseMenuComponent', () => {
     TestBed.configureTestingModule({
       declarations: [MenuComponent],
       imports: [UiModelModule],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));
