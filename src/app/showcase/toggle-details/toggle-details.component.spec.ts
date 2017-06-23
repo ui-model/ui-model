@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ToggleDetailsComponent } from './toggle-details.component';
 import { UiModelModule } from '@ui-model/angular';
 
-describe('ToggleDetailsComponent', () => {
+describe('ShowcaseToggleDetailsComponent', () => {
   let component: ToggleDetailsComponent;
   let fixture: ComponentFixture<ToggleDetailsComponent>;
 

@@ -4,7 +4,7 @@ import { SelectNgModelComponent } from './select-ng-model.component';
 import { UiModelModule } from '@ui-model/angular';
 import { FormsModule } from '@angular/forms';
 
-describe('SelectNgModelComponent', () => {
+describe('ShowcaseSelectNgModelComponent', () => {
   let component: SelectNgModelComponent;
   let fixture: ComponentFixture<SelectNgModelComponent>;
 

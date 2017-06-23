@@ -4,7 +4,7 @@ import { BasicInfoGroupComponent } from './basic-info-group.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('BasicInfoGroupComponent', () => {
+describe('ShowcaseBasicInfoGroupComponent', () => {
   let component: BasicInfoGroupComponent;
   let fixture: ComponentFixture<BasicInfoGroupComponent>;
 

@@ -1,11 +1,10 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormComponent } from './form.component';
 import { FormsModule } from '@angular/forms';
 import { FormUtils, UiModelModule } from '@ui-model/angular';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('FormComponent', () => {
+describe('ShowcaseFormComponent', () => {
   let component: FormComponent;
   let fixture: ComponentFixture<FormComponent>;
 

@@ -1,4 +1,3 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TooltipComponent } from './tooltip.component';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
@@ -19,7 +18,7 @@ class MyTooltipService {
     },
   };
 }
-describe('TooltipComponent', () => {
+describe('ShowcaseTooltipComponent', () => {
   let component: TooltipComponent;
   let fixture: ComponentFixture<TooltipComponent>;
 

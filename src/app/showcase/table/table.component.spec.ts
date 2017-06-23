@@ -1,9 +1,8 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TableComponent } from './table.component';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 
-describe('TableComponent', () => {
+describe('ShowcaseTableComponent', () => {
   let component: TableComponent;
   let fixture: ComponentFixture<TableComponent>;
 

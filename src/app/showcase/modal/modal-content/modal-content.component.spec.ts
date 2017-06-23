@@ -1,9 +1,8 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ModalContentComponent } from './modal-content.component';
 import { CountDownDirective } from '@ui-model/angular';
 
-describe('ModalContentComponent', () => {
+describe('ShowcaseModalContentComponent', () => {
   let component: ModalContentComponent;
   let fixture: ComponentFixture<ModalContentComponent>;
 

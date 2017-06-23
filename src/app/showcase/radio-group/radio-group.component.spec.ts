@@ -3,7 +3,7 @@ import { RadioGroupComponent } from './radio-group.component';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { FormsModule } from '@angular/forms';
 
-describe('RadioGroupComponent', () => {
+describe('ShowcaseRadioGroupComponent', () => {
   let component: RadioGroupComponent;
   let fixture: ComponentFixture<RadioGroupComponent>;
 

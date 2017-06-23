@@ -6,7 +6,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ALL_SERVICES_OF_UI_MODEL_ANGULAR, FormMaker } from '@ui-model/angular';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 
-describe('FormModelComponent', () => {
+describe('ShowcaseFormModelComponent', () => {
   let component: FormModelComponent;
   let fixture: ComponentFixture<FormModelComponent>;
 

@@ -1,9 +1,8 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ZoomComponent } from './zoom.component';
 import { UiModelModule } from '@ui-model/angular';
 
-describe('ZoomComponent', () => {
+describe('ShowcaseZoomComponent', () => {
   let component: ZoomComponent;
   let fixture: ComponentFixture<ZoomComponent>;
 

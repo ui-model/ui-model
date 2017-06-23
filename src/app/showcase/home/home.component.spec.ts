@@ -6,7 +6,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { SourceCodeService } from '../../core/source-code.service';
 import { Observable } from 'rxjs/Observable';
 
-describe('HomeComponent', () => {
+describe('ShowcaseHomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 

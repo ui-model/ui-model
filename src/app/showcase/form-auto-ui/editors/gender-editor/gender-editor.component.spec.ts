@@ -5,7 +5,7 @@ import { FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule } from 
 import { FieldMetadataDirective } from '@ui-model/angular';
 import { RadioGroupComponent } from '@ui-model/angular-bootstrap';
 
-describe('GenderEditorComponent', () => {
+describe('ShowcaseGenderEditorComponent', () => {
   let component: GenderEditorComponent;
   let fixture: ComponentFixture<GenderEditorComponent>;
 

@@ -1,9 +1,8 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DraggableComponent } from './draggable.component';
 import { UiModelModule } from '@ui-model/angular';
 
-describe('DraggableComponent', () => {
+describe('ShowcaseDraggableComponent', () => {
   let component: DraggableComponent;
   let fixture: ComponentFixture<DraggableComponent>;
 

@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TabSetComponent } from './tab-set.component';
 import { UiModelModule } from '@ui-model/angular';
 
-describe('TabSetComponent', () => {
+describe('ShowcaseTabSetComponent', () => {
   let component: TabSetComponent;
   let fixture: ComponentFixture<TabSetComponent>;
 

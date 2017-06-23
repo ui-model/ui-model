@@ -1,9 +1,8 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ToggleComponent } from './toggle.component';
 import { UiModelModule } from '@ui-model/angular';
 
-describe('ToggleComponent', () => {
+describe('ShowcaseToggleComponent', () => {
   let component: ToggleComponent;
   let fixture: ComponentFixture<ToggleComponent>;
 

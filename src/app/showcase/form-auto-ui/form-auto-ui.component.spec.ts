@@ -4,7 +4,7 @@ import { FormAutoUiComponent } from './form-auto-ui.component';
 import { ElementRef, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormMaker, FormUtils } from '@ui-model/angular';
 
-describe('FormAutoUiComponent', () => {
+describe('ShowcaseFormAutoUiComponent', () => {
   let component: FormAutoUiComponent;
   let fixture: ComponentFixture<FormAutoUiComponent>;
 

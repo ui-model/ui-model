@@ -4,7 +4,7 @@ import { MultiSelectNgModelComponent } from './multi-select-ng-model.component';
 import { UiModelModule } from '@ui-model/angular';
 import { FormsModule } from '@angular/forms';
 
-describe('MultiSelectNgModelComponent', () => {
+describe('ShowcaseMultiSelectNgModelComponent', () => {
   let component: MultiSelectNgModelComponent;
   let fixture: ComponentFixture<MultiSelectNgModelComponent>;
 

@@ -3,7 +3,7 @@ import { ToggleNgModelComponent } from './toggle-ng-model.component';
 import { UiModelModule } from '@ui-model/angular';
 import { FormsModule } from '@angular/forms';
 
-describe('ToggleNgModelComponent', () => {
+describe('ShowcaseToggleNgModelComponent', () => {
   let component: ToggleNgModelComponent;
   let fixture: ComponentFixture<ToggleNgModelComponent>;
 

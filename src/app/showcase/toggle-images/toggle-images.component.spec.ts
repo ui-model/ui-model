@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ToggleImagesComponent } from './toggle-images.component';
 import { UiModelModule } from '@ui-model/angular';
 
-describe('ToggleImagesComponent', () => {
+describe('ShowcaseToggleImagesComponent', () => {
   let component: ToggleImagesComponent;
   let fixture: ComponentFixture<ToggleImagesComponent>;
 

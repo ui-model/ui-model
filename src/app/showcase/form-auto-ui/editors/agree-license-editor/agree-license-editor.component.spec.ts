@@ -4,7 +4,7 @@ import { AgreeLicenseEditorComponent } from './agree-license-editor.component';
 import { FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule } from '@angular/forms';
 import { FieldMetadataDirective } from '@ui-model/angular';
 
-describe('AgreeLicenseEditorComponent', () => {
+describe('ShowcaseAgreeLicenseEditorComponent', () => {
   let component: AgreeLicenseEditorComponent;
   let fixture: ComponentFixture<AgreeLicenseEditorComponent>;
 

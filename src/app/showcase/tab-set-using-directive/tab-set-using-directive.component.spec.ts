@@ -4,7 +4,7 @@ import { TabSetUsingDirectiveComponent } from './tab-set-using-directive.compone
 import { UiModelModule } from '@ui-model/angular';
 import { FormsModule } from '@angular/forms';
 
-describe('TabSetUsingDirectiveComponent', () => {
+describe('ShowcaseTabSetUsingDirectiveComponent', () => {
   let component: TabSetUsingDirectiveComponent;
   let fixture: ComponentFixture<TabSetUsingDirectiveComponent>;
 

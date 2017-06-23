@@ -1,4 +1,3 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CalendarComponent } from './calendar.component';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +5,7 @@ import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { UiModelModule } from '@ui-model/angular';
 
-describe('CalendarComponent', () => {
+describe('ShowcaseCalendarComponent', () => {
   let component: CalendarComponent;
   let fixture: ComponentFixture<CalendarComponent>;
 

@@ -4,7 +4,7 @@ import { ReactiveFormComponent } from './reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('ReactiveFormComponent', () => {
+describe('ShowcaseReactiveFormComponent', () => {
   let component: ReactiveFormComponent;
   let fixture: ComponentFixture<ReactiveFormComponent>;
 
