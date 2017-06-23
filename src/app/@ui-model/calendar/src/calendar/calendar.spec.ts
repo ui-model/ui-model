@@ -115,6 +115,7 @@ describe('Calendar', () => {
     let calendar;
     beforeEach(() => {
       calendar = new Calendar().setValue(date('2017-02-16'));
+      calendar.setFakeToday('2017-02-01');
     });
     it('normal compare', () => {
       expect(calendar.isActive(date('2017-02-16'))).toBeTruthy();
@@ -149,7 +150,7 @@ describe('Calendar', () => {
     });
   });
   describe('navigation', () => {
-    let calendar;
+    let calendar: Calendar;
     beforeEach(() => {
       calendar = new Calendar().setValue(date('2017-02-16'));
     });
@@ -164,10 +165,12 @@ describe('Calendar', () => {
     it('prevMonth', () => {
       calendar.goToPrevMonth();
       expect(calendar.value).toEqual(date('2017-01-16'));
+      expect(calendar.inSameMonth(date('2017-01-10'))).toBeTruthy();
     });
     it('nextMonth', () => {
       calendar.goToNextMonth();
       expect(calendar.value).toEqual(date('2017-03-16'));
+      expect(calendar.inSameMonth(date('2017-03-10'))).toBeTruthy();
     });
   });
   describe('ui helper', () => {

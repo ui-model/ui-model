@@ -154,7 +154,7 @@ export class Calendar extends Stateful {
   }
 
   private addMonth(step: number): void {
-    this.goTo(this.fakeValue.add(step, 'month').toDate());
+    this.goTo(moment(this.fakeValue).add(step, 'month').toDate());
   }
 
   goToPrevMonth(step: number = 1): void {
