@@ -1,4 +1,4 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Output } from '@angular/core';
 import { CalendarValueAccessor } from '@ui-model/angular';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -14,4 +14,9 @@ const CALENDAR_VALUE_ACCESSOR = {
   providers: [CALENDAR_VALUE_ACCESSOR],
 })
 export class CalendarComponent extends CalendarValueAccessor {
+  @Output() change = new EventEmitter<Date>();
+
+  close(): void {
+    this.change.emit(this.value);
+  }
 }

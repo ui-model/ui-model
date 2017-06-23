@@ -37,7 +37,7 @@
         [class.today]="isToday(day)"
         [class.other-month]="!inSameMonth(day)"
         [class.weekend]="isWeekEnd(day)"
-        (click)="goTo(day)"
+        (click)="goTo(day); close()"
     >
       {{day.getDate()}}
     </td>

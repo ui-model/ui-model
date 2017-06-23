@@ -18,7 +18,8 @@
     </div>
   </div>
   <div class="dropdown-menu" *ngIf="picker.isOn">
-    <ui-calendar name="date" [(ngModel)]="value" #calendarRef="ngModel" required></ui-calendar>
+    <ui-calendar name="date" [(ngModel)]="value" #calendarRef="ngModel" required
+                 (change)="picker.close()"></ui-calendar>
   </div>
   <ui-field-error [field]="inputRef"></ui-field-error>
 </div>
