@@ -1,5 +1,6 @@
 import { Calendar } from './calendar';
 import * as moment from 'moment';
+import { isSameDate } from '@ui-model/calendar';
 
 describe('Calendar', () => {
   beforeEach(() => {
@@ -7,6 +8,20 @@ describe('Calendar', () => {
   });
 
   it('constructor', () => {
+    const calendar = new Calendar();
+    calendar.setFakeToday(date('2013-01-10'));
+    expect(calendar.weeks).toEqual([1, 2, 3, 4, 5, 6]);
+  });
+
+  it('isSameDate', () => {
+    expect(isSameDate(undefined, undefined)).toBeTruthy();
+    expect(isSameDate(undefined, new Date())).toBeFalsy();
+    expect(isSameDate(new Date(), undefined)).toBeFalsy();
+    expect(isSameDate('2017-08-01', '2017-08-02')).toBeFalsy();
+    expect(isSameDate('2017-08-01', '2017-08-01')).toBeTruthy();
+  });
+
+  it('setValue', () => {
     const now = new Date();
     const c1 = new Calendar().setValue(now);
     expect(c1.value).toEqual(now);
@@ -45,12 +60,12 @@ describe('Calendar', () => {
       expect(calendar.isActive(today)).toBeTruthy();
     });
     it('states should be the same as today', () => {
-      calendar.setMockValue(date('2017-01-10'));
+      calendar.setFakeToday(date('2017-01-10'));
       expect(calendar.inSameMonth(date('2017-01-01'))).toBeTruthy();
       expect(calendar.inSameMonth(date('2017-02-01'))).toBeFalsy();
     });
     it('years & months should be the same as today', () => {
-      calendar.setMockValue(date('2013-01-10'));
+      calendar.setFakeToday(date('2013-01-10'));
       expect(calendar.nearlyYears).toEqual([
         2008,
         2009,

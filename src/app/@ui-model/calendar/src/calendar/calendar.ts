@@ -1,36 +1,46 @@
 import * as moment from 'moment';
 import { Moment, MomentInput } from 'moment';
-import { Stateful } from '@ui-model/common';
+import { Stateful, StateListener } from '@ui-model/common';
+import { isNullOrUndefined } from 'util';
 
 export class Calendar extends Stateful {
-  private _value = moment();
+  constructor(stateListener?: StateListener, stateKey?: string) {
+    super(stateListener, stateKey);
+    this.update();
+  }
 
-  _isNull = true;
+  private _value: Moment;
 
-  get isNull(): boolean {
-    return this._isNull;
+  private _fakeToday: Moment;
+
+  get fakeToday(): Moment {
+    return this._fakeToday || moment();
+  }
+
+  set fakeToday(value: Moment) {
+    this._fakeToday = moment(value);
+    this.update();
+  }
+
+  setFakeToday(value: MomentInput): this {
+    this.fakeToday = moment(value);
+    return this;
+  }
+
+  private get fakeValue(): Moment {
+    return this._value || this.fakeToday;
   }
 
   get value(): Date {
-    if (this._isNull) {
-      return undefined;
-    } else {
-      return this._value.toDate();
-    }
+    return this._value && this._value.toDate();
   }
 
   set value(value: Date) {
-    if (!value || !moment(value).isValid()) {
-      this._isNull = true;
-      this._value = moment();
-      this.update();
-    } else if (!this.value || !this._value.isSame(value, 'date')) {
-      this._isNull = !value;
-      this._value = moment(value);
+    if (!isSameDate(value, this._value)) {
+      this._value = value && moment(value);
       this.update();
       this.changed();
     }
-
   }
 
   setValue(value: MomentInput): this {
@@ -38,17 +48,12 @@ export class Calendar extends Stateful {
     return this;
   }
 
-  setMockValue(value: MomentInput): void {
-    this._value = moment(value);
-    this.update();
-  }
-
   clear(): void {
     this.value = undefined;
   }
 
   get year(): number {
-    return this._value.year();
+    return this.fakeValue.year();
   }
 
   set year(value: number) {
@@ -65,7 +70,7 @@ export class Calendar extends Stateful {
   }
 
   get month(): number {
-    return this._value.month();
+    return this.fakeValue.month();
   }
 
   set month(value: number) {
@@ -82,23 +87,23 @@ export class Calendar extends Stateful {
   }
 
   isActive(date: MomentInput): boolean {
-    return !this._isNull && this._value.isSame(date, 'date');
+    return this._value && this._value.isSame(date, 'date');
   }
 
   isToday(date: MomentInput): boolean {
-    return moment().isSame(date, 'date');
+    return this.fakeToday.isSame(date, 'date');
   }
 
   isPast(date: MomentInput): boolean {
-    return this._value.isAfter(date, 'date');
+    return this._value && this._value.isAfter(date, 'date');
   }
 
   isFuture(date: MomentInput): boolean {
-    return this._value.isBefore(date, 'date');
+    return this._value && this._value.isBefore(date, 'date');
   }
 
   inSameMonth(date: MomentInput): boolean {
-    return this._value.isSame(date, 'month');
+    return this.fakeValue.isSame(date, 'month');
   }
 
   isWeekEnd(date: Date): boolean {
@@ -149,7 +154,7 @@ export class Calendar extends Stateful {
   }
 
   private addMonth(step: number): void {
-    this.goTo(moment(this._value).add(step, 'month').toDate());
+    this.goTo(this.fakeValue.add(step, 'month').toDate());
   }
 
   goToPrevMonth(step: number = 1): void {
@@ -183,7 +188,7 @@ export class Calendar extends Stateful {
   }
 
   update(): void {
-    const firstDayOfMonth = moment(this._value).startOf('month').local(true);
+    const firstDayOfMonth = moment(this.fakeValue).startOf('month').local(true);
     const firstWeek = firstDayOfMonth.week();
     const firstSunday = moment(firstDayOfMonth).startOf('week').local(true);
 
@@ -203,4 +208,21 @@ function range(start: number, end: number): number[] {
     result.push(i);
   }
   return result;
+}
+
+export function isSameDate(value1: MomentInput, value2: MomentInput): boolean {
+  if (isNullOrUndefined(value1) && isNullOrUndefined(value2)) {
+    return true;
+  }
+
+  if (isNullOrUndefined(value1)) {
+    // always let first parameter is not null
+    return isSameDate(value2, value1);
+  }
+
+  if (isNullOrUndefined(value2)) {
+    return false;
+  }
+
+  return moment(value1).isSame(value2, 'date');
 }
