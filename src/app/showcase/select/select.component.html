@@ -2,6 +2,4 @@
   <option [ngValue]="undefined">-</option>
   <option *ngFor="let option of options" [ngValue]="option">{{option.label}}</option>
 </select>
-<p>
-  {{selection|json}}
-</p>
+<app-json-viewer [value]="selection"></app-json-viewer>

@@ -4,6 +4,7 @@ import { UiModelModule } from '@ui-model/angular';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-viewer.component';
 import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
+import { JsonViewerComponent } from './components/json-viewer/json-viewer.component';
 
 @NgModule({
   imports: [
@@ -12,12 +13,13 @@ import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
     UiModelMarkdownModule,
     UiModelBootstrapModule,
   ],
-  declarations: [MarkdownViewerComponent],
+  declarations: [MarkdownViewerComponent, JsonViewerComponent],
   exports: [
     UiModelModule,
     UiModelBootstrapModule,
     UiModelMarkdownModule,
     MarkdownViewerComponent,
+    JsonViewerComponent,
   ],
 })
 export class SharedModule {

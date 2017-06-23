@@ -19,4 +19,4 @@
   </div>
 </form>
 
-<pre class="alert alert-info" *ngIf="report">{{report|json:2}}</pre>
+<app-json-viewer [value]="report"></app-json-viewer>

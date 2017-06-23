@@ -78,4 +78,4 @@
   </ui-panel>
   <ui-field-error fieldName="profile"></ui-field-error>
 </div>
-<pre class="alert alert-info">{{form.value|json:2}}</pre>
+<app-json-viewer [value]="form.value"></app-json-viewer>

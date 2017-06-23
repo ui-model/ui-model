@@ -3,8 +3,12 @@
 
   <div class="form-group">
     <button type="submit" class="btn btn-primary btn-block">Submit</button>
-    <button type="button" class="btn btn-secondary btn-block" (click)="form.disable()" *ngIf="form.enabled">Disable this form</button>
-    <button type="button" class="btn btn-secondary btn-block" (click)="form.enable()" *ngIf="form.disabled">Enable this form</button>
+    <button type="button" class="btn btn-secondary btn-block" (click)="form.disable()" *ngIf="form.enabled">Disable this
+      form
+    </button>
+    <button type="button" class="btn btn-secondary btn-block" (click)="form.enable()" *ngIf="form.disabled">Enable this
+      form
+    </button>
   </div>
 </form>
-<pre class="alert alert-info">{{form.value|json:2}}</pre>
+<app-json-viewer [value]="form.value"></app-json-viewer>
