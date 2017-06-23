@@ -39,6 +39,13 @@ export class DateInputDirective implements ControlValueAccessor, Validator {
 
   private onChange: (value: Date) => void;
 
+  @HostListener('change', ['$event.target'])
+  change(input: HTMLInputElement): void {
+    if (input.type === 'date') {
+      this.changed(input.value);
+    }
+  }
+
   @HostListener('blur', ['$event.target'])
   blur(input: HTMLInputElement): void {
     this.changed(input.value);
