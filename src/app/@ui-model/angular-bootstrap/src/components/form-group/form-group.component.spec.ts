@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormGroupComponent } from './form-group.component';
-import { FieldLabelPipe } from '../../../../angular/src/pipes/field-label.pipe';
+import { FieldLabelPipe } from '@ui-model/angular';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { NameMapper } from '../../../../angular/src/services/name-mapper.service';
+import { NameMapper } from '@ui-model/angular';
 
 describe('FormGroupComponent', () => {
   let component: FormGroupComponent;

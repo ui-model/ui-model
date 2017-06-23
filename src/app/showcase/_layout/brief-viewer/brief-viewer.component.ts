@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MetadataService } from '../../core/metadata.service';
+import { MetadataService } from '../../../core/metadata.service';
 
 @Component({
   selector: 'app-brief-viewer',

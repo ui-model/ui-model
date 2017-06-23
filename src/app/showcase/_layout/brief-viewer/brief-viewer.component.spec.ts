@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BriefViewerComponent } from './brief-viewer.component';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MetadataService } from '../../core/metadata.service';
+import { MetadataService } from '../../../core/metadata.service';
 import { By } from '@angular/platform-browser';
 
 describe('BriefViewerComponent', () => {

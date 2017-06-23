@@ -4,12 +4,12 @@ import { async, inject, TestBed } from '@angular/core/testing';
 import { SourceViewerComponent } from './source-viewer.component';
 import { UiModelModule } from '@ui-model/angular';
 import { ActivatedRoute } from '@angular/router';
-import { SourceCodeService } from '../../core/source-code.service';
+import { SourceCodeService } from '../../../core/source-code.service';
 import { Subject } from 'rxjs/Subject';
 import { FormsModule } from '@angular/forms';
-import { MetadataService } from '../../core/metadata.service';
+import { MetadataService } from '../../../core/metadata.service';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 
 class MySourceCodeService {
 

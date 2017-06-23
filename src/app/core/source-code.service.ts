@@ -15,7 +15,7 @@ export class SourceCodeService {
     if (!name) {
       return Observable.of('');
     }
-    return this.http.get(`/src/app/showcase/${name}/${name}.component.${ext}`)
+    return this.http.get(`app/showcase/${name}/${name}.component.${ext}`)
       .map(toText)
       .catch(defaultIfError(''));
   }
@@ -24,8 +24,8 @@ export class SourceCodeService {
     if (!name) {
       return Observable.of('');
     }
-    return this.http.get(`/src/app/showcase/${name}/_docs/readme.${locale}.md`)
-      .catch(() => this.http.get(`/src/app/showcase/${name}/_docs/readme.md`))
+    return this.http.get(`app/showcase/${name}/_docs/readme.${locale}.md`)
+      .catch(() => this.http.get(`app/showcase/${name}/_docs/readme.md`))
       .map(toText)
       .catch(defaultIfError(''));
   }

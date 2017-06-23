@@ -9,7 +9,7 @@
     "lint": "tslint -c tslint.json \"src/**/*.ts\"",
     "test": "npm run lint && ng test -sr",
     "test-dev": "ng test --browsers=Chrome",
-    "build": "ng build && cp -r ./src dist/",
+    "build": "ng build && cp -r ./src/app dist/",
     "build-cn": "ng build --prod --aot --i18n-file=src/i18n/messages.zh.xlf --locale=zh --i18n-format=xlf",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",

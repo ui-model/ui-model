@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import 'rxjs/add/observable/of';
-import { MetadataService } from '../../core/metadata.service';
+import { MetadataService } from '../../../core/metadata.service';
 
 @Component({
   selector: 'app-document-viewer',
