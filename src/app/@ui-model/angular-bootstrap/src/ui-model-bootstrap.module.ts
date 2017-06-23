@@ -15,6 +15,7 @@ import { FieldErrorComponent } from './components/field-error/field-error.compon
 import { FormGroupComponent } from './components/form-group/form-group.component';
 import { FormArrayComponent } from './components/form-array/form-array.component';
 import { FormControlComponent } from './components/form-control/form-control.component';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import { FormControlComponent } from './components/form-control/form-control.com
     FormGroupComponent,
     FormArrayComponent,
     FormControlComponent,
+    DatePickerComponent,
   ],
   exports: [
     UiModelModule,
@@ -53,6 +55,7 @@ import { FormControlComponent } from './components/form-control/form-control.com
     FormGroupComponent,
     FormArrayComponent,
     FormControlComponent,
+    DatePickerComponent,
   ],
 })
 export class UiModelBootstrapModule {
@@ -71,3 +74,4 @@ export * from './components/field-error/field-error.component';
 export * from './components/form-group/form-group.component';
 export * from './components/form-array/form-array.component';
 export * from './components/form-control/form-control.component';
+export * from './components/date-picker/date-picker.component';

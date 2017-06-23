@@ -24,6 +24,11 @@
   <ui-field-error [field]="inputRef"></ui-field-error>
 </div>
 
+<div class="form-group">
+  <ui-date-picker [(ngModel)]="value" #pickerRef="ngModel"></ui-date-picker>
+  <ui-field-error [field]="pickerRef"></ui-field-error>
+</div>
+
 <div class="alert alert-info" *ngIf="value">
   <div *ngIf="value|isValidDate">
     {{value.toISOString()}}

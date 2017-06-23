@@ -4,8 +4,15 @@
     "baseUrl": "",
     "rootDir": ".",
     "paths": {
-      "@ui-model/common": ["../common"],
-      "@ui-model/angular": ["../angular"]
+      "@ui-model/common": [
+        "../common"
+      ],
+      "@ui-model/core": [
+        "../core"
+      ],
+      "@ui-model/angular": [
+        "../angular"
+      ]
     }
   }
 }
