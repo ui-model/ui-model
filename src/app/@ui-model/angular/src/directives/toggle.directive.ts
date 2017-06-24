@@ -1,4 +1,4 @@
-import { Directive, forwardRef } from '@angular/core';
+import { Directive, forwardRef, Input } from '@angular/core';
 import { Toggle } from '@ui-model/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -46,4 +46,11 @@ export class ToggleDirective extends Toggle implements ControlValueAccessor {
   registerOnTouched(fn: () => {}): void {
     this._onTouched = fn;
   }
+
+  @Input() disabled = false;
+
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
 }

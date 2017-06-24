@@ -108,6 +108,13 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
     this._touched = fn;
   }
 
+  @Input() disabled = false;
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+
   select(item: T): void {
     this.value = item;
     this.changed();
