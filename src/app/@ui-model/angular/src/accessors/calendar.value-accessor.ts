@@ -32,6 +32,10 @@ export class CalendarValueAccessor extends Calendar implements ControlValueAcces
     this.onTouched = fn;
   }
 
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
   private onChange: (value: Date) => {};
   private onTouched: () => {};
 }

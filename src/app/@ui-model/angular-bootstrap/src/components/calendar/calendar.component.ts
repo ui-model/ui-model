@@ -12,6 +12,7 @@ const CALENDAR_VALUE_ACCESSOR = {
   templateUrl: 'calendar.component.html',
   styleUrls: ['calendar.component.scss'],
   providers: [CALENDAR_VALUE_ACCESSOR],
+  inputs: ['disabled'],
 })
 export class CalendarComponent extends CalendarValueAccessor {
   @Output() change = new EventEmitter<Date>();

@@ -1,4 +1,4 @@
-<table>
+<table [class.diabled]="disabled">
   <caption>
     <div>
       <a href="javascript:void(0)" (click)="goToPrevMonth()" title="Previous Month">
@@ -44,3 +44,4 @@
   </tr>
   </tbody>
 </table>
+<div class="disabled-mask" *ngIf="disabled"></div>

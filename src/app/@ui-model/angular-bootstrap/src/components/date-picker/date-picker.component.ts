@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Toggle } from '@ui-model/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -57,7 +57,7 @@ export class DatePickerComponent implements OnInit, ControlValueAccessor {
     this._onTouched = fn;
   }
 
-  disabled = false;
+  @Input() disabled = false;
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;

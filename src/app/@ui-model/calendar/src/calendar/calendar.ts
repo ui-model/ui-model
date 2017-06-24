@@ -9,6 +9,8 @@ export class Calendar extends Stateful {
     this.update();
   }
 
+  disabled = false;
+
   private _value: Moment;
 
   private _fakeToday: Moment;
@@ -36,6 +38,10 @@ export class Calendar extends Stateful {
   }
 
   set value(value: Date) {
+    if (this.disabled) {
+      return;
+    }
+
     if (!isSameDate(value, this._value)) {
       this._value = value && moment(value);
       this.update();
@@ -57,6 +63,9 @@ export class Calendar extends Stateful {
   }
 
   set year(value: number) {
+    if (this.disabled) {
+      return;
+    }
     if (value !== this.year) {
       this._value.year(value);
       this.update();
@@ -74,6 +83,9 @@ export class Calendar extends Stateful {
   }
 
   set month(value: number) {
+    if (this.disabled) {
+      return;
+    }
     if (value !== this.month) {
       this._value.month(value);
       this.update();

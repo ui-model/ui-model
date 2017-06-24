@@ -7,6 +7,6 @@ import 'moment/locale/zh-cn';
   styleUrls: ['./calendar.component.scss'],
 })
 export class CalendarComponent {
-
+  disabled = false;
   value: Date;
 }
