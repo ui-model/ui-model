@@ -16,6 +16,8 @@ import { FormGroupComponent } from './components/form-group/form-group.component
 import { FormArrayComponent } from './components/form-array/form-array.component';
 import { FormControlComponent } from './components/form-control/form-control.component';
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
+import { SelectBoxComponent } from './components/select-box/select-box.component';
+import { MultiSelectBoxComponent } from './components/multi-select-box/multi-select-box.component';
 
 @NgModule({
   imports: [
@@ -39,6 +41,8 @@ import { DatePickerComponent } from './components/date-picker/date-picker.compon
     FormArrayComponent,
     FormControlComponent,
     DatePickerComponent,
+    SelectBoxComponent,
+    MultiSelectBoxComponent,
   ],
   exports: [
     UiModelModule,
@@ -56,6 +60,7 @@ import { DatePickerComponent } from './components/date-picker/date-picker.compon
     FormArrayComponent,
     FormControlComponent,
     DatePickerComponent,
+    SelectBoxComponent,
   ],
 })
 export class UiModelBootstrapModule {
@@ -75,3 +80,4 @@ export * from './components/form-group/form-group.component';
 export * from './components/form-array/form-array.component';
 export * from './components/form-control/form-control.component';
 export * from './components/date-picker/date-picker.component';
+export * from './components/select-box/select-box.component';

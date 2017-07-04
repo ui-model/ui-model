@@ -35,6 +35,7 @@ import { D3LineChartComponent } from '../showcase/d3-line-chart/d3-line-chart.co
 import { ReactiveFormComponent } from '../showcase/reactive-form/reactive-form.component';
 import { FormModelComponent } from '../showcase/form-model/form-model.component';
 import { FormAutoUiComponent } from '../showcase/form-auto-ui/form-auto-ui.component';
+import { SelectBoxComponent } from '../showcase/select-box/select-box.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -374,6 +375,16 @@ export const showcaseRoutes: Route[] = [
       title: 'Infinite Scroll',
       tags: ['scroll', 'measure', 'super list', 'locate'].map(Tag.of),
       description: 'List of millions of rows',
+      authors: ['wzc'].map(Author.of),
+    },
+  },
+  {
+    path: 'select-box',
+    component: SelectBoxComponent,
+    data: {
+      title: 'Select Box',
+      tags: ['select', 'select2', 'multi-select'].map(Tag.of),
+      description: 'A select box like jquery\'s select2',
       authors: ['wzc'].map(Author.of),
     },
   },

@@ -51,6 +51,7 @@ import { LayoutComponent } from './_layout/layout/layout.component';
 import { BriefViewerComponent } from './_layout/brief-viewer/brief-viewer.component';
 import { DocumentViewerComponent } from './_layout/document-viewer/document-viewer.component';
 import { SourceViewerComponent } from './_layout/source-viewer/source-viewer.component';
+import { SelectBoxComponent } from './select-box/select-box.component';
 
 @NgModule({
   imports: [
@@ -106,6 +107,7 @@ import { SourceViewerComponent } from './_layout/source-viewer/source-viewer.com
     FormAutoUiComponent,
     GenderEditorComponent,
     AgreeLicenseEditorComponent,
+    SelectBoxComponent,
   ],
   providers: [RemoteUsernameValidator],
   entryComponents: [GenderEditorComponent, AgreeLicenseEditorComponent],
