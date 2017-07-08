@@ -1,6 +1,6 @@
 {
   "name": "@ui-model/angular-d3",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "license": "MIT",
   "main": "index.ts",
   "description": "angular binding for ui model with d3",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ui-model/ui-model#readme",
   "dependencies": {
-    "@ui-model/angular": "0.0.35",
+    "@ui-model/angular": "0.0.36",
     "d3": "^4.0.0"
   },
   "peerDependencies": {
