@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot } from '@
 import { Title } from '@angular/platform-browser';
 import { template } from 'lodash';
 
-interface IRoute {
+export interface IRoute {
   data?: {
     title?: string,
     titleTemplateForChildren?: string;
