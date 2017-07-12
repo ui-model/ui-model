@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { toArray } from 'lodash';
+
 @Component({
   selector: 'app-preview',
   templateUrl: './preview.component.html',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class PreviewComponent {
 
-  files = [];
+  toFiles(files: FileList): File[] {
+    return toArray(files);
+  }
 
 }

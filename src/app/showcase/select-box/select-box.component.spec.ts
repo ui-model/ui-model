@@ -1,16 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectBoxComponent } from './select-box.component';
+import { FormsModule } from '@angular/forms';
+import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('SelectBoxComponent', () => {
+describe('ShowcaseSelectBoxComponent', () => {
   let component: SelectBoxComponent;
   let fixture: ComponentFixture<SelectBoxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectBoxComponent ]
+      imports: [FormsModule, UiModelBootstrapModule],
+      declarations: [SelectBoxComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

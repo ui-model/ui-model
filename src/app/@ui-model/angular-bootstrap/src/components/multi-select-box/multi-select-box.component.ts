@@ -9,7 +9,7 @@ export class MultiSelectBoxComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

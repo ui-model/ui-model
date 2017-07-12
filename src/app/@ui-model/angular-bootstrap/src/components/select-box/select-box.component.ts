@@ -11,12 +11,12 @@ import { SelectValueAccessor } from '@ui-model/angular';
   ],
 })
 export class SelectBoxComponent<T> extends SelectValueAccessor<T> implements OnInit {
-  @Input() options: T[];
-
   constructor() {
     super();
   }
 
-  ngOnInit() {
+  @Input() options: T[];
+
+  ngOnInit(): void {
   }
 }
