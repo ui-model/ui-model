@@ -19,7 +19,6 @@ import { ChartComponent } from './chart/chart.component';
 import { TypeAheadComponent } from './type-ahead/type-ahead.component';
 import { ZoomComponent } from './zoom/zoom.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
-import { RadioGroupComponent } from './radio-group/radio-group.component';
 import { RadioButtonComponent } from './radio-button/radio-button.component';
 import { TabSetComponent } from './tab-set/tab-set.component';
 import { TabSetUsingDirectiveComponent } from './tab-set-using-directive/tab-set-using-directive.component';
@@ -40,7 +39,6 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { BasicInfoGroupComponent } from './reactive-form/basic-info-group/basic-info-group.component';
 import { FormModelComponent } from './form-model/form-model.component';
 import { FormAutoUiComponent } from './form-auto-ui/form-auto-ui.component';
-import { GenderEditorComponent } from './form-auto-ui/editors/gender-editor/gender-editor.component';
 import { AgreeLicenseEditorComponent } from './form-auto-ui/editors/agree-license-editor/agree-license-editor.component';
 
 import { ShowcaseRoutingModule } from './showcase-routing.module';
@@ -52,6 +50,8 @@ import { BriefViewerComponent } from './_layout/brief-viewer/brief-viewer.compon
 import { DocumentViewerComponent } from './_layout/document-viewer/document-viewer.component';
 import { SourceViewerComponent } from './_layout/source-viewer/source-viewer.component';
 import { SelectBoxComponent } from './select-box/select-box.component';
+import { RadioGroupComponent } from './radio-group/radio-group.component';
+import { RadioGroupWithinFormComponent } from '@ui-model/angular-bootstrap';
 
 @NgModule({
   imports: [
@@ -105,12 +105,11 @@ import { SelectBoxComponent } from './select-box/select-box.component';
     BasicInfoGroupComponent,
     FormModelComponent,
     FormAutoUiComponent,
-    GenderEditorComponent,
     AgreeLicenseEditorComponent,
     SelectBoxComponent,
   ],
   providers: [RemoteUsernameValidator],
-  entryComponents: [GenderEditorComponent, AgreeLicenseEditorComponent],
+  entryComponents: [RadioGroupWithinFormComponent, AgreeLicenseEditorComponent],
 })
 export class ShowcaseModule {
 }

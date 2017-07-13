@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FieldMetadataDirective } from '@ui-model/angular';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
@@ -9,11 +8,13 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
 })
 export class AgreeLicenseEditorComponent implements OnInit {
 
-  constructor(group: FormGroupDirective, public field: FieldMetadataDirective) {
+  constructor(group: FormGroupDirective) {
     this.group = group.control;
   }
 
   group: FormGroup;
+
+  @Input() name: string;
 
   ngOnInit(): void {
   }

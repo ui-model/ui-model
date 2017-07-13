@@ -51,6 +51,7 @@ import { UpdateTitleGuard } from './guards/update-title.guard';
 import { DateInputDirective } from './directives/date-input.directive';
 import { IsValidDatePipe } from './pipes/is-valid-date.pipe';
 import { IsInvalidDatePipe } from './pipes/is-invalid-date.pipe';
+import { DynamicComponentInputsDirective } from './directives/dynamic-component-inputs.directive';
 
 export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper,
   FormUtils, UpdateTitleGuard];
@@ -104,6 +105,7 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameM
     DateInputDirective,
     IsValidDatePipe,
     IsInvalidDatePipe,
+    DynamicComponentInputsDirective,
   ],
   exports: [
     SelectDirective,
@@ -128,6 +130,7 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameM
     FormArrayExporterDirective,
     FormGroupExporterDirective,
     FieldMetadataDirective,
+    DynamicComponentInputsDirective,
 
     FormatPipe,
     OrderByPipe,
@@ -182,6 +185,7 @@ export * from './directives/form-array-exporter.directive';
 export * from './directives/form-group-exporter.directive';
 export * from './directives/field-metadata.directive';
 export * from './directives/date-input.directive';
+export * from './directives/dynamic-component-inputs.directive';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';

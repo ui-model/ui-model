@@ -12,6 +12,7 @@ export interface PropertyMetadata {
   label?: string;
   css?: string;
   editor?: Type<Object> | string;
+  editorInputs?: { [key: string]: any };
   errors?: { [code: string]: string };
 
   isGroup?: boolean;

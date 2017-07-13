@@ -8,7 +8,6 @@
     <textarea class="form-control" id="_{{field.name}}_{{uniqueId}}"
               [formControl]="control"></textarea>
   </ng-container>
-  <ng-container *ngIf="isCustomEditor(field)">
-    <ng-container *ngComponentOutlet="field.editor"></ng-container>
-  </ng-container>
+  <div *ngIf="isCustomEditor(field)" [ngComponentOutlet]="field.editor" [ngComponentOutletInjector]="injector"
+       [uiDynamicComponentInputs]="[field.editorInputs, {name: field.name}]"></div>
 </div>

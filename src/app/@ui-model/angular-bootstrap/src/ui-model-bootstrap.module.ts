@@ -18,6 +18,7 @@ import { FormControlComponent } from './components/form-control/form-control.com
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
 import { SelectBoxComponent } from './components/select-box/select-box.component';
 import { MultiSelectBoxComponent } from './components/multi-select-box/multi-select-box.component';
+import { RadioGroupWithinFormComponent } from './components/radio-group-within-form/radio-group-within-form.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { MultiSelectBoxComponent } from './components/multi-select-box/multi-sel
     PaginationComponent,
     PanelComponent,
     RadioGroupComponent,
+    RadioGroupWithinFormComponent,
     TableComponent,
     TreeNodeComponent,
     CalendarComponent,
@@ -50,6 +52,7 @@ import { MultiSelectBoxComponent } from './components/multi-select-box/multi-sel
     PaginationComponent,
     PanelComponent,
     RadioGroupComponent,
+    RadioGroupWithinFormComponent,
     TableComponent,
     TreeNodeComponent,
     CalendarComponent,
@@ -70,6 +73,7 @@ export * from './components/modal/modal.component';
 export * from './components/pagination/pagination.component';
 export * from './components/panel/panel.component';
 export * from './components/radio-group/radio-group.component';
+export * from './components/radio-group-within-form/radio-group-within-form.component';
 export * from './components/table/table.component';
 export * from './components/tree-node/tree-node.component';
 export * from './components/calendar/calendar.component';

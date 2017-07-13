@@ -1,6 +1,17 @@
-import { Property, Model, minValue } from '@ui-model/angular';
+import { minValue, Model, Property } from '@ui-model/angular';
 import { FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { GenderEditorComponent } from '../editors/gender-editor/gender-editor.component';
+import { RadioGroupWithinFormComponent } from '@ui-model/angular-bootstrap';
+
+const genderOptions = [
+  {
+    id: 'male',
+    label: 'Male',
+  },
+  {
+    id: 'female',
+    label: 'Female',
+  },
+];
 
 @Model({
   label: 'Profile',
@@ -11,7 +22,8 @@ export class ProfileModel {
   birthday: Date;
 
   @Property({
-    editor: GenderEditorComponent,
+    editor: RadioGroupWithinFormComponent,
+    editorInputs: {options: genderOptions},
     validators: [Validators.required],
   })
   gender: string;
