@@ -52,6 +52,7 @@ import { SourceViewerComponent } from './_layout/source-viewer/source-viewer.com
 import { SelectBoxComponent } from './select-box/select-box.component';
 import { RadioGroupComponent } from './radio-group/radio-group.component';
 import { RadioGroupWithinFormComponent } from '@ui-model/angular-bootstrap';
+import { D3GaugeComponent } from './d3-gauge/d3-gauge.component';
 
 @NgModule({
   imports: [
@@ -107,6 +108,7 @@ import { RadioGroupWithinFormComponent } from '@ui-model/angular-bootstrap';
     FormAutoUiComponent,
     AgreeLicenseEditorComponent,
     SelectBoxComponent,
+    D3GaugeComponent,
   ],
   providers: [RemoteUsernameValidator],
   entryComponents: [RadioGroupWithinFormComponent, AgreeLicenseEditorComponent],

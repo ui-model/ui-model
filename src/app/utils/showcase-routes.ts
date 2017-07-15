@@ -36,6 +36,7 @@ import { ReactiveFormComponent } from '../showcase/reactive-form/reactive-form.c
 import { FormModelComponent } from '../showcase/form-model/form-model.component';
 import { FormAutoUiComponent } from '../showcase/form-auto-ui/form-auto-ui.component';
 import { SelectBoxComponent } from '../showcase/select-box/select-box.component';
+import { D3GaugeComponent } from '../showcase/d3-gauge/d3-gauge.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -334,6 +335,16 @@ export const showcaseRoutes: Route[] = [
     data: {
       title: 'D3 Line Chart',
       tags: ['chart', 'd3', 'line'].map(Tag.of),
+      description: `How to integrate with d3 library through ui-model`,
+      authors: ['wzc'].map(Author.of),
+    },
+  },
+  {
+    path: 'd3-gauge',
+    component: D3GaugeComponent,
+    data: {
+      title: 'D3 Gauge',
+      tags: ['chart', 'd3', 'gauge', 'progress'].map(Tag.of),
       description: `How to integrate with d3 library through ui-model`,
       authors: ['wzc'].map(Author.of),
     },

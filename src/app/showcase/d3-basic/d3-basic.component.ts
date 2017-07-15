@@ -8,15 +8,7 @@ import { max } from 'd3-array';
   styleUrls: ['./d3-basic.component.scss'],
 })
 export class D3BasicComponent {
-  items = [
-    100,
-    200,
-    150,
-    400,
-    100,
-    200,
-    150,
-  ];
+  items = [100, 200, 150, 400, 100, 200, 150];
 
   colorOf(index: number): string {
     return schemeCategory10[index];
