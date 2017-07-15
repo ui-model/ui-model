@@ -37,6 +37,7 @@ import { FormModelComponent } from '../showcase/form-model/form-model.component'
 import { FormAutoUiComponent } from '../showcase/form-auto-ui/form-auto-ui.component';
 import { SelectBoxComponent } from '../showcase/select-box/select-box.component';
 import { D3GaugeComponent } from '../showcase/d3-gauge/d3-gauge.component';
+import { D3GeoMapComponent } from '../showcase/d3-geo-map/d3-geo-map.component';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -345,6 +346,16 @@ export const showcaseRoutes: Route[] = [
     data: {
       title: 'D3 Gauge',
       tags: ['chart', 'd3', 'gauge', 'progress'].map(Tag.of),
+      description: `How to integrate with d3 library through ui-model`,
+      authors: ['wzc'].map(Author.of),
+    },
+  },
+  {
+    path: 'd3-geo-map',
+    component: D3GeoMapComponent,
+    data: {
+      title: 'D3 Geo Map',
+      tags: ['chart', 'd3', 'geo', 'map'].map(Tag.of),
       description: `How to integrate with d3 library through ui-model`,
       authors: ['wzc'].map(Author.of),
     },

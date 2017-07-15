@@ -1,0 +1,13 @@
+<svg [uiGeoBox]="map">
+  <g>
+    <g *ngFor="let feature of map.features">
+      <path stroke="rgba(61, 61, 61, 1)" stroke-width="0.3" fill="none" [uiGeoPath]="feature"></path>
+      <circle [uiGeoGps]="feature.properties.cp" nameX="cx" nameY="cy" r="0.5" fill="#000"></circle>
+    </g>
+  </g>
+  <g class="overlay">
+    <g *ngFor="let route of routes;let index = index">
+      <line [style.stroke]="index|d3Colors" [attr.stroke-width]="0.5" [uiGeoLine]="route.vector"></line>
+    </g>
+  </g>
+</svg>

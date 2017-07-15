@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UiModelD3Module } from '@ui-model/angular-d3';
+import { ALL_SERVICES_OF_UI_MODEL_D3, UiModelD3Module } from '@ui-model/angular-d3';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -53,6 +53,7 @@ import { SelectBoxComponent } from './select-box/select-box.component';
 import { RadioGroupComponent } from './radio-group/radio-group.component';
 import { RadioGroupWithinFormComponent } from '@ui-model/angular-bootstrap';
 import { D3GaugeComponent } from './d3-gauge/d3-gauge.component';
+import { D3GeoMapComponent } from './d3-geo-map/d3-geo-map.component';
 
 @NgModule({
   imports: [
@@ -109,8 +110,9 @@ import { D3GaugeComponent } from './d3-gauge/d3-gauge.component';
     AgreeLicenseEditorComponent,
     SelectBoxComponent,
     D3GaugeComponent,
+    D3GeoMapComponent,
   ],
-  providers: [RemoteUsernameValidator],
+  providers: [RemoteUsernameValidator, ...ALL_SERVICES_OF_UI_MODEL_D3],
   entryComponents: [RadioGroupWithinFormComponent, AgreeLicenseEditorComponent],
 })
 export class ShowcaseModule {
