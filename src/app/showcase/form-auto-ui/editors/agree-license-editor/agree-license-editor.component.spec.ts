@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AgreeLicenseEditorComponent } from './agree-license-editor.component';
-import { FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule } from '@angular/forms';
+import { ControlContainer, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 describe('ShowcaseAgreeLicenseEditorComponent', () => {
   let component: AgreeLicenseEditorComponent;
@@ -12,7 +12,7 @@ describe('ShowcaseAgreeLicenseEditorComponent', () => {
       imports: [ReactiveFormsModule],
       declarations: [AgreeLicenseEditorComponent],
       providers: [
-        {provide: FormGroupDirective, useValue: {control: new FormGroup({fieldName: new FormControl()})}},
+        {provide: ControlContainer, useValue: {control: new FormGroup({fieldName: new FormControl()})}},
       ],
     })
       .compileComponents();
