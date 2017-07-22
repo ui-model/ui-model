@@ -32,9 +32,8 @@ export class DateInputDirective implements ControlValueAccessor, Validator {
     return isDate(c);
   }
 
-  writeValue(obj: MomentInput): void {
-    const date = moment(obj);
-    this.renderer.setProperty(this.element, 'value', date.format('YYYY-MM-DD'));
+  writeValue(value: MomentInput): void {
+    this.renderer.setProperty(this.element, 'value', value ? moment(value).format('YYYY-MM-DD') : '');
   }
 
   private onChange: (value: Date) => void;
