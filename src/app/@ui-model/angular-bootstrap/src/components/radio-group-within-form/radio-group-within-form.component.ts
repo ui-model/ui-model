@@ -3,7 +3,7 @@ import { ControlContainer } from '@angular/forms';
 import { BaseControlWithinForm } from '@ui-model/angular';
 
 @Component({
-  selector: 'app-radio-group-within-form-group',
+  selector: 'ui-radio-group-within-form',
   templateUrl: './radio-group-within-form.component.html',
   styleUrls: ['./radio-group-within-form.component.scss'],
 })

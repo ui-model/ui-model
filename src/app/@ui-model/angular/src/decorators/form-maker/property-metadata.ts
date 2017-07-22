@@ -1,5 +1,6 @@
-import { AbstractControl, AsyncValidator, AsyncValidatorFn, Validator, ValidatorFn } from '@angular/forms';
 import { Type } from '@angular/core';
+import { AbstractControl, AsyncValidator, AsyncValidatorFn, Validator, ValidatorFn } from '@angular/forms';
+
 export interface PropertyMetadata {
   name?: string;
   type?: Type<any>;

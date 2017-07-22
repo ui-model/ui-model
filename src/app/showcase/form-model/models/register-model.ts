@@ -1,6 +1,6 @@
-import { Property, Model, url } from '@ui-model/angular';
+import { FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Model, Property, url } from '@ui-model/angular';
 import { ProfileModel } from './profile-model';
-import { Validators } from '@angular/forms';
 
 @Model()
 export class RegisterModel {
@@ -30,6 +30,15 @@ export class RegisterModel {
   })
   tags: string[];
 
-  @Property([Validators.required])
+  @Property([Validators.required, notTooThin])
   profile: ProfileModel;
+}
+
+export function notTooThin(c: FormGroup): ValidationErrors {
+  const profile = ProfileModel.of(c.value);
+  if (profile.bmi <= 18.4) {
+    return {
+      tooThin: true,
+    };
+  }
 }

@@ -11,6 +11,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { metaKeyModel, metaKeyProperty, ModelMetadata } from '../decorators/form-maker';
+
 const Reflect = window['Reflect'];
 
 @Injectable()
@@ -57,12 +58,12 @@ export class FormMaker {
       }
 
       const subModel = (Reflect.getMetadata(metaKeyModel, property.type) || {}) as ModelMetadata;
-      const validators = [].concat(property.dataTypeValidators).concat(property.validators).concat(subModel.validators)
+      const validators = [].concat(property.dataTypeValidators).concat(property.validators)
         .filter((fn) => !!fn)
         .map(toValidator);
       control.setValidators(Validators.compose(validators));
 
-      const asyncValidators = [].concat(property.asyncValidators).concat(subModel.asyncValidators)
+      const asyncValidators = [].concat(property.asyncValidators)
         .filter((fn) => !!fn)
         .map(toAsyncValidator);
       control.setAsyncValidators(Validators.composeAsync(asyncValidators));

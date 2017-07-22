@@ -1,16 +1,14 @@
+import { AbstractControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { complexity, Model, Property, url } from '@ui-model/angular';
-import { ProfileModel } from './profile-model';
-import { AbstractControl, Validators } from '@angular/forms';
 import { AgreeLicenseEditorComponent } from '../editors/agree-license-editor/agree-license-editor.component';
 import { RemoteUsernameValidator } from '../validators/remote-username.validator';
+import { ProfileModel } from './profile-model';
 
-@Model({
-  label: 'User Registration',
-})
+@Model()
 export class RegisterModel {
   @Property({
     label: 'User name',
-    css: 'uppercase',
+    css: 'col-md-12 uppercase',
     validators: [Validators.required, Validators.minLength(3)],
     asyncValidators: [RemoteUsernameValidator],
   })
@@ -78,7 +76,16 @@ export class RegisterModel {
 
   @Property({
     label: 'User profile',
-    validators: [Validators.required],
+    validators: [Validators.required, notTooThin],
   })
   profile: ProfileModel = new ProfileModel();
+}
+
+export function notTooThin(c: FormGroup): ValidationErrors {
+  const profile = ProfileModel.of(c.value);
+  if (profile.bmi <= 18.4) {
+    return {
+      tooThin: true,
+    };
+  }
 }

@@ -1,9 +1,6 @@
-import { Property, Model, minValue } from '@ui-model/angular';
-import { FormGroup, ValidationErrors } from '@angular/forms';
+import { minValue, Model, Property } from '@ui-model/angular';
 
-@Model({
-  validators: [notTooThin],
-})
+@Model()
 export class ProfileModel {
   @Property()
   birthday: Date;
@@ -42,13 +39,4 @@ export class ProfileModel {
     return rawData.map(ProfileModel.of);
   }
 
-}
-
-export function notTooThin(c: FormGroup): ValidationErrors {
-  const profile = ProfileModel.of(c.value);
-  if (profile.bmi <= 18.4) {
-    return {
-      tooThin: true,
-    };
-  }
 }

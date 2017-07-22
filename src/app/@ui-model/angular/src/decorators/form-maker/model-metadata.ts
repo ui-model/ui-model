@@ -1,4 +1,5 @@
 import { PropertyMetadata } from './property-metadata';
-export interface ModelMetadata extends PropertyMetadata {
+
+export interface ModelMetadata {
   properties?: PropertyMetadata[];
 }

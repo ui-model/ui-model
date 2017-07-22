@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl, FormGroup, Validators } from '@angular/forms';
 import { PropertyMetadata } from '@ui-model/angular';
-import { AbstractControl, FormGroup } from '@angular/forms';
 import { isString } from 'util';
 
 @Component({
@@ -38,6 +38,10 @@ export class FormControlComponent implements OnInit {
 
   isTextArea(field: PropertyMetadata): boolean {
     return field.editor === 'textarea';
+  }
+
+  isRequired(field: PropertyMetadata): boolean {
+    return field.validators && field.validators.indexOf(Validators.required) !== -1;
   }
 
   static latestUniqueId: number = new Date().getTime();

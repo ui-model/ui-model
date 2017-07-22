@@ -1,4 +1,4 @@
-<div *ngIf="group && field" class="form-group" [formGroup]="group">
+<div *ngIf="group && field" class="form-group" [class.ui-required]="isRequired(field)" [formGroup]="group">
   <label *ngIf="field | fieldLabel" for="_{{field.name}}_{{uniqueId}}">{{field | fieldLabel}}</label>
   <ng-container *ngIf="isInput(field)">
     <input [type]="field.editor || 'text'" class="form-control" id="_{{field.name}}_{{uniqueId}}"

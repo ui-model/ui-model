@@ -1,5 +1,8 @@
 <form (submit)="submit()">
-  <ui-form-group *ngIf="form" [group]="form"></ui-form-group>
+  <fieldset>
+    <legend>Register Form</legend>
+    <ui-form-group *ngIf="form" [group]="form"></ui-form-group>
+  </fieldset>
 
   <div class="form-group">
     <button type="submit" class="btn btn-primary btn-block">Submit</button>
