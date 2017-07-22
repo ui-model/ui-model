@@ -1,22 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { ControlContainer } from '@angular/forms';
+import { BaseControlWithinForm } from '@ui-model/angular';
 
 @Component({
   selector: 'app-agree-license-editor',
   templateUrl: './agree-license-editor.component.html',
   styleUrls: ['./agree-license-editor.component.scss'],
 })
-export class AgreeLicenseEditorComponent implements OnInit {
+export class AgreeLicenseEditorComponent extends BaseControlWithinForm {
 
-  constructor(group: FormGroupDirective) {
-    this.group = group.control;
+  constructor(container: ControlContainer) {
+    super(container);
   }
-
-  group: FormGroup;
 
   @Input() name: string;
-
-  ngOnInit(): void {
-  }
-
 }

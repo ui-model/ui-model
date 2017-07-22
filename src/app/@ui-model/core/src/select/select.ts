@@ -1,4 +1,5 @@
 import { Stateful, Transformer, Transformers } from '@ui-model/common';
+
 export class Select<T> extends Stateful {
   _selection: T;
 

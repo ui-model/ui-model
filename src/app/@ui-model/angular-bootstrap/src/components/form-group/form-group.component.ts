@@ -1,32 +1,33 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { PropertyMetadata, ModelMetadata, metaKeyModel } from '@ui-model/angular';
+import { metaKeyModel, ModelMetadata, PropertyMetadata } from '@ui-model/angular';
 
 @Component({
   selector: 'ui-form-group',
   templateUrl: './form-group.component.html',
   styleUrls: ['./form-group.component.scss'],
 })
-export class FormGroupComponent implements OnInit {
-
-  constructor() {
-  }
-
+export class FormGroupComponent {
   @Input() group: FormGroup;
 
   get form(): ModelMetadata {
     return this.group && this.group[metaKeyModel];
   }
 
-  ngOnInit(): void {
-  }
-
   cssOf(field: PropertyMetadata): string {
     if (!field) {
       return '';
     }
-    const customCss = field.css || '';
-    const autoCss = field.isControl ? 'col-md-6' : 'col-md-12';
-    return ['ui-model-field', `ui-model-field-${field.name}`, autoCss, customCss].join(' ');
+    const cssList = ['ui-model-field', `ui-model-field-${field.name}`];
+    if (field.css) {
+      cssList.push(field.css);
+    } else {
+      if (field.isGroup || field.isArray) {
+        cssList.push('col-md-12');
+      } else {
+        cssList.push('col-md-6');
+      }
+    }
+    return cssList.join(' ');
   }
 }

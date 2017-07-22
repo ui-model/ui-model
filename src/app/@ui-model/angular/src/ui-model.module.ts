@@ -187,6 +187,8 @@ export * from './directives/field-metadata.directive';
 export * from './directives/date-input.directive';
 export * from './directives/dynamic-component-inputs.directive';
 
+export * from './utils/base-control-within-form/base-control-within-form';
+
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';
 export * from './pipes/order-name.pipe';

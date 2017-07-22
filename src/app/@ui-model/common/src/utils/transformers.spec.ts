@@ -1,4 +1,4 @@
-import { Transformer, Transformers } from './transformers';
+import { Transformers } from './transformers';
 
 describe('Transformer', () => {
   it('identity', () => {
