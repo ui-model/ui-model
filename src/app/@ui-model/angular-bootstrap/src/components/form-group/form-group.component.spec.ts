@@ -1,9 +1,9 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FieldLabelPipe, NameMapper } from '@ui-model/angular';
+import { FieldCssPipe } from '@ui-model/angular-bootstrap';
 
 import { FormGroupComponent } from './form-group.component';
-import { FieldLabelPipe } from '@ui-model/angular';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { NameMapper } from '@ui-model/angular';
 
 describe('FormGroupComponent', () => {
   let component: FormGroupComponent;
@@ -11,7 +11,7 @@ describe('FormGroupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FormGroupComponent, FieldLabelPipe],
+      declarations: [FormGroupComponent, FieldLabelPipe, FieldCssPipe],
       providers: [NameMapper],
       schemas: [NO_ERRORS_SCHEMA],
     })

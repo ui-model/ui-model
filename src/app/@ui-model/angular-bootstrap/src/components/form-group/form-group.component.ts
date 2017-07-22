@@ -13,24 +13,4 @@ export class FormGroupComponent {
   get form(): ModelMetadata {
     return this.group && this.group[metaKeyModel];
   }
-
-  cssOf(field: PropertyMetadata): string {
-    if (!field) {
-      return '';
-    }
-    const cssList = ['ui-model-field', `ui-model-field-${field.name}`];
-    if (field.css) {
-      if (isDevMode()) {
-        console.warn('You specified a custom css, so I no longer automatically add `col-md-*` class.');
-      }
-      cssList.push(field.css);
-    } else {
-      if (field.isGroup || field.isArray) {
-        cssList.push('col-md-12');
-      } else {
-        cssList.push('col-md-6');
-      }
-    }
-    return cssList.join(' ');
-  }
 }

@@ -1,5 +1,5 @@
 <div *ngIf="form && group" [formGroup]="group" class="row">
-  <div *ngFor="let field of form.properties" [uiFieldMetadata]="field" [ngClass]="cssOf(field)">
+  <div *ngFor="let field of form.properties" [uiFieldMetadata]="field" [ngClass]="field|fieldCss">
     <ui-form-control *ngIf="field.isControl" [group]="group" [field]="field"></ui-form-control>
     <ui-form-array *ngIf="field.isArray" [group]="group" [field]="field"></ui-form-array>
     <fieldset *ngIf="field.isGroup">
