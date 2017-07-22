@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Point } from '@ui-model/common';
-import { geoMercator } from 'd3-geo';
+import { geoMercator, GeoProjection } from 'd3-geo';
 
 @Injectable()
 export class GeoProjectionService {
 
-  projection = geoMercator().center([
+  projection: GeoProjection = geoMercator().center([
     103,
     22,
   ]);

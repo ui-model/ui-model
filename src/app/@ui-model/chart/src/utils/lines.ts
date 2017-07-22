@@ -1,6 +1,12 @@
-import { isDefined } from '@ui-model/common';
-class Point { x: number; y: number; }
-class Line { x1: number; y1: number; x2: number; y2: number; }
+import { isDefined, Point } from '@ui-model/common';
+
+export class Line {
+  x1: number;
+  y1: number;
+  x2: number;
+  y2: number;
+}
+
 export function lines(data: Point[]): Line[] {
   return data.map((point, index, points) => {
     const nextPoint = points[index + 1];

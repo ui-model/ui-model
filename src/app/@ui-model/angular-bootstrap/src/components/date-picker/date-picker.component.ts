@@ -35,7 +35,7 @@ export class DatePickerComponent implements OnInit, ControlValueAccessor {
 
   private _onChange: (value: Date) => void;
 
-  protected changed(): void {
+  changed(): void {
     if (this._onChange) {
       this._onChange(this.value);
     }

@@ -1,12 +1,16 @@
 export * from './common/stateful';
 
-export { Comparator, Comparators } from './utils/comparator';
+export { Comparator } from './utils/comparator';
+export { Comparators } from './utils/comparators';
 export { Coordinate } from './utils/coordinate';
 export { DataType, dataTypeOf } from './utils/data-type';
-export { Predicate, Predicates } from './utils/predicate';
-export { Supplier, getOrCall } from './utils/supplier';
+export { Predicate } from './utils/predicate';
+export { Predicates } from './utils/predicates';
+export { getOrCall } from './utils/getOrCall';
+export { Supplier } from './utils/supplier';
 export { SortOrder } from './utils/sort-order';
-export { Transformer, Transformers } from './utils/transformer';
+export { Transformer } from './utils/transformer';
+export { Transformers } from './utils/transformers';
 export { Rect } from './utils/rect';
 export { Point } from './utils/point';
 export { Size } from './utils/size';
