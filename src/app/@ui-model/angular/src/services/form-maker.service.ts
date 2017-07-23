@@ -40,7 +40,7 @@ export class FormMaker {
       } else if (property.isArray) {
         control = new FormArray([]);
       } else {
-        control = new FormControl();
+        control = new FormControl(property.defaultValue);
       }
 
       control[metaKeyProperty] = property;

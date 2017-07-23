@@ -9,6 +9,7 @@ export interface PropertyMetadata {
   validators?: (ValidatorFn | Type<Validator>)[];
   asyncValidators?: (AsyncValidatorFn | Type<AsyncValidator>)[];
   listeners?: ((c: AbstractControl) => void)[];
+  defaultValue?: any;
 
   label?: string;
   css?: string;
