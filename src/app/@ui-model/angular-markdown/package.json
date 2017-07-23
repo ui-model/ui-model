@@ -1,6 +1,6 @@
 {
   "name": "@ui-model/angular-markdown",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "license": "MIT",
   "main": "index.ts",
   "description": "angular binding for ui model with markdown",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ui-model/ui-model#readme",
   "dependencies": {
-    "@ui-model/angular": "0.0.40",
+    "@ui-model/angular": "0.0.41",
     "highlight.js": "^9.10.0",
     "markdown-it": "^8.3.1",
     "markdown-it-abbr": "^1.0.4",
