@@ -1,6 +1,6 @@
 {
   "name": "@ui-model/calendar",
-  "version": "0.0.41",
+  "version": "0.0.50",
   "description": "ui model calendar",
   "main": "index.ts",
   "repository": {
@@ -20,9 +20,9 @@
   "homepage": "https://github.com/ui-model/ui-model#readme",
   "dependencies": {
     "moment": "^2.0.0",
-    "@ui-model/common": "0.0.41"
+    "@ui-model/common": "0.0.50"
   },
   "peerDependencies": {
-    "rxjs": "^5.0.0"
+    "rxjs": "^5.0.0 || ^5.0.0"
   }
 }
