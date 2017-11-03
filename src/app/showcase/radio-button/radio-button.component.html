@@ -1,12 +1,14 @@
-<label class="form-check-inline" *ngFor="let option of options; let odd=odd">
-  <ng-container *ngIf="odd">
-    <input class="form-check-input" type="radio" (change)="select.select(option)"
-           [checked]="select.selected(option)"/>
-    {{option.label}}
-  </ng-container>
+<ng-container *ngFor="let option of options; let odd=odd">
+  <div class="form-check form-check-inline" *ngIf="odd">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" (change)="select.select(option)"
+             [checked]="select.selected(option)"/>
+      {{option.label}}
+    </label>
+  </div>
   <button class="btn" *ngIf="!odd" [class.btn-primary]="select.selected(option)"
           (click)="select.select(option)">{{option.label}}
   </button>
-</label>
+</ng-container>
 
 <app-json-viewer [value]="select.selection"></app-json-viewer>

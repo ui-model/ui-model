@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-md-6">
-    <div class="dropdown" uiToggle #dropdown="uiToggle" (uiClickOutside)="dropdown.close()">
-      <button class="btn btn-secondary dropdown-toggle" type="button" (click)="dropdown.toggle()">
+    <div class="dropdown" uiToggle #dropdown1="uiToggle" (uiClickOutside)="dropdown1.close()">
+      <button class="btn btn-primary dropdown-toggle" type="button" (click)="dropdown1.toggle()">
         <span i18n>Dropdown Button</span>
       </button>
-      <div class="dropdown-menu" *ngIf="dropdown.isOn">
+      <div class="dropdown-menu" (click)="dropdown1.close()" *ngIf="dropdown1.isOn">
         <a class="dropdown-item" i18n>Action</a>
         <a class="dropdown-item" i18n>Another action</a>
         <div class="dropdown-divider"></div>
@@ -13,11 +13,11 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="dropdown" uiToggle #dropdown1="uiToggle" (uiClickOutside)="dropdown1.close()">
-      <button class="btn btn-secondary dropdown-toggle" type="button" (click)="dropdown1.toggle()">
+    <div class="dropdown" uiToggle #dropdown2="uiToggle" (uiClickOutside)="dropdown2.close()">
+      <button class="btn btn-primary dropdown-toggle" type="button" (click)="dropdown2.toggle()">
         <span i18n>Another Dropdown</span>
       </button>
-      <div class="dropdown-menu" *ngIf="dropdown1.isOn">
+      <div class="dropdown-menu" (click)="dropdown2.close()" *ngIf="dropdown2.isOn">
         <a class="dropdown-item" i18n>Action</a>
         <a class="dropdown-item" i18n>Another action</a>
         <div class="dropdown-divider"></div>

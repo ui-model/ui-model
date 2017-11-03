@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
 :host {
@@ -6,7 +7,7 @@
 
 .playground {
   display: inline-block;
-  background: $gray-lighter;
+  background: $gray-300;
   padding: 20px;
 }
 

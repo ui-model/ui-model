@@ -1,43 +1,42 @@
 import { Route } from '@angular/router';
-import { SelectComponent } from '../showcase/select/select.component';
-import { MultiSelectComponent } from '../showcase/multi-select/multi-select.component';
-import { TableComponent } from '../showcase/table/table.component';
-import { ToggleComponent } from '../showcase/toggle/toggle.component';
-import { TreeComponent } from '../showcase/tree/tree.component';
-import { FormComponent } from '../showcase/form/form.component';
 import { CalendarComponent } from '../showcase/calendar/calendar.component';
-import { PreviewComponent } from '../showcase/preview/preview.component';
-import { DraggableComponent } from '../showcase/draggable/draggable.component';
-import { ModalComponent } from '../showcase/modal/modal.component';
 import { ChartComponent } from '../showcase/chart/chart.component';
-import { TypeAheadComponent } from '../showcase/type-ahead/type-ahead.component';
-import { ZoomComponent } from '../showcase/zoom/zoom.component';
-import { TooltipComponent } from '../showcase/tooltip/tooltip.component';
-import { Author } from './author';
-import { Tag } from './tag';
-import { RadioGroupComponent } from '../showcase/radio-group/radio-group.component';
-import { RadioButtonComponent } from '../showcase/radio-button/radio-button.component';
-import { TabSetComponent } from '../showcase/tab-set/tab-set.component';
-import { TabSetUsingDirectiveComponent } from '../showcase/tab-set-using-directive/tab-set-using-directive.component';
+import { D3BasicComponent } from '../showcase/d3-basic/d3-basic.component';
+import { D3GaugeComponent } from '../showcase/d3-gauge/d3-gauge.component';
+import { D3GeoMapComponent } from '../showcase/d3-geo-map/d3-geo-map.component';
+import { D3LineChartComponent } from '../showcase/d3-line-chart/d3-line-chart.component';
+import { DraggableComponent } from '../showcase/draggable/draggable.component';
+import { DropdownComponent } from '../showcase/dropdown/dropdown.component';
+import { FormAutoUiComponent } from '../showcase/form-auto-ui/form-auto-ui.component';
+import { FormModelComponent } from '../showcase/form-model/form-model.component';
+import { FormComponent } from '../showcase/form/form.component';
+import { InfiniteScrollComponent } from '../showcase/infinite-scroll/infinite-scroll.component';
+import { InplaceEditorComponent } from '../showcase/inplace-editor/inplace-editor.component';
 import { MenuComponent } from '../showcase/menu/menu.component';
+import { ModalComponent } from '../showcase/modal/modal.component';
 import { MultiSelectCheckboxComponent } from '../showcase/multi-select-checkbox/multi-select-checkbox.component';
 import { MultiSelectNgModelComponent } from '../showcase/multi-select-ng-model/multi-select-ng-model.component';
-import { DropdownComponent } from '../showcase/dropdown/dropdown.component';
-import { InplaceEditorComponent } from '../showcase/inplace-editor/inplace-editor.component';
+import { MultiSelectComponent } from '../showcase/multi-select/multi-select.component';
 import { PanelComponent } from '../showcase/panel/panel.component';
+import { PreviewComponent } from '../showcase/preview/preview.component';
+import { RadioButtonComponent } from '../showcase/radio-button/radio-button.component';
+import { RadioGroupComponent } from '../showcase/radio-group/radio-group.component';
+import { ReactiveFormComponent } from '../showcase/reactive-form/reactive-form.component';
+import { SelectNgModelComponent } from '../showcase/select-ng-model/select-ng-model.component';
+import { SelectComponent } from '../showcase/select/select.component';
+import { TabSetUsingDirectiveComponent } from '../showcase/tab-set-using-directive/tab-set-using-directive.component';
+import { TabSetComponent } from '../showcase/tab-set/tab-set.component';
+import { TableComponent } from '../showcase/table/table.component';
 import { ToggleDetailsComponent } from '../showcase/toggle-details/toggle-details.component';
 import { ToggleImagesComponent } from '../showcase/toggle-images/toggle-images.component';
 import { ToggleNgModelComponent } from '../showcase/toggle-ng-model/toggle-ng-model.component';
-import { SelectNgModelComponent } from '../showcase/select-ng-model/select-ng-model.component';
-import { D3BasicComponent } from '../showcase/d3-basic/d3-basic.component';
-import { InfiniteScrollComponent } from '../showcase/infinite-scroll/infinite-scroll.component';
-import { D3LineChartComponent } from '../showcase/d3-line-chart/d3-line-chart.component';
-import { ReactiveFormComponent } from '../showcase/reactive-form/reactive-form.component';
-import { FormModelComponent } from '../showcase/form-model/form-model.component';
-import { FormAutoUiComponent } from '../showcase/form-auto-ui/form-auto-ui.component';
-import { SelectBoxComponent } from '../showcase/select-box/select-box.component';
-import { D3GaugeComponent } from '../showcase/d3-gauge/d3-gauge.component';
-import { D3GeoMapComponent } from '../showcase/d3-geo-map/d3-geo-map.component';
+import { ToggleComponent } from '../showcase/toggle/toggle.component';
+import { TooltipComponent } from '../showcase/tooltip/tooltip.component';
+import { TreeComponent } from '../showcase/tree/tree.component';
+import { TypeAheadComponent } from '../showcase/type-ahead/type-ahead.component';
+import { ZoomComponent } from '../showcase/zoom/zoom.component';
+import { Author } from './author';
+import { Tag } from './tag';
 
 export const showcaseRoutes: Route[] = [
   {
@@ -397,16 +396,6 @@ export const showcaseRoutes: Route[] = [
       title: 'Infinite Scroll',
       tags: ['scroll', 'measure', 'super list', 'locate'].map(Tag.of),
       description: 'List of millions of rows',
-      authors: ['wzc'].map(Author.of),
-    },
-  },
-  {
-    path: 'select-box',
-    component: SelectBoxComponent,
-    data: {
-      title: 'Select Box',
-      tags: ['select', 'select2', 'multi-select'].map(Tag.of),
-      description: 'A select box like jquery\'s select2',
       authors: ['wzc'].map(Author.of),
     },
   },

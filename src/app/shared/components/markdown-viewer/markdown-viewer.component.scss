@@ -7,7 +7,7 @@
 /deep/ {
   h1 {
     font-size: 1.5rem;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-300;
     padding-bottom: 0.5em;
     margin-bottom: 0.5em;
   }
@@ -28,8 +28,8 @@
     font-size: 1rem;
   }
   blockquote {
-    border-left: 3px solid $brand-info;
-    color: $gray-light;
+    border-left: 3px solid $info;
+    color: $gray-500;
     padding-left: 0.5em;
   }
   ul, ol {

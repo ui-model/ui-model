@@ -30,7 +30,9 @@ export class RegisterModel {
   })
   tags: string[];
 
-  @Property([Validators.required, notTooThin])
+  @Property({
+    validators: [Validators.required, notTooThin],
+  })
   profile: ProfileModel;
 }
 

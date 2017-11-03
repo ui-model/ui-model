@@ -13,7 +13,7 @@
 }
 
 .demo-dropdown {
-  /deep/ .card-block {
+  /deep/ .card-body {
     height: 13em;
   }
   .dropdown {
@@ -23,7 +23,7 @@
 
 .custom-button {
   display: inline-block;
-  border: 1px solid $brand-primary;
+  border: 1px solid $primary;
   cursor: pointer;
   padding: 0.5em 1em;
   border-radius: 2px;

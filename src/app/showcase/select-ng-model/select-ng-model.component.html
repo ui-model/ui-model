@@ -1,16 +1,18 @@
 <div class="row" uiSelect #select="uiSelect" [(ngModel)]="selection">
   <div class="col-md-6">
     <select class="form-control" [(ngModel)]="select.selection">
-      <option [ngValue]="undefined">-</option>
-      <option *ngFor="let option of options" [ngValue]="option">{{option.name}}</option>
+      <option value="">-</option>
+      <option *ngFor="let option of options" [value]="option.id">{{option.name}}</option>
     </select>
   </div>
   <div class="col-md-6">
-    <label class="form-check-inline" *ngFor="let option of options">
-      <input class="form-check-input" type="radio" (change)="select.select(option)"
-             [checked]="select.selected(option)"/>
-      {{option.name}}
-    </label>
+    <div class="form-check form-check-inline" *ngFor="let option of options">
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" (change)="select.select(option)"
+               [checked]="select.selected(option)"/>
+        {{option.name}}
+      </label>
+    </div>
   </div>
 </div>
 

@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
 :host {
@@ -16,6 +17,6 @@
 
 .dropdown-item {
   &.not-found {
-    color: $brand-danger;
+    color: $danger;
   }
 }

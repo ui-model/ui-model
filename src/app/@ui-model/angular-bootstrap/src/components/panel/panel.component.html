@@ -4,7 +4,7 @@
     <i class="fa fa-chevron-up pull-right" *ngIf="toggleable && toggle.isOn" (click)="toggle.close()"></i>
     <i class="fa fa-chevron-down pull-right" *ngIf="toggleable && toggle.isOff" (click)="toggle.open()"></i>
   </div>
-  <div class="card-block" *ngIf="toggle.isOn">
+  <div class="card-body" *ngIf="toggle.isOn">
     <ng-content></ng-content>
   </div>
 </div>

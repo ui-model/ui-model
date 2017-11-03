@@ -4,7 +4,7 @@ import { PropertyMetadata } from '../decorators/form-maker/property-metadata';
 @Directive({
   selector: '[uiFieldMetadata]',
 })
-export class FieldMetadataDirective implements PropertyMetadata {
+export class FieldMetadataDirective {
 
   constructor() {
   }

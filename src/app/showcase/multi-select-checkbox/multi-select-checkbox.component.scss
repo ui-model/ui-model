@@ -1,21 +1,18 @@
-@import "../../shared/styles/common";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
 
 :host {
   display: block;
 }
 
-.form-check-label {
-  margin-right: 1em;
-}
-
 .btn-primary {
-  background: $gray;
+  background: $secondary;
   border-color: transparent;
   &.active {
-    background: $brand-primary;
+    background: $primary;
   }
 }
 
 .indeterminate {
-  background: lighten($brand-primary, 30%);
+  background: lighten($primary, 30%);
 }
