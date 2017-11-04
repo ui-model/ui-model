@@ -6,7 +6,7 @@ notification:
   email: asnowwolf@gmail.com
 
 node_js:
-  - "6"
+  - "8"
 
 addons:
   chrome: stable
