@@ -5,6 +5,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { SourceCodeService } from '../../core/source-code.service';
 import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 
 describe('ShowcaseHomeComponent', () => {
   let component: HomeComponent;
@@ -17,7 +18,7 @@ describe('ShowcaseHomeComponent', () => {
       providers: [
         {
           provide: SourceCodeService, useValue: {
-          loadDocument: () => Observable.of('home'),
+          loadDocument: () => of('home'),
         },
         },
       ],

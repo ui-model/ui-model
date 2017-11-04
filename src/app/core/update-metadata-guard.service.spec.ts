@@ -1,8 +1,8 @@
 import { inject, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs/observable/of';
+import { MetadataService } from './metadata.service';
 
 import { UpdateMetadataGuard } from './update-metadata-guard.service';
-import { MetadataService } from './metadata.service';
-import { Observable } from 'rxjs/Observable';
 
 describe('UpdateMetadataGuard', () => {
   beforeEach(() => {
@@ -11,7 +11,7 @@ describe('UpdateMetadataGuard', () => {
         provide: MetadataService,
         useValue: {
           load: () => {
-            return Observable.of(true);
+            return of(true);
           },
         },
       }],

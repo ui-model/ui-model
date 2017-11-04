@@ -4,14 +4,15 @@ import { MetadataService } from './metadata.service';
 import { SourceCodeService } from './source-code.service';
 import { Observable } from 'rxjs/Observable';
 import { Metadata } from '../utils/meta-data';
+import { of } from 'rxjs/observable/of';
 
 class MySourceCodeService {
   loadFile(name: string, ext: string): Observable<string> {
-    return Observable.of(`content of ${name}.${ext}`);
+    return of(`content of ${name}.${ext}`);
   }
 
   loadDocument(name: string, locale: string = 'en-US'): Observable<string> {
-    return Observable.of(`content of ${name}.${locale}.md`);
+    return of(`content of ${name}.${locale}.md`);
   }
 }
 describe('MetadataService', () => {
