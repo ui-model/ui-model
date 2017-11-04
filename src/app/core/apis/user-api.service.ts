@@ -1,26 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { isEmpty, toData } from '@ui-model/angular';
 import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators';
+import { isEmpty } from 'rxjs/operators';
 import { UserModel } from '../models/user.model';
 
 @Injectable()
 export class UserApi {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
   }
 
   query(usernameFilter?: string): Observable<UserModel[]> {
-    return this.http.get(`api/users?username=${usernameFilter}`).pipe(
-      map(toData),
-      map(UserModel.from),
-    );
+    return this.http.get<UserModel[]>(`api/users?username=${usernameFilter}`);
   }
 
   checkUnique(username: string): Observable<boolean> {
     return this.query(`^${username}$`).pipe(
-      map(isEmpty),
+      isEmpty(),
     );
   }
 }

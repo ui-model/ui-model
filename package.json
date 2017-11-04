@@ -50,6 +50,7 @@
     "markdown-it-table-of-contents": "^0.3.2",
     "moment": "^2.16.0",
     "rxjs": "^5.5.2",
+    "tslint": "^5.8.0",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
@@ -73,7 +74,6 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
-    "tslint": "~4.5.0",
     "typescript": "~2.4.2"
   }
 }
