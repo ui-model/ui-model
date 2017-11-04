@@ -1,9 +1,9 @@
 import { Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges } from '@angular/core';
-import { GeoProjectionService } from './geo-projection.service';
 import { Rect } from '@ui-model/common';
-import { FeatureCollection, GeometryObject } from 'geojson';
 import { geoBounds } from 'd3-geo';
+import { Feature, FeatureCollection, GeometryObject } from 'geojson';
 import * as _ from 'lodash';
+import { GeoProjectionService } from './geo-projection.service';
 
 @Directive({
   selector: 'svg[uiGeoBox]',
@@ -19,7 +19,7 @@ export class GeoBoxDirective implements OnChanges {
       return;
     }
     const values = _(this.geoBox.features)
-      .flatMap((feature) => geoBounds(feature))
+      .flatMap((feature: Feature<GeometryObject>) => geoBounds(feature))
       .map((coordinate: [number, number]) => {
         return this.projection.project(coordinate);
       });
