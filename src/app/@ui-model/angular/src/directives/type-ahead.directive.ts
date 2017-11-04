@@ -1,6 +1,6 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { debounceTime } from 'rxjs/operators';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/debounceTime';
 
 @Directive({
   selector: '[uiTypeAhead]',
@@ -16,11 +16,13 @@ export class TypeAheadDirective implements OnInit, OnDestroy {
   @Output('uiTypeAheadOpen') open = new EventEmitter<void>();
   @Output('uiTypeAheadClose') close = new EventEmitter<void>();
 
-  @HostListener('keyup') keyup(): void {
+  @HostListener('keyup')
+  keyup(): void {
     this.typing.next(this.element.nativeElement.value);
   }
 
-  @HostListener('focus') focus(): void {
+  @HostListener('focus')
+  focus(): void {
     this.keyup();
     this.open.emit();
   }
@@ -28,12 +30,12 @@ export class TypeAheadDirective implements OnInit, OnDestroy {
   @Input() delay = 200;
 
   ngOnInit(): void {
-    this.typing
-      .debounceTime(this.delay)
-      .subscribe((term) => {
-        this.open.emit();
-        this.search.emit(term);
-      });
+    this.typing.pipe(
+      debounceTime(this.delay),
+    ).subscribe((term) => {
+      this.open.emit();
+      this.search.emit(term);
+    });
   }
 
   ngOnDestroy(): void {

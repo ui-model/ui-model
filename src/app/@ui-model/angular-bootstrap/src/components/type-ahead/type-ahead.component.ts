@@ -1,12 +1,11 @@
 import { Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SafeHtml } from '@angular/platform-browser';
-import 'rxjs/add/operator/skipWhile';
-import 'rxjs/add/operator/do';
-import { Toggle } from '@ui-model/core';
 import { isFunction, Supplier, Transformer } from '@ui-model/common';
+import { Toggle } from '@ui-model/core';
+import { debounceTime, skipWhile, tap } from 'rxjs/operators';
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
 
 const TYPE_AHEAD_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -60,15 +59,15 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
   sub: Subscription;
 
   ngOnInit(): void {
-    this.sub = this.checker.asObservable()
-      .skipWhile((term) => !term)
-      .debounceTime(200)
-      .do(() => {
+    this.sub = this.checker.asObservable().pipe(
+      skipWhile((term) => !term),
+      debounceTime(200),
+      tap(() => {
         this.search.emit(this.term);
-      })
-      .subscribe(() => {
-        this.dropDown.open();
-      });
+      }),
+    ).subscribe(() => {
+      this.dropDown.open();
+    });
   }
 
   ngOnDestroy(): void {

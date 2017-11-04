@@ -1,12 +1,13 @@
 import { Stateful } from '@ui-model/common';
-import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
+import { take } from 'rxjs/operators';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/observable/interval';
-import 'rxjs/add/operator/take';
+import { Subscription } from 'rxjs/Subscription';
+import { interval } from 'rxjs/observable/interval';
 
 export class CountDown extends Stateful {
   initialValue = 0;
+
   setInitialValue(value: number): this {
     this.initialValue = value;
     return this;
@@ -50,13 +51,13 @@ export class CountDown extends Stateful {
     this.reset();
     this.value = this.initialValue;
     this.running = true;
-    this.sub = Observable.interval(this.interval)
-      .take(this.initialValue)
-      .subscribe(() => {
-        this.value--;
-      }, null, () => {
-        this.running = false;
-      });
+    this.sub = interval(this.interval).pipe(
+      take(this.initialValue),
+    ).subscribe(() => {
+      this.value--;
+    }, null, () => {
+      this.running = false;
+    });
   }
 
   stop(): void {

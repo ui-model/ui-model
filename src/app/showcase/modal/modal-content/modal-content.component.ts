@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import 'rxjs/add/observable/interval';
-import 'rxjs/add/operator/take';
 
 @Component({
   selector: 'app-modal-content',

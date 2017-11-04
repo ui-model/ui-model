@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 import { defaultIfError, toText } from '@ui-model/angular';
+import { Observable } from 'rxjs/Observable';
+import { catchError, map } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class SourceCodeService {
@@ -13,20 +13,22 @@ export class SourceCodeService {
 
   loadFile(name: string, ext: string): Observable<string> {
     if (!name) {
-      return Observable.of('');
+      return of('');
     }
-    return this.http.get(`app/showcase/${name}/${name}.component.${ext}`)
-      .map(toText)
-      .catch(defaultIfError(''));
+    return this.http.get(`app/showcase/${name}/${name}.component.${ext}`).pipe(
+      map(toText),
+      catchError(defaultIfError('')),
+    );
   }
 
   loadDocument(name: string, locale: string = navigator.language): Observable<string> {
     if (!name) {
-      return Observable.of('');
+      return of('');
     }
-    return this.http.get(`app/showcase/${name}/_docs/readme.${locale}.md`)
-      .catch(() => this.http.get(`app/showcase/${name}/_docs/readme.md`))
-      .map(toText)
-      .catch(defaultIfError(''));
+    return this.http.get(`app/showcase/${name}/_docs/readme.${locale}.md`).pipe(
+      catchError(() => this.http.get(`app/showcase/${name}/_docs/readme.md`)),
+      map(toText),
+      catchError(defaultIfError('')),
+    );
   }
 }

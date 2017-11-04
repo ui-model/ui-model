@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import 'rxjs/add/operator/switchMap';
 import { MetadataService } from '../../../core/metadata.service';
 
 @Component({

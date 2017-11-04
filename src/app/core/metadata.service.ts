@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { zip } from 'rxjs/observable/zip';
+import { tap } from 'rxjs/operators';
+import { Author } from '../utils/author';
 import { Metadata } from '../utils/meta-data';
 import { Tag } from '../utils/tag';
-import { Author } from '../utils/author';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/zip';
 import { SourceCodeService } from './source-code.service';
 
 @Injectable()
@@ -52,13 +53,17 @@ export class MetadataService {
 
   load(id: string, metadata: Metadata): Observable<any> {
     this.meta = Object.assign({}, metadata, {id: id});
-    return Observable.zip(
-      this.api.loadDocument(id)
-        .do((doc) => this.document = doc, () => this.document = ''),
+    return zip(
+      this.api.loadDocument(id).pipe(
+        tap((doc: string) => this.document = doc, () => this.document = ''),
+      ),
       ...this.types.map((type, index) => {
-        return this.api.loadFile(id, type)
-          .do((source) => this.sources[index] = source, () => this.sources[index] = '');
+        return this.api.loadFile(id, type).pipe(
+          tap((source) => this.sources[index] = source, () => this.sources[index] = ''),
+        );
       }),
-    ).do(() => this.type = this.types[0]);
+    ).pipe(
+      tap(() => this.type = this.types[0]),
+    );
   }
 }

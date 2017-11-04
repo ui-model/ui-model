@@ -1,8 +1,7 @@
 import { Rect, Stateful } from '@ui-model/common';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/do';
+import { map } from 'rxjs/operators';
+import { merge } from 'rxjs/observable/merge';
 
 export class Zoom extends Stateful {
   get activeRect(): Rect {
@@ -67,13 +66,14 @@ export class Zoom extends Stateful {
   private _passiveViewport: Rect = new Rect();
 
   get changes(): Observable<this> {
-    return Observable.merge([
+    return merge([
       this.activeRect.changes,
       this.activeViewport.changes,
       this.passiveRect.changes,
       this.passiveViewport.changes,
-    ])
-      .map(() => this);
+    ]).pipe(
+      map(() => this),
+    );
   }
 
   update(): void {
