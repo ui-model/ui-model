@@ -8,8 +8,7 @@
       true,
       "call-signature",
       "parameter",
-      "property-declaration",
-      "member-variable-declaration"
+      "property-declaration"
     ],
     "unified-signatures": true,
     "curly": true,

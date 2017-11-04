@@ -15,11 +15,11 @@ export class Comparators {
 
   static string(v1: any, v2: any): number {
     return (v1 || '').toString().localeCompare((v2 || '').toString());
-  };
+  }
 
   static number(v1: any, v2: any): number {
     return (+v1 || 0) - (+v2 || 0);
-  };
+  }
 
   static boolean(v1: any, v2: any): number {
     if (!!v1 === !!v2) {
@@ -29,7 +29,7 @@ export class Comparators {
       return 1;
     }
     return -1;
-  };
+  }
 
   static date(v1: any, v2: any): number {
     return new Date(v1).getTime() - new Date(v2).getTime();

@@ -2,10 +2,10 @@ import { AbstractControl, ValidatorFn } from '@angular/forms';
 
 export function complexity(minCharacterKinds: number): ValidatorFn {
   return (c: AbstractControl) => {
-    const complexity = complexityOf(c.value);
-    if (complexity < minCharacterKinds) {
+    const value = complexityOf(c.value);
+    if (value < minCharacterKinds) {
       return {
-        complexity: {requiredValue: minCharacterKinds, actualValue: complexity},
+        complexity: {requiredValue: minCharacterKinds, actualValue: value},
       };
     }
   };

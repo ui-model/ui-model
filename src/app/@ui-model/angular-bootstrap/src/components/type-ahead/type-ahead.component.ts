@@ -43,7 +43,7 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
     } else {
       return value[this.displayField];
     }
-  };
+  }
 
   defaultParser(value: T): string {
     if (!value) {

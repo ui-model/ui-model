@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot } from '@angular/router';
 import { template } from 'lodash';
 
 export interface IRoute {
@@ -40,7 +40,7 @@ export function titleOfRoot(route: IRoute): string {
   return titleOfRoot(route.parent) || route.data.title;
 }
 
-export function titleOf(route: IRoute, titleOfRoot: string = ''): string {
+export function titleOf(route: IRoute, rootTitle: string = ''): string {
   if (!route || !route.data) {
     return '';
   }
@@ -50,7 +50,7 @@ export function titleOf(route: IRoute, titleOfRoot: string = ''): string {
   }
 
   const titleTemplate = titleTemplateOf(route.parent);
-  const titleOfParent = titleOf(route.parent, titleOfRoot);
+  const titleOfParent = titleOf(route.parent, rootTitle);
 
   if (!currentTitle || currentTitle === titleOfParent) {
     return titleOfParent;
@@ -59,7 +59,7 @@ export function titleOf(route: IRoute, titleOfRoot: string = ''): string {
   return template(titleTemplate)({
     current: currentTitle,
     parent: titleOfParent,
-    root: titleOfRoot,
+    root: rootTitle,
   });
 }
 
