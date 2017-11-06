@@ -4,13 +4,13 @@
     <tr>
       <th class="resizable" *ngFor="let field of fields"
           uiMeasure #measure="uiMeasure"
-          [style.width.px]="(measure.clientRect.width + draggable.offset.x)||100"
+          [style.width.px]="(measure.clientRect.width + movable.offset.x)||100"
           [class.sortable]="sortable && field.sortable"
           [ngClass]="field.type|typeName:'data-type-'"
           (click)="sorter.toggle(field)" [title]="field.title">
         {{field.title}}
         <i class="fa" [ngClass]="orderCss(field.sortOrder)" *ngIf="field.sortable"></i>
-        <div class="splitter" uiDraggable #draggable="uiDraggable" (uiDragStop)="measure.update()"></div>
+        <div class="splitter" uiMovable (uiMoveStop)="measure.update()"></div>
       </th>
     </tr>
     </thead>

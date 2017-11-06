@@ -1,10 +1,10 @@
-<div [class.no-selectable]="draggable.dragging">
+<div [class.no-selectable]="movable.moving">
   <div class="playground">
-    <div class="draggable"
+    <div class="movable"
          uiMeasure #inner="uiMeasure"
-         uiDraggable #draggable="uiDraggable" (uiDragStop)="inner.update()"
-         [style.left.px]="inner.offsetRect.left + draggable.offset.x"
-         [style.top.px]="inner.offsetRect.top + draggable.offset.y"
+         uiMovable #movable="uiMovable" (uiMoveStop)="inner.update()"
+         [style.left.px]="inner.offsetRect.left + movable.offset.x"
+         [style.top.px]="inner.offsetRect.top + movable.offset.y"
     >
     </div>
   </div>
@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-md-6">
         <span i18n>delta</span>
-        ( x: {{draggable.offset.x}}, y: {{draggable.offset.y}} )
+        ( x: {{movable.offset.x}}, y: {{movable.offset.y}} )
       </div>
       <div class="col-md-6">
         <span i18n>pos</span>

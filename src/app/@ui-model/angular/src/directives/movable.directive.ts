@@ -2,15 +2,15 @@ import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 import { Distance, Point } from '@ui-model/common';
 
 @Directive({
-  selector: '[uiDraggable]',
-  exportAs: 'uiDraggable',
+  selector: '[uiMovable]',
+  exportAs: 'uiMovable',
 })
-export class DraggableDirective {
-  @Output('uiDragStart') onStart = new EventEmitter<void>();
-  @Output('uiDragMove') onMove = new EventEmitter<any>();
-  @Output('uiDragStop') onStop = new EventEmitter<void>();
+export class MovableDirective {
+  @Output('uiMoveStart') onStart = new EventEmitter<void>();
+  @Output('uiMoving') onMove = new EventEmitter<any>();
+  @Output('uiMoveStop') onStop = new EventEmitter<void>();
 
-  dragging = false;
+  moving = false;
 
   startPos = new Point();
   latestPos = new Point();
@@ -36,7 +36,7 @@ export class DraggableDirective {
     }
     event.srcElement.setPointerCapture(1);
     event.stopPropagation();
-    this.dragging = true;
+    this.moving = true;
     this.startPos = new Point(event.screenX, event.screenY);
     this.pos = new Point(event.screenX, event.screenY);
     this.onStart.emit();
@@ -50,7 +50,7 @@ export class DraggableDirective {
     }
     event.srcElement.releasePointerCapture(1);
     event.stopPropagation();
-    this.dragging = false;
+    this.moving = false;
     this.onMove.emit(this.delta);
     this.onStop.emit();
     this.startPos = new Point(event.screenX, event.screenY);
@@ -63,7 +63,7 @@ export class DraggableDirective {
       return;
     }
     event.stopPropagation();
-    if (this.dragging) {
+    if (this.moving) {
       this.latestPos = this.pos;
       this.pos = new Point(event.screenX, event.screenY);
       this.onMove.emit(this.delta);

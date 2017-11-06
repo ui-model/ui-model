@@ -5,7 +5,6 @@ import { D3BasicComponent } from '../showcase/d3-basic/d3-basic.component';
 import { D3GaugeComponent } from '../showcase/d3-gauge/d3-gauge.component';
 import { D3GeoMapComponent } from '../showcase/d3-geo-map/d3-geo-map.component';
 import { D3LineChartComponent } from '../showcase/d3-line-chart/d3-line-chart.component';
-import { DraggableComponent } from '../showcase/draggable/draggable.component';
 import { DropdownComponent } from '../showcase/dropdown/dropdown.component';
 import { FormAutoUiComponent } from '../showcase/form-auto-ui/form-auto-ui.component';
 import { FormModelComponent } from '../showcase/form-model/form-model.component';
@@ -14,6 +13,7 @@ import { InfiniteScrollComponent } from '../showcase/infinite-scroll/infinite-sc
 import { InplaceEditorComponent } from '../showcase/inplace-editor/inplace-editor.component';
 import { MenuComponent } from '../showcase/menu/menu.component';
 import { ModalComponent } from '../showcase/modal/modal.component';
+import { MovableComponent } from '../showcase/movable/movable.component';
 import { MultiSelectCheckboxComponent } from '../showcase/multi-select-checkbox/multi-select-checkbox.component';
 import { MultiSelectNgModelComponent } from '../showcase/multi-select-ng-model/multi-select-ng-model.component';
 import { MultiSelectComponent } from '../showcase/multi-select/multi-select.component';
@@ -214,7 +214,7 @@ export const showcaseRoutes: Route[] = [
     component: TableComponent,
     data: {
       title: 'Table',
-      tags: ['table', 'sort', 'pager', 'resize', 'drag', 'measure', 'pagination', 'viewport'].map(Tag.of),
+      tags: ['table', 'sort', 'pager', 'resize', 'move', 'measure', 'pagination', 'viewport'].map(Tag.of),
       description: '`table` is **composed** of `sort`/`slice`/`resize`/`pagination`...',
       authors: ['wzc'].map(Author.of),
     },
@@ -290,11 +290,11 @@ export const showcaseRoutes: Route[] = [
     },
   },
   {
-    path: 'draggable',
-    component: DraggableComponent,
+    path: 'movable',
+    component: MovableComponent,
     data: {
-      title: 'Draggable',
-      tags: ['draggable', 'move', 'measure'].map(Tag.of),
+      title: 'Movable',
+      tags: ['movable', 'drag', 'move', 'measure'].map(Tag.of),
       description: 'How to use the **helper directive** to **bridge** between ui-model and view',
       authors: ['wzc'].map(Author.of),
     },

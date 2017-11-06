@@ -4,7 +4,6 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { CountDownDirective } from './directives/count-down.directive';
 import { DateInputDirective } from './directives/date-input.directive';
 import { DisabledDirective } from './directives/disabled.directive';
-import { DraggableDirective } from './directives/draggable.directive';
 import { DynamicComponentInputsDirective } from './directives/dynamic-component-inputs.directive';
 import { FieldMetadataDirective } from './directives/field-metadata.directive';
 import { FileChangeDetectDirective } from './directives/file-change-detect.directive';
@@ -13,6 +12,7 @@ import { FormArrayExporterDirective } from './directives/form-array-exporter.dir
 import { FormGroupExporterDirective } from './directives/form-group-exporter.directive';
 import { ImgSrcFileDirective } from './directives/img-src-file.directive';
 import { MeasureDirective } from './directives/measure.directive';
+import { MovableDirective } from './directives/movable.directive';
 import { MultiBindingDirective } from './directives/multi-binding.directive';
 import { MultiSelectDirective } from './directives/multi-select.directive';
 import { PagerDirective } from './directives/pager.directive';
@@ -69,7 +69,7 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameM
     PaginationDirective,
 
     ClickOutsideDirective,
-    DraggableDirective,
+    MovableDirective,
     MeasureDirective,
     ImgSrcFileDirective,
     FileChangeDetectDirective,
@@ -117,7 +117,7 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameM
 
     MultiBindingDirective,
     ClickOutsideDirective,
-    DraggableDirective,
+    MovableDirective,
     MeasureDirective,
     ImgSrcFileDirective,
     FileChangeDetectDirective,
@@ -171,7 +171,7 @@ export * from './directives/pagination.directive';
 export * from './directives/multi-select.directive';
 
 export * from './directives/click-outside.directive';
-export * from './directives/draggable.directive';
+export * from './directives/movable.directive';
 export * from './directives/measure.directive';
 export * from './directives/img-src-file.directive';
 export * from './directives/file-change-detect.directive';

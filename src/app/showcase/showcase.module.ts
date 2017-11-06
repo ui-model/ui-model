@@ -14,7 +14,6 @@ import { D3BasicComponent } from './d3-basic/d3-basic.component';
 import { D3GaugeComponent } from './d3-gauge/d3-gauge.component';
 import { D3GeoMapComponent } from './d3-geo-map/d3-geo-map.component';
 import { D3LineChartComponent } from './d3-line-chart/d3-line-chart.component';
-import { DraggableComponent } from './draggable/draggable.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { AgreeLicenseEditorComponent } from './form-auto-ui/editors/agree-license-editor/agree-license-editor.component';
 import { FormAutoUiComponent } from './form-auto-ui/form-auto-ui.component';
@@ -27,6 +26,7 @@ import { InplaceEditorComponent } from './inplace-editor/inplace-editor.componen
 import { MenuComponent } from './menu/menu.component';
 import { ModalContentComponent } from './modal/modal-content/modal-content.component';
 import { ModalComponent } from './modal/modal.component';
+import { MovableComponent } from './movable/movable.component';
 import { MultiSelectCheckboxComponent } from './multi-select-checkbox/multi-select-checkbox.component';
 import { MultiSelectNgModelComponent } from './multi-select-ng-model/multi-select-ng-model.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
@@ -77,7 +77,7 @@ import { ZoomComponent } from './zoom/zoom.component';
     TreeComponent,
     CalendarComponent,
     PreviewComponent,
-    DraggableComponent,
+    MovableComponent,
     ModalComponent,
     ModalContentComponent,
     ChartComponent,
