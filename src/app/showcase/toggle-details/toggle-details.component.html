@@ -1,4 +1,4 @@
-<div uiToggle #more="uiToggle">
+<div [uiToggle]="true" #more="uiToggle">
   <div i18n>This is a brief</div>
   <a uiPreventDefault href (click)="more.open()" *ngIf="more.isOff" i18n>Click me to see more...</a>
   <div *ngIf="more.isOn" class="alert alert-success">

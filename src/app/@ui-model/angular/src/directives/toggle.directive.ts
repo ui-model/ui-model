@@ -1,6 +1,6 @@
 import { Directive, forwardRef, Input } from '@angular/core';
-import { Toggle } from '@ui-model/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Toggle } from '@ui-model/core';
 
 const TOGGLE_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -11,6 +11,7 @@ const TOGGLE_VALUE_ACCESSOR = {
 @Directive({
   selector: '[uiToggle]',
   exportAs: 'uiToggle',
+  inputs: ['isOn', 'isOff', 'isOn:uiToggle'],
   providers: [TOGGLE_VALUE_ACCESSOR],
 })
 export class ToggleDirective extends Toggle implements ControlValueAccessor {
