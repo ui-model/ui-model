@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./movable.component.scss'],
 })
 export class MovableComponent {
-  offset = {};
 }
