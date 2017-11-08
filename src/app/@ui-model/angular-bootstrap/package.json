@@ -1,6 +1,6 @@
 {
   "name": "@ui-model/angular-bootstrap",
-  "version": "0.0.54",
+  "version": "0.0.55",
   "license": "MIT",
   "main": "index.ts",
   "description": "angular binding for ui model using bootstrap as css framework",
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ui-model/ui-model-angular-bootstrap#readme",
   "dependencies": {
-    "@ui-model/angular": "0.0.54",
+    "@ui-model/angular": "0.0.55",
     "bootstrap": "4.0.0-beta.2",
     "font-awesome": "^4.0.0"
   },
