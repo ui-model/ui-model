@@ -1,34 +1,26 @@
-import { Directive, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
   selector: '[uiClickOutside]',
 })
-export class ClickOutsideDirective implements OnInit, OnDestroy {
+export class ClickOutsideDirective {
   constructor(private element: ElementRef) {
   }
 
   @Output('uiClickOutside') onClickOutside = new EventEmitter<void>();
 
-  escKeyListener = (event: KeyboardEvent) => {
+  @HostListener('document:keyup', ['$event'])
+  escKeyListener(event: KeyboardEvent): void {
     if (event.keyCode === 27) {
       this.onClickOutside.emit();
     }
   }
 
-  clickListener = (event) => {
+  @HostListener('document:mouseup', ['$event'])
+  clickListener(event: MouseEvent): void {
     if (!isSelfOrAncestorNode(this.element.nativeElement, event.target  as Node || event.srcElement)) {
       this.onClickOutside.emit();
     }
-  }
-
-  ngOnInit(): void {
-    document.addEventListener('mouseup', this.clickListener);
-    document.addEventListener('keyup', this.escKeyListener);
-  }
-
-  ngOnDestroy(): void {
-    document.removeEventListener('mouseup', this.clickListener);
-    document.removeEventListener('keyup', this.escKeyListener);
   }
 }
 
