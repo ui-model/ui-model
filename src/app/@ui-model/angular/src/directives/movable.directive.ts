@@ -6,9 +6,9 @@ import { Distance, Point } from '@ui-model/common';
   exportAs: 'uiMovable',
 })
 export class MovableDirective {
-  @Output('uiMoveStart') onStart = new EventEmitter<void>();
-  @Output('uiMoving') onMove = new EventEmitter<any>();
-  @Output('uiMoveStop') onStop = new EventEmitter<void>();
+  @Output('uiMoveStart') onStart = new EventEmitter<MouseEvent>();
+  @Output('uiMoving') onMove = new EventEmitter<MouseEvent>();
+  @Output('uiMoveStop') onStop = new EventEmitter<MouseEvent>();
 
   moving = false;
 
@@ -39,8 +39,7 @@ export class MovableDirective {
     this.moving = true;
     this.startPos = new Point(event.screenX, event.screenY);
     this.pos = new Point(event.screenX, event.screenY);
-    this.onStart.emit();
-    this.onMove.emit({x: 0, y: 0});
+    this.onStart.emit(event);
   }
 
   @HostListener('mouseup', ['$event'])
@@ -51,8 +50,7 @@ export class MovableDirective {
     event.srcElement.releasePointerCapture(1);
     event.stopPropagation();
     this.moving = false;
-    this.onMove.emit(this.delta);
-    this.onStop.emit();
+    this.onStop.emit(event);
     this.startPos = new Point(event.screenX, event.screenY);
     this.pos = new Point(event.screenX, event.screenY);
   }
@@ -66,7 +64,7 @@ export class MovableDirective {
     if (this.moving) {
       this.latestPos = this.pos;
       this.pos = new Point(event.screenX, event.screenY);
-      this.onMove.emit(this.delta);
+      this.onMove.emit(event);
     }
   }
 }
