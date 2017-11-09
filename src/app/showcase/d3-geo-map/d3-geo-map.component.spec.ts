@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { UiModelD3Module } from '@ui-model/angular-d3';
 
 import { D3GeoMapComponent } from './d3-geo-map.component';
-import { ALL_SERVICES_OF_UI_MODEL_D3, UiModelD3Module } from '@ui-model/angular-d3';
 
 describe('D3GeoMapComponent', () => {
   let component: D3GeoMapComponent;
@@ -9,9 +9,9 @@ describe('D3GeoMapComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [UiModelD3Module],
+      imports: [UiModelD3Module.forRoot()],
       declarations: [D3GeoMapComponent],
-      providers: [ALL_SERVICES_OF_UI_MODEL_D3],
+      providers: [],
     })
       .compileComponents();
   }));

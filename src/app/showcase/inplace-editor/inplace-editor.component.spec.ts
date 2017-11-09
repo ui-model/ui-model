@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { UiModelModule } from '@ui-model/angular';
 
 import { InplaceEditorComponent } from './inplace-editor.component';
-import { UiModelModule } from '@ui-model/angular';
-import { FormsModule } from '@angular/forms';
 
 describe('ShowcaseInplaceEditorComponent', () => {
   let component: InplaceEditorComponent;
@@ -11,7 +11,7 @@ describe('ShowcaseInplaceEditorComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [InplaceEditorComponent],
-      imports: [UiModelModule, FormsModule],
+      imports: [UiModelModule.forRoot(), FormsModule],
     })
       .compileComponents();
   }));

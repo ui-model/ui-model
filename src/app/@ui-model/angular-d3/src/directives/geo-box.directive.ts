@@ -3,7 +3,7 @@ import { Rect } from '@ui-model/common';
 import { geoBounds } from 'd3-geo';
 import { Feature, FeatureCollection, GeometryObject } from 'geojson';
 import * as _ from 'lodash';
-import { GeoProjectionService } from './geo-projection.service';
+import { GeoProjectionService } from '../services/geo-projection.service';
 
 @Directive({
   selector: 'svg[uiGeoBox]',

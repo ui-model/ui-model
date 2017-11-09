@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { PreviewComponent } from './preview.component';
 import { UiModelModule } from '@ui-model/angular';
+import { PreviewComponent } from './preview.component';
 
 describe('ShowcasePreviewComponent', () => {
   let component: PreviewComponent;
@@ -9,7 +9,7 @@ describe('ShowcasePreviewComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PreviewComponent],
-      imports: [UiModelModule],
+      imports: [UiModelModule.forRoot()],
     })
       .compileComponents();
   }));

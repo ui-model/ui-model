@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ChartComponent } from './chart.component';
-import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { UiModelModule } from '@ui-model/angular';
+import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
+import { UiModelD3Module } from '@ui-model/angular-d3';
+import { ChartComponent } from './chart.component';
 
 describe('ShowcaseChartComponent', () => {
   let component: ChartComponent;
@@ -10,7 +12,12 @@ describe('ShowcaseChartComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ChartComponent],
-      imports: [UiModelBootstrapModule, FormsModule],
+      imports: [
+        UiModelModule.forRoot(),
+        UiModelBootstrapModule,
+        UiModelD3Module.forRoot(),
+        FormsModule,
+      ],
     })
       .compileComponents();
   }));

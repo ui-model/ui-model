@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { CalendarComponent } from './calendar.component';
-import { FormsModule } from '@angular/forms';
-import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
+import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
+import { CalendarComponent } from './calendar.component';
 
 describe('ShowcaseCalendarComponent', () => {
   let component: CalendarComponent;
@@ -12,9 +12,8 @@ describe('ShowcaseCalendarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CalendarComponent],
-      imports: [FormsModule, UiModelBootstrapModule],
+      imports: [FormsModule, UiModelBootstrapModule, UiModelModule.forRoot()],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [...UiModelModule.services],
     })
       .compileComponents();
   }));

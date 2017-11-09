@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RadioGroupWithinFormComponent } from '@ui-model/angular-bootstrap';
-import { ALL_SERVICES_OF_UI_MODEL_D3, UiModelD3Module } from '@ui-model/angular-d3';
+import { UiModelModule } from '@ui-model/angular';
+import { RadioGroupWithinFormComponent, UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
+import { UiModelD3Module } from '@ui-model/angular-d3';
+import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
 import { SharedModule } from '../shared/shared.module';
 import { BriefViewerComponent } from './_layout/brief-viewer/brief-viewer.component';
 import { DocumentViewerComponent } from './_layout/document-viewer/document-viewer.component';
@@ -59,7 +61,10 @@ import { ZoomComponent } from './zoom/zoom.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    UiModelD3Module,
+    UiModelModule.forFeature(),
+    UiModelBootstrapModule.forFeature(),
+    UiModelMarkdownModule.forFeature(),
+    UiModelD3Module.forFeature(),
     SharedModule,
     ShowcaseRoutingModule,
   ],
@@ -110,7 +115,7 @@ import { ZoomComponent } from './zoom/zoom.component';
     D3GaugeComponent,
     D3GeoMapComponent,
   ],
-  providers: [RemoteUsernameValidator, ...ALL_SERVICES_OF_UI_MODEL_D3],
+  providers: [RemoteUsernameValidator],
   entryComponents: [RadioGroupWithinFormComponent, AgreeLicenseEditorComponent],
 })
 export class ShowcaseModule {

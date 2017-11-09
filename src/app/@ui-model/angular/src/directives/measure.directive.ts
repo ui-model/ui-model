@@ -10,7 +10,8 @@ export class MeasureDirective implements OnInit {
     this.element = element.nativeElement;
   }
 
-  @Output('uiMeasure') changed = new EventEmitter<MeasureDirective>();
+  @Output('uiMeasure')
+  changed = new EventEmitter<MeasureDirective>();
 
   private _signal: any;
   get signal(): any {

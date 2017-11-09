@@ -1,8 +1,8 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { TooltipComponent } from './tooltip.component';
 import { TooltipService, UiModelModule } from '@ui-model/angular';
 import { Rect } from '@ui-model/common';
+import { TooltipComponent } from './tooltip.component';
 
 describe('TooltipComponent', () => {
   let component: TooltipComponent;
@@ -11,7 +11,7 @@ describe('TooltipComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TooltipComponent],
-      imports: [UiModelModule],
+      imports: [UiModelModule.forRoot()],
       providers: [TooltipService],
     })
       .compileComponents();

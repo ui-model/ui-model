@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UiModelModule } from '@ui-model/angular';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { HighlightPipe } from './pipes/highlight.pipe';
 import { MarkdownPipe } from './pipes/markdown.pipe';
 
@@ -13,12 +12,18 @@ import { MarkdownPipe } from './pipes/markdown.pipe';
     MarkdownPipe,
   ],
   exports: [
-    UiModelModule,
     HighlightPipe,
     MarkdownPipe,
   ],
 })
 export class UiModelMarkdownModule {
+  static forRoot(): ModuleWithProviders {
+    return {ngModule: UiModelMarkdownModule};
+  }
+
+  static forFeature(): ModuleWithProviders {
+    return {ngModule: UiModelMarkdownModule};
+  }
 }
 
 export * from './pipes/highlight.pipe';

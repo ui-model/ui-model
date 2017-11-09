@@ -1,7 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MenuComponent } from './menu.component';
-import { UiModelModule } from '@ui-model/angular';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { UiModelModule } from '@ui-model/angular';
+import { MenuComponent } from './menu.component';
 
 describe('ShowcaseMenuComponent', () => {
   let component: MenuComponent;
@@ -10,7 +10,7 @@ describe('ShowcaseMenuComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MenuComponent],
-      imports: [UiModelModule],
+      imports: [UiModelModule.forRoot()],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

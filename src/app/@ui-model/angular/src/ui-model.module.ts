@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { CountDownDirective } from './directives/count-down.directive';
 import { DateInputDirective } from './directives/date-input.directive';
@@ -22,8 +22,8 @@ import { SelectDirective } from './directives/select.directive';
 import { ToggleDirective } from './directives/toggle.directive';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { TypeAheadDirective } from './directives/type-ahead.directive';
-
 import { UpdateTitleGuard } from './guards/update-title.guard';
+
 import { DefaultPipe } from './pipes/default.pipe';
 import { FieldErrorMapperPipe } from './pipes/field-error-mapper.pipe';
 import { FieldLabelPipe } from './pipes/field-label.pipe';
@@ -44,18 +44,13 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { TemplatePipe } from './pipes/template.pipe';
 import { TimesPipe } from './pipes/times.pipe';
 import { TypeNamePipe } from './pipes/type-name.pipe';
-import { FieldErrorMapper } from './services/field-error-mapper.service';
 
+import { FieldErrorMapper } from './services/field-error-mapper.service';
 import { FormMaker } from './services/form-maker.service';
 import { FormUtils } from './services/form-utils.service';
-
 import { Modal, ModalService } from './services/modal.service';
 import { NameMapper } from './services/name-mapper.service';
 import { TooltipService } from './services/tooltip.service';
-
-export const ALL_SERVICES_OF_UI_MODEL_ANGULAR = [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper,
-  FormUtils, UpdateTitleGuard];
-export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils, UpdateTitleGuard };
 
 @NgModule({
   imports: [
@@ -154,7 +149,18 @@ export { Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameM
   ],
 })
 export class UiModelModule {
-  static services = ALL_SERVICES_OF_UI_MODEL_ANGULAR;
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: UiModelModule,
+      providers: [Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils, UpdateTitleGuard],
+    };
+  }
+
+  static forFeature(): ModuleWithProviders {
+    return {
+      ngModule: UiModelModule,
+    };
+  }
 }
 
 export * from './accessors/base.value-accessor';
@@ -218,3 +224,14 @@ export * from './validators/max-value.validator';
 export * from './validators/url.validator';
 export * from './validators/equals.validator';
 export * from './validators/complexity.validator';
+
+export * from './services/field-error-mapper.service';
+
+export * from './services/form-maker.service';
+export * from './services/form-utils.service';
+
+export * from './services/modal.service';
+export * from './services/name-mapper.service';
+export * from './services/tooltip.service';
+
+export * from './guards/update-title.guard';

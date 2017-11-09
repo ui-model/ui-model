@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges } from '@angular/core';
-import { GeoProjectionService } from './geo-projection.service';
+import { GeoProjectionService } from '../services/geo-projection.service';
 
 @Directive({
   selector: 'line[uiGeoLine]',

@@ -1,10 +1,10 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormMaker, UiModelModule } from '@ui-model/angular';
+import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 
 import { FormModelComponent } from './form-model.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ALL_SERVICES_OF_UI_MODEL_ANGULAR, FormMaker } from '@ui-model/angular';
-import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 
 describe('ShowcaseFormModelComponent', () => {
   let component: FormModelComponent;
@@ -13,11 +13,12 @@ describe('ShowcaseFormModelComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        UiModelModule.forRoot(),
         UiModelBootstrapModule,
         ReactiveFormsModule,
       ],
       declarations: [FormModelComponent],
-      providers: [FormMaker, ALL_SERVICES_OF_UI_MODEL_ANGULAR],
+      providers: [FormMaker],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ModalComponent } from './modal.component';
-import { ModalContentComponent } from './modal-content/modal-content.component';
+import { ModalService, UiModelModule } from '@ui-model/angular';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
-import { ModalService } from '@ui-model/angular';
+import { ModalContentComponent } from './modal-content/modal-content.component';
+import { ModalComponent } from './modal.component';
 
 describe('ShowcaseModalComponent', () => {
   let component: ModalComponent;
@@ -11,7 +11,10 @@ describe('ShowcaseModalComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ModalComponent, ModalContentComponent],
-      imports: [UiModelBootstrapModule],
+      imports: [
+        UiModelModule.forRoot(),
+        UiModelBootstrapModule.forRoot(),
+      ],
       providers: [ModalService],
     })
       .compileComponents();

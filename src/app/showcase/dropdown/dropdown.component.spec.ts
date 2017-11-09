@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { UiModelModule } from '@ui-model/angular';
 
 import { DropdownComponent } from './dropdown.component';
-import { UiModelModule } from '@ui-model/angular';
 
 describe('ShowcaseDropdownComponent', () => {
   let component: DropdownComponent;
@@ -10,7 +10,7 @@ describe('ShowcaseDropdownComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [DropdownComponent],
-      imports: [UiModelModule],
+      imports: [UiModelModule.forRoot()],
     })
       .compileComponents();
   }));

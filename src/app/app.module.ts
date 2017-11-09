@@ -1,13 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './layout/app/app.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { UiModelModule } from '@ui-model/angular';
+import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
+import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
 import { routing } from './app-routing.module';
-import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { AppComponent } from './layout/app/app.component';
 import { GlobalModalComponent } from './layout/global-modal/global-modal.component';
 import { NavHeaderComponent } from './layout/nav-header/nav-header.component';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
-import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   imports: [
@@ -15,6 +18,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     SharedModule,
     CoreModule,
+    UiModelModule.forRoot(),
+    UiModelBootstrapModule.forRoot(),
+    UiModelMarkdownModule.forRoot(),
     routing,
   ],
   declarations: [

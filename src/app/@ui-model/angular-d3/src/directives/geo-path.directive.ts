@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges } from '@angular/core';
-import { GeoProjectionService } from './geo-projection.service';
 import { geoPath } from 'd3-geo';
 import { Feature, GeometryObject } from 'geojson';
+import { GeoProjectionService } from '../services/geo-projection.service';
 
 @Directive({
   selector: '[uiGeoPath]',

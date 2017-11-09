@@ -1,8 +1,8 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { UiModelModule } from '@ui-model/angular';
 
 import { RadioButtonComponent } from './radio-button.component';
-import { UiModelModule } from '@ui-model/angular';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ShowcaseRadioButtonComponent', () => {
   let component: RadioButtonComponent;
@@ -11,7 +11,7 @@ describe('ShowcaseRadioButtonComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [RadioButtonComponent],
-      imports: [UiModelModule],
+      imports: [UiModelModule.forRoot()],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

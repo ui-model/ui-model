@@ -1,9 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BriefViewerComponent } from './brief-viewer.component';
-import { SharedModule } from '../../../shared/shared.module';
-import { RouterTestingModule } from '@angular/router/testing';
-import { MetadataService } from '../../../core/metadata.service';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
+import { UiModelModule } from '@ui-model/angular';
+import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
+import { MetadataService } from '../../../core/metadata.service';
+import { SharedModule } from '../../../shared/shared.module';
+import { BriefViewerComponent } from './brief-viewer.component';
 
 describe('BriefViewerComponent', () => {
   let component: BriefViewerComponent;
@@ -12,7 +14,12 @@ describe('BriefViewerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BriefViewerComponent],
-      imports: [SharedModule, RouterTestingModule],
+      imports: [
+        SharedModule,
+        RouterTestingModule,
+        UiModelModule.forRoot(),
+        UiModelMarkdownModule.forRoot(),
+      ],
       providers: [
         {
           provide: MetadataService,
