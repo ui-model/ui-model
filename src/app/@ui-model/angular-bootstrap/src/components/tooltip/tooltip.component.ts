@@ -13,10 +13,10 @@ export class TooltipComponent {
   @ViewChild('measure') measure: MeasureDirective;
 
   get left(): number {
-    return this.tooltip.targetRect.left + (this.tooltip.targetRect.width - this.measure.boundingRect.width) / 2;
+    return this.tooltip.pointingRect.left + (this.tooltip.pointingRect.width - this.measure.boundingRect.width) / 2;
   }
 
   get top(): number {
-    return this.tooltip.targetRect.bottom;
+    return this.tooltip.pointingRect.bottom;
   }
 }

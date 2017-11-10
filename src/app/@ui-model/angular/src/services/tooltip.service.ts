@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
 import { Rect } from '@ui-model/common';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class TooltipService {
@@ -18,7 +18,7 @@ export class TooltipService {
     this._changes.next();
   }
 
-  targetRect: Rect;
+  pointingRect: Rect;
 
   private _message: string | SafeHtml;
   get message(): string | SafeHtml {
@@ -31,15 +31,16 @@ export class TooltipService {
   }
 
   get visible(): boolean {
-    return !!this._message && !!this.targetRect;
+    return !!this._message && !!this.pointingRect;
   }
 
-  show(message: string | SafeHtml, targetRect: Rect): void {
+  show(message: string | SafeHtml, pointingRect: Rect): void {
     this.message = message;
-    this.targetRect = targetRect;
+    this.pointingRect = pointingRect;
   }
 
   hide(): void {
     this.message = '';
+    this.pointingRect = undefined;
   }
 }

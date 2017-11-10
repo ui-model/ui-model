@@ -20,7 +20,7 @@ describe('TooltipComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TooltipComponent);
     component = fixture.componentInstance;
-    component.tooltip.targetRect = new Rect().setLeft(0).setTop(0).setWidth(100).setHeight(100);
+    component.tooltip.pointingRect = new Rect().setLeft(0).setTop(0).setWidth(100).setHeight(100);
     fixture.detectChanges();
   });
 

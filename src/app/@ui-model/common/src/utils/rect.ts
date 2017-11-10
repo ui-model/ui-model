@@ -1,4 +1,5 @@
 import { Stateful } from '../common/stateful';
+
 export class Rect extends Stateful {
   private _left = 0;
   get left(): number {
@@ -169,7 +170,7 @@ export class Rect extends Stateful {
     return Rect.from(rect.left, rect.top, rect.width, rect.height);
   }
 
-  static fromClientRect(rect: ClientRect): Rect {
-    return Rect.from(rect.left, rect.top, rect.width, rect.height);
+  static fromClientRect(rect: ClientRect, scrollX: number = 0, scrollY: number = 0): Rect {
+    return Rect.from(rect.left, rect.top, rect.width, rect.height).move(scrollX, scrollY);
   }
 }
