@@ -12,6 +12,7 @@
   <button type="button" class="btn btn-primary bottom right" [uiTooltip]="html|safeHtml" uiDisabled>
     <span i18n>Bottom & Right</span>
   </button>
+
   <ui-tooltip *ngIf="tooltip.visible">
     <div [innerHTML]="tooltip.message"></div>
   </ui-tooltip>
