@@ -1,4 +1,4 @@
-<div class="tooltip tooltip-bottom" [style.left.px]="left" [style.top.px]="top" uiMeasure #measure="uiMeasure">
+<div class="tooltip" [style.left.px]="rect.left" [style.top.px]="rect.top" (uiMeasure)="resize($event)">
   <div class="tooltip-inner">
     <ng-content></ng-content>
   </div>

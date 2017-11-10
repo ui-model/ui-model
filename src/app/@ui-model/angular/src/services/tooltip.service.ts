@@ -18,7 +18,7 @@ export class TooltipService {
     this._changes.next();
   }
 
-  pointingRect: Rect;
+  private pointingRect: Rect;
 
   private _message: string | SafeHtml;
   get message(): string | SafeHtml {
@@ -42,5 +42,10 @@ export class TooltipService {
   hide(): void {
     this.message = '';
     this.pointingRect = undefined;
+  }
+
+  getRectFor(tooltipRect: Rect): Rect {
+    return tooltipRect
+      .moveTo(this.pointingRect.centerX - tooltipRect.halfWidth, this.pointingRect.bottom);
   }
 }

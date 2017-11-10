@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { MeasureDirective, TooltipService } from '@ui-model/angular';
+import { Rect } from '@ui-model/common';
 
 @Component({
   selector: 'ui-tooltip',
@@ -10,13 +11,9 @@ export class TooltipComponent {
   constructor(public tooltip: TooltipService) {
   }
 
-  @ViewChild('measure') measure: MeasureDirective;
+  rect: Rect = new Rect();
 
-  get left(): number {
-    return this.tooltip.pointingRect.left + (this.tooltip.pointingRect.width - this.measure.boundingRect.width) / 2;
-  }
-
-  get top(): number {
-    return this.tooltip.pointingRect.bottom;
+  resize($event: MeasureDirective): void {
+    this.rect = this.tooltip.getRectFor($event.boundingClientRect);
   }
 }
