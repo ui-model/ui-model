@@ -1,21 +1,20 @@
-import { Directive, HostListener, Input } from '@angular/core';
-import { TooltipService } from '../services/tooltip.service';
-import { MeasureDirective } from './measure.directive';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
+import { Rect } from '@ui-model/common';
+import { TooltipService } from '../services/tooltip.service';
 
 @Directive({
   selector: '[uiTooltip]',
 })
 export class TooltipDirective {
-  constructor(private service: TooltipService, private measure: MeasureDirective) {
+  constructor(private service: TooltipService, private element: ElementRef) {
   }
 
   @Input('uiTooltip') message: string | SafeHtml;
 
   @HostListener('mouseenter')
   show(): void {
-    this.measure.update();
-    const rect = this.measure.boundingRect;
+    const rect = Rect.fromClientRect((this.element.nativeElement as Element).getBoundingClientRect());
     this.service.show(this.message, rect);
   }
 
