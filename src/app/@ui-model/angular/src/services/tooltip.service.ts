@@ -18,7 +18,7 @@ export class TooltipService {
     this._changes.next();
   }
 
-  private pointingRect: Rect;
+  pointingRect: Rect;
 
   private _message: string | SafeHtml;
   get message(): string | SafeHtml {

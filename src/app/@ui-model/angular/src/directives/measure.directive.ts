@@ -64,6 +64,8 @@ export class MeasureDirective implements OnInit {
     this._offsetRect = Rect.from(this.element.offsetLeft, this.element.offsetTop, this.element.offsetWidth, this.element.offsetHeight);
     this._clientRect = Rect.from(this.element.clientLeft, this.element.clientTop, this.element.clientWidth, this.element.clientHeight);
     this._scrollRect = Rect.from(this.element.scrollLeft, this.element.scrollTop, this.element.scrollWidth, this.element.scrollHeight);
-    this.changed.emit(this);
+    Promise.resolve().then(() => {
+      this.changed.emit(this);
+    });
   }
 }

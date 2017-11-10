@@ -1,7 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TooltipService, UiModelModule } from '@ui-model/angular';
-import { Rect } from '@ui-model/common';
 import { TooltipComponent } from './tooltip.component';
 
 describe('TooltipComponent', () => {
@@ -20,7 +19,6 @@ describe('TooltipComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TooltipComponent);
     component = fixture.componentInstance;
-    component.tooltip.pointingRect = new Rect().setLeft(0).setTop(0).setWidth(100).setHeight(100);
     fixture.detectChanges();
   });
 
