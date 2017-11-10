@@ -15,7 +15,9 @@ export class TooltipService {
   }
 
   protected changed(): void {
-    this._changes.next();
+    Promise.resolve().then(() => {
+      this._changes.next();
+    });
   }
 
   pointingRect: Rect;
