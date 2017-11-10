@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
 import { Rect } from '@ui-model/common';
 import { Observable } from 'rxjs/Observable';
+import { delay } from 'rxjs/operators';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
@@ -11,13 +12,13 @@ export class TooltipService {
 
   private _changes = new Subject<void>();
   get changes(): Observable<void> {
-    return this._changes.asObservable();
+    return this._changes.asObservable()
+    // wait for the next tick to ensure that changes(e.g. message) have been applied
+      .pipe(delay(0));
   }
 
   protected changed(): void {
-    Promise.resolve().then(() => {
-      this._changes.next();
-    });
+    this._changes.next();
   }
 
   pointingRect: Rect;
