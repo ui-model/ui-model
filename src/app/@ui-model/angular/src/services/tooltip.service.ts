@@ -45,7 +45,9 @@ export class TooltipService {
   }
 
   getRectFor(tooltipRect: Rect): Rect {
-    return tooltipRect
-      .moveTo(this.pointingRect.centerX - tooltipRect.halfWidth, this.pointingRect.bottom);
+    if (this.pointingRect) {
+      tooltipRect.moveTo(this.pointingRect.centerX - tooltipRect.halfWidth, this.pointingRect.bottom);
+    }
+    return tooltipRect;
   }
 }
