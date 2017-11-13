@@ -25,7 +25,7 @@ export class FormMaker {
     return this.createFromMetadata(meta);
   }
 
-  private buildMetadata<T>(model: Type<T>): ModelMetadata {
+  buildMetadata<T>(model: Type<T>): ModelMetadata {
     if (!Reflect.hasMetadata(metaKeyModel, model)) {
       throw Error('The `model` parameter must be a class with the `@Model()` decorator!');
     }
