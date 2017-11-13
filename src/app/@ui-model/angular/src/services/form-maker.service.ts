@@ -21,22 +21,31 @@ export class FormMaker {
   }
 
   createFromModel<T>(model: Type<T>): FormGroup {
-    return this._createFromModel(model) as FormGroup;
+    const meta = this.buildMetadata(model);
+    return this.createFromMetadata(meta);
   }
 
-  private _createFromModel<T>(model: Type<T>): AbstractControl {
+  private buildMetadata<T>(model: Type<T>): ModelMetadata {
     if (!Reflect.hasMetadata(metaKeyModel, model)) {
-      throw Error('The `model` parameter must be a class with the `@FormModel()` decorator!');
+      throw Error('The `model` parameter must be a class with the `@Model()` decorator!');
     }
 
     const meta = Reflect.getMetadata(metaKeyModel, model) as ModelMetadata;
+    meta.properties
+      .filter(property => property.isGroup && !property.groupModel)
+      .forEach((property) => {
+        property.groupModel = this.buildMetadata(property.type);
+      });
+    return meta;
+  }
 
+  createFromMetadata(meta: ModelMetadata): FormGroup {
     const controls: { [name: string]: AbstractControl } = {};
 
     meta.properties.forEach((property) => {
       let control;
       if (property.isGroup) {
-        control = this._createFromModel(property.type);
+        control = this.createFromMetadata(property.groupModel);
       } else if (property.isArray) {
         control = new FormArray([]);
       } else {

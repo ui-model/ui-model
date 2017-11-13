@@ -1,5 +1,6 @@
 import { Type } from '@angular/core';
 import { AbstractControl, AsyncValidator, AsyncValidatorFn, Validator, ValidatorFn } from '@angular/forms';
+import { ModelMetadata } from './model-metadata';
 
 export interface PropertyMetadata {
   name?: string;
@@ -18,6 +19,7 @@ export interface PropertyMetadata {
   errors?: { [code: string]: string };
 
   isGroup?: boolean;
+  groupModel?: ModelMetadata;
   isArray?: boolean;
   isControl?: boolean;
 }
