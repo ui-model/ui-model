@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { TooltipComponent } from './tooltip.component';
+import { TooltipService, UiModelModule } from '@ui-model/angular';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
-import { TooltipService } from '@ui-model/angular';
+import { TooltipComponent } from './tooltip.component';
 
 class MyTooltipService {
   visible = true;
@@ -18,6 +18,7 @@ class MyTooltipService {
     },
   };
 }
+
 describe('ShowcaseTooltipComponent', () => {
   let component: TooltipComponent;
   let fixture: ComponentFixture<TooltipComponent>;
@@ -25,7 +26,10 @@ describe('ShowcaseTooltipComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TooltipComponent],
-      imports: [UiModelBootstrapModule],
+      imports: [
+        UiModelModule.forRoot(),
+        UiModelBootstrapModule.forRoot(),
+      ],
       providers: [{provide: TooltipService, useClass: MyTooltipService}],
     })
       .compileComponents();
