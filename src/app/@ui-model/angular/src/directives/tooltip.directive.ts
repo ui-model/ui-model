@@ -7,15 +7,25 @@ import { TooltipService } from '../services/tooltip.service';
   selector: '[uiTooltip]',
 })
 export class TooltipDirective {
-  constructor(private service: TooltipService, private element: ElementRef) {
+  constructor(private service: TooltipService, private elementRef: ElementRef) {
   }
 
   @Input('uiTooltip') message: string | SafeHtml;
 
+  private get fallbackMessage(): string {
+    const element = this.elementRef.nativeElement as Element;
+    return element.getAttribute('title') ||
+      element.getAttribute('placeholder') ||
+      element.getAttribute('alt');
+  }
+
   @HostListener('mouseenter')
   show(): void {
-    const rect = Rect.fromClientRect((this.element.nativeElement as Element).getBoundingClientRect());
-    this.service.show(this.message, rect);
+    const rect = Rect.fromClientRect((this.elementRef.nativeElement as Element).getBoundingClientRect());
+    const message = this.message || this.fallbackMessage;
+    if (message) {
+      this.service.show(message, rect);
+    }
   }
 
   @HostListener('mouseleave', ['$event'])
