@@ -70,6 +70,10 @@ export class Select<T> extends Stateful {
     return this.selection === item || this.transformer(this.selection) === this.transformer(item);
   }
 
+  isActive(item: T): boolean {
+    return this.selected(item);
+  }
+
   select(item: T): this {
     const value = this.transformer(item);
     if (!this.selected(value)) {

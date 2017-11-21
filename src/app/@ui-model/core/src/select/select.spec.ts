@@ -1,5 +1,5 @@
-import { Select } from './select';
 import { Transformers } from '@ui-model/common';
+import { Select } from './select';
 
 describe('Select', () => {
   it('select', () => {
@@ -23,6 +23,15 @@ describe('Select', () => {
       done();
     });
     select.select(1);
+  });
+
+  it('selected', () => {
+    const select = new Select();
+    select.select(1);
+    expect(select.selected(1)).toBeTruthy();
+    expect(select.selected(2)).toBeFalsy();
+    expect(select.isActive(1)).toBeTruthy();
+    expect(select.isActive(2)).toBeFalsy();
   });
 
   it('selection', () => {
