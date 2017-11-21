@@ -66,7 +66,6 @@ export class FormMaker {
         return service && service.validate.bind(service) || validatorOrServiceClass;
       }
 
-      const subModel = (Reflect.getMetadata(metaKeyModel, property.type) || {}) as ModelMetadata;
       const validators = [].concat(property.dataTypeValidators).concat(property.validators)
         .filter((fn) => !!fn)
         .map(toValidator);
