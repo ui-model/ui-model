@@ -13,7 +13,9 @@ const genderOptions = [
   },
 ];
 
-@Model()
+@Model({
+  updateOn: 'blur',
+})
 export class ProfileModel {
   @Property()
   birthday: Date;

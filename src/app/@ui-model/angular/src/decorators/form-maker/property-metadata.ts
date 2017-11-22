@@ -1,5 +1,6 @@
 import { Type } from '@angular/core';
 import { AbstractControl, AsyncValidator, AsyncValidatorFn, Validator, ValidatorFn } from '@angular/forms';
+import { FormHooks } from '@angular/forms/src/model';
 import { ModelMetadata } from './model-metadata';
 
 export interface PropertyMetadata {
@@ -11,6 +12,7 @@ export interface PropertyMetadata {
   asyncValidators?: (AsyncValidatorFn | Type<AsyncValidator>)[];
   listeners?: ((c: AbstractControl) => void)[];
   defaultValue?: any;
+  updateOn?: FormHooks;
 
   label?: string;
   css?: string;

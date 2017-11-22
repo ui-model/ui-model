@@ -10,6 +10,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { FormHooks } from '@angular/forms/src/model';
 import { metaKeyModel, metaKeyProperty, ModelMetadata } from '../decorators/form-maker';
 
 const Reflect = window['Reflect'];
@@ -39,17 +40,18 @@ export class FormMaker {
     return meta;
   }
 
-  createFromMetadata(meta: ModelMetadata): FormGroup {
+  createFromMetadata(meta: ModelMetadata, inheritedUpdateOn?: FormHooks): FormGroup {
     const controls: { [name: string]: AbstractControl } = {};
 
+    const modelUpdateOn = meta.updateOn || inheritedUpdateOn;
     meta.properties.forEach((property) => {
       let control;
       if (property.isGroup) {
-        control = this.createFromMetadata(property.groupModel);
+        control = this.createFromMetadata(property.groupModel, modelUpdateOn);
       } else if (property.isArray) {
         control = new FormArray([]);
       } else {
-        control = new FormControl(property.defaultValue);
+        control = new FormControl(property.defaultValue, {updateOn: property.updateOn || modelUpdateOn});
       }
 
       control[metaKeyProperty] = property;
