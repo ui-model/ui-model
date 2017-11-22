@@ -75,9 +75,8 @@ export class Select<T> extends Stateful {
   }
 
   select(item: T): this {
-    const value = this.transformer(item);
-    if (!this.selected(value)) {
-      this.selection = value;
+    if (!this.selected(this.transformer(item))) {
+      this.selection = item;
     }
     return this;
   }

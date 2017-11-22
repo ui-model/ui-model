@@ -39,7 +39,14 @@ describe('Select', () => {
     select.select(1);
     expect(select.selection).toEqual(1);
   });
-  it('if use identity transformer, we cant lookup object properly', () => {
+
+  it('selection with transformer', () => {
+    const select = new Select().setTransformer(Transformers.objectByField('a'));
+    select.select({a: 1});
+    expect(select.selection).toEqual({a: 1});
+  });
+
+  it('if use identity transformer, we cannot lookup object properly', () => {
     const select = new Select().setTransformer(Transformers.identity);
     select.select({a: 1});
     expect(select.selected({a: 1})).toBeFalsy();
