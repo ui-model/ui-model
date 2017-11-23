@@ -75,7 +75,7 @@ export class RegisterModel {
   confirmPassword: string;
 
   @Property({
-    label: 'User profile',
+    label: 'User profile (update on blur)',
     validators: [Validators.required, notTooThin],
   })
   profile: ProfileModel = new ProfileModel();
