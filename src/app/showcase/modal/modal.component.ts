@@ -22,7 +22,7 @@ export class ModalComponent implements OnInit {
       type: ModalTypes.Info,
       message: 'Hello, world!',
       title: 'Information',
-      icon: 'fa fa-info-circle',
+      icon: 'fa-info-circle',
     });
   }
 
@@ -35,7 +35,7 @@ export class ModalComponent implements OnInit {
       type: ModalTypes.Success,
       message: 'Hello, world!',
       title: 'Success',
-      icon: 'fa fa-check-circle',
+      icon: 'fa-check-circle',
     });
   }
 
@@ -48,7 +48,7 @@ export class ModalComponent implements OnInit {
       type: ModalTypes.Warning,
       message: 'Hello, world!',
       title: 'Warning',
-      icon: 'fa fa-exclamation-circle',
+      icon: 'fa-exclamation-circle',
     });
   }
 
@@ -61,7 +61,7 @@ export class ModalComponent implements OnInit {
       type: ModalTypes.Error,
       message: 'Hello, world!',
       title: 'Danger!',
-      icon: 'fa fa-times-circle',
+      icon: 'fa-times-circle',
     });
   }
 
@@ -74,7 +74,7 @@ export class ModalComponent implements OnInit {
       type: ModalTypes.Confirm,
       message: 'Do you want to delete this file?',
       title: 'Confirm',
-      icon: 'fa fa-check-circle-o',
+      icon: 'fa-check-circle-o',
     });
     dialog.subscribe((confirmed) => {
       alert('result: ' + confirmed);
@@ -93,7 +93,7 @@ export class ModalComponent implements OnInit {
       type: ModalTypes.Prompt,
       message: 'Please enter your name: ',
       title: 'Prompt',
-      icon: 'fa fa-keyboard-o',
+      icon: 'fa-keyboard-o',
     });
     dialog.subscribe((result) => {
       alert('result: ' + result);
@@ -113,7 +113,7 @@ export class ModalComponent implements OnInit {
       type: ModalTypes.Form,
       message: 'Please fill in this form: ',
       title: 'Prompt with form',
-      icon: 'fa fa-table',
+      icon: 'fa-table',
       data: formGroup,
     });
     dialog.subscribe((result) => {

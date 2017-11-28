@@ -1,73 +1,71 @@
-<fieldset>
-  <legend>Embedded Content</legend>
-  <button type="button" class="btn btn-primary" (click)="toggle.toggle()" i18n>
-    Toggle
-  </button>
-  <ui-modal *ngIf="toggle.isOn" (cancel)="toggle.close()">
-    <app-modal-content (cancel)="toggle.close()" (close)="toggle.close()" title="Modal title" i18n>
-      This is a test
-    </app-modal-content>
-  </ui-modal>
-</fieldset>
+<h4>Embedded Content</h4>
+<button type="button" class="btn btn-primary" (click)="toggle.toggle()" i18n>
+  Toggle
+</button>
+<ui-modal *ngIf="toggle.isOn" (cancel)="toggle.close()">
+  <app-modal-content (cancel)="toggle.close()" (close)="toggle.close()" title="Modal title" i18n>
+    This is a test
+  </app-modal-content>
+</ui-modal>
 
-<fieldset>
-  <legend>Service</legend>
-  <button type="button" class="btn btn-info" (click)="info()" i18n>
-    Info
-  </button>
+<hr/>
 
-  <button type="button" class="btn btn-success" (click)="success()" i18n>
-    Success
-  </button>
+<h4>Service</h4>
+<button type="button" class="btn btn-info" (click)="info()" i18n>
+  Info
+</button>
 
-  <button type="button" class="btn btn-warning" (click)="warning()" i18n>
-    Warning
-  </button>
+<button type="button" class="btn btn-success" (click)="success()" i18n>
+  Success
+</button>
 
-  <button type="button" class="btn btn-danger" (click)="error()" i18n>
-    Error / Danger
-  </button>
+<button type="button" class="btn btn-warning" (click)="warning()" i18n>
+  Warning
+</button>
 
-  <button type="button" class="btn btn-primary" (click)="confirm()" i18n>
-    Confirm
-  </button>
+<button type="button" class="btn btn-danger" (click)="error()" i18n>
+  Error / Danger
+</button>
 
-  <button type="button" class="btn btn-primary" (click)="form()" i18n>
-    Form
-  </button>
+<button type="button" class="btn btn-primary" (click)="confirm()" i18n>
+  Confirm
+</button>
 
-  <button type="button" class="btn btn-primary" (click)="prompt()" i18n>
-    Prompt
-  </button>
-</fieldset>
+<button type="button" class="btn btn-primary" (click)="form()" i18n>
+  Form
+</button>
 
-<fieldset>
-  <legend>Service (convenience method)</legend>
-  <button type="button" class="btn btn-info" (click)="info2()" i18n>
-    Info
-  </button>
+<button type="button" class="btn btn-primary" (click)="prompt()" i18n>
+  Prompt
+</button>
 
-  <button type="button" class="btn btn-success" (click)="success2()" i18n>
-    Success
-  </button>
+<hr/>
 
-  <button type="button" class="btn btn-warning" (click)="warning2()" i18n>
-    Warning
-  </button>
+<h4>Service (convenience method)</h4>
+<button type="button" class="btn btn-info" (click)="info2()" i18n>
+  Info
+</button>
 
-  <button type="button" class="btn btn-danger" (click)="error2()" i18n>
-    Error / Danger
-  </button>
+<button type="button" class="btn btn-success" (click)="success2()" i18n>
+  Success
+</button>
 
-  <button type="button" class="btn btn-primary" (click)="confirm2()" i18n>
-    Confirm
-  </button>
+<button type="button" class="btn btn-warning" (click)="warning2()" i18n>
+  Warning
+</button>
 
-  <button type="button" class="btn btn-primary" (click)="form2()" i18n>
-    Form
-  </button>
+<button type="button" class="btn btn-danger" (click)="error2()" i18n>
+  Error / Danger
+</button>
 
-  <button type="button" class="btn btn-primary" (click)="prompt2()" i18n>
-    Prompt
-  </button>
-</fieldset>
+<button type="button" class="btn btn-primary" (click)="confirm2()" i18n>
+  Confirm
+</button>
+
+<button type="button" class="btn btn-primary" (click)="form2()" i18n>
+  Form
+</button>
+
+<button type="button" class="btn btn-primary" (click)="prompt2()" i18n>
+  Prompt
+</button>
