@@ -9,7 +9,7 @@ describe('ModalService', () => {
     });
   });
 
-  it('should ...', inject([ModalService], (service: ModalService) => {
+  it('should ...', inject([ModalService], (service: ModalService<T>) => {
     expect(service).toBeTruthy();
   }));
 });

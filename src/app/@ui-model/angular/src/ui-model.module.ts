@@ -48,7 +48,7 @@ import { TypeNamePipe } from './pipes/type-name.pipe';
 import { FieldErrorMapper } from './services/field-error-mapper.service';
 import { FormMaker } from './services/form-maker.service';
 import { FormUtils } from './services/form-utils.service';
-import { Modal, ModalService } from './services/modal.service';
+import { ModalService } from './services/modal.service';
 import { NameMapper } from './services/name-mapper.service';
 import { TooltipService } from './services/tooltip.service';
 
@@ -152,7 +152,7 @@ export class UiModelModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: UiModelModule,
-      providers: [Modal, ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils, UpdateTitleGuard],
+      providers: [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils, UpdateTitleGuard],
     };
   }
 
@@ -231,6 +231,7 @@ export * from './services/form-maker.service';
 export * from './services/form-utils.service';
 
 export * from './services/modal.service';
+export * from './services/modal.model';
 export * from './services/name-mapper.service';
 export * from './services/tooltip.service';
 

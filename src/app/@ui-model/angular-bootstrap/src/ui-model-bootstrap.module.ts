@@ -8,6 +8,13 @@ import { FieldErrorComponent } from './components/field-error/field-error.compon
 import { FormArrayComponent } from './components/form-array/form-array.component';
 import { FormControlComponent } from './components/form-control/form-control.component';
 import { FormGroupComponent } from './components/form-group/form-group.component';
+import { ModalConfirmComponent } from './components/modal/modal-confirm/modal-confirm.component';
+import { ModalErrorComponent } from './components/modal/modal-error/modal-error.component';
+import { ModalFormComponent } from './components/modal/modal-form/modal-form.component';
+import { ModalInfoComponent } from './components/modal/modal-info/modal-info.component';
+import { ModalPromptComponent } from './components/modal/modal-prompt/modal-prompt.component';
+import { ModalSuccessComponent } from './components/modal/modal-success/modal-success.component';
+import { ModalWarningComponent } from './components/modal/modal-warning/modal-warning.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { MultiSelectBoxComponent } from './components/multi-select-box/multi-select-box.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
@@ -30,6 +37,13 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
   ],
   declarations: [
     ModalComponent,
+    ModalSuccessComponent,
+    ModalInfoComponent,
+    ModalErrorComponent,
+    ModalConfirmComponent,
+    ModalFormComponent,
+    ModalPromptComponent,
+    ModalWarningComponent,
     PaginationComponent,
     PanelComponent,
     RadioGroupComponent,
@@ -50,6 +64,13 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
   ],
   exports: [
     ModalComponent,
+    ModalSuccessComponent,
+    ModalInfoComponent,
+    ModalErrorComponent,
+    ModalFormComponent,
+    ModalConfirmComponent,
+    ModalPromptComponent,
+    ModalWarningComponent,
     PaginationComponent,
     PanelComponent,
     RadioGroupComponent,
@@ -79,6 +100,14 @@ export class UiModelBootstrapModule {
 }
 
 export * from './components/modal/modal.component';
+export * from './components/modal/modal-confirm/modal-confirm.component';
+export * from './components/modal/modal-error/modal-error.component';
+export * from './components/modal/modal-form/modal-form.component';
+export * from './components/modal/modal-info/modal-info.component';
+export * from './components/modal/modal-success/modal-success.component';
+export * from './components/modal/modal-prompt/modal-prompt.component';
+export * from './components/modal/modal-warning/modal-warning.component';
+
 export * from './components/pagination/pagination.component';
 export * from './components/panel/panel.component';
 export * from './components/radio-group/radio-group.component';

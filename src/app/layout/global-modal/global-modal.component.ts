@@ -8,7 +8,7 @@ import { ModalService } from '@ui-model/angular';
 })
 export class GlobalModalComponent implements OnInit {
 
-  constructor(public modal: ModalService) {
+  constructor(public modal: ModalService<any>) {
   }
 
   ngOnInit(): void {

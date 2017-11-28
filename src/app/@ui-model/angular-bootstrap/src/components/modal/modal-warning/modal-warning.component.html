@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h5 class="modal-title">
+    {{title}}
+    <button type="button" class="close" aria-label="Close" (click)="cancel.emit()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </h5>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-auto">
+      <i [ngClass]="icon" class="fa-5x text-warning"></i>
+    </div>
+    <div class="col">
+      {{message}}
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="close.emit()">
+    <span i18n>Ok</span>
+  </button>
+</div>

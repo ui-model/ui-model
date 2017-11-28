@@ -1,0 +1,29 @@
+<form (submit)="close.emit(group.value)">
+  <div class="modal-header">
+    <h5 class="modal-title">
+      {{title}}
+      <button type="button" class="close" aria-label="Close" (click)="cancel.emit()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </h5>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-auto">
+        <i [ngClass]="icon" class="fa-5x text-primary"></i>
+      </div>
+      <div class="col">
+        <h4>{{message}}</h4>
+        <ui-form-group [group]="group"></ui-form-group>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">
+      <span i18n>Submit</span>
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="cancel.emit()">
+      <span i18n>Cancel</span>
+    </button>
+  </div>
+</form>
