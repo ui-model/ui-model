@@ -20,7 +20,7 @@
                     (close)="modal.close(item, $event)" (cancel)="modal.cancel(item)">
   </ui-modal-confirm>
   <ui-modal-prompt *ngIf="item.type === 'prompt'"
-                   [title]="item.title" [message]="item.message" [icon]="item.icon" defaultValue="Ralph WANG"
+                   [title]="item.title" [message]="item.message" [icon]="item.icon" [defaultValue]="item.data"
                    (close)="modal.close(item, $event)" (cancel)="modal.cancel(item)">
   </ui-modal-prompt>
   <ui-modal-form *ngIf="item.type === 'form'"

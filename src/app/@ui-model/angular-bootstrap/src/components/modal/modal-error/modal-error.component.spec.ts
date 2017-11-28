@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DefaultPipe } from '@ui-model/angular';
 
 import { ModalErrorComponent } from './modal-error.component';
 
@@ -8,7 +9,7 @@ describe('ModalErrorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalErrorComponent],
+      declarations: [ModalErrorComponent, DefaultPipe],
     })
       .compileComponents();
   }));

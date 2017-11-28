@@ -1,5 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DefaultPipe } from '@ui-model/angular';
 
 import { ModalFormComponent } from './modal-form.component';
 
@@ -9,7 +10,7 @@ describe('ModalFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalFormComponent],
+      declarations: [ModalFormComponent, DefaultPipe],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

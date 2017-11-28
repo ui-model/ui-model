@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DefaultPipe } from '@ui-model/angular';
 
 import { ModalWarningComponent } from './modal-warning.component';
 
@@ -8,7 +9,7 @@ describe('ModalWarningComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalWarningComponent],
+      declarations: [ModalWarningComponent, DefaultPipe],
     })
       .compileComponents();
   }));

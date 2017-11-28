@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DefaultPipe } from '@ui-model/angular';
 
 import { ModalInfoComponent } from './modal-info.component';
 
@@ -8,7 +9,7 @@ describe('ModalInfoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalInfoComponent],
+      declarations: [ModalInfoComponent, DefaultPipe],
     })
       .compileComponents();
   }));

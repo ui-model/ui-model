@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h5 class="modal-title">
-    {{title}}
+    {{title|default:'Confirm'}}
     <button type="button" class="close" aria-label="Close" (click)="close.emit(false);cancel.emit()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -9,7 +9,7 @@
 <div class="modal-body">
   <div class="row">
     <div class="col-auto">
-      <i [ngClass]="icon" class="fa-5x text-primary"></i>
+      <i [ngClass]="icon|default:'fa fa-check-circle-o'" class="fa-5x text-primary"></i>
     </div>
     <div class="col">
       {{message}}

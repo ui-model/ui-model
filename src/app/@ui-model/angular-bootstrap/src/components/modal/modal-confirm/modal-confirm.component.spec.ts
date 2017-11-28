@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DefaultPipe } from '@ui-model/angular';
 
 import { ModalConfirmComponent } from './modal-confirm.component';
 
@@ -8,7 +9,7 @@ describe('ModalConfirmComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalConfirmComponent],
+      declarations: [ModalConfirmComponent, DefaultPipe],
     })
       .compileComponents();
   }));

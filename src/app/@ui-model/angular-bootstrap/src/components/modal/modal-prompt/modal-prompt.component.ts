@@ -43,7 +43,7 @@ export class ModalPromptComponent implements OnInit {
 
   @Input()
   set defaultValue(value: string) {
-    this.formGroup.setValue({result: value});
+    this.formGroup.setValue({result: value || ''});
   }
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormMaker } from '@ui-model/angular';
+import { DefaultPipe, FormMaker } from '@ui-model/angular';
 
 import { ModalPromptComponent } from './modal-prompt.component';
 
@@ -10,7 +10,7 @@ describe('ModalPromptComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalPromptComponent],
+      declarations: [ModalPromptComponent, DefaultPipe],
       providers: [FormMaker],
       schemas: [NO_ERRORS_SCHEMA],
     })
