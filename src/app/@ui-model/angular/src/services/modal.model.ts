@@ -11,7 +11,7 @@ export enum ModalTypes {
 
 export class Modal {
   title?: string;
-  message: string;
+  message?: string;
   icon?: string;
   type: ModalTypes = ModalTypes.Custom;
   customId?: string;

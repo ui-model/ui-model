@@ -93,10 +93,8 @@ export class ModalService {
     });
   }
 
-  custom(title: string, customId: string, data?: any): Observable<any> {
+  custom(customId: string, data?: any): Observable<any> {
     return this.open({
-      title,
-      message: '',
       type: ModalTypes.Custom,
       customId,
       data,
