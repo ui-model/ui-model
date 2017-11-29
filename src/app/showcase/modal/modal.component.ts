@@ -128,4 +128,11 @@ export class ModalComponent implements OnInit {
       alert('result: ' + JSON.stringify(result));
     });
   }
+
+  custom(): void {
+    const dialog = this.modal.custom('Custom Modal', 'register');
+    dialog.subscribe((result) => {
+      alert('result is \n' + JSON.stringify(result));
+    });
+  }
 }

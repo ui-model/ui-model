@@ -93,6 +93,16 @@ export class ModalService {
     });
   }
 
+  custom(title: string, customId: string, data?: any): Observable<any> {
+    return this.open({
+      title,
+      message: '',
+      type: ModalTypes.Custom,
+      customId,
+      data,
+    });
+  }
+
   private subjectOf(modal: Modal): Subject<any> {
     const index = this.items.indexOf(modal);
     return this.events[index];

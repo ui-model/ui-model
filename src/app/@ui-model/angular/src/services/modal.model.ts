@@ -14,5 +14,6 @@ export class Modal {
   message: string;
   icon?: string;
   type: ModalTypes = ModalTypes.Custom;
+  customId?: string;
   data?: any;
 }
