@@ -20,7 +20,7 @@
   "homepage": "https://github.com/ui-model/ui-model-angular-bootstrap#readme",
   "dependencies": {
     "@ui-model/angular": "0.0.72",
-    "bootstrap": "4.0.0-beta.2",
+    "bootstrap": "4.0.0",
     "font-awesome": "^4.0.0"
   },
   "peerDependencies": {
