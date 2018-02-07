@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injector, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormGroup, Validators } from '@angular/forms';
 import { PropertyMetadata } from '@ui-model/angular';
 import { isString } from 'util';
@@ -9,7 +9,7 @@ import { isString } from 'util';
   styleUrls: ['./form-control.component.scss'],
 })
 export class FormControlComponent implements OnInit {
-  constructor() {
+  constructor(public injector: Injector) {
     this.uniqueId = ++FormControlComponent.latestUniqueId;
   }
 
