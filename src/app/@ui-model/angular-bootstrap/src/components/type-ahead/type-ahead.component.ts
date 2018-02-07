@@ -33,6 +33,8 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
   @Input() parser: Transformer<any, string> = this.defaultParser.bind(this);
   @Output() search = new EventEmitter<string>();
 
+  activeIndex = 0;
+
   defaultFormatter(value: T): string | SafeHtml {
     if (!value) {
       return '';
@@ -122,4 +124,48 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
   clear(): void {
     this.select(undefined);
   }
+
+  keydown($event: KeyboardEvent): void {
+    if ([KEY_ARROW_UP, KEY_ARROW_DOWN, KEY_HOME, KEY_END].indexOf($event.keyCode) !== -1) {
+      $event.preventDefault();
+      $event.stopPropagation();
+    }
+  }
+
+  keyup($event: KeyboardEvent): void {
+    const count = this.items.length;
+    switch ($event.keyCode) {
+      case KEY_ARROW_DOWN:
+        this.activeIndex = (this.activeIndex + 1) % count;
+        break;
+      case KEY_ARROW_UP:
+        this.activeIndex = (this.activeIndex + count - 1) % count;
+        break;
+      case KEY_HOME:
+        this.activeIndex = 0;
+        break;
+      case KEY_END:
+        this.activeIndex = count - 1;
+        break;
+      default:
+        return;
+    }
+    $event.preventDefault();
+    $event.stopPropagation();
+  }
+
+  keypress($event: KeyboardEvent): void {
+    if ($event.keyCode === KEY_RETURN) {
+      this.select(this.items[this.activeIndex]);
+      this.dropDown.close();
+      $event.preventDefault();
+      $event.stopPropagation();
+    }
+  }
 }
+
+const KEY_RETURN = 13;
+const KEY_HOME = 36;
+const KEY_END = 35;
+const KEY_ARROW_UP = 38;
+const KEY_ARROW_DOWN = 40;

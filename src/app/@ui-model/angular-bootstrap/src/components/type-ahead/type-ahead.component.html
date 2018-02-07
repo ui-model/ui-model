@@ -3,7 +3,7 @@
     <input type="text" class="form-control" name="term"
            uiTypeAhead #typeAhead="uiTypeAhead" (uiTypeAheadSearch)="search.emit($event)"
            (uiTypeAheadOpen)="dropDown.open()" (uiTypeAheadClose)="dropDown.close()" [(ngModel)]="term"
-
+           (keydown)="keydown($event)" (keyup)="keyup($event)" (keypress)="keypress($event)"
     />
     <div class="input-group-btn">
       <button type="button" class="btn btn-primary" (click)="clear()">X</button>
@@ -11,7 +11,8 @@
   </div>
   <div class="dropdown-menu" *ngIf="dropDown.isOn">
     <div class="dropdown-item not-found" *ngIf="!items.length">{{placeholder}}</div>
-    <div class="dropdown-item" *ngFor="let item of items" (click)="select(item);dropDown.close()"
+    <div class="dropdown-item" *ngFor="let item of items; let index = index" [class.active]="index === activeIndex"
+         (click)="select(item);dropDown.close()"
          [innerHTML]="formatter(item)">
     </div>
   </div>
