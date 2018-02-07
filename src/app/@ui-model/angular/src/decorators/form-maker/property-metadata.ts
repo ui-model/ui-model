@@ -4,8 +4,9 @@ import { FormHooks } from '@angular/forms/src/model';
 import { ModelMetadata } from './model-metadata';
 
 export interface PropertyMetadata {
-  name?: string;
   type?: Type<any>;
+  hidden?: boolean;
+  displayOrder?: number;
   arrayElementType?: Type<any>;
   dataTypeValidators?: ValidatorFn[];
   validators?: (ValidatorFn | Type<Validator>)[];
@@ -20,6 +21,7 @@ export interface PropertyMetadata {
   editorInputs?: { [key: string]: any };
   errors?: { [code: string]: string };
 
+  name?: string;
   isGroup?: boolean;
   groupModel?: ModelMetadata;
   isArray?: boolean;
