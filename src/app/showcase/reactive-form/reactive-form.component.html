@@ -12,7 +12,7 @@
       <div *ngFor="let control of tags.controls;let i = index">
         <div class="input-group">
           <input type="text" class="form-control" [formControlName]="i" placeholder="please input a tag"/>
-          <div class="input-group-btn">
+          <div class="input-group-append">
             <button class="btn btn-secondary btn-sm" (click)="removeTag(i)">
               <i class="fa fa-remove"></i>
             </button>

@@ -4,7 +4,7 @@
     <div class="form-group" *ngFor="let control of values.items">
       <div class="input-group">
         <input type="text" class="form-control" id="values" name="values" [formControl]="control"/>
-        <div class="input-group-btn">
+        <div class="input-group-append">
           <button class="btn btn-primary" (click)="values.removeItem(control)" [disabled]="control.disabled">
             <i class="fa fa-close"></i>
           </button>
