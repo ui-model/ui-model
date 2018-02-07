@@ -10,7 +10,7 @@ export class TypeAheadComponent {
   constructor(private sanitizer: DomSanitizer) {
     this.originItems.forEach((item) => {
       item['format'] = () => {
-        return this.sanitizer.bypassSecurityTrustHtml(`<label onclick="alert(1)">${item.name}</label> - <code>${item.value}</code>`);
+        return this.sanitizer.bypassSecurityTrustHtml(`<label onclick="alert(1)">${item.name}</label> - <code>${item.id}</code>`);
       };
       item['parse'] = () => {
         return item.name;
@@ -22,19 +22,19 @@ export class TypeAheadComponent {
   originItems = [
     {
       name: 'a',
-      value: 1,
+      id: 1,
     },
     {
       name: 'b',
-      value: 2,
+      id: 2,
     },
     {
       name: 'abc',
-      value: 3,
+      id: 3,
     },
     {
       name: 'cba',
-      value: 4,
+      id: 4,
     },
   ];
 

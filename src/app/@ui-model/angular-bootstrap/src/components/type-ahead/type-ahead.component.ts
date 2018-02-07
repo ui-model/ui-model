@@ -29,6 +29,7 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
   @Input() items: T[];
   @Input() displayField = 'name';
   @Input() placeholder = '-';
+  @Input() valueField = 'id';
   @Input() formatter: Transformer<any, SafeHtml> = this.defaultFormatter.bind(this);
   @Input() parser: Transformer<any, string> = this.defaultParser.bind(this);
   @Output() search = new EventEmitter<string>();
@@ -93,7 +94,7 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
 
   protected changed(): void {
     if (this._change) {
-      this._change(this.value);
+      this._change(this.value[this.valueField]);
     }
   }
 
