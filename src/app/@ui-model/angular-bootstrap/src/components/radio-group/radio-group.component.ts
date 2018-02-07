@@ -7,6 +7,7 @@ const RADIO_GROUP_VALUE_ACCESSOR = {
   useExisting: forwardRef(() => RadioGroupComponent),
   multi: true,
 };
+
 @Component({
   selector: 'ui-radio-group',
   template: require('./radio-group.component.html'),
@@ -15,5 +16,7 @@ const RADIO_GROUP_VALUE_ACCESSOR = {
   providers: [RADIO_GROUP_VALUE_ACCESSOR],
 })
 export class RadioGroupComponent<T> extends SelectValueAccessor<T> {
+  randomId = `${new Date().getTime()}${Math.floor(Math.random() * 10000)}`;
+
   @Input() options: T[];
 }
