@@ -12,8 +12,8 @@ class PromptModel {
 
 @Component({
   selector: 'ui-modal-prompt',
-  templateUrl: './modal-prompt.component.html',
-  styleUrls: ['./modal-prompt.component.scss'],
+  template: require('./modal-prompt.component.html'),
+  styles: [require('./modal-prompt.component.scss')],
 })
 export class ModalPromptComponent implements OnInit {
   constructor(private formMaker: FormMaker) {

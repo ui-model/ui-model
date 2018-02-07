@@ -3,8 +3,8 @@ import { AbstractControl, FormGroupDirective, FormGroupName } from '@angular/for
 
 @Component({
   selector: 'ui-field-error',
-  templateUrl: './field-error.component.html',
-  styleUrls: ['./field-error.component.scss'],
+  template: require('./field-error.component.html'),
+  styles: [require('./field-error.component.scss')],
 })
 export class FieldErrorComponent implements OnInit {
   constructor(@Optional() private group: FormGroupName, @Optional() private form: FormGroupDirective) {

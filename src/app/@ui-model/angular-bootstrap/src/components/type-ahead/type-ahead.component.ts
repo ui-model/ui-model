@@ -15,8 +15,8 @@ const TYPE_AHEAD_ACCESSOR = {
 
 @Component({
   selector: 'ui-type-ahead',
-  templateUrl: './type-ahead.component.html',
-  styleUrls: ['./type-ahead.component.scss'],
+  template: require('./type-ahead.component.html'),
+  styles: [require('./type-ahead.component.scss')],
   providers: [TYPE_AHEAD_ACCESSOR],
 })
 export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?: Supplier<string> }>

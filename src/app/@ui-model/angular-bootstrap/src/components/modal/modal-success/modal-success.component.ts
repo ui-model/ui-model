@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'ui-modal-success',
-  templateUrl: './modal-success.component.html',
-  styleUrls: ['./modal-success.component.scss'],
+  template: require('./modal-success.component.html'),
+  styles: [require('./modal-success.component.scss')],
 })
 export class ModalSuccessComponent implements OnInit {
 

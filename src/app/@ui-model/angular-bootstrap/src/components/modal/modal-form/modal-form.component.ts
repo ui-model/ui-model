@@ -3,8 +3,8 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'ui-modal-form',
-  templateUrl: './modal-form.component.html',
-  styleUrls: ['./modal-form.component.scss'],
+  template: require('./modal-form.component.html'),
+  styles: [require('./modal-form.component.scss')],
 })
 export class ModalFormComponent implements OnInit {
 

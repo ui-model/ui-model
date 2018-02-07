@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PropertyMetadata } from '@ui-model/angular';
 import { FormGroup } from '@angular/forms';
+import { PropertyMetadata } from '@ui-model/angular';
 
 @Component({
   selector: 'ui-form-array',
-  templateUrl: './form-array.component.html',
-  styleUrls: ['./form-array.component.scss'],
+  template: require('./form-array.component.html'),
+  styles: [require('./form-array.component.scss')],
 })
 export class FormArrayComponent implements OnInit {
 

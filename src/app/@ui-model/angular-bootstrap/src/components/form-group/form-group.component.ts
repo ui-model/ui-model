@@ -1,11 +1,11 @@
-import { Component, Input, isDevMode } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { metaKeyModel, ModelMetadata, PropertyMetadata } from '@ui-model/angular';
+import { metaKeyModel, ModelMetadata } from '@ui-model/angular';
 
 @Component({
   selector: 'ui-form-group',
-  templateUrl: './form-group.component.html',
-  styleUrls: ['./form-group.component.scss'],
+  template: require('./form-group.component.html'),
+  styles: [require('./form-group.component.scss')],
 })
 export class FormGroupComponent {
   @Input() group: FormGroup;

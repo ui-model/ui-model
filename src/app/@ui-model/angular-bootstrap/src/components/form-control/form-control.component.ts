@@ -5,8 +5,8 @@ import { isString } from 'util';
 
 @Component({
   selector: 'ui-form-control',
-  templateUrl: './form-control.component.html',
-  styleUrls: ['./form-control.component.scss'],
+  template: require('./form-control.component.html'),
+  styles: [require('./form-control.component.scss')],
 })
 export class FormControlComponent implements OnInit {
   constructor(public injector: Injector) {

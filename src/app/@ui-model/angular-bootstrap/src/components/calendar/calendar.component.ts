@@ -1,16 +1,17 @@
 import { Component, EventEmitter, forwardRef, Output } from '@angular/core';
-import { CalendarValueAccessor } from '@ui-model/angular';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { CalendarValueAccessor } from '@ui-model/angular';
 
 const CALENDAR_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => CalendarComponent),
   multi: true,
 };
+
 @Component({
   selector: 'ui-calendar',
-  templateUrl: 'calendar.component.html',
-  styleUrls: ['calendar.component.scss'],
+  template: require('./calendar.component.html'),
+  styles: [require('./calendar.component.scss')],
   providers: [CALENDAR_VALUE_ACCESSOR],
   inputs: ['disabled'],
 })

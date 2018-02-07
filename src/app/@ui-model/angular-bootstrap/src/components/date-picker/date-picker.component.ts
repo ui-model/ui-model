@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Toggle } from '@ui-model/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Toggle } from '@ui-model/core';
 
 @Component({
   selector: 'ui-date-picker',
-  templateUrl: './date-picker.component.html',
-  styleUrls: ['./date-picker.component.scss'],
+  template: require('./date-picker.component.html'),
+  styles: [require('./date-picker.component.scss')],
   providers: [
     {provide: NG_VALUE_ACCESSOR, multi: true, useExisting: DatePickerComponent},
   ],

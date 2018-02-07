@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { TreeNode } from './tree-node';
 import { Toggle } from '@ui-model/core';
+import { TreeNode } from './tree-node';
 
 @Component({
   selector: 'ui-tree-node',
-  templateUrl: 'tree-node.component.html',
-  styleUrls: ['tree-node.component.scss'],
+  template: require('./tree-node.component.html'),
+  styles: [require('./tree-node.component.scss')],
 })
 export class TreeNodeComponent {
   @Input() data: TreeNode;

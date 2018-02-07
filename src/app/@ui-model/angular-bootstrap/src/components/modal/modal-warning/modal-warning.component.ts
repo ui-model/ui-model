@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'ui-modal-warning',
-  templateUrl: './modal-warning.component.html',
-  styleUrls: ['./modal-warning.component.scss'],
+  template: require('./modal-warning.component.html'),
+  styles: [require('./modal-warning.component.scss')],
 })
 export class ModalWarningComponent implements OnInit {
 

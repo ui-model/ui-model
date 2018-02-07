@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { TableField, TableSorter } from '@ui-model/core';
 import { SortOrder } from '@ui-model/common';
+import { TableField, TableSorter } from '@ui-model/core';
 
 @Component({
   selector: 'ui-table',
-  templateUrl: 'table.component.html',
-  styleUrls: ['table.component.scss'],
+  template: require('./table.component.html'),
+  styles: [require('./table.component.scss')],
 })
 export class TableComponent<T> {
 

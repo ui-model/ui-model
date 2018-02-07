@@ -3,8 +3,8 @@ import { Toggle } from '@ui-model/core';
 
 @Component({
   selector: 'ui-panel',
-  templateUrl: 'panel.component.html',
-  styleUrls: ['panel.component.scss'],
+  template: require('./panel.component.html'),
+  styles: [require('./panel.component.scss')],
 })
 export class PanelComponent {
   @Input() title: string;
