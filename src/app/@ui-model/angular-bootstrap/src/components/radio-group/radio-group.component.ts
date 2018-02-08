@@ -10,8 +10,8 @@ const RADIO_GROUP_VALUE_ACCESSOR = {
 
 @Component({
   selector: 'ui-radio-group',
-  template: require('./radio-group.component.html'),
-  styles: [require('./radio-group.component.scss')],
+  templateUrl: 'radio-group.component.html',
+  styleUrls: ['radio-group.component.scss'],
   inputs: ['disabled', 'valueField', 'labelField'],
   providers: [RADIO_GROUP_VALUE_ACCESSOR],
 })

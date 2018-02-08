@@ -3,8 +3,8 @@ import { Pagination } from '@ui-model/core';
 
 @Component({
   selector: 'ui-pagination',
-  template: require('./pagination.component.html'),
-  styles: [require('./pagination.component.scss')],
+  templateUrl: 'pagination.component.html',
+  styleUrls: ['pagination.component.scss'],
 })
 export class PaginationComponent {
   @Input() showBrief = true;

@@ -4,8 +4,8 @@ import { SelectValueAccessor } from '@ui-model/angular';
 
 @Component({
   selector: 'ui-select-box',
-  template: require('./select-box.component.html'),
-  styles: [require('./select-box.component.scss')],
+  templateUrl: './select-box.component.html',
+  styleUrls: ['./select-box.component.scss'],
   providers: [
     {provide: NG_VALUE_ACCESSOR, multi: true, useExisting: SelectBoxComponent},
   ],

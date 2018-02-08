@@ -4,8 +4,8 @@ import { PropertyMetadata } from '@ui-model/angular';
 
 @Component({
   selector: 'ui-form-array',
-  template: require('./form-array.component.html'),
-  styles: [require('./form-array.component.scss')],
+  templateUrl: './form-array.component.html',
+  styleUrls: ['./form-array.component.scss'],
 })
 export class FormArrayComponent implements OnInit {
 

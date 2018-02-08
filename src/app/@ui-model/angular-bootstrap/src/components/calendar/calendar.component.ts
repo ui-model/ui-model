@@ -7,11 +7,10 @@ const CALENDAR_VALUE_ACCESSOR = {
   useExisting: forwardRef(() => CalendarComponent),
   multi: true,
 };
-
 @Component({
   selector: 'ui-calendar',
-  template: require('./calendar.component.html'),
-  styles: [require('./calendar.component.scss')],
+  templateUrl: 'calendar.component.html',
+  styleUrls: ['calendar.component.scss'],
   providers: [CALENDAR_VALUE_ACCESSOR],
   inputs: ['disabled'],
 })

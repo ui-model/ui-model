@@ -4,8 +4,8 @@ import { TreeNode } from './tree-node';
 
 @Component({
   selector: 'ui-tree-node',
-  template: require('./tree-node.component.html'),
-  styles: [require('./tree-node.component.scss')],
+  templateUrl: 'tree-node.component.html',
+  styleUrls: ['tree-node.component.scss'],
 })
 export class TreeNodeComponent {
   @Input() data: TreeNode;

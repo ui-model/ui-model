@@ -23,8 +23,7 @@
       "../../../node_modules/@types"
     ],
     "types": [
-      "rxjs",
-      "node"
+      "rxjs"
     ],
     "paths": {
       "@ui-model/core": [

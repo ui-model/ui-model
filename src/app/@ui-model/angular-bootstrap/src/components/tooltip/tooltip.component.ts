@@ -4,8 +4,8 @@ import { Rect } from '@ui-model/common';
 
 @Component({
   selector: 'ui-tooltip',
-  template: require('./tooltip.component.html'),
-  styles: [require('./tooltip.component.scss')],
+  templateUrl: './tooltip.component.html',
+  styleUrls: ['./tooltip.component.scss'],
 })
 export class TooltipComponent {
   constructor(public tooltip: TooltipService) {

@@ -4,8 +4,8 @@ import { Toggle } from '@ui-model/core';
 
 @Component({
   selector: 'ui-date-picker',
-  template: require('./date-picker.component.html'),
-  styles: [require('./date-picker.component.scss')],
+  templateUrl: './date-picker.component.html',
+  styleUrls: ['./date-picker.component.scss'],
   providers: [
     {provide: NG_VALUE_ACCESSOR, multi: true, useExisting: DatePickerComponent},
   ],

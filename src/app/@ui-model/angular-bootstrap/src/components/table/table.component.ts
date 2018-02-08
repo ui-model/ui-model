@@ -4,8 +4,8 @@ import { TableField, TableSorter } from '@ui-model/core';
 
 @Component({
   selector: 'ui-table',
-  template: require('./table.component.html'),
-  styles: [require('./table.component.scss')],
+  templateUrl: 'table.component.html',
+  styleUrls: ['table.component.scss'],
 })
 export class TableComponent<T> {
 

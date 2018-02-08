@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'ui-modal-confirm',
-  template: require('./modal-confirm.component.html'),
-  styles: [require('./modal-confirm.component.scss')],
+  templateUrl: './modal-confirm.component.html',
+  styleUrls: ['./modal-confirm.component.scss'],
 })
 export class ModalConfirmComponent implements OnInit {
 
