@@ -37,8 +37,6 @@ export class FormMaker {
       .forEach((property) => {
         property.groupModel = this.buildMetadata(property.type);
       });
-
-    meta.properties = meta.properties.sort((p1, p2) => (p1.displayOrder || 0) - (p2.displayOrder || 0));
     return meta;
   }
 
