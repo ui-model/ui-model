@@ -1,4 +1,4 @@
-<div *ngIf="group && field && !field.hidden" class="form-group" [class.ui-required]="isRequired(field)"
+<div *ngIf="group && field" class="form-group" [class.ui-required]="isRequired(field)"
      [formGroup]="group">
   <label *ngIf="field | fieldLabel" for="_{{field.name}}_{{uniqueId}}">{{field | fieldLabel}}</label>
   <ng-container *ngIf="isInput(field)">
