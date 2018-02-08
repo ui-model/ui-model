@@ -1,4 +1,5 @@
 import { FeatureCollection, GeometryObject } from 'geojson';
+
 export const provinces: FeatureCollection<GeometryObject> = {
   type: 'FeatureCollection',
   features: [
@@ -1453,7 +1454,7 @@ export const provinces: FeatureCollection<GeometryObject> = {
             ],
             [
               119.2676,
-              50.0977,
+              50.0.78,
             ],
             [
               119.3555,
