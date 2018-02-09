@@ -94,7 +94,7 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
 
   protected changed(): void {
     if (this._change) {
-      this._change(this.value && this.value[this.valueField]);
+      this._change(this.value[this.valueField]);
     }
   }
 
