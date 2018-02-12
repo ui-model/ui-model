@@ -1,6 +1,6 @@
 import { Type } from '@angular/core';
 
-export enum ModalTypes {
+export enum ModalType {
   Info = 'info',
   Success = 'success',
   Warning = 'warning',
@@ -15,7 +15,7 @@ export class Modal {
   title?: string;
   message?: string;
   icon?: string;
-  type?: ModalTypes;
+  type?: ModalType;
   data?: any;
   customComponent?: Type<any>;
   customInputs?: { [key: string]: any };

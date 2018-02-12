@@ -2,7 +2,7 @@ import { Injectable, Type } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import { Modal, ModalTypes } from './modal.model';
+import { Modal, ModalType } from './modal.model';
 
 @Injectable()
 export class ModalService {
@@ -35,7 +35,7 @@ export class ModalService {
     return this.open({
       title: title,
       message: message,
-      type: ModalTypes.Info,
+      type: ModalType.Info,
     });
   }
 
@@ -43,7 +43,7 @@ export class ModalService {
     return this.open({
       title: title,
       message: message,
-      type: ModalTypes.Success,
+      type: ModalType.Success,
     });
   }
 
@@ -51,7 +51,7 @@ export class ModalService {
     return this.open({
       title: title,
       message: message,
-      type: ModalTypes.Warning,
+      type: ModalType.Warning,
     });
   }
 
@@ -59,7 +59,7 @@ export class ModalService {
     return this.open({
       title: title,
       message: message,
-      type: ModalTypes.Error,
+      type: ModalType.Error,
     });
   }
 
@@ -71,7 +71,7 @@ export class ModalService {
     return this.open({
       title: title,
       message: message,
-      type: ModalTypes.Confirm,
+      type: ModalType.Confirm,
     });
   }
 
@@ -79,7 +79,7 @@ export class ModalService {
     return this.open({
       title: title,
       message: message,
-      type: ModalTypes.Prompt,
+      type: ModalType.Prompt,
       data: defaultValue,
     });
   }
@@ -88,14 +88,14 @@ export class ModalService {
     return this.open({
       title: title,
       message: message,
-      type: ModalTypes.Form,
+      type: ModalType.Form,
       data: formGroup,
     });
   }
 
   custom(component: Type<any>, inputs?: { [key: string]: any }): Observable<any> {
     return this.open({
-      type: ModalTypes.Custom,
+      type: ModalType.Custom,
       customComponent: component,
       customInputs: inputs,
     });

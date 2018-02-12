@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormMaker, ModalService, ModalTypes } from '@ui-model/angular';
+import { FormMaker, ModalService, ModalType } from '@ui-model/angular';
 import { Toggle } from '@ui-model/core';
 import { FormModel } from './_models/form.model';
 import { ModalCustomComponent } from './modal-custom/modal-custom.component';
@@ -20,7 +20,7 @@ export class ModalComponent implements OnInit {
 
   info(): void {
     this.modal.open({
-      type: ModalTypes.Info,
+      type: ModalType.Info,
       message: 'Hello, world!',
       title: 'Information',
       icon: 'fa-info-circle',
@@ -33,7 +33,7 @@ export class ModalComponent implements OnInit {
 
   success(): void {
     this.modal.open({
-      type: ModalTypes.Success,
+      type: ModalType.Success,
       message: 'Hello, world!',
       title: 'Success',
       icon: 'fa-check-circle',
@@ -46,7 +46,7 @@ export class ModalComponent implements OnInit {
 
   warning(): void {
     this.modal.open({
-      type: ModalTypes.Warning,
+      type: ModalType.Warning,
       message: 'Hello, world!',
       title: 'Warning',
       icon: 'fa-exclamation-circle',
@@ -59,7 +59,7 @@ export class ModalComponent implements OnInit {
 
   error(): void {
     this.modal.open({
-      type: ModalTypes.Error,
+      type: ModalType.Error,
       message: 'Hello, world!',
       title: 'Danger!',
       icon: 'fa-times-circle',
@@ -72,7 +72,7 @@ export class ModalComponent implements OnInit {
 
   confirm(): void {
     const dialog = this.modal.open({
-      type: ModalTypes.Confirm,
+      type: ModalType.Confirm,
       message: 'Do you want to delete this file?',
       title: 'Confirm',
       icon: 'fa-check-circle-o',
@@ -91,7 +91,7 @@ export class ModalComponent implements OnInit {
 
   prompt(): void {
     const dialog = this.modal.open({
-      type: ModalTypes.Prompt,
+      type: ModalType.Prompt,
       message: 'Please enter your name: ',
       title: 'Prompt',
       icon: 'fa-keyboard-o',
@@ -111,7 +111,7 @@ export class ModalComponent implements OnInit {
   form(): void {
     const formGroup = this.maker.createFromModel(FormModel);
     const dialog = this.modal.open({
-      type: ModalTypes.Form,
+      type: ModalType.Form,
       message: 'Please fill in this form: ',
       title: 'Prompt with form',
       icon: 'fa-table',
