@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --extract-css --sourcemaps --port 0 --open",
+    "start": "ng serve --port 0 --open",
     "start-cn": "ng serve --aot --i18n-file=src/i18n/messages.zh.xlf --locale=zh --i18n-format=xlf --port 0 --open",
     "lint": "tslint -c tslint.json \"src/**/*.ts\"",
     "pretest": "npm run lint",
@@ -20,7 +20,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "^1.5.0",
+    "@angular/cli": "^1.6.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/core": "^5.0.0",

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormMaker, ModalService, ModalTypes } from '@ui-model/angular';
 import { Toggle } from '@ui-model/core';
 import { FormModel } from './_models/form.model';
+import { ModalCustomComponent } from './modal-custom/modal-custom.component';
 
 @Component({
   selector: 'app-modal',
@@ -130,7 +131,7 @@ export class ModalComponent implements OnInit {
   }
 
   custom(): void {
-    const dialog = this.modal.custom('Custom Modal', 'register');
+    const dialog = this.modal.custom(ModalCustomComponent, {name: 'wzc'});
     dialog.subscribe((result) => {
       alert('result is \n' + JSON.stringify(result));
     });

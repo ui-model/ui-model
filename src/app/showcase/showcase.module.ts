@@ -27,6 +27,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
 import { InplaceEditorComponent } from './inplace-editor/inplace-editor.component';
 import { MenuComponent } from './menu/menu.component';
 import { ModalContentComponent } from './modal/modal-content/modal-content.component';
+import { ModalCustomComponent } from './modal/modal-custom/modal-custom.component';
 import { ModalComponent } from './modal/modal.component';
 import { MovableComponent } from './movable/movable.component';
 import { MultiSelectCheckboxComponent } from './multi-select-checkbox/multi-select-checkbox.component';
@@ -114,9 +115,10 @@ import { ZoomComponent } from './zoom/zoom.component';
     SelectBoxComponent,
     D3GaugeComponent,
     D3GeoMapComponent,
+    ModalCustomComponent,
   ],
   providers: [RemoteUsernameValidator],
-  entryComponents: [RadioGroupWithinFormComponent, AgreeLicenseEditorComponent],
+  entryComponents: [RadioGroupWithinFormComponent, AgreeLicenseEditorComponent, ModalCustomComponent],
 })
 export class ShowcaseModule {
 }

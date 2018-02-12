@@ -1,3 +1,5 @@
+import { Type } from '@angular/core';
+
 export enum ModalTypes {
   Info = 'info',
   Success = 'success',
@@ -13,7 +15,8 @@ export class Modal {
   title?: string;
   message?: string;
   icon?: string;
-  type: ModalTypes = ModalTypes.Custom;
-  customId?: string;
+  type?: ModalTypes;
   data?: any;
+  customComponent?: Type<any>;
+  customInputs?: { [key: string]: any };
 }

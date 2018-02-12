@@ -7,7 +7,6 @@ import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
 import { routing } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './layout/app/app.component';
-import { GlobalModalComponent } from './layout/global-modal/global-modal.component';
 import { NavHeaderComponent } from './layout/nav-header/nav-header.component';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { SharedModule } from './shared/shared.module';
@@ -25,7 +24,6 @@ import { SharedModule } from './shared/shared.module';
   ],
   declarations: [
     AppComponent,
-    GlobalModalComponent,
     NavHeaderComponent,
     NavMenuComponent,
   ],

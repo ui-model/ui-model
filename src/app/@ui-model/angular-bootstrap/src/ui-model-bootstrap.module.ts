@@ -8,6 +8,7 @@ import { FieldErrorComponent } from './components/field-error/field-error.compon
 import { FormArrayComponent } from './components/form-array/form-array.component';
 import { FormControlComponent } from './components/form-control/form-control.component';
 import { FormGroupComponent } from './components/form-group/form-group.component';
+import { ModalListComponent } from './components/modal-list/modal-list.component';
 import { ModalConfirmComponent } from './components/modal/modal-confirm/modal-confirm.component';
 import { ModalErrorComponent } from './components/modal/modal-error/modal-error.component';
 import { ModalFormComponent } from './components/modal/modal-form/modal-form.component';
@@ -33,7 +34,7 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    UiModelModule,
+    UiModelModule.forFeature(),
   ],
   declarations: [
     ModalComponent,
@@ -61,6 +62,7 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
     SelectBoxComponent,
     MultiSelectBoxComponent,
     FieldCssPipe,
+    ModalListComponent,
   ],
   exports: [
     ModalComponent,
@@ -86,6 +88,7 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
     FormControlComponent,
     DatePickerComponent,
     SelectBoxComponent,
+    ModalListComponent,
     FieldCssPipe,
   ],
 })

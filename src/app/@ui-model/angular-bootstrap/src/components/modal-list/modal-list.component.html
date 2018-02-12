@@ -28,19 +28,7 @@
                  (close)="modal.close(item, $event)" (cancel)="modal.cancel(item)">
   </ui-modal-form>
   <ng-container *ngIf="item.type === 'custom'">
-    <div *ngIf="item.customId === 'register'">
-      <ui-modal>
-        <div class="modal-header">
-          <h2 class="modal-title">Custom modal</h2>
-        </div>
-        <div class="modal-body">
-          A custom register form
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" (click)="modal.close(item, {username: 'abc'})">Submit</button>
-          <button type="button" class="btn btn-secondary" (click)="modal.cancel(item)">Cancel</button>
-        </div>
-      </ui-modal>
-    </div>
+    <div [ngComponentOutlet]="item.customComponent" [ngComponentOutletInjector]="injector"
+         [uiDynamicComponentInputs]="[item.customInputs, {modal: item}]"></div>
   </ng-container>
 </ui-modal>

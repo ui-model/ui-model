@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Type } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -93,11 +93,11 @@ export class ModalService {
     });
   }
 
-  custom(customId: string, data?: any): Observable<any> {
+  custom(component: Type<any>, inputs?: { [key: string]: any }): Observable<any> {
     return this.open({
       type: ModalTypes.Custom,
-      customId,
-      data,
+      customComponent: component,
+      customInputs: inputs,
     });
   }
 
