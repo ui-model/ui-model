@@ -108,6 +108,9 @@ export class ModalService {
 
   private remove(modal: Modal): void {
     const index = this.items.indexOf(modal);
+    if (index === -1) {
+      return;
+    }
     const subject = this.events[index];
     subject.complete();
     this.items.splice(index, 1);

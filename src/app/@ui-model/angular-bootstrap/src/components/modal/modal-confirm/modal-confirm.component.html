@@ -2,7 +2,8 @@
   <h5 class="modal-title">
     {{title|default:'Confirm'}}
   </h5>
-  <button type="button" class="close text-white" aria-label="Close" (click)="close.emit(false);cancel.emit()">
+  <button type="button" class="close text-white" tabindex="-1" aria-label="Close"
+          (click)="close.emit(false);cancel.emit()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
