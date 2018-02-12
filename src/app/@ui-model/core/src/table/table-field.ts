@@ -1,11 +1,12 @@
 import { Comparator, Comparators, DataType, isUndefined, SortOrder, Transformer, Transformers } from '@ui-model/common';
+
 export class TableField {
   name: string;
   title: string;
   type = DataType.any;
-  sortable? = true;
-  sortOrder?: SortOrder = SortOrder.None;
-  scale? = 0;
+  sortable = true;
+  sortOrder: SortOrder = SortOrder.None;
+  scale = 0;
   comparator?: Comparator<any> = Comparators.any;
   formatter?: Transformer<any, string> = Transformers.identity;
 
