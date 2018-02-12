@@ -1,10 +1,10 @@
-<div class="modal-header">
+<div class="modal-header bg-primary text-white">
   <h5 class="modal-title">
     {{title|default:'Confirm'}}
-    <button type="button" class="close" aria-label="Close" (click)="close.emit(false);cancel.emit()">
-      <span aria-hidden="true">&times;</span>
-    </button>
   </h5>
+  <button type="button" class="close text-white" aria-label="Close" (click)="close.emit(false);cancel.emit()">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 <div class="modal-body">
   <div class="row">

@@ -1454,7 +1454,7 @@ export const provinces: FeatureCollection<GeometryObject> = {
             ],
             [
               119.2676,
-              50.0.78,
+              50.078,
             ],
             [
               119.3555,
