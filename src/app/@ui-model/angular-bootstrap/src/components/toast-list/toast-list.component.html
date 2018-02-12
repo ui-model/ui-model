@@ -1,0 +1,5 @@
+<div class="tooltip" *ngIf="!toast.isEmpty">
+  <div *ngFor="let item of toast.items" class="tooltip-inner bg-success text-light mb-2">
+    {{item.message}} ({{item.duration / 1000 | number:'1.0-0'}})
+  </div>
+</div>

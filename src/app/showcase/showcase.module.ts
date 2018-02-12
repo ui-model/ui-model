@@ -48,6 +48,7 @@ import { ShowcaseRoutingModule } from './showcase-routing.module';
 import { TabSetUsingDirectiveComponent } from './tab-set-using-directive/tab-set-using-directive.component';
 import { TabSetComponent } from './tab-set/tab-set.component';
 import { TableComponent } from './table/table.component';
+import { ToastComponent } from './toast/toast.component';
 import { ToggleDetailsComponent } from './toggle-details/toggle-details.component';
 import { ToggleImagesComponent } from './toggle-images/toggle-images.component';
 import { ToggleNgModelComponent } from './toggle-ng-model/toggle-ng-model.component';
@@ -116,6 +117,7 @@ import { ZoomComponent } from './zoom/zoom.component';
     D3GaugeComponent,
     D3GeoMapComponent,
     ModalCustomComponent,
+    ToastComponent,
   ],
   providers: [RemoteUsernameValidator],
   entryComponents: [RadioGroupWithinFormComponent, AgreeLicenseEditorComponent, ModalCustomComponent],

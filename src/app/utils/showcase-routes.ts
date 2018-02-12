@@ -27,6 +27,7 @@ import { SelectComponent } from '../showcase/select/select.component';
 import { TabSetUsingDirectiveComponent } from '../showcase/tab-set-using-directive/tab-set-using-directive.component';
 import { TabSetComponent } from '../showcase/tab-set/tab-set.component';
 import { TableComponent } from '../showcase/table/table.component';
+import { ToastComponent } from '../showcase/toast/toast.component';
 import { ToggleDetailsComponent } from '../showcase/toggle-details/toggle-details.component';
 import { ToggleImagesComponent } from '../showcase/toggle-images/toggle-images.component';
 import { ToggleNgModelComponent } from '../showcase/toggle-ng-model/toggle-ng-model.component';
@@ -305,6 +306,16 @@ export const showcaseRoutes: Route[] = [
     data: {
       title: 'Modal',
       tags: ['modal', 'toggle', 'service'].map(Tag.of),
+      description: 'How to use the global **service** to encapsulate ui-model',
+      authors: ['wzc'].map(Author.of),
+    },
+  },
+  {
+    path: 'toast',
+    component: ToastComponent,
+    data: {
+      title: 'Toast',
+      tags: ['toast', 'service'].map(Tag.of),
       description: 'How to use the global **service** to encapsulate ui-model',
       authors: ['wzc'].map(Author.of),
     },

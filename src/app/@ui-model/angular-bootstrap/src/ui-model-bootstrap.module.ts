@@ -24,6 +24,7 @@ import { RadioGroupWithinFormComponent } from './components/radio-group-within-f
 import { RadioGroupComponent } from './components/radio-group/radio-group.component';
 import { SelectBoxComponent } from './components/select-box/select-box.component';
 import { TableComponent } from './components/table/table.component';
+import { ToastListComponent } from './components/toast-list/toast-list.component';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { TreeNodeComponent } from './components/tree-node/tree-node.component';
 import { TypeAheadComponent } from './components/type-ahead/type-ahead.component';
@@ -63,6 +64,7 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
     MultiSelectBoxComponent,
     FieldCssPipe,
     ModalListComponent,
+    ToastListComponent,
   ],
   exports: [
     ModalComponent,
@@ -89,6 +91,7 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
     DatePickerComponent,
     SelectBoxComponent,
     ModalListComponent,
+    ToastListComponent,
     FieldCssPipe,
   ],
 })

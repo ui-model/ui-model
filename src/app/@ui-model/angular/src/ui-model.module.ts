@@ -50,6 +50,7 @@ import { FormMaker } from './services/form-maker.service';
 import { FormUtils } from './services/form-utils.service';
 import { ModalService } from './services/modal.service';
 import { NameMapper } from './services/name-mapper.service';
+import { ToastService } from './services/toast.service';
 import { TooltipService } from './services/tooltip.service';
 
 @NgModule({
@@ -152,7 +153,16 @@ export class UiModelModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: UiModelModule,
-      providers: [ModalService, TooltipService, FormMaker, FieldErrorMapper, NameMapper, FormUtils, UpdateTitleGuard],
+      providers: [
+        ModalService,
+        TooltipService,
+        FormMaker,
+        FieldErrorMapper,
+        NameMapper,
+        FormUtils,
+        UpdateTitleGuard,
+        ToastService,
+      ],
     };
   }
 
@@ -232,6 +242,8 @@ export * from './services/form-utils.service';
 
 export * from './services/modal.service';
 export * from './services/modal.model';
+export * from './services/toast.service';
+export * from './services/toast.model';
 export * from './services/name-mapper.service';
 export * from './services/tooltip.service';
 
