@@ -4,25 +4,25 @@ import { FormHooks } from '@angular/forms/src/model';
 import { ModelMetadata } from './model-metadata';
 
 export interface PropertyMetadata {
-  type?: Type<any>;
+  label?: string;
+  css?: string;
+  editor?: Type<Object> | string;
+  editorInputs?: { [key: string]: any };
   hidden?: boolean;
+
+  errors?: { [code: string]: string };
   arrayElementType?: Type<any>;
-  dataTypeValidators?: ValidatorFn[];
   validators?: (ValidatorFn | Type<Validator>)[];
   asyncValidators?: (AsyncValidatorFn | Type<AsyncValidator>)[];
   listeners?: ((c: AbstractControl) => void)[];
   defaultValue?: any;
   updateOn?: FormHooks;
 
-  label?: string;
-  css?: string;
-  editor?: Type<Object> | string;
-  editorInputs?: { [key: string]: any };
-  errors?: { [code: string]: string };
-
   name?: string;
-  isGroup?: boolean;
+  type?: Type<any>;
+  dataTypeValidators?: ValidatorFn[];
   groupModel?: ModelMetadata;
+  isGroup?: boolean;
   isArray?: boolean;
   isControl?: boolean;
 }
