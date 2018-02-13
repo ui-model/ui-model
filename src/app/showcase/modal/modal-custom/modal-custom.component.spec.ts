@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ModalService } from '@ui-model/angular';
 
 import { ModalCustomComponent } from './modal-custom.component';
 
@@ -9,6 +10,7 @@ describe('ModalCustomComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ModalCustomComponent],
+      providers: [ModalService],
     })
       .compileComponents();
   }));

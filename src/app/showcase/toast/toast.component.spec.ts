@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ToastService } from '@ui-model/angular';
 
 import { ToastComponent } from './toast.component';
 
@@ -9,6 +10,7 @@ describe('ToastComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ToastComponent],
+      providers: [ToastService],
     })
       .compileComponents();
   }));

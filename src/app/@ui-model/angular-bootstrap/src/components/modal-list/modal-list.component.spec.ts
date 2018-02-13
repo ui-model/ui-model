@@ -1,4 +1,6 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DynamicComponentInputsDirective, ModalService } from '@ui-model/angular';
 
 import { ModalListComponent } from './modal-list.component';
 
@@ -8,7 +10,12 @@ describe('ModalListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalListComponent],
+      declarations: [
+        ModalListComponent,
+        DynamicComponentInputsDirective,
+      ],
+      providers: [ModalService],
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));
