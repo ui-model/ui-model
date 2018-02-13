@@ -7,6 +7,9 @@
       "@ui-model/common": ["../common"],
       "@ui-model/core": ["../core"],
       "@ui-model/calendar": ["../calendar"]
-    }
+    },
+    "types": [
+      "jasmine"
+    ]
   }
 }
