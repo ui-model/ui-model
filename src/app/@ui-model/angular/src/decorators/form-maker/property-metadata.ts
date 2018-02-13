@@ -6,7 +6,6 @@ import { ModelMetadata } from './model-metadata';
 export interface PropertyMetadata {
   type?: Type<any>;
   hidden?: boolean;
-  displayOrder?: number;
   arrayElementType?: Type<any>;
   dataTypeValidators?: ValidatorFn[];
   validators?: (ValidatorFn | Type<Validator>)[];

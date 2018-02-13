@@ -1,8 +1,8 @@
-import { ModelMetadata } from './model-metadata';
-import { metaKeyModel, metaKeyType, Reflect } from './constants';
-import { PropertyMetadata } from './property-metadata';
-import { isNumber } from '../../validators/is-number.validator';
 import { isBoolean } from '../../validators/is-boolean.validator';
+import { isNumber } from '../../validators/is-number.validator';
+import { metaKeyModel, metaKeyType, Reflect } from './constants';
+import { ModelMetadata } from './model-metadata';
+import { PropertyMetadata } from './property-metadata';
 
 export function getOrCreateModelMetadata(target: any): ModelMetadata {
   const result = Reflect.getMetadata(metaKeyModel, target);
@@ -24,13 +24,17 @@ export function getOrCreateProperty(target: any, propertyName: string): Property
   if (result) {
     return result;
   } else {
-    const property: PropertyMetadata = {name: propertyName, type: Reflect.getMetadata(metaKeyType, target, propertyName)};
+    const property: PropertyMetadata = {
+      name: propertyName,
+      type: Reflect.getMetadata(metaKeyType, target, propertyName),
+    };
     property.isArray = property.type === Array;
     property.isGroup = Reflect.hasMetadata(metaKeyModel, property.type);
     property.isControl = !property.isArray && !property.isGroup;
     property.dataTypeValidators = [];
     switch (property.type) {
       case Number:
+        property.editor = 'number';
         property.dataTypeValidators = [isNumber];
         break;
       case Boolean:

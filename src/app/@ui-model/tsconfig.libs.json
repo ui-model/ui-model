@@ -23,7 +23,8 @@
       "../../../node_modules/@types"
     ],
     "types": [
-      "rxjs"
+      "rxjs",
+      "jasmine"
     ],
     "paths": {
       "@ui-model/core": [
