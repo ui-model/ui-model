@@ -1,10 +1,10 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { BasicInfoGroupComponent } from './basic-info-group.component';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('ShowcaseBasicInfoGroupComponent', () => {
+describe('showcase > ShowcaseBasicInfoGroupComponent', () => {
   let component: BasicInfoGroupComponent;
   let fixture: ComponentFixture<BasicInfoGroupComponent>;
 

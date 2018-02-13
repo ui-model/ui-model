@@ -3,7 +3,7 @@ import { UiModelModule } from '@ui-model/angular';
 
 import { DropdownComponent } from './dropdown.component';
 
-describe('ShowcaseDropdownComponent', () => {
+describe('showcase > ShowcaseDropdownComponent', () => {
   let component: DropdownComponent;
   let fixture: ComponentFixture<DropdownComponent>;
 

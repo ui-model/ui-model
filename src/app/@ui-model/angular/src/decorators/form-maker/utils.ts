@@ -1,6 +1,6 @@
+import { metaKeyModel, metaKeyType, Reflect } from '../../utils/constants';
 import { isBoolean } from '../../validators/is-boolean.validator';
 import { isNumber } from '../../validators/is-number.validator';
-import { metaKeyModel, metaKeyType, Reflect } from './constants';
 import { ModelMetadata } from './model-metadata';
 import { PropertyMetadata } from './property-metadata';
 

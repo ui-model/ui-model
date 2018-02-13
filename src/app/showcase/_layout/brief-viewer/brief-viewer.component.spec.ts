@@ -7,7 +7,7 @@ import { MetadataService } from '../../../core/metadata.service';
 import { SharedModule } from '../../../shared/shared.module';
 import { BriefViewerComponent } from './brief-viewer.component';
 
-describe('BriefViewerComponent', () => {
+describe('showcase > BriefViewerComponent', () => {
   let component: BriefViewerComponent;
   let fixture: ComponentFixture<BriefViewerComponent>;
 

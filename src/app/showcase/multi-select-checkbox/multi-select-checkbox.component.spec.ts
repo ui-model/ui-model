@@ -5,7 +5,7 @@ import { UiModelModule } from '@ui-model/angular';
 
 import { MultiSelectCheckboxComponent } from './multi-select-checkbox.component';
 
-describe('ShowcaseMultiSelectCheckboxComponent', () => {
+describe('showcase > ShowcaseMultiSelectCheckboxComponent', () => {
   let component: MultiSelectCheckboxComponent;
   let fixture: ComponentFixture<MultiSelectCheckboxComponent>;
 

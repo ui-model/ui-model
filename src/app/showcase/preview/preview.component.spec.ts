@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiModelModule } from '@ui-model/angular';
 import { PreviewComponent } from './preview.component';
 
-describe('ShowcasePreviewComponent', () => {
+describe('showcase > ShowcasePreviewComponent', () => {
   let component: PreviewComponent;
   let fixture: ComponentFixture<PreviewComponent>;
 

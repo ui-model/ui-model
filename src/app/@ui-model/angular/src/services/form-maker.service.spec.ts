@@ -23,7 +23,7 @@ class MyModel {
   birthday: Date;
 }
 
-describe('FormModelBuilder', () => {
+describe('FormMaker', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [FormMaker],

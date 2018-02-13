@@ -20,7 +20,7 @@ class MyActivatedRoute {
   params = new Subject();
 }
 
-describe('SourceViewerComponent', () => {
+describe('showcase > SourceViewerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SourceViewerComponent],

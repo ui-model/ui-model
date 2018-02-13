@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { D3GaugeComponent } from './d3-gauge.component';
 import { FormsModule } from '@angular/forms';
 
-describe('D3GaugeComponent', () => {
+import { D3GaugeComponent } from './d3-gauge.component';
+
+describe('showcase > D3GaugeComponent', () => {
   let component: D3GaugeComponent;
   let fixture: ComponentFixture<D3GaugeComponent>;
 

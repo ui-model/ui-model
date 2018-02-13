@@ -4,7 +4,7 @@ import { UiModelModule } from '@ui-model/angular';
 
 import { RadioButtonComponent } from './radio-button.component';
 
-describe('ShowcaseRadioButtonComponent', () => {
+describe('showcase > ShowcaseRadioButtonComponent', () => {
   let component: RadioButtonComponent;
   let fixture: ComponentFixture<RadioButtonComponent>;
 

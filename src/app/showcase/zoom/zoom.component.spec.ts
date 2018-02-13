@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiModelModule } from '@ui-model/angular';
 import { ZoomComponent } from './zoom.component';
 
-describe('ShowcaseZoomComponent', () => {
+describe('showcase > ShowcaseZoomComponent', () => {
   let component: ZoomComponent;
   let fixture: ComponentFixture<ZoomComponent>;
 

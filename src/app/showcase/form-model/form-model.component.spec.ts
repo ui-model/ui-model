@@ -6,7 +6,7 @@ import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 
 import { FormModelComponent } from './form-model.component';
 
-describe('ShowcaseFormModelComponent', () => {
+describe('showcase > ShowcaseFormModelComponent', () => {
   let component: FormModelComponent;
   let fixture: ComponentFixture<FormModelComponent>;
 

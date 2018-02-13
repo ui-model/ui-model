@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { AgreeLicenseEditorComponent } from './agree-license-editor.component';
 import { ControlContainer, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
-describe('ShowcaseAgreeLicenseEditorComponent', () => {
+import { AgreeLicenseEditorComponent } from './agree-license-editor.component';
+
+describe('showcase > ShowcaseAgreeLicenseEditorComponent', () => {
   let component: AgreeLicenseEditorComponent;
   let fixture: ComponentFixture<AgreeLicenseEditorComponent>;
 

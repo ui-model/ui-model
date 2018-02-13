@@ -13,7 +13,7 @@ import {
 import { FormHooks } from '@angular/forms/src/model';
 import { metaKeyModel, metaKeyProperty, ModelMetadata } from '../decorators/form-maker';
 
-const Reflect = window['Reflect'];
+import { Reflect } from '../utils/constants';
 
 @Injectable()
 export class FormMaker {

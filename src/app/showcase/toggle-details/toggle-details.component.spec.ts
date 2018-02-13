@@ -3,7 +3,7 @@ import { UiModelModule } from '@ui-model/angular';
 
 import { ToggleDetailsComponent } from './toggle-details.component';
 
-describe('ShowcaseToggleDetailsComponent', () => {
+describe('showcase > ShowcaseToggleDetailsComponent', () => {
   let component: ToggleDetailsComponent;
   let fixture: ComponentFixture<ToggleDetailsComponent>;
 

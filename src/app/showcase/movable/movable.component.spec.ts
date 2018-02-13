@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiModelModule } from '@ui-model/angular';
 import { MovableComponent } from './movable.component';
 
-describe('ShowcaseMovableComponent', () => {
+describe('showcase > ShowcaseMovableComponent', () => {
   let component: MovableComponent;
   let fixture: ComponentFixture<MovableComponent>;
 

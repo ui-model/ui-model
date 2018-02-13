@@ -4,7 +4,7 @@ import { UiModelModule } from '@ui-model/angular';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { TableComponent } from './table.component';
 
-describe('ShowcaseTableComponent', () => {
+describe('showcase > ShowcaseTableComponent', () => {
   let component: TableComponent;
   let fixture: ComponentFixture<TableComponent>;
 

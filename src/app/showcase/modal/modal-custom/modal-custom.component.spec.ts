@@ -3,7 +3,7 @@ import { ModalService } from '@ui-model/angular';
 
 import { ModalCustomComponent } from './modal-custom.component';
 
-describe('ModalCustomComponent', () => {
+describe('showcase > ModalCustomComponent', () => {
   let component: ModalCustomComponent;
   let fixture: ComponentFixture<ModalCustomComponent>;
 

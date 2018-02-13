@@ -4,7 +4,7 @@ import { UiModelModule } from '@ui-model/angular';
 
 import { TabSetComponent } from './tab-set.component';
 
-describe('ShowcaseTabSetComponent', () => {
+describe('showcase > ShowcaseTabSetComponent', () => {
   let component: TabSetComponent;
   let fixture: ComponentFixture<TabSetComponent>;
 

@@ -5,7 +5,7 @@ import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { UiModelD3Module } from '@ui-model/angular-d3';
 import { ChartComponent } from './chart.component';
 
-describe('ShowcaseChartComponent', () => {
+describe('showcase > ShowcaseChartComponent', () => {
   let component: ChartComponent;
   let fixture: ComponentFixture<ChartComponent>;
 

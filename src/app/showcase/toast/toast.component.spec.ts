@@ -3,7 +3,7 @@ import { ToastService } from '@ui-model/angular';
 
 import { ToastComponent } from './toast.component';
 
-describe('ToastComponent', () => {
+describe('showcase > ToastComponent', () => {
   let component: ToastComponent;
   let fixture: ComponentFixture<ToastComponent>;
 

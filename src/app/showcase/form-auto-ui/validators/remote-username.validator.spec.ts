@@ -4,7 +4,7 @@ import { UserApi } from '../../../core/apis/user-api.service';
 
 import { RemoteUsernameValidator } from './remote-username.validator';
 
-describe('RemoteUsernameValidatorService', () => {
+describe('showcase > RemoteUsernameValidatorService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [

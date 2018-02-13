@@ -1,11 +1,11 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SelectBoxComponent } from './select-box.component';
 import { FormsModule } from '@angular/forms';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('ShowcaseSelectBoxComponent', () => {
+import { SelectBoxComponent } from './select-box.component';
+
+describe('showcase > ShowcaseSelectBoxComponent', () => {
   let component: SelectBoxComponent;
   let fixture: ComponentFixture<SelectBoxComponent>;
 

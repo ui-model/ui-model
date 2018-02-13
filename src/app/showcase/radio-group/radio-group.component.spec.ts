@@ -1,10 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RadioGroupComponent } from './radio-group.component';
-import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
-import { FormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
+import { RadioGroupComponent } from './radio-group.component';
 
-describe('ShowcaseRadioGroupComponent', () => {
+describe('showcase > ShowcaseRadioGroupComponent', () => {
   let component: RadioGroupComponent;
   let fixture: ComponentFixture<RadioGroupComponent>;
 

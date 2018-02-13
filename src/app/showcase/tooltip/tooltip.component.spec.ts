@@ -19,7 +19,7 @@ class MyTooltipService {
   };
 }
 
-describe('ShowcaseTooltipComponent', () => {
+describe('showcase > ShowcaseTooltipComponent', () => {
   let component: TooltipComponent;
   let fixture: ComponentFixture<TooltipComponent>;
 

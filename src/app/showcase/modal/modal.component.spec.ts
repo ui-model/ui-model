@@ -4,7 +4,7 @@ import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { ModalContentComponent } from './modal-content/modal-content.component';
 import { ModalComponent } from './modal.component';
 
-describe('ShowcaseModalComponent', () => {
+describe('showcase > ShowcaseModalComponent', () => {
   let component: ModalComponent;
   let fixture: ComponentFixture<ModalComponent>;
 

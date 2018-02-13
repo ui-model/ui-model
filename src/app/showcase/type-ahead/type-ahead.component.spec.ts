@@ -1,10 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { TypeAheadComponent } from './type-ahead.component';
-import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
-import { FormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
+import { TypeAheadComponent } from './type-ahead.component';
 
-describe('ShowcaseTypeAheadComponent', () => {
+describe('showcase > ShowcaseTypeAheadComponent', () => {
   let component: TypeAheadComponent;
   let fixture: ComponentFixture<TypeAheadComponent>;
 

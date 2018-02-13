@@ -5,7 +5,7 @@ import { UiModelModule } from '@ui-model/angular';
 
 import { TabSetUsingDirectiveComponent } from './tab-set-using-directive.component';
 
-describe('ShowcaseTabSetUsingDirectiveComponent', () => {
+describe('showcase > ShowcaseTabSetUsingDirectiveComponent', () => {
   let component: TabSetUsingDirectiveComponent;
   let fixture: ComponentFixture<TabSetUsingDirectiveComponent>;
 

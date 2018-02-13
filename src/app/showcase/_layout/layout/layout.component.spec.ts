@@ -1,12 +1,12 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { LayoutComponent } from './layout.component';
-import { SharedModule } from '../../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { SharedModule } from '../../../shared/shared.module';
 
-describe('ShowcaseLayoutComponent', () => {
+import { LayoutComponent } from './layout.component';
+
+describe('showcase > ShowcaseLayoutComponent', () => {
   let component: LayoutComponent;
   let fixture: ComponentFixture<LayoutComponent>;
 

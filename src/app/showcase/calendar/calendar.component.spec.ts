@@ -5,7 +5,7 @@ import { UiModelModule } from '@ui-model/angular';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { CalendarComponent } from './calendar.component';
 
-describe('ShowcaseCalendarComponent', () => {
+describe('showcase > ShowcaseCalendarComponent', () => {
   let component: CalendarComponent;
   let fixture: ComponentFixture<CalendarComponent>;
 

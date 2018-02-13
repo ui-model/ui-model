@@ -4,7 +4,7 @@ import { UiModelModule } from '@ui-model/angular';
 
 import { InplaceEditorComponent } from './inplace-editor.component';
 
-describe('ShowcaseInplaceEditorComponent', () => {
+describe('showcase > ShowcaseInplaceEditorComponent', () => {
   let component: InplaceEditorComponent;
   let fixture: ComponentFixture<InplaceEditorComponent>;
 

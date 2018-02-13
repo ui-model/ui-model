@@ -1,13 +1,12 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs/observable/of';
+import { SourceCodeService } from '../../core/source-code.service';
+import { SharedModule } from '../../shared/shared.module';
 
 import { HomeComponent } from './home.component';
-import { SharedModule } from '../../shared/shared.module';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { SourceCodeService } from '../../core/source-code.service';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 
-describe('ShowcaseHomeComponent', () => {
+describe('showcase > ShowcaseHomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 

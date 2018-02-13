@@ -1,11 +1,11 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { MetadataService } from '../../../core/metadata.service';
 
 import { DocumentViewerComponent } from './document-viewer.component';
-import { MetadataService } from '../../../core/metadata.service';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { By } from '@angular/platform-browser';
 
-describe('DocumentViewerComponent', () => {
+describe('showcase > DocumentViewerComponent', () => {
   let component: DocumentViewerComponent;
   let fixture: ComponentFixture<DocumentViewerComponent>;
 

@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiModelModule } from '@ui-model/angular';
 import { MenuComponent } from './menu.component';
 
-describe('ShowcaseMenuComponent', () => {
+describe('showcase > ShowcaseMenuComponent', () => {
   let component: MenuComponent;
   let fixture: ComponentFixture<MenuComponent>;
 

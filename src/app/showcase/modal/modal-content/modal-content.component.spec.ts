@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ModalContentComponent } from './modal-content.component';
 import { CountDownDirective } from '@ui-model/angular';
+import { ModalContentComponent } from './modal-content.component';
 
-describe('ShowcaseModalContentComponent', () => {
+describe('showcase > ShowcaseModalContentComponent', () => {
   let component: ModalContentComponent;
   let fixture: ComponentFixture<ModalContentComponent>;
 
