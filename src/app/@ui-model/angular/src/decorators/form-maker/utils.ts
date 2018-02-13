@@ -1,6 +1,5 @@
-import { metaKeyModel, metaKeyType, Reflect } from '../../utils/constants';
-import { isBoolean } from '../../validators/is-boolean.validator';
-import { isNumber } from '../../validators/is-number.validator';
+import { Type } from '@angular/core';
+import { metaKeyModel, metaKeyType, Reflect } from '../../../';
 import { ModelMetadata } from './model-metadata';
 import { PropertyMetadata } from './property-metadata';
 
@@ -9,7 +8,7 @@ export function getOrCreateModelMetadata(target: any): ModelMetadata {
   if (result) {
     return result;
   } else {
-    const meta: ModelMetadata = {properties: []};
+    const meta = new ModelMetadata();
     Reflect.defineMetadata(metaKeyModel, meta, target);
     return meta;
   }
@@ -24,24 +23,25 @@ export function getOrCreateProperty(target: any, propertyName: string): Property
   if (result) {
     return result;
   } else {
-    const property: PropertyMetadata = {
-      name: propertyName,
-      type: Reflect.getMetadata(metaKeyType, target, propertyName),
-    };
-    property.isArray = property.type === Array;
-    property.isGroup = Reflect.hasMetadata(metaKeyModel, property.type);
-    property.isControl = !property.isArray && !property.isGroup;
-    property.dataTypeValidators = [];
-    switch (property.type) {
-      case Number:
-        property.editor = 'number';
-        property.dataTypeValidators = [isNumber];
-        break;
-      case Boolean:
-        property.dataTypeValidators = [isBoolean];
-        break;
+    const property = new PropertyMetadata();
+    Object.assign(property, target);
+    property.name = propertyName;
+    property.type = Reflect.getMetadata(metaKeyType, target, propertyName);
+    if (!property.editor) {
+      property.editor = defaultEditorFor(property);
     }
     formMeta.properties.push(property);
     return property;
+  }
+}
+
+function defaultEditorFor(property: PropertyMetadata): string | Type<Object> {
+  switch (property.type) {
+    case Number:
+      return 'number';
+    case Date:
+      return 'date';
+    default:
+      return property.editor;
   }
 }

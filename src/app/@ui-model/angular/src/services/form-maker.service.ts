@@ -11,9 +11,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { FormHooks } from '@angular/forms/src/model';
-import { metaKeyModel, metaKeyProperty, ModelMetadata } from '../decorators/form-maker';
-
-import { Reflect } from '../utils/constants';
+import { metaKeyModel, metaKeyProperty, ModelMetadata, Reflect } from '../../';
 
 @Injectable()
 export class FormMaker {
@@ -77,6 +75,7 @@ export class FormMaker {
         .filter((fn) => !!fn)
         .map(toAsyncValidator);
       control.setAsyncValidators(Validators.composeAsync(asyncValidators));
+
       control.valueChanges.subscribe(() => {
         // delay to the next tick, so that listeners get the latest value
         Promise.resolve().then(() => {

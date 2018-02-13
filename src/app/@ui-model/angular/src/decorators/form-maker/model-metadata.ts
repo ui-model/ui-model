@@ -1,7 +1,11 @@
 import { FormHooks } from '@angular/forms/src/model';
 import { PropertyMetadata } from './property-metadata';
 
-export interface ModelMetadata {
+export interface ModelDef {
   updateOn?: FormHooks;
-  properties?: PropertyMetadata[];
+}
+
+export class ModelMetadata implements ModelDef {
+  updateOn: FormHooks = 'blur';
+  properties: PropertyMetadata[] = [];
 }
