@@ -1,5 +1,5 @@
 import { Directive, Input } from '@angular/core';
-import { PropertyMetadata } from '../decorators/form-maker/property-metadata';
+import { PropertyMetadata } from '../decorators/form-maker';
 
 @Directive({
   selector: '[uiFieldMetadata]',
