@@ -1,6 +1,6 @@
 {
   "name": "@ui-model/common",
-  "version": "0.0.81",
+  "version": "0.0.83",
   "description": "ui model library",
   "main": "index.ts",
   "repository": {
