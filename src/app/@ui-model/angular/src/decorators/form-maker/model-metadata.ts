@@ -6,6 +6,6 @@ export interface ModelDef {
 }
 
 export class ModelMetadata implements ModelDef {
-  updateOn: FormHooks = 'blur';
+  updateOn: FormHooks = 'change';
   properties: PropertyMetadata[] = [];
 }

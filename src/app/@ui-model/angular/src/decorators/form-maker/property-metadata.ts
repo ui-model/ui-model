@@ -33,7 +33,7 @@ export class PropertyMetadata implements PropertyDef {
   asyncValidators: (AsyncValidatorFn | Type<AsyncValidator>)[] = [];
   listeners: ((c: AbstractControl) => void)[] = [];
   defaultValue?: any;
-  updateOn: FormHooks = 'blur';
+  updateOn: FormHooks = 'change';
 
   name?: string;
   type?: Type<any>;
