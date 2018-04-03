@@ -1,8 +1,9 @@
 import { isBoolean } from '../../validators/is-boolean.validator';
 import { isNumber } from '../../validators/is-number.validator';
-import { metaKeyModel, metaKeyType, Reflect } from './constants';
+import { metaKeyModel, metaKeyType } from './constants';
 import { ModelMetadata } from './model-metadata';
 import { PropertyMetadata } from './property-metadata';
+import 'reflect-metadata';
 
 export function getOrCreateModelMetadata(target: any): ModelMetadata {
   const result = Reflect.getMetadata(metaKeyModel, target);
