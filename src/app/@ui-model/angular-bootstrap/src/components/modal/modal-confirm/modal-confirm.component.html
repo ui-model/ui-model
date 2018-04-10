@@ -1,9 +1,9 @@
-<div class="modal-header bg-primary text-white">
+<div class="modal-header bg-warning text-white">
   <h5 class="modal-title">
     {{title|default:'Confirm'}}
   </h5>
   <button type="button" class="close text-white" tabindex="-1" aria-label="Close"
-          (click)="close.emit(false);cancel.emit()">
+          (click)="cancel.emit()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -18,10 +18,10 @@
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-primary" (click)="close.emit(true)">
+  <button type="button" class="btn btn-warning" (click)="close.emit()">
     <span i18n>Yes</span>
   </button>
-  <button type="button" class="btn btn-secondary" (click)="close.emit(false)">
+  <button type="button" class="btn btn-secondary" (click)="cancel.emit()">
     <span i18n>No</span>
   </button>
 </div>
