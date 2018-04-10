@@ -3,12 +3,12 @@
   <label *ngIf="field | fieldLabel" for="_{{field.name}}_{{uniqueId}}">{{field | fieldLabel}}</label>
   <ng-container *ngIf="isInput(field)">
     <input [type]="field.editor || 'text'" class="form-control" id="_{{field.name}}_{{uniqueId}}"
-           [formControl]="control"/>
+           [formControl]="control" [readonly]="field.readonly"/>
   </ng-container>
   <ng-container *ngIf="isTextArea(field)">
     <textarea class="form-control" id="_{{field.name}}_{{uniqueId}}"
-              [formControl]="control"></textarea>
+              [formControl]="control" [readonly]="field.readonly"></textarea>
   </ng-container>
   <div *ngIf="isCustomEditor(field)" [ngComponentOutlet]="field.editor" [ngComponentOutletInjector]="injector"
-       [uiDynamicComponentInputs]="[field.editorInputs, {name: field.name}]"></div>
+       [uiDynamicComponentInputs]="[field.editorInputs, {name: field.name, field: field}]"></div>
 </div>

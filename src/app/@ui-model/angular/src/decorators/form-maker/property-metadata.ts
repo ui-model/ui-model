@@ -10,6 +10,7 @@ export interface PropertyDef {
   editor?: Type<Object> | string;
   editorInputs?: { [key: string]: any };
   hidden?: boolean;
+  readonly?: boolean;
 
   errors?: { [code: string]: string };
   arrayElementType?: Type<any>;
@@ -26,6 +27,7 @@ export class PropertyMetadata implements PropertyDef {
   editor?: Type<Object> | string;
   editorInputs?: { [key: string]: any };
   hidden = false;
+  readonly = false;
 
   errors?: { [code: string]: string };
   arrayElementType?: Type<any>;
