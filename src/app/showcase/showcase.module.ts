@@ -2,7 +2,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
-import { RadioGroupWithinFormComponent, UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
+import {
+  RadioGroupWithinFormComponent,
+  TypeAheadWithinFormComponent,
+  UiModelBootstrapModule,
+} from '@ui-model/angular-bootstrap';
 import { UiModelD3Module } from '@ui-model/angular-d3';
 import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
 import { SharedModule } from '../shared/shared.module';
@@ -120,7 +124,12 @@ import { ZoomComponent } from './zoom/zoom.component';
     ToastComponent,
   ],
   providers: [RemoteUsernameValidator],
-  entryComponents: [RadioGroupWithinFormComponent, AgreeLicenseEditorComponent, ModalCustomComponent],
+  entryComponents: [
+    RadioGroupWithinFormComponent,
+    AgreeLicenseEditorComponent,
+    ModalCustomComponent,
+    TypeAheadWithinFormComponent,
+  ],
 })
 export class ShowcaseModule {
 }

@@ -1,7 +1,19 @@
+@import "./common";
+
 svg.icon {
   height: 1em;
   width: auto;
   * {
     fill: CurrentColor;
+  }
+}
+
+.ui-required {
+  > label {
+    &:after {
+      content: '*';
+      padding: 0 0.5rem;
+      color: $danger;
+    }
   }
 }

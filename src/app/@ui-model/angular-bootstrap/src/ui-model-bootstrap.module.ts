@@ -27,6 +27,7 @@ import { TableComponent } from './components/table/table.component';
 import { ToastListComponent } from './components/toast-list/toast-list.component';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { TreeNodeComponent } from './components/tree-node/tree-node.component';
+import { TypeAheadWithinFormComponent } from './components/type-ahead-within-form/type-ahead-within-form.component';
 import { TypeAheadComponent } from './components/type-ahead/type-ahead.component';
 import { FieldCssPipe } from './pipes/field-css.pipe';
 
@@ -54,6 +55,7 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
     TreeNodeComponent,
     CalendarComponent,
     TypeAheadComponent,
+    TypeAheadWithinFormComponent,
     TooltipComponent,
     FieldErrorComponent,
     FormGroupComponent,
@@ -83,6 +85,7 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
     TreeNodeComponent,
     CalendarComponent,
     TypeAheadComponent,
+    TypeAheadWithinFormComponent,
     TooltipComponent,
     FieldErrorComponent,
     FormGroupComponent,
@@ -122,6 +125,7 @@ export * from './components/table/table.component';
 export * from './components/tree-node/tree-node.component';
 export * from './components/calendar/calendar.component';
 export * from './components/type-ahead/type-ahead.component';
+export * from './components/type-ahead-within-form/type-ahead-within-form.component';
 export * from './components/tooltip/tooltip.component';
 export * from './components/field-error/field-error.component';
 export * from './components/form-group/form-group.component';

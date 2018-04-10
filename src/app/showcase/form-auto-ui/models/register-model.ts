@@ -1,7 +1,9 @@
 import { AbstractControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { complexity, Model, Property, url } from '@ui-model/angular';
+import { TypeAheadWithinFormComponent } from '@ui-model/angular-bootstrap';
 import { AgreeLicenseEditorComponent } from '../editors/agree-license-editor/agree-license-editor.component';
 import { RemoteUsernameValidator } from '../validators/remote-username.validator';
+import { cities } from './cities';
 import { ProfileModel } from './profile-model';
 
 @Model()
@@ -36,6 +38,13 @@ export class RegisterModel {
     validators: [Validators.required, Validators.minLength(3), url],
   })
   homepage: string;
+
+  @Property({
+    validators: [Validators.required],
+    editor: TypeAheadWithinFormComponent,
+    editorInputs: {options: cities},
+  })
+  city: string;
 
   @Property({
     validators: [Validators.required],
