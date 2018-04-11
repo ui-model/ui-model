@@ -3,7 +3,7 @@ import { ControlContainer } from '@angular/forms';
 import { BaseControlWithinForm } from '@ui-model/angular';
 
 @Component({
-  selector: 'app-type-ahead-within-form',
+  selector: 'ui-type-ahead-within-form',
   templateUrl: './type-ahead-within-form.component.html',
   styleUrls: ['./type-ahead-within-form.component.scss'],
 })

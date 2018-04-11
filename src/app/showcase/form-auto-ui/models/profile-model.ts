@@ -22,7 +22,7 @@ export class ProfileModel {
 
   @Property({
     editor: RadioGroupWithinFormComponent,
-    editorInputs: {options: genderOptions},
+    editorInputs: { options: genderOptions },
     validators: [Validators.required],
   })
   gender: string;
@@ -34,6 +34,7 @@ export class ProfileModel {
 
   @Property({
     validators: [minValue(20)],
+    viewerInputs: { format: '1.2' }
   })
   weight: number;
 

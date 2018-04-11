@@ -1,7 +1,7 @@
 import { Component, Injector, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormGroup, Validators } from '@angular/forms';
 import { PropertyMetadata } from '@ui-model/angular';
-import { isString } from 'util';
+import { isFunction, isString } from 'util';
 
 @Component({
   selector: 'ui-form-control',
@@ -17,6 +17,7 @@ export class FormControlComponent implements OnInit {
 
   @Input() group: FormGroup;
   @Input() field: PropertyMetadata;
+  @Input() readonly = false;
 
   get control(): AbstractControl {
     if (!this.group || !this.field) {
@@ -29,7 +30,7 @@ export class FormControlComponent implements OnInit {
   }
 
   isCustomEditor(field: PropertyMetadata): boolean {
-    return field.editor instanceof Object;
+    return isFunction(field.editor);
   }
 
   isInput(field: PropertyMetadata): boolean {
@@ -42,6 +43,22 @@ export class FormControlComponent implements OnInit {
 
   isRequired(field: PropertyMetadata): boolean {
     return field.validators && field.validators.indexOf(Validators.required) !== -1;
+  }
+
+  isPlainText(field: PropertyMetadata): boolean {
+    return field.type === String;
+  }
+
+  isNumber(field: PropertyMetadata): boolean {
+    return field.type === Number;
+  }
+
+  isDate(field: PropertyMetadata): boolean {
+    return field.type === Date;
+  }
+
+  isCustomViewer(field: PropertyMetadata): boolean {
+    return isFunction(field.viewer);
   }
 
   static latestUniqueId: number = new Date().getTime();

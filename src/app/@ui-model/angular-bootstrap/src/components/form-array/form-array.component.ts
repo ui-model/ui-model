@@ -14,11 +14,8 @@ export class FormArrayComponent implements OnInit {
 
   @Input() group: FormGroup;
   @Input() field: PropertyMetadata;
+  @Input() readonly = false;
 
   ngOnInit(): void {
-  }
-
-  log(value: any[]): void {
-    console.log(value);
   }
 }

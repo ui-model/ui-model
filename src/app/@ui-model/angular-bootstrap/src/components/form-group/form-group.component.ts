@@ -9,6 +9,7 @@ import { metaKeyModel, ModelMetadata } from '@ui-model/angular';
 })
 export class FormGroupComponent {
   @Input() group: FormGroup;
+  @Input() readonly = false;
 
   get form(): ModelMetadata {
     return this.group && this.group[metaKeyModel];

@@ -9,6 +9,8 @@ export interface PropertyDef {
   css?: string;
   editor?: Type<Object> | string;
   editorInputs?: { [key: string]: any };
+  viewer?: Type<Object> | string;
+  viewerInputs?: { [key: string]: any };
   hidden?: boolean;
   readonly?: boolean;
 
@@ -26,6 +28,8 @@ export class PropertyMetadata implements PropertyDef {
   css = '';
   editor?: Type<Object> | string;
   editorInputs?: { [key: string]: any };
+  viewer?: Type<Object> | string;
+  viewerInputs?: { [key: string]: any };
   hidden = false;
   readonly = false;
 

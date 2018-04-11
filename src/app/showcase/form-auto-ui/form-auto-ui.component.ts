@@ -13,6 +13,8 @@ export class FormAutoUiComponent implements OnInit {
   constructor(private maker: FormMaker, private utils: FormUtils, private elementRef: ElementRef) {
   }
 
+  readonly = false;
+
   form: FormGroup;
 
   ngOnInit(): void {
