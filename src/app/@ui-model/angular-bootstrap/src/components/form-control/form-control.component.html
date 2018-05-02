@@ -15,10 +15,19 @@
          [uiDynamicComponentInputs]="[field.editorInputs, {name: field.name, field: field}]"></div>
   </ng-container>
   <div *ngIf="readonly" class="form-control-plaintext">
-    <div *ngIf="isPlainText(field)">{{control.value | default : '-'}}</div>
-    <div *ngIf="isDate(field)">{{control.value | date:field.viewerInputs?.format | default: '-' }}</div>
-    <div *ngIf="isNumber(field)">{{control.value | number:field.viewerInputs?.format | default: '(NaN)'}}</div>
     <div *ngIf="isCustomViewer(field)" [ngComponentOutlet]="field.viewer" [ngComponentOutletInjector]="injector"
          [uiDynamicComponentInputs]="[field.viewerInputs, {name: field.name, field: field}]"></div>
+    <ng-container *ngIf="!isCustomViewer(field)">
+      <div *ngIf="isPlainText(field)">{{control.value | default : '-'}}</div>
+      <div *ngIf="isDate(field)">{{control.value | date:field.viewerInputs?.format | default: '-' }}</div>
+      <div *ngIf="isNumber(field)">
+        <ng-container *ngIf="field.viewerInputs?.format === 'percent'">
+          {{control.value | percent | default: '(NaN)'}}
+        </ng-container>
+        <ng-container *ngIf="field.viewerInputs?.format !== 'percent'">
+          {{control.value | number:field.viewerInputs?.format | default: '(NaN)'}}
+        </ng-container>
+      </div>
+    </ng-container>
   </div>
 </div>
