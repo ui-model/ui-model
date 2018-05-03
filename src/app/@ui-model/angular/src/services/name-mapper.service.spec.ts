@@ -28,18 +28,18 @@ describe('NameMapper', () => {
   });
 
   it('should convert composedWord to nature case', () => {
-    expect(mapper.toNatureCase('composedWord')).toEqual('Composed word');
+    expect(mapper.toNatureCase('composedWord')).toEqual('Composed Word');
   });
 
   it('should convert composedWordWith123Number to nature case', () => {
-    expect(mapper.toNatureCase('composedWordWith123Number')).toEqual('Composed word with123 number');
+    expect(mapper.toNatureCase('composedWordWith123Number')).toEqual('Composed Word With123 Number');
   });
 
   it('should convert ComposedWord to nature case', () => {
-    expect(mapper.toNatureCase('ComposedWord')).toEqual('Composed word');
+    expect(mapper.toNatureCase('ComposedWord')).toEqual('Composed Word');
   });
 
   it('should convert ComposedABBRWord to nature case', () => {
-    expect(mapper.toNatureCase('ComposedABBRWord')).toEqual('Composed ABBR word');
+    expect(mapper.toNatureCase('ComposedABBRWord')).toEqual('Composed ABBR Word');
   });
 });

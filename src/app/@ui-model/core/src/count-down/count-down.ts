@@ -1,5 +1,4 @@
 import { Stateful } from '@ui-model/common';
-import { Observable } from 'rxjs/Observable';
 import { take } from 'rxjs/operators';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
@@ -55,7 +54,7 @@ export class CountDown extends Stateful {
       take(this.initialValue),
     ).subscribe(() => {
       this.value--;
-    }, null, () => {
+    }, undefined, () => {
       this.running = false;
     });
   }

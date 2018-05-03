@@ -30,7 +30,6 @@ export class ModalService {
     this.remove(modal);
   }
 
-
   info(message: string, title: string = ''): Observable<void> {
     return this.open({
       title: title,
