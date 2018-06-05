@@ -11,10 +11,7 @@ export class ModalConfirmComponent implements OnInit {
   }
 
   @Output()
-  close = new EventEmitter<void>();
-
-  @Output()
-  cancel = new EventEmitter<void>();
+  close = new EventEmitter<boolean>();
 
   @Input()
   title: string;
