@@ -22,8 +22,8 @@ export class SourceCodeService {
     if (!name) {
       return of('');
     }
-    return this.http.get(`app/showcase/${name}/_docs/readme.${locale}.md`, { responseType: 'text' }).pipe(
-      catchError(() => this.http.get(`app/showcase/${name}/_docs/readme.md`, { responseType: 'text' })),
+    return this.http.get(`app/showcase/${name}/docs/readme.${locale}.md`, { responseType: 'text' }).pipe(
+      catchError(() => this.http.get(`app/showcase/${name}/docs/readme.md`, { responseType: 'text' })),
       catchError(() => of('')),
     );
   }
