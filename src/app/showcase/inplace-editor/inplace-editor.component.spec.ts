@@ -11,7 +11,7 @@ describe('showcase > ShowcaseInplaceEditorComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [InplaceEditorComponent],
-      imports: [UiModelModule.forRoot(), FormsModule],
+      imports: [UiModelModule, FormsModule],
     })
       .compileComponents();
   }));

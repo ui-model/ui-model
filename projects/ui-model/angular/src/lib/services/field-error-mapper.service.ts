@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class FieldErrorMapper {
   lookup(key: string, customMessages: { [key: string]: string } = {}): string {
     const message = customMessages[key];

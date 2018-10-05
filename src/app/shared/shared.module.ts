@@ -9,7 +9,7 @@ import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-v
 @NgModule({
   imports: [
     CommonModule,
-    UiModelModule.forFeature(),
+    UiModelModule,
     UiModelMarkdownModule,
     UiModelBootstrapModule,
   ],

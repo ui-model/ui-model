@@ -18,7 +18,7 @@ export class MultiSelect<T> extends Stateful {
     return this;
   }
 
-  private _transformer: Transformer<T, any> = objectById();
+  private _transformer: Transformer<T, any> = objectById;
   get transformer(): Transformer<T, any> {
     return this._transformer;
   }

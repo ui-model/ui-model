@@ -10,7 +10,7 @@ describe('showcase > ShowcaseToggleNgModelComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ToggleNgModelComponent],
-      imports: [UiModelModule.forRoot(), FormsModule],
+      imports: [UiModelModule, FormsModule],
     })
       .compileComponents();
   }));

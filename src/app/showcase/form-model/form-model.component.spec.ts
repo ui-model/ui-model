@@ -13,7 +13,7 @@ describe('showcase > ShowcaseFormModelComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        UiModelModule.forRoot(),
+        UiModelModule,
         UiModelBootstrapModule,
         ReactiveFormsModule,
       ],

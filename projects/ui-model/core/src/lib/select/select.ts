@@ -3,7 +3,7 @@ import { objectByField, objectById, Stateful, Transformer } from '@ui-model/comm
 export class Select<T> extends Stateful {
   _selection: T;
 
-  private _transformer: Transformer<T, any> = objectById();
+  private _transformer: Transformer<T, any> = objectById;
   get transformer(): Transformer<T, any> {
     return this._transformer;
   }

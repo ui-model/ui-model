@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Point } from '@ui-model/common';
 import { geoMercator, GeoProjection } from 'd3-geo';
 
-@Injectable()
+@Injectable({ providedIn: 'root'} )
 export class GeoProjectionService {
 
   projection: GeoProjection = geoMercator().center([

@@ -11,7 +11,7 @@ describe('TypeAheadComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TypeAheadComponent],
-      imports: [UiModelModule.forRoot(), FormsModule],
+      imports: [UiModelModule, FormsModule],
     })
       .compileComponents();
   }));

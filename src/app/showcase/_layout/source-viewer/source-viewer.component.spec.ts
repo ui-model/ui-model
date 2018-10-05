@@ -25,8 +25,8 @@ describe('showcase > SourceViewerComponent', () => {
     TestBed.configureTestingModule({
       declarations: [SourceViewerComponent],
       imports: [
-        UiModelModule.forRoot(),
-        UiModelMarkdownModule.forRoot(),
+        UiModelModule,
+        UiModelMarkdownModule,
         RouterTestingModule,
         FormsModule,
         SharedModule,

@@ -9,7 +9,7 @@ describe('showcase > ShowcaseToggleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ToggleComponent],
-      imports: [UiModelModule.forRoot()],
+      imports: [UiModelModule],
     })
       .compileComponents();
   }));

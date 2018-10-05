@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { isString } from 'util';
 import { ToastModel } from './toast.model';
 
-@Injectable()
+@Injectable({ providedIn: 'root'} )
 export class ToastService<T extends ToastModel = ToastModel> {
 
   constructor() {

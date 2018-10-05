@@ -11,7 +11,7 @@ describe('showcase > ShowcaseMultiSelectComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MultiSelectComponent],
-      imports: [UiModelModule.forRoot(), FormsModule],
+      imports: [UiModelModule, FormsModule],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

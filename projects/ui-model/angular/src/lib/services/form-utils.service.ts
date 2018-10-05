@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormArray, FormGroup } from '@angular/forms';
 
-@Injectable()
+@Injectable({ providedIn: 'root'} )
 export class FormUtils {
 
   constructor() {

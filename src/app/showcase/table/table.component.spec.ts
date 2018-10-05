@@ -12,8 +12,8 @@ describe('showcase > ShowcaseTableComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TableComponent],
       imports: [
-        UiModelModule.forRoot(),
-        UiModelBootstrapModule.forRoot(),
+        UiModelModule,
+        UiModelBootstrapModule,
       ],
       schemas: [NO_ERRORS_SCHEMA],
     })

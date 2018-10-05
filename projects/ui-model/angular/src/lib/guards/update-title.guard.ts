@@ -12,7 +12,7 @@ export interface IRoute {
   root?: IRoute;
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root'} )
 export class UpdateTitleGuard implements CanActivateChild {
   constructor(private title: Title) {
   }

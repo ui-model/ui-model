@@ -9,7 +9,7 @@ describe('showcase > D3GeoMapComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [UiModelD3Module.forRoot()],
+      imports: [UiModelD3Module],
       declarations: [D3GeoMapComponent],
       providers: [],
     })

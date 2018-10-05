@@ -17,8 +17,8 @@ describe('showcase > BriefViewerComponent', () => {
       imports: [
         SharedModule,
         RouterTestingModule,
-        UiModelModule.forRoot(),
-        UiModelMarkdownModule.forRoot(),
+        UiModelModule,
+        UiModelMarkdownModule,
       ],
       providers: [
         {

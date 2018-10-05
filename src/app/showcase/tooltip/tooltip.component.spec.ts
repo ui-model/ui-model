@@ -27,8 +27,8 @@ describe('showcase > ShowcaseTooltipComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TooltipComponent],
       imports: [
-        UiModelModule.forRoot(),
-        UiModelBootstrapModule.forRoot(),
+        UiModelModule,
+        UiModelBootstrapModule,
       ],
       providers: [{provide: TooltipService, useClass: MyTooltipService}],
     })

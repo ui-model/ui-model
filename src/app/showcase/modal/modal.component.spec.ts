@@ -12,8 +12,8 @@ describe('showcase > ShowcaseModalComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ModalComponent, ModalContentComponent],
       imports: [
-        UiModelModule.forRoot(),
-        UiModelBootstrapModule.forRoot(),
+        UiModelModule,
+        UiModelBootstrapModule,
       ],
       providers: [ModalService],
     })

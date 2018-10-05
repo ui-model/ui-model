@@ -12,7 +12,7 @@ describe('showcase > ShowcaseMultiSelectNgModelComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MultiSelectNgModelComponent],
-      imports: [UiModelModule.forRoot(), FormsModule],
+      imports: [UiModelModule, FormsModule],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

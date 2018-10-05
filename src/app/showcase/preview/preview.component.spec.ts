@@ -9,7 +9,7 @@ describe('showcase > ShowcasePreviewComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PreviewComponent],
-      imports: [UiModelModule.forRoot()],
+      imports: [UiModelModule],
     })
       .compileComponents();
   }));

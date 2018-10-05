@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
 import { CalendarComponent } from './components/calendar/calendar.component';
@@ -36,7 +36,7 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    UiModelModule.forFeature(),
+    UiModelModule,
   ],
   declarations: [
     ModalComponent,
@@ -99,13 +99,6 @@ import { FieldCssPipe } from './pipes/field-css.pipe';
   ],
 })
 export class UiModelBootstrapModule {
-  static forRoot(): ModuleWithProviders {
-    return { ngModule: UiModelBootstrapModule };
-  }
-
-  static forFeature(): ModuleWithProviders {
-    return { ngModule: UiModelBootstrapModule };
-  }
 }
 
 export * from './components/modal/modal.component';

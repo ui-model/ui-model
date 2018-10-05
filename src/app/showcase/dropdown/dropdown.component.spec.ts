@@ -10,7 +10,7 @@ describe('showcase > ShowcaseDropdownComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [DropdownComponent],
-      imports: [UiModelModule.forRoot()],
+      imports: [UiModelModule],
     })
       .compileComponents();
   }));

@@ -12,7 +12,7 @@ describe('showcase > ShowcaseCalendarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CalendarComponent],
-      imports: [FormsModule, UiModelBootstrapModule, UiModelModule.forRoot()],
+      imports: [FormsModule, UiModelBootstrapModule, UiModelModule],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

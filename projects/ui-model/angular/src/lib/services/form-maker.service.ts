@@ -14,7 +14,7 @@ import { FormHooks } from '@angular/forms/src/model';
 import { metaKeyModel, metaKeyProperty, Reflect } from '../utils/constants';
 import { ModelMetadata } from '../decorators/form-maker';
 
-@Injectable()
+@Injectable({ providedIn: 'root'} )
 export class FormMaker {
 
   constructor(private injector: Injector) {

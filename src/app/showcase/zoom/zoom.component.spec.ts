@@ -9,7 +9,7 @@ describe('showcase > ShowcaseZoomComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ZoomComponent],
-      imports: [UiModelModule.forRoot()],
+      imports: [UiModelModule],
     })
       .compileComponents();
   }));

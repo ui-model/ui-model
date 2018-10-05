@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { Modal, ModalType } from './modal.model';
 
-@Injectable()
+@Injectable({ providedIn: 'root'} )
 export class ModalService {
 
   constructor() {

@@ -20,8 +20,8 @@ export function objectByField(field: string): Transformer<Object, any> {
   };
 }
 
-export function objectById(): Transformer<Object, any> {
-  return objectByField('id');
+export function objectById(formData: any): any {
+  return objectByField('id')(formData);
 }
 
 export function asString(fromData: any): string {

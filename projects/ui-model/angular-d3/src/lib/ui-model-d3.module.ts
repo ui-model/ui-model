@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { GeoBoxDirective } from './directives/geo-box.directive';
 import { GeoGpsDirective } from './directives/geo-gps.directive';
 import { GeoLineDirective } from './directives/geo-line.directive';
 import { GeoPathDirective } from './directives/geo-path.directive';
 import { D3ColorsPipe } from './pipes/d3-colors.pipe';
-import { GeoProjectionService } from './services/geo-projection.service';
 
 @NgModule({
   imports: [
@@ -27,18 +26,6 @@ import { GeoProjectionService } from './services/geo-projection.service';
   ],
 })
 export class UiModelD3Module {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: UiModelD3Module,
-      providers: [GeoProjectionService],
-    };
-  }
-
-  static forFeature(): ModuleWithProviders {
-    return {
-      ngModule: UiModelD3Module,
-    };
-  }
 }
 
 export * from './pipes/d3-colors.pipe';

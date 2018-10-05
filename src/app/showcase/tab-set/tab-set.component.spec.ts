@@ -11,7 +11,7 @@ describe('showcase > ShowcaseTabSetComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TabSetComponent],
-      imports: [UiModelModule.forRoot()],
+      imports: [UiModelModule],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

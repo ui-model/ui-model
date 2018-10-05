@@ -4,7 +4,7 @@ import { Rect } from '@ui-model/common';
 import { Observable, Subject } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root'} )
 export class TooltipService {
   constructor() {
   }

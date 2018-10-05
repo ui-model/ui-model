@@ -10,7 +10,7 @@ describe('TooltipComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TooltipComponent],
-      imports: [UiModelModule.forRoot()],
+      imports: [UiModelModule],
       providers: [TooltipService],
     })
       .compileComponents();

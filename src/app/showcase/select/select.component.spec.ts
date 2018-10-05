@@ -11,7 +11,7 @@ describe('showcase > ShowcaseSelectComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SelectComponent],
-      imports: [UiModelModule.forRoot(), FormsModule],
+      imports: [UiModelModule, FormsModule],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

@@ -12,7 +12,7 @@ describe('showcase > ShowcaseSelectNgModelComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SelectNgModelComponent],
-      imports: [UiModelModule.forRoot(), FormsModule],
+      imports: [UiModelModule, FormsModule],
       schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();

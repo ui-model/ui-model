@@ -13,9 +13,9 @@ describe('showcase > ShowcaseChartComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ChartComponent],
       imports: [
-        UiModelModule.forRoot(),
+        UiModelModule,
         UiModelBootstrapModule,
-        UiModelD3Module.forRoot(),
+        UiModelD3Module,
         FormsModule,
       ],
     })

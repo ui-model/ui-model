@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { CountDownDirective } from './directives/count-down.directive';
 import { DateInputDirective } from './directives/date-input.directive';
@@ -22,7 +22,6 @@ import { SelectDirective } from './directives/select.directive';
 import { ToggleDirective } from './directives/toggle.directive';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { TypeAheadDirective } from './directives/type-ahead.directive';
-import { UpdateTitleGuard } from './guards/update-title.guard';
 
 import { DefaultPipe } from './pipes/default.pipe';
 import { FieldErrorMapperPipe } from './pipes/field-error-mapper.pipe';
@@ -44,14 +43,6 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { TemplatePipe } from './pipes/template.pipe';
 import { TimesPipe } from './pipes/times.pipe';
 import { TypeNamePipe } from './pipes/type-name.pipe';
-
-import { FieldErrorMapper } from './services/field-error-mapper.service';
-import { FormMaker } from './services/form-maker.service';
-import { FormUtils } from './services/form-utils.service';
-import { ModalService } from './services/modal.service';
-import { NameMapper } from './services/name-mapper.service';
-import { ToastService } from './services/toast.service';
-import { TooltipService } from './services/tooltip.service';
 
 @NgModule({
   imports: [
@@ -150,27 +141,6 @@ import { TooltipService } from './services/tooltip.service';
   ],
 })
 export class UiModelModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: UiModelModule,
-      providers: [
-        ModalService,
-        TooltipService,
-        FormMaker,
-        FieldErrorMapper,
-        NameMapper,
-        FormUtils,
-        UpdateTitleGuard,
-        ToastService,
-      ],
-    };
-  }
-
-  static forFeature(): ModuleWithProviders {
-    return {
-      ngModule: UiModelModule,
-    };
-  }
 }
 
 export * from './accessors/base.value-accessor';
