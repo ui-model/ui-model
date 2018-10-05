@@ -10,7 +10,7 @@ import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     SharedModule,
     CoreModule,
