@@ -11,7 +11,7 @@ import {
   getYear,
   isAfter,
   isBefore,
-  isEqual,
+  isSameDay,
   isSameMonth,
   setMonth,
   setYear,
@@ -59,7 +59,7 @@ export class Calendar extends Stateful {
       return;
     }
 
-    if (!isEqual(value, this._value)) {
+    if (!isSameDay(value, this._value)) {
       this._value = value;
       this.update();
       this.changed();
@@ -116,11 +116,11 @@ export class Calendar extends Stateful {
   }
 
   isActive(date: Date): boolean {
-    return this._value && isEqual(this._value, date);
+    return this._value && isSameDay(this._value, date);
   }
 
   isToday(date: Date): boolean {
-    return isEqual(this.fakeToday, date);
+    return isSameDay(this.fakeToday, date);
   }
 
   isPast(date: Date): boolean {
@@ -170,8 +170,8 @@ export class Calendar extends Stateful {
   }
 
   isValid(date: Date): boolean {
-    return (!this._minValue || isEqual(this._minValue, date) || isAfter(date, this._minValue)) &&
-      (!this._maxValue || isEqual(this._maxValue, date) || isBefore(date, this._maxValue));
+    return (!this._minValue || isSameDay(this._minValue, date) || isAfter(date, this._minValue)) &&
+      (!this._maxValue || isSameDay(this._maxValue, date) || isBefore(date, this._maxValue));
   }
 
   goTo(date: Date): void {
@@ -250,5 +250,5 @@ function months(): string[] {
   const now = new Date();
   const firstMonth = startOfYear(now);
   return range(0, 12).map(i => addMonths(firstMonth, i))
-    .map(day => format(day, 'MMM'));
+    .map(day => format(day, 'MMMM'));
 }

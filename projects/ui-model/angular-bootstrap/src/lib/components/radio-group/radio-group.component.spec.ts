@@ -3,8 +3,8 @@ import { RadioGroupComponent } from './radio-group.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('RadioGroupComponent', () => {
-  let component: RadioGroupComponent<boolean>;
-  let fixture: ComponentFixture<RadioGroupComponent<boolean>>;
+  let component: RadioGroupComponent<{}>;
+  let fixture: ComponentFixture<RadioGroupComponent<{}>>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

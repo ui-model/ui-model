@@ -24,6 +24,6 @@ function titleCase(value: string): string {
   return value[0].toUpperCase() + value.slice(1).toLowerCase();
 }
 
-function tokenize(name: string = ''): string[] {
+export function tokenize(name: string = ''): string[] {
   return name.split(/([A-Z][a-z0-9_\b]+)/g).filter((token) => !!token);
 }

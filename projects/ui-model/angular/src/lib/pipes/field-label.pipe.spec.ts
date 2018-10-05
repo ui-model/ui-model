@@ -1,5 +1,6 @@
 import { FieldLabelPipe } from './field-label.pipe';
 import { NameMapper } from '../services/name-mapper.service';
+import { PropertyMetadata } from '@ui-model/angular';
 
 describe('FieldLabelPipe', () => {
   let pipe: FieldLabelPipe;
@@ -13,14 +14,22 @@ describe('FieldLabelPipe', () => {
   });
 
   it('should return label if it is defined', () => {
-    expect(pipe.transform({ label: 'ABC', name: 'def' })).toEqual('ABC');
+    const field = new PropertyMetadata();
+    field.label = 'ABC';
+    field.name = 'def';
+    expect(pipe.transform(field)).toEqual('ABC');
   });
 
   it('should return label if it is blank', () => {
-    expect(pipe.transform({ label: '', name: 'def' })).toEqual('');
+    const field = new PropertyMetadata();
+    field.label = '';
+    field.name = 'def';
+    expect(pipe.transform(field)).toEqual('');
   });
 
   it('should return mapped name if label is undefined', () => {
-    expect(pipe.transform({ name: 'def' })).toEqual('Def');
+    const field = new PropertyMetadata();
+    field.name = 'def';
+    expect(pipe.transform(field)).toEqual('Def');
   });
 });

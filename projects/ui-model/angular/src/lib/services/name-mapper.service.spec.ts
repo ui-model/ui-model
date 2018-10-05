@@ -1,6 +1,6 @@
 import { inject, TestBed } from '@angular/core/testing';
 
-import { NameMapper } from './name-mapper.service';
+import { NameMapper, tokenize } from './name-mapper.service';
 
 describe('NameMapper', () => {
   beforeEach(() => {
@@ -20,7 +20,7 @@ describe('NameMapper', () => {
   });
 
   it('should tokenize', () => {
-    expect(mapper.tokenize('composedWord')).toEqual(['composed', 'Word']);
+    expect(tokenize('composedWord')).toEqual(['composed', 'Word']);
   });
 
   it('should convert simple word to nature case', () => {
