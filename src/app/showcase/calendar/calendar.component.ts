@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import 'moment/locale/zh-cn';
 
 @Component({
   selector: 'app-calendar',

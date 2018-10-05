@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { zip } from 'rxjs/observable/zip';
+import { Observable, zip } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Author } from '../utils/author';
 import { Metadata } from '../utils/meta-data';

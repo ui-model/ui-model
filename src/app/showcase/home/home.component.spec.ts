@@ -1,6 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 import { SourceCodeService } from '../../core/source-code.service';
 import { SharedModule } from '../../shared/shared.module';
 

@@ -1,0 +1,17 @@
+{
+  "name": "@ui-model/angular-bootstrap",
+  "version": "0.1.0",
+  "main": "src/public_api.ts",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0",
+    "@angular/core": "^6.0.0",
+    "@angular/forms": "^6.0.0",
+    "@ui-model/angular": "0.1.0",
+    "bootstrap": "4.0.0",
+    "font-awesome": "^4.0.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0"
+  }
+}

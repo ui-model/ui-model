@@ -1,0 +1,15 @@
+{
+  "name": "@ui-model/angular",
+  "version": "0.1.0",
+  "main": "src/public_api.ts",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0",
+    "@angular/core": "^6.0.0",
+    "@angular/forms": "^6.0.0",
+    "@ui-model/common": "0.1.0",
+    "@ui-model/core": "0.1.0",
+    "@ui-model/calendar": "0.1.0",
+    "@ui-model/chart": "0.1.0",
+    "rxjs": "^6.0.0"
+  }
+}

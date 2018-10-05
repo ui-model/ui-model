@@ -1,5 +1,5 @@
 import { inject, TestBed } from '@angular/core/testing';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 import { MetadataService } from './metadata.service';
 
 import { UpdateMetadataGuard } from './update-metadata-guard.service';

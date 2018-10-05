@@ -1,8 +1,8 @@
 <div class="row" uiSelect #select="uiSelect" [(ngModel)]="selection">
   <div class="col-md-6">
-    <select class="form-control" [(ngModel)]="select.selection">
+    <select class="form-control" [(ngModel)]="selection">
       <option value="">-</option>
-      <option *ngFor="let option of options" [value]="option.id">{{option.name}}</option>
+      <option *ngFor="let option of options" [ngValue]="option.id">{{option.name}}</option>
     </select>
   </div>
   <div class="col-md-6">

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MultiSelect } from '@ui-model/core';
-import { Transformers } from '@ui-model/common';
+import { objectByField } from '@ui-model/common';
 
 @Component({
   selector: 'app-multi-select-checkbox',
@@ -27,9 +27,9 @@ export class MultiSelectCheckboxComponent {
     },
   ];
 
-  select = new MultiSelect<{ code: string, label: string }>().setOptions(this.options).setTransformer(Transformers.objectByField('code'));
+  select = new MultiSelect<{ code: string, label: string }>().setOptions(this.options).setTransformer(objectByField('code'));
 
-  getCode = ({code}) => {
+  getCode = ({ code }) => {
     return code;
-  }
+  };
 }

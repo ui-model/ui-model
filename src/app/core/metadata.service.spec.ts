@@ -2,9 +2,8 @@ import { inject, TestBed } from '@angular/core/testing';
 
 import { MetadataService } from './metadata.service';
 import { SourceCodeService } from './source-code.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable, of } from 'rxjs';
 import { Metadata } from '../utils/meta-data';
-import { of } from 'rxjs/observable/of';
 
 class MySourceCodeService {
   loadFile(name: string, ext: string): Observable<string> {

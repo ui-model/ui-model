@@ -1,10 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
+    "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -12,39 +13,58 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "types": [
-      "node"
-    ],
     "lib": [
-      "es2016",
+      "es2017",
       "dom"
     ],
-    "mapRoot": "./",
-    "module": "es2015",
     "paths": {
-      "@ui-model/core": [
-        "./app/@ui-model/core"
-      ],
-      "@ui-model/common": [
-        "./app/@ui-model/common"
-      ],
-      "@ui-model/chart": [
-        "./app/@ui-model/chart"
-      ],
-      "@ui-model/calendar": [
-        "./app/@ui-model/calendar"
-      ],
       "@ui-model/angular": [
-        "./app/@ui-model/angular"
+        "projects/ui-model/angular"
       ],
-      "@ui-model/angular-d3": [
-        "./app/@ui-model/angular-d3"
-      ],
-      "@ui-model/angular-markdown": [
-        "./app/@ui-model/angular-markdown"
+      "@ui-model/angular/*": [
+        "projects/ui-model/angular/*"
       ],
       "@ui-model/angular-bootstrap": [
-        "./app/@ui-model/angular-bootstrap"
+        "projects/ui-model/angular-bootstrap"
+      ],
+      "@ui-model/angular-bootstrap/*": [
+        "projects/ui-model/angular-bootstrap/*"
+      ],
+      "@ui-model/angular-markdown": [
+        "projects/ui-model/angular-markdown"
+      ],
+      "@ui-model/angular-markdown/*": [
+        "projects/ui-model/angular-markdown/*"
+      ],
+      "@ui-model/calendar": [
+        "projects/ui-model/calendar"
+      ],
+      "@ui-model/calendar/*": [
+        "projects/ui-model/calendar/*"
+      ],
+      "@ui-model/chart": [
+        "projects/ui-model/chart"
+      ],
+      "@ui-model/chart/*": [
+        "projects/ui-model/chart/*"
+      ],
+      "@ui-model/common": [
+        "projects/ui-model/common"
+      ],
+      "@ui-model/common/*": [
+        "projects/ui-model/common/*"
+      ],
+      "@ui-model/core": [
+        "projects/ui-model/core"
+      ],
+      "@ui-model/core/*": [
+        "projects/ui-model/core/*"
+      ],
+      "@ui-model/angular-d3": [
+        "projects/ui-model/angular-d3"
+      ],
+      "@ui-model/angular-d3/*": [
+        "projects/ui-model/angular-d3/*"
       ]
     }
   }

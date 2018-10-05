@@ -1,0 +1,34 @@
+<ui-modal *ngFor="let item of modal.items">
+  <ui-modal-info *ngIf="item.type === 'info'"
+                 [title]="item.title" [message]="item.message" [icon]="item.icon"
+                 (close)="modal.close(item, true)" (cancel)="modal.cancel(item)">
+  </ui-modal-info>
+  <ui-modal-success *ngIf="item.type === 'success'"
+                    [title]="item.title" [message]="item.message" [icon]="item.icon"
+                    (close)="modal.close(item, true)" (cancel)="modal.cancel(item)">
+  </ui-modal-success>
+  <ui-modal-warning *ngIf="item.type === 'warning'"
+                    [title]="item.title" [message]="item.message" [icon]="item.icon"
+                    (close)="modal.close(item, true)" (cancel)="modal.cancel(item)">
+  </ui-modal-warning>
+  <ui-modal-error *ngIf="item.type === 'error'"
+                  [title]="item.title" [message]="item.message" [icon]="item.icon"
+                  (close)="modal.close(item, true)" (cancel)="modal.cancel(item)">
+  </ui-modal-error>
+  <ui-modal-confirm *ngIf="item.type === 'confirm'"
+                    [title]="item.title" [message]="item.message" [icon]="item.icon"
+                    (close)="modal.close(item, $event)" (cancel)="modal.cancel(item)">
+  </ui-modal-confirm>
+  <ui-modal-prompt *ngIf="item.type === 'prompt'"
+                   [title]="item.title" [message]="item.message" [icon]="item.icon" [defaultValue]="item.data"
+                   (close)="modal.close(item, $event)" (cancel)="modal.cancel(item)">
+  </ui-modal-prompt>
+  <ui-modal-form *ngIf="item.type === 'form'"
+                 [title]="item.title" [message]="item.message" [icon]="item.icon" [group]="item.data"
+                 (close)="modal.close(item, $event)" (cancel)="modal.cancel(item)">
+  </ui-modal-form>
+  <ng-container *ngIf="item.type === 'custom'">
+    <div [ngComponentOutlet]="item.customComponent" [ngComponentOutletInjector]="injector"
+         [uiDynamicComponentInputs]="[item.customInputs, {modal: item}]"></div>
+  </ng-container>
+</ui-modal>

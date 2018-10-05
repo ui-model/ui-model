@@ -2,12 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
-import {
-  RadioGroupWithinFormComponent,
-  TypeAheadWithinFormComponent,
-  UiModelBootstrapModule,
-} from '@ui-model/angular-bootstrap';
-import { UiModelD3Module } from '@ui-model/angular-d3';
+import { RadioGroupWithinFormComponent, TypeAheadWithinFormComponent, UiModelBootstrapModule, } from '@ui-model/angular-bootstrap';
 import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
 import { SharedModule } from '../shared/shared.module';
 import { BriefViewerComponent } from './_layout/brief-viewer/brief-viewer.component';
@@ -16,10 +11,6 @@ import { LayoutComponent } from './_layout/layout/layout.component';
 import { SourceViewerComponent } from './_layout/source-viewer/source-viewer.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ChartComponent } from './chart/chart.component';
-import { D3BasicComponent } from './d3-basic/d3-basic.component';
-import { D3GaugeComponent } from './d3-gauge/d3-gauge.component';
-import { D3GeoMapComponent } from './d3-geo-map/d3-geo-map.component';
-import { D3LineChartComponent } from './d3-line-chart/d3-line-chart.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { AgreeLicenseEditorComponent } from './form-auto-ui/editors/agree-license-editor/agree-license-editor.component';
 import { FormAutoUiComponent } from './form-auto-ui/form-auto-ui.component';
@@ -61,6 +52,11 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { TreeComponent } from './tree/tree.component';
 import { TypeAheadComponent } from './type-ahead/type-ahead.component';
 import { ZoomComponent } from './zoom/zoom.component';
+import { UiModelD3Module } from '@ui-model/angular-d3';
+import { D3BasicComponent } from './d3-basic/d3-basic.component';
+import { D3LineChartComponent } from './d3-line-chart/d3-line-chart.component';
+import { D3GaugeComponent } from './d3-gauge/d3-gauge.component';
+import { D3GeoMapComponent } from './d3-geo-map/d3-geo-map.component';
 
 @NgModule({
   imports: [
@@ -109,19 +105,19 @@ import { ZoomComponent } from './zoom/zoom.component';
     ToggleImagesComponent,
     ToggleNgModelComponent,
     SelectNgModelComponent,
-    D3BasicComponent,
     InfiniteScrollComponent,
-    D3LineChartComponent,
     ReactiveFormComponent,
     BasicInfoGroupComponent,
     FormModelComponent,
     FormAutoUiComponent,
     AgreeLicenseEditorComponent,
     SelectBoxComponent,
-    D3GaugeComponent,
-    D3GeoMapComponent,
     ModalCustomComponent,
     ToastComponent,
+    D3BasicComponent,
+    D3LineChartComponent,
+    D3GaugeComponent,
+    D3GeoMapComponent,
   ],
   providers: [RemoteUsernameValidator],
   entryComponents: [

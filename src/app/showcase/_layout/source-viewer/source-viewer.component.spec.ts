@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { UiModelModule } from '@ui-model/angular';
 import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { MetadataService } from '../../../core/metadata.service';
 import { SourceCodeService } from '../../../core/source-code.service';
 import { SharedModule } from '../../../shared/shared.module';

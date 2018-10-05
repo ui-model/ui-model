@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { scaleBand, scaleLinear, schemeCategory10 } from 'd3-scale';
+import { scaleBand, scaleLinear } from 'd3-scale';
 import { max } from 'd3-array';
+import { schemeCategory10 } from 'd3-scale-chromatic';
 
 @Component({
   selector: 'app-d3-basic',

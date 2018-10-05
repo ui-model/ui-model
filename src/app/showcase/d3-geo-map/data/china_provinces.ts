@@ -1,6 +1,6 @@
-import { FeatureCollection, GeometryObject } from 'geojson';
+import { FeatureCollection, MultiPolygon, Polygon } from 'geojson';
 
-export const provinces: FeatureCollection<GeometryObject> = {
+export const provinces: FeatureCollection<MultiPolygon | Polygon> = {
   type: 'FeatureCollection',
   features: [
     {

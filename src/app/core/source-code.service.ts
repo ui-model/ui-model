@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
@@ -14,8 +13,8 @@ export class SourceCodeService {
     if (!name) {
       return of('');
     }
-    return this.http.get(`app/showcase/${name}/${name}.component.${ext}`, {responseType: 'text'}).pipe(
-      catchError(() => ''),
+    return this.http.get(`app/showcase/${name}/${name}.component.${ext}`, { responseType: 'text' }).pipe(
+      catchError(() => of('')),
     );
   }
 
@@ -23,9 +22,9 @@ export class SourceCodeService {
     if (!name) {
       return of('');
     }
-    return this.http.get(`app/showcase/${name}/_docs/readme.${locale}.md`, {responseType: 'text'}).pipe(
-      catchError(() => this.http.get(`app/showcase/${name}/_docs/readme.md`, {responseType: 'text'})),
-      catchError(() => ''),
+    return this.http.get(`app/showcase/${name}/_docs/readme.${locale}.md`, { responseType: 'text' }).pipe(
+      catchError(() => this.http.get(`app/showcase/${name}/_docs/readme.md`, { responseType: 'text' })),
+      catchError(() => of('')),
     );
   }
 }

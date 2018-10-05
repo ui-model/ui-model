@@ -1,6 +1,7 @@
 import { Route, RouterModule } from '@angular/router';
 import { UpdateTitleGuard } from '@ui-model/angular';
 import { UpdateMetadataGuard } from './core/update-metadata-guard.service';
+import { NgModule } from '@angular/core';
 
 export const routes: Route[] = [
   {
@@ -19,4 +20,9 @@ export const routes: Route[] = [
   },
 ];
 
-export const routing = RouterModule.forRoot(routes);
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {
+}
