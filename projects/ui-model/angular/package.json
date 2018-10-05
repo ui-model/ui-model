@@ -8,7 +8,6 @@
     "@angular/forms": "^6.0.0",
     "@ui-model/common": "0.1.0",
     "@ui-model/core": "0.1.0",
-    "@ui-model/calendar": "0.1.0",
     "@ui-model/chart": "0.1.0",
     "rxjs": "^6.0.0"
   }

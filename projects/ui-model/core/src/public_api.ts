@@ -2,6 +2,7 @@
  * Public API Surface of core
  */
 
+export * from './lib/calendar/calendar';
 export * from './lib/count-down/count-down';
 export * from './lib/multi-select/multi-select';
 export * from './lib/pager/pager';
