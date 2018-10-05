@@ -15,7 +15,7 @@ cp -r ./dist/ui-model/* ./prebuilt/
 
 cp ./dist/ui-model/index.html ./prebuilt/404.html
 
-sleep 3
+#sleep 3
 
 #wget -m --adjust-extension localhost:4000 -P /tmp
 #
