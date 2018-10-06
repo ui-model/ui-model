@@ -3,15 +3,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
 
-import { TabSetUsingDirectiveComponent } from './tab-set-using-directive.component';
+import { TabSetNgModelComponent } from './tab-set-ng-model.component';
 
 describe('showcase > ShowcaseTabSetUsingDirectiveComponent', () => {
-  let component: TabSetUsingDirectiveComponent;
-  let fixture: ComponentFixture<TabSetUsingDirectiveComponent>;
+  let component: TabSetNgModelComponent;
+  let fixture: ComponentFixture<TabSetNgModelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TabSetUsingDirectiveComponent],
+      declarations: [TabSetNgModelComponent],
       imports: [UiModelModule, FormsModule],
       schemas: [NO_ERRORS_SCHEMA],
     })
@@ -19,7 +19,7 @@ describe('showcase > ShowcaseTabSetUsingDirectiveComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TabSetUsingDirectiveComponent);
+    fixture = TestBed.createComponent(TabSetNgModelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

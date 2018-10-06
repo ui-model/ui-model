@@ -2,7 +2,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
-import { RadioGroupWithinFormComponent, TypeAheadWithinFormComponent, UiModelBootstrapModule, } from '@ui-model/angular-bootstrap';
+import {
+  RadioGroupWithinFormComponent,
+  TypeAheadWithinFormComponent,
+  UiModelBootstrapModule,
+} from '@ui-model/angular-bootstrap';
 import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
 import { SharedModule } from '../shared/shared.module';
 import { BriefViewerComponent } from './_layout/brief-viewer/brief-viewer.component';
@@ -40,7 +44,7 @@ import { SelectNgModelComponent } from './select-ng-model/select-ng-model.compon
 import { SelectComponent } from './select/select.component';
 
 import { ShowcaseRoutingModule } from './showcase-routing.module';
-import { TabSetUsingDirectiveComponent } from './tab-set-using-directive/tab-set-using-directive.component';
+import { TabSetNgModelComponent } from './tab-set-ng-model/tab-set-ng-model.component';
 import { TabSetComponent } from './tab-set/tab-set.component';
 import { TableComponent } from './table/table.component';
 import { ToastComponent } from './toast/toast.component';
@@ -94,7 +98,7 @@ import { D3GeoMapComponent } from './d3-geo-map/d3-geo-map.component';
     RadioGroupComponent,
     RadioButtonComponent,
     TabSetComponent,
-    TabSetUsingDirectiveComponent,
+    TabSetNgModelComponent,
     MenuComponent,
     MultiSelectCheckboxComponent,
     MultiSelectNgModelComponent,

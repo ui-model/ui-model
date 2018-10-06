@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-tab-set-using-directive',
-  templateUrl: './tab-set-using-directive.component.html',
-  styleUrls: ['./tab-set-using-directive.component.scss'],
+  selector: 'app-tab-ng-model',
+  templateUrl: './tab-set-ng-model.component.html',
+  styleUrls: ['./tab-set-ng-model.component.scss'],
 })
-export class TabSetUsingDirectiveComponent {
+export class TabSetNgModelComponent {
   options = [
     {
       label: 'A1',

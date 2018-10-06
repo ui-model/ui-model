@@ -20,7 +20,7 @@ import { RadioGroupComponent } from '../showcase/radio-group/radio-group.compone
 import { ReactiveFormComponent } from '../showcase/reactive-form/reactive-form.component';
 import { SelectNgModelComponent } from '../showcase/select-ng-model/select-ng-model.component';
 import { SelectComponent } from '../showcase/select/select.component';
-import { TabSetUsingDirectiveComponent } from '../showcase/tab-set-using-directive/tab-set-using-directive.component';
+import { TabSetNgModelComponent } from '../showcase/tab-set-ng-model/tab-set-ng-model.component';
 import { TabSetComponent } from '../showcase/tab-set/tab-set.component';
 import { TableComponent } from '../showcase/table/table.component';
 import { ToastComponent } from '../showcase/toast/toast.component';
@@ -92,9 +92,9 @@ export const showcaseRoutes: Route[] = [
   },
   {
     path: 'tab-set-using-directive',
-    component: TabSetUsingDirectiveComponent,
+    component: TabSetNgModelComponent,
     data: {
-      title: 'Tab Set(Directive)',
+      title: 'Tab Set(ngModel)',
       tags: ['select', 'tab set', 'multi-page'].map(Tag.of),
       description: '`select` means: choose `1` from `N`',
       authors: ['wzc'].map(Author.of),
