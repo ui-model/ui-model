@@ -25,7 +25,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/app"
+              "src/app",
+              "src/google44a5c950a9a9b940.html",
+              "src/baidu_verify_AD8wvnfKCx.html"
             ],
             "styles": [
               "src/styles.scss"
