@@ -1,7 +1,8 @@
 import { Type } from '@angular/core';
-import { metaKeyModel, metaKeyType, Reflect } from '../../utils/constants';
+import { metaKeyModel, metaKeyType } from '../../utils/constants';
 import { ModelMetadata } from './model-metadata';
 import { PropertyMetadata } from './property-metadata';
+import { Reflect } from 'core-js';
 
 export function getOrCreateModelMetadata(target: any): ModelMetadata {
   const result = Reflect.getMetadata(metaKeyModel, target);

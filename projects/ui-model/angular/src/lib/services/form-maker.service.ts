@@ -11,10 +11,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { FormHooks } from '@angular/forms/src/model';
-import { metaKeyModel, metaKeyProperty, Reflect } from '../utils/constants';
+import { metaKeyModel, metaKeyProperty } from '../utils/constants';
 import { ModelMetadata } from '../decorators/form-maker';
+import { Reflect } from 'core-js';
 
-@Injectable({ providedIn: 'root'} )
+@Injectable({ providedIn: 'root' })
 export class FormMaker {
 
   constructor(private injector: Injector) {

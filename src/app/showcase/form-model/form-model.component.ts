@@ -4,7 +4,6 @@ import { FormMaker } from '@ui-model/angular';
 import { FormGroup } from '@angular/forms';
 import { ProfileModel } from './models/profile-model';
 
-const Reflect = window['Reflect'];
 @Component({
   selector: 'app-form-model',
   templateUrl: './form-model.component.html',
