@@ -1,10 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UserApi } from './apis/user-api.service';
 import { MetadataService } from './metadata.service';
-import { MockDbService } from './mock/mock-db.service';
 import { SourceCodeService } from './source-code.service';
 import { UpdateMetadataGuard } from './update-metadata-guard.service';
 
@@ -12,7 +10,6 @@ import { UpdateMetadataGuard } from './update-metadata-guard.service';
   imports: [
     CommonModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(MockDbService, {passThruUnknownUrl: true}),
   ],
   declarations: [],
   providers: [

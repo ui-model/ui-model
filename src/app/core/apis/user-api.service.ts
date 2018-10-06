@@ -1,17 +1,17 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { isEmpty } from 'rxjs/operators';
 import { UserModel } from '../models/user.model';
+import { users } from '../mock/users';
 
 @Injectable()
 export class UserApi {
 
-  constructor(private http: HttpClient) {
+  constructor() {
   }
 
   query(usernameFilter?: string): Observable<UserModel[]> {
-    return this.http.get<UserModel[]>(`api/users?username=${usernameFilter}`);
+    return of(users.filter(user => new RegExp(`^${usernameFilter}$`).test(user.username)));
   }
 
   checkUnique(username: string): Observable<boolean> {

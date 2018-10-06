@@ -1,0 +1,49 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@ui-model/angular": [
+        "dist/ui-model/angular"
+      ],
+      "@ui-model/angular/*": [
+        "dist/ui-model/angular/*"
+      ],
+      "@ui-model/angular-bootstrap": [
+        "dist/ui-model/angular-bootstrap"
+      ],
+      "@ui-model/angular-bootstrap/*": [
+        "dist/ui-model/angular-bootstrap/*"
+      ],
+      "@ui-model/angular-markdown": [
+        "dist/ui-model/angular-markdown"
+      ],
+      "@ui-model/angular-markdown/*": [
+        "dist/ui-model/angular-markdown/*"
+      ],
+      "@ui-model/chart": [
+        "dist/ui-model/chart"
+      ],
+      "@ui-model/chart/*": [
+        "dist/ui-model/chart/*"
+      ],
+      "@ui-model/common": [
+        "dist/ui-model/common"
+      ],
+      "@ui-model/common/*": [
+        "dist/ui-model/common/*"
+      ],
+      "@ui-model/core": [
+        "dist/ui-model/core"
+      ],
+      "@ui-model/core/*": [
+        "dist/ui-model/core/*"
+      ],
+      "@ui-model/angular-d3": [
+        "dist/ui-model/angular-d3"
+      ],
+      "@ui-model/angular-d3/*": [
+        "dist/ui-model/angular-d3/*"
+      ]
+    }
+  }
+}
