@@ -1,3 +1,0 @@
-[submodule "prebuilt"]
-	path = prebuilt
-	url = git@github.com:ui-model/ui-model.github.io.git

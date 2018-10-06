@@ -11,9 +11,9 @@ npm run build
 #
 #npm run serve:ssr &
 #
-cp -r ./dist/ui-model/* ./prebuilt/
+cp -r ./dist/ui-model/* ../ui-model.github.io/
 
-cp ./dist/ui-model/index.html ./prebuilt/404.html
+cp ./dist/ui-model/index.html ../ui-model.github.io/404.html
 
 #sleep 3
 
@@ -21,13 +21,13 @@ cp ./dist/ui-model/index.html ./prebuilt/404.html
 #
 #kill `lsof -t -i :4000`
 #
-#cp -r /tmp/localhost:4000/* prebuilt
+#cp -r /tmp/localhost:4000/* ../ui-model.github.io
 #
 #rm -fr /tmp/localhost:4000
 #
 commitMessage=$(git log --oneline -n 1)
 
-cd prebuilt
+cd ../ui-model.github.io/
 
 git add .
 git commit -am "${commitMessage}"
