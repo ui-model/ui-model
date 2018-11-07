@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import * as MarkdownIt from 'markdown-it';
 import * as hljs from 'highlight.js';
 
@@ -28,8 +28,10 @@ export class MarkdownPipe implements PipeTransform {
   }
 }
 
-function highlighter({ options }: { options }): void {
-  options.highlight = (code, lang) => {
-    return hljs.highlightAuto(code, lang ? [lang] : ['ts', 'js', 'html', 'scss', 'css']).value;
-  };
+function highlighter(md: MarkdownIt): void {
+  md.set({
+    highlight: (code, lang) => {
+      return hljs.highlightAuto(code, lang ? [lang] : ['ts', 'js', 'html', 'scss', 'css']).value;
+    },
+  });
 }
