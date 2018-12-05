@@ -18,7 +18,7 @@ export class ClickOutsideDirective {
 
   @HostListener('document:mouseup', ['$event'])
   clickListener(event: MouseEvent): void {
-    if (!isSelfOrAncestorNode(this.element.nativeElement, event.target  as Node || event.srcElement)) {
+    if (!isSelfOrAncestorNode(this.element.nativeElement, event.target as Node || event.srcElement)) {
       this.onClickOutside.emit();
     }
   }

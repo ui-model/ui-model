@@ -5,7 +5,7 @@ import { FormUtils } from './form-utils.service';
 describe('FormUtilsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FormUtils]
+      providers: [FormUtils],
     });
   });
 

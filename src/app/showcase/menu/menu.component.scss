@@ -10,6 +10,7 @@
 
 .nav-item {
   position: relative;
+
   > .dropdown-menu {
     display: block;
     position: absolute;
@@ -18,8 +19,10 @@
 
 .dropdown-item {
   cursor: pointer;
+
   &.active {
     color: white;
+
     &:hover {
       color: white;
     }

@@ -8,7 +8,7 @@ describe('MultiSelectBoxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MultiSelectBoxComponent]
+      declarations: [MultiSelectBoxComponent],
     })
       .compileComponents();
   }));

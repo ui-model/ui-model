@@ -1,5 +1,12 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator, } from '@angular/forms';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+  ValidationErrors,
+  Validator,
+} from '@angular/forms';
 import { isDate } from '../validators/is-date.validator';
 import { format, parse } from 'date-fns';
 

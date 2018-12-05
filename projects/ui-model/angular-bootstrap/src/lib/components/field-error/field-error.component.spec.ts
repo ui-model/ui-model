@@ -1,7 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FieldErrorComponent } from './field-error.component';
-import { FieldErrorMapper, FieldErrorMapperPipe, ObjectToArrayPipe, SafeHtmlPipe, TemplatePipe } from '@ui-model/angular';
+import {
+  FieldErrorMapper,
+  FieldErrorMapperPipe,
+  ObjectToArrayPipe,
+  SafeHtmlPipe,
+  TemplatePipe,
+} from '@ui-model/angular';
 
 describe('FieldErrorComponent', () => {
   let component: FieldErrorComponent;

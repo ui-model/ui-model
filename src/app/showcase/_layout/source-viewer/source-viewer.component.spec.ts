@@ -34,9 +34,9 @@ describe('showcase > SourceViewerComponent', () => {
       providers: [
         MySourceCodeService,
         MyActivatedRoute,
-        {provide: SourceCodeService, useClass: MySourceCodeService},
-        {provide: ActivatedRoute, useClass: MyActivatedRoute},
-        {provide: MetadataService, useValue: {}},
+        { provide: SourceCodeService, useClass: MySourceCodeService },
+        { provide: ActivatedRoute, useClass: MyActivatedRoute },
+        { provide: MetadataService, useValue: {} },
       ],
     })
       .compileComponents();

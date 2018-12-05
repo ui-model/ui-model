@@ -14,7 +14,7 @@ describe('Transformer', () => {
   });
 
   it('objectById', () => {
-    expect(objectById({id: 1})).toEqual(1);
+    expect(objectById({ id: 1 })).toEqual(1);
   });
 
   it('objectByField', () => {

@@ -20,7 +20,7 @@ describe('showcase > ShowcaseBasicInfoGroupComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BasicInfoGroupComponent);
     component = fixture.componentInstance;
-    component.group = new FormGroup({age: new FormControl(0)});
+    component.group = new FormGroup({ age: new FormControl(0) });
     fixture.detectChanges();
   });
 

@@ -1,4 +1,4 @@
-import { AbstractControl, ControlContainer, FormArray, FormControl, FormGroup, } from '@angular/forms';
+import { AbstractControl, ControlContainer, FormArray, FormControl, FormGroup } from '@angular/forms';
 
 export class BaseControlWithinForm {
   constructor(private container: ControlContainer) {

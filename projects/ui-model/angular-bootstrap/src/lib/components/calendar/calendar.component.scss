@@ -21,20 +21,25 @@ caption {
   caption-side: top;
   padding: 0;
   text-align: center;
+
   > div {
     display: table;
     width: 100%;
+
     > * {
       display: table-cell;
       width: auto;
+
       &.form-control {
         border: none;
         width: 50%;
       }
     }
   }
+
   a {
     color: $gray-500;
+
     &:hover, &:focus {
       color: $link-hover-color;
     }
@@ -58,6 +63,7 @@ td {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
+
   &.week {
     padding-left: 0.2em;
     padding-right: 0.2em;
@@ -65,16 +71,20 @@ td {
     font-size: smaller;
     border-right: 1px solid $gray-300;
   }
+
   &.weekend {
     color: $gray-500;
   }
+
   &.other-month {
     color: $gray-300;
   }
+
   &.today {
     color: $gray-100;
     background: $info;
   }
+
   &.active {
     background: $primary;
     color: $gray-100;

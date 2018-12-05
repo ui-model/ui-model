@@ -9,6 +9,7 @@
 
 table {
   table-layout: fixed;
+
   th {
     min-width: 100px;
   }
@@ -26,15 +27,19 @@ table {
 th {
   &.sortable {
     cursor: pointer;
+
     > .fa-sort-none {
       @include fa-icon();
+
       &:after {
         content: $fa-var-sort;
       }
     }
+
     > .fa-sort-asc {
       @include fa-icon();
     }
+
     > .fa-sort-desc {
       @include fa-icon();
     }

@@ -42,7 +42,7 @@ export class RegisterModel {
   @Property({
     validators: [Validators.required],
     editor: TypeAheadWithinFormComponent,
-    editorInputs: {options: cities},
+    editorInputs: { options: cities },
   })
   city: string;
 

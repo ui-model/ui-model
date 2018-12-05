@@ -25,6 +25,7 @@ const routes = [
     weight: 5,
   },
 ];
+
 @Component({
   selector: 'app-d3-geo-map',
   templateUrl: './d3-geo-map.component.html',
@@ -32,9 +33,9 @@ const routes = [
 })
 export class D3GeoMapComponent {
   map: FeatureCollection<GeometryObject> = provinces;
-  routes = routes.map(({from, to, weight}) => {
-    const fromLoc = _.find(this.map.features, {id: from}).properties['cp'];
-    const toLoc = _.find(this.map.features, {id: to}).properties['cp'];
+  routes = routes.map(({ from, to, weight }) => {
+    const fromLoc = _.find(this.map.features, { id: from }).properties['cp'];
+    const toLoc = _.find(this.map.features, { id: to }).properties['cp'];
     return {
       weight: weight,
       vector: [fromLoc, toLoc],

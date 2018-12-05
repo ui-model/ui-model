@@ -3,6 +3,6 @@ export class Tag {
   weight = 0;
 
   static of(keyword: string): Tag {
-    return {keyword: keyword, weight: 0};
+    return { keyword: keyword, weight: 0 };
   }
 }

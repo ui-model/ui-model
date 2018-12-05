@@ -14,12 +14,13 @@ class MySourceCodeService {
     return of(`content of ${name}.${locale}.md`);
   }
 }
+
 describe('MetadataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
         MetadataService,
-        {provide: SourceCodeService, useClass: MySourceCodeService},
+        { provide: SourceCodeService, useClass: MySourceCodeService },
       ],
     });
   });

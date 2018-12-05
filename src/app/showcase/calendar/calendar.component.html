@@ -16,7 +16,8 @@
 
 <div class="form-group dropdown" uiToggle #picker="uiToggle" (uiClickOutside)="picker.close()">
   <div class="input-group">
-    <input type="text" [disabled]="disabled" uiDateInput required #inputRef="ngModel" class="form-control" [(ngModel)]="value"/>
+    <input type="text" [disabled]="disabled" uiDateInput required #inputRef="ngModel" class="form-control"
+           [(ngModel)]="value"/>
     <div class="input-group-append">
       <button type="button" [disabled]="disabled" class="btn btn-primary" (click)="picker.toggle()">
         <i class="fa fa-calendar"></i>
@@ -31,7 +32,7 @@
 </div>
 
 <div class="form-group">
-  <ui-date-picker  [disabled]="disabled" [(ngModel)]="value" #pickerRef="ngModel"></ui-date-picker>
+  <ui-date-picker [disabled]="disabled" [(ngModel)]="value" #pickerRef="ngModel"></ui-date-picker>
   <ui-field-error [field]="pickerRef"></ui-field-error>
 </div>
 

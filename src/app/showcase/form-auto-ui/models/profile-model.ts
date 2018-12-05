@@ -34,7 +34,7 @@ export class ProfileModel {
 
   @Property({
     validators: [minValue(20)],
-    viewerInputs: { format: '1.2' }
+    viewerInputs: { format: '1.2' },
   })
   weight: number;
 

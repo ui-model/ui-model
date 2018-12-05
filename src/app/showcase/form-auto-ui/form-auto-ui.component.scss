@@ -9,6 +9,7 @@ ui-form-group {
     .uppercase {
       text-transform: uppercase;
     }
+
     .ui-model-field-username, .ui-model-field-agreeLicense {
       @include make-col(12);
     }

@@ -13,7 +13,7 @@ export class ChartComponent {
   noteOffset = 8;
 
   translateOf(pie: Pie): string {
-    const {x, y} = pie.mapToXY(pie.middlePercent, pie.radius + this.noteOffset);
+    const { x, y } = pie.mapToXY(pie.middlePercent, pie.radius + this.noteOffset);
     return `translateX(${x}px) translateY(${y}px)`;
   }
 }

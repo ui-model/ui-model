@@ -14,7 +14,7 @@ describe('showcase > ShowcaseFormAutoUiComponent', () => {
       providers: [
         FormMaker,
         FormUtils,
-        {provide: ElementRef, useValue: {nativeElement: Document}}
+        { provide: ElementRef, useValue: { nativeElement: Document } },
       ],
       schemas: [NO_ERRORS_SCHEMA],
     })

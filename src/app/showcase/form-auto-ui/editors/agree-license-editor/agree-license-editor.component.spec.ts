@@ -12,7 +12,7 @@ describe('showcase > ShowcaseAgreeLicenseEditorComponent', () => {
       imports: [ReactiveFormsModule],
       declarations: [AgreeLicenseEditorComponent],
       providers: [
-        {provide: ControlContainer, useValue: {control: new FormGroup({fieldName: new FormControl()})}},
+        { provide: ControlContainer, useValue: { control: new FormGroup({ fieldName: new FormControl() }) } },
       ],
     })
       .compileComponents();

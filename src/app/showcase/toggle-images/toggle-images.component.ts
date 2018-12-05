@@ -16,13 +16,21 @@ interface Calendar {
   year: number;
   month: number;
   weeks: number[];
+
   getDays(week: number): Date[];
+
   goTo(date: Date): void;
+
   goToPrevMonth(): void;
+
   goToNextMonth(): void;
+
   isToday(date: Date): void;
+
   isActive(date: Date): void;
+
   isWeekEnd(date: Date): void;
+
   readonly weekdayNames: string[];
   readonly monthNames: string[];
 }

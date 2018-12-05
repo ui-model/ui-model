@@ -9,6 +9,7 @@
   position: relative;
   height: 500px;
   background: $gray-300;
+
   > * {
     position: absolute;
   }
@@ -16,12 +17,15 @@
   .top {
     top: 4px;
   }
+
   .left {
     left: 4px;
   }
+
   .bottom {
     bottom: 4px;
   }
+
   .right {
     right: 4px;
   }

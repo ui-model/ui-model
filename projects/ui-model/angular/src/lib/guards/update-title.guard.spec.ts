@@ -61,7 +61,10 @@ describe('UpdateTitleGuard', () => {
   it('should return title with template - nested and inherited data', () => {
     const root = { data: {} };
     const route1 = { data: { title: 'Abc', titleTemplateForChildren: '<%= current %> - <%= parent %>' } };
-    const route2 = { data: { title: 'Abc', titleTemplateForChildren: '<%= current %> - <%= parent %>' }, parent: route1 };
+    const route2 = {
+      data: { title: 'Abc', titleTemplateForChildren: '<%= current %> - <%= parent %>' },
+      parent: route1,
+    };
     const route3 = { data: { title: 'Ghi' }, parent: route2, root: root };
     expect(titleOf(route3)).toEqual('Ghi - Abc');
   });

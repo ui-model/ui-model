@@ -30,7 +30,7 @@ describe('showcase > ShowcaseTooltipComponent', () => {
         UiModelModule,
         UiModelBootstrapModule,
       ],
-      providers: [{provide: TooltipService, useClass: MyTooltipService}],
+      providers: [{ provide: TooltipService, useClass: MyTooltipService }],
     })
       .compileComponents();
   }));

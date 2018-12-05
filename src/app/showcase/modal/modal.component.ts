@@ -131,7 +131,7 @@ export class ModalComponent implements OnInit {
   }
 
   custom(): void {
-    const dialog = this.modal.custom(ModalCustomComponent, {name: 'wzc'});
+    const dialog = this.modal.custom(ModalCustomComponent, { name: 'wzc' });
     dialog.subscribe((result) => {
       alert('result is \n' + JSON.stringify(result));
     });

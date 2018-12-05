@@ -12,12 +12,12 @@ export class FormComponent {
   constructor(private utils: FormUtils) {
   }
 
-  user = {username: '', email: ''};
+  user = { username: '', email: '' };
   report: string;
 
   submit(form: NgForm): void {
     if (!form.valid) {
-      this.utils.traverseTree(form.control, (control) => control.markAsDirty({onlySelf: true}));
+      this.utils.traverseTree(form.control, (control) => control.markAsDirty({ onlySelf: true }));
       return;
     }
     this.report = form.value;

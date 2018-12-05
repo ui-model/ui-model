@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class SelectNgModelComponent {
   selection;
-  options = [{name: 'A', id: 'a'}, {name: 'B', id: 'b'}];
+  options = [{ name: 'A', id: 'a' }, { name: 'B', id: 'b' }];
 }

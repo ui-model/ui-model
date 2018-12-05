@@ -17,8 +17,8 @@ describe('showcase > ShowcaseHomeComponent', () => {
       providers: [
         {
           provide: SourceCodeService, useValue: {
-          loadDocument: () => of('home'),
-        },
+            loadDocument: () => of('home'),
+          },
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],

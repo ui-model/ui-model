@@ -26,7 +26,7 @@ export class MultiSelectNgModelComponent {
     },
   ];
 
-  getCode = ({code}) => {
+  getCode = ({ code }) => {
     return code;
-  }
+  };
 }

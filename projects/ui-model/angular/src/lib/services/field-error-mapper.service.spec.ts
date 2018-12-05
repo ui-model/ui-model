@@ -5,7 +5,7 @@ import { FieldErrorMapper } from './field-error-mapper.service';
 describe('FieldErrorMapperService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FieldErrorMapper]
+      providers: [FieldErrorMapper],
     });
   });
 

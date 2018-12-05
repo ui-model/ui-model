@@ -28,12 +28,15 @@ export class NavMenuComponent {
 function testAuthor(pattern: RegExp, author: Author): boolean {
   return author && pattern.test(author.name) || pattern.test(author.id) || pattern.test(author.email);
 }
+
 function testTag(pattern: RegExp, tag: Tag): boolean {
   return tag && pattern.test(tag.keyword);
 }
+
 function matchAuthors(authors: Author[], pattern: RegExp): boolean {
   return authors && !!authors.find((author) => testAuthor(pattern, author));
 }
+
 function matchTags(tags: Tag[], pattern: RegExp): boolean {
   return tags && !!tags.find((tag) => testTag(pattern, tag));
 }

@@ -8,6 +8,7 @@
 .btn-primary {
   background: $secondary;
   border-color: transparent;
+
   &.active {
     background: $primary;
   }

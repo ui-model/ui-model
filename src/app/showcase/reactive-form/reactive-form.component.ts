@@ -16,7 +16,7 @@ export class ReactiveFormComponent implements OnInit {
       }),
       tags: fb.array([]),
     });
-    this.form.setValue({name: 'Tom', basic: {age: 10}, tags: []});
+    this.form.setValue({ name: 'Tom', basic: { age: 10 }, tags: [] });
   }
 
   get name(): AbstractControl {

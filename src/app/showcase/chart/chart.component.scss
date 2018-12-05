@@ -12,6 +12,7 @@ svg {
   .markup, .serial {
     transition: 1s;
   }
+
   text {
     text-anchor: middle;
     font-size: 5px;
@@ -23,30 +24,39 @@ svg {
   &[index="0"] {
     fill: #1f77b4;
   }
+
   &[index="1"] {
     fill: #ff7f0e;
   }
+
   &[index="2"] {
     fill: #2ca02c;
   }
+
   &[index="3"] {
     fill: #d62728;
   }
+
   &[index="4"] {
     fill: #9467bd;
   }
+
   &[index="5"] {
     fill: #8c564b;
   }
+
   &[index="6"] {
     fill: #e377c2;
   }
+
   &[index="7"] {
     fill: #7f7f7f;
   }
+
   &[index="8"] {
     fill: #bcbd22;
   }
+
   &[index="9"] {
     fill: #17becf;
   }

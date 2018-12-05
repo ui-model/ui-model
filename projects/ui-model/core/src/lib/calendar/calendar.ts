@@ -17,7 +17,7 @@ import {
   setYear,
   startOfMonth,
   startOfWeek,
-  startOfYear
+  startOfYear,
 } from 'date-fns';
 
 export class Calendar extends Stateful {
