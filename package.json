@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 14200",
     "build": "ng build --prod",
     "build-libs": "ng build @ui-model/common && ng build @ui-model/core && ng build @ui-model/chart && ng build @ui-model/angular && ng build @ui-model/angular-bootstrap && ng build @ui-model/angular-d3 && ng build @ui-model/angular-markdown",
     "test": "ng test",

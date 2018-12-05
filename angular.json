@@ -142,7 +142,7 @@
       "root": "projects/ui-model/angular",
       "sourceRoot": "projects/ui-model/angular/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -177,7 +177,7 @@
       "root": "projects/ui-model/angular-bootstrap",
       "sourceRoot": "projects/ui-model/angular-bootstrap/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -212,7 +212,7 @@
       "root": "projects/ui-model/angular-markdown",
       "sourceRoot": "projects/ui-model/angular-markdown/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -247,7 +247,7 @@
       "root": "projects/ui-model/calendar",
       "sourceRoot": "projects/ui-model/calendar/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -282,7 +282,7 @@
       "root": "projects/ui-model/chart",
       "sourceRoot": "projects/ui-model/chart/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -317,7 +317,7 @@
       "root": "projects/ui-model/common",
       "sourceRoot": "projects/ui-model/common/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -352,7 +352,7 @@
       "root": "projects/ui-model/core",
       "sourceRoot": "projects/ui-model/core/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
