@@ -12,7 +12,7 @@ export class ClickOutsideDirective {
 
   @HostListener('document:keyup', ['$event'])
   escKeyListener(event: KeyboardEvent): void {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' || event.key === 'Esc') {
       this.clickOutside.emit();
     }
   }
