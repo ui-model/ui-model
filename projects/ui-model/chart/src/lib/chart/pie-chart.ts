@@ -1,6 +1,6 @@
 import { BaseModel } from '@ui-model/common';
-import { empty, Observable } from 'rxjs';
-import { map, merge } from 'rxjs/operators';
+import { merge, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Pie } from '../shape/pie';
 
 export class PieChart extends BaseModel {
@@ -19,8 +19,7 @@ export class PieChart extends BaseModel {
   }
 
   get changes(): Observable<this> {
-    return empty().pipe(
-      merge(this._pies.map(pie => pie.changes)),
+    return merge(...this._pies.map(pie => pie.changes)).pipe(
       map(() => this),
     );
   }

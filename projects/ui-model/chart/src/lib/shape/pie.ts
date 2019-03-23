@@ -1,11 +1,10 @@
 import { BaseModel, Coordinate } from '@ui-model/common';
-import { Observable } from 'rxjs';
-import { map, merge } from 'rxjs/operators';
+import { merge, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export class Pie extends BaseModel {
   get changes(): Observable<this> {
-    return this._begin.changes.pipe(
-      merge(this._end.changes),
+    return merge(this._begin.changes, this._end.changes).pipe(
       map(() => this),
     );
   }
