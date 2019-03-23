@@ -1,4 +1,4 @@
-<app-markdown-viewer [content]="meta.document" *ngIf="meta.document"></app-markdown-viewer>
+<app-markdown-viewer *ngIf="meta.document" [content]="meta.document"></app-markdown-viewer>
 <div class="alert alert-danger" *ngIf="!meta.document">
   No documentation yet
 </div>

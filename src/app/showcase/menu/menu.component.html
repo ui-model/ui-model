@@ -1,6 +1,6 @@
 <div class="dropdown-menu static">
-  <a class="dropdown-item" *ngFor="let option of options" [class.active]="select.selected(option)"
-     (click)="select.select(option)">
+  <a (click)="select.select(option)" *ngFor="let option of options" [class.active]="select.selected(option)"
+     class="dropdown-item">
     {{option.label}}
   </a>
 </div>

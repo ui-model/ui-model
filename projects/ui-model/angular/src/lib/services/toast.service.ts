@@ -5,12 +5,17 @@ import { ToastModel } from './toast.model';
 @Injectable({ providedIn: 'root' })
 export class ToastService<T extends ToastModel = ToastModel> {
 
+  get isEmpty(): boolean {
+    return !this.items || !this.items.length;
+  }
+
   constructor() {
   }
 
   items: T[] = [];
 
   show(message: string | T, timeout?: number): Promise<void>;
+
   show(message: any, timeout: number = 2000): Promise<void> {
     return new Promise<void>((resolve) => {
       const item = isString(message) ? {
@@ -30,9 +35,5 @@ export class ToastService<T extends ToastModel = ToastModel> {
         resolve();
       }, 500);
     });
-  }
-
-  get isEmpty(): boolean {
-    return !this.items || !this.items.length;
   }
 }

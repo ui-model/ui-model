@@ -9,7 +9,12 @@ import { TableField, TableSorter } from '@ui-model/core';
 })
 export class TableComponent<T> {
 
+  @Input() items: T[] = [];
+  sorter = new TableSorter().setFields(this.fields);
+  size = {};
+
   _fields: TableField[] = [];
+
   get fields(): TableField[] {
     return this._fields;
   }
@@ -22,8 +27,6 @@ export class TableComponent<T> {
     }
   }
 
-  @Input() items: T[] = [];
-
   get sortable(): boolean {
     return this.sorter.enabled;
   }
@@ -32,10 +35,6 @@ export class TableComponent<T> {
   set sortable(value: boolean) {
     this.sorter.enabled = value;
   }
-
-  sorter = new TableSorter().setFields(this.fields);
-
-  size = {};
 
   orderCss(order: SortOrder): string {
     switch (order) {

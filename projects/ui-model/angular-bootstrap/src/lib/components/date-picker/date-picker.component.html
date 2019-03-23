@@ -1,14 +1,14 @@
-<div class="dropdown" (uiClickOutside)="toggle.close()">
+<div (uiClickOutside)="toggle.close()" class="dropdown">
   <div class="input-group">
-    <input type="text" uiDateInput [disabled]="disabled" class="form-control" [(ngModel)]="value"
-           (ngModelChange)="changed()"/>
+    <input (ngModelChange)="changed()" [(ngModel)]="value" [disabled]="disabled" class="form-control" type="text"
+           uiDateInput/>
     <div class="input-group-append">
-      <button type="button" class="btn btn-primary" [disabled]="disabled" (click)="toggle.toggle()">
+      <button (click)="toggle.toggle()" [disabled]="disabled" class="btn btn-primary" type="button">
         <i class="fa fa-calendar"></i>
       </button>
     </div>
   </div>
-  <div class="dropdown-menu" *ngIf="!disabled && toggle.isOn">
-    <ui-calendar name="date" [(ngModel)]="value" (ngModelChange)="changed()" (change)="toggle.close()"></ui-calendar>
+  <div *ngIf="!disabled && toggle.isOn" class="dropdown-menu">
+    <ui-calendar (change)="toggle.close()" (ngModelChange)="changed()" [(ngModel)]="value" name="date"></ui-calendar>
   </div>
 </div>

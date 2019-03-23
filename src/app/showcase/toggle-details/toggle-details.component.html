@@ -1,9 +1,9 @@
-<div [uiToggle]="true" #more="uiToggle">
+<div #more="uiToggle" [uiToggle]="true">
   <div i18n>This is a brief</div>
-  <a uiPreventDefault href (click)="more.open()" *ngIf="more.isOff" i18n>Click me to see more...</a>
+  <a (click)="more.open()" *ngIf="more.isOff" href i18n uiPreventDefault>Click me to see more...</a>
   <div *ngIf="more.isOn" class="alert alert-success">
-    <div i18n *ngFor="let i of 10|times">these are detail with many many lines</div>
+    <div *ngFor="let i of 10|times" i18n>these are detail with many many lines</div>
 
-    <a uiPreventDefault href (click)="more.close()" i18n>Click me to see brief only</a>
+    <a (click)="more.close()" href i18n uiPreventDefault>Click me to see brief only</a>
   </div>
 </div>

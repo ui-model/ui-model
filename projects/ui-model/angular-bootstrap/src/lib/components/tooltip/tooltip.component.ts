@@ -8,9 +8,9 @@ import { Rect } from '@ui-model/common';
   styleUrls: ['./tooltip.component.scss'],
 })
 export class TooltipComponent {
+
   constructor(public tooltip: TooltipService) {
   }
-
   rect: Rect = new Rect();
 
   resize($event: MeasureDirective): void {

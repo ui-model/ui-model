@@ -5,15 +5,15 @@
   </fieldset>
 
   <div class="form-group">
-    <button type="submit" class="btn btn-primary btn-block">Submit</button>
-    <button type="button" class="btn btn-secondary btn-block" (click)="form.disable()" *ngIf="form.enabled">Disable this
+    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+    <button (click)="form.disable()" *ngIf="form.enabled" class="btn btn-secondary btn-block" type="button">Disable this
       form
     </button>
-    <button type="button" class="btn btn-secondary btn-block" (click)="form.enable()" *ngIf="form.disabled">Enable this
+    <button (click)="form.enable()" *ngIf="form.disabled" class="btn btn-secondary btn-block" type="button">Enable this
       form
     </button>
     <label>
-      <input type="checkbox" #chkReadonly (change)="readonly = chkReadonly.checked">
+      <input #chkReadonly (change)="readonly = chkReadonly.checked" type="checkbox">
       Read-only
     </label>
   </div>

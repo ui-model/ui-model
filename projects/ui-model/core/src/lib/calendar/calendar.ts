@@ -21,34 +21,6 @@ import {
 } from 'date-fns';
 
 export class Calendar extends BaseModel {
-  constructor() {
-    super();
-    this.update();
-  }
-
-  disabled = false;
-
-  private _value: Date;
-
-  private _fakeToday: Date;
-
-  get fakeToday(): Date {
-    return this._fakeToday || new Date();
-  }
-
-  set fakeToday(value: Date) {
-    this._fakeToday = value;
-    this.update();
-  }
-
-  setFakeToday(value: Date): this {
-    this.fakeToday = value;
-    return this;
-  }
-
-  private get fakeValue(): Date {
-    return this._value || this.fakeToday;
-  }
 
   get value(): Date {
     return this._value;
@@ -66,13 +38,13 @@ export class Calendar extends BaseModel {
     }
   }
 
-  setValue(value: Date): this {
-    this.value = value;
-    return this;
+  get fakeToday(): Date {
+    return this._fakeToday || new Date();
   }
 
-  clear(): void {
-    this.value = undefined;
+  set fakeToday(value: Date) {
+    this._fakeToday = value;
+    this.update();
   }
 
   get year(): number {
@@ -90,11 +62,6 @@ export class Calendar extends BaseModel {
     }
   }
 
-  setYear(value: number): this {
-    this.year = value;
-    return this;
-  }
-
   get month(): number {
     return getMonth(this.fakeValue);
   }
@@ -108,6 +75,76 @@ export class Calendar extends BaseModel {
       this.update();
       this.changed();
     }
+  }
+
+  get minValue(): Date {
+    return this._minValue;
+  }
+
+  set minValue(value: Date) {
+    this._minValue = value;
+  }
+
+  get maxValue(): Date {
+    return this._maxValue;
+  }
+
+  set maxValue(value: Date) {
+    this._maxValue = value;
+  }
+
+  get weeks(): number[] {
+    return this._weeks;
+  }
+
+  get nearlyYears(): number[] {
+    return this._nearlyYears;
+  }
+
+  private get fakeValue(): Date {
+    return this._value || this.fakeToday;
+  }
+
+  constructor() {
+    super();
+    this.update();
+  }
+
+  disabled = false;
+  // TODO: 生成列表
+  readonly weekdayNames = weekdaysMin();
+  readonly monthNames = months();
+  private _dates = [];
+
+  private _value: Date;
+
+  private _fakeToday: Date;
+
+  private _minValue: Date;
+
+  private _maxValue: Date;
+
+  private _weeks = [];
+
+  private _nearlyYears = [];
+
+  setFakeToday(value: Date): this {
+    this.fakeToday = value;
+    return this;
+  }
+
+  setValue(value: Date): this {
+    this.value = value;
+    return this;
+  }
+
+  clear(): void {
+    this.value = undefined;
+  }
+
+  setYear(value: number): this {
+    this.year = value;
+    return this;
   }
 
   setMonth(value: number): this {
@@ -140,28 +177,9 @@ export class Calendar extends BaseModel {
     return weekday === 0 || weekday === 6;
   }
 
-  private _minValue: Date;
-  get minValue(): Date {
-    return this._minValue;
-  }
-
-  set minValue(value: Date) {
-    this._minValue = value;
-  }
-
   setMinValue(value: Date): this {
     this.minValue = value;
     return this;
-  }
-
-  private _maxValue: Date;
-
-  get maxValue(): Date {
-    return this._maxValue;
-  }
-
-  set maxValue(value: Date) {
-    this._maxValue = value;
   }
 
   setMaxValue(value: Date): this {
@@ -182,10 +200,6 @@ export class Calendar extends BaseModel {
     this.goTo(new Date());
   }
 
-  private addMonth(step: number): void {
-    this.goTo(addMonths(this.fakeValue, step));
-  }
-
   goToPrevMonth(step: number = 1): void {
     this.addMonth(-step);
   }
@@ -194,27 +208,8 @@ export class Calendar extends BaseModel {
     this.addMonth(step);
   }
 
-  private _weeks = [];
-
-  get weeks(): number[] {
-    return this._weeks;
-  }
-
-  private _dates = [];
-
   dates(week: number): Date[] {
     return this._dates[week - this.weeks[0]];
-  }
-
-  // TODO: 生成列表
-  readonly weekdayNames = weekdaysMin();
-
-  readonly monthNames = months();
-
-  private _nearlyYears = [];
-
-  get nearlyYears(): number[] {
-    return this._nearlyYears;
   }
 
   update(): void {
@@ -229,6 +224,10 @@ export class Calendar extends BaseModel {
       });
     });
     this._nearlyYears = range(this.year - 5, this.year + 6);
+  }
+
+  private addMonth(step: number): void {
+    this.goTo(addMonths(this.fakeValue, step));
   }
 }
 

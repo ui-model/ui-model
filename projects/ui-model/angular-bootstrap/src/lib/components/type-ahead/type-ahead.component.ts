@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SafeHtml } from '@angular/platform-browser';
 import { isFunction, Supplier, Transformer } from '@ui-model/common';
@@ -6,17 +6,15 @@ import { Toggle } from '@ui-model/core';
 import { debounceTime, skipWhile, tap } from 'rxjs/operators';
 import { Subject, Subscription } from 'rxjs';
 
-const TYPE_AHEAD_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => TypeAheadComponent),
-  multi: true,
-};
-
 @Component({
   selector: 'ui-type-ahead',
   templateUrl: './type-ahead.component.html',
   styleUrls: ['./type-ahead.component.scss'],
-  providers: [TYPE_AHEAD_ACCESSOR],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: TypeAheadComponent,
+    multi: true,
+  }],
 })
 export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?: Supplier<string> }>
   implements ControlValueAccessor, OnInit, OnDestroy {
@@ -33,6 +31,22 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
   @Output() search = new EventEmitter<string>();
 
   activeIndex = 0;
+  sub: Subscription;
+  term = '';
+  _change: (value: T) => void;
+  _touched: () => void;
+  @Input() disabled = false;
+
+  _value: T;
+
+  get value(): T {
+    return this._value;
+  }
+
+  set value(value: T) {
+    this._value = value;
+    this.term = value && this.parser(value);
+  }
 
   defaultFormatter(value: T): string | SafeHtml {
     if (!value) {
@@ -57,8 +71,6 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
     }
   }
 
-  sub: Subscription;
-
   ngOnInit(): void {
     this.sub = this.checker.asObservable().pipe(
       skipWhile((term) => !term),
@@ -76,26 +88,6 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
     this.sub.unsubscribe();
   }
 
-  term = '';
-  _value: T;
-  get value(): T {
-    return this._value;
-  }
-
-  set value(value: T) {
-    this._value = value;
-    this.term = value && this.parser(value);
-  }
-
-  _change: (value: T) => void;
-  _touched: () => void;
-
-  protected changed(): void {
-    if (this._change) {
-      this._change(this.value);
-    }
-  }
-
   writeValue(value: T): void {
     this.value = value;
   }
@@ -108,12 +100,9 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
     this._touched = fn;
   }
 
-  @Input() disabled = false;
-
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
   }
-
 
   select(item: T): void {
     this.value = item;
@@ -125,7 +114,7 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
   }
 
   keydown($event: KeyboardEvent): void {
-    if ([KEY_ARROW_UP, KEY_ARROW_DOWN, KEY_HOME, KEY_END].indexOf($event.keyCode) !== -1) {
+    if (['ArrowUp', 'ArrowDown', 'Home', 'End'].indexOf($event.key) !== -1) {
       $event.preventDefault();
       $event.stopPropagation();
     }
@@ -133,17 +122,17 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
 
   keyup($event: KeyboardEvent): void {
     const count = this.items.length;
-    switch ($event.keyCode) {
-      case KEY_ARROW_DOWN:
+    switch ($event.key) {
+      case 'ArrowDown':
         this.activeIndex = (this.activeIndex + 1) % count;
         break;
-      case KEY_ARROW_UP:
+      case 'ArrowUp':
         this.activeIndex = (this.activeIndex + count - 1) % count;
         break;
-      case KEY_HOME:
+      case 'Home':
         this.activeIndex = 0;
         break;
-      case KEY_END:
+      case 'End':
         this.activeIndex = count - 1;
         break;
       default:
@@ -154,17 +143,17 @@ export class TypeAheadComponent<T extends { format?: Supplier<SafeHtml>, parse?:
   }
 
   keypress($event: KeyboardEvent): void {
-    if ($event.keyCode === KEY_RETURN) {
+    if ($event.key === 'Enter') {
       this.select(this.items[this.activeIndex]);
       this.dropDown.close();
       $event.preventDefault();
       $event.stopPropagation();
     }
   }
-}
 
-const KEY_RETURN = 13;
-const KEY_HOME = 36;
-const KEY_END = 35;
-const KEY_ARROW_UP = 38;
-const KEY_ARROW_DOWN = 40;
+  protected changed(): void {
+    if (this._change) {
+      this._change(this.value);
+    }
+  }
+}

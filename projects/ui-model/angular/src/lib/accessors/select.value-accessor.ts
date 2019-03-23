@@ -2,11 +2,13 @@ import { ControlValueAccessor } from '@angular/forms';
 import { Select } from '@ui-model/core';
 
 export class SelectValueAccessor<T> extends Select<T> implements ControlValueAccessor {
+
   constructor() {
     super();
   }
-
   disabled = false;
+  onChange: (value: T) => {};
+  onTouched: () => {};
 
   enable(): void {
     this.disabled = false;
@@ -14,23 +16,6 @@ export class SelectValueAccessor<T> extends Select<T> implements ControlValueAcc
 
   disable(): void {
     this.disabled = true;
-  }
-
-  onChange: (value: T) => {};
-  onTouched: () => {};
-
-  protected changed(): void {
-    super.changed();
-    if (this.onChange) {
-      this.onChange(this.transformer(this.selection));
-    }
-    this.touched();
-  }
-
-  protected touched(): void {
-    if (this.onTouched) {
-      this.onTouched();
-    }
   }
 
   writeValue(value: T): void {
@@ -47,5 +32,19 @@ export class SelectValueAccessor<T> extends Select<T> implements ControlValueAcc
 
   setDisabledState?(isDisabled: boolean): void {
     this.disabled = isDisabled;
+  }
+
+  protected changed(): void {
+    super.changed();
+    if (this.onChange) {
+      this.onChange(this.transformer(this.selection));
+    }
+    this.touched();
+  }
+
+  protected touched(): void {
+    if (this.onTouched) {
+      this.onTouched();
+    }
   }
 }

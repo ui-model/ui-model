@@ -14,7 +14,6 @@ export class FormAutoUiComponent implements OnInit {
   }
 
   readonly = false;
-
   form: FormGroup;
 
   ngOnInit(): void {

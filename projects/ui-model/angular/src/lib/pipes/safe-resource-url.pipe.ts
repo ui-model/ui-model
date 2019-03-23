@@ -6,9 +6,9 @@ import { isString } from '@ui-model/common';
   name: 'safeResourceUrl',
 })
 export class SafeResourceUrlPipe implements PipeTransform, OnDestroy {
+
   constructor(private sanitizer: DomSanitizer) {
   }
-
   private blobUrls = [];
 
   transform(value: string | File): SafeResourceUrl {

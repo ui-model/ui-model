@@ -7,10 +7,6 @@ import { TooltipService } from '../services/tooltip.service';
   selector: '[uiTooltip]',
 })
 export class TooltipDirective {
-  constructor(private service: TooltipService, private elementRef: ElementRef) {
-  }
-
-  @Input('uiTooltip') message: string | SafeHtml;
 
   private get fallbackMessage(): string {
     const element = this.elementRef.nativeElement as Element;
@@ -18,6 +14,11 @@ export class TooltipDirective {
       element.getAttribute('placeholder') ||
       element.getAttribute('alt');
   }
+
+  constructor(private service: TooltipService, private elementRef: ElementRef) {
+  }
+
+  @Input('uiTooltip') message: string | SafeHtml;
 
   @HostListener('mouseenter')
   show(): void {

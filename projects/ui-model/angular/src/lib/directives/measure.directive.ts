@@ -6,14 +6,7 @@ import { Rect } from '@ui-model/common';
   exportAs: 'uiMeasure',
 })
 export class MeasureDirective implements OnInit {
-  constructor(element: ElementRef) {
-    this.element = element.nativeElement;
-  }
 
-  @Output('uiMeasure')
-  changed = new EventEmitter<MeasureDirective>();
-
-  private _signal: any;
   get signal(): any {
     return this._signal;
   }
@@ -23,13 +16,6 @@ export class MeasureDirective implements OnInit {
     this._signal = value;
     this.update();
   }
-
-  @HostListener('load')
-  onLoad(): void {
-    this.update();
-  }
-
-  private _boundingClientRect: Rect;
   get boundingClientRect(): Rect {
     return this._boundingClientRect;
   }
@@ -37,23 +23,38 @@ export class MeasureDirective implements OnInit {
   get boundingRect(): Rect {
     return this.boundingClientRect;
   }
-
-  private _offsetRect: Rect;
   get offsetRect(): Rect {
     return this._offsetRect;
   }
-
-  private _clientRect: Rect;
   get clientRect(): Rect {
     return this._clientRect;
   }
-
-  private _scrollRect: Rect;
   get scrollRect(): Rect {
     return this._scrollRect;
   }
 
+  constructor(element: ElementRef) {
+    this.element = element.nativeElement;
+  }
+
+  @Output('uiMeasure')
+  changed = new EventEmitter<MeasureDirective>();
   private element: HTMLElement;
+
+  private _signal: any;
+
+  private _boundingClientRect: Rect;
+
+  private _offsetRect: Rect;
+
+  private _clientRect: Rect;
+
+  private _scrollRect: Rect;
+
+  @HostListener('load')
+  onLoad(): void {
+    this.update();
+  }
 
   ngOnInit(): void {
     this.update();

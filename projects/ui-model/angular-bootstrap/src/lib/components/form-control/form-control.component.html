@@ -1,21 +1,21 @@
-<div *ngIf="group && field" class="form-group" [class.ui-required]="!readonly && isRequired(field)"
-     [formGroup]="group">
+<div *ngIf="group && field" [class.ui-required]="!readonly && isRequired(field)" [formGroup]="group"
+     class="form-group">
   <label *ngIf="field | fieldLabel" for="_{{field.name}}_{{uniqueId}}">{{field | fieldLabel}}</label>
   <ng-container *ngIf="!readonly">
     <ng-container *ngIf="isInput(field)">
-      <input [type]="field.editor || 'text'" class="form-control" id="_{{field.name}}_{{uniqueId}}"
-             [step]="field.editorInputs?.step"
-             [formControl]="control" [readonly]="field.readonly"/>
+      <input [formControl]="control" [readonly]="field.readonly" [step]="field.editorInputs?.step"
+             [type]="field.editor || 'text'"
+             class="form-control" id="_{{field.name}}_{{uniqueId}}"/>
     </ng-container>
     <ng-container *ngIf="isTextArea(field)">
-    <textarea class="form-control" id="_{{field.name}}_{{uniqueId}}"
-              [formControl]="control" [readonly]="field.readonly"></textarea>
+    <textarea [formControl]="control" [readonly]="field.readonly"
+              class="form-control" id="_{{field.name}}_{{uniqueId}}"></textarea>
     </ng-container>
-    <div *ngIf="isCustomEditor(field)" [ngComponentOutlet]="field.editor" [ngComponentOutletInjector]="injector"
+    <div *ngIf="isCustomEditor(field)" [ngComponentOutletInjector]="injector" [ngComponentOutlet]="field.editor"
          [uiDynamicComponentInputs]="[field.editorInputs, {name: field.name, field: field}]"></div>
   </ng-container>
   <div *ngIf="readonly" class="form-control-plaintext">
-    <div *ngIf="isCustomViewer(field)" [ngComponentOutlet]="field.viewer" [ngComponentOutletInjector]="injector"
+    <div *ngIf="isCustomViewer(field)" [ngComponentOutletInjector]="injector" [ngComponentOutlet]="field.viewer"
          [uiDynamicComponentInputs]="[field.viewerInputs, {name: field.name, field: field}]"></div>
     <ng-container *ngIf="!isCustomViewer(field)">
       <div *ngIf="isPlainText(field)">{{control.value | default : '-'}}</div>

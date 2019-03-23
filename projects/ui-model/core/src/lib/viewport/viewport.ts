@@ -1,6 +1,8 @@
 import { BaseModel, Rect } from '@ui-model/common';
 
 export class Viewport<T> extends BaseModel {
+  private _dataSource: T[] = [];
+
   get dataSource(): T[] {
     return this._dataSource;
   }
@@ -12,18 +14,13 @@ export class Viewport<T> extends BaseModel {
     }
   }
 
-  setDataSource(value: T[]): this {
-    this.dataSource = value;
-    return this;
-  }
-
-  private _dataSource: T[] = [];
+  private _items: T[] = [];
 
   get items(): T[] {
     return this._items;
   }
 
-  private _items: T[] = [];
+  private _offset = 0;
 
   get offset(): number {
     return this._offset;
@@ -36,12 +33,7 @@ export class Viewport<T> extends BaseModel {
     }
   }
 
-  setOffset(value: number): this {
-    this.offset = value;
-    return this;
-  }
-
-  private _offset = 0;
+  private _size = 10;
 
   get size(): number {
     return this._size;
@@ -54,12 +46,7 @@ export class Viewport<T> extends BaseModel {
     }
   }
 
-  setSize(value: number): this {
-    this.size = value;
-    return this;
-  }
-
-  private _size = 10;
+  private _itemHeight: number;
 
   get itemHeight(): number {
     return this._itemHeight;
@@ -71,13 +58,6 @@ export class Viewport<T> extends BaseModel {
       this.changed();
     }
   }
-
-  setItemHeight(value: number): this {
-    this.itemHeight = value;
-    return this;
-  }
-
-  private _itemHeight: number;
 
   get count(): number {
     return this.dataSource.length;
@@ -109,6 +89,26 @@ export class Viewport<T> extends BaseModel {
 
   get footerHeight(): number {
     return this.itemHeight * this.footerCount;
+  }
+
+  setDataSource(value: T[]): this {
+    this.dataSource = value;
+    return this;
+  }
+
+  setOffset(value: number): this {
+    this.offset = value;
+    return this;
+  }
+
+  setSize(value: number): this {
+    this.size = value;
+    return this;
+  }
+
+  setItemHeight(value: number): this {
+    this.itemHeight = value;
+    return this;
   }
 
   scrollTo(rect: Rect): this {

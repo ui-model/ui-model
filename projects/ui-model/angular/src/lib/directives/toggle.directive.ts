@@ -1,38 +1,24 @@
-import { Directive, forwardRef, Input } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Toggle } from '@ui-model/core';
-
-const TOGGLE_VALUE_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => ToggleDirective),
-  multi: true,
-};
 
 @Directive({
   selector: '[uiToggle]',
   exportAs: 'uiToggle',
-  inputs: ['isOn', 'isOff', 'isOn:uiToggle'],
-  providers: [TOGGLE_VALUE_ACCESSOR],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: ToggleDirective,
+    multi: true,
+  }],
 })
 export class ToggleDirective extends Toggle implements ControlValueAccessor {
+
   constructor() {
     super();
   }
 
-  protected changed(): void {
-    super.changed();
-    if (this._onChange) {
-      this._onChange(this.isOn);
-    }
-    this.touched();
-  }
-
-  protected touched(): void {
-    if (this._onTouched) {
-      this._onTouched();
-    }
-  }
-
+  @Input() disabled = false;
+  @Input('uiToggle') isOn: boolean;
   private _onChange: (value: boolean) => {};
   private _onTouched: () => {};
 
@@ -48,10 +34,22 @@ export class ToggleDirective extends Toggle implements ControlValueAccessor {
     this._onTouched = fn;
   }
 
-  @Input() disabled = false;
-
   setDisabledState?(isDisabled: boolean): void {
     this.disabled = isDisabled;
+  }
+
+  protected changed(): void {
+    super.changed();
+    if (this._onChange) {
+      this._onChange(this.isOn);
+    }
+    this.touched();
+  }
+
+  protected touched(): void {
+    if (this._onTouched) {
+      this._onTouched();
+    }
   }
 
 }

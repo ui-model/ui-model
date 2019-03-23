@@ -7,14 +7,15 @@ import { AbstractControl, FormGroup } from '@angular/forms';
   styleUrls: ['./basic-info-group.component.scss'],
 })
 export class BasicInfoGroupComponent implements OnInit {
-  constructor() {
-  }
-
-  @Input() group: FormGroup;
 
   get age(): AbstractControl {
     return this.group && this.group.get('age');
   }
+
+  constructor() {
+  }
+
+  @Input() group: FormGroup;
 
   ngOnInit(): void {
   }

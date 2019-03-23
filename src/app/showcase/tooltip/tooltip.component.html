@@ -1,15 +1,15 @@
-<div class="playground" uiMeasure #playground="uiMeasure">
-  <button type="button" class="btn btn-primary top left" uiTooltip>
+<div #playground="uiMeasure" class="playground" uiMeasure>
+  <button class="btn btn-primary top left" type="button" uiTooltip>
     <span i18n>No tooltip</span>
   </button>
-  <button type="button" class="btn btn-primary top right" uiTooltip title="total: {{total}}">
+  <button class="btn btn-primary top right" title="total: {{total}}" type="button" uiTooltip>
     <span i18n>Tooltip from title</span>
   </button>
-  <button type="button" class="btn btn-primary bottom left" uiMeasure #btnBL="uiMeasure"
+  <button #btnBL="uiMeasure" class="btn btn-primary bottom left" type="button" uiMeasure
           uiTooltip="width: {{btnBL.boundingRect.width}}">
     <span i18n>Tooltip binding</span>
   </button>
-  <button type="button" class="btn btn-primary bottom right" [uiTooltip]="html|safeHtml" uiDisabled>
+  <button [uiTooltip]="html|safeHtml" class="btn btn-primary bottom right" type="button" uiDisabled>
     <span i18n>HTML on disabled button</span>
   </button>
 

@@ -22,15 +22,6 @@ export class Pager extends BaseModel {
     }
   }
 
-  setIndex(value: number): this {
-    this.index = value;
-    return this;
-  }
-
-  isActive(page: number): boolean {
-    return this.index === page;
-  }
-
   get isFirst(): boolean {
     return this.index <= this.indexMin;
   }
@@ -44,6 +35,7 @@ export class Pager extends BaseModel {
   }
 
   private _size = 10;
+
   get size(): number {
     return this._size;
   }
@@ -64,11 +56,6 @@ export class Pager extends BaseModel {
     }
   }
 
-  setSize(value: number): this {
-    this.size = value;
-    return this;
-  }
-
   get begin(): number {
     return this.offset;
   }
@@ -78,6 +65,7 @@ export class Pager extends BaseModel {
   }
 
   private _totalItems = 0;
+
   get totalItems(): number {
     return this._totalItems;
   }
@@ -85,7 +73,7 @@ export class Pager extends BaseModel {
   set totalItems(value: number) {
     value = +value;
     if (value < 0) {
-      throw new Error('`recordCount` cannot be less than 0');
+      throw new Error('`totalItems` cannot be less than 0');
     }
 
     if (this._totalItems !== value) {
@@ -94,11 +82,6 @@ export class Pager extends BaseModel {
       this.goTo(latestPage);
       this.changed();
     }
-  }
-
-  setTotalItems(value: number): this {
-    this.totalItems = value;
-    return this;
   }
 
   get isEmpty(): boolean {
@@ -120,20 +103,43 @@ export class Pager extends BaseModel {
     return this.count - 1;
   }
 
-  prev(step: number = 1): void {
-    this.index -= step;
-  }
-
   get hasPrev(): boolean {
     return !this.isFirst;
   }
 
-  next(step: number = 1): void {
-    this.index += step;
-  }
-
   get hasNext(): boolean {
     return !this.isLast;
+  }
+
+  get required(): boolean {
+    return this.totalItems > this.size;
+  }
+
+  setIndex(value: number): this {
+    this.index = value;
+    return this;
+  }
+
+  isActive(page: number): boolean {
+    return this.index === page;
+  }
+
+  setSize(value: number): this {
+    this.size = value;
+    return this;
+  }
+
+  setTotalItems(value: number): this {
+    this.totalItems = value;
+    return this;
+  }
+
+  prev(step: number = 1): void {
+    this.index -= step;
+  }
+
+  next(step: number = 1): void {
+    this.index += step;
   }
 
   goTo(page: number): void {
@@ -146,10 +152,5 @@ export class Pager extends BaseModel {
 
   goToLast(): void {
     this.goTo(this.indexMax);
-  }
-
-
-  get required(): boolean {
-    return this.totalItems > this.size;
   }
 }

@@ -3,7 +3,7 @@
     <h5 class="modal-title">
       {{title|default:'Form'}}
     </h5>
-    <button type="button" class="close" tabindex="-1" aria-label="Close" (click)="cancel.emit()">
+    <button (click)="cancel.emit()" aria-label="Close" class="close" tabindex="-1" type="button">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -19,10 +19,10 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn btn-primary">
+    <button class="btn btn-primary" type="submit">
       <span i18n>Submit</span>
     </button>
-    <button type="button" class="btn btn-secondary" (click)="cancel.emit()">
+    <button (click)="cancel.emit()" class="btn btn-secondary" type="button">
       <span i18n>Cancel</span>
     </button>
   </div>

@@ -13,19 +13,14 @@ export class ModalFormComponent implements OnInit {
 
   @Output()
   close = new EventEmitter<any>();
-
   @Output()
   cancel = new EventEmitter<void>();
-
   @Input()
   title: string;
-
   @Input()
   message: string;
-
   @Input()
   group: FormGroup;
-
   @Input()
   icon: string;
 

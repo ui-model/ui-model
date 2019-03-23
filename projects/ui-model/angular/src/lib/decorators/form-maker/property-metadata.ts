@@ -29,7 +29,7 @@ export interface PropertyDef {
 
 export class PropertyMetadata implements PropertyDef {
   label?: string;
-  css? = '';
+  css ? = '';
   editor?: Type<Object> | string;
   editorInputs?: { [key: string]: any };
   viewer?: Type<Object> | string;

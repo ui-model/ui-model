@@ -2,21 +2,23 @@
   <div class="card-header">
     <div class="form-check form-check-inline">
       <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" [indeterminate]="select.indeterminate"
-               [(ngModel)]="select.allSelected"/>
+        <input [(ngModel)]="select.allSelected" [indeterminate]="select.indeterminate" class="form-check-input"
+               type="checkbox"/>
         <span i18n>All</span>
       </label>
     </div>
-    <span class="btn btn-primary" [class.active]="select.allSelected" [class.indeterminate]="select.indeterminate"
-          (click)="select.allSelected = !select.allSelected" i18n>
+    <span (click)="select.allSelected = !select.allSelected" [class.active]="select.allSelected"
+          [class.indeterminate]="select.indeterminate"
+          class="btn btn-primary" i18n>
         Customized "Checkbox"
       </span>
   </div>
   <div class="card-body">
-    <div class="form-check form-check-inline" *ngFor="let option of options">
+    <div *ngFor="let option of options" class="form-check form-check-inline">
       <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" [ngModel]="select.selected(option)"
-               (ngModelChange)="select.selectAs(option, $event)"/>
+        <input (ngModelChange)="select.selectAs(option, $event)" [ngModel]="select.selected(option)"
+               class="form-check-input"
+               type="checkbox"/>
         {{option.label}}
       </label>
     </div>

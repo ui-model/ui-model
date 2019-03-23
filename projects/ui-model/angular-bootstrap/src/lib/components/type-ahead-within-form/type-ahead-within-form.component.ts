@@ -8,10 +8,10 @@ import { BaseControlWithinForm } from '@ui-model/angular';
   styleUrls: ['./type-ahead-within-form.component.scss'],
 })
 export class TypeAheadWithinFormComponent extends BaseControlWithinForm {
+
   constructor(container: ControlContainer) {
     super(container);
   }
-
   @Input() options: any[];
   @Input() name: string;
 }

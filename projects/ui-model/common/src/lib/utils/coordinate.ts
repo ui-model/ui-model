@@ -1,70 +1,6 @@
 import { BaseModel } from '../common/base-model';
 
 export class Coordinate extends BaseModel {
-  get cx(): number {
-    return this._cx;
-  }
-
-  set cx(value: number) {
-    if (this._cx !== value) {
-      this._cx = fixRoundOffError(value);
-      this.changed();
-    }
-  }
-
-  setCx(value: number): this {
-    this.cx = value;
-    return this;
-  }
-
-  get cy(): number {
-    return this._cy;
-  }
-
-  set cy(value: number) {
-    if (this._cy !== value) {
-      this._cy = fixRoundOffError(value);
-      this.changed();
-    }
-  }
-
-  setCy(value: number): this {
-    this.cy = value;
-    return this;
-  }
-
-  get radius(): number {
-    return this._radius;
-  }
-
-  set radius(value: number) {
-    if (this._radius !== value) {
-      this._radius = fixRoundOffError(value);
-      this.changed();
-    }
-  }
-
-  setRadius(value: number): this {
-    this.radius = value;
-    return this;
-  }
-
-  get radian(): number {
-    return this._radian;
-  }
-
-  set radian(value: number) {
-    if (this._radian !== value) {
-      this._radian = fixRoundOffError(value);
-      this.changed();
-    }
-  }
-
-  setRadian(value: number): this {
-    this.radian = value;
-    return this;
-  }
-
   get x(): number {
     return fixRoundOffError(this.cx + this.radius * Math.cos(this.radian));
   }
@@ -74,11 +10,6 @@ export class Coordinate extends BaseModel {
     const y = this.y - this.cy;
     this.radius = Math.sqrt(x * x + y * y);
     this.radian = Math.atan2(y, x);
-  }
-
-  setX(value: number): this {
-    this.x = value;
-    return this;
   }
 
   get y(): number {
@@ -92,11 +23,6 @@ export class Coordinate extends BaseModel {
     this.radian = Math.atan2(y, x);
   }
 
-  setY(value: number): this {
-    this.y = value;
-    return this;
-  }
-
   get degree(): number {
     return radianToDegree(this.radian);
   }
@@ -105,17 +31,99 @@ export class Coordinate extends BaseModel {
     this.radian = degreeToRadian(value);
   }
 
-  setDegree(value: number): this {
-    this.degree = value;
-    return this;
-  }
-
   get percent(): number {
     return radianToPercent(this.radian);
   }
 
   set percent(value: number) {
     this.radian = percentToRadian(value);
+  }
+
+  private _cx: number;
+
+  get cx(): number {
+    return this._cx;
+  }
+
+  set cx(value: number) {
+    if (this._cx !== value) {
+      this._cx = fixRoundOffError(value);
+      this.changed();
+    }
+  }
+
+  private _cy: number;
+
+  get cy(): number {
+    return this._cy;
+  }
+
+  set cy(value: number) {
+    if (this._cy !== value) {
+      this._cy = fixRoundOffError(value);
+      this.changed();
+    }
+  }
+
+  private _radius: number;
+
+  get radius(): number {
+    return this._radius;
+  }
+
+  set radius(value: number) {
+    if (this._radius !== value) {
+      this._radius = fixRoundOffError(value);
+      this.changed();
+    }
+  }
+
+  private _radian: number;
+
+  get radian(): number {
+    return this._radian;
+  }
+
+  set radian(value: number) {
+    if (this._radian !== value) {
+      this._radian = fixRoundOffError(value);
+      this.changed();
+    }
+  }
+
+  setCx(value: number): this {
+    this.cx = value;
+    return this;
+  }
+
+  setCy(value: number): this {
+    this.cy = value;
+    return this;
+  }
+
+  setRadius(value: number): this {
+    this.radius = value;
+    return this;
+  }
+
+  setRadian(value: number): this {
+    this.radian = value;
+    return this;
+  }
+
+  setX(value: number): this {
+    this.x = value;
+    return this;
+  }
+
+  setY(value: number): this {
+    this.y = value;
+    return this;
+  }
+
+  setDegree(value: number): this {
+    this.degree = value;
+    return this;
   }
 
   setPercent(value: number): this {
@@ -172,11 +180,6 @@ export class Coordinate extends BaseModel {
   rotateByPercent(percent: number): Coordinate {
     return this.rotate(percentToRadian(percent));
   }
-
-  private _cx: number;
-  private _cy: number;
-  private _radius: number;
-  private _radian: number;
 }
 
 export function degreeToRadian(degree: number): number {

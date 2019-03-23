@@ -12,13 +12,10 @@ export class ModalConfirmComponent implements OnInit {
 
   @Output()
   close = new EventEmitter<boolean>();
-
   @Input()
   title: string;
-
   @Input()
   message: string;
-
   @Input()
   icon: string;
 

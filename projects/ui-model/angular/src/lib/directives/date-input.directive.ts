@@ -19,12 +19,16 @@ import { format, parse } from 'date-fns';
   ],
 })
 export class DateInputDirective implements ControlValueAccessor, Validator {
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) {
-  }
 
   get element(): Element {
     return this.elementRef.nativeElement;
   }
+
+  constructor(private renderer: Renderer2, private elementRef: ElementRef) {
+  }
+
+  private onChange: (value: Date) => void;
+  private onTouched: () => void;
 
   validate(c: AbstractControl): ValidationErrors | any {
     return isDate(c);
@@ -33,8 +37,6 @@ export class DateInputDirective implements ControlValueAccessor, Validator {
   writeValue(value: Date): void {
     this.renderer.setProperty(this.element, 'value', value ? format(value, 'YYYY-MM-DD') : '');
   }
-
-  private onChange: (value: Date) => void;
 
   @HostListener('change', ['$event.target'])
   change(input: HTMLInputElement): void {
@@ -49,22 +51,8 @@ export class DateInputDirective implements ControlValueAccessor, Validator {
     this.touched();
   }
 
-  protected changed(value: Date): void {
-    if (this.onChange) {
-      this.onChange(value);
-    }
-  }
-
   registerOnChange(fn: (value: Date) => void): void {
     this.onChange = fn;
-  }
-
-  private onTouched: () => void;
-
-  protected touched(): void {
-    if (this.onTouched) {
-      this.onTouched();
-    }
   }
 
   registerOnTouched(fn: () => void): void {
@@ -73,5 +61,17 @@ export class DateInputDirective implements ControlValueAccessor, Validator {
 
   setDisabledState?(isDisabled: boolean): void {
     this.renderer.setProperty(this.element, 'disabled', isDisabled);
+  }
+
+  protected changed(value: Date): void {
+    if (this.onChange) {
+      this.onChange(value);
+    }
+  }
+
+  protected touched(): void {
+    if (this.onTouched) {
+      this.onTouched();
+    }
   }
 }

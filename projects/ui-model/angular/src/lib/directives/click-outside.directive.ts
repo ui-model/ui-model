@@ -4,22 +4,23 @@ import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angu
   selector: '[uiClickOutside]',
 })
 export class ClickOutsideDirective {
+
   constructor(private element: ElementRef) {
   }
 
-  @Output('uiClickOutside') onClickOutside = new EventEmitter<void>();
+  @Output('uiClickOutside') clickOutside = new EventEmitter<void>();
 
   @HostListener('document:keyup', ['$event'])
   escKeyListener(event: KeyboardEvent): void {
-    if (event.keyCode === 27) {
-      this.onClickOutside.emit();
+    if (event.key === 'Escape') {
+      this.clickOutside.emit();
     }
   }
 
   @HostListener('document:mouseup', ['$event'])
   clickListener(event: MouseEvent): void {
     if (!isSelfOrAncestorNode(this.element.nativeElement, event.target as Node || event.srcElement)) {
-      this.onClickOutside.emit();
+      this.clickOutside.emit();
     }
   }
 }

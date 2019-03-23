@@ -12,6 +12,8 @@
       "element",
       "ui",
       "kebab-case"
-    ]
+    ],
+    "no-output-rename": false,
+    "no-input-rename": false
   }
 }

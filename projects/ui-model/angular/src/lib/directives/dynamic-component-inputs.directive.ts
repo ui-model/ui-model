@@ -6,10 +6,6 @@ import { NgComponentOutlet } from '@angular/common';
   exportAs: 'uiDynamicComponentInputs',
 })
 export class DynamicComponentInputsDirective implements OnInit {
-  constructor(private outlet: NgComponentOutlet) {
-  }
-
-  private _inputs: { [name: string]: any }[];
 
   get inputs(): { [name: string]: any }[] {
     return this._inputs;
@@ -21,7 +17,11 @@ export class DynamicComponentInputsDirective implements OnInit {
     this.updateInputs();
   }
 
+  constructor(private outlet: NgComponentOutlet) {
+  }
   component: { [name: string]: any };
+
+  private _inputs: { [name: string]: any }[];
 
   ngOnInit(): void {
     // WARNING: access private properties `_componentRef._component` of ngComponentOutlet

@@ -1,15 +1,15 @@
 <div class="card">
   <div class="card-header">
     <label>
-      <input type="checkbox" [indeterminate]="select.indeterminate" [(ngModel)]="select.allSelected"/>
+      <input [(ngModel)]="select.allSelected" [indeterminate]="select.indeterminate" type="checkbox"/>
       <span i18n>All</span>
     </label>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" *ngFor="let option of options">
+    <li *ngFor="let option of options" class="list-group-item">
       <label>
-        <input type="checkbox" [ngModel]="select.selected(option)"
-               (ngModelChange)="select.selectAs(option, $event)"/>
+        <input (ngModelChange)="select.selectAs(option, $event)" [ngModel]="select.selected(option)"
+               type="checkbox"/>
         <span [innerHTML]="option.label"></span>
       </label>
     </li>

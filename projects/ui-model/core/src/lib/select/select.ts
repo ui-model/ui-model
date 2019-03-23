@@ -3,7 +3,17 @@ import { BaseModel, objectByField, objectById, Transformer } from '@ui-model/com
 export class Select<T> extends BaseModel {
   _selection: T;
 
+  get selection(): T {
+    return this._selection;
+  }
+
+  set selection(item: T) {
+    this._selection = item;
+    this.changed();
+  }
+
   private _transformer: Transformer<T, any> = objectById;
+
   get transformer(): Transformer<T, any> {
     return this._transformer;
   }
@@ -13,12 +23,8 @@ export class Select<T> extends BaseModel {
     this.changed();
   }
 
-  setTransformer(value: Transformer<T, any>): this {
-    this.transformer = value;
-    return this;
-  }
-
   private _valueField = 'id';
+
   get valueField(): string {
     return this._valueField;
   }
@@ -28,11 +34,6 @@ export class Select<T> extends BaseModel {
       this._valueField = value;
       this.transformer = objectByField(value);
     }
-  }
-
-  setValueField(field: string): this {
-    this.valueField = field;
-    return this;
   }
 
   private _labelField = 'label';
@@ -47,18 +48,19 @@ export class Select<T> extends BaseModel {
     }
   }
 
-  setLabelField(field: string): this {
-    this.labelField = field;
+  setTransformer(value: Transformer<T, any>): this {
+    this.transformer = value;
     return this;
   }
 
-  get selection(): T {
-    return this._selection;
+  setValueField(field: string): this {
+    this.valueField = field;
+    return this;
   }
 
-  set selection(item: T) {
-    this._selection = item;
-    this.changed();
+  setLabelField(field: string): this {
+    this.labelField = field;
+    return this;
   }
 
   setSelection(value: T): this {

@@ -1,19 +1,20 @@
 <div (uiClickOutside)="dropDown.close()">
   <div class="input-group">
-    <input type="text" class="form-control" name="term"
-           uiTypeAhead #typeAhead="uiTypeAhead" (uiTypeAheadSearch)="search.emit($event)"
-           (uiTypeAheadOpen)="dropDown.open()" (uiTypeAheadClose)="dropDown.close()" [(ngModel)]="term"
-           (keydown)="keydown($event)" (keyup)="keyup($event)" (keypress)="keypress($event)"
+    <input #typeAhead="uiTypeAhead" (keydown)="keydown($event)" (keypress)="keypress($event)"
+           (keyup)="keyup($event)" (uiTypeAheadClose)="dropDown.close()" (uiTypeAheadOpen)="dropDown.open()"
+           (uiTypeAheadSearch)="search.emit($event)" [(ngModel)]="term" class="form-control"
+           name="term" type="text" uiTypeAhead
     />
     <div class="input-group-append">
-      <button type="button" class="btn btn-primary" (click)="clear()">X</button>
+      <button (click)="clear()" class="btn btn-primary" type="button">X</button>
     </div>
   </div>
-  <div class="dropdown-menu" *ngIf="dropDown.isOn">
-    <div class="dropdown-item not-found" *ngIf="!items.length">{{placeholder}}</div>
-    <div class="dropdown-item" *ngFor="let item of items; let index = index" [class.active]="index === activeIndex"
-         (click)="select(item);dropDown.close()"
-         [innerHTML]="formatter(item)">
+  <div *ngIf="dropDown.isOn" class="dropdown-menu">
+    <div *ngIf="!items.length" class="dropdown-item not-found">{{placeholder}}</div>
+    <div (click)="select(item);dropDown.close()" *ngFor="let item of items; let index = index"
+         [class.active]="index === activeIndex"
+         [innerHTML]="formatter(item)"
+         class="dropdown-item">
     </div>
   </div>
 </div>

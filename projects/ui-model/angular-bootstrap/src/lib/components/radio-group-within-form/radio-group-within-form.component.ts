@@ -8,10 +8,10 @@ import { BaseControlWithinForm } from '@ui-model/angular';
   styleUrls: ['./radio-group-within-form.component.scss'],
 })
 export class RadioGroupWithinFormComponent extends BaseControlWithinForm {
+
   constructor(container: ControlContainer) {
     super(container);
   }
-
   @Input() options: any[];
   @Input() name: string;
 }

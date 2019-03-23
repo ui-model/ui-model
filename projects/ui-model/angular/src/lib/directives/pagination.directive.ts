@@ -1,15 +1,20 @@
-import { Directive, EventEmitter, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { Pagination } from '@ui-model/core';
 
 @Directive({
   selector: '[uiPagination]',
   exportAs: 'uiPagination',
-  inputs: ['index', 'totalItems', 'size', 'viewport'],
 })
 export class PaginationDirective extends Pagination {
+
   constructor() {
     super();
   }
+
+  @Input() index: number;
+  @Input() totalItems: number;
+  @Input() size: number;
+  @Input() viewport: number;
 
   @Output() indexChange = new EventEmitter();
 

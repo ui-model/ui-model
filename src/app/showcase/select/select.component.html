@@ -1,4 +1,4 @@
-<select class="form-control" [(ngModel)]="selection">
+<select [(ngModel)]="selection" class="form-control">
   <option [ngValue]="undefined">-</option>
   <option *ngFor="let option of options" [ngValue]="option">{{option.label}}</option>
 </select>

@@ -15,15 +15,6 @@ export class Pagination extends Pager {
     }
   }
 
-  setViewport(value: number): this {
-    this.viewport = value;
-    return this;
-  }
-
-  private get halfViewport(): number {
-    return Math.floor(this.viewport / 2);
-  }
-
   get hasFirst(): boolean {
     return this.hasMore && this.index > this.halfViewport;
   }
@@ -58,5 +49,14 @@ export class Pagination extends Pager {
       result.push(i);
     }
     return result;
+  }
+
+  private get halfViewport(): number {
+    return Math.floor(this.viewport / 2);
+  }
+
+  setViewport(value: number): this {
+    this.viewport = value;
+    return this;
   }
 }

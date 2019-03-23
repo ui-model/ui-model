@@ -9,9 +9,9 @@ import { GeoProjectionService } from '../services/geo-projection.service';
   selector: 'svg[uiGeoBox]',
 })
 export class GeoBoxDirective implements OnChanges {
+
   constructor(private projection: GeoProjectionService, private element: ElementRef, private renderer: Renderer2) {
   }
-
   @Input('uiGeoBox') geoBox: FeatureCollection<GeometryObject>;
 
   ngOnChanges(changes: SimpleChanges): void {

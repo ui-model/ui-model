@@ -4,15 +4,12 @@ import { interval, Subject, Subscription } from 'rxjs';
 
 export class CountDown extends BaseModel {
   initialValue = 0;
-
-  setInitialValue(value: number): this {
-    this.initialValue = value;
-    return this;
-  }
-
   interval = 1000;
+  stopped = new Subject<void>();
+  private sub: Subscription;
 
   private _value = 0;
+
   get value(): number {
     return this._value;
   }
@@ -23,8 +20,6 @@ export class CountDown extends BaseModel {
       this.changed();
     }
   }
-
-  stopped = new Subject<void>();
 
   private _running = false;
 
@@ -42,7 +37,10 @@ export class CountDown extends BaseModel {
     }
   }
 
-  private sub: Subscription;
+  setInitialValue(value: number): this {
+    this.initialValue = value;
+    return this;
+  }
 
   start(): void {
     this.reset();

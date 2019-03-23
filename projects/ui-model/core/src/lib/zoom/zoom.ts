@@ -3,6 +3,8 @@ import { merge, Observable } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 
 export class Zoom extends BaseModel {
+  private _activeRect: Rect = new Rect();
+
   get activeRect(): Rect {
     return this._activeRect;
   }
@@ -12,10 +14,7 @@ export class Zoom extends BaseModel {
     this.changed();
   }
 
-  setActiveRect(value: Rect): this {
-    this.activeRect = value;
-    return this;
-  }
+  private _activeViewport: Rect = new Rect();
 
   get activeViewport(): Rect {
     return this._activeViewport;
@@ -26,10 +25,7 @@ export class Zoom extends BaseModel {
     this.changed();
   }
 
-  setActiveViewport(value: Rect): this {
-    this.activeViewport = value;
-    return this;
-  }
+  private _passiveRect: Rect = new Rect();
 
   get passiveRect(): Rect {
     return this._passiveRect;
@@ -40,10 +36,7 @@ export class Zoom extends BaseModel {
     this.changed();
   }
 
-  setPassiveRect(value: Rect): this {
-    this.passiveRect = value;
-    return this;
-  }
+  private _passiveViewport: Rect = new Rect();
 
   get passiveViewport(): Rect {
     return this._passiveViewport;
@@ -54,16 +47,6 @@ export class Zoom extends BaseModel {
     this.changed();
   }
 
-  setPassiveViewport(value: Rect): this {
-    this.passiveViewport = value;
-    return this;
-  }
-
-  private _activeRect: Rect = new Rect();
-  private _activeViewport: Rect = new Rect();
-  private _passiveRect: Rect = new Rect();
-  private _passiveViewport: Rect = new Rect();
-
   get changes(): Observable<this> {
     return merge([
       this.activeRect.changes,
@@ -73,6 +56,26 @@ export class Zoom extends BaseModel {
     ]).pipe(
       mapTo(this),
     );
+  }
+
+  setActiveRect(value: Rect): this {
+    this.activeRect = value;
+    return this;
+  }
+
+  setActiveViewport(value: Rect): this {
+    this.activeViewport = value;
+    return this;
+  }
+
+  setPassiveRect(value: Rect): this {
+    this.passiveRect = value;
+    return this;
+  }
+
+  setPassiveViewport(value: Rect): this {
+    this.passiveViewport = value;
+    return this;
   }
 
   update(): void {

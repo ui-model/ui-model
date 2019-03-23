@@ -3,7 +3,7 @@
     <i class="fa fa-spinner fa-spin"></i>
     checking...
   </div>
-  <ul class="text-danger" *ngIf="!field.pristine && field.invalid && field.errors">
+  <ul *ngIf="!field.pristine && field.invalid && field.errors" class="text-danger">
     <li *ngFor="let error of field.errors | objectToArray"
         [innerHTML]="error|fieldErrorMapper:messages|template:error|safeHtml"></li>
   </ul>

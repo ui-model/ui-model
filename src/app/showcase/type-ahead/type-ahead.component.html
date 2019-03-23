@@ -1,4 +1,4 @@
-<ui-type-ahead [items]="items" (search)="search($event)" name="term" [(ngModel)]="selection"
-               placeholder="(Not Found)" i18n-placeholder></ui-type-ahead>
+<ui-type-ahead (search)="search($event)" [(ngModel)]="selection" [items]="items" i18n-placeholder
+               name="term" placeholder="(Not Found)"></ui-type-ahead>
 
 <app-json-viewer [value]="selection"></app-json-viewer>

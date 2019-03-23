@@ -15,7 +15,6 @@ export class FormModelComponent implements OnInit {
   }
 
   form: FormGroup;
-
   genders = [
     {
       id: 'male',

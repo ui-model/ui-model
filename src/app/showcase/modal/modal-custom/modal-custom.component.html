@@ -1,14 +1,14 @@
 <form (submit)="close(input.value)">
   <div class="modal-header">
     <h5> Please input your name:</h5>
-    <button type="button" tabindex="-1" class="close" (click)="cancel()">
+    <button (click)="cancel()" class="close" tabindex="-1" type="button">
       <i class="fa fa-times"></i>
     </button>
   </div>
   <div class="modal-body">
-    <input type="text" autofocus class="form-control" [value]="name" #input/>
+    <input #input [value]="name" autofocus class="form-control" type="text"/>
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn btn-primary">Ok</button>
+    <button class="btn btn-primary" type="submit">Ok</button>
   </div>
 </form>

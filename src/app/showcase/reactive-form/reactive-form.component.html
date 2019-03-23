@@ -1,7 +1,7 @@
 <form [formGroup]="form">
   <div class="form-group">
     <label for="name">Name: </label>
-    <input type="text" id="name" class="form-control" [formControl]="name"/>
+    <input [formControl]="name" class="form-control" id="name" type="text"/>
     <ui-field-error [field]="name"></ui-field-error>
   </div>
   <app-basic-info-group [group]="basic"></app-basic-info-group>
@@ -11,16 +11,16 @@
       </label>
       <div *ngFor="let control of tags.controls;let i = index">
         <div class="input-group">
-          <input type="text" class="form-control" [formControlName]="i" placeholder="please input a tag"/>
+          <input [formControlName]="i" class="form-control" placeholder="please input a tag" type="text"/>
           <div class="input-group-append">
-            <button class="btn btn-secondary btn-sm" (click)="removeTag(i)">
+            <button (click)="removeTag(i)" class="btn btn-secondary btn-sm">
               <i class="fa fa-remove"></i>
             </button>
           </div>
         </div>
         <ui-field-error [field]="control"></ui-field-error>
       </div>
-      <button class="btn btn-secondary btn-block" (click)="newTag()">
+      <button (click)="newTag()" class="btn btn-secondary btn-block">
         <i class="fa fa-plus-circle"></i>
         Add New Tag
       </button>
@@ -28,7 +28,7 @@
 
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-primary btn-block" [uiDisabled]="form.invalid">Submit</button>
+    <button [uiDisabled]="form.invalid" class="btn btn-primary btn-block" type="submit">Submit</button>
   </div>
 </form>
 

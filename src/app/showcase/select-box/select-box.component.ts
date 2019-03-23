@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-box.component.scss'],
 })
 export class SelectBoxComponent implements OnInit {
+
   constructor() {
   }
-
-
   value;
 
   ngOnInit(): void {

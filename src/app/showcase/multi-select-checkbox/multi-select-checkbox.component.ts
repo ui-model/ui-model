@@ -31,5 +31,5 @@ export class MultiSelectCheckboxComponent {
 
   getCode = ({ code }) => {
     return code;
-  };
+  }
 }

@@ -7,12 +7,11 @@ import { Modal, ModalService } from '@ui-model/angular';
   styleUrls: ['./modal-custom.component.scss'],
 })
 export class ModalCustomComponent implements OnInit {
+
   constructor(private modalService: ModalService) {
   }
-
   @Input()
   modal: Modal;
-
   @Input()
   name: string;
 

@@ -5,12 +5,13 @@ export type OnControlTouched = () => void;
 
 export class BaseValueAccessor<T> implements ControlValueAccessor {
   value: T;
+  disabled = false;
+  private _onChange: OnValueChange<T>;
+  private _onTouched: OnControlTouched;
 
   writeValue(obj: T): void {
     this.value = obj;
   }
-
-  private _onChange: OnValueChange<T>;
 
   changed(): void {
     if (this._onChange) {
@@ -22,8 +23,6 @@ export class BaseValueAccessor<T> implements ControlValueAccessor {
     this._onChange = fn;
   }
 
-  private _onTouched: OnControlTouched;
-
   registerOnTouched(fn: OnControlTouched): void {
     this._onTouched = fn;
   }
@@ -33,8 +32,6 @@ export class BaseValueAccessor<T> implements ControlValueAccessor {
       this._onTouched();
     }
   }
-
-  disabled = false;
 
   setDisabledState?(isDisabled: boolean): void {
     this.disabled = isDisabled;

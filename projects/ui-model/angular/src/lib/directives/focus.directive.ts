@@ -4,11 +4,6 @@ import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from
   selector: '[uiFocus]',
 })
 export class FocusDirective {
-  constructor(element: ElementRef) {
-    this.element = element.nativeElement as HTMLElement;
-  }
-
-  private element: HTMLElement;
 
   get focus(): boolean | string {
     return this.element === document.activeElement;
@@ -21,7 +16,11 @@ export class FocusDirective {
     }
   }
 
+  constructor(element: ElementRef) {
+    this.element = element.nativeElement as HTMLElement;
+  }
   @Output('uiFocusChange') focusChange = new EventEmitter<boolean>();
+  private element: HTMLElement;
 
   @HostListener('focus')
   onFocus(): void {

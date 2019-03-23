@@ -16,6 +16,8 @@ interface Calendar {
   year: number;
   month: number;
   weeks: number[];
+  readonly weekdayNames: string[];
+  readonly monthNames: string[];
 
   getDays(week: number): Date[];
 
@@ -30,7 +32,4 @@ interface Calendar {
   isActive(date: Date): void;
 
   isWeekEnd(date: Date): void;
-
-  readonly weekdayNames: string[];
-  readonly monthNames: string[];
 }

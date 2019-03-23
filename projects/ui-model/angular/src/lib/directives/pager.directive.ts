@@ -1,16 +1,19 @@
-import { Directive, EventEmitter, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { Pager } from '@ui-model/core';
 
 @Directive({
   selector: '[uiPager]',
   exportAs: 'uiPager',
-  inputs: ['index', 'recordCount', 'size'],
 })
 export class PagerDirective extends Pager {
+
   constructor() {
     super();
   }
 
+  @Input() index: number;
+  @Input() totalItems: number;
+  @Input() size: number;
   @Output() indexChange = new EventEmitter();
 
   protected changed(): void {

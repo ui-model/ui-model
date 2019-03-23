@@ -12,16 +12,12 @@ export class ModalSuccessComponent implements OnInit {
 
   @Output()
   close = new EventEmitter<void>();
-
   @Output()
   cancel = new EventEmitter<void>();
-
   @Input()
   title: string;
-
   @Input()
   message: string;
-
   @Input()
   icon: string;
 

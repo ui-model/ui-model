@@ -3,6 +3,9 @@ import { merge, Observable } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 
 export class Pie extends BaseModel {
+  private _begin: Coordinate = new Coordinate();
+  private _end: Coordinate = new Coordinate();
+
   get changes(): Observable<this> {
     return merge(this._begin.changes, this._end.changes).pipe(
       mapTo(this),
@@ -20,11 +23,6 @@ export class Pie extends BaseModel {
     }
   }
 
-  setCx(value: number): this {
-    this.cx = value;
-    return this;
-  }
-
   get cy(): number {
     return this._begin.cy;
   }
@@ -34,11 +32,6 @@ export class Pie extends BaseModel {
       this._begin.setCy(value);
       this._end.setCy(value);
     }
-  }
-
-  setCy(value: number): this {
-    this.cy = value;
-    return this;
   }
 
   get radius(): number {
@@ -52,22 +45,12 @@ export class Pie extends BaseModel {
     }
   }
 
-  setRadius(value: number): this {
-    this.radius = value;
-    return this;
-  }
-
   get beginPercent(): number {
     return this._begin.percent;
   }
 
   set beginPercent(value: number) {
     this._begin.setPercent(value);
-  }
-
-  setBeginPercent(value: number): this {
-    this.beginPercent = value;
-    return this;
   }
 
   get endPercent(): number {
@@ -78,26 +61,9 @@ export class Pie extends BaseModel {
     this._end.setPercent(value);
   }
 
-  setEndPercent(value: number): this {
-    this.endPercent = value;
-    return this;
-  }
-
   get middlePercent(): number {
     return this.beginPercent + (this.endPercent - this.beginPercent) / 2;
   }
-
-  mapToXY(percent: number, radius: number): { x: number, y: number } {
-    const coordinate = new Coordinate();
-    coordinate.cx = this.cx;
-    coordinate.cy = this.cy;
-    coordinate.percent = percent;
-    coordinate.radius = radius;
-    return { x: coordinate.x, y: coordinate.y };
-  }
-
-  private _begin: Coordinate = new Coordinate();
-  private _end: Coordinate = new Coordinate();
 
   get largeArc(): number {
     if ((this._begin.percent - 0.5) > this._end.percent) {
@@ -128,5 +94,39 @@ Z`;
 A ${this.radius} ${this.radius}, 0 ${this.largeArc} ${this.sweepFlag}, ${this._end.x} ${this._end.y}
 L ${this._begin.cx},${this._begin.cy}Z`;
     }
+  }
+
+  setCx(value: number): this {
+    this.cx = value;
+    return this;
+  }
+
+  setCy(value: number): this {
+    this.cy = value;
+    return this;
+  }
+
+  setRadius(value: number): this {
+    this.radius = value;
+    return this;
+  }
+
+  setBeginPercent(value: number): this {
+    this.beginPercent = value;
+    return this;
+  }
+
+  setEndPercent(value: number): this {
+    this.endPercent = value;
+    return this;
+  }
+
+  mapToXY(percent: number, radius: number): { x: number, y: number } {
+    const coordinate = new Coordinate();
+    coordinate.cx = this.cx;
+    coordinate.cy = this.cy;
+    coordinate.percent = percent;
+    coordinate.radius = radius;
+    return { x: coordinate.x, y: coordinate.y };
   }
 }

@@ -4,6 +4,17 @@ import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
   selector: '[uiDisabled]',
 })
 export class DisabledDirective {
+
+  get disabled(): boolean | string {
+    return this._disabled;
+  }
+
+  @Input('uiDisabled')
+  set disabled(value: boolean | string) {
+    this._disabled = value || value === '';
+    this.classDisabled = this._disabled;
+  }
+
   constructor(private element: ElementRef) {
     const e = this.element.nativeElement;
     // cancel all events but mouseenter/mouseleave/mouseover/mouseout - they are necessary for tooltip
@@ -31,19 +42,9 @@ export class DisabledDirective {
     e.addEventListener('pointerout', this.preventDefault);
     e.addEventListener('pointerleave', this.preventDefault);
   }
+  @HostBinding('class.disabled') classDisabled;
 
   private _disabled: boolean | string = true;
-  get disabled(): boolean | string {
-    return this._disabled;
-  }
-
-  @Input('uiDisabled')
-  set disabled(value: boolean | string) {
-    this._disabled = value || value === '';
-    this.classDisabled = this._disabled;
-  }
-
-  @HostBinding('class.disabled') classDisabled;
 
   preventDefault = (event) => {
     if (this.disabled) {
@@ -52,5 +53,5 @@ export class DisabledDirective {
       event.stopImmediatePropagation();
       return false;
     }
-  };
+  }
 }

@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./type-ahead.component.scss'],
 })
 export class TypeAheadComponent {
+
   constructor(private sanitizer: DomSanitizer) {
     this.originItems.forEach((item) => {
       item['format'] = () => {
@@ -18,7 +19,6 @@ export class TypeAheadComponent {
 
     });
   }
-
   originItems = [
     {
       name: 'a',
@@ -37,9 +37,7 @@ export class TypeAheadComponent {
       value: 4,
     },
   ];
-
   items = this.originItems;
-
   selection = this.originItems[1];
 
   search(term: string): void {

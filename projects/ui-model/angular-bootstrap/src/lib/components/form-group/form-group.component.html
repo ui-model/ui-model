@@ -1,8 +1,8 @@
 <div *ngIf="form && group" [formGroup]="group" class="row">
   <ng-container *ngFor="let field of form.properties">
-    <div *ngIf="!field.hidden" [uiFieldMetadata]="field" [ngClass]="field|fieldCss">
-      <ui-form-control *ngIf="field.isControl" [group]="group" [field]="field" [readonly]="readonly"></ui-form-control>
-      <ui-form-array *ngIf="field.isArray" [group]="group" [field]="field" [readonly]="readonly"></ui-form-array>
+    <div *ngIf="!field.hidden" [ngClass]="field|fieldCss" [uiFieldMetadata]="field">
+      <ui-form-control *ngIf="field.isControl" [field]="field" [group]="group" [readonly]="readonly"></ui-form-control>
+      <ui-form-array *ngIf="field.isArray" [field]="field" [group]="group" [readonly]="readonly"></ui-form-array>
       <fieldset *ngIf="field.isGroup">
         <legend>{{field.label}}</legend>
         <ui-form-group [group]="group.get(field.name)" [readonly]="readonly"></ui-form-group>

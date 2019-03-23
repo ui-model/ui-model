@@ -1,15 +1,12 @@
-import { Directive, EventEmitter, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { CountDown } from '@ui-model/core';
 
 @Directive({
   selector: '[uiCountDown]',
   exportAs: 'uiCountDown',
-  inputs: [
-    'initialValue',
-    'interval',
-  ],
 })
 export class CountDownDirective extends CountDown {
+
   constructor() {
     super();
     this.stopped.subscribe(() => {
@@ -17,5 +14,7 @@ export class CountDownDirective extends CountDown {
     });
   }
 
+  @Input() initialValue: number;
+  @Input() interval: number;
   @Output() done = new EventEmitter<void>();
 }

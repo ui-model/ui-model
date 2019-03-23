@@ -11,12 +11,6 @@ import { Toggle } from '@ui-model/core';
   ],
 })
 export class DatePickerComponent implements OnInit, ControlValueAccessor {
-  constructor() {
-  }
-
-  toggle = new Toggle();
-
-  private _value: Date;
 
   get value(): Date {
     return this._value;
@@ -26,14 +20,22 @@ export class DatePickerComponent implements OnInit, ControlValueAccessor {
     this._value = value;
   }
 
+  constructor() {
+  }
+
+  toggle = new Toggle();
+  @Input() disabled = false;
+  private _onChange: (value: Date) => void;
+  private _onTouched: () => void;
+
+  private _value: Date;
+
   ngOnInit(): void {
   }
 
   writeValue(obj: Date): void {
     this.value = obj;
   }
-
-  private _onChange: (value: Date) => void;
 
   changed(): void {
     if (this._onChange) {
@@ -45,21 +47,17 @@ export class DatePickerComponent implements OnInit, ControlValueAccessor {
     this._onChange = fn;
   }
 
-  private _onTouched: () => void;
+  registerOnTouched(fn: () => void): void {
+    this._onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
 
   protected touched(): void {
     if (this._onTouched) {
       this._onTouched();
     }
-  }
-
-  registerOnTouched(fn: () => void): void {
-    this._onTouched = fn;
-  }
-
-  @Input() disabled = false;
-
-  setDisabledState(isDisabled: boolean): void {
-    this.disabled = isDisabled;
   }
 }

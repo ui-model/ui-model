@@ -1,7 +1,7 @@
 <ul class="nav nav-pills">
-  <li class="nav-item" *ngFor="let item of items">
-    <a class="nav-link"
-       [routerLink]="item.path"
+  <li *ngFor="let item of items" class="nav-item">
+    <a [routerLink]="item.path"
+       class="nav-link"
        routerLinkActive="active">{{item.data?.title}}</a>
   </li>
 </ul>

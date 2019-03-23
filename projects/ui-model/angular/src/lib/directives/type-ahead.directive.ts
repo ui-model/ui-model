@@ -7,14 +7,14 @@ import { Subject } from 'rxjs';
   exportAs: 'uiTypeAhead',
 })
 export class TypeAheadDirective implements OnInit, OnDestroy {
+
   constructor(private element: ElementRef) {
   }
-
-  private typing = new Subject();
-
   @Output('uiTypeAheadSearch') search = new EventEmitter<any>();
   @Output('uiTypeAheadOpen') open = new EventEmitter<void>();
   @Output('uiTypeAheadClose') close = new EventEmitter<void>();
+  @Input() delay = 200;
+  private typing = new Subject();
 
   @HostListener('keyup')
   keyup(): void {
@@ -26,8 +26,6 @@ export class TypeAheadDirective implements OnInit, OnDestroy {
     this.keyup();
     this.open.emit();
   }
-
-  @Input() delay = 200;
 
   ngOnInit(): void {
     this.typing.pipe(

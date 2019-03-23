@@ -8,10 +8,6 @@ import { SourceCodeService } from './source-code.service';
 
 @Injectable()
 export class MetadataService {
-  constructor(private api: SourceCodeService) {
-  }
-
-  meta: Metadata = new Metadata();
 
   get id(): string {
     return this.meta.id;
@@ -33,13 +29,6 @@ export class MetadataService {
     return this.meta.authors;
   }
 
-  document: string;
-  types = ['html', 'ts', 'scss', 'spec.ts'];
-  source: string;
-  sources: string[] = [];
-
-  private _type: string = this.types[0];
-
   get type(): string {
     return this._type;
   }
@@ -49,6 +38,17 @@ export class MetadataService {
     const index = this.types.indexOf(type);
     this.source = this.sources[index];
   }
+
+  constructor(private api: SourceCodeService) {
+  }
+
+  meta: Metadata = new Metadata();
+  document: string;
+  types = ['html', 'ts', 'scss', 'spec.ts'];
+  source: string;
+  sources: string[] = [];
+
+  private _type: string = this.types[0];
 
   load(id: string, metadata: Metadata): Observable<any> {
     this.meta = Object.assign({}, metadata, { id: id });

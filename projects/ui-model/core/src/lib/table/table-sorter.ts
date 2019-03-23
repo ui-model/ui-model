@@ -13,6 +13,8 @@ function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
 
 export class TableSorter extends BaseModel {
 
+  enabled = true;
+
   private _fields: TableField[] = [];
 
   get fields(): TableField[] {
@@ -24,23 +26,23 @@ export class TableSorter extends BaseModel {
     this.changed();
   }
 
-  setFields(value: TableField[]): this {
-    this.fields = value;
-    return this;
-  }
-
-  get field(): TableField {
-    return this._field;
-  }
-
-  enabled = true;
-
   get disabled(): boolean {
     return !this.enabled;
   }
 
   set disabled(value: boolean) {
     this.enabled = !value;
+  }
+
+  private _field: TableField;
+
+  get field(): TableField {
+    return this._field;
+  }
+
+  setFields(value: TableField[]): this {
+    this.fields = value;
+    return this;
   }
 
   setDisabled(value: boolean): this {
@@ -86,6 +88,4 @@ export class TableSorter extends BaseModel {
     this._field = field;
     this.changed();
   }
-
-  private _field: TableField;
 }

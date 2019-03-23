@@ -1,7 +1,6 @@
 import { BaseModel } from '@ui-model/common';
 
 export class Toggle extends BaseModel {
-  private _isOn = Toggle.OFF;
 
   get isOn(): boolean {
     return this._isOn;
@@ -14,17 +13,19 @@ export class Toggle extends BaseModel {
     }
   }
 
-  setIsOn(value: boolean): this {
-    this.isOn = value;
-    return this;
-  }
-
   get isOff(): boolean {
     return !this.isOn;
   }
 
   set isOff(value: boolean) {
     this.isOn = !value;
+  }
+
+  private _isOn = Toggle.OFF;
+
+  setIsOn(value: boolean): this {
+    this.isOn = value;
+    return this;
   }
 
   setIsOff(value: boolean): this {
@@ -65,7 +66,6 @@ export class Toggle extends BaseModel {
   hide(): void {
     this.turnOff();
   }
-
   static readonly ON = true;
   static readonly OFF = false;
 }

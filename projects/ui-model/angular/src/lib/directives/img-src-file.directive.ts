@@ -5,12 +5,6 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
   selector: 'img[srcFile]',
 })
 export class ImgSrcFileDirective {
-  constructor(private element: ElementRef, private renderer: Renderer2) {
-  }
-
-  private url: string;
-
-  private _srcFile: Blob;
 
   get srcFile(): Blob {
     return this._srcFile;
@@ -24,15 +18,22 @@ export class ImgSrcFileDirective {
     this.renderer.setAttribute(this.element.nativeElement, 'src', this.url);
   }
 
-  @HostListener('load')
-  private loaded(): void {
-    this.cleanUp();
+  constructor(private element: ElementRef, private renderer: Renderer2) {
   }
+
+  private url: string;
+
+  private _srcFile: Blob;
 
   cleanUp(): void {
     if (isBlobUrl(this.url)) {
       URL.revokeObjectURL(this.url);
     }
+  }
+
+  @HostListener('load')
+  private loaded(): void {
+    this.cleanUp();
   }
 }
 

@@ -1,7 +1,7 @@
 import { BaseModel } from '../common/base-model';
 
 export class Rect extends BaseModel {
-  private _left = 0;
+
   get left(): number {
     return this._left;
   }
@@ -11,12 +11,6 @@ export class Rect extends BaseModel {
     this.changed();
   }
 
-  setLeft(value: number): this {
-    this.left = value;
-    return this;
-  }
-
-  private _top = 0;
   get top(): number {
     return this._top;
   }
@@ -25,13 +19,6 @@ export class Rect extends BaseModel {
     this._top = value;
     this.changed();
   }
-
-  setTop(value: number): this {
-    this.top = value;
-    return this;
-  }
-
-  private _width = 0;
   get width(): number {
     return this._width;
   }
@@ -41,12 +28,6 @@ export class Rect extends BaseModel {
     this.changed();
   }
 
-  setWidth(value: number): this {
-    this.width = value;
-    return this;
-  }
-
-  private _height = 0;
   get height(): number {
     return this._height;
   }
@@ -54,18 +35,6 @@ export class Rect extends BaseModel {
   set height(value: number) {
     this._height = value;
     this.changed();
-  }
-
-  setHeight(value: number): this {
-    this.height = value;
-    return this;
-  }
-
-  limit = Rect.InfinityRect;
-
-  limitTo(limit: Rect): Rect {
-    this.limit = limit;
-    return this;
   }
 
   get right(): number {
@@ -94,6 +63,41 @@ export class Rect extends BaseModel {
 
   get centerY(): number {
     return this.top + this.halfHeight;
+  }
+
+  limit = Rect.InfinityRect;
+
+  private _left = 0;
+
+  private _top = 0;
+
+  private _width = 0;
+
+  private _height = 0;
+
+  setLeft(value: number): this {
+    this.left = value;
+    return this;
+  }
+
+  setTop(value: number): this {
+    this.top = value;
+    return this;
+  }
+
+  setWidth(value: number): this {
+    this.width = value;
+    return this;
+  }
+
+  setHeight(value: number): this {
+    this.height = value;
+    return this;
+  }
+
+  limitTo(limit: Rect): Rect {
+    this.limit = limit;
+    return this;
   }
 
   zoom(scale: number): Rect {
@@ -155,7 +159,6 @@ export class Rect extends BaseModel {
     this.height = rect.height;
     return this;
   }
-
   static readonly InfinityRect = new Rect()
     .setLeft(-Number.MAX_VALUE / 2)
     .setTop(-Number.MAX_VALUE / 2)

@@ -1,10 +1,11 @@
 <div [class.no-selectable]="movable.moving">
   <div class="playground">
-    <div class="movable"
-         uiMeasure #inner="uiMeasure"
-         uiMovable #movable="uiMovable" (uiMoveStop)="inner.update()"
+    <div #inner="uiMeasure"
+         #movable="uiMovable" (uiMoveStop)="inner.update()"
          [style.left.px]="inner.offsetRect.left + movable.offset.x"
-         [style.top.px]="inner.offsetRect.top + movable.offset.y"
+         [style.top.px]="inner.offsetRect.top + movable.offset.y" class="movable"
+         uiMeasure
+         uiMovable
     >
     </div>
   </div>

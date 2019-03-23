@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+
   constructor(source: SourceCodeService) {
     this.content = source.loadDocument('home');
   }
-
   content: Observable<string>;
 }

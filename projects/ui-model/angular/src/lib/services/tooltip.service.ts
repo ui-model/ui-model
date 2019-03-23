@@ -6,23 +6,13 @@ import { delay } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class TooltipService {
-  constructor() {
-  }
 
-  private _changes = new Subject<void>();
   get changes(): Observable<void> {
     return this._changes.asObservable()
     // wait for the next tick to ensure that changes(e.g. message) have been applied
       .pipe(delay(0));
   }
 
-  protected changed(): void {
-    this._changes.next();
-  }
-
-  pointingRect: Rect;
-
-  private _message: string | SafeHtml;
   get message(): string | SafeHtml {
     return this._message;
   }
@@ -35,6 +25,15 @@ export class TooltipService {
   get visible(): boolean {
     return !!this._message && !!this.pointingRect;
   }
+
+  constructor() {
+  }
+
+  pointingRect: Rect;
+
+  private _changes = new Subject<void>();
+
+  private _message: string | SafeHtml;
 
   show(message: string | SafeHtml, pointingRect: Rect): void {
     this.message = message;
@@ -51,5 +50,9 @@ export class TooltipService {
       tooltipRect.moveTo(this.pointingRect.centerX - tooltipRect.halfWidth, this.pointingRect.bottom);
     }
     return tooltipRect;
+  }
+
+  protected changed(): void {
+    this._changes.next();
   }
 }

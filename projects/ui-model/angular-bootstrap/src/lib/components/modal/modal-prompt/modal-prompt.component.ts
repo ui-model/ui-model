@@ -16,26 +16,6 @@ class PromptModel {
   styleUrls: ['./modal-prompt.component.scss'],
 })
 export class ModalPromptComponent implements OnInit {
-  constructor(private formMaker: FormMaker) {
-    this.formGroup = this.formMaker.createFromModel(PromptModel);
-  }
-
-  formGroup: FormGroup;
-
-  @Output()
-  close = new EventEmitter<any>();
-
-  @Output()
-  cancel = new EventEmitter<void>();
-
-  @Input()
-  title: string;
-
-  @Input()
-  message: string;
-
-  @Input()
-  icon: string;
 
   get defaultValue(): string {
     return this.formGroup.value && this.formGroup.value.result;
@@ -45,6 +25,21 @@ export class ModalPromptComponent implements OnInit {
   set defaultValue(value: string) {
     this.formGroup.setValue({ result: value || '' });
   }
+
+  constructor(private formMaker: FormMaker) {
+    this.formGroup = this.formMaker.createFromModel(PromptModel);
+  }
+  formGroup: FormGroup;
+  @Output()
+  close = new EventEmitter<any>();
+  @Output()
+  cancel = new EventEmitter<void>();
+  @Input()
+  title: string;
+  @Input()
+  message: string;
+  @Input()
+  icon: string;
 
   ngOnInit(): void {
   }

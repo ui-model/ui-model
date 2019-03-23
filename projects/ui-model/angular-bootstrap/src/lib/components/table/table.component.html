@@ -1,16 +1,16 @@
-<ng-container *ngIf="sorter" uiPagination #pager="uiPagination" [totalItems]="items.length">
+<ng-container #pager="uiPagination" *ngIf="sorter" [totalItems]="items.length" uiPagination>
   <table class="table table-hover table-striped table-bordered">
     <thead>
     <tr>
-      <th class="resizable" *ngFor="let field of fields"
-          uiMeasure #measure="uiMeasure"
-          [style.width.px]="(measure.clientRect.width + movable.offset.x)||100"
-          [class.sortable]="sortable && field.sortable"
+      <th #measure="uiMeasure" (click)="sorter.toggle(field)"
+          *ngFor="let field of fields" [class.sortable]="sortable && field.sortable"
           [ngClass]="field.type|typeName:'data-type-'"
-          (click)="sorter.toggle(field)" [title]="field.title">
+          [style.width.px]="(measure.clientRect.width + movable.offset.x)||100"
+          [title]="field.title"
+          class="resizable" uiMeasure>
         {{field.title}}
-        <i class="fa" [ngClass]="orderCss(field.sortOrder)" *ngIf="field.sortable"></i>
-        <div class="splitter" uiMovable #movable="uiMovable" (uiMoveStop)="measure.update()"></div>
+        <i *ngIf="field.sortable" [ngClass]="orderCss(field.sortOrder)" class="fa"></i>
+        <div #movable="uiMovable" (uiMoveStop)="measure.update()" class="splitter" uiMovable></div>
       </th>
     </tr>
     </thead>
@@ -28,7 +28,7 @@
       <ui-pagination [pager]="pager" [showBrief]="false"></ui-pagination>
     </div>
     <div class="col-md-2">
-      <select class="form-control" name="pageSize" [(ngModel)]="pager.size">
+      <select [(ngModel)]="pager.size" class="form-control" name="pageSize">
         <option value="10">10</option>
         <option value="20">20</option>
         <option value="50">50</option>

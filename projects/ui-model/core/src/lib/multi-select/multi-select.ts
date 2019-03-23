@@ -13,12 +13,8 @@ export class MultiSelect<T> extends BaseModel {
     this.changed();
   }
 
-  setOptions(value: T[]): this {
-    this.options = value;
-    return this;
-  }
-
   private _transformer: Transformer<T, any> = objectById;
+
   get transformer(): Transformer<T, any> {
     return this._transformer;
   }
@@ -28,12 +24,8 @@ export class MultiSelect<T> extends BaseModel {
     this.changed();
   }
 
-  setTransformer(value: Transformer<T, any>): this {
-    this.transformer = value;
-    return this;
-  }
-
   private _valueField = 'id';
+
   get valueField(): string {
     return this._valueField;
   }
@@ -43,11 +35,6 @@ export class MultiSelect<T> extends BaseModel {
       this._valueField = value;
       this.transformer = objectByField(value);
     }
-  }
-
-  setValueField(field: string): this {
-    this.valueField = field;
-    return this;
   }
 
   get allSelected(): boolean {
@@ -62,11 +49,6 @@ export class MultiSelect<T> extends BaseModel {
     }
   }
 
-  setAllSelected(value: boolean): this {
-    this.allSelected = value;
-    return this;
-  }
-
   get indeterminate(): boolean {
     return this.anySelected && this.anyUnselected;
   }
@@ -77,6 +59,43 @@ export class MultiSelect<T> extends BaseModel {
 
   get anyUnselected(): boolean {
     return !!this.options && this.options.filter((option) => this.unselected(option)).length > 0;
+  }
+
+  get selection(): T[] {
+    if (!this.options) {
+      return [];
+    }
+
+    return this.options.filter((option) => this.selected(option));
+  }
+
+  set selection(selections: T[]) {
+    if (!selections) {
+      return;
+    }
+    selections.forEach((value) => {
+      this.select(value);
+    });
+  }
+
+  setOptions(value: T[]): this {
+    this.options = value;
+    return this;
+  }
+
+  setTransformer(value: Transformer<T, any>): this {
+    this.transformer = value;
+    return this;
+  }
+
+  setValueField(field: string): this {
+    this.valueField = field;
+    return this;
+  }
+
+  setAllSelected(value: boolean): this {
+    this.allSelected = value;
+    return this;
   }
 
   selected(option: T): boolean {
@@ -114,23 +133,6 @@ export class MultiSelect<T> extends BaseModel {
 
   toggleAll(): void {
     this.options.forEach((option) => this.toggle(option));
-  }
-
-  get selection(): T[] {
-    if (!this.options) {
-      return [];
-    }
-
-    return this.options.filter((option) => this.selected(option));
-  }
-
-  set selection(selections: T[]) {
-    if (!selections) {
-      return;
-    }
-    selections.forEach((value) => {
-      this.select(value);
-    });
   }
 
   setSelection(value: T[]): this {

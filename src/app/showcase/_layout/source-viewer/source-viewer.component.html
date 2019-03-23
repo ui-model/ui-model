@@ -1,6 +1,6 @@
-<p class="badge-list" *ngIf="meta?.authors|isNotEmpty">
+<p *ngIf="meta?.authors|isNotEmpty" class="badge-list">
   <span i18n>Authors:</span>
-  <a class="author" *ngFor="let author of meta.authors" [routerLink]="['/authors', author.id]">{{author.name}}</a>
+  <a *ngFor="let author of meta.authors" [routerLink]="['/authors', author.id]" class="author">{{author.name}}</a>
 </p>
 <ul class="nav nav-tabs" uiSelect #types="uiSelect" [(ngModel)]="meta.type">
   <li class="nav-item" *ngFor="let type of meta.types">

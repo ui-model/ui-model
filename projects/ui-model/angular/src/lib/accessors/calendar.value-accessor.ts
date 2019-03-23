@@ -2,23 +2,13 @@ import { ControlValueAccessor } from '@angular/forms';
 import { Calendar } from '@ui-model/core';
 
 export class CalendarValueAccessor extends Calendar implements ControlValueAccessor {
+
   constructor() {
     super();
   }
 
-  protected changed(): void {
-    super.changed();
-    if (this.onChange) {
-      this.onChange(this.value);
-    }
-    this.touched();
-  }
-
-  protected touched(): void {
-    if (this.onTouched) {
-      this.onTouched();
-    }
-  }
+  private onChange: (value: Date) => {};
+  private onTouched: () => {};
 
   writeValue(value: Date): void {
     this.value = value;
@@ -36,6 +26,17 @@ export class CalendarValueAccessor extends Calendar implements ControlValueAcces
     this.disabled = isDisabled;
   }
 
-  private onChange: (value: Date) => {};
-  private onTouched: () => {};
+  protected changed(): void {
+    super.changed();
+    if (this.onChange) {
+      this.onChange(this.value);
+    }
+    this.touched();
+  }
+
+  protected touched(): void {
+    if (this.onTouched) {
+      this.onTouched();
+    }
+  }
 }

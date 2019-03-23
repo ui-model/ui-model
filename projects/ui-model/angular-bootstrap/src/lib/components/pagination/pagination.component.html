@@ -1,30 +1,30 @@
 <ul class="pagination">
-  <li class="page-item" [class.disabled]="!pager.hasFirst" *ngIf="showFirstLast">
-    <a href="javascript:void(0)" (click)="pager.goToFirst()" class="page-link" title="First">
+  <li *ngIf="showFirstLast" [class.disabled]="!pager.hasFirst" class="page-item">
+    <a (click)="pager.goToFirst()" class="page-link" href="javascript:void(0)" title="First">
       <i class="fa fa-step-backward"></i>
     </a>
   </li>
-  <li class="page-item" [class.disabled]="!pager.hasPrev" *ngIf="showPrevNext">
-    <a href="javascript:void(0)" (click)="pager.prev()" class="page-link" title="Prev">
+  <li *ngIf="showPrevNext" [class.disabled]="!pager.hasPrev" class="page-item">
+    <a (click)="pager.prev()" class="page-link" href="javascript:void(0)" title="Prev">
       <i class="fa fa-backward"></i>
     </a>
   </li>
   <ng-container *ngIf="!pager.isEmpty">
-    <li class="page-item" *ngFor="let page of pager.pages" [class.active]="pager.isActive(page)">
-      <a class="page-link" href="javascript:void(0)" (click)="pager.goTo(page)">{{page + 1}}</a>
+    <li *ngFor="let page of pager.pages" [class.active]="pager.isActive(page)" class="page-item">
+      <a (click)="pager.goTo(page)" class="page-link" href="javascript:void(0)">{{page + 1}}</a>
     </li>
   </ng-container>
-  <li class="page-item" [class.disabled]="!pager.hasNext" *ngIf="showPrevNext">
-    <a href="javascript:void(0)" (click)="pager.next()" class="page-link" title="Next">
+  <li *ngIf="showPrevNext" [class.disabled]="!pager.hasNext" class="page-item">
+    <a (click)="pager.next()" class="page-link" href="javascript:void(0)" title="Next">
       <i class="fa fa-forward"></i>
     </a>
   </li>
-  <li class="page-item" [class.disabled]="!pager.hasLast" *ngIf="showFirstLast">
-    <a href="javascript:void(0)" (click)="pager.goToLast()" class="page-link" title="Last">
+  <li *ngIf="showFirstLast" [class.disabled]="!pager.hasLast" class="page-item">
+    <a (click)="pager.goToLast()" class="page-link" href="javascript:void(0)" title="Last">
       <i class="fa fa-step-forward"></i>
     </a>
   </li>
-  <li class="page-item disabled" *ngIf="showBrief">
+  <li *ngIf="showBrief" class="page-item disabled">
     <span class="page-link">
       {{pager.totalItems}} items / {{pager.count}} pages
     </span>
