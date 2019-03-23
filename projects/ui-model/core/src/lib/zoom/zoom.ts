@@ -1,6 +1,6 @@
 import { BaseModel, Rect } from '@ui-model/common';
 import { merge, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { mapTo } from 'rxjs/operators';
 
 export class Zoom extends BaseModel {
   get activeRect(): Rect {
@@ -71,7 +71,7 @@ export class Zoom extends BaseModel {
       this.passiveRect.changes,
       this.passiveViewport.changes,
     ]).pipe(
-      map(() => this),
+      mapTo(this),
     );
   }
 
