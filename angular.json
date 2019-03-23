@@ -243,41 +243,6 @@
         }
       }
     },
-    "@ui-model/calendar": {
-      "root": "projects/ui-model/calendar",
-      "sourceRoot": "projects/ui-model/calendar/src",
-      "projectType": "library",
-      "prefix": "ui",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ui-model/calendar/tsconfig.lib.json",
-            "project": "projects/ui-model/calendar/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ui-model/calendar/src/test.ts",
-            "tsConfig": "projects/ui-model/calendar/tsconfig.spec.json",
-            "karmaConfig": "projects/ui-model/calendar/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ui-model/calendar/tsconfig.lib.json",
-              "projects/ui-model/calendar/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "@ui-model/chart": {
       "root": "projects/ui-model/chart",
       "sourceRoot": "projects/ui-model/chart/src",
