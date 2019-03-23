@@ -1,6 +1,6 @@
-import { Stateful } from '../common/stateful';
+import { BaseModel } from '../common/base-model';
 
-export class Coordinate extends Stateful {
+export class Coordinate extends BaseModel {
   get cx(): number {
     return this._cx;
   }

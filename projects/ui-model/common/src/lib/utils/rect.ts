@@ -1,6 +1,6 @@
-import { Stateful } from '../common/stateful';
+import { BaseModel } from '../common/base-model';
 
-export class Rect extends Stateful {
+export class Rect extends BaseModel {
   private _left = 0;
   get left(): number {
     return this._left;

@@ -1,5 +1,5 @@
 import { TableField } from './table-field';
-import { SortOrder, Stateful } from '@ui-model/common';
+import { BaseModel, SortOrder } from '@ui-model/common';
 
 function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
   if (!order) {
@@ -11,7 +11,7 @@ function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
   }
 }
 
-export class TableSorter extends Stateful {
+export class TableSorter extends BaseModel {
 
   private _fields: TableField[] = [];
 

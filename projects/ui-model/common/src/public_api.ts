@@ -2,7 +2,7 @@
  * Public API Surface of common
  */
 
-export { Stateful } from './lib/common/stateful';
+export { BaseModel } from './lib/common/base-model';
 
 export { Comparator } from './lib/utils/comparator';
 export { Comparators } from './lib/utils/comparators';
@@ -20,4 +20,3 @@ export { Point } from './lib/utils/point';
 export { Size } from './lib/utils/size';
 export { Distance } from './lib/utils/distance';
 export * from './lib/utils/typings';
-export { StateListener } from './lib/utils/state-listener';

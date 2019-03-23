@@ -1,9 +1,9 @@
-import { Stateful } from '@ui-model/common';
+import { BaseModel } from '@ui-model/common';
 import { empty, Observable } from 'rxjs';
 import { map, merge } from 'rxjs/operators';
 import { Pie } from '../shape/pie';
 
-export class PieChart extends Stateful {
+export class PieChart extends BaseModel {
   get serials(): number[] {
     return this._serials;
   }

@@ -1,6 +1,6 @@
-import { objectByField, objectById, Stateful, Transformer } from '@ui-model/common';
+import { BaseModel, objectByField, objectById, Transformer } from '@ui-model/common';
 
-export class MultiSelect<T> extends Stateful {
+export class MultiSelect<T> extends BaseModel {
   private selectedStates = new Map<T, boolean>();
 
   private _options: T[] = [];

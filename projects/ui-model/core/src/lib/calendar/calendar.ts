@@ -1,4 +1,4 @@
-import { Stateful, StateListener } from '@ui-model/common';
+import { BaseModel } from '@ui-model/common';
 import {
   addDays,
   addMonths,
@@ -20,9 +20,9 @@ import {
   startOfYear,
 } from 'date-fns';
 
-export class Calendar extends Stateful {
-  constructor(stateListener?: StateListener, stateKey?: string) {
-    super(stateListener, stateKey);
+export class Calendar extends BaseModel {
+  constructor() {
+    super();
     this.update();
   }
 

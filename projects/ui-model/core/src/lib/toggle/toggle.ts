@@ -1,6 +1,6 @@
-import { Stateful } from '@ui-model/common';
+import { BaseModel } from '@ui-model/common';
 
-export class Toggle extends Stateful {
+export class Toggle extends BaseModel {
   private _isOn = Toggle.OFF;
 
   get isOn(): boolean {

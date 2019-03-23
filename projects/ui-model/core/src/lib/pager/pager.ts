@@ -1,6 +1,6 @@
-import { Stateful } from '@ui-model/common';
+import { BaseModel } from '@ui-model/common';
 
-export class Pager extends Stateful {
+export class Pager extends BaseModel {
   private _index = 0;
 
   get index(): number {

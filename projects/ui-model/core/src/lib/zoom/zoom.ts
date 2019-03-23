@@ -1,8 +1,8 @@
-import { Rect, Stateful } from '@ui-model/common';
+import { BaseModel, Rect } from '@ui-model/common';
 import { merge, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export class Zoom extends Stateful {
+export class Zoom extends BaseModel {
   get activeRect(): Rect {
     return this._activeRect;
   }

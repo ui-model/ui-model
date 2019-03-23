@@ -1,8 +1,8 @@
-import { Stateful } from '@ui-model/common';
+import { BaseModel } from '@ui-model/common';
 import { take } from 'rxjs/operators';
 import { interval, Subject, Subscription } from 'rxjs';
 
-export class CountDown extends Stateful {
+export class CountDown extends BaseModel {
   initialValue = 0;
 
   setInitialValue(value: number): this {

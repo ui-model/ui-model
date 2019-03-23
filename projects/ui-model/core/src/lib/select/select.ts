@@ -1,6 +1,6 @@
-import { objectByField, objectById, Stateful, Transformer } from '@ui-model/common';
+import { BaseModel, objectByField, objectById, Transformer } from '@ui-model/common';
 
-export class Select<T> extends Stateful {
+export class Select<T> extends BaseModel {
   _selection: T;
 
   private _transformer: Transformer<T, any> = objectById;
