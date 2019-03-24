@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs">
   <li *ngFor="let option of options" class="nav-item">
-    <a (click)="select.select(option)" [class.active]="select.selected(option)"
+    <a (click)="select.select(option)" [class.active]="select.selected(option)" href="javascript:void(0)"
        class="nav-link">{{option.label}}</a>
   </li>
 </ul>
