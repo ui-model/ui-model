@@ -91,7 +91,7 @@ export const showcaseRoutes: Route[] = [
     },
   },
   {
-    path: 'tab-set-using-directive',
+    path: 'tab-set-ng-model',
     component: TabSetNgModelComponent,
     data: {
       title: 'Tab Set(ngModel)',
