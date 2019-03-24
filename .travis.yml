@@ -1,15 +1,13 @@
 language: node_js
-
 sudo: false
-
-notification:
-  email: asnowwolf@gmail.com
-
+dist: trusty
 node_js:
-  - "10"
+  - 10.9.0
+cache:
+  directories:
+    - "./node_modules"
+git:
+  depth: false
 
-addons:
-  chrome: stable
-
-before_install:
-  - "google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost:4200 &"
+script:
+  - "./deploy-cn.sh"

@@ -5,29 +5,27 @@ set -e
 
 npm run build
 
-npm run build:ssr
+commitMessage=$(git log --oneline -n 1)
 
 kill `lsof -t -i :4000` || true
 
-npm run serve:ssr &
+npx http-server-spa dist/ui-model index.html 4000 &
 
-cp -r ./dist/ui-model/* ../ui-model.github.io/
+rm -fr /tmp/ui-model-prerender || true
 
-cp ./dist/ui-model/index.html ../ui-model.github.io/404.html
+npx prerender mirror -r /tmp/ui-model-prerender/ http://localhost:4000/
 
-sleep 3
+kill `lsof -t -i :4000` || true
 
-wget -m --adjust-extension localhost:4000 -P /tmp
+rm -fr /tmp/ui-model-prebuilt
 
-kill `lsof -t -i :4000`
+git clone https://asnowwolf:${GITHUB_ACCESS_TOKEN}@github.com/ui-model/ui-model-prebuilt.git /tmp/ui-model-prebuilt
 
-cp -r /tmp/localhost:4000/* ../ui-model.github.io
+cp -r ./dist/ui-model/* /tmp/ui-model-prebuilt/
 
-rm -fr /tmp/localhost:4000
+cp -r /tmp/ui-model-prerender/localhost:4000/* /tmp/ui-model-prebuilt/
 
-commitMessage=$(git log --oneline -n 1)
-
-cd ../ui-model.github.io/
+cd /tmp/ui-model-prebuilt/
 
 git add .
 git commit -am "${commitMessage}"
