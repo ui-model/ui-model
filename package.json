@@ -52,7 +52,7 @@
     "@angular/compiler-cli": "^7.0.2",
     "@angular/language-service": "^7.0.2",
     "@angular/platform-server": "^7.0.2",
-    "@awesome-fe/prerender": "0.0.5",
+    "@awesome-fe/prerender": "0.0.7",
     "@nguniversal/express-engine": "^7.0.2",
     "@nguniversal/module-map-ngfactory-loader": "^7.0.2",
     "@types/core-js": "^2.5.0",

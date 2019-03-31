@@ -13,7 +13,7 @@ npx http-server-spa dist/ui-model index.html 4000 &
 
 rm -fr /tmp/ui-model-prerender || true
 
-npx prerender mirror -r /tmp/ui-model-prerender/ http://localhost:4000/
+npx prerender mirror /tmp/ui-model-prerender/  http://localhost:4000/ -r --selector "app-markdown-viewer>div"
 
 kill `lsof -t -i :4000` || true
 
