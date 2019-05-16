@@ -8,10 +8,7 @@
     "build-libs": "ng build @ui-model/common && ng build @ui-model/core && ng build @ui-model/chart && ng build @ui-model/angular && ng build @ui-model/angular-bootstrap && ng build @ui-model/angular-d3 && ng build @ui-model/angular-markdown",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "prebuild:ssr": "ng run ui-model:server",
-    "build:ssr": "tsc -p tsconfig.ssr.json",
-    "serve:ssr": "node dist/server.js"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -47,14 +44,10 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
-    "@angular-devkit/build-ng-packagr": "^0.10.4",
     "@angular/cli": "~7.0.4",
     "@angular/compiler-cli": "^7.0.2",
     "@angular/language-service": "^7.0.2",
-    "@angular/platform-server": "^7.0.2",
     "@awesome-fe/prerender": "0.0.7",
-    "@nguniversal/express-engine": "^7.0.2",
-    "@nguniversal/module-map-ngfactory-loader": "^7.0.2",
     "@types/core-js": "^2.5.0",
     "@types/d3": "^5.0.0",
     "@types/highlight.js": "^9.12.3",
@@ -72,10 +65,8 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "^4.4.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tsickle": "^0.33.1",
     "tslib": "^1.9.3",
     "tslint": "~5.11.0",
     "typescript": "^3.1.3"
