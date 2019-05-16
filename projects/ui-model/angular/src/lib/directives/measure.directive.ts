@@ -1,6 +1,7 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { Rect } from '@ui-model/common';
 
+// TODO: 改用 Mutation​Observer
 @Directive({
   selector: '[uiMeasure]',
   exportAs: 'uiMeasure',

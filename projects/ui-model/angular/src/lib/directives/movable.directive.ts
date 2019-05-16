@@ -1,6 +1,8 @@
 import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 import { Distance, Point } from '@ui-model/common';
 
+// TODO: 处理 svg 坐标系映射
+
 @Directive({
   selector: '[uiMovable]',
   exportAs: 'uiMovable',

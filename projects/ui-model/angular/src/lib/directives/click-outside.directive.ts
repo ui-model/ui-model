@@ -10,6 +10,7 @@ export class ClickOutsideDirective {
 
   @Output('uiClickOutside') clickOutside = new EventEmitter<void>();
 
+  // TODO: 移到 service 中，以免挂多次事件
   @HostListener('document:keyup', ['$event'])
   escKeyListener(event: KeyboardEvent): void {
     if (event.key === 'Escape' || event.key === 'Esc') {
