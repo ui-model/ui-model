@@ -10,7 +10,7 @@ pre {
   padding: 0.5em;
 }
 
-/deep/ .empty {
+::ng-deep .empty {
   color: $warning;
 }
 

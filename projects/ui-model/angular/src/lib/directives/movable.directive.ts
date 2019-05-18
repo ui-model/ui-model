@@ -36,7 +36,9 @@ export class MovableDirective {
     if (!isMajorButton(event)) {
       return;
     }
-    event.srcElement.setPointerCapture(1);
+
+    const target = event.target as Element;
+    target.setPointerCapture(1);
     event.stopPropagation();
     this.moving = true;
     this.startPos = new Point(event.screenX, event.screenY);
@@ -49,7 +51,7 @@ export class MovableDirective {
     if (!isMajorButton(event)) {
       return;
     }
-    event.srcElement.releasePointerCapture(1);
+    (event.target as Element).releasePointerCapture(1);
     event.stopPropagation();
     this.moving = false;
     this.stop.emit(event);

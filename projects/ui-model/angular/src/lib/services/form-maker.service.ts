@@ -10,10 +10,10 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { FormHooks } from '@angular/forms/src/model';
 import { metaKeyModel, metaKeyProperty } from '../utils/constants';
 import { ModelMetadata } from '../decorators/form-maker';
 import { Reflect } from 'core-js';
+import { FormHooks } from '../utils/polyfills';
 
 @Injectable({ providedIn: 'root' })
 export class FormMaker {

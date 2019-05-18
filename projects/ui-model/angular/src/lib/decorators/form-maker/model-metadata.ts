@@ -1,5 +1,5 @@
-import { FormHooks } from '@angular/forms/src/model';
 import { PropertyMetadata } from './property-metadata';
+import { FormHooks } from '../../utils/polyfills';
 
 export interface ModelDef {
   updateOn?: FormHooks;

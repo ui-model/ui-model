@@ -14,7 +14,7 @@ export const routes: Route[] = [
     children: [
       {
         path: '',
-        loadChildren: './showcase/showcase.module#ShowcaseModule',
+        loadChildren: () => import('./showcase/showcase.module').then(m => m.ShowcaseModule),
       },
     ],
   },

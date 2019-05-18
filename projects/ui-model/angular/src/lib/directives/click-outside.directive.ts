@@ -5,10 +5,10 @@ import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angu
 })
 export class ClickOutsideDirective {
 
+  @Output('uiClickOutside') clickOutside = new EventEmitter<void>();
+
   constructor(private element: ElementRef) {
   }
-
-  @Output('uiClickOutside') clickOutside = new EventEmitter<void>();
 
   // TODO: 移到 service 中，以免挂多次事件
   @HostListener('document:keyup', ['$event'])
@@ -20,7 +20,7 @@ export class ClickOutsideDirective {
 
   @HostListener('document:mouseup', ['$event'])
   clickListener(event: MouseEvent): void {
-    if (!isSelfOrAncestorNode(this.element.nativeElement, event.target as Node || event.srcElement)) {
+    if (!isSelfOrAncestorNode(this.element.nativeElement, (event.target || event.srcElement) as Node)) {
       this.clickOutside.emit();
     }
   }
