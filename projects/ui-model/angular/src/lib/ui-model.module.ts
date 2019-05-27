@@ -43,6 +43,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { TemplatePipe } from './pipes/template.pipe';
 import { TimesPipe } from './pipes/times.pipe';
 import { TypeNamePipe } from './pipes/type-name.pipe';
+import { WindowMeasureDirective } from './directives/window-measure.directive';
 
 @NgModule({
   imports: [
@@ -93,6 +94,7 @@ import { TypeNamePipe } from './pipes/type-name.pipe';
     IsValidDatePipe,
     IsInvalidDatePipe,
     DynamicComponentInputsDirective,
+    WindowMeasureDirective,
   ],
   exports: [
     SelectDirective,
@@ -138,6 +140,7 @@ import { TypeNamePipe } from './pipes/type-name.pipe';
     TemplatePipe,
     IsValidDatePipe,
     IsInvalidDatePipe,
+    WindowMeasureDirective,
   ],
 })
 export class UiModelModule {
@@ -209,6 +212,7 @@ export * from './services/field-error-mapper.service';
 
 export * from './services/form-maker.service';
 export * from './services/form-utils.service';
+export * from './services/window-measure.service';
 
 export * from './services/modal.service';
 export * from './services/modal.model';

@@ -1,0 +1,35 @@
+import { Directive, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { WindowMeasureService } from '../services/window-measure.service';
+import { Rect } from '@ui-model/common';
+import { Subscription } from 'rxjs';
+
+@Directive({
+  selector: '[uiWindowMeasure]',
+  exportAs: 'uiWindowMeasure',
+})
+export class WindowMeasureDirective implements OnInit, OnDestroy {
+  constructor(private measure: WindowMeasureService) {
+  }
+
+  @Output()
+  resize = new EventEmitter<Window>();
+  private sub: Subscription;
+
+  get innerRect(): Rect {
+    return this.measure.innerRect;
+  }
+
+  get outerRect(): Rect {
+    return this.measure.outerRect;
+  }
+
+  ngOnInit(): void {
+    this.sub = this.measure.resize$.subscribe((window) => {
+      this.resize.next(window);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
+}
