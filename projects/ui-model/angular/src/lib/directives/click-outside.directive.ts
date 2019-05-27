@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter, HostListener, OnDestroy, OnInit, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { DocumentEventListener } from '../services/document-event-listener.service';
 import { Subscription } from 'rxjs';
 
@@ -16,15 +16,12 @@ export class ClickOutsideDirective implements OnInit, OnDestroy {
   @Output('uiClickOutside')
   clickOutside = new EventEmitter<void>();
 
-  // TODO: 移到 service 中，以免挂多次事件
-  @HostListener('document:keyup', ['$event'])
   escKeyListener(event: KeyboardEvent): void {
     if (event.key === 'Escape' || event.key === 'Esc') {
       this.clickOutside.emit();
     }
   }
 
-  @HostListener('document:mouseup', ['$event'])
   clickListener(event: MouseEvent): void {
     if (!isSelfOrAncestorNode(this.element.nativeElement, (event.target || event.srcElement) as Node)) {
       this.clickOutside.emit();
