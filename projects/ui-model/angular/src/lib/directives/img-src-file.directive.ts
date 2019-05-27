@@ -18,7 +18,7 @@ export class ImgSrcFileDirective {
     this.renderer.setAttribute(this.element.nativeElement, 'src', this.url);
   }
 
-  constructor(private element: ElementRef, private renderer: Renderer2) {
+  constructor(private element: ElementRef<Element>, private renderer: Renderer2) {
   }
 
   private url: string;

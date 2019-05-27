@@ -17,6 +17,7 @@ export class MeasureDirective implements OnInit {
     this._signal = value;
     this.update();
   }
+
   get boundingClientRect(): Rect {
     return this._boundingClientRect;
   }
@@ -24,17 +25,20 @@ export class MeasureDirective implements OnInit {
   get boundingRect(): Rect {
     return this.boundingClientRect;
   }
+
   get offsetRect(): Rect {
     return this._offsetRect;
   }
+
   get clientRect(): Rect {
     return this._clientRect;
   }
+
   get scrollRect(): Rect {
     return this._scrollRect;
   }
 
-  constructor(element: ElementRef) {
+  constructor(element: ElementRef<HTMLElement>) {
     this.element = element.nativeElement;
   }
 

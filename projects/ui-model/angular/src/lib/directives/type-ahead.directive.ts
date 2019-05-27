@@ -8,8 +8,9 @@ import { Subject } from 'rxjs';
 })
 export class TypeAheadDirective implements OnInit, OnDestroy {
 
-  constructor(private element: ElementRef) {
+  constructor(private element: ElementRef<Element>) {
   }
+
   @Output('uiTypeAheadSearch') search = new EventEmitter<any>();
   @Output('uiTypeAheadOpen') open = new EventEmitter<void>();
   @Output('uiTypeAheadClose') close = new EventEmitter<void>();

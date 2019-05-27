@@ -16,7 +16,7 @@ export class FocusDirective {
     }
   }
 
-  constructor(element: ElementRef) {
+  constructor(element: ElementRef<Element>) {
     this.element = element.nativeElement as HTMLElement;
   }
   @Output('uiFocusChange') focusChange = new EventEmitter<boolean>();

@@ -15,7 +15,7 @@ export class DisabledDirective {
     this.classDisabled = this._disabled;
   }
 
-  constructor(private element: ElementRef) {
+  constructor(private element: ElementRef<Element>) {
     const e = this.element.nativeElement;
     // cancel all events but mouseenter/mouseleave/mouseover/mouseout - they are necessary for tooltip
     e.addEventListener('click', this.preventDefault);
@@ -42,6 +42,7 @@ export class DisabledDirective {
     e.addEventListener('pointerout', this.preventDefault);
     e.addEventListener('pointerleave', this.preventDefault);
   }
+
   @HostBinding('class.disabled') classDisabled;
 
   private _disabled: boolean | string = true;
@@ -53,5 +54,5 @@ export class DisabledDirective {
       event.stopImmediatePropagation();
       return false;
     }
-  }
+  };
 }

@@ -24,7 +24,7 @@ export class DateInputDirective implements ControlValueAccessor, Validator {
     return this.elementRef.nativeElement;
   }
 
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) {
+  constructor(private renderer: Renderer2, private elementRef: ElementRef<Element>) {
   }
 
   private onChange: (value: Date) => void;

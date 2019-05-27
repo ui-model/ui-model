@@ -4,7 +4,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
   selector: '[uiMultiBinding]',
 })
 export class MultiBindingDirective {
-  constructor(private element: ElementRef) {
+  constructor(private element: ElementRef<Element>) {
   }
 
   private _value: Object;
@@ -32,7 +32,7 @@ export class MultiBindingDirective {
   }
 
   private update(): void {
-    const element = this.element.nativeElement as Element;
+    const element = this.element.nativeElement;
     for (const key in this._value) {
       if (this._value.hasOwnProperty(key)) {
         element.setAttribute(this._prefix + key, this._value[key]);

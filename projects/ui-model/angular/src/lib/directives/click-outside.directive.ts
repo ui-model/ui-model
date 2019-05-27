@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
   selector: '[uiClickOutside]',
 })
 export class ClickOutsideDirective implements OnInit, OnDestroy {
-  constructor(private element: ElementRef, private documentEventListener: DocumentEventListener) {
+  constructor(private element: ElementRef<Element>, private documentEventListener: DocumentEventListener) {
   }
 
   private subKeyup: Subscription;

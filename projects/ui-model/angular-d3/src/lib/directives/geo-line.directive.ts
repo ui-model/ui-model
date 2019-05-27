@@ -6,8 +6,9 @@ import { GeoProjectionService } from '../services/geo-projection.service';
 })
 export class GeoLineDirective implements OnChanges {
 
-  constructor(private projection: GeoProjectionService, private element: ElementRef, private renderer: Renderer2) {
+  constructor(private projection: GeoProjectionService, private element: ElementRef<Element>, private renderer: Renderer2) {
   }
+
   @Input('uiGeoLine') geoLine: [[number, number], [number, number]];
 
   ngOnChanges(changes: SimpleChanges): void {

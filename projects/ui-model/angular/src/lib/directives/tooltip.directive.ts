@@ -9,20 +9,20 @@ import { TooltipService } from '../services/tooltip.service';
 export class TooltipDirective {
 
   private get fallbackMessage(): string {
-    const element = this.elementRef.nativeElement as Element;
+    const element = this.elementRef.nativeElement;
     return element.getAttribute('title') ||
       element.getAttribute('placeholder') ||
       element.getAttribute('alt');
   }
 
-  constructor(private service: TooltipService, private elementRef: ElementRef) {
+  constructor(private service: TooltipService, private elementRef: ElementRef<Element>) {
   }
 
   @Input('uiTooltip') message: string | SafeHtml;
 
   @HostListener('mouseenter')
   show(): void {
-    const rect = Rect.fromClientRect((this.elementRef.nativeElement as Element).getBoundingClientRect());
+    const rect = Rect.fromClientRect(this.elementRef.nativeElement.getBoundingClientRect());
     const message = this.message || this.fallbackMessage;
     if (message) {
       this.service.show(message, rect);

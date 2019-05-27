@@ -8,7 +8,7 @@ import { GeoProjectionService } from '../services/geo-projection.service';
 })
 export class GeoPathDirective implements OnChanges {
 
-  constructor(private projection: GeoProjectionService, private element: ElementRef, private renderer: Renderer2) {
+  constructor(private projection: GeoProjectionService, private element: ElementRef<Element>, private renderer: Renderer2) {
   }
   @Input('uiGeoPath') geoPath: Feature<GeometryObject>;
 

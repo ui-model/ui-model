@@ -7,7 +7,7 @@ import { GeoProjectionService } from '../services/geo-projection.service';
 })
 export class GeoGpsDirective implements OnChanges {
 
-  constructor(private projection: GeoProjectionService, private element: ElementRef, private renderer: Renderer2) {
+  constructor(private projection: GeoProjectionService, private element: ElementRef<Element>, private renderer: Renderer2) {
 
   }
   @Input('uiGeoGps') geoGps: [number, number];
