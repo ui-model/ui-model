@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { scaleBand, scaleLinear } from 'd3-scale';
 import { max } from 'd3-array';
+import { scaleBand, scaleLinear } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
 
 @Component({

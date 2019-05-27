@@ -14,9 +14,7 @@ export class FormControlComponent implements OnInit {
     this.uniqueId = ++FormControlComponent.latestUniqueId;
   }
 
-  static latestUniqueId: number = new Date().getTime();
   uniqueId: number;
-
   @Input() group: FormGroup;
   @Input() field: PropertyMetadata;
   @Input() readonly = false;
@@ -62,4 +60,6 @@ export class FormControlComponent implements OnInit {
   isCustomViewer(field: PropertyMetadata): boolean {
     return isFunction(field.viewer);
   }
+
+  static latestUniqueId: number = new Date().getTime();
 }

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Metadata } from '../../utils/meta-data';
 import { Author } from '../../utils/author';
-import { Tag } from '../../utils/tag';
+import { Metadata } from '../../utils/meta-data';
 import { showcaseRoutes } from '../../utils/showcase-routes';
+import { Tag } from '../../utils/tag';
 
 @Component({
   selector: 'app-nav-menu',

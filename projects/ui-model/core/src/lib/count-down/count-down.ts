@@ -1,6 +1,6 @@
 import { BaseModel } from '@ui-model/common';
-import { take } from 'rxjs/operators';
 import { interval, Subject, Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 export class CountDown extends BaseModel {
   initialValue = 0;
@@ -48,10 +48,13 @@ export class CountDown extends BaseModel {
     this.running = true;
     this.sub = interval(this.interval).pipe(
       take(this.initialValue),
-    ).subscribe(() => {
-      this.value--;
-    }, undefined, () => {
-      this.running = false;
+    ).subscribe({
+      next: () => {
+        this.value--;
+      },
+      complete: () => {
+        this.running = false;
+      },
     });
   }
 

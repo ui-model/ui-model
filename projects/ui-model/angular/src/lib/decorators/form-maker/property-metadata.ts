@@ -1,11 +1,11 @@
 import { Type } from '@angular/core';
 import { AbstractControl, AsyncValidator, AsyncValidatorFn, Validator, ValidatorFn } from '@angular/forms';
-import { metaKeyModel } from '../../utils/constants';
-import { ModelMetadata } from './model-metadata';
-import { isNumber } from '../../validators/is-number.validator';
-import { isBoolean } from '../../validators/is-boolean.validator';
 import { Reflect } from 'core-js';
+import { metaKeyModel } from '../../utils/constants';
 import { FormHooks } from '../../utils/polyfills';
+import { isBoolean } from '../../validators/is-boolean.validator';
+import { isNumber } from '../../validators/is-number.validator';
+import { ModelMetadata } from './model-metadata';
 
 export interface PropertyDef {
   label?: string;

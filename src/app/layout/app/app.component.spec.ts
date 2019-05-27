@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
-import { async, TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { SourceCodeService } from '../../core/source-code.service';
-import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { SourceCodeService } from '../../core/source-code.service';
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {

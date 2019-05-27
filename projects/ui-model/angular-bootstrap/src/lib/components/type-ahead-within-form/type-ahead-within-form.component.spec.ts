@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TypeAheadDirective } from '@ui-model/angular';
+import { TypeAheadComponent } from '@ui-model/angular-bootstrap';
 
 import { TypeAheadWithinFormComponent } from './type-ahead-within-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TypeAheadComponent } from '@ui-model/angular-bootstrap';
-import { TypeAheadDirective } from '@ui-model/angular';
 
 xdescribe('TypeAheadWithinFormComponent', () => {
   let component: TypeAheadWithinFormComponent;

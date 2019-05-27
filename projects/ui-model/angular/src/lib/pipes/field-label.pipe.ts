@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { NameMapper } from '../services/name-mapper.service';
-import { PropertyMetadata } from '../decorators/form-maker';
 import { isUndefined } from 'util';
+import { PropertyMetadata } from '../decorators/form-maker';
+import { NameMapper } from '../services/name-mapper.service';
 
 @Pipe({
   name: 'fieldLabel',

@@ -1,6 +1,10 @@
 import { Route } from '@angular/router';
 import { CalendarComponent } from '../showcase/calendar/calendar.component';
 import { ChartComponent } from '../showcase/chart/chart.component';
+import { D3BasicComponent } from '../showcase/d3-basic/d3-basic.component';
+import { D3GaugeComponent } from '../showcase/d3-gauge/d3-gauge.component';
+import { D3GeoMapComponent } from '../showcase/d3-geo-map/d3-geo-map.component';
+import { D3LineChartComponent } from '../showcase/d3-line-chart/d3-line-chart.component';
 import { DropdownComponent } from '../showcase/dropdown/dropdown.component';
 import { FormAutoUiComponent } from '../showcase/form-auto-ui/form-auto-ui.component';
 import { FormModelComponent } from '../showcase/form-model/form-model.component';
@@ -34,10 +38,6 @@ import { TypeAheadComponent } from '../showcase/type-ahead/type-ahead.component'
 import { ZoomComponent } from '../showcase/zoom/zoom.component';
 import { Author } from './author';
 import { Tag } from './tag';
-import { D3GeoMapComponent } from '../showcase/d3-geo-map/d3-geo-map.component';
-import { D3GaugeComponent } from '../showcase/d3-gauge/d3-gauge.component';
-import { D3BasicComponent } from '../showcase/d3-basic/d3-basic.component';
-import { D3LineChartComponent } from '../showcase/d3-line-chart/d3-line-chart.component';
 
 export const showcaseRoutes: Route[] = [
   {

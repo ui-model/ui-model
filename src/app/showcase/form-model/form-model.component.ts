@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterModel } from './models/register-model';
-import { FormMaker } from '@ui-model/angular';
 import { FormGroup } from '@angular/forms';
+import { FormMaker } from '@ui-model/angular';
 import { ProfileModel } from './models/profile-model';
+import { RegisterModel } from './models/register-model';
 
 @Component({
   selector: 'app-form-model',

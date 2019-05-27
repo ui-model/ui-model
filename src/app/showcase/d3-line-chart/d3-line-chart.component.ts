@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { scaleLinear } from 'd3';
 import { lines } from '@ui-model/chart';
 import { Point } from '@ui-model/common';
+import { scaleLinear } from 'd3';
 
 @Component({
   selector: 'app-d3-bar-chart',

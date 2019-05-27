@@ -1,7 +1,7 @@
 import { Directive, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MultiSelectValueAccessor } from '../accessors/multi-select.value-accessor';
 import { Transformer } from '@ui-model/common';
+import { MultiSelectValueAccessor } from '../accessors/multi-select.value-accessor';
 
 @Directive({
   selector: '[uiMultiSelect]',

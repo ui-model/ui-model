@@ -7,8 +7,8 @@ import {
   ValidationErrors,
   Validator,
 } from '@angular/forms';
-import { isDate } from '../validators/is-date.validator';
 import { format, parse } from 'date-fns';
+import { isDate } from '../validators/is-date.validator';
 
 // tslint:disable:directive-selector
 @Directive({

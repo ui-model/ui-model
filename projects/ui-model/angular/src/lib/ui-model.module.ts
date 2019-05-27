@@ -22,6 +22,7 @@ import { SelectDirective } from './directives/select.directive';
 import { ToggleDirective } from './directives/toggle.directive';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { TypeAheadDirective } from './directives/type-ahead.directive';
+import { WindowMeasureDirective } from './directives/window-measure.directive';
 
 import { DefaultPipe } from './pipes/default.pipe';
 import { FieldErrorMapperPipe } from './pipes/field-error-mapper.pipe';
@@ -43,7 +44,6 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { TemplatePipe } from './pipes/template.pipe';
 import { TimesPipe } from './pipes/times.pipe';
 import { TypeNamePipe } from './pipes/type-name.pipe';
-import { WindowMeasureDirective } from './directives/window-measure.directive';
 
 @NgModule({
   imports: [

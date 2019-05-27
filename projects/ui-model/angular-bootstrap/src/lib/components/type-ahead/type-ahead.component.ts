@@ -3,8 +3,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SafeHtml } from '@angular/platform-browser';
 import { isFunction, Supplier, Transformer } from '@ui-model/common';
 import { Toggle } from '@ui-model/core';
-import { debounceTime, skipWhile, tap } from 'rxjs/operators';
 import { Subject, Subscription } from 'rxjs';
+import { debounceTime, skipWhile, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'ui-type-ahead',

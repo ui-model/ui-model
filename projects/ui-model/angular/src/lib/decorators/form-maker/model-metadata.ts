@@ -1,5 +1,5 @@
-import { PropertyMetadata } from './property-metadata';
 import { FormHooks } from '../../utils/polyfills';
+import { PropertyMetadata } from './property-metadata';
 
 export interface ModelDef {
   updateOn?: FormHooks;

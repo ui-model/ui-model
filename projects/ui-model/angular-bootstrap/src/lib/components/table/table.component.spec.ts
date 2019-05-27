@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { TableComponent } from './table.component';
+import { FormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
 import { PaginationComponent } from '../pagination/pagination.component';
-import { FormsModule } from '@angular/forms';
+import { TableComponent } from './table.component';
 
 describe('TableComponent', () => {
   let component: TableComponent<any>;

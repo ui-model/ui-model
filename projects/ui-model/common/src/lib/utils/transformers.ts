@@ -1,5 +1,5 @@
-import { isObject, isUndefined } from './typings';
 import { Transformer } from './transformer';
+import { isObject, isUndefined } from './typings';
 
 export function identity(fromData: any): any {
   return fromData;

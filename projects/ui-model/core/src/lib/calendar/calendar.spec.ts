@@ -1,5 +1,5 @@
-import { Calendar } from './calendar';
 import { addHours, parse } from 'date-fns';
+import { Calendar } from './calendar';
 
 describe('Calendar', () => {
   beforeEach(() => {

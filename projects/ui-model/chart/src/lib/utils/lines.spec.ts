@@ -1,5 +1,5 @@
-import { lines } from './lines';
 import { Point } from '@ui-model/common';
+import { lines } from './lines';
 
 describe('Line Chart', () => {
   it('convert points to point pairs', () => {

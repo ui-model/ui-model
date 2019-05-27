@@ -1,6 +1,6 @@
-import { FieldLabelPipe } from './field-label.pipe';
-import { NameMapper } from '../services/name-mapper.service';
 import { PropertyMetadata } from '@ui-model/angular';
+import { NameMapper } from '../services/name-mapper.service';
+import { FieldLabelPipe } from './field-label.pipe';
 
 describe('FieldLabelPipe', () => {
   let pipe: FieldLabelPipe;

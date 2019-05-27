@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { FormMaker, FormUtils } from '@ui-model/angular';
 import { RegisterModel } from './models/register-model';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-auto-ui',

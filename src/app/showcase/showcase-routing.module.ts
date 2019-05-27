@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { Author } from '../utils/author';
-import { LayoutComponent } from './_layout/layout/layout.component';
 import { showcaseRoutes } from '../utils/showcase-routes';
+import { LayoutComponent } from './_layout/layout/layout.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {

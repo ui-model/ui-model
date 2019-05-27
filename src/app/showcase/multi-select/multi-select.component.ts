@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MultiSelect } from '@ui-model/core';
 import { objectByField } from '@ui-model/common';
+import { MultiSelect } from '@ui-model/core';
 
 @Component({
   selector: 'app-multi-select',

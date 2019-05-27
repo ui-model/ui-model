@@ -1,5 +1,5 @@
-import { Zoom } from './zoom';
 import { Rect } from '@ui-model/common';
+import { Zoom } from './zoom';
 
 describe('Zoom', () => {
   it('1:1', () => {

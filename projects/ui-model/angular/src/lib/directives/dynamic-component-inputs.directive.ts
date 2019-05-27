@@ -1,5 +1,5 @@
-import { Directive, Input, OnInit } from '@angular/core';
 import { NgComponentOutlet } from '@angular/common';
+import { Directive, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[uiDynamicComponentInputs]',

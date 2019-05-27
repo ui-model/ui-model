@@ -1,6 +1,6 @@
 import { Directive, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
-import { DocumentEventListener } from '../services/document-event-listener.service';
 import { Subscription } from 'rxjs';
+import { DocumentEventListener } from '../services/document-event-listener.service';
 
 @Directive({
   selector: '[uiClickOutside]',
@@ -21,7 +21,7 @@ export class ClickOutsideDirective implements OnInit, OnDestroy {
   }
 
   clickListener(event: MouseEvent): void {
-    if (!isSelfOrAncestorNode(this.element.nativeElement, (event.target || event.srcElement) as Node)) {
+    if (!isSelfOrAncestorNode(this.element.nativeElement, event.target as Node)) {
       this.clickOutside.emit();
     }
   }

@@ -1,9 +1,9 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { FormArrayComponent } from './form-array.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FieldLabelPipe, FormArrayExporterDirective, NameMapper } from '@ui-model/angular';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { FormArrayComponent } from './form-array.component';
 
 describe('FormArrayComponent', () => {
   let component: FormArrayComponent;

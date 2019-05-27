@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as _ from 'lodash';
 import { Viewport } from '@ui-model/core';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-infinite-scroll',

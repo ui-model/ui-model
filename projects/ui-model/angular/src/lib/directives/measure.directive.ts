@@ -16,7 +16,6 @@ export class MeasureDirective implements OnInit {
   changed = new EventEmitter<MeasureDirective>();
   private element: HTMLElement;
   private _signal: any;
-  private _boundingClientRect: Rect;
 
   get signal(): any {
     return this._signal;
@@ -28,30 +27,32 @@ export class MeasureDirective implements OnInit {
     this.update();
   }
 
-  private _offsetRect: Rect;
+  private _boundingClientRect: Rect;
 
   get boundingClientRect(): Rect {
     return this._boundingClientRect;
   }
 
-  private _clientRect: Rect;
+  private _offsetRect: Rect;
 
   get offsetRect(): Rect {
     return this._offsetRect;
   }
 
-  private _scrollRect: Rect;
+  private _clientRect: Rect;
 
   get clientRect(): Rect {
     return this._clientRect;
   }
 
-  get boundingRect(): Rect {
-    return this.boundingClientRect;
-  }
+  private _scrollRect: Rect;
 
   get scrollRect(): Rect {
     return this._scrollRect;
+  }
+
+  get boundingRect(): Rect {
+    return this.boundingClientRect;
   }
 
   @HostListener('load')

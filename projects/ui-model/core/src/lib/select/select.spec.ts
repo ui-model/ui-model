@@ -1,5 +1,5 @@
-import { Select } from './select';
 import { identity, objectByField } from '@ui-model/common';
+import { Select } from './select';
 
 describe('Select', () => {
   it('select', () => {

@@ -1,5 +1,5 @@
-import { FieldErrorMapperPipe } from './field-error-mapper.pipe';
 import { FieldErrorMapper } from '../services/field-error-mapper.service';
+import { FieldErrorMapperPipe } from './field-error-mapper.pipe';
 
 describe('FieldErrorMapperPipe', () => {
   it('create an instance', () => {

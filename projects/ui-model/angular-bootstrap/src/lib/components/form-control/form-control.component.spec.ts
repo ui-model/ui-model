@@ -1,9 +1,9 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { FormControlComponent } from './form-control.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DefaultPipe, FieldLabelPipe, NameMapper } from '@ui-model/angular';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { FormControlComponent } from './form-control.component';
 
 describe('FormControlComponent', () => {
   let component: FormControlComponent;

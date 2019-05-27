@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
-import { WindowMeasureService } from '../services/window-measure.service';
 import { Rect } from '@ui-model/common';
 import { Subscription } from 'rxjs';
+import { WindowMeasureService } from '../services/window-measure.service';
 
 @Directive({
   selector: '[uiWindowMeasure]',

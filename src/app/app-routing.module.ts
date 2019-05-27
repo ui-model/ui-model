@@ -1,7 +1,7 @@
+import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import { UpdateTitleGuard } from '@ui-model/angular';
 import { UpdateMetadataGuard } from './core/update-metadata-guard.service';
-import { NgModule } from '@angular/core';
 
 export const routes: Route[] = [
   {

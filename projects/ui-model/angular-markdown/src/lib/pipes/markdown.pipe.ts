@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as MarkdownIt from 'markdown-it';
 import * as hljs from 'highlight.js';
+import * as MarkdownIt from 'markdown-it';
 
 declare function require(id: string): any;
 

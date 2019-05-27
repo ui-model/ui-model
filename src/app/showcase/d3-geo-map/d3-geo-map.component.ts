@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FeatureCollection, GeometryObject } from 'geojson';
-import { provinces } from './data/china_provinces';
 import * as _ from 'lodash';
+import { provinces } from './data/china_provinces';
 
 const routes = [
   {

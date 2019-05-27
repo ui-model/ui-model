@@ -1,5 +1,5 @@
-import { FormGroupExporterDirective } from './form-group-exporter.directive';
 import { FormGroupDirective, FormGroupName } from '@angular/forms';
+import { FormGroupExporterDirective } from './form-group-exporter.directive';
 
 describe('FormGroupDirective', () => {
   it('should create an instance', () => {

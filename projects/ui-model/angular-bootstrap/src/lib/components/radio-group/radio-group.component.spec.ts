@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { RadioGroupComponent } from './radio-group.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RadioGroupComponent } from './radio-group.component';
 
 describe('RadioGroupComponent', () => {
   let component: RadioGroupComponent<{}>;

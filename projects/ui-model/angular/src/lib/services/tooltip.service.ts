@@ -12,7 +12,6 @@ export class TooltipService {
 
   pointingRect: Rect;
   private _changes = new Subject<void>();
-  private _message: string | SafeHtml;
 
   get changes(): Observable<void> {
     return this._changes.asObservable()
@@ -20,9 +19,7 @@ export class TooltipService {
       .pipe(delay(0));
   }
 
-  get visible(): boolean {
-    return !!this._message && !!this.pointingRect;
-  }
+  private _message: string | SafeHtml;
 
   get message(): string | SafeHtml {
     return this._message;
@@ -31,6 +28,10 @@ export class TooltipService {
   set message(value: string | SafeHtml) {
     this._message = value;
     this.changed();
+  }
+
+  get visible(): boolean {
+    return !!this._message && !!this.pointingRect;
   }
 
   show(message: string | SafeHtml, pointingRect: Rect): void {

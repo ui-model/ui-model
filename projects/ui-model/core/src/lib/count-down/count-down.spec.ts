@@ -1,5 +1,5 @@
-import { CountDown } from './count-down';
 import { fakeAsync, tick } from '@angular/core/testing';
+import { CountDown } from './count-down';
 
 describe('Count down', () => {
   it('constructor', () => {

@@ -64,9 +64,36 @@ export class Calendar extends BaseModel {
   }
 
   private _minValue: Date;
+
+  get minValue(): Date {
+    return this._minValue;
+  }
+
+  set minValue(value: Date) {
+    this._minValue = value;
+  }
+
   private _maxValue: Date;
+
+  get maxValue(): Date {
+    return this._maxValue;
+  }
+
+  set maxValue(value: Date) {
+    this._maxValue = value;
+  }
+
   private _weeks = [];
+
+  get weeks(): number[] {
+    return this._weeks;
+  }
+
   private _nearlyYears = [];
+
+  get nearlyYears(): number[] {
+    return this._nearlyYears;
+  }
 
   private _value: Date;
 
@@ -86,39 +113,15 @@ export class Calendar extends BaseModel {
     }
   }
 
-  get minValue(): Date {
-    return this._minValue;
-  }
-
-  set minValue(value: Date) {
-    this._minValue = value;
-  }
-
   private _fakeToday: Date;
-
-  get maxValue(): Date {
-    return this._maxValue;
-  }
-
-  set maxValue(value: Date) {
-    this._maxValue = value;
-  }
 
   get fakeToday(): Date {
     return this._fakeToday || new Date();
   }
 
-  get weeks(): number[] {
-    return this._weeks;
-  }
-
   set fakeToday(value: Date) {
     this._fakeToday = value;
     this.update();
-  }
-
-  get nearlyYears(): number[] {
-    return this._nearlyYears;
   }
 
   private get fakeValue(): Date {

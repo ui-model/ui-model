@@ -1,5 +1,5 @@
-import { TableField } from './table-field';
 import { BaseModel, SortOrder } from '@ui-model/common';
+import { TableField } from './table-field';
 
 function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {
   if (!order) {

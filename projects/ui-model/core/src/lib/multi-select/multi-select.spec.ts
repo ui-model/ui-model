@@ -1,5 +1,5 @@
-import { MultiSelect } from './multi-select';
 import { objectByField } from '@ui-model/common';
+import { MultiSelect } from './multi-select';
 
 const options = [
   1,
