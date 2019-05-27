@@ -10,6 +10,7 @@ export class GeoGpsDirective implements OnChanges {
   constructor(private projection: GeoProjectionService, private element: ElementRef<Element>, private renderer: Renderer2) {
 
   }
+
   @Input('uiGeoGps') geoGps: [number, number];
   @Input() nameX = 'x';
   @Input() nameY = 'y';

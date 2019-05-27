@@ -11,7 +11,7 @@
   </div>
   <div *ngIf="dropDown.isOn" class="dropdown-menu">
     <div *ngIf="!items.length" class="dropdown-item not-found">{{placeholder}}</div>
-    <div (click)="select(item);dropDown.close()" *ngFor="let item of items; let index = index"
+    <div *ngFor="let item of items; let index = index" (click)="select(item);dropDown.close()"
          [class.active]="index === activeIndex"
          [innerHTML]="formatter(item)"
          class="dropdown-item">

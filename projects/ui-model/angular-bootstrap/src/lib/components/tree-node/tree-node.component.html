@@ -1,6 +1,6 @@
 <ng-container *ngIf="data">
-  <i (click)="toggle.open()" *ngIf="data.items?.length && toggle.isOff" class="fa fa-plus-square-o"></i>
-  <i (click)="toggle.close()" *ngIf="data.items?.length && toggle.isOn" class="fa fa-minus-square-o"></i>
+  <i *ngIf="data.items?.length && toggle.isOff" (click)="toggle.open()" class="fa fa-plus-square-o"></i>
+  <i *ngIf="data.items?.length && toggle.isOn" (click)="toggle.close()" class="fa fa-minus-square-o"></i>
   <label>{{data.label}}</label>
   <ul *ngIf="data && toggle.isOn">
     <li *ngFor="let item of data.items">

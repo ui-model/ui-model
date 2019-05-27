@@ -1,8 +1,8 @@
 <div class="card">
   <div *ngIf="title" class="card-header">
     {{title}}
-    <i (click)="toggle.close()" *ngIf="toggleable && toggle.isOn" class="fa fa-chevron-up pull-right"></i>
-    <i (click)="toggle.open()" *ngIf="toggleable && toggle.isOff" class="fa fa-chevron-down pull-right"></i>
+    <i *ngIf="toggleable && toggle.isOn" (click)="toggle.close()" class="fa fa-chevron-up pull-right"></i>
+    <i *ngIf="toggleable && toggle.isOff" (click)="toggle.open()" class="fa fa-chevron-down pull-right"></i>
   </div>
   <div *ngIf="toggle.isOn" class="card-body">
     <ng-content></ng-content>

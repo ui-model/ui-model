@@ -9,18 +9,6 @@ import { maxValue, minValue } from '@ui-model/angular';
 })
 export class ReactiveFormComponent implements OnInit {
 
-  get name(): AbstractControl {
-    return this.form.get('name');
-  }
-
-  get basic(): AbstractControl {
-    return this.form.get('basic');
-  }
-
-  get tags(): FormArray {
-    return this.form.get('tags') as FormArray;
-  }
-
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
@@ -33,6 +21,18 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   form: FormGroup;
+
+  get name(): AbstractControl {
+    return this.form.get('name');
+  }
+
+  get basic(): AbstractControl {
+    return this.form.get('basic');
+  }
+
+  get tags(): FormArray {
+    return this.form.get('tags') as FormArray;
+  }
 
   newTag(): void {
     this.tags.push(new FormControl(['']));

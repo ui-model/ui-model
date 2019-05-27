@@ -10,6 +10,7 @@ export class GeoPathDirective implements OnChanges {
 
   constructor(private projection: GeoProjectionService, private element: ElementRef<Element>, private renderer: Renderer2) {
   }
+
   @Input('uiGeoPath') geoPath: Feature<GeometryObject>;
 
   ngOnChanges(changes: SimpleChanges): void {

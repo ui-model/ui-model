@@ -8,17 +8,17 @@ import { TooltipService } from '../services/tooltip.service';
 })
 export class TooltipDirective {
 
+  constructor(private service: TooltipService, private elementRef: ElementRef<Element>) {
+  }
+
+  @Input('uiTooltip') message: string | SafeHtml;
+
   private get fallbackMessage(): string {
     const element = this.elementRef.nativeElement;
     return element.getAttribute('title') ||
       element.getAttribute('placeholder') ||
       element.getAttribute('alt');
   }
-
-  constructor(private service: TooltipService, private elementRef: ElementRef<Element>) {
-  }
-
-  @Input('uiTooltip') message: string | SafeHtml;
 
   @HostListener('mouseenter')
   show(): void {

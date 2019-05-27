@@ -20,15 +20,15 @@ import { format, parse } from 'date-fns';
 })
 export class DateInputDirective implements ControlValueAccessor, Validator {
 
-  get element(): Element {
-    return this.elementRef.nativeElement;
-  }
-
   constructor(private renderer: Renderer2, private elementRef: ElementRef<Element>) {
   }
 
   private onChange: (value: Date) => void;
   private onTouched: () => void;
+
+  get element(): Element {
+    return this.elementRef.nativeElement;
+  }
 
   validate(c: AbstractControl): ValidationErrors | any {
     return isDate(c);

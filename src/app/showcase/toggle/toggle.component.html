@@ -1,9 +1,9 @@
-<span (click)="toggle.turnOff()" *ngIf="toggle.isOn" class="custom-button">
+<span *ngIf="toggle.isOn" (click)="toggle.turnOff()" class="custom-button">
   <i class="fa fa-toggle-on"></i>
   <span i18n>On</span>
 </span>
 
-<span class="custom-button" (click)="toggle.turnOn()" *ngIf="toggle.isOff">
+<span *ngIf="toggle.isOff" class="custom-button" (click)="toggle.turnOn()">
   <i class="fa fa-toggle-off"></i>
   <span i18n>Off</span>
 </span>

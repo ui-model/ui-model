@@ -24,7 +24,7 @@
       </button>
     </div>
   </div>
-  <div class="dropdown-menu" *ngIf="picker.isOn">
+  <div *ngIf="picker.isOn" class="dropdown-menu">
     <ui-calendar name="date" [disabled]="disabled" [(ngModel)]="value" #calendarRef="ngModel" required
                  (change)="picker.close()"></ui-calendar>
   </div>
@@ -36,7 +36,7 @@
   <ui-field-error [field]="pickerRef"></ui-field-error>
 </div>
 
-<div class="alert alert-info" *ngIf="value">
+<div *ngIf="value" class="alert alert-info">
   <div *ngIf="value|isValidDate">
     {{value.toISOString()}}
   </div>

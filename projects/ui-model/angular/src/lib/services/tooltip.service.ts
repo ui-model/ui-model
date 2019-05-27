@@ -7,10 +7,21 @@ import { delay } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class TooltipService {
 
+  constructor() {
+  }
+
+  pointingRect: Rect;
+  private _changes = new Subject<void>();
+  private _message: string | SafeHtml;
+
   get changes(): Observable<void> {
     return this._changes.asObservable()
     // wait for the next tick to ensure that changes(e.g. message) have been applied
       .pipe(delay(0));
+  }
+
+  get visible(): boolean {
+    return !!this._message && !!this.pointingRect;
   }
 
   get message(): string | SafeHtml {
@@ -21,19 +32,6 @@ export class TooltipService {
     this._message = value;
     this.changed();
   }
-
-  get visible(): boolean {
-    return !!this._message && !!this.pointingRect;
-  }
-
-  constructor() {
-  }
-
-  pointingRect: Rect;
-
-  private _changes = new Subject<void>();
-
-  private _message: string | SafeHtml;
 
   show(message: string | SafeHtml, pointingRect: Rect): void {
     this.message = message;

@@ -15,6 +15,7 @@ export class SelectBoxComponent<T> extends SelectValueAccessor<T> implements OnI
   constructor() {
     super();
   }
+
   @Input() options: T[];
 
   ngOnInit(): void {

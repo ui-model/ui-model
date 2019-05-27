@@ -31,5 +31,5 @@ export class MultiSelectComponent {
 
   getCode = ({ code }) => {
     return code;
-  }
+  };
 }

@@ -19,6 +19,7 @@ export class TypeAheadComponent {
 
     });
   }
+
   originItems = [
     {
       name: 'a',

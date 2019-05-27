@@ -1,6 +1,6 @@
 <div class="dropdown-menu static">
-  <a (click)="select.select(option)" *ngFor="let option of options" [class.active]="select.selected(option)"
-     class="dropdown-item">
+  <a *ngFor="let option of options" (click)="select.select(option)" [class.active]="select.selected(option)"
+    class="dropdown-item">
     {{option.label}}
   </a>
 </div>
@@ -8,12 +8,12 @@
 <hr>
 
 <ul class="nav nav-pills">
-  <li class="nav-item" *ngFor="let option of options; let last=last" [class.float-sm-right]="last">
+  <li *ngFor="let option of options; let last=last" class="nav-item" [class.float-sm-right]="last">
     <a class="nav-link" uiPreventDefault href [class.active]="select.selected(option)"
-       (mouseenter)="select.select(option)">{{option.label}}</a>
-    <div class="dropdown-menu" *ngIf="select.selected(option)">
-      <a class="dropdown-item" *ngFor="let item of option.items" [class.active]="subMenu.selected(item)"
-         (mouseenter)="subMenu.select(item)">
+      (mouseenter)="select.select(option)">{{option.label}}</a>
+    <div *ngIf="select.selected(option)" class="dropdown-menu">
+      <a *ngFor="let item of option.items" class="dropdown-item" [class.active]="subMenu.selected(item)"
+        (mouseenter)="subMenu.select(item)">
         {{item.label}}
       </a>
     </div>

@@ -6,7 +6,7 @@
       {{option.label}}
     </label>
   </div>
-  <button (click)="select.select(option)" *ngIf="!odd" [class.btn-primary]="select.selected(option)"
+  <button *ngIf="!odd" (click)="select.select(option)" [class.btn-primary]="select.selected(option)"
           class="btn">{{option.label}}
   </button>
 </ng-container>

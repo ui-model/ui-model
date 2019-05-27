@@ -15,12 +15,11 @@ export class DocumentEventListener implements OnDestroy {
   }
 
   private mouseup$$ = new Subject<MouseEvent>();
+  private keyup$$ = new Subject<KeyboardEvent>();
 
   get mouseup$(): Observable<MouseEvent> {
     return this.mouseup$$.asObservable();
   }
-
-  private keyup$$ = new Subject<KeyboardEvent>();
 
   get keyup$(): Observable<KeyboardEvent> {
     return this.keyup$$.asObservable();

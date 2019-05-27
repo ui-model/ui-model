@@ -5,14 +5,14 @@ import { ToastModel } from './toast.model';
 @Injectable({ providedIn: 'root' })
 export class ToastService<T extends ToastModel = ToastModel> {
 
-  get isEmpty(): boolean {
-    return !this.items || !this.items.length;
-  }
-
   constructor() {
   }
 
   items: T[] = [];
+
+  get isEmpty(): boolean {
+    return !this.items || !this.items.length;
+  }
 
   show(message: string | T, timeout?: number): Promise<void>;
 

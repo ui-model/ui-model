@@ -13,6 +13,7 @@ export class ModalComponent implements OnInit {
 
   constructor(private modal: ModalService, private maker: FormMaker) {
   }
+
   toggle = new Toggle();
 
   ngOnInit(): void {

@@ -1,9 +1,9 @@
-<ng-container #pager="uiPagination" *ngIf="sorter" [totalItems]="items.length" uiPagination>
+<ng-container *ngIf="sorter" #pager="uiPagination" [totalItems]="items.length" uiPagination>
   <table class="table table-hover table-striped table-bordered">
     <thead>
     <tr>
-      <th #measure="uiMeasure" (click)="sorter.toggle(field)"
-          *ngFor="let field of fields" [class.sortable]="sortable && field.sortable"
+      <th *ngFor="let field of fields" #measure="uiMeasure"
+          (click)="sorter.toggle(field)" [class.sortable]="sortable && field.sortable"
           [ngClass]="field.type|typeName:'data-type-'"
           [style.width.px]="(measure.clientRect.width + movable.offset.x)||100"
           [title]="field.title"

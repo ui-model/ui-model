@@ -22,30 +22,16 @@ import {
 
 export class Calendar extends BaseModel {
 
-  get value(): Date {
-    return this._value;
-  }
-
-  set value(value: Date) {
-    if (this.disabled) {
-      return;
-    }
-
-    if (!isSameDay(value, this._value)) {
-      this._value = value;
-      this.update();
-      this.changed();
-    }
-  }
-
-  get fakeToday(): Date {
-    return this._fakeToday || new Date();
-  }
-
-  set fakeToday(value: Date) {
-    this._fakeToday = value;
+  constructor() {
+    super();
     this.update();
   }
+
+  disabled = false;
+  // TODO: 生成列表
+  readonly weekdayNames = weekdaysMin();
+  readonly monthNames = months();
+  private _dates = [];
 
   get year(): number {
     return getYear(this.fakeValue);
@@ -77,6 +63,29 @@ export class Calendar extends BaseModel {
     }
   }
 
+  private _minValue: Date;
+  private _maxValue: Date;
+  private _weeks = [];
+  private _nearlyYears = [];
+
+  private _value: Date;
+
+  get value(): Date {
+    return this._value;
+  }
+
+  set value(value: Date) {
+    if (this.disabled) {
+      return;
+    }
+
+    if (!isSameDay(value, this._value)) {
+      this._value = value;
+      this.update();
+      this.changed();
+    }
+  }
+
   get minValue(): Date {
     return this._minValue;
   }
@@ -84,6 +93,8 @@ export class Calendar extends BaseModel {
   set minValue(value: Date) {
     this._minValue = value;
   }
+
+  private _fakeToday: Date;
 
   get maxValue(): Date {
     return this._maxValue;
@@ -93,8 +104,17 @@ export class Calendar extends BaseModel {
     this._maxValue = value;
   }
 
+  get fakeToday(): Date {
+    return this._fakeToday || new Date();
+  }
+
   get weeks(): number[] {
     return this._weeks;
+  }
+
+  set fakeToday(value: Date) {
+    this._fakeToday = value;
+    this.update();
   }
 
   get nearlyYears(): number[] {
@@ -104,29 +124,6 @@ export class Calendar extends BaseModel {
   private get fakeValue(): Date {
     return this._value || this.fakeToday;
   }
-
-  constructor() {
-    super();
-    this.update();
-  }
-
-  disabled = false;
-  // TODO: 生成列表
-  readonly weekdayNames = weekdaysMin();
-  readonly monthNames = months();
-  private _dates = [];
-
-  private _value: Date;
-
-  private _fakeToday: Date;
-
-  private _minValue: Date;
-
-  private _maxValue: Date;
-
-  private _weeks = [];
-
-  private _nearlyYears = [];
 
   setFakeToday(value: Date): this {
     this.fakeToday = value;

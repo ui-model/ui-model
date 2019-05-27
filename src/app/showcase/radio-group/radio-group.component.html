@@ -1,7 +1,7 @@
 <p>
   Normal Radio Group
 </p>
-<div class="form-check form-check-inline" *ngFor="let option of options">
+<div *ngFor="let option of options" class="form-check form-check-inline">
   <label class="form-check-label">
     <input class="form-check-input" type="radio" (change)="select.select(option.id)"
            [checked]="select.selected(option.id)"/>

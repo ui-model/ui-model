@@ -32,8 +32,8 @@
     <td class="week">
       {{week}}
     </td>
-    <td (click)="goTo(day); close()"
-        *ngFor="let day of dates(week)"
+    <td *ngFor="let day of dates(week)"
+        (click)="goTo(day); close()"
         [class.active]="isActive(day)"
         [class.other-month]="!inSameMonth(day)"
         [class.today]="isToday(day)"
@@ -44,4 +44,4 @@
   </tr>
   </tbody>
 </table>
-<div class="disabled-mask" *ngIf="disabled"></div>
+<div *ngIf="disabled" class="disabled-mask"></div>

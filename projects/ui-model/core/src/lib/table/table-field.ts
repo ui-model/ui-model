@@ -10,24 +10,6 @@ export class TableField {
   comparator?: Comparator<any> = Comparators.any;
   formatter?: Transformer<any, string> = identity;
 
-  isNonOrder(): boolean {
-    return !this.isAscOrder() && !this.isDescOrder();
-  }
-
-  isAscOrder(): boolean {
-    return this.sortOrder === SortOrder.Asc;
-  }
-
-  isDescOrder(): boolean {
-    return this.sortOrder === SortOrder.Desc;
-  }
-
-  compare(item1: TableField, item2: TableField): number {
-    const v1 = item1[this.name];
-    const v2 = item2[this.name];
-    return this.comparator(v1, v2);
-  }
-
   static of(rawData: any): TableField {
     const result = new TableField();
     if (!isUndefined(rawData.name)) {
@@ -60,5 +42,23 @@ export class TableField {
 
   static from(rawData: any[]): TableField[] {
     return rawData.map(TableField.of);
+  }
+
+  isNonOrder(): boolean {
+    return !this.isAscOrder() && !this.isDescOrder();
+  }
+
+  isAscOrder(): boolean {
+    return this.sortOrder === SortOrder.Asc;
+  }
+
+  isDescOrder(): boolean {
+    return this.sortOrder === SortOrder.Desc;
+  }
+
+  compare(item1: TableField, item2: TableField): number {
+    const v1 = item1[this.name];
+    const v2 = item2[this.name];
+    return this.comparator(v1, v2);
   }
 }

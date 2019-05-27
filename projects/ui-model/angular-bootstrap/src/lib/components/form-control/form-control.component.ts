@@ -10,21 +10,23 @@ import { isFunction, isString } from 'util';
 })
 export class FormControlComponent implements OnInit {
 
+  constructor(public injector: Injector) {
+    this.uniqueId = ++FormControlComponent.latestUniqueId;
+  }
+
+  static latestUniqueId: number = new Date().getTime();
+  uniqueId: number;
+
+  @Input() group: FormGroup;
+  @Input() field: PropertyMetadata;
+  @Input() readonly = false;
+
   get control(): AbstractControl {
     if (!this.group || !this.field) {
       return;
     }
     return this.group.get(this.field.name);
   }
-
-  constructor(public injector: Injector) {
-    this.uniqueId = ++FormControlComponent.latestUniqueId;
-  }
-  uniqueId: number;
-
-  @Input() group: FormGroup;
-  @Input() field: PropertyMetadata;
-  @Input() readonly = false;
 
   ngOnInit(): void {
   }
@@ -60,5 +62,4 @@ export class FormControlComponent implements OnInit {
   isCustomViewer(field: PropertyMetadata): boolean {
     return isFunction(field.viewer);
   }
-  static latestUniqueId: number = new Date().getTime();
 }

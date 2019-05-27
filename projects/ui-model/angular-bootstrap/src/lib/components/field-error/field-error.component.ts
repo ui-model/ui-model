@@ -8,6 +8,14 @@ import { AbstractControl, FormGroupDirective, FormGroupName } from '@angular/for
 })
 export class FieldErrorComponent implements OnInit {
 
+  constructor(@Optional() private group: FormGroupName, @Optional() private form: FormGroupDirective) {
+  }
+
+  @Input() field: AbstractControl;
+  @Input() messages: { [key: string]: string };
+
+  private _fieldName: string;
+
   get fieldName(): string {
     return this._fieldName;
   }
@@ -18,14 +26,6 @@ export class FieldErrorComponent implements OnInit {
       this.fieldNameChanged();
     }
   }
-
-  constructor(@Optional() private group: FormGroupName, @Optional() private form: FormGroupDirective) {
-  }
-
-  @Input() field: AbstractControl;
-  @Input() messages: { [key: string]: string };
-
-  private _fieldName: string;
 
   fieldNameChanged(): void {
     if (!this.fieldName) {

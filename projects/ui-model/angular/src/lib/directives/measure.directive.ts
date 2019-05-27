@@ -8,6 +8,16 @@ import { Rect } from '@ui-model/common';
 })
 export class MeasureDirective implements OnInit {
 
+  constructor(element: ElementRef<HTMLElement>) {
+    this.element = element.nativeElement;
+  }
+
+  @Output('uiMeasure')
+  changed = new EventEmitter<MeasureDirective>();
+  private element: HTMLElement;
+  private _signal: any;
+  private _boundingClientRect: Rect;
+
   get signal(): any {
     return this._signal;
   }
@@ -18,43 +28,31 @@ export class MeasureDirective implements OnInit {
     this.update();
   }
 
+  private _offsetRect: Rect;
+
   get boundingClientRect(): Rect {
     return this._boundingClientRect;
+  }
+
+  private _clientRect: Rect;
+
+  get offsetRect(): Rect {
+    return this._offsetRect;
+  }
+
+  private _scrollRect: Rect;
+
+  get clientRect(): Rect {
+    return this._clientRect;
   }
 
   get boundingRect(): Rect {
     return this.boundingClientRect;
   }
 
-  get offsetRect(): Rect {
-    return this._offsetRect;
-  }
-
-  get clientRect(): Rect {
-    return this._clientRect;
-  }
-
   get scrollRect(): Rect {
     return this._scrollRect;
   }
-
-  constructor(element: ElementRef<HTMLElement>) {
-    this.element = element.nativeElement;
-  }
-
-  @Output('uiMeasure')
-  changed = new EventEmitter<MeasureDirective>();
-  private element: HTMLElement;
-
-  private _signal: any;
-
-  private _boundingClientRect: Rect;
-
-  private _offsetRect: Rect;
-
-  private _clientRect: Rect;
-
-  private _scrollRect: Rect;
 
   @HostListener('load')
   onLoad(): void {

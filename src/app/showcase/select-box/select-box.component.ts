@@ -9,6 +9,7 @@ export class SelectBoxComponent implements OnInit {
 
   constructor() {
   }
+
   value;
 
   ngOnInit(): void {

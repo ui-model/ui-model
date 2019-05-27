@@ -1,2 +1,2 @@
-<img (click)="toggle.turnOn()" *ngIf="toggle.isOff" alt="dog" src="../../../assets/toggle/dog.jpg"/>
-<img src="../../../assets/toggle/cat.jpg" alt="cat" *ngIf="toggle.isOn" (click)="toggle.turnOff()"/>
+<img *ngIf="toggle.isOff" (click)="toggle.turnOn()" alt="dog" src="../../../assets/toggle/dog.jpg"/>
+<img *ngIf="toggle.isOn" src="../../../assets/toggle/cat.jpg" alt="cat" (click)="toggle.turnOff()"/>

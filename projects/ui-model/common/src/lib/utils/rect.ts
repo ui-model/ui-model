@@ -2,40 +2,16 @@ import { BaseModel } from '../common/base-model';
 
 export class Rect extends BaseModel {
 
-  get left(): number {
-    return this._left;
-  }
-
-  set left(value: number) {
-    this._left = value;
-    this.changed();
-  }
-
-  get top(): number {
-    return this._top;
-  }
-
-  set top(value: number) {
-    this._top = value;
-    this.changed();
-  }
-  get width(): number {
-    return this._width;
-  }
-
-  set width(value: number) {
-    this._width = value;
-    this.changed();
-  }
-
-  get height(): number {
-    return this._height;
-  }
-
-  set height(value: number) {
-    this._height = value;
-    this.changed();
-  }
+  static readonly InfinityRect = new Rect()
+    .setLeft(-Number.MAX_VALUE / 2)
+    .setTop(-Number.MAX_VALUE / 2)
+    .setWidth(Number.MAX_VALUE)
+    .setHeight(Number.MAX_VALUE);
+  limit = Rect.InfinityRect;
+  private _left = 0;
+  private _top = 0;
+  private _width = 0;
+  private _height = 0;
 
   get right(): number {
     return this.left + this.width;
@@ -53,27 +29,65 @@ export class Rect extends BaseModel {
     return this.width / 2;
   }
 
+  get left(): number {
+    return this._left;
+  }
+
+  set left(value: number) {
+    this._left = value;
+    this.changed();
+  }
+
   get halfHeight(): number {
     return this.height / 2;
+  }
+
+  get top(): number {
+    return this._top;
+  }
+
+  set top(value: number) {
+    this._top = value;
+    this.changed();
   }
 
   get centerX(): number {
     return this.left + this.halfWidth;
   }
 
+  get width(): number {
+    return this._width;
+  }
+
+  set width(value: number) {
+    this._width = value;
+    this.changed();
+  }
+
   get centerY(): number {
     return this.top + this.halfHeight;
   }
 
-  limit = Rect.InfinityRect;
+  get height(): number {
+    return this._height;
+  }
 
-  private _left = 0;
+  set height(value: number) {
+    this._height = value;
+    this.changed();
+  }
 
-  private _top = 0;
+  static from(left: number, top: number, width: number, height: number): Rect {
+    return new Rect().setLeft(left).setTop(top).setWidth(width).setHeight(height);
+  }
 
-  private _width = 0;
+  static copyFrom(rect: Rect): Rect {
+    return Rect.from(rect.left, rect.top, rect.width, rect.height);
+  }
 
-  private _height = 0;
+  static fromClientRect(rect: ClientRect, scrollX: number = 0, scrollY: number = 0): Rect {
+    return Rect.from(rect.left, rect.top, rect.width, rect.height).move(scrollX, scrollY);
+  }
 
   setLeft(value: number): this {
     this.left = value;
@@ -158,22 +172,5 @@ export class Rect extends BaseModel {
     this.width = rect.width;
     this.height = rect.height;
     return this;
-  }
-  static readonly InfinityRect = new Rect()
-    .setLeft(-Number.MAX_VALUE / 2)
-    .setTop(-Number.MAX_VALUE / 2)
-    .setWidth(Number.MAX_VALUE)
-    .setHeight(Number.MAX_VALUE);
-
-  static from(left: number, top: number, width: number, height: number): Rect {
-    return new Rect().setLeft(left).setTop(top).setWidth(width).setHeight(height);
-  }
-
-  static copyFrom(rect: Rect): Rect {
-    return Rect.from(rect.left, rect.top, rect.width, rect.height);
-  }
-
-  static fromClientRect(rect: ClientRect, scrollX: number = 0, scrollY: number = 0): Rect {
-    return Rect.from(rect.left, rect.top, rect.width, rect.height).move(scrollX, scrollY);
   }
 }

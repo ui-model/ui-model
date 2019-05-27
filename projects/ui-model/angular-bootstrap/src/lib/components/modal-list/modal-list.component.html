@@ -1,31 +1,32 @@
 <ui-modal *ngFor="let item of modal.items">
-  <ui-modal-info (cancel)="modal.cancel(item)"
-                 (close)="modal.close(item, true)" *ngIf="item.type === 'info'" [icon]="item.icon"
+  <ui-modal-info *ngIf="item.type === 'info'"
+                 (cancel)="modal.cancel(item)" (close)="modal.close(item, true)" [icon]="item.icon"
                  [message]="item.message" [title]="item.title">
   </ui-modal-info>
-  <ui-modal-success (cancel)="modal.cancel(item)"
-                    (close)="modal.close(item, true)" *ngIf="item.type === 'success'" [icon]="item.icon"
+  <ui-modal-success *ngIf="item.type === 'success'"
+                    (cancel)="modal.cancel(item)" (close)="modal.close(item, true)" [icon]="item.icon"
                     [message]="item.message" [title]="item.title">
   </ui-modal-success>
-  <ui-modal-warning (cancel)="modal.cancel(item)"
-                    (close)="modal.close(item, true)" *ngIf="item.type === 'warning'" [icon]="item.icon"
+  <ui-modal-warning *ngIf="item.type === 'warning'"
+                    (cancel)="modal.cancel(item)" (close)="modal.close(item, true)" [icon]="item.icon"
                     [message]="item.message" [title]="item.title">
   </ui-modal-warning>
-  <ui-modal-error (cancel)="modal.cancel(item)"
-                  (close)="modal.close(item, true)" *ngIf="item.type === 'error'" [icon]="item.icon"
+  <ui-modal-error *ngIf="item.type === 'error'"
+                  (cancel)="modal.cancel(item)" (close)="modal.close(item, true)" [icon]="item.icon"
                   [message]="item.message" [title]="item.title">
   </ui-modal-error>
-  <ui-modal-confirm (cancel)="modal.cancel(item)"
-                    (close)="modal.close(item, $event)" *ngIf="item.type === 'confirm'" [icon]="item.icon"
+  <ui-modal-confirm *ngIf="item.type === 'confirm'"
+                    (cancel)="modal.cancel(item)" (close)="modal.close(item, $event)" [icon]="item.icon"
                     [message]="item.message" [title]="item.title">
   </ui-modal-confirm>
-  <ui-modal-prompt (cancel)="modal.cancel(item)"
-                   (close)="modal.close(item, $event)" *ngIf="item.type === 'prompt'" [defaultValue]="item.data"
+  <ui-modal-prompt *ngIf="item.type === 'prompt'"
+                   (cancel)="modal.cancel(item)" (close)="modal.close(item, $event)" [defaultValue]="item.data"
                    [icon]="item.icon"
                    [message]="item.message" [title]="item.title">
   </ui-modal-prompt>
-  <ui-modal-form (cancel)="modal.cancel(item)"
-                 (close)="modal.close(item, $event)" *ngIf="item.type === 'form'" [group]="item.data" [icon]="item.icon"
+  <ui-modal-form *ngIf="item.type === 'form'"
+                 (cancel)="modal.cancel(item)" (close)="modal.close(item, $event)" [group]="item.data"
+                 [icon]="item.icon"
                  [message]="item.message" [title]="item.title">
   </ui-modal-form>
   <ng-container *ngIf="item.type === 'custom'">

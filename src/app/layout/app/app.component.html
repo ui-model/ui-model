@@ -18,7 +18,7 @@
     </div>
     <div class="col-md-7">
       <div class="badge-list form-control-plaintext">
-        <label class="badge badge-info" *ngFor="let tag of tags" (click)="setFilter(tag)">{{tag}}</label>
+        <label *ngFor="let tag of tags" class="badge badge-info" (click)="setFilter(tag)">{{tag}}</label>
       </div>
     </div>
   </div>

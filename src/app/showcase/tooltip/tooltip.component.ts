@@ -10,6 +10,7 @@ export class TooltipComponent {
 
   constructor(public tooltip: TooltipService) {
   }
+
   total = 10;
   html = '<strong>strong</strong><em>def</em>';
 

@@ -9,6 +9,7 @@ export class JsonViewerComponent implements OnInit {
 
   constructor() {
   }
+
   @Input() value: any;
 
   ngOnInit(): void {

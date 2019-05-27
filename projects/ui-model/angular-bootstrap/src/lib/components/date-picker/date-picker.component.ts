@@ -12,14 +12,6 @@ import { Toggle } from '@ui-model/core';
 })
 export class DatePickerComponent implements OnInit, ControlValueAccessor {
 
-  get value(): Date {
-    return this._value;
-  }
-
-  set value(value: Date) {
-    this._value = value;
-  }
-
   constructor() {
   }
 
@@ -29,6 +21,14 @@ export class DatePickerComponent implements OnInit, ControlValueAccessor {
   private _onTouched: () => void;
 
   private _value: Date;
+
+  get value(): Date {
+    return this._value;
+  }
+
+  set value(value: Date) {
+    this._value = value;
+  }
 
   ngOnInit(): void {
   }

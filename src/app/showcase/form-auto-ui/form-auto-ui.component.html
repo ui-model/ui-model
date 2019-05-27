@@ -6,10 +6,10 @@
 
   <div class="form-group">
     <button class="btn btn-primary btn-block" type="submit">Submit</button>
-    <button (click)="form.disable()" *ngIf="form.enabled" class="btn btn-secondary btn-block" type="button">Disable this
+    <button *ngIf="form.enabled" (click)="form.disable()" class="btn btn-secondary btn-block" type="button">Disable this
       form
     </button>
-    <button (click)="form.enable()" *ngIf="form.disabled" class="btn btn-secondary btn-block" type="button">Enable this
+    <button *ngIf="form.disabled" (click)="form.enable()" class="btn btn-secondary btn-block" type="button">Enable this
       form
     </button>
     <label>

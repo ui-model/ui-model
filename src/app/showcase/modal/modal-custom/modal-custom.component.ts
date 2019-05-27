@@ -10,6 +10,7 @@ export class ModalCustomComponent implements OnInit {
 
   constructor(private modalService: ModalService) {
   }
+
   @Input()
   modal: Modal;
   @Input()

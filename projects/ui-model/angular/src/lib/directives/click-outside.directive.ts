@@ -9,12 +9,10 @@ export class ClickOutsideDirective implements OnInit, OnDestroy {
   constructor(private element: ElementRef<Element>, private documentEventListener: DocumentEventListener) {
   }
 
-  private subKeyup: Subscription;
-  private subMouseUp: Subscription;
-
-
   @Output('uiClickOutside')
   clickOutside = new EventEmitter<void>();
+  private subKeyup: Subscription;
+  private subMouseUp: Subscription;
 
   escKeyListener(event: KeyboardEvent): void {
     if (event.key === 'Escape' || event.key === 'Esc') {

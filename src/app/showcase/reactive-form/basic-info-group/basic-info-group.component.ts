@@ -8,14 +8,14 @@ import { AbstractControl, FormGroup } from '@angular/forms';
 })
 export class BasicInfoGroupComponent implements OnInit {
 
-  get age(): AbstractControl {
-    return this.group && this.group.get('age');
-  }
-
   constructor() {
   }
 
   @Input() group: FormGroup;
+
+  get age(): AbstractControl {
+    return this.group && this.group.get('age');
+  }
 
   ngOnInit(): void {
   }

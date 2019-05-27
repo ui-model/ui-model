@@ -6,6 +6,13 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
 })
 export class ImgSrcFileDirective {
 
+  constructor(private element: ElementRef<Element>, private renderer: Renderer2) {
+  }
+
+  private url: string;
+
+  private _srcFile: Blob;
+
   get srcFile(): Blob {
     return this._srcFile;
   }
@@ -17,13 +24,6 @@ export class ImgSrcFileDirective {
     this.url = URL.createObjectURL(value);
     this.renderer.setAttribute(this.element.nativeElement, 'src', this.url);
   }
-
-  constructor(private element: ElementRef<Element>, private renderer: Renderer2) {
-  }
-
-  private url: string;
-
-  private _srcFile: Blob;
 
   cleanUp(): void {
     if (isBlobUrl(this.url)) {
