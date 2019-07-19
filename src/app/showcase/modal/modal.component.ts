@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormMaker, ModalService, ModalType } from '@ui-model/angular';
-import { Toggle } from '@ui-model/core';
+import { Toggle } from '@ui-model/common';
 import { FormModel } from './_models/form.model';
 import { ModalCustomComponent } from './modal-custom/modal-custom.component';
 

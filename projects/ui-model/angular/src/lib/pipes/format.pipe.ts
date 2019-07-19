@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DataType, dataTypeOf, identity, isUndefined } from '@ui-model/common';
-import { TableField } from '@ui-model/core';
+import { TableField } from '@ui-model/common';
+import { DataType, dataTypeOf, identity, isUndefined } from '@ui-model/core';
 import { format } from 'date-fns';
 
 @Pipe({

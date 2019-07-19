@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MeasureDirective, TooltipService } from '@ui-model/angular';
-import { Rect } from '@ui-model/common';
+import { Rect } from '@ui-model/core';
 
 @Component({
   selector: 'ui-tooltip',

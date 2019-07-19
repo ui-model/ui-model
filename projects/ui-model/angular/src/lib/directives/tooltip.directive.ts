@@ -1,6 +1,6 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
-import { Rect } from '@ui-model/common';
+import { Rect } from '@ui-model/core';
 import { TooltipService } from '../services/tooltip.service';
 
 @Directive({

@@ -1,6 +1,6 @@
 import { Directive, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Toggle } from '@ui-model/core';
+import { Toggle } from '@ui-model/common';
 
 @Directive({
   selector: '[uiToggle]',

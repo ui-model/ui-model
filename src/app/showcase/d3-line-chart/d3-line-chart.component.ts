@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { lines } from '@ui-model/chart';
-import { Point } from '@ui-model/common';
+import { Point } from '@ui-model/core';
 import { scaleLinear } from 'd3';
 
 @Component({

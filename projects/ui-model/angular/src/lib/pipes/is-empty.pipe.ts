@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isEmpty } from '@ui-model/common';
+import { isEmpty } from '@ui-model/core';
 
 @Pipe({
   name: 'isEmpty',

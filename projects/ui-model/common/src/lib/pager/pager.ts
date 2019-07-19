@@ -1,4 +1,4 @@
-import { BaseModel } from '@ui-model/common';
+import { BaseModel } from '@ui-model/core';
 
 export class Pager extends BaseModel {
   private _index = 0;

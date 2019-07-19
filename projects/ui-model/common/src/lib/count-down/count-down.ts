@@ -1,4 +1,4 @@
-import { BaseModel } from '@ui-model/common';
+import { BaseModel } from '@ui-model/core';
 import { interval, Subject, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 

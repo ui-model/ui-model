@@ -1,5 +1,5 @@
 import { ControlValueAccessor } from '@angular/forms';
-import { Select } from '@ui-model/core';
+import { Select } from '@ui-model/common';
 
 export class SelectValueAccessor<T> extends Select<T> implements ControlValueAccessor {
 

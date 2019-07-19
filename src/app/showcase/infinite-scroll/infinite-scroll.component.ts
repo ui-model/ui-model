@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Viewport } from '@ui-model/core';
+import { Viewport } from '@ui-model/common';
 import * as _ from 'lodash';
 
 @Component({

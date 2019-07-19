@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isUndefined, SortOrder } from '@ui-model/common';
+import { isUndefined, SortOrder } from '@ui-model/core';
 
 @Pipe({
   name: 'orderName',

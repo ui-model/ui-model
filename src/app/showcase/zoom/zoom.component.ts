@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Zoom } from '@ui-model/core';
+import { Zoom } from '@ui-model/common';
 
 @Component({
   selector: 'app-zoom',

@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SafeHtml } from '@angular/platform-browser';
-import { isFunction, Supplier, Transformer } from '@ui-model/common';
-import { Toggle } from '@ui-model/core';
+import { Toggle } from '@ui-model/common';
+import { isFunction, Supplier, Transformer } from '@ui-model/core';
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime, skipWhile, tap } from 'rxjs/operators';
 

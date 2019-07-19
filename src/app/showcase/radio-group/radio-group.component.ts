@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Select } from '@ui-model/core';
+import { Select } from '@ui-model/common';
 
 @Component({
   selector: 'app-radio-group',

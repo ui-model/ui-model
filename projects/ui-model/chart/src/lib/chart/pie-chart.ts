@@ -1,4 +1,4 @@
-import { BaseModel } from '@ui-model/common';
+import { BaseModel } from '@ui-model/core';
 import { merge, Observable } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 import { Pie } from '../shape/pie';

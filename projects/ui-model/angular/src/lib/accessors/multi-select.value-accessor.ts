@@ -1,5 +1,5 @@
 import { ControlValueAccessor } from '@angular/forms';
-import { MultiSelect } from '@ui-model/core';
+import { MultiSelect } from '@ui-model/common';
 
 export class MultiSelectValueAccessor<T> extends MultiSelect<T> implements ControlValueAccessor {
 

@@ -1,4 +1,4 @@
-import { identity, objectByField } from '@ui-model/common';
+import { identity, objectByField } from '@ui-model/core';
 import { Select } from './select';
 
 describe('Select', () => {

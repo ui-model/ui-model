@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Pagination } from '@ui-model/core';
+import { Pagination } from '@ui-model/common';
 import { PaginationComponent } from './pagination.component';
 
 describe('PaginationComponent', () => {

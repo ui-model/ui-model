@@ -1,5 +1,5 @@
 import { ControlValueAccessor } from '@angular/forms';
-import { Calendar } from '@ui-model/core';
+import { Calendar } from '@ui-model/common';
 
 export class CalendarValueAccessor extends Calendar implements ControlValueAccessor {
 

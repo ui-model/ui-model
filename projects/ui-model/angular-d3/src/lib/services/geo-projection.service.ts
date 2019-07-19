@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Point } from '@ui-model/common';
+import { Point } from '@ui-model/core';
 import { geoMercator, GeoProjection } from 'd3-geo';
 
 @Injectable({ providedIn: 'root' })

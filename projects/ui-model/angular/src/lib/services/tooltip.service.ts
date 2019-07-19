@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
-import { Rect } from '@ui-model/common';
+import { Rect } from '@ui-model/core';
 import { Observable, Subject } from 'rxjs';
 import { delay } from 'rxjs/operators';
 

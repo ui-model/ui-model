@@ -1,4 +1,4 @@
-import { DataType } from '@ui-model/common';
+import { DataType } from '@ui-model/core';
 import { TableField } from './table-field';
 import { TableSorter } from './table-sorter';
 

@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
-import { Pager } from '@ui-model/core';
+import { Pager } from '@ui-model/common';
 
 @Directive({
   selector: '[uiPager]',

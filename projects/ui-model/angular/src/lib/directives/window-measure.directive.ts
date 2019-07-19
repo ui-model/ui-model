@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
-import { Rect } from '@ui-model/common';
+import { Rect } from '@ui-model/core';
 import { Subscription } from 'rxjs';
 import { WindowMeasureService } from '../services/window-measure.service';
 

@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
-import { Pagination } from '@ui-model/core';
+import { Pagination } from '@ui-model/common';
 
 @Directive({
   selector: '[uiPagination]',

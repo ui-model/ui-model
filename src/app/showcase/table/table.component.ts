@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataType } from '@ui-model/common';
-import { TableField } from '@ui-model/core';
+import { TableField } from '@ui-model/common';
+import { DataType } from '@ui-model/core';
 import * as _ from 'lodash';
 
 class Item {

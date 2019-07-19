@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable, OnDestroy } from '@angular/core';
-import { Rect } from '@ui-model/common';
+import { Rect } from '@ui-model/core';
 import { Observable, Subscription } from 'rxjs';
 
 @Injectable({

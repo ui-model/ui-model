@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { SortOrder } from '@ui-model/common';
-import { TableField, TableSorter } from '@ui-model/core';
+import { TableField, TableSorter } from '@ui-model/common';
+import { SortOrder } from '@ui-model/core';
 
 @Component({
   selector: 'ui-table',

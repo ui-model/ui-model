@@ -1,4 +1,4 @@
-import { BaseModel, objectByField, objectById, Transformer } from '@ui-model/common';
+import { BaseModel, objectByField, objectById, Transformer } from '@ui-model/core';
 
 export class Select<T> extends BaseModel {
   _selection: T;

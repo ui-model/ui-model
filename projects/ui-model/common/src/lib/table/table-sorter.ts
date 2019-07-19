@@ -1,4 +1,4 @@
-import { BaseModel, SortOrder } from '@ui-model/common';
+import { BaseModel, SortOrder } from '@ui-model/core';
 import { TableField } from './table-field';
 
 function nextOf(order: SortOrder, defaultOrder: SortOrder): SortOrder {

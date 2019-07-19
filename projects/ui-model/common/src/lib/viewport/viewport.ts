@@ -1,4 +1,4 @@
-import { BaseModel, Rect } from '@ui-model/common';
+import { BaseModel, Rect } from '@ui-model/core';
 
 export class Viewport<T> extends BaseModel {
   private _dataSource: T[] = [];

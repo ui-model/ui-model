@@ -26,17 +26,17 @@
       "@ui-model/chart/*": [
         "dist/ui-model/chart/*"
       ],
-      "@ui-model/common": [
-        "dist/ui-model/common"
-      ],
-      "@ui-model/common/*": [
-        "dist/ui-model/common/*"
-      ],
       "@ui-model/core": [
         "dist/ui-model/core"
       ],
       "@ui-model/core/*": [
         "dist/ui-model/core/*"
+      ],
+      "@ui-model/common": [
+        "dist/ui-model/common"
+      ],
+      "@ui-model/common/*": [
+        "dist/ui-model/common/*"
       ],
       "@ui-model/angular-d3": [
         "dist/ui-model/angular-d3"

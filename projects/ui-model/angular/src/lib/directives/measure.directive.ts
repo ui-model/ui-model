@@ -1,5 +1,5 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
-import { Rect } from '@ui-model/common';
+import { Rect } from '@ui-model/core';
 
 // TODO: 改用 Mutation​Observer
 @Directive({

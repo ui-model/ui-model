@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DataType } from '@ui-model/common';
+import { DataType } from '@ui-model/core';
 
 @Pipe({
   name: 'typeName',

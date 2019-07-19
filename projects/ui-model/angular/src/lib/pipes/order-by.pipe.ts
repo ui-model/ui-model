@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TableSorter } from '@ui-model/core';
+import { TableSorter } from '@ui-model/common';
 
 @Pipe({
   name: 'orderBy',

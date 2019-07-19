@@ -1,4 +1,4 @@
-import { BaseModel, Rect } from '@ui-model/common';
+import { BaseModel, Rect } from '@ui-model/core';
 import { merge, Observable } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 

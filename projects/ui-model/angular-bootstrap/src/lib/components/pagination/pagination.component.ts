@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Pagination } from '@ui-model/core';
+import { Pagination } from '@ui-model/common';
 
 @Component({
   selector: 'ui-pagination',

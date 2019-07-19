@@ -1,4 +1,4 @@
-import { Point } from '@ui-model/common';
+import { Point } from '@ui-model/core';
 import { lines } from './lines';
 
 describe('Line Chart', () => {

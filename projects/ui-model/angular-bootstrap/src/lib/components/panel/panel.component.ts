@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Toggle } from '@ui-model/core';
+import { Toggle } from '@ui-model/common';
 
 @Component({
   selector: 'ui-panel',

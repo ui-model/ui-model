@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges } from '@angular/core';
-import { Rect } from '@ui-model/common';
+import { Rect } from '@ui-model/core';
 import { geoBounds } from 'd3-geo';
 import { Feature, FeatureCollection, GeometryObject } from 'geojson';
 import { flatMap, max, min } from 'lodash';

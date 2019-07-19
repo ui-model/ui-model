@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
-import { CountDown } from '@ui-model/core';
+import { CountDown } from '@ui-model/common';
 
 @Directive({
   selector: '[uiCountDown]',

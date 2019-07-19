@@ -1,4 +1,4 @@
-import { isDefined, Point } from '@ui-model/common';
+import { isDefined, Point } from '@ui-model/core';
 
 export class Line {
   x1: number;
