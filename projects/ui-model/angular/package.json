@@ -1,14 +1,14 @@
 {
   "name": "@ui-model/angular",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "src/public_api.ts",
   "peerDependencies": {
     "@angular/common": "^6.0.0 || ^7.0.0 || ^8.0.0",
     "@angular/core": "^6.0.0 || ^7.0.0 || ^8.0.0",
     "@angular/forms": "^6.0.0 || ^7.0.0 || ^8.0.0",
-    "@ui-model/core": "0.1.2",
-    "@ui-model/common": "0.1.2",
-    "@ui-model/chart": "0.1.2",
+    "@ui-model/core": "0.2.0",
+    "@ui-model/common": "0.2.0",
+    "@ui-model/chart": "0.2.0",
     "rxjs": "^6.0.0"
   }
 }
