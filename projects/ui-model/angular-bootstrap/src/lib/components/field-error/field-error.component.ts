@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Optional } from '@angular/core';
-import { AbstractControl, FormGroupDirective, FormGroupName } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
+import { FormFieldDirective } from '../../../../../angular/src/lib/directives/form-field.directive';
 
 @Component({
   selector: 'ui-field-error',
@@ -7,38 +8,27 @@ import { AbstractControl, FormGroupDirective, FormGroupName } from '@angular/for
   styleUrls: ['./field-error.component.scss'],
 })
 export class FieldErrorComponent implements OnInit {
-
-  constructor(@Optional() private group: FormGroupName, @Optional() private form: FormGroupDirective) {
+  constructor(@Optional() private formField: FormFieldDirective) {
   }
 
-  @Input() field: AbstractControl;
-  @Input() messages: { [key: string]: string };
+  @Input()
+  messages: Record<string, string>;
 
-  private _fieldName: string;
+  controls: AbstractControl[];
 
-  get fieldName(): string {
-    return this._fieldName;
+  get field(): AbstractControl {
+    return this.controls[0];
   }
 
-  @Input() set fieldName(value: string) {
-    if (this._fieldName !== value) {
-      this._fieldName = value;
-      this.fieldNameChanged();
-    }
-  }
-
-  fieldNameChanged(): void {
-    if (!this.fieldName) {
-      return;
-    }
-    if (this.group) {
-      this.field = this.group.control.get(this.fieldName);
-    } else if (this.form) {
-      this.field = this.form.control.get(this.fieldName);
-    }
+  @Input()
+  set field(value: AbstractControl) {
+    this.controls = [value];
   }
 
   ngOnInit(): void {
-    this.fieldNameChanged();
+    if (!this.formField) {
+      return;
+    }
+    this.formField.changes$.subscribe(controls => this.controls = controls);
   }
 }

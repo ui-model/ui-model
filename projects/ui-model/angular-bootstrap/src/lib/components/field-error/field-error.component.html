@@ -1,10 +1,10 @@
-<div *ngIf="field">
-  <div *ngIf="field.pending" class="text-warning">
+<div *ngFor="let control of controls">
+  <div *ngIf="control.pending" class="text-warning">
     <i class="fa fa-spinner fa-spin"></i>
     checking...
   </div>
-  <ul *ngIf="!field.pristine && field.invalid && field.errors" class="text-danger">
-    <li *ngFor="let error of field.errors | objectToArray"
+  <ul *ngIf="!control.pristine && control.invalid && control.errors" class="text-danger">
+    <li *ngFor="let error of control.errors | objectToArray"
         [innerHTML]="error|fieldErrorMapper:messages|template:error|safeHtml"></li>
   </ul>
 </div>

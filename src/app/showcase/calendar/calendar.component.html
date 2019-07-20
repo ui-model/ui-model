@@ -4,36 +4,36 @@
     Disabled
   </label>
 </div>
-<div class="form-group">
-  <input type="date" [disabled]="disabled" required #dateRef="ngModel" class="form-control" [(ngModel)]="value"/>
-  <ui-field-error [field]="dateRef"></ui-field-error>
+<div class="form-group" uiFormField>
+  <input type="date" [disabled]="disabled" required class="form-control" [(ngModel)]="value"/>
+  <ui-field-error></ui-field-error>
 </div>
 
-<div class="form-group">
-  <ui-calendar name="date" [disabled]="disabled" [(ngModel)]="value" #calendarRef="ngModel" required></ui-calendar>
-  <ui-field-error [field]="calendarRef"></ui-field-error>
+<div class="form-group" uiFormField>
+  <ui-calendar name="date" [disabled]="disabled" [(ngModel)]="value" required></ui-calendar>
+  <ui-field-error></ui-field-error>
 </div>
 
 <div class="form-group dropdown" uiToggle #picker="uiToggle" (uiClickOutside)="picker.close()">
-  <div class="input-group">
-    <input type="text" [disabled]="disabled" uiDateInput required #inputRef="ngModel" class="form-control"
+  <div class="input-group" uiFormField>
+    <input type="text" [disabled]="disabled" uiDateInput required class="form-control"
            [(ngModel)]="value"/>
     <div class="input-group-append">
       <button type="button" [disabled]="disabled" class="btn btn-primary" (click)="picker.toggle()">
         <i class="fa fa-calendar"></i>
       </button>
     </div>
+    <ui-field-error></ui-field-error>
   </div>
   <div *ngIf="picker.isOn" class="dropdown-menu">
-    <ui-calendar name="date" [disabled]="disabled" [(ngModel)]="value" #calendarRef="ngModel" required
+    <ui-calendar name="date" [disabled]="disabled" [(ngModel)]="value" required
                  (change)="picker.close()"></ui-calendar>
   </div>
-  <ui-field-error [field]="inputRef"></ui-field-error>
 </div>
 
-<div class="form-group">
-  <ui-date-picker [disabled]="disabled" [(ngModel)]="value" #pickerRef="ngModel"></ui-date-picker>
-  <ui-field-error [field]="pickerRef"></ui-field-error>
+<div class="form-group" uiFormField>
+  <ui-date-picker [disabled]="disabled" [(ngModel)]="value"></ui-date-picker>
+  <ui-field-error></ui-field-error>
 </div>
 
 <div *ngIf="value" class="alert alert-info">

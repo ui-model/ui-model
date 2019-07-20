@@ -4,35 +4,35 @@
     <button (click)="setValue2()" class="btn btn-primary" type="button">Set value 2</button>
   </p>
 
-  <div class="form-group">
+  <div class="form-group" uiFormField>
     <label for="username">Username</label>
     <input class="form-control" formControlName="username" id="username" name="username"
            type="text"/>
-    <ui-field-error fieldName="username"></ui-field-error>
+    <ui-field-error></ui-field-error>
   </div>
-  <div class="form-group">
+  <div class="form-group" uiFormField>
     <label for="email">Email</label>
     <input class="form-control" formControlName="email" id="email" name="email"
            type="text"/>
-    <ui-field-error fieldName="email"></ui-field-error>
+    <ui-field-error></ui-field-error>
   </div>
-  <div class="form-group">
+  <div class="form-group" uiFormField>
     <label for="mobile">Mobile</label>
     <input class="form-control" formControlName="mobile" id="mobile" name="mobile"
            type="text"/>
-    <ui-field-error [messages]="{pattern: 'Should be a valid mobile'}" fieldName="mobile"></ui-field-error>
+    <ui-field-error [messages]="{pattern: 'Should be a valid mobile'}"></ui-field-error>
   </div>
 
-  <div class="form-group">
+  <div class="form-group" uiFormField>
     <label for="homepage">Homepage</label>
     <input class="form-control" formControlName="homepage" id="homepage" name="homepage"
            type="text"/>
-    <ui-field-error fieldName="homepage"></ui-field-error>
+    <ui-field-error></ui-field-error>
   </div>
 
   <div #tags="uiFormArray" class="form-group" formArrayName="tags">
     <label for="tags">Tags</label>
-    <div *ngFor="let control of tags.items" class="form-group">
+    <div *ngFor="let control of tags.items" class="form-group" uiFormField>
       <div class="input-group">
         <input [formControl]="control" class="form-control" id="tags" name="tags"
                type="text"/>
@@ -42,7 +42,7 @@
           </button>
         </div>
       </div>
-      <ui-field-error [field]="control"></ui-field-error>
+      <ui-field-error></ui-field-error>
     </div>
     <div>
       <button (click)="tags.createItem()" class="btn btn-primary" type="button">
@@ -53,29 +53,29 @@
   </div>
 
   <ui-panel #profile="uiFormGroup" formGroupName="profile" title="Profile">
-    <div class="form-group">
+    <div class="form-group" uiFormField>
       <label>Birthday</label>
       <ui-calendar formControlName="birthday"></ui-calendar>
-      <ui-field-error fieldName="birthday"></ui-field-error>
+      <ui-field-error></ui-field-error>
     </div>
-    <div class="form-group">
+    <div class="form-group" uiFormField>
       <label>Gender</label>
       <ui-radio-group [options]="genders" formControlName="gender"></ui-radio-group>
-      <ui-field-error fieldName="gender"></ui-field-error>
+      <ui-field-error></ui-field-error>
     </div>
-    <div class="form-group">
+    <div class="form-group" uiFormField>
       <label for="height">Height(CM)</label>
       <input class="form-control" formControlName="height" id="height" name="height"
              type="number"/>
-      <ui-field-error fieldName="height"></ui-field-error>
+      <ui-field-error></ui-field-error>
     </div>
-    <div class="form-group">
+    <div class="form-group" uiFormField>
       <label for="weight">Weight</label>
       <input class="form-control" formControlName="weight" id="weight" name="weight"
              type="number"/>
-      <ui-field-error fieldName="weight"></ui-field-error>
+      <ui-field-error></ui-field-error>
     </div>
   </ui-panel>
-  <ui-field-error fieldName="profile"></ui-field-error>
+  <ui-field-error [field]="profile"></ui-field-error>
 </div>
 <app-json-viewer [value]="form.value"></app-json-viewer>

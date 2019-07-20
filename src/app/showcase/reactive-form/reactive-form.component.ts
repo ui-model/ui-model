@@ -35,7 +35,7 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   newTag(): void {
-    this.tags.push(new FormControl(['']));
+    this.tags.push(new FormControl([''], Validators.minLength(4)));
   }
 
   removeTag(i: number): void {

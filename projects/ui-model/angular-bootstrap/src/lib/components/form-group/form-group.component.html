@@ -7,7 +7,7 @@
         <legend>{{field.label}}</legend>
         <ui-form-group [group]="group.get(field.name)" [readonly]="readonly"></ui-form-group>
       </fieldset>
-      <ui-field-error [fieldName]="field.name" [messages]="field.errors"></ui-field-error>
+      <ui-field-error [field]="group.get(field.name)" [messages]="field.errors"></ui-field-error>
     </div>
   </ng-container>
 </div>

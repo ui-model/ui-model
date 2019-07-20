@@ -2,11 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
-import {
-  RadioGroupWithinFormComponent,
-  TypeAheadWithinFormComponent,
-  UiModelBootstrapModule,
-} from '@ui-model/angular-bootstrap';
+import { RadioGroupWithinFormComponent, TypeAheadWithinFormComponent } from '@ui-model/angular-bootstrap';
+import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap/src/lib/ui-model-bootstrap.module';
 import { UiModelD3Module } from '@ui-model/angular-d3';
 import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
 import { SharedModule } from '../shared/shared.module';
@@ -73,6 +70,7 @@ import { ZoomComponent } from './zoom/zoom.component';
     UiModelD3Module,
     SharedModule,
     ShowcaseRoutingModule,
+    UiModelBootstrapModule,
   ],
   declarations: [
     HomeComponent,

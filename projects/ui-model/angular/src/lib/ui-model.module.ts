@@ -96,6 +96,7 @@ import { TypeNamePipe } from './pipes/type-name.pipe';
     IsInvalidDatePipe,
     DynamicComponentInputsDirective,
     WindowMeasureDirective,
+    FormFieldDirective,
   ],
   exports: [
     SelectDirective,
@@ -142,6 +143,7 @@ import { TypeNamePipe } from './pipes/type-name.pipe';
     IsValidDatePipe,
     IsInvalidDatePipe,
     WindowMeasureDirective,
+    FormFieldDirective,
   ],
 })
 export class UiModelModule {
@@ -171,6 +173,7 @@ export * from './directives/disabled.directive';
 export * from './directives/focus.directive';
 export * from './directives/prevent-default.directive';
 export * from './directives/count-down.directive';
+export * from './directives/form-field.directive';
 export * from './directives/form-array-exporter.directive';
 export * from './directives/form-group-exporter.directive';
 export * from './directives/field-metadata.directive';

@@ -1,24 +1,28 @@
 <form [formGroup]="form">
-  <div class="form-group">
+  <div class="form-group" uiFormField>
     <label for="name">Name: </label>
     <input [formControl]="name" class="form-control" id="name" type="text"/>
-    <ui-field-error [field]="name"></ui-field-error>
+    <ui-field-error></ui-field-error>
   </div>
-  <app-basic-info-group [group]="basic"></app-basic-info-group>
+  <div>
+    <app-basic-info-group [group]="basic"></app-basic-info-group>
+  </div>
   <div formArrayName="tags">
     <div class="form-group tags">
       <label>Tags:
       </label>
       <div *ngFor="let control of tags.controls;let i = index">
-        <div class="input-group">
-          <input [formControlName]="i" class="form-control" placeholder="please input a tag" type="text"/>
-          <div class="input-group-append">
-            <button (click)="removeTag(i)" class="btn btn-secondary btn-sm">
-              <i class="fa fa-remove"></i>
-            </button>
+        <div uiFormField>
+          <div class="input-group">
+            <input [formControlName]="i" class="form-control" placeholder="please input a tag" type="text"/>
+            <div class="input-group-append">
+              <button (click)="removeTag(i)" class="btn btn-secondary btn-sm">
+                <i class="fa fa-remove"></i>
+              </button>
+            </div>
           </div>
+          <ui-field-error></ui-field-error>
         </div>
-        <ui-field-error [field]="control"></ui-field-error>
       </div>
       <button (click)="newTag()" class="btn btn-secondary btn-block">
         <i class="fa fa-plus-circle"></i>
