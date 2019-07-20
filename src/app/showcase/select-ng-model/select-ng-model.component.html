@@ -1,11 +1,11 @@
-<div #select="uiSelect" [(ngModel)]="selection" class="row" uiSelect>
+<div class="row">
   <div class="col-md-6">
     <select [(ngModel)]="selection" class="form-control">
       <option value="">-</option>
       <option *ngFor="let option of options" [ngValue]="option.id">{{option.name}}</option>
     </select>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" uiSelect #select="uiSelect" [(ngModel)]="selection">
     <div *ngFor="let option of options" class="form-check form-check-inline">
       <label class="form-check-label">
         <input (change)="select.select(option)" [checked]="select.selected(option)" class="form-check-input"
