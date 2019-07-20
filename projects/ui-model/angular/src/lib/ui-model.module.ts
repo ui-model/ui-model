@@ -9,6 +9,7 @@ import { FieldMetadataDirective } from './directives/field-metadata.directive';
 import { FileChangeDetectDirective } from './directives/file-change-detect.directive';
 import { FocusDirective } from './directives/focus.directive';
 import { FormArrayExporterDirective } from './directives/form-array-exporter.directive';
+import { FormFieldDirective } from './directives/form-field.directive';
 import { FormGroupExporterDirective } from './directives/form-group-exporter.directive';
 import { ImgSrcFileDirective } from './directives/img-src-file.directive';
 import { MeasureDirective } from './directives/measure.directive';
@@ -177,6 +178,7 @@ export * from './directives/date-input.directive';
 export * from './directives/dynamic-component-inputs.directive';
 
 export * from './utils/base-control-within-form/base-control-within-form';
+export * from './utils/next-tick';
 
 export * from './pipes/format.pipe';
 export * from './pipes/order-by.pipe';
