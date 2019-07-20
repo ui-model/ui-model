@@ -382,6 +382,41 @@
           }
         }
       }
+    },
+    "@ui-model/angular-svg": {
+      "projectType": "library",
+      "root": "projects/ui-model/angular-svg",
+      "sourceRoot": "projects/ui-model/angular-svg/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ui-model/angular-svg/tsconfig.lib.json",
+            "project": "projects/ui-model/angular-svg/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ui-model/angular-svg/src/test.ts",
+            "tsConfig": "projects/ui-model/angular-svg/tsconfig.spec.json",
+            "karmaConfig": "projects/ui-model/angular-svg/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ui-model/angular-svg/tsconfig.lib.json",
+              "projects/ui-model/angular-svg/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ui-model"

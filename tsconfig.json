@@ -60,6 +60,12 @@
       ],
       "@ui-model/angular-d3/*": [
         "projects/ui-model/angular-d3/*"
+      ],
+      "@ui-model/angular-svg": [
+        "projects/ui-model/angular-svg"
+      ],
+      "@ui-model/angular-svg/*": [
+        "projects/ui-model/angular-svg/*"
       ]
     }
   }

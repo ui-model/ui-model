@@ -38,6 +38,12 @@
       "@ui-model/common/*": [
         "dist/ui-model/common/*"
       ],
+      "@ui-model/svg": [
+        "dist/ui-model/svg"
+      ],
+      "@ui-model/svg/*": [
+        "dist/ui-model/svg/*"
+      ],
       "@ui-model/angular-d3": [
         "dist/ui-model/angular-d3"
       ],
