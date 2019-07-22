@@ -2,4 +2,4 @@
  * Public API Surface of angular-svg
  */
 
-export * from './lib/angular-svg.module';
+export * from './lib/ui-model-svg.module';

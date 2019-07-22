@@ -387,7 +387,7 @@
       "projectType": "library",
       "root": "projects/ui-model/angular-svg",
       "sourceRoot": "projects/ui-model/angular-svg/src",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
