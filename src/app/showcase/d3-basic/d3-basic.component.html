@@ -1,7 +1,7 @@
 <svg height="250" viewBox="0 0 1000 1000" width="250">
-  <g *ngFor="let item of items; let index=index" [style.fill]="colorOf(index)"
-     attr.transform="translate({{offsetOf(index)}}, 900)">
-    <rect [style.height]="heightOf(item)" [style.y]="-heightOf(item)"
+  <g *ngFor="let item of items; let index=index" [fill]="colorOf(index)"
+     transform="translate({{offsetOf(index)}}, 900)">
+    <rect [height]="heightOf(item)" [y]="-heightOf(item)"
           width="100" x="-50"></rect>
     <text class="axis-label" dy="4em" text-anchor="middle">{{item}}</text>
   </g>

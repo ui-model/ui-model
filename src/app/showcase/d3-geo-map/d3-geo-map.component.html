@@ -7,7 +7,7 @@
   </g>
   <g class="overlay">
     <g *ngFor="let route of routes;let index = index">
-      <line [attr.stroke-width]="0.5" [style.stroke]="index|d3Colors" [uiGeoLine]="route.vector"></line>
+      <line [stroke-width]="0.5" [stroke]="index|d3Colors" [uiGeoLine]="route.vector"></line>
     </g>
   </g>
 </svg>

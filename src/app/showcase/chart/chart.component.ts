@@ -14,6 +14,6 @@ export class ChartComponent {
 
   translateOf(pie: Pie): string {
     const { x, y } = pie.mapToXY(pie.middlePercent, pie.radius + this.noteOffset);
-    return `translateX(${x}px) translateY(${y}px)`;
+    return `translate(${x}, ${y})`;
   }
 }

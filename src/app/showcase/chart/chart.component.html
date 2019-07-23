@@ -1,8 +1,8 @@
 <svg height="300" viewBox="0 0 100 100" width="300" xmlns="http://www.w3.org/2000/svg">
   <g *ngFor="let pie of chart.pies; let index = index" [attr.index]="index" class="chart">
-    <path [attr.d]="pie.path" [style.stroke-width]="gutter"
+    <path [d]="pie.path" [stroke-width]="gutter"
           class="serial"></path>
-    <g [style.transform]="translateOf(pie)|safeStyle" class="markup">
+    <g [transform]="translateOf(pie)" class="markup">
       <circle r="5"></circle>
       <text dy="2">{{chart.serials[index]}}</text>
     </g>

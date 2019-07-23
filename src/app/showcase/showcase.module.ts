@@ -6,6 +6,7 @@ import { RadioGroupWithinFormComponent, TypeAheadWithinFormComponent } from '@ui
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap/src/lib/ui-model-bootstrap.module';
 import { UiModelD3Module } from '@ui-model/angular-d3';
 import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
+import { UiModelSvgModule } from '@ui-model/angular-svg/src/lib/ui-model-svg.module';
 import { SharedModule } from '../shared/shared.module';
 import { BriefViewerComponent } from './_layout/brief-viewer/brief-viewer.component';
 import { DocumentViewerComponent } from './_layout/document-viewer/document-viewer.component';
@@ -70,6 +71,7 @@ import { ZoomComponent } from './zoom/zoom.component';
     UiModelD3Module,
     SharedModule,
     ShowcaseRoutingModule,
+    UiModelSvgModule,
     UiModelBootstrapModule,
   ],
   declarations: [
