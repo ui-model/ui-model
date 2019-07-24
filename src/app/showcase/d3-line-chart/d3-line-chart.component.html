@@ -1,9 +1,9 @@
 <svg height="250" viewBox="0 0 1000 1000" width="250">
   <g fill="none" stroke="black">
-    <line *ngFor="let point of points;let index=index"
-          [x1]="point.x1"
-          [x2]="point.x2" [y1]="point.y1"
-          [y2]="point.y2" [stroke]="index|d3Colors:points.length"
+    <line *ngFor="let line of lines;let index=index"
+          [x1]="line.x1"
+          [x2]="line.x2" [y1]="line.y1"
+          [y2]="line.y2" [stroke]="index|d3Colors:lines.length"
           stroke-width="5"
     ></line>
   </g>
