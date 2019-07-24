@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Optional } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { FormFieldDirective } from '../../../../../angular/src/lib/directives/form-field.directive';
+import { FormFieldDirective } from '@ui-model/angular';
 
 @Component({
   selector: 'ui-field-error',
