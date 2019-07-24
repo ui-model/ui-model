@@ -8,22 +8,23 @@ export class SvgFeDistantLightDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get azimuth(): string {
+
+  get azimuth(): number {
     return getAttr(this.elementRef, 'azimuth');
   }
 
   @Input('azimuth')
-  set azimuth(value: string) {
+  set azimuth(value: number) {
     setAttr(this.elementRef, 'azimuth', value);
   }
 
 
-  get elevation(): string {
+  get elevation(): number {
     return getAttr(this.elementRef, 'elevation');
   }
 
   @Input('elevation')
-  set elevation(value: string) {
+  set elevation(value: number) {
     setAttr(this.elementRef, 'elevation', value);
   }
 
@@ -35,16 +36,6 @@ export class SvgFeDistantLightDirective {
   @Input('id')
   set id(value: string) {
     setAttr(this.elementRef, 'id', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -76,6 +67,5 @@ export class SvgFeDistantLightDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

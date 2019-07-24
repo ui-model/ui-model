@@ -8,7 +8,8 @@ export class SvgFontFaceNameDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get id(): string {
+
+  get id(): string {
     return getAttr(this.elementRef, 'id');
   }
 
@@ -25,16 +26,6 @@ export class SvgFontFaceNameDirective {
   @Input('name')
   set name(value: string) {
     setAttr(this.elementRef, 'name', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -66,6 +57,5 @@ export class SvgFontFaceNameDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

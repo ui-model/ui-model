@@ -8,32 +8,23 @@ export class SvgFontFaceDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get accentHeight(): string {
+
+  get accentHeight(): number {
     return getAttr(this.elementRef, 'accent-height');
   }
 
   @Input('accent-height')
-  set accentHeight(value: string) {
+  set accentHeight(value: number) {
     setAttr(this.elementRef, 'accent-height', value);
   }
 
 
-  get alphabetic(): string {
-    return getAttr(this.elementRef, 'alphabetic');
-  }
-
-  @Input('alphabetic')
-  set alphabetic(value: string) {
-    setAttr(this.elementRef, 'alphabetic', value);
-  }
-
-
-  get ascent(): string {
+  get ascent(): number {
     return getAttr(this.elementRef, 'ascent');
   }
 
   @Input('ascent')
-  set ascent(value: string) {
+  set ascent(value: number) {
     setAttr(this.elementRef, 'ascent', value);
   }
 
@@ -48,22 +39,22 @@ export class SvgFontFaceDirective {
   }
 
 
-  get capHeight(): string {
+  get capHeight(): number {
     return getAttr(this.elementRef, 'cap-height');
   }
 
   @Input('cap-height')
-  set capHeight(value: string) {
+  set capHeight(value: number) {
     setAttr(this.elementRef, 'cap-height', value);
   }
 
 
-  get descent(): string {
+  get descent(): number {
     return getAttr(this.elementRef, 'descent');
   }
 
   @Input('descent')
-  set descent(value: string) {
+  set descent(value: number) {
     setAttr(this.elementRef, 'descent', value);
   }
 
@@ -78,12 +69,12 @@ export class SvgFontFaceDirective {
   }
 
 
-  get fontSize(): string {
+  get fontSize(): string | number {
     return getAttr(this.elementRef, 'font-size');
   }
 
   @Input('font-size')
-  set fontSize(value: string) {
+  set fontSize(value: string | number) {
     setAttr(this.elementRef, 'font-size', value);
   }
 
@@ -128,12 +119,12 @@ export class SvgFontFaceDirective {
   }
 
 
-  get hanging(): string {
+  get hanging(): number {
     return getAttr(this.elementRef, 'hanging');
   }
 
   @Input('hanging')
-  set hanging(value: string) {
+  set hanging(value: number) {
     setAttr(this.elementRef, 'hanging', value);
   }
 
@@ -148,42 +139,32 @@ export class SvgFontFaceDirective {
   }
 
 
-  get ideographic(): string {
+  get ideographic(): number {
     return getAttr(this.elementRef, 'ideographic');
   }
 
   @Input('ideographic')
-  set ideographic(value: string) {
+  set ideographic(value: number) {
     setAttr(this.elementRef, 'ideographic', value);
   }
 
 
-  get mathematical(): string {
-    return getAttr(this.elementRef, 'mathematical');
-  }
-
-  @Input('mathematical')
-  set mathematical(value: string) {
-    setAttr(this.elementRef, 'mathematical', value);
-  }
-
-
-  get overlinePosition(): string {
+  get overlinePosition(): number {
     return getAttr(this.elementRef, 'overline-position');
   }
 
   @Input('overline-position')
-  set overlinePosition(value: string) {
+  set overlinePosition(value: number) {
     setAttr(this.elementRef, 'overline-position', value);
   }
 
 
-  get overlineThickness(): string {
+  get overlineThickness(): number {
     return getAttr(this.elementRef, 'overline-thickness');
   }
 
   @Input('overline-thickness')
-  set overlineThickness(value: string) {
+  set overlineThickness(value: number) {
     setAttr(this.elementRef, 'overline-thickness', value);
   }
 
@@ -198,82 +179,72 @@ export class SvgFontFaceDirective {
   }
 
 
-  get slope(): string {
+  get slope(): number {
     return getAttr(this.elementRef, 'slope');
   }
 
   @Input('slope')
-  set slope(value: string) {
+  set slope(value: number) {
     setAttr(this.elementRef, 'slope', value);
   }
 
 
-  get stemh(): string {
+  get stemh(): number {
     return getAttr(this.elementRef, 'stemh');
   }
 
   @Input('stemh')
-  set stemh(value: string) {
+  set stemh(value: number) {
     setAttr(this.elementRef, 'stemh', value);
   }
 
 
-  get stemv(): string {
+  get stemv(): number {
     return getAttr(this.elementRef, 'stemv');
   }
 
   @Input('stemv')
-  set stemv(value: string) {
+  set stemv(value: number) {
     setAttr(this.elementRef, 'stemv', value);
   }
 
 
-  get strikethroughPosition(): string {
+  get strikethroughPosition(): number {
     return getAttr(this.elementRef, 'strikethrough-position');
   }
 
   @Input('strikethrough-position')
-  set strikethroughPosition(value: string) {
+  set strikethroughPosition(value: number) {
     setAttr(this.elementRef, 'strikethrough-position', value);
   }
 
 
-  get strikethroughThickness(): string {
+  get strikethroughThickness(): number {
     return getAttr(this.elementRef, 'strikethrough-thickness');
   }
 
   @Input('strikethrough-thickness')
-  set strikethroughThickness(value: string) {
+  set strikethroughThickness(value: number) {
     setAttr(this.elementRef, 'strikethrough-thickness', value);
   }
 
 
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
-  }
-
-
-  get underlinePosition(): string {
+  get underlinePosition(): number {
     return getAttr(this.elementRef, 'underline-position');
   }
 
   @Input('underline-position')
-  set underlinePosition(value: string) {
+  set underlinePosition(value: number) {
     setAttr(this.elementRef, 'underline-position', value);
   }
 
 
-  get underlineThickness(): string {
+  get underlineThickness(): number {
     return getAttr(this.elementRef, 'underline-thickness');
   }
 
   @Input('underline-thickness')
-  set underlineThickness(value: string) {
+  set underlineThickness(value: number) {
     setAttr(this.elementRef, 'underline-thickness', value);
   }
 
@@ -288,53 +259,13 @@ export class SvgFontFaceDirective {
   }
 
 
-  get unitsPerEm(): string {
+  get unitsPerEm(): number {
     return getAttr(this.elementRef, 'units-per-em');
   }
 
   @Input('units-per-em')
-  set unitsPerEm(value: string) {
+  set unitsPerEm(value: number) {
     setAttr(this.elementRef, 'units-per-em', value);
-  }
-
-
-  get vAlphabetic(): string {
-    return getAttr(this.elementRef, 'v-alphabetic');
-  }
-
-  @Input('v-alphabetic')
-  set vAlphabetic(value: string) {
-    setAttr(this.elementRef, 'v-alphabetic', value);
-  }
-
-
-  get vHanging(): string {
-    return getAttr(this.elementRef, 'v-hanging');
-  }
-
-  @Input('v-hanging')
-  set vHanging(value: string) {
-    setAttr(this.elementRef, 'v-hanging', value);
-  }
-
-
-  get vIdeographic(): string {
-    return getAttr(this.elementRef, 'v-ideographic');
-  }
-
-  @Input('v-ideographic')
-  set vIdeographic(value: string) {
-    setAttr(this.elementRef, 'v-ideographic', value);
-  }
-
-
-  get vMathematical(): string {
-    return getAttr(this.elementRef, 'v-mathematical');
-  }
-
-  @Input('v-mathematical')
-  set vMathematical(value: string) {
-    setAttr(this.elementRef, 'v-mathematical', value);
   }
 
 
@@ -348,12 +279,12 @@ export class SvgFontFaceDirective {
   }
 
 
-  get xHeight(): string {
+  get xHeight(): number {
     return getAttr(this.elementRef, 'x-height');
   }
 
   @Input('x-height')
-  set xHeight(value: string) {
+  set xHeight(value: number) {
     setAttr(this.elementRef, 'x-height', value);
   }
 
@@ -386,6 +317,5 @@ export class SvgFontFaceDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

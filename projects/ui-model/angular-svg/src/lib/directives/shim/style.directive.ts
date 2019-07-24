@@ -8,7 +8,8 @@ export class SvgStyleDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get id(): string {
+
+  get id(): string {
     return getAttr(this.elementRef, 'id');
   }
 
@@ -25,16 +26,6 @@ export class SvgStyleDirective {
   @Input('media')
   set media(value: string) {
     setAttr(this.elementRef, 'media', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -86,6 +77,5 @@ export class SvgStyleDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

@@ -8,7 +8,8 @@ export class SvgSetDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get attributeName(): string {
+
+  get attributeName(): string {
     return getAttr(this.elementRef, 'attributeName');
   }
 
@@ -58,12 +59,12 @@ export class SvgSetDirective {
   }
 
 
-  get externalResourcesRequired(): string {
+  get externalResourcesRequired(): boolean {
     return getAttr(this.elementRef, 'externalResourcesRequired');
   }
 
   @Input('externalResourcesRequired')
-  set externalResourcesRequired(value: string) {
+  set externalResourcesRequired(value: boolean) {
     setAttr(this.elementRef, 'externalResourcesRequired', value);
   }
 
@@ -165,16 +166,6 @@ export class SvgSetDirective {
   @Input('systemLanguage')
   set systemLanguage(value: string) {
     setAttr(this.elementRef, 'systemLanguage', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -286,6 +277,5 @@ export class SvgSetDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

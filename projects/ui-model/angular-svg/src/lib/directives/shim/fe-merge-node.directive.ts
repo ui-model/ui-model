@@ -8,7 +8,8 @@ export class SvgFeMergeNodeDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get id(): string {
+
+  get id(): string {
     return getAttr(this.elementRef, 'id');
   }
 
@@ -25,16 +26,6 @@ export class SvgFeMergeNodeDirective {
   @Input('in')
   set in(value: string) {
     setAttr(this.elementRef, 'in', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -66,6 +57,5 @@ export class SvgFeMergeNodeDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

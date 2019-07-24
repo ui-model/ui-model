@@ -8,7 +8,8 @@ export class SvgFePointLightDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get id(): string {
+
+  get id(): string {
     return getAttr(this.elementRef, 'id');
   }
 
@@ -18,22 +19,12 @@ export class SvgFePointLightDirective {
   }
 
 
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
-  }
-
-
-  get x(): string {
+  get x(): string | number {
     return getAttr(this.elementRef, 'x');
   }
 
   @Input('x')
-  set x(value: string) {
+  set x(value: string | number) {
     setAttr(this.elementRef, 'x', value);
   }
 
@@ -68,24 +59,23 @@ export class SvgFePointLightDirective {
   }
 
 
-  get y(): string {
+  get y(): string | number {
     return getAttr(this.elementRef, 'y');
   }
 
   @Input('y')
-  set y(value: string) {
+  set y(value: string | number) {
     setAttr(this.elementRef, 'y', value);
   }
 
 
-  get z(): string {
+  get z(): number {
     return getAttr(this.elementRef, 'z');
   }
 
   @Input('z')
-  set z(value: string) {
+  set z(value: number) {
     setAttr(this.elementRef, 'z', value);
   }
-
 
 }

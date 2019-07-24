@@ -8,15 +8,6 @@ export class SvgFontFaceUriDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get href(): string {
-    return getAttr(this.elementRef, 'href');
-  }
-
-  @Input('href')
-  set href(value: string) {
-    setAttr(this.elementRef, 'href', value);
-  }
-
 
   get id(): string {
     return getAttr(this.elementRef, 'id');
@@ -25,16 +16,6 @@ export class SvgFontFaceUriDirective {
   @Input('id')
   set id(value: string) {
     setAttr(this.elementRef, 'id', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -136,6 +117,5 @@ export class SvgFontFaceUriDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

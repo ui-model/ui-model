@@ -8,7 +8,8 @@ export class SvgFeSpotLightDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get id(): string {
+
+  get id(): string {
     return getAttr(this.elementRef, 'id');
   }
 
@@ -18,72 +19,62 @@ export class SvgFeSpotLightDirective {
   }
 
 
-  get limitingConeAngle(): string {
+  get limitingConeAngle(): number {
     return getAttr(this.elementRef, 'limitingConeAngle');
   }
 
   @Input('limitingConeAngle')
-  set limitingConeAngle(value: string) {
+  set limitingConeAngle(value: number) {
     setAttr(this.elementRef, 'limitingConeAngle', value);
   }
 
 
-  get pointsAtX(): string {
+  get pointsAtX(): number {
     return getAttr(this.elementRef, 'pointsAtX');
   }
 
   @Input('pointsAtX')
-  set pointsAtX(value: string) {
+  set pointsAtX(value: number) {
     setAttr(this.elementRef, 'pointsAtX', value);
   }
 
 
-  get pointsAtY(): string {
+  get pointsAtY(): number {
     return getAttr(this.elementRef, 'pointsAtY');
   }
 
   @Input('pointsAtY')
-  set pointsAtY(value: string) {
+  set pointsAtY(value: number) {
     setAttr(this.elementRef, 'pointsAtY', value);
   }
 
 
-  get pointsAtZ(): string {
+  get pointsAtZ(): number {
     return getAttr(this.elementRef, 'pointsAtZ');
   }
 
   @Input('pointsAtZ')
-  set pointsAtZ(value: string) {
+  set pointsAtZ(value: number) {
     setAttr(this.elementRef, 'pointsAtZ', value);
   }
 
 
-  get specularExponent(): string {
+  get specularExponent(): number {
     return getAttr(this.elementRef, 'specularExponent');
   }
 
   @Input('specularExponent')
-  set specularExponent(value: string) {
+  set specularExponent(value: number) {
     setAttr(this.elementRef, 'specularExponent', value);
   }
 
 
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
-  }
-
-
-  get x(): string {
+  get x(): string | number {
     return getAttr(this.elementRef, 'x');
   }
 
   @Input('x')
-  set x(value: string) {
+  set x(value: string | number) {
     setAttr(this.elementRef, 'x', value);
   }
 
@@ -118,24 +109,23 @@ export class SvgFeSpotLightDirective {
   }
 
 
-  get y(): string {
+  get y(): string | number {
     return getAttr(this.elementRef, 'y');
   }
 
   @Input('y')
-  set y(value: string) {
+  set y(value: string | number) {
     setAttr(this.elementRef, 'y', value);
   }
 
 
-  get z(): string {
+  get z(): number {
     return getAttr(this.elementRef, 'z');
   }
 
   @Input('z')
-  set z(value: string) {
+  set z(value: number) {
     setAttr(this.elementRef, 'z', value);
   }
-
 
 }

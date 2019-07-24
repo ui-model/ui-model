@@ -8,23 +8,14 @@ export class SvgScriptDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get externalResourcesRequired(): string {
+
+  get externalResourcesRequired(): boolean {
     return getAttr(this.elementRef, 'externalResourcesRequired');
   }
 
   @Input('externalResourcesRequired')
-  set externalResourcesRequired(value: string) {
+  set externalResourcesRequired(value: boolean) {
     setAttr(this.elementRef, 'externalResourcesRequired', value);
-  }
-
-
-  get href(): string {
-    return getAttr(this.elementRef, 'href');
-  }
-
-  @Input('href')
-  set href(value: string) {
-    setAttr(this.elementRef, 'href', value);
   }
 
 
@@ -35,16 +26,6 @@ export class SvgScriptDirective {
   @Input('id')
   set id(value: string) {
     setAttr(this.elementRef, 'id', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -156,6 +137,5 @@ export class SvgScriptDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

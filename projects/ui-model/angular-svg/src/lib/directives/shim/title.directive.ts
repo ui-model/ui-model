@@ -8,12 +8,13 @@ export class SvgTitleDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get class(): string {
+
+  get class(): string | string[] {
     return getAttr(this.elementRef, 'class');
   }
 
   @Input('class')
-  set class(value: string) {
+  set class(value: string | string[]) {
     setAttr(this.elementRef, 'class', value);
   }
 
@@ -35,16 +36,6 @@ export class SvgTitleDirective {
   @Input('style')
   set style(value: string) {
     setAttr(this.elementRef, 'style', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -76,6 +67,5 @@ export class SvgTitleDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

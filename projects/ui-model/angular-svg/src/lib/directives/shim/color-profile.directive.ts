@@ -8,7 +8,8 @@ export class SvgColorProfileDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get id(): string {
+
+  get id(): string {
     return getAttr(this.elementRef, 'id');
   }
 
@@ -45,16 +46,6 @@ export class SvgColorProfileDirective {
   @Input('rendering-intent')
   set renderingIntent(value: string) {
     setAttr(this.elementRef, 'rendering-intent', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -156,6 +147,5 @@ export class SvgColorProfileDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

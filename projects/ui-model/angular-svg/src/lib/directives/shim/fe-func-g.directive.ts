@@ -8,22 +8,23 @@ export class SvgFeFuncGDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get amplitude(): string {
+
+  get amplitude(): number {
     return getAttr(this.elementRef, 'amplitude');
   }
 
   @Input('amplitude')
-  set amplitude(value: string) {
+  set amplitude(value: number) {
     setAttr(this.elementRef, 'amplitude', value);
   }
 
 
-  get exponent(): string {
+  get exponent(): number {
     return getAttr(this.elementRef, 'exponent');
   }
 
   @Input('exponent')
-  set exponent(value: string) {
+  set exponent(value: number) {
     setAttr(this.elementRef, 'exponent', value);
   }
 
@@ -38,43 +39,33 @@ export class SvgFeFuncGDirective {
   }
 
 
-  get intercept(): string {
+  get intercept(): number {
     return getAttr(this.elementRef, 'intercept');
   }
 
   @Input('intercept')
-  set intercept(value: string) {
+  set intercept(value: number) {
     setAttr(this.elementRef, 'intercept', value);
   }
 
 
-  get offset(): string {
+  get offset(): string | number {
     return getAttr(this.elementRef, 'offset');
   }
 
   @Input('offset')
-  set offset(value: string) {
+  set offset(value: string | number) {
     setAttr(this.elementRef, 'offset', value);
   }
 
 
-  get slope(): string {
+  get slope(): number {
     return getAttr(this.elementRef, 'slope');
   }
 
   @Input('slope')
-  set slope(value: string) {
+  set slope(value: number) {
     setAttr(this.elementRef, 'slope', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -126,6 +117,5 @@ export class SvgFeFuncGDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

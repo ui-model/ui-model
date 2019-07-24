@@ -8,12 +8,13 @@ export class SvgCursorDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get externalResourcesRequired(): string {
+
+  get externalResourcesRequired(): boolean {
     return getAttr(this.elementRef, 'externalResourcesRequired');
   }
 
   @Input('externalResourcesRequired')
-  set externalResourcesRequired(value: string) {
+  set externalResourcesRequired(value: boolean) {
     setAttr(this.elementRef, 'externalResourcesRequired', value);
   }
 
@@ -58,22 +59,12 @@ export class SvgCursorDirective {
   }
 
 
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
-  }
-
-
-  get x(): string {
+  get x(): string | number {
     return getAttr(this.elementRef, 'x');
   }
 
   @Input('x')
-  set x(value: string) {
+  set x(value: string | number) {
     setAttr(this.elementRef, 'x', value);
   }
 
@@ -178,14 +169,13 @@ export class SvgCursorDirective {
   }
 
 
-  get y(): string {
+  get y(): string | number {
     return getAttr(this.elementRef, 'y');
   }
 
   @Input('y')
-  set y(value: string) {
+  set y(value: string | number) {
     setAttr(this.elementRef, 'y', value);
   }
-
 
 }

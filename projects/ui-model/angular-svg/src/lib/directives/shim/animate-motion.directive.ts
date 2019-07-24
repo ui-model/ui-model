@@ -8,7 +8,8 @@ export class SvgAnimateMotionDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get accumulate(): string {
+
+  get accumulate(): string {
     return getAttr(this.elementRef, 'accumulate');
   }
 
@@ -78,12 +79,12 @@ export class SvgAnimateMotionDirective {
   }
 
 
-  get externalResourcesRequired(): string {
+  get externalResourcesRequired(): boolean {
     return getAttr(this.elementRef, 'externalResourcesRequired');
   }
 
   @Input('externalResourcesRequired')
-  set externalResourcesRequired(value: string) {
+  set externalResourcesRequired(value: boolean) {
     setAttr(this.elementRef, 'externalResourcesRequired', value);
   }
 
@@ -258,16 +259,6 @@ export class SvgAnimateMotionDirective {
   }
 
 
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
-  }
-
-
   get to(): string {
     return getAttr(this.elementRef, 'to');
   }
@@ -386,6 +377,5 @@ export class SvgAnimateMotionDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

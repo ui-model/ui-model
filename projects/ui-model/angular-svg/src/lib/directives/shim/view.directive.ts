@@ -8,12 +8,13 @@ export class SvgViewDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get externalResourcesRequired(): string {
+
+  get externalResourcesRequired(): boolean {
     return getAttr(this.elementRef, 'externalResourcesRequired');
   }
 
   @Input('externalResourcesRequired')
-  set externalResourcesRequired(value: string) {
+  set externalResourcesRequired(value: boolean) {
     setAttr(this.elementRef, 'externalResourcesRequired', value);
   }
 
@@ -38,22 +39,12 @@ export class SvgViewDirective {
   }
 
 
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
-  }
-
-
-  get viewBox(): string {
+  get viewBox(): string | string[] {
     return getAttr(this.elementRef, 'viewBox');
   }
 
   @Input('viewBox')
-  set viewBox(value: string) {
+  set viewBox(value: string | string[]) {
     setAttr(this.elementRef, 'viewBox', value);
   }
 
@@ -106,6 +97,5 @@ export class SvgViewDirective {
   set zoomAndPan(value: string) {
     setAttr(this.elementRef, 'zoomAndPan', value);
   }
-
 
 }

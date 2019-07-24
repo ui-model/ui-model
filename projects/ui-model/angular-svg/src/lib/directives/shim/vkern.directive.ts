@@ -8,7 +8,8 @@ export class SvgVkernDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get g1(): string {
+
+  get g1(): string {
     return getAttr(this.elementRef, 'g1');
   }
 
@@ -38,23 +39,13 @@ export class SvgVkernDirective {
   }
 
 
-  get k(): string {
+  get k(): number {
     return getAttr(this.elementRef, 'k');
   }
 
   @Input('k')
-  set k(value: string) {
+  set k(value: number) {
     setAttr(this.elementRef, 'k', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -106,6 +97,5 @@ export class SvgVkernDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }

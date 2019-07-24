@@ -8,7 +8,8 @@ export class SvgFontDirective {
   constructor(private elementRef: ElementRef<Element>) {
   }
 
-    get alignmentBaseline(): string {
+
+  get alignmentBaseline(): string {
     return getAttr(this.elementRef, 'alignment-baseline');
   }
 
@@ -18,22 +19,22 @@ export class SvgFontDirective {
   }
 
 
-  get baselineShift(): string {
+  get baselineShift(): string | number {
     return getAttr(this.elementRef, 'baseline-shift');
   }
 
   @Input('baseline-shift')
-  set baselineShift(value: string) {
+  set baselineShift(value: string | number) {
     setAttr(this.elementRef, 'baseline-shift', value);
   }
 
 
-  get class(): string {
+  get class(): string | string[] {
     return getAttr(this.elementRef, 'class');
   }
 
   @Input('class')
-  set class(value: string) {
+  set class(value: string | string[]) {
     setAttr(this.elementRef, 'class', value);
   }
 
@@ -168,12 +169,12 @@ export class SvgFontDirective {
   }
 
 
-  get externalResourcesRequired(): string {
+  get externalResourcesRequired(): boolean {
     return getAttr(this.elementRef, 'externalResourcesRequired');
   }
 
   @Input('externalResourcesRequired')
-  set externalResourcesRequired(value: string) {
+  set externalResourcesRequired(value: boolean) {
     setAttr(this.elementRef, 'externalResourcesRequired', value);
   }
 
@@ -188,12 +189,12 @@ export class SvgFontDirective {
   }
 
 
-  get fillOpacity(): string {
+  get fillOpacity(): string | number {
     return getAttr(this.elementRef, 'fill-opacity');
   }
 
   @Input('fill-opacity')
-  set fillOpacity(value: string) {
+  set fillOpacity(value: string | number) {
     setAttr(this.elementRef, 'fill-opacity', value);
   }
 
@@ -228,12 +229,12 @@ export class SvgFontDirective {
   }
 
 
-  get floodOpacity(): string {
+  get floodOpacity(): string | number {
     return getAttr(this.elementRef, 'flood-opacity');
   }
 
   @Input('flood-opacity')
-  set floodOpacity(value: string) {
+  set floodOpacity(value: string | number) {
     setAttr(this.elementRef, 'flood-opacity', value);
   }
 
@@ -248,22 +249,22 @@ export class SvgFontDirective {
   }
 
 
-  get fontSize(): string {
+  get fontSize(): string | number {
     return getAttr(this.elementRef, 'font-size');
   }
 
   @Input('font-size')
-  set fontSize(value: string) {
+  set fontSize(value: string | number) {
     setAttr(this.elementRef, 'font-size', value);
   }
 
 
-  get fontSizeAdjust(): string {
+  get fontSizeAdjust(): string | number {
     return getAttr(this.elementRef, 'font-size-adjust');
   }
 
   @Input('font-size-adjust')
-  set fontSizeAdjust(value: string) {
+  set fontSizeAdjust(value: string | number) {
     setAttr(this.elementRef, 'font-size-adjust', value);
   }
 
@@ -308,52 +309,52 @@ export class SvgFontDirective {
   }
 
 
-  get glyphOrientationHorizontal(): string {
+  get glyphOrientationHorizontal(): string | number {
     return getAttr(this.elementRef, 'glyph-orientation-horizontal');
   }
 
   @Input('glyph-orientation-horizontal')
-  set glyphOrientationHorizontal(value: string) {
+  set glyphOrientationHorizontal(value: string | number) {
     setAttr(this.elementRef, 'glyph-orientation-horizontal', value);
   }
 
 
-  get glyphOrientationVertical(): string {
+  get glyphOrientationVertical(): string | number {
     return getAttr(this.elementRef, 'glyph-orientation-vertical');
   }
 
   @Input('glyph-orientation-vertical')
-  set glyphOrientationVertical(value: string) {
+  set glyphOrientationVertical(value: string | number) {
     setAttr(this.elementRef, 'glyph-orientation-vertical', value);
   }
 
 
-  get horizAdvX(): string {
+  get horizAdvX(): number {
     return getAttr(this.elementRef, 'horiz-adv-x');
   }
 
   @Input('horiz-adv-x')
-  set horizAdvX(value: string) {
+  set horizAdvX(value: number) {
     setAttr(this.elementRef, 'horiz-adv-x', value);
   }
 
 
-  get horizOriginX(): string {
+  get horizOriginX(): number {
     return getAttr(this.elementRef, 'horiz-origin-x');
   }
 
   @Input('horiz-origin-x')
-  set horizOriginX(value: string) {
+  set horizOriginX(value: number) {
     setAttr(this.elementRef, 'horiz-origin-x', value);
   }
 
 
-  get horizOriginY(): string {
+  get horizOriginY(): number {
     return getAttr(this.elementRef, 'horiz-origin-y');
   }
 
   @Input('horiz-origin-y')
-  set horizOriginY(value: string) {
+  set horizOriginY(value: number) {
     setAttr(this.elementRef, 'horiz-origin-y', value);
   }
 
@@ -378,12 +379,12 @@ export class SvgFontDirective {
   }
 
 
-  get letterSpacing(): string {
+  get letterSpacing(): string | number {
     return getAttr(this.elementRef, 'letter-spacing');
   }
 
   @Input('letter-spacing')
-  set letterSpacing(value: string) {
+  set letterSpacing(value: string | number) {
     setAttr(this.elementRef, 'letter-spacing', value);
   }
 
@@ -438,12 +439,12 @@ export class SvgFontDirective {
   }
 
 
-  get opacity(): string {
+  get opacity(): string | number {
     return getAttr(this.elementRef, 'opacity');
   }
 
   @Input('opacity')
-  set opacity(value: string) {
+  set opacity(value: string | number) {
     setAttr(this.elementRef, 'opacity', value);
   }
 
@@ -455,16 +456,6 @@ export class SvgFontDirective {
   @Input('overflow')
   set overflow(value: string) {
     setAttr(this.elementRef, 'overflow', value);
-  }
-
-
-  get paintOrder(): string {
-    return getAttr(this.elementRef, 'paint-order');
-  }
-
-  @Input('paint-order')
-  set paintOrder(value: string) {
-    setAttr(this.elementRef, 'paint-order', value);
   }
 
 
@@ -498,12 +489,12 @@ export class SvgFontDirective {
   }
 
 
-  get stopOpacity(): string {
+  get stopOpacity(): string | number {
     return getAttr(this.elementRef, 'stop-opacity');
   }
 
   @Input('stop-opacity')
-  set stopOpacity(value: string) {
+  set stopOpacity(value: string | number) {
     setAttr(this.elementRef, 'stop-opacity', value);
   }
 
@@ -518,22 +509,22 @@ export class SvgFontDirective {
   }
 
 
-  get strokeDasharray(): string {
+  get strokeDasharray(): string | number[] {
     return getAttr(this.elementRef, 'stroke-dasharray');
   }
 
   @Input('stroke-dasharray')
-  set strokeDasharray(value: string) {
+  set strokeDasharray(value: string | number[]) {
     setAttr(this.elementRef, 'stroke-dasharray', value);
   }
 
 
-  get strokeDashoffset(): string {
+  get strokeDashoffset(): string | number {
     return getAttr(this.elementRef, 'stroke-dashoffset');
   }
 
   @Input('stroke-dashoffset')
-  set strokeDashoffset(value: string) {
+  set strokeDashoffset(value: string | number) {
     setAttr(this.elementRef, 'stroke-dashoffset', value);
   }
 
@@ -558,32 +549,32 @@ export class SvgFontDirective {
   }
 
 
-  get strokeMiterlimit(): string {
+  get strokeMiterlimit(): string | number {
     return getAttr(this.elementRef, 'stroke-miterlimit');
   }
 
   @Input('stroke-miterlimit')
-  set strokeMiterlimit(value: string) {
+  set strokeMiterlimit(value: string | number) {
     setAttr(this.elementRef, 'stroke-miterlimit', value);
   }
 
 
-  get strokeOpacity(): string {
+  get strokeOpacity(): string | number {
     return getAttr(this.elementRef, 'stroke-opacity');
   }
 
   @Input('stroke-opacity')
-  set strokeOpacity(value: string) {
+  set strokeOpacity(value: string | number) {
     setAttr(this.elementRef, 'stroke-opacity', value);
   }
 
 
-  get strokeWidth(): string {
+  get strokeWidth(): string | number {
     return getAttr(this.elementRef, 'stroke-width');
   }
 
   @Input('stroke-width')
-  set strokeWidth(value: string) {
+  set strokeWidth(value: string | number) {
     setAttr(this.elementRef, 'stroke-width', value);
   }
 
@@ -595,16 +586,6 @@ export class SvgFontDirective {
   @Input('style')
   set style(value: string) {
     setAttr(this.elementRef, 'style', value);
-  }
-
-
-  get tabindex(): string {
-    return getAttr(this.elementRef, 'tabindex');
-  }
-
-  @Input('tabindex')
-  set tabindex(value: string) {
-    setAttr(this.elementRef, 'tabindex', value);
   }
 
 
@@ -628,16 +609,6 @@ export class SvgFontDirective {
   }
 
 
-  get textOverflow(): string {
-    return getAttr(this.elementRef, 'text-overflow');
-  }
-
-  @Input('text-overflow')
-  set textOverflow(value: string) {
-    setAttr(this.elementRef, 'text-overflow', value);
-  }
-
-
   get textRendering(): string {
     return getAttr(this.elementRef, 'text-rendering');
   }
@@ -648,12 +619,12 @@ export class SvgFontDirective {
   }
 
 
-  get transform(): string {
+  get transform(): string | string[] {
     return getAttr(this.elementRef, 'transform');
   }
 
   @Input('transform')
-  set transform(value: string) {
+  set transform(value: string | string[]) {
     setAttr(this.elementRef, 'transform', value);
   }
 
@@ -668,42 +639,32 @@ export class SvgFontDirective {
   }
 
 
-  get vectorEffect(): string {
-    return getAttr(this.elementRef, 'vector-effect');
-  }
-
-  @Input('vector-effect')
-  set vectorEffect(value: string) {
-    setAttr(this.elementRef, 'vector-effect', value);
-  }
-
-
-  get vertAdvY(): string {
+  get vertAdvY(): number {
     return getAttr(this.elementRef, 'vert-adv-y');
   }
 
   @Input('vert-adv-y')
-  set vertAdvY(value: string) {
+  set vertAdvY(value: number) {
     setAttr(this.elementRef, 'vert-adv-y', value);
   }
 
 
-  get vertOriginX(): string {
+  get vertOriginX(): number {
     return getAttr(this.elementRef, 'vert-origin-x');
   }
 
   @Input('vert-origin-x')
-  set vertOriginX(value: string) {
+  set vertOriginX(value: number) {
     setAttr(this.elementRef, 'vert-origin-x', value);
   }
 
 
-  get vertOriginY(): string {
+  get vertOriginY(): number {
     return getAttr(this.elementRef, 'vert-origin-y');
   }
 
   @Input('vert-origin-y')
-  set vertOriginY(value: string) {
+  set vertOriginY(value: number) {
     setAttr(this.elementRef, 'vert-origin-y', value);
   }
 
@@ -718,12 +679,12 @@ export class SvgFontDirective {
   }
 
 
-  get wordSpacing(): string {
+  get wordSpacing(): string | number {
     return getAttr(this.elementRef, 'word-spacing');
   }
 
   @Input('word-spacing')
-  set wordSpacing(value: string) {
+  set wordSpacing(value: string | number) {
     setAttr(this.elementRef, 'word-spacing', value);
   }
 
@@ -766,6 +727,5 @@ export class SvgFontDirective {
   set xmlSpace(value: string) {
     setAttr(this.elementRef, 'xml:space', value);
   }
-
 
 }
