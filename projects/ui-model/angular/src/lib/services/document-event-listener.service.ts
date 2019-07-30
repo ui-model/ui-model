@@ -1,32 +1,80 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
+interface ListenerEntry<K extends keyof DocumentEventMap> {
+  type: K;
+  subject: Subject<DocumentEventMap[K]>;
+  listener?: EventListenerOrEventListenerObject;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class DocumentEventListener implements OnDestroy {
   constructor() {
-    document.addEventListener('mouseup', ($event) => {
-      this.mouseup$$.next($event);
-    });
-    document.addEventListener('keyup', ($event) => {
-      this.keyup$$.next($event);
-    });
+    this.addEventListeners();
   }
 
-  private mouseup$$ = new Subject<MouseEvent>();
-  private keyup$$ = new Subject<KeyboardEvent>();
+  listeners: ListenerEntry<keyof DocumentEventMap>[] = [];
 
-  get mouseup$(): Observable<MouseEvent> {
-    return this.mouseup$$.asObservable();
-  }
+  private _keyup$ = new Subject<KeyboardEvent>();
 
   get keyup$(): Observable<KeyboardEvent> {
-    return this.keyup$$.asObservable();
+    return this._keyup$;
+  }
+
+  private _mouseup$ = new Subject<MouseEvent>();
+
+  get mouseup$(): Observable<MouseEvent> {
+    return this._mouseup$;
+  }
+
+  private _mousemove$ = new Subject<MouseEvent>();
+
+  get mousemove$(): Observable<MouseEvent> {
+    return this._mousemove$;
+  }
+
+  private _mousedown$ = new Subject<MouseEvent>();
+
+  get mousedown$(): Observable<MouseEvent> {
+    return this._mousedown$;
   }
 
   ngOnDestroy(): void {
-    this.mouseup$$.complete();
-    this.keyup$$.complete();
+    this.listeners.forEach(it => {
+      if (it.listener) {
+        document.removeEventListener(it.type, it.listener);
+      }
+      it.subject.complete();
+    });
+  }
+
+  private addEventListeners() {
+    this.listeners = [
+      {
+        type: 'mousedown',
+        subject: this._mousedown$,
+      },
+      {
+        type: 'mousemove',
+        subject: this._mousemove$,
+      },
+      {
+        type: 'mouseup',
+        subject: this._mouseup$,
+      },
+      {
+        type: 'keyup',
+        subject: this._keyup$,
+      },
+    ];
+
+    this.listeners.forEach(it => {
+      it.listener = (event) => {
+        it.subject.next(event);
+      };
+      document.addEventListener(it.type, it.listener);
+    });
   }
 }
