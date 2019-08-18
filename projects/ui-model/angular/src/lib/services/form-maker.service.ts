@@ -10,7 +10,6 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { Reflect } from 'core-js';
 import { ModelMetadata } from '../decorators/form-maker';
 import { metaKeyModel, metaKeyProperty } from '../utils/constants';
 import { FormHooks } from '../utils/polyfills';

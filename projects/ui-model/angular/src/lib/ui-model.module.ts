@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import 'reflect-metadata';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { CountDownDirective } from './directives/count-down.directive';
 import { DateInputDirective } from './directives/date-input.directive';
