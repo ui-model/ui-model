@@ -1,7 +1,0 @@
-<div *ngFor="let option of options" class="form-check form-check-inline">
-  <input (change)="select(option)" [checked]="selected(option)" [disabled]="disabled" [id]="idOf(option)"
-         class="form-check-input" type="radio"/>
-  <label [for]="idOf(option)" class="form-check-label">
-    {{option[labelField]}}
-  </label>
-</div>

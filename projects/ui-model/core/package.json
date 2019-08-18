@@ -1,8 +1,0 @@
-{
-  "name": "@ui-model/core",
-  "version": "0.2.1",
-  "main": "src/public_api.ts",
-  "peerDependencies": {
-    "rxjs": "^6.0.0"
-  }
-}

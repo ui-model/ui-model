@@ -1,9 +1,0 @@
-{
-  "name": "@ui-model/chart",
-  "version": "0.2.1",
-  "main": "src/public_api.ts",
-  "peerDependencies": {
-    "@ui-model/common": "0.2.1",
-    "rxjs": "^6.0.0"
-  }
-}

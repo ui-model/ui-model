@@ -1,8 +1,0 @@
-{
-  "name": "@ui-model/angular-svg",
-  "version": "0.2.1",
-  "peerDependencies": {
-    "@angular/common": "^6.0.0 || ^7.0.0 || ^8.0.0",
-    "@angular/core": "^6.0.0 || ^7.0.0 || ^8.0.0"
-  }
-}

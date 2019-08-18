@@ -1,0 +1,24 @@
+[submodule "projects/ui-model/angular"]
+	path = projects/ui-model/angular
+	url = git@github.com:ui-model/angular.git
+[submodule "projects/ui-model/angular-bootstrap"]
+	path = projects/ui-model/angular-bootstrap
+	url = git@github.com:ui-model/angular-bootstrap.git
+[submodule "projects/ui-model/angular-d3"]
+	path = projects/ui-model/angular-d3
+	url = git@github.com:ui-model/angular-d3.git
+[submodule "projects/ui-model/angular-markdown"]
+	path = projects/ui-model/angular-markdown
+	url = git@github.com:ui-model/angular-markdown.git
+[submodule "projects/ui-model/angular-svg"]
+	path = projects/ui-model/angular-svg
+	url = git@github.com:ui-model/angular-svg.git
+[submodule "projects/ui-model/chart"]
+	path = projects/ui-model/chart
+	url = git@github.com:ui-model/chart.git
+[submodule "projects/ui-model/common"]
+	path = projects/ui-model/common
+	url = git@github.com:ui-model/common.git
+[submodule "projects/ui-model/core"]
+	path = projects/ui-model/core
+	url = git@github.com:ui-model/core.git
