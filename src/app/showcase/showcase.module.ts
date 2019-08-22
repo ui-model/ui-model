@@ -2,11 +2,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
-import { RadioGroupWithinFormComponent, TypeAheadWithinFormComponent } from '@ui-model/angular-bootstrap';
-import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap/src/lib/ui-model-bootstrap.module';
+import {
+  RadioGroupWithinFormComponent,
+  TypeAheadWithinFormComponent,
+  UiModelBootstrapModule,
+} from '@ui-model/angular-bootstrap';
 import { UiModelD3Module } from '@ui-model/angular-d3';
 import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
-import { UiModelSvgModule } from '@ui-model/angular-svg/src/lib/ui-model-svg.module';
+import { UiModelSvgModule } from '@ui-model/angular-svg';
 import { SharedModule } from '../shared/shared.module';
 import { BriefViewerComponent } from './_layout/brief-viewer/brief-viewer.component';
 import { DocumentViewerComponent } from './_layout/document-viewer/document-viewer.component';

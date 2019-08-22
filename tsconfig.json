@@ -22,51 +22,27 @@
       "@ui-model/angular": [
         "projects/ui-model/angular"
       ],
-      "@ui-model/angular/*": [
-        "projects/ui-model/angular/*"
-      ],
       "@ui-model/angular-bootstrap": [
         "projects/ui-model/angular-bootstrap"
-      ],
-      "@ui-model/angular-bootstrap/*": [
-        "projects/ui-model/angular-bootstrap/*"
       ],
       "@ui-model/angular-markdown": [
         "projects/ui-model/angular-markdown"
       ],
-      "@ui-model/angular-markdown/*": [
-        "projects/ui-model/angular-markdown/*"
-      ],
       "@ui-model/chart": [
         "projects/ui-model/chart"
-      ],
-      "@ui-model/chart/*": [
-        "projects/ui-model/chart/*"
       ],
       "@ui-model/core": [
         "projects/ui-model/core"
       ],
-      "@ui-model/core/*": [
-        "projects/ui-model/core/*"
-      ],
       "@ui-model/common": [
         "projects/ui-model/common"
-      ],
-      "@ui-model/common/*": [
-        "projects/ui-model/common/*"
       ],
       "@ui-model/angular-d3": [
         "projects/ui-model/angular-d3"
       ],
-      "@ui-model/angular-d3/*": [
-        "projects/ui-model/angular-d3/*"
-      ],
       "@ui-model/angular-svg": [
         "projects/ui-model/angular-svg"
       ],
-      "@ui-model/angular-svg/*": [
-        "projects/ui-model/angular-svg/*"
-      ]
     }
   }
 }
