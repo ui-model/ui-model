@@ -1,23 +1,27 @@
-<div [class.no-selectable]="movable.moving">
-  <div class="playground">
-    <div #inner="uiMeasure"
-         #movable="uiMovable" (uiMoveStop)="inner.update()"
-         [style.left.px]="inner.offsetRect.left + movable.offset.x"
-         [style.top.px]="inner.offsetRect.top + movable.offset.y" class="movable"
-         uiMeasure
-         uiMovable
-    >
+<h4>SVG Movable</h4>
+<div class="playground">
+  <svg viewBox="0 0 300 300" width="100%" height="600">
+    <circle fill="green" [cx]="30" [cy]="30" r="30" uiMovable #svgMovable="uiMovable" uiMovableTransform></circle>
+  </svg>
+</div>
+<div class="alert alert-info">
+  <div class="row">
+    <div class="col-md-6">
+      <span i18n>offset</span>
+      ( x: {{svgMovable.offset.x}}, y: {{svgMovable.offset.y}} )
     </div>
+  </div>
+</div>
+<h4>HTML Movable</h4>
+<div [class.no-selectable]="htmlMovable.moving">
+  <div class="playground">
+    <div class="movable" uiMovable #htmlMovable="uiMovable" uiMovableTransform></div>
   </div>
   <div class="alert alert-info">
     <div class="row">
       <div class="col-md-6">
-        <span i18n>delta</span>
-        ( x: {{movable.offset.x}}, y: {{movable.offset.y}} )
-      </div>
-      <div class="col-md-6">
-        <span i18n>pos</span>
-        ( x: {{inner.offsetRect.left}}, y: {{inner.offsetRect.top}} )
+        <span i18n>offset</span>
+        ( x: {{htmlMovable.offset.x}}, y: {{htmlMovable.offset.y}} )
       </div>
     </div>
   </div>
