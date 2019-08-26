@@ -11,6 +11,7 @@ import { FormModelComponent } from '../showcase/form-model/form-model.component'
 import { FormComponent } from '../showcase/form/form.component';
 import { InfiniteScrollComponent } from '../showcase/infinite-scroll/infinite-scroll.component';
 import { InplaceEditorComponent } from '../showcase/inplace-editor/inplace-editor.component';
+import { MeasureComponent } from '../showcase/measure/measure.component';
 import { MenuComponent } from '../showcase/menu/menu.component';
 import { ModalComponent } from '../showcase/modal/modal.component';
 import { MovableComponent } from '../showcase/movable/movable.component';
@@ -296,6 +297,16 @@ export const showcaseRoutes: Route[] = [
     data: {
       title: 'Movable',
       tags: ['movable', 'drag', 'move', 'measure'].map(Tag.of),
+      description: 'How to use the **helper directive** to **bridge** between ui-model and view',
+      authors: ['wzc'].map(Author.of),
+    },
+  },
+  {
+    path: 'measure',
+    component: MeasureComponent,
+    data: {
+      title: 'Measure',
+      tags: ['measure'].map(Tag.of),
       description: 'How to use the **helper directive** to **bridge** between ui-model and view',
       authors: ['wzc'].map(Author.of),
     },

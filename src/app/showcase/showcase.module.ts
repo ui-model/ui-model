@@ -30,6 +30,7 @@ import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 import { InplaceEditorComponent } from './inplace-editor/inplace-editor.component';
+import { MeasureComponent } from './measure/measure.component';
 import { MenuComponent } from './menu/menu.component';
 import { ModalContentComponent } from './modal/modal-content/modal-content.component';
 import { ModalCustomComponent } from './modal/modal-custom/modal-custom.component';
@@ -125,6 +126,7 @@ import { ZoomComponent } from './zoom/zoom.component';
     D3LineChartComponent,
     D3GaugeComponent,
     D3GeoMapComponent,
+    MeasureComponent,
   ],
   providers: [RemoteUsernameValidator],
   entryComponents: [
