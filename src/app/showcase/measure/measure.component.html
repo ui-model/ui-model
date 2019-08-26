@@ -1,13 +1,18 @@
-<input type="text" class="form-control" [(ngModel)]="content" placeholder="输入内容，测量宽度"/>
+<p>
+  <input type="text" class="form-control" [(ngModel)]="content" placeholder="输入内容，测量宽度"/>
+</p>
+<h4>HTML Measure</h4>
 <p>
   <span uiMeasure #measure=uiMeasure [uiMeasureSignal]="content">{{content}}</span>
 </p>
 <p>
-  {{measure.boundingRect.width}}
+  宽度：{{measure.boundingRect.width}}px
 </p>
 
+<h4>SVG Measure</h4>
 <svg viewBox="0 0 100 100" width="200" height="200">
   <text x="50" y="50" uiMeasure #m2="uiMeasure" [uiMeasureSignal]="content">{{content}}</text>
 </svg>
-
-{{m2.boundingRect.width}}
+<p>
+  宽度：{{m2.boundingRect.width}}px
+</p>
