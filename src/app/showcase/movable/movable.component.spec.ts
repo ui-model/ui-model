@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiModelModule } from '@ui-model/angular';
+import { UiModelSvgModule } from '@ui-model/angular-svg';
 import { MovableComponent } from './movable.component';
 
 describe('showcase > ShowcaseMovableComponent', () => {
@@ -9,7 +10,7 @@ describe('showcase > ShowcaseMovableComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MovableComponent],
-      imports: [UiModelModule],
+      imports: [UiModelModule, UiModelSvgModule],
     })
       .compileComponents();
   }));

@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { D3ColorsPipe } from '@ui-model/angular-d3';
+import { UiModelSvgModule } from '@ui-model/angular-svg';
 import { SharedModule } from '../../shared/shared.module';
 
 import { D3LineChartComponent } from './d3-line-chart.component';
@@ -10,7 +11,7 @@ describe('showcase > ShowcaseD3LineChartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule],
+      imports: [SharedModule, UiModelSvgModule],
       declarations: [D3LineChartComponent, D3ColorsPipe],
     })
       .compileComponents();

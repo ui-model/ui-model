@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
 import { UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { UiModelD3Module } from '@ui-model/angular-d3';
+import { UiModelSvgModule } from '@ui-model/angular-svg';
 import { ChartComponent } from './chart.component';
 
 describe('showcase > ShowcaseChartComponent', () => {
@@ -16,6 +17,7 @@ describe('showcase > ShowcaseChartComponent', () => {
         UiModelModule,
         UiModelBootstrapModule,
         UiModelD3Module,
+        UiModelSvgModule,
         FormsModule,
       ],
     })

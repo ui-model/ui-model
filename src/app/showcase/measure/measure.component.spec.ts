@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { UiModelModule } from '@ui-model/angular';
+import { UiModelSvgModule } from '@ui-model/angular-svg';
 
 import { MeasureComponent } from './measure.component';
 
@@ -8,6 +11,7 @@ describe('MeasureComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [FormsModule, UiModelModule, UiModelSvgModule],
       declarations: [MeasureComponent],
     })
       .compileComponents();
