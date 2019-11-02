@@ -476,5 +476,8 @@
       }
     }
   },
-  "defaultProject": "ui-model"
+  "defaultProject": "ui-model",
+  "cli": {
+    "analytics": "0b52ad2c-6b7f-479c-b485-966f3b46c311"
+  }
 }
