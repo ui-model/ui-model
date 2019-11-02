@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/ui-model",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -41,6 +42,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -159,6 +166,11 @@
           "options": {
             "tsConfig": "projects/ui-model/angular/tsconfig.lib.json",
             "project": "projects/ui-model/angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-model/angular/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -194,6 +206,11 @@
           "options": {
             "tsConfig": "projects/ui-model/angular-bootstrap/tsconfig.lib.json",
             "project": "projects/ui-model/angular-bootstrap/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-model/angular-bootstrap/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -229,6 +246,11 @@
           "options": {
             "tsConfig": "projects/ui-model/angular-markdown/tsconfig.lib.json",
             "project": "projects/ui-model/angular-markdown/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-model/angular-markdown/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -264,6 +286,11 @@
           "options": {
             "tsConfig": "projects/ui-model/chart/tsconfig.lib.json",
             "project": "projects/ui-model/chart/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-model/chart/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -299,6 +326,11 @@
           "options": {
             "tsConfig": "projects/ui-model/core/tsconfig.lib.json",
             "project": "projects/ui-model/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-model/core/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -334,6 +366,11 @@
           "options": {
             "tsConfig": "projects/ui-model/common/tsconfig.lib.json",
             "project": "projects/ui-model/common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-model/common/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -369,6 +406,11 @@
           "options": {
             "tsConfig": "projects/ui-model/angular-d3/tsconfig.lib.json",
             "project": "projects/ui-model/angular-d3/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-model/angular-d3/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -404,6 +446,11 @@
           "options": {
             "tsConfig": "projects/ui-model/angular-svg/tsconfig.lib.json",
             "project": "projects/ui-model/angular-svg/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-model/angular-svg/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
