@@ -42,6 +42,7 @@
           },
           "configurations": {
             "production": {
+              "tsConfig": "src/tsconfig.app.prod.json",
               "budgets": [
                 {
                   "type": "anyComponentStyle",

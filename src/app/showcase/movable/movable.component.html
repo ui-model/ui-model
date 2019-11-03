@@ -3,7 +3,8 @@
   <svg viewBox="0 0 300 300" width="100%" height="600">
     <g uiMovableTransform>
       <rect x="0" y="0" width="60" height="60" fill="green"></rect>
-      <circle class="drag-handle" fill="yellow" [cx]="10" [cy]="10" r="5" uiMovable #svgMovable="uiMovable"></circle>
+      <circle class="drag-handle" fill="yellow" [attr.cx]="10" [attr.cy]="10" r="5" uiMovable
+              #svgMovable="uiMovable"></circle>
       <text x="30" y="30" fill="white" text-anchor="middle" alignment-baseline="middle">Text</text>
     </g>
   </svg>

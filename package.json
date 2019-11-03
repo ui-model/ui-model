@@ -5,8 +5,8 @@
     "ng": "ng",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "start": "node --max-old-space-size=8192 node_modules/.bin/ng serve --port 14200",
-    "build": "ng build --prod --source-map",
-    "build-libs": "ng build @ui-model/core && ng build @ui-model/common && ng build @ui-model/chart && ng build @ui-model/angular && ng build @ui-model/angular-bootstrap && ng build @ui-model/angular-svg && ng build @ui-model/angular-d3 && ng build @ui-model/angular-markdown",
+    "build": "npm run build-libs && ng build --prod --source-map --no-delete-output-path",
+    "build-libs": "ng build @ui-model/core --prod && ng build @ui-model/common --prod && ng build @ui-model/chart --prod && ng build @ui-model/angular --prod && ng build @ui-model/angular-bootstrap --prod && ng build @ui-model/angular-svg --prod && ng build @ui-model/angular-d3 --prod && ng build @ui-model/angular-markdown --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
