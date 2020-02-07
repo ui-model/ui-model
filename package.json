@@ -35,7 +35,7 @@
     "date-fns": "^1.30.1",
     "font-awesome": "^4.7.0",
     "highlight.js": "^9.15.8",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "markdown-it": "^8.4.2",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-deflist": "^2.0.3",
