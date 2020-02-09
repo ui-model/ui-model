@@ -9,7 +9,7 @@ commitMessage=$(git log --oneline -n 1)
 
 kill `lsof -t -i :4000` || true
 
-npx http-server-spa dist/ui-model index.html 4000 &
+npx http-server-spa dist/demo index.html 4000 &
 
 rm -fr /tmp/ui-model-prerender || true
 
@@ -21,7 +21,7 @@ rm -fr /tmp/ui-model-prebuilt
 
 git clone https://asnowwolf:${GITHUB_ACCESS_TOKEN}@github.com/ui-model/ui-model-prebuilt.git /tmp/ui-model-prebuilt
 
-cp -r ./dist/ui-model/* /tmp/ui-model-prebuilt/
+cp -r ./dist/demo/* /tmp/ui-model-prebuilt/
 
 cp -r /tmp/ui-model-prerender/localhost:4000/* /tmp/ui-model-prebuilt/
 

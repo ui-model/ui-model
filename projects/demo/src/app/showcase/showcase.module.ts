@@ -2,11 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiModelModule } from '@ui-model/angular';
-import {
-  RadioGroupWithinFormComponent,
-  TypeAheadWithinFormComponent,
-  UiModelBootstrapModule,
-} from '@ui-model/angular-bootstrap';
+import { RadioGroupWithinFormComponent, TypeAheadWithinFormComponent, UiModelBootstrapModule } from '@ui-model/angular-bootstrap';
 import { UiModelD3Module } from '@ui-model/angular-d3';
 import { UiModelMarkdownModule } from '@ui-model/angular-markdown';
 import { UiModelSvgModule } from '@ui-model/angular-svg';

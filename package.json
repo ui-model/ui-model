@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "start": "ng serve --port 14200",
-    "build": "npm run build-libs && node  --max-old-space-size=8192 node_modules/.bin/ng build --prod --source-map --no-delete-output-path",
+    "build": "ng build --prod --source-map",
     "build-libs": "tools/build-libs.sh",
     "test": "ng test",
     "lint": "ng lint",
@@ -34,6 +33,7 @@
     "d3": "^5.9.7",
     "date-fns": "^1.30.1",
     "font-awesome": "^4.7.0",
+    "geojson": "^0.5.0",
     "highlight.js": "^9.15.8",
     "lodash": "^4.17.11",
     "markdown-it": "^8.4.2",
